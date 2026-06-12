@@ -67,7 +67,20 @@ document.addEventListener('DOMContentLoaded', () => {
             "hero-microcopy-text": "Deja de ser un esclavo de tu WhatsApp. Automatiza tus pedidos y recupera hasta 3 horas al día.",
             "support-badge": "CONFIANZA Y GARANTÍA",
             "support-title": "Soporte 100% Local",
-            "support-desc": "No somos una plataforma externa. Somos un estudio creativo basado en Cuba. Si tienes cualquier duda o problema técnico, estamos disponibles para ayudarte por WhatsApp al instante. Garantizamos que tu negocio nunca se detenga."
+            "support-desc": "No somos una plataforma externa. Somos un estudio creativo basado en Cuba. Si tienes cualquier duda o problema técnico, estamos disponibles para ayudarte por WhatsApp al instante. Garantizamos que tu negocio nunca se detenga.",
+            "demo-faq-badge": "DUDAS COMERCIALES",
+            "demo-faq-title": "Preguntas de negocios como el tuyo",
+            "demo-faq-q1": "¿Tengo que pagar comisiones por las ventas que realice?",
+            "demo-faq-a1": "No. El catálogo es 100% de tu propiedad. No cobramos comisiones por pedido, no hay intermediarios y el flujo de caja va directo a tus manos.",
+            "demo-faq-q2": "¿Cómo actualizo mis productos o precios si el mercado cambia?",
+            "demo-faq-a2": "Te entregamos un panel de administración ultra-lígero que puedes abrir desde tu teléfono móvil. Cambias un precio, editas un producto o desactivas el stock en 30 segundos sin depender de un programador.",
+            "demo-faq-q3": "¿Qué pasa si mi teléfono está apagado o no tengo datos en el momento de un pedido?",
+            "demo-faq-a3": "Tus clientes pueden seguir navegando y armando sus pedidos las 24 horas del día. Los pedidos quedan listos en espera y te llegarán organizados a tu WhatsApp en cuanto tu teléfono recupere la conexión.",
+            
+            "cbox-title": "Una sola inversión, cero mensualidades.",
+            "cbox-desc": "El costo de implementar tu catálogo equivale a lo que pierde tu negocio en una sola semana por clientes que se van con la competencia debido a la demora en WhatsApp. Automatiza tu operación hoy y recupera tu inversión en menos de 30 días.",
+            "cbox-btn": "PROBAR MI MENÚ GRATIS",
+            "cbox-microcopy": "✓ Diseñamos una maqueta de prueba interactiva con tus propios productos sin que pagues nada."
         },
         en: {
             "cat-hero-title": "Automate your Sales in Cuba with a <span class=\"text-custom-accent\">Catalog that Loads Instantly</span>",
@@ -116,7 +129,20 @@ document.addEventListener('DOMContentLoaded', () => {
             "hero-microcopy-text": "Stop being a slave to your WhatsApp. Automate your orders and win back up to 3 hours a day.",
             "support-badge": "TRUST AND GUARANTEE",
             "support-title": "100% Local Support",
-            "support-desc": "We are not an external platform. We are a creative studio based in Cuba. If you have any technical questions or issues, we are available to help you via WhatsApp instantly. We guarantee that your business never stops."
+            "support-desc": "We are not an external platform. We are a creative studio based in Cuba. If you have any technical questions or issues, we are available to help you via WhatsApp instantly. We guarantee that your business never stops.",
+            "demo-faq-badge": "BUSINESS QUESTIONS",
+            "demo-faq-title": "Questions from businesses like yours",
+            "demo-faq-q1": "Do I have to pay commissions on sales I make?",
+            "demo-faq-a1": "No. The catalog is 100% owned by you. We do not charge commissions per order, there are no intermediaries, and cash flow goes directly to your hands.",
+            "demo-faq-q2": "How do I update my products or prices if the market changes?",
+            "demo-faq-a2": "We provide you with an ultra-lightweight administration panel that you can open from your mobile phone. You change a price, edit a product, or disable stock in 30 seconds without relying on a programmer.",
+            "demo-faq-q3": "What happens if my phone is off or I don't have data at the time of an order?",
+            "demo-faq-a3": "Your customers can continue browsing and building their orders 24 hours a day. Orders will be queued and arrive organized to your WhatsApp as soon as your phone recovers connection.",
+
+            "cbox-title": "A single investment, zero monthly fees.",
+            "cbox-desc": "The cost of implementing your catalog is equivalent to what your business loses in a single week due to customers leaving for the competition because of WhatsApp delays. Automate your operation today and recover your investment in less than 30 days.",
+            "cbox-btn": "TRY MY MENU FOR FREE",
+            "cbox-microcopy": "✓ We design an interactive test mockup with your own products at no cost."
         }
     };
 
@@ -615,6 +641,33 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
         
+        // FAQ Accordion logic
+        const faqItems = document.querySelectorAll('.demo-faq-item');
+        faqItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const content = item.querySelector('.demo-faq-content');
+                const icon = item.querySelector('.demo-faq-icon');
+                
+                // Close other open items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        const otherContent = otherItem.querySelector('.demo-faq-content');
+                        const otherIcon = otherItem.querySelector('.demo-faq-icon');
+                        otherContent.style.maxHeight = null;
+                        otherIcon.textContent = '+';
+                    }
+                });
+
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                    icon.textContent = '+';
+                } else {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    icon.textContent = '−';
+                }
+            });
+        });
+
         // Carga inicial del nicho Comida
         selectNiche(activeNiche);
     }

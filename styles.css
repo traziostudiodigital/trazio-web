@@ -166,3 +166,14 @@ header a:active img {
 .animate-float {
   animation: float 4s ease-in-out infinite;
 }
+
+/* Custom Double Fine Gold Border Card (CorelDRAW Style) */
+.border-double-gold {
+  border: 1px solid rgba(201, 169, 110, 0.4);
+  outline: 1px solid rgba(201, 169, 110, 0.2);
+  outline-offset: 4px;
+  border-radius: 8px !important;
+}
+.border-double-gold > div {
+  border-radius: 6px !important; /* Slightly tighter radius for nested child container */
+}
