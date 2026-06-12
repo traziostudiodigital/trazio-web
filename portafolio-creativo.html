@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Creativo - Trazio Studio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-custom-main text-custom-main min-h-screen flex flex-col justify-between">
+
+    <!-- Sticky Header -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-custom-main/80 border-b border-custom/20 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center w-full">
+            <!-- Back Button -->
+            <a href="index.html" class="flex items-center space-x-2 text-sm font-semibold hover:text-custom-accent transition-colors duration-300 nav-link-premium py-1" data-i18n="port-back">
+                ← Volver
+            </a>
+            
+            <!-- Brand / Isotype Centered -->
+            <a href="index.html" class="flex items-center space-x-1 group">
+                <img src="assets/isotype-gold.svg" class="w-8 h-8 rounded-lg shadow-md hover:scale-105 transition-transform duration-300" alt="Trazio Isotype">
+                <!-- Gold Logo (Dark Mode) -->
+                <img src="assets/logo-gold.svg" class="logo-gold h-7 w-auto transition-all duration-300" alt="Trazio Studio Logo">
+                <!-- Dark Logo (Light Mode) -->
+                <img src="assets/logo-dark.svg" class="logo-dark h-7 w-auto transition-all duration-300" alt="Trazio Studio Logo">
+            </a>
+            
+            <!-- Language & Theme Switchers -->
+            <div class="flex items-center space-x-4">
+                <!-- Language Selector -->
+                <button id="language-toggle" class="p-2 rounded-lg bg-custom-card border border-custom/10 text-xs font-semibold uppercase hover:text-custom-accent hover:border-custom/30 transition-all duration-300" title="Change Language / Cambiar Idioma">
+                    <span id="current-lang-display">ES</span>
+                </button>
+                
+                <!-- Theme Switcher -->
+                <button id="theme-switcher" class="p-2 rounded-lg bg-custom-card border border-custom/10 text-custom-main hover:text-custom-accent hover:border-custom/30 transition-all duration-300" title="Toggle Theme / Cambiar Tema">
+                    <!-- Moon icon for dark mode -->
+                    <svg id="theme-icon-moon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                    </svg>
+                    <!-- Sun icon for light mode -->
+                    <svg id="theme-icon-sun" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="max-w-4xl mx-auto px-6 py-16 md:py-24 flex flex-col items-center text-center animate-fade-in-up">
+            <!-- Floating Isotype Gold -->
+            <img src="assets/isotype-gold.svg" class="w-14 h-14 mb-6 animate-float" alt="Trazio Isotype">
+            
+            <!-- Main Title -->
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.1] mb-6 text-custom-main" data-i18n="port-hero-title">
+                Portafolio Creativo
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="text-lg sm:text-xl text-custom-muted max-w-2xl mb-12 leading-relaxed" data-i18n="port-hero-subtitle">
+                Galería de momentos e historias capturadas bajo una estética moderna, minimalista y de alto impacto visual.
+            </p>
+        </section>
+
+        <!-- Interactive Gallery Section -->
+        <section class="max-w-7xl mx-auto px-6 pb-24">
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap gap-3 justify-center mb-12">
+                <button class="filter-btn px-6 py-2.5 rounded-xl border border-transparent bg-custom-accent text-black font-semibold text-sm transition-all duration-300" data-filter="all" data-i18n="port-filter-all">Todos</button>
+                <button class="filter-btn px-6 py-2.5 rounded-xl border border-custom/30 text-custom-main hover:border-custom-accent hover:text-custom-accent font-semibold text-sm transition-all duration-300" data-filter="bodas" data-i18n="port-filter-weddings">Bodas</button>
+                <button class="filter-btn px-6 py-2.5 rounded-xl border border-custom/30 text-custom-main hover:border-custom-accent hover:text-custom-accent font-semibold text-sm transition-all duration-300" data-filter="retratos" data-i18n="port-filter-portraits">Retratos</button>
+                <button class="filter-btn px-6 py-2.5 rounded-xl border border-custom/30 text-custom-main hover:border-custom-accent hover:text-custom-accent font-semibold text-sm transition-all duration-300" data-filter="eventos" data-i18n="port-filter-events">Eventos</button>
+            </div>
+
+            <!-- Gallery Grid (6 Photo Cards) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1: Bodas -->
+                <div class="gallery-item bg-custom-card rounded-2xl overflow-hidden border border-custom/10 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300" data-category="bodas">
+                    <div class="overflow-hidden aspect-[4/3] relative">
+                        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80" alt="Wedding 1" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <span class="absolute top-4 left-4 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold tracking-wider uppercase border border-custom/30 text-custom-accent bg-custom-main/90" data-i18n="port-filter-weddings">Bodas</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-custom-main" data-i18n="port-card1-title">Boda en el Prado</h3>
+                        <p class="text-custom-muted text-sm leading-relaxed" data-i18n="port-card1-desc">Fotografía artística en La Habana Vieja.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2: Bodas -->
+                <div class="gallery-item bg-custom-card rounded-2xl overflow-hidden border border-custom/10 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300" data-category="bodas">
+                    <div class="overflow-hidden aspect-[4/3] relative">
+                        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=600&q=80" alt="Wedding 2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <span class="absolute top-4 left-4 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold tracking-wider uppercase border border-custom/30 text-custom-accent bg-custom-main/90" data-i18n="port-filter-weddings">Bodas</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-custom-main" data-i18n="port-card2-title">Atardecer de Amor</h3>
+                        <p class="text-custom-muted text-sm leading-relaxed" data-i18n="port-card2-desc">Sesión exterior íntima junto al mar.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3: Retratos -->
+                <div class="gallery-item bg-custom-card rounded-2xl overflow-hidden border border-custom/10 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300" data-category="retratos">
+                    <div class="overflow-hidden aspect-[4/3] relative">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Portrait 1" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <span class="absolute top-4 left-4 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold tracking-wider uppercase border border-custom/30 text-custom-accent bg-custom-main/90" data-i18n="port-filter-portraits">Retratos</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-custom-main" data-i18n="port-card3-title">Mirada Interior</h3>
+                        <p class="text-custom-muted text-sm leading-relaxed" data-i18n="port-card3-desc">Retrato editorial con luz natural.</p>
+                    </div>
+                </div>
+
+                <!-- Card 4: Retratos -->
+                <div class="gallery-item bg-custom-card rounded-2xl overflow-hidden border border-custom/10 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300" data-category="retratos">
+                    <div class="overflow-hidden aspect-[4/3] relative">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" alt="Portrait 2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <span class="absolute top-4 left-4 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold tracking-wider uppercase border border-custom/30 text-custom-accent bg-custom-main/90" data-i18n="port-filter-portraits">Retratos</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-custom-main" data-i18n="port-card4-title">Esencia Urbana</h3>
+                        <p class="text-custom-muted text-sm leading-relaxed" data-i18n="port-card4-desc">Fotografía callejera de alta costura.</p>
+                    </div>
+                </div>
+
+                <!-- Card 5: Eventos -->
+                <div class="gallery-item bg-custom-card rounded-2xl overflow-hidden border border-custom/10 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300" data-category="eventos">
+                    <div class="overflow-hidden aspect-[4/3] relative">
+                        <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=600&q=80" alt="Event 1" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <span class="absolute top-4 left-4 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold tracking-wider uppercase border border-custom/30 text-custom-accent bg-custom-main/90" data-i18n="port-filter-events">Eventos</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-custom-main" data-i18n="port-card5-title">Gala de Negocios</h3>
+                        <p class="text-custom-muted text-sm leading-relaxed" data-i18n="port-card5-desc">Cobertura profesional de conferencias.</p>
+                    </div>
+                </div>
+
+                <!-- Card 6: Eventos -->
+                <div class="gallery-item bg-custom-card rounded-2xl overflow-hidden border border-custom/10 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300" data-category="eventos">
+                    <div class="overflow-hidden aspect-[4/3] relative">
+                        <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=600&q=80" alt="Event 2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <span class="absolute top-4 left-4 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold tracking-wider uppercase border border-custom/30 text-custom-accent bg-custom-main/90" data-i18n="port-filter-events">Eventos</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-custom-main" data-i18n="port-card6-title">Ritmo y Luz</h3>
+                        <p class="text-custom-muted text-sm leading-relaxed" data-i18n="port-card6-desc">Captura dinámica de eventos en vivo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rates Section -->
+        <section id="rates" class="max-w-5xl mx-auto px-6 py-20 md:py-28 border-t border-custom/10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-4 text-custom-main" data-i18n="port-rates-title">Tarifas & Coberturas</h2>
+                <p class="text-lg text-custom-muted leading-relaxed" data-i18n="port-rates-subtitle">Planes claros y optimizados para proyectos personales o comerciales.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-4xl mx-auto">
+                <!-- Card 1: Standard Portrait Session -->
+                <div class="bg-custom-card p-8 md:p-10 rounded-2xl border border-custom/10 flex flex-col justify-between hover:-translate-y-2 hover:shadow-2xl transition-all duration-300">
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-bold mb-4 text-custom-main" data-i18n="port-rate1-title">Sesión de Retrato Estándar</h3>
+                        <div class="text-3xl sm:text-4xl font-extrabold text-custom-accent mb-6" data-i18n="port-rate1-price">
+                            $50 <span class="text-xs text-custom-muted uppercase font-semibold tracking-wider ml-1">MLC / USD</span>
+                        </div>
+                        <ul class="text-custom-muted text-left mb-8 space-y-4 text-sm sm:text-base border-t border-custom/10 pt-6">
+                            <li class="flex items-start" data-i18n="port-rate1-feat1">✔ Sesión de 1.5 horas en exteriores o estudio</li>
+                            <li class="flex items-start" data-i18n="port-rate1-feat2">✔ 15 fotos editadas en alta resolución</li>
+                            <li class="flex items-start" data-i18n="port-rate1-feat3">✔ Entrega digital en menos de 7 días</li>
+                            <li class="flex items-start" data-i18n="port-rate1-feat4">✔ Asesoría de vestuario y poses incluida</li>
+                        </ul>
+                    </div>
+                    <button data-package="portrait" class="booking-btn w-full py-4 px-6 rounded-xl font-bold bg-custom-accent hover:bg-custom-accent-hover text-black transition-all duration-300 hover:-translate-y-0.5 shadow-lg shadow-custom-accent/10" data-i18n="port-btn-book">
+                        Reservar Vía WhatsApp
+                    </button>
+                </div>
+
+                <!-- Card 2: Premium Event Coverage -->
+                <div class="bg-custom-card p-8 md:p-10 rounded-2xl border border-custom-accent/20 flex flex-col justify-between hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 relative">
+                    <!-- Premium Badge -->
+                    <span class="absolute -top-3.5 right-6 inline-flex items-center px-3 py-1 rounded-full text-xs font-extrabold tracking-wider uppercase border border-custom-accent text-black bg-custom-accent">PREMIUM</span>
+                    
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-bold mb-4 text-custom-main" data-i18n="port-rate2-title">Cobertura de Evento Premium</h3>
+                        <div class="text-3xl sm:text-4xl font-extrabold text-custom-accent mb-6" data-i18n="port-rate2-price">
+                            $150 <span class="text-xs text-custom-muted uppercase font-semibold tracking-wider ml-1">MLC / USD</span>
+                        </div>
+                        <ul class="text-custom-muted text-left mb-8 space-y-4 text-sm sm:text-base border-t border-custom/10 pt-6">
+                            <li class="flex items-start" data-i18n="port-rate2-feat1">✔ Hasta 4 horas de cobertura continua</li>
+                            <li class="flex items-start" data-i18n="port-rate2-feat2">✔ +100 fotos editadas y optimizadas</li>
+                            <li class="flex items-start" data-i18n="port-rate2-feat3">✔ Entrega en galería web privada para compartir</li>
+                            <li class="flex items-start" data-i18n="port-rate2-feat4">✔ Incluye fotos de grupo y detalles del local</li>
+                        </ul>
+                    </div>
+                    <button data-package="event" class="booking-btn w-full py-4 px-6 rounded-xl font-bold bg-custom-accent hover:bg-custom-accent-hover text-black transition-all duration-300 hover:-translate-y-0.5 shadow-lg shadow-custom-accent/10" data-i18n="port-btn-book">
+                        Reservar Vía WhatsApp
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="border-t border-custom/10 py-8 bg-custom-card/30 text-center text-sm text-custom-muted">
+        <div class="max-w-7xl mx-auto px-6">
+            <p>&copy; <span id="current-year">2026</span> Trazio Studio. <span data-i18n="footer-tagline">Trazamos herramientas web de alta velocidad para optimizar tus ventas.</span></p>
+        </div>
+    </footer>
+
+    <!-- Bilingual, Theme & Filter Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeSwitcher = document.getElementById('theme-switcher');
+            const languageToggle = document.getElementById('language-toggle');
+            const currentLangDisplay = document.getElementById('current-lang-display');
+            const themeIconMoon = document.getElementById('theme-icon-moon');
+            const themeIconSun = document.getElementById('theme-icon-sun');
+
+            const translations = {
+                es: {
+                    "port-back": "← Volver",
+                    "port-hero-title": "Portafolio Creativo",
+                    "port-hero-subtitle": "Galería de momentos e historias capturadas bajo una estética moderna, minimalista y de alto impacto visual.",
+                    "port-filter-all": "Todos",
+                    "port-filter-weddings": "Bodas",
+                    "port-filter-portraits": "Retratos",
+                    "port-filter-events": "Eventos",
+                    "port-card1-title": "Boda en el Prado",
+                    "port-card1-desc": "Fotografía artística en La Habana Vieja.",
+                    "port-card2-title": "Atardecer de Amor",
+                    "port-card2-desc": "Sesión exterior íntima junto al mar.",
+                    "port-card3-title": "Mirada Interior",
+                    "port-card3-desc": "Retrato editorial con luz natural.",
+                    "port-card4-title": "Esencia Urbana",
+                    "port-card4-desc": "Fotografía callejera de alta costura.",
+                    "port-card5-title": "Gala de Negocios",
+                    "port-card5-desc": "Cobertura profesional de conferencias.",
+                    "port-card6-title": "Ritmo y Luz",
+                    "port-card6-desc": "Captura dinámica de eventos en vivo.",
+                    "port-rates-title": "Tarifas & Coberturas",
+                    "port-rates-subtitle": "Planes claros y optimizados para proyectos personales o comerciales.",
+                    "port-rate1-title": "Sesión de Retrato Estándar",
+                    "port-rate1-price": "$50 <span class='text-xs text-custom-muted uppercase font-semibold tracking-wider ml-1'>MLC / USD</span>",
+                    "port-rate1-feat1": "✔ Sesión de 1.5 horas en exteriores o estudio",
+                    "port-rate1-feat2": "✔ 15 fotos editadas en alta resolución",
+                    "port-rate1-feat3": "✔ Entrega digital en menos de 7 días",
+                    "port-rate1-feat4": "✔ Asesoría de vestuario y poses incluida",
+                    "port-rate2-title": "Cobertura de Evento Premium",
+                    "port-rate2-price": "$150 <span class='text-xs text-custom-muted uppercase font-semibold tracking-wider ml-1'>MLC / USD</span>",
+                    "port-rate2-feat1": "✔ Hasta 4 horas de cobertura continua",
+                    "port-rate2-feat2": "✔ +100 fotos editadas y optimizadas",
+                    "port-rate2-feat3": "✔ Entrega en galería web privada para compartir",
+                    "port-rate2-feat4": "✔ Incluye fotos de grupo y detalles del local",
+                    "port-btn-book": "Reservar Vía WhatsApp",
+                    "footer-tagline": "Trazamos herramientas web de alta velocidad para optimizar tus ventas."
+                },
+                en: {
+                    "port-back": "← Back",
+                    "port-hero-title": "Creative Portfolio",
+                    "port-hero-subtitle": "A gallery of moments and stories captured with a modern, minimalist, and high-impact visual aesthetic.",
+                    "port-filter-all": "All",
+                    "port-filter-weddings": "Weddings",
+                    "port-filter-portraits": "Portraits",
+                    "port-filter-events": "Events",
+                    "port-card1-title": "Prado Wedding",
+                    "port-card1-desc": "Artistic photography in Old Havana.",
+                    "port-card2-title": "Sunset of Love",
+                    "port-card2-desc": "Intimate outdoor session by the sea.",
+                    "port-card3-title": "Inner Look",
+                    "port-card3-desc": "Editorial portrait using natural light.",
+                    "port-card4-title": "Urban Essence",
+                    "port-card4-desc": "High-fashion street photography.",
+                    "port-card5-title": "Business Gala",
+                    "port-card5-desc": "Professional coverage of conferences.",
+                    "port-card6-title": "Rhythm & Light",
+                    "port-card6-desc": "Dynamic capture of live music events.",
+                    "port-rates-title": "Rates & Bookings",
+                    "port-rates-subtitle": "Clear and optimized plans for personal or commercial projects.",
+                    "port-rate1-title": "Standard Portrait Session",
+                    "port-rate1-price": "$50 <span class='text-xs text-custom-muted uppercase font-semibold tracking-wider ml-1'>MLC / USD</span>",
+                    "port-rate1-feat1": "✔ 1.5-hour session outdoors or in-studio",
+                    "port-rate1-feat2": "✔ 15 high-resolution edited photos",
+                    "port-rate1-feat3": "✔ Digital delivery in less than 7 days",
+                    "port-rate1-feat4": "✔ Wardrobe and posing guidance included",
+                    "port-rate2-title": "Premium Event Coverage",
+                    "port-rate2-price": "$150 <span class='text-xs text-custom-muted uppercase font-semibold tracking-wider ml-1'>MLC / USD</span>",
+                    "port-rate2-feat1": "✔ Up to 4 hours of continuous coverage",
+                    "port-rate2-feat2": "✔ +100 edited and optimized photos",
+                    "port-rate2-feat3": "✔ Delivered in a private web gallery ready to share",
+                    "port-rate2-feat4": "✔ Includes group shots and venue details",
+                    "port-btn-book": "Book via WhatsApp",
+                    "footer-tagline": "We build high-speed web tools to optimize your business operations."
+                }
+            };
+
+            // --- Theme State Management ---
+            const applyTheme = (theme) => {
+                if (theme === 'light') {
+                    document.body.classList.add('light-theme');
+                    if (themeIconMoon) themeIconMoon.classList.add('hidden');
+                    if (themeIconSun) themeIconSun.classList.remove('hidden');
+                } else {
+                    document.body.classList.remove('light-theme');
+                    if (themeIconMoon) themeIconMoon.classList.remove('hidden');
+                    if (themeIconSun) themeIconSun.classList.add('hidden');
+                }
+            };
+
+            const toggleTheme = () => {
+                const currentTheme = localStorage.getItem('theme') || 'dark';
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                localStorage.setItem('theme', newTheme);
+                applyTheme(newTheme);
+            };
+
+            // --- Language State Management & Dynamic Translation ---
+            const translatePage = (lang) => {
+                document.querySelectorAll('[data-i18n]').forEach(element => {
+                    const key = element.getAttribute('data-i18n');
+                    if (translations[lang] && translations[lang][key]) {
+                        element.innerHTML = translations[lang][key];
+                    }
+                });
+                if (currentLangDisplay) {
+                    currentLangDisplay.textContent = lang.toUpperCase();
+                }
+                document.documentElement.lang = lang; // Update HTML lang attribute
+            };
+
+            const toggleLanguage = () => {
+                const currentLang = localStorage.getItem('language') || 'es';
+                const newLang = currentLang === 'es' ? 'en' : 'es';
+                localStorage.setItem('language', newLang);
+                translatePage(newLang);
+            };
+
+            // --- Initial Setup on Load ---
+
+            // Set current year in footer safely
+            const currentYearEl = document.getElementById('current-year');
+            if (currentYearEl) {
+                currentYearEl.textContent = new Date().getFullYear();
+            }
+
+            // Apply stored theme or default to dark
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            applyTheme(savedTheme);
+
+            // Apply stored language or default to Spanish
+            const savedLanguage = localStorage.getItem('language') || 'es';
+            translatePage(savedLanguage);
+
+            // --- Event Listeners ---
+            if (themeSwitcher) {
+                themeSwitcher.addEventListener('click', toggleTheme);
+            }
+            if (languageToggle) {
+                languageToggle.addEventListener('click', toggleLanguage);
+            }
+
+            // --- 10-line vanilla JS gallery filter logic ---
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterButtons.forEach(b => {
+                        b.classList.remove('bg-custom-accent', 'text-black', 'border-transparent');
+                        b.classList.add('border-custom/30', 'text-custom-main');
+                    });
+                    btn.classList.add('bg-custom-accent', 'text-black', 'border-transparent');
+                    btn.classList.remove('border-custom/30', 'text-custom-main');
+                    const val = btn.getAttribute('data-filter');
+                    galleryItems.forEach(item => {
+                        item.classList.toggle('hidden', val !== 'all' && item.getAttribute('data-category') !== val);
+                    });
+                });
+            });
+
+            // --- Booking Button Logic (opens dynamic WhatsApp prefilled links) ---
+            const bookingButtons = document.querySelectorAll('.booking-btn');
+            bookingButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const pkg = btn.getAttribute('data-package');
+                    const lang = localStorage.getItem('language') || 'es';
+                    let msg = '';
+                    if (pkg === 'portrait') {
+                        msg = lang === 'es' 
+                            ? 'Hola Trazio Studio, me interesa agendar una Sesión de Retrato Estándar ($50 MLC/USD).' 
+                            : 'Hello Trazio Studio, I am interested in booking a Standard Portrait Session ($50 MLC/USD).';
+                    } else {
+                        msg = lang === 'es' 
+                            ? 'Hola Trazio Studio, me interesa contratar la Cobertura de Evento Premium ($150 MLC/USD).' 
+                            : 'Hello Trazio Studio, I am interested in booking the Premium Event Coverage ($150 MLC/USD).';
+                    }
+                    window.open(`https://wa.me/5350000000?text=${encodeURIComponent(msg)}`, '_blank');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

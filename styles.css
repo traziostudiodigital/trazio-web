@@ -1,0 +1,168 @@
+/* Trazio Studio - Master Stylesheet (Premium Geometric B2B Identity) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap');
+
+:root {
+  --bg-primary: #111118;     /* Carbono Absoluto */
+  --bg-secondary: #1E1E2A;   /* Azul Cenizo */
+  --text-primary: #F5F4EF;   /* Blanco Cálido */
+  --text-muted: #8B7355;     /* Marrón Tierra */
+  --accent: #C9A96E;         /* Oro Mineral */
+  --accent-rgb: 201, 169, 110;
+  --accent-muted: #8B7355;
+}
+
+body.light-theme {
+  --bg-primary: #F5F4EF;     /* Blanco Cálido */
+  --bg-secondary: #FFFFFF;   /* Blanco Puro */
+  --text-primary: #111118;   /* Carbono Absoluto */
+  --text-muted: #8B7355;     /* Marrón Tierra */
+  --accent: #8B7355;         /* Marrón Tierra */
+  --accent-muted: #C9A96E;   /* Oro Mineral */
+}
+
+/* --- ESTILOS BASE --- */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.4s ease, color 0.4s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* --- CONTROL DE VISIBILIDAD DE LOGO (EVITA DUPLICADOS) --- */
+body.light-theme .logo-gold {
+  display: none !important;
+}
+body.light-theme .logo-dark {
+  display: block !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+body:not(.light-theme) .logo-gold {
+  display: block !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+body:not(.light-theme) .logo-dark {
+  display: none !important;
+}
+
+/* --- CLASES DE UTILIDAD PERSONALIZADAS (TRAZIO SYSTEM) --- */
+.bg-custom-main {
+  background-color: var(--bg-primary);
+}
+
+.bg-custom-card {
+  background-color: var(--bg-secondary);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.bg-custom-accent {
+  background-color: var(--accent);
+}
+
+.bg-custom-accent-hover:hover {
+  background-color: var(--accent-muted);
+}
+
+.text-custom-main {
+  color: var(--text-primary);
+}
+
+.text-custom-accent {
+  color: var(--accent);
+}
+
+.text-custom-muted {
+  color: var(--text-muted);
+}
+
+.border-custom {
+  border-color: rgba(139, 115, 85, 0.1);
+}
+
+/* --- ESTÉTICA GEOMÉTRICA (MÁXIMO 4PX RADIUS SEGÚN COREL) --- */
+.rounded-lg, .rounded-xl, .rounded-2xl, button, select, input {
+  border-radius: 4px !important;
+}
+
+/* --- PREMIUM SVG PATTERN 1: Diagonal Tech Blueprint --- */
+.bg-pattern-diagonal {
+  background-color: var(--bg-primary);
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40' stroke='%23C9A96E' stroke-width='0.8' fill='none' stroke-opacity='0.12'/%3E%3C/svg%3E");
+}
+
+/* --- PREMIUM SVG PATTERN 2: Node Matrix / Crosses --- */
+.bg-pattern-nodes {
+  background-color: var(--bg-primary);
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 25v10m-5-5h10' stroke='%23C9A96E' stroke-width='1.2' fill='none' stroke-opacity='0.20'/%3E%3C/svg%3E");
+}
+
+/* --- SUBRAYADO EXPANSIVO PREMIUM PARA MENÚS --- */
+.nav-link-premium {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link-premium::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1.5px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--accent);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.nav-link-premium:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* --- INTERACTIVIDAD DEL ISOTIPO "T" EN CABECERA --- */
+header a img {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s ease;
+}
+
+header a:hover img {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 8px rgba(201, 169, 110, 0.4));
+}
+
+header a:active img {
+  transform: scale(0.95);
+}
+
+/* --- ANIMACIONES GLOBALES --- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
