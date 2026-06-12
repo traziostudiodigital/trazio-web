@@ -76,7 +76,7 @@
                 <a href="https://wa.me/5350000000?text=Hola,%20quiero%20ver%20las%20soluciones%20web" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 text-base font-semibold text-white bg-custom-accent rounded-xl shadow-lg shadow-custom-accent/10 hover:bg-custom-accent-hover hover:-translate-y-1 transition-all duration-300" data-i18n="hero-cta-primary">
                     Ver Soluciones
                 </a>
-                <a href="#audit" class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 text-base font-semibold text-custom-main bg-custom-card border border-custom/20 rounded-xl hover:bg-custom-main hover:border-custom/55 hover:-translate-y-1 transition-all duration-300" data-i18n="hero-cta-secondary">
+                <a href="#footer" class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 text-base font-semibold text-custom-main bg-custom-card border border-custom/20 rounded-xl hover:bg-custom-main hover:border-custom/55 hover:-translate-y-1 transition-all duration-300" data-i18n="hero-cta-secondary">
                     Analizar mi Negocio
                 </a>
             </div>
@@ -510,49 +510,10 @@
                 </div>
             </div>
         </section>
-        <section id="audit" class="relative py-16 md:py-20 px-6 border-t border-custom/10 overflow-hidden bg-pattern-nodes">
-            <div class="max-w-7xl mx-auto relative z-10">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase border border-custom/30 text-custom-accent bg-custom-accent/5 mb-4" data-i18n="contact-badge">AUDITORÍA GRATUITA</span>
-                    <h2 class="text-4xl sm:text-5xl font-bold tracking-tighter mb-6 text-custom-main" data-i18n="contact-title">Inicia tu cambio hoy</h2>
-                    <p class="text-lg sm:text-xl text-custom-muted leading-relaxed" data-i18n="contact-subtitle">Completa este formulario y analizaremos gratis la presencia digital de tu negocio para diseñarte la mejor ruta.</p>
-                </div>
-
-                <div class="max-w-xl mx-auto bg-custom-card p-8 md:p-10 rounded-2xl border border-custom/10 shadow-lg shadow-custom-accent/10 relative overflow-hidden">
-                    <div class="absolute inset-0 bg-custom-accent/5 blur-3xl opacity-50"></div>
-                    <form id="contact-form" class="relative z-10 space-y-6">
-                        <div>
-                            <label for="name" class="sr-only" data-i18n="form-name">Tu nombre</label>
-                            <input type="text" id="name" name="name" placeholder="Tu nombre" class="w-full px-5 py-3 bg-custom-main border border-custom/20 rounded-lg text-custom-main placeholder-custom-muted focus:outline-none focus:ring-2 focus:ring-custom-accent focus:border-transparent form-input-gold transition-all duration-300" required data-i18n="form-name-placeholder">
-                        </div>
-                        <div>
-                            <label for="business" class="sr-only" data-i18n="form-business">Nombre de tu negocio o actividad</label>
-                            <input type="text" id="business" name="business" placeholder="Nombre de tu negocio o actividad" class="w-full px-5 py-3 bg-custom-main border border-custom/20 rounded-lg text-custom-main placeholder-custom-muted focus:outline-none focus:ring-2 focus:ring-custom-accent focus:border-transparent form-input-gold transition-all duration-300" required data-i18n="form-business-placeholder">
-                        </div>
-                        <div>
-                            <label for="whatsapp" class="sr-only" data-i18n="form-phone">Tu número de WhatsApp</label>
-                            <input type="tel" id="whatsapp" name="whatsapp" placeholder="Tu número de WhatsApp" class="w-full px-5 py-3 bg-custom-main border border-custom/20 rounded-lg text-custom-main placeholder-custom-muted focus:outline-none focus:ring-2 focus:ring-custom-accent focus:border-transparent form-input-gold transition-all duration-300" required data-i18n="form-phone-placeholder">
-                        </div>
-                        <div>
-                            <label for="solution" class="sr-only" data-i18n="form-select">Solución que te interesa</label>
-                            <select id="solution" name="solution" class="w-full px-5 py-3 bg-custom-main border border-custom/20 rounded-lg text-custom-main focus:outline-none focus:ring-2 focus:ring-custom-accent focus:border-transparent form-input-gold transition-all duration-300" required data-i18n="form-select-placeholder">
-                                <option value="" disabled selected data-i18n="form-select">Solución que te interesa</option>
-                                <option value="Catalogo de Ventas (WhatsApp)" data-i18n="form-opt1">Catálogo de Ventas (WhatsApp)</option>
-                                <option value="Portafolio / Marca Personal" data-i18n="form-opt2">Portafolio / Marca Personal</option>
-                                <option value="Web Corporativa (Mipyme)" data-i18n="form-opt3">Web Corporativa (Mipyme)</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="w-full inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-custom-accent rounded-xl shadow-lg shadow-custom-accent/10 hover:bg-custom-accent-hover hover:-translate-y-0.5 transition-all duration-300" data-i18n="form-btn">
-                            Solicitar mi Auditoría Gratis
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </section>
     </main>
 
-<footer class="bg-custom-main border-t border-custom/10 pt-12 pb-6 px-6 relative z-10 transition-colors duration-300">
-    <!-- Main Footer Grid (4 Columns on Desktop) -->
+<footer id="footer" class="bg-[#111118] border-t border-custom/10 py-12 px-6 relative z-10 transition-colors duration-300">
+    <!-- Main Footer Grid (12 Columns on Desktop) -->
     <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
         
         <!-- Column 1: Logo & Tagline (Takes 3/12 cols) -->
@@ -575,7 +536,7 @@
             </ul>
         </div>
 
-        <!-- Column 3: Contact (Takes 2/12 cols) -->
+        <!-- Column 3: Contact & Socials (Takes 2/12 cols) -->
         <div class="lg:col-span-2 flex flex-col items-center lg:items-start text-center lg:text-left">
             <h3 class="text-xs font-semibold uppercase tracking-widest text-custom-main mb-4" data-i18n="footer-contact">Contacto</h3>
             <ul class="space-y-3.5 text-sm w-full">
@@ -587,30 +548,47 @@
                         WhatsApp
                     </a>
                 </li>
+                <li>
+                    <a href="mailto:contacto@traziostudio.com" class="text-custom-muted hover:text-custom-accent transition-all duration-300 flex items-center justify-center lg:justify-start group gap-2.5">
+                        <span class="p-1.5 rounded-lg bg-custom-card border border-custom/10 text-custom-accent group-hover:border-custom-accent/30 transition-colors">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        </span>
+                        Email
+                    </a>
+                </li>
+                <li>
+                    <a href="https://facebook.com/traziostudio" target="_blank" rel="noopener noreferrer" class="text-custom-muted hover:text-custom-accent transition-all duration-300 flex items-center justify-center lg:justify-start group gap-2.5">
+                        <span class="p-1.5 rounded-lg bg-custom-card border border-custom/10 text-custom-accent group-hover:border-custom-accent/30 transition-colors">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </span>
+                        Facebook
+                    </a>
+                </li>
             </ul>
         </div>
 
-        <!-- Column 4: Interactive B2B AIDA CTA Block (Takes 5/12 cols) -->
-<div class="lg:col-span-5 w-full bg-custom-card/50 border border-custom-accent/20 p-6 flex flex-col items-center lg:items-start text-center lg:text-left space-y-4">
+        <!-- Column 4: The Unified B2B CTA Card (Takes 5/12 cols) -->
+        <div class="lg:col-span-5 w-full bg-custom-card/50 border border-custom-accent/20 p-6 rounded-lg text-left space-y-4">
             <h3 class="text-sm font-bold text-custom-main uppercase leading-tight" data-i18n="footer-aida-text">
-                ¿Necesitas un sistema de ventas o una web de alta velocidad como esta para tu negocio? Escríbenos y trazamos tu solución hoy mismo.
+                ¿Listo para hacer crecer tu negocio?
             </h3>
-            
-            <a href="https://wa.me/5350000000?text=Hola%20Trazio%20Studio,%20quiero%20que%20revisen%20mi%20menú/catálogo%20actual%20en%20PDF%20de%20forma%20gratuita%20para%20ver%20cómo%20se%20vería%20en%20su%20sistema." target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center px-6 py-3.5 bg-custom-accent hover:bg-custom-accent-hover text-black font-bold uppercase text-[11px] tracking-wider transition-all duration-300" data-i18n="footer-aida-cta">
-                Solicitar Auditoría Gratuita de mi Catálogo Actual
+            <p class="text-xs text-custom-muted leading-relaxed" data-i18n="footer-aida-desc">
+                Escríbenos y cuéntanos tu idea o mándanos tu lista de precios por WhatsApp. Te preparamos una demostración interactiva totalmente gratis y adaptada a tu sector en menos de 24 horas.
+            </p>
+            <a href="https://wa.me/5350000000?text=Hola%20Trazio%20Studio,%20quiero%20solicitar%20una%20demostración%20gratuita%20para%20mi%20negocio." target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center px-6 py-3.5 bg-custom-accent hover:bg-custom-accent-hover text-black font-bold uppercase text-[11px] tracking-wider transition-all duration-300" data-i18n="footer-aida-cta">
+                SOLICITAR DEMOSTRACIÓN GRATIS
             </a>
-            
             <p class="text-[10px] sm:text-xs text-custom-muted leading-relaxed" data-i18n="footer-microcopy">
-                <span class="text-custom-accent">✔</span> ¿No sabes de tecnología? Si sabes usar Facebook, ya sabes usar Trazio. Te entregamos el sistema funcionando y te enseñamos a gestionar tus precios en 5 minutos.
+                <span class="text-custom-accent">✔</span> Sin costo técnico, compromisos ni contratos de mantenimiento.
             </p>
         </div>
 
     </div>
 
     <!-- Bottom Copyright Bar -->
-    <div class="max-w-7xl mx-auto border-t border-custom/10 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center text-[11px] text-custom-muted/80">
+    <div class="max-w-7xl mx-auto border-t border-custom/10 mt-10 pt-6 flex flex-col items-center text-center text-[11px] text-custom-muted/80 space-y-2">
         <p>&copy; <span id="current-year"></span> Trazio Studio. <span data-i18n="all-rights-reserved">All rights reserved.</span></p>
-        <p class="mt-2 md:mt-0 font-medium">Designed with precision by Trazio Studio</p>
+        <p class="font-medium">Designed with precision by Trazio Studio</p>
     </div>
 </footer>
 

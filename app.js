@@ -128,23 +128,12 @@ document.addEventListener('DOMContentLoaded', () => {
             "faq-q4": "¿Cuáles son las formas de pago?",
             "faq-a4": "Aceptamos pagos directos a través de Zelle, TropiPay, criptomonedas (USDT), y transferencias nacionales para facilitar las operaciones de las Mipymes locales.",
 
-            // --- Sección de Conversión / Auditoría Gratis ---
-            "contact-badge": "AUDITORÍA GRATUITA",
-            "contact-title": "Inicia tu cambio hoy",
-            "contact-subtitle": "Completa este formulario y analizaremos gratis la presencia digital de tu negocio para diseñarte la mejor ruta.",
-            "form-name": "Tu nombre",
-            "form-business": "Nombre de tu negocio o actividad",
-            "form-phone": "Tu número de WhatsApp",
-            "form-select": "Solución que te interesa",
-            "form-opt1": "Catálogo de Ventas (WhatsApp)",
-            "form-opt2": "Portafolio / Marca Personal",
-            "form-opt3": "Web Corporativa (Mipyme)",
-            "form-btn": "Solicitar mi Auditoría Gratis",
-
             // --- Footer / Pie de página ---
             "footer-tagline": "Trazamos herramientas web de alta velocidad para optimizar tus ventas.",
-            "footer-aida-cta": "Solicitar Auditoría Gratuita de mi Catálogo Actual",
-            "footer-microcopy": "<span class='text-custom-accent'>✔</span> ¿No sabes de tecnología? Si sabes usar Facebook, ya sabes usar Trazio. Te entregamos el sistema funcionando y te enseñamos a gestionar tus precios en 5 minutos."
+            "footer-aida-text": "¿Listo para hacer crecer tu negocio?",
+            "footer-aida-desc": "Escríbenos y mándanos tu catálogo, lista de precios o idea por WhatsApp. Te preparamos una demostración interactiva totalmente gratis y adaptada a tu sector en menos de 24 horas.",
+            "footer-aida-cta": "SOLICITAR DEMOSTRACIÓN GRATIS",
+            "footer-microcopy": "<span class='text-custom-accent'>✔</span> Sin costo técnico, compromisos ni contratos de mantenimiento."
         },
         en: {
             // Main navigation links
@@ -265,23 +254,12 @@ document.addEventListener('DOMContentLoaded', () => {
             "faq-q4": "What payment methods do you accept?",
             "faq-a4": "We accept direct payments via Zelle, TropiPay, cryptocurrencies (USDT), and national transfers to streamline operations for local businesses.",
 
-            // --- Contact / Conversion Form ---
-            "contact-badge": "FREE AUDIT",
-            "contact-title": "Start your transformation today",
-            "contact-subtitle": "Complete this form, and we will audit your business's digital presence for free to design your best route.",
-            "form-name": "Your name",
-            "form-business": "Business name or industry",
-            "form-phone": "Your WhatsApp number",
-            "form-select": "Select your solution",
-            "form-opt1": "Ordering Catalog (WhatsApp)",
-            "form-opt2": "Portfolio / Personal Brand",
-            "form-opt3": "Corporate Web (Business)",
-            "form-btn": "Request My Free Audit",
-
             // --- Footer ---
             "footer-tagline": "We build high-speed web tools to optimize your business operations.",
-            "footer-aida-cta": "Request Free Audit of my Current Catalog",
-            "footer-microcopy": "<span class='text-custom-accent'>✔</span> Don't know tech? If you know how to use Facebook, you already know how to use Trazio. We deliver the system ready to go and teach you how to manage prices in 5 minutes."
+            "footer-aida-text": "Ready to grow your business?",
+            "footer-aida-desc": "Write to us and send your catalog, price list, or idea via WhatsApp. We will prepare an interactive demo completely free and tailored to your sector in less than 24 hours.",
+            "footer-aida-cta": "REQUEST FREE DEMONSTRATION",
+            "footer-microcopy": "<span class='text-custom-accent'>✔</span> No technical cost, commitments, or maintenance contracts."
         }
     };
 
