@@ -59,9 +59,14 @@ document.addEventListener('DOMContentLoaded', () => {
             "turnkey-s2-desc": "Tus pedidos quedan en cola y se sincronizan apenas recuperas conexión, evitando pérdidas de clientes.",
             "turnkey-s3-title": "Entrega sin fricción",
             "turnkey-s3-desc": "Pedidos organizados que llegan directo a tu WhatsApp, sin depender de paneles complejos que requieren internet constante.",
-            "footer-aida-cta": "Solicitar Auditoría Gratuita de mi Catálogo Actual",
-            "footer-microcopy": "<span class='text-custom-accent'>✔</span> ¿No sabes de tecnología? Si sabes usar Facebook, ya sabes usar Trazio. Te entregamos el sistema funcionando y te enseñamos a gestionar tus precios en 5 minutos.",
-            "hero-microcopy": "⏱️ Deja de ser un esclavo de tu WhatsApp. Automatiza tus pedidos y recupera hasta 3 horas al día."
+            "footer-aida-text": "¿Listo para automatizar tus ventas?",
+            "footer-aida-desc": "Mándanos tu lista de precios o menú actual por WhatsApp. Te preparamos una demostración interactiva gratis...",
+            "footer-aida-cta": "VER MI MENÚ DISEÑADO GRATIS",
+            "footer-microcopy": "<span class='text-custom-accent'>✔</span> Sin costo técnico. Te lo configuramos en menos de 24 horas y te enseñamos a usarlo desde tu móvil.",
+            "hero-microcopy": "⏱️ Deja de ser un esclavo de tu WhatsApp. Automatiza tus pedidos y recupera hasta 3 horas al día.",
+            "support-badge": "CONFIANZA Y GARANTÍA",
+            "support-title": "Soporte 100% Local",
+            "support-desc": "No somos una plataforma externa. Somos un estudio creativo basado en Cuba. Si tienes cualquier duda o problema técnico, estamos disponibles para ayudarte por WhatsApp al instante. Garantizamos que tu negocio nunca se detenga."
         },
         en: {
             "cat-hero-title": "Automate your Sales in Cuba with a <span class=\"text-custom-accent\">Catalog that Loads Instantly</span>",
@@ -102,9 +107,14 @@ document.addEventListener('DOMContentLoaded', () => {
             "turnkey-s2-desc": "Your orders stay queued and sync as soon as you regain connection, preventing lost sales.",
             "turnkey-s3-title": "Frictionless Delivery",
             "turnkey-s3-desc": "Organized orders sent directly to your WhatsApp, without relying on complex panels requiring constant internet.",
-            "footer-aida-cta": "Request Free Audit of my Current Catalog",
-            "footer-microcopy": "<span class='text-custom-accent'>✔</span> Don't know tech? If you know how to use Facebook, you already know how to use Trazio. We deliver the system ready to go and teach you how to manage prices in 5 minutes.",
-            "hero-microcopy": "⏱️ Stop being a slave to your WhatsApp. Automate your orders and win back up to 3 hours a day."
+            "footer-aida-text": "Ready to automate your sales?",
+            "footer-aida-desc": "Send us your price list or current menu via WhatsApp. We will prepare a free interactive demo for you...",
+            "footer-aida-cta": "SEE MY DESIGNED MENU FOR FREE",
+            "footer-microcopy": "<span class='text-custom-accent'>✔</span> No technical cost. We set it up for you in less than 24 hours and teach you how to use it from your mobile.",
+            "hero-microcopy": "⏱️ Stop being a slave to your WhatsApp. Automate your orders and win back up to 3 hours a day.",
+            "support-badge": "TRUST AND GUARANTEE",
+            "support-title": "100% Local Support",
+            "support-desc": "We are not an external platform. We are a creative studio based in Cuba. If you have any technical questions or issues, we are available to help you via WhatsApp instantly. We guarantee that your business never stops."
         }
     };
 
@@ -297,7 +307,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="flex flex-col space-y-3 mt-auto pt-3 border-t border-custom/5">
                             <div class="flex justify-between items-center">
                                 <span class="text-[10px] uppercase font-bold text-custom-muted">${UI_TRANSLATIONS[currentLang]["base-price"]}</span>
-                                <span class="text-base font-bold text-custom-accent">$${item.price.toFixed(2)} MLC</span>
+                                <span class="text-base font-bold text-custom-accent">$${item.price.toFixed(2)} USD</span>
                             </div>
                             <button onclick="openServiceModal('${item.id}')" class="w-full py-2.5 bg-custom-accent hover:bg-custom-accent-hover text-black font-bold uppercase text-[11px] tracking-wider rounded-none transition-all text-center">Solicitar Cotización</button>
                         </div>
@@ -456,9 +466,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 3. Total a pagar
         if (currentLang === 'es') {
-            text += `*Total a pagar: $${total.toFixed(2)}*\n\n`;
+            text += `*Total a pagar: $${total.toFixed(2)} USD*\n\n`;
         } else {
-            text += `*Total to pay: $${total.toFixed(2)}*\n\n`;
+            text += `*Total to pay: $${total.toFixed(2)} USD*\n\n`;
         }
 
         // 4. Footer comercial de Trazio Studio

@@ -8,7 +8,7 @@ const multiNicheData = {
         en: "Strong Cuban coffee, freshly brewed, with traditional golden foam."
       },
       price: 1.50,
-      image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=400"
+      image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=400&q=60&fm=webp"
     },
     {
       id: "food-02",
@@ -18,7 +18,7 @@ const multiNicheData = {
         en: "Short espresso cut with condensed milk and a touch of steamed milk."
       },
       price: 2.00,
-      image: "https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=400"
+      image: "https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=400&q=60&fm=webp"
     }
   ],
   ropa: [
@@ -30,7 +30,7 @@ const multiNicheData = {
         en: "High-durability footwear, modern athletic design perfect for daily wear."
       },
       price: 45.00,
-      image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400",
+      image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=400&q=60&fm=webp",
       sizes: ["S", "M", "L"]
     },
     {
@@ -41,7 +41,7 @@ const multiNicheData = {
         en: "Cool fabric, light and comfortable cut, latest imported trend."
       },
       price: 25.00,
-      image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400",
+      image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=400&q=60&fm=webp",
       sizes: ["S", "M", "L"]
     }
   ],
@@ -54,7 +54,7 @@ const multiNicheData = {
         en: "Deep cleaning of turbine, evaporator, filters, and refrigerant pressure check."
       },
       price: 20.00,
-      image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=400"
+      image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=400&q=60&fm=webp"
     },
     {
       id: "serv-02",
@@ -64,7 +64,7 @@ const multiNicheData = {
         en: "Household load study, mounting of structure, and photovoltaic backup system connection."
       },
       price: 150.00,
-      image: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=400"
+      image: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=400&q=60&fm=webp"
     }
   ]
 };

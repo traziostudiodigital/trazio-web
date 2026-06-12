@@ -1,0 +1,7 @@
+# Ignorar carpetas temporales de la IA
+.trae/
+.cline/
+
+# Ignorar archivos del sistema operativo
+Thumbs.db
+.DS_Store

@@ -88,7 +88,7 @@ body:not(.light-theme) .logo-dark {
 
 /* --- ESTÉTICA GEOMÉTRICA (MÁXIMO 4PX RADIUS SEGÚN COREL) --- */
 .rounded-lg, .rounded-xl, .rounded-2xl, button, select, input {
-  border-radius: 4px !important;
+  border-radius: 8px !important;
 }
 
 /* --- PREMIUM SVG PATTERN 1: Diagonal Tech Blueprint --- */
