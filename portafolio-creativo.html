@@ -13,396 +13,439 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body class="bg-custom-main text-custom-main min-h-screen flex flex-col justify-between">
-
     <!-- Sticky Header -->
     <header class="sticky top-0 z-50 backdrop-blur-md bg-custom-main/80 border-b border-custom/20 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center w-full">
-            <!-- Back Button -->
-            <a href="index.html" class="flex items-center space-x-2 text-sm font-semibold hover:text-custom-accent transition-colors duration-300 nav-link-premium py-1" data-i18n="port-back">
-                ← Volver
-            </a>
-            
-            <!-- Brand / Isotype Centered -->
+        <div class="max-w-7xl mx-auto px-8 md:px-12 lg:px-16 py-4 flex justify-between items-center w-full">
+            <!-- Logo / Brand -->
             <a href="index.html" class="flex items-center space-x-1 group">
-                <img src="assets/isotype-gold.svg" class="w-8 h-8 rounded-lg shadow-md hover:scale-105 transition-transform duration-300" alt="Trazio Isotype">
-                <!-- Gold Logo (Dark Mode) -->
-                <img src="assets/logo-gold.svg" class="logo-gold h-7 w-auto transition-all duration-300" alt="Trazio Studio Logo">
-                <!-- Dark Logo (Light Mode) -->
-                <img src="assets/logo-dark.svg" class="logo-dark h-7 w-auto transition-all duration-300" alt="Trazio Studio Logo">
+                <!-- Isotype Only -->
+                <img src="assets/isotype-gold.svg" class="w-8 h-8 hover:scale-105 transition-transform duration-300" alt="Trazio Isotype">
             </a>
             
-            <!-- Language & Theme Switchers -->
-            <div class="flex items-center space-x-4">
+            <!-- Navigation Links - Hidden on Mobile, Visible on Desktop -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="portafolio-creativo.html" class="nav-link-premium text-sm font-medium hover:text-custom-accent transition-colors duration-300" data-i18n="nav-portfolio">Portafolios</a>
+                <a href="catalogo-pedidos.html" class="nav-link-premium text-sm font-medium hover:text-custom-accent transition-colors duration-300" data-i18n="nav-catalogs">Catálogos</a>
+                <a href="identidad-corporativa.html" class="nav-link-premium text-sm font-medium hover:text-custom-accent transition-colors duration-300" data-i18n="nav-corporate">Empresas</a>
+            </nav>
+
+            <div class="flex items-center space-x-3">
                 <!-- Language Selector -->
-                <button id="language-toggle" class="p-2 rounded-lg bg-custom-card border border-custom/10 text-xs font-semibold uppercase hover:text-custom-accent hover:border-custom/30 transition-all duration-300" title="Change Language / Cambiar Idioma">
+                <button id="language-toggle" class="flex items-center justify-center h-10 px-3 rounded-none bg-custom-card border border-custom/10 text-xs font-bold uppercase hover:text-custom-accent hover:border-custom/30 transition-all duration-300" title="Cambiar Idioma">
                     <span id="current-lang-display">ES</span>
                 </button>
                 
                 <!-- Theme Switcher -->
-                <button id="theme-switcher" class="p-2 rounded-lg bg-custom-card border border-custom/10 text-custom-main hover:text-custom-accent hover:border-custom/30 transition-all duration-300" title="Toggle Theme / Cambiar Tema">
-                    <!-- Moon icon for dark mode -->
-                    <svg id="theme-icon-moon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
-                    </svg>
-                    <!-- Sun icon for light mode -->
-                    <svg id="theme-icon-sun" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                    </svg>
+                <button id="theme-switcher" class="flex items-center justify-center h-10 w-10 rounded-none bg-custom-card border border-custom/10 text-custom-main hover:text-custom-accent hover:border-custom/30 transition-all duration-300" title="Cambiar Tema">
+                    <svg id="theme-icon-moon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    <svg id="theme-icon-sun" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
                 </button>
+
+                <!-- Header CTA Button -->
+                <a href="https://wa.me/5350000000?text=Hola,%20quiero%20iniciar%20un%20proyecto" target="_blank" rel="noopener noreferrer" class="hidden sm:flex items-center justify-center h-10 px-5 text-xs font-bold text-black uppercase tracking-wider bg-custom-accent rounded-none shadow-md shadow-custom-accent/10 hover:bg-custom-accent-hover transition-all duration-300" data-i18n="nav-cta">
+                    Iniciar Proyecto
+                </a>
             </div>
         </div>
     </header>
 
     <main class="flex-grow">
         <!-- Hero Section -->
-        <section class="max-w-4xl mx-auto px-6 py-16 md:py-24 flex flex-col items-center text-center animate-fade-in-up">
-            <!-- Floating Isotype Gold -->
-            <img src="assets/isotype-gold.svg" class="w-14 h-14 mb-6 animate-float" alt="Trazio Isotype">
-            
-            <!-- Main Title -->
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.1] mb-6 text-custom-main" data-i18n="port-hero-title">
-                Portafolio Creativo
+        <section id="portfolio-hero" class="max-w-4xl mx-auto px-6 py-12 md:py-16 flex flex-col items-center text-center animate-fadea_in-up bg-mesh-dots">
+            <img src="assets/logo-gold.svg" class="logo-gold h-14 md:h-16 mx-auto mb-6" alt="Trazio Studio">
+            <img src="assets/logo-dark.svg" class="logo-dark h-14 md:h-16 mx-auto mb-6" alt="Trazio Studio">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tighter leading-[1.1] mb-6 text-custom-main" dataa_i18n="port-hero-title">
+                Tu Talento merece un <span class="text-custom-accent">Escenario Internacional</span>
             </h1>
-
-            <!-- Subtitle -->
             <p class="text-lg sm:text-xl text-custom-muted max-w-2xl mb-12 leading-relaxed" data-i18n="port-hero-subtitle">
-                Galería de momentos e historias capturadas bajo una estética moderna, minimalista y de alto impacto visual.
+                Deja de competir en el ruido de los algoritmos de redes sociales y posiciona tu marca personal con una herramienta web de élite.
             </p>
-        </section>
-
-        <!-- Interactive Gallery Section -->
-        <section class="max-w-7xl mx-auto px-6 pb-24">
-            <!-- Filter Buttons -->
-            <div class="flex flex-wrap gap-3 justify-center mb-12">
-                <button class="filter-btn px-6 py-2.5 rounded-xl border border-transparent bg-custom-accent text-black font-semibold text-sm transition-all duration-300" data-filter="all" data-i18n="port-filter-all">Todos</button>
-                <button class="filter-btn px-6 py-2.5 rounded-xl border border-custom/30 text-custom-main hover:border-custom-accent hover:text-custom-accent font-semibold text-sm transition-all duration-300" data-filter="bodas" data-i18n="port-filter-weddings">Bodas</button>
-                <button class="filter-btn px-6 py-2.5 rounded-xl border border-custom/30 text-custom-main hover:border-custom-accent hover:text-custom-accent font-semibold text-sm transition-all duration-300" data-filter="retratos" data-i18n="port-filter-portraits">Retratos</button>
-                <button class="filter-btn px-6 py-2.5 rounded-xl border border-custom/30 text-custom-main hover:border-custom-accent hover:text-custom-accent font-semibold text-sm transition-all duration-300" data-filter="eventos" data-i18n="port-filter-events">Eventos</button>
-            </div>
-
-            <!-- Gallery Grid (6 Photo Cards) -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Card 1: Bodas -->
-                <div class="gallery-item bg-custom-card rounded-2xl overflow-hidden border border-custom/10 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300" data-category="bodas">
-                    <div class="overflow-hidden aspect-[4/3] relative">
-                        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80" alt="Wedding 1" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
-                        <span class="absolute top-4 left-4 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold tracking-wider uppercase border border-custom/30 text-custom-accent bg-custom-main/90" data-i18n="port-filter-weddings">Bodas</span>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-custom-main" data-i18n="port-card1-title">Boda en el Prado</h3>
-                        <p class="text-custom-muted text-sm leading-relaxed" data-i18n="port-card1-desc">Fotografía artística en La Habana Vieja.</p>
-                    </div>
-                </div>
-
-                <!-- Card 2: Bodas -->
-                <div class="gallery-item bg-custom-card rounded-2xl overflow-hidden border border-custom/10 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300" data-category="bodas">
-                    <div class="overflow-hidden aspect-[4/3] relative">
-                        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=600&q=80" alt="Wedding 2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
-                        <span class="absolute top-4 left-4 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold tracking-wider uppercase border border-custom/30 text-custom-accent bg-custom-main/90" data-i18n="port-filter-weddings">Bodas</span>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-custom-main" data-i18n="port-card2-title">Atardecer de Amor</h3>
-                        <p class="text-custom-muted text-sm leading-relaxed" data-i18n="port-card2-desc">Sesión exterior íntima junto al mar.</p>
-                    </div>
-                </div>
-
-                <!-- Card 3: Retratos -->
-                <div class="gallery-item bg-custom-card rounded-2xl overflow-hidden border border-custom/10 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300" data-category="retratos">
-                    <div class="overflow-hidden aspect-[4/3] relative">
-                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Portrait 1" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
-                        <span class="absolute top-4 left-4 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold tracking-wider uppercase border border-custom/30 text-custom-accent bg-custom-main/90" data-i18n="port-filter-portraits">Retratos</span>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-custom-main" data-i18n="port-card3-title">Mirada Interior</h3>
-                        <p class="text-custom-muted text-sm leading-relaxed" data-i18n="port-card3-desc">Retrato editorial con luz natural.</p>
-                    </div>
-                </div>
-
-                <!-- Card 4: Retratos -->
-                <div class="gallery-item bg-custom-card rounded-2xl overflow-hidden border border-custom/10 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300" data-category="retratos">
-                    <div class="overflow-hidden aspect-[4/3] relative">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" alt="Portrait 2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
-                        <span class="absolute top-4 left-4 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold tracking-wider uppercase border border-custom/30 text-custom-accent bg-custom-main/90" data-i18n="port-filter-portraits">Retratos</span>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-custom-main" data-i18n="port-card4-title">Esencia Urbana</h3>
-                        <p class="text-custom-muted text-sm leading-relaxed" data-i18n="port-card4-desc">Fotografía callejera de alta costura.</p>
-                    </div>
-                </div>
-
-                <!-- Card 5: Eventos -->
-                <div class="gallery-item bg-custom-card rounded-2xl overflow-hidden border border-custom/10 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300" data-category="eventos">
-                    <div class="overflow-hidden aspect-[4/3] relative">
-                        <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=600&q=80" alt="Event 1" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
-                        <span class="absolute top-4 left-4 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold tracking-wider uppercase border border-custom/30 text-custom-accent bg-custom-main/90" data-i18n="port-filter-events">Eventos</span>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-custom-main" data-i18n="port-card5-title">Gala de Negocios</h3>
-                        <p class="text-custom-muted text-sm leading-relaxed" data-i18n="port-card5-desc">Cobertura profesional de conferencias.</p>
-                    </div>
-                </div>
-
-                <!-- Card 6: Eventos -->
-                <div class="gallery-item bg-custom-card rounded-2xl overflow-hidden border border-custom/10 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300" data-category="eventos">
-                    <div class="overflow-hidden aspect-[4/3] relative">
-                        <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=600&q=80" alt="Event 2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
-                        <span class="absolute top-4 left-4 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold tracking-wider uppercase border border-custom/30 text-custom-accent bg-custom-main/90" data-i18n="port-filter-events">Eventos</span>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-custom-main" data-i18n="port-card6-title">Ritmo y Luz</h3>
-                        <p class="text-custom-muted text-sm leading-relaxed" data-i18n="port-card6-desc">Captura dinámica de eventos en vivo.</p>
-                    </div>
-                </div>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center w-full sm:w-auto">
+                <a href="#portfolio-workspace" class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 text-base font-semibold text-white bg-custom-accent rounded-xl shadow-lg shadow-custom-accent/10 hover:bg-custom-accent-hover hover:-translate-y-1 transition-all duration-300">
+                    Ver Diseños
+                </a>
+                <a href="https://wa.me/5350000000?text=Hola,%20quiero%20diseñar%20mi%20marca" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 text-base font-semibold text-custom-main bg-custom-card border border-custom/20 rounded-xl hover:bg-custom-main hover:border-custom/55 hover:-translate-y-1 transition-all duration-300">
+                    Diseñar mi Marca
+                </a>
             </div>
         </section>
 
-        <!-- Rates Section -->
-        <section id="rates" class="max-w-5xl mx-auto px-6 py-20 md:py-28 border-t border-custom/10">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-4 text-custom-main" data-i18n="port-rates-title">Tarifas & Coberturas</h2>
-                <p class="text-lg text-custom-muted leading-relaxed" data-i18n="port-rates-subtitle">Planes claros y optimizados para proyectos personales o comerciales.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-4xl mx-auto">
-                <!-- Card 1: Standard Portrait Session -->
-                <div class="bg-custom-card p-8 md:p-10 rounded-2xl border border-custom/10 flex flex-col justify-between hover:-translate-y-2 hover:shadow-2xl transition-all duration-300">
-                    <div>
-                        <h3 class="text-xl sm:text-2xl font-bold mb-4 text-custom-main" data-i18n="port-rate1-title">Sesión de Retrato Estándar</h3>
-                        <div class="text-3xl sm:text-4xl font-extrabold text-custom-accent mb-6" data-i18n="port-rate1-price">
-                            $50 <span class="text-xs text-custom-muted uppercase font-semibold tracking-wider ml-1">MLC / USD</span>
-                        </div>
-                        <ul class="text-custom-muted text-left mb-8 space-y-4 text-sm sm:text-base border-t border-custom/10 pt-6">
-                            <li class="flex items-start" data-i18n="port-rate1-feat1">✔ Sesión de 1.5 horas en exteriores o estudio</li>
-                            <li class="flex items-start" data-i18n="port-rate1-feat2">✔ 15 fotos editadas en alta resolución</li>
-                            <li class="flex items-start" data-i18n="port-rate1-feat3">✔ Entrega digital en menos de 7 días</li>
-                            <li class="flex items-start" data-i18n="port-rate1-feat4">✔ Asesoría de vestuario y poses incluida</li>
-                        </ul>
-                    </div>
-                    <button data-package="portrait" class="booking-btn w-full py-4 px-6 rounded-xl font-bold bg-custom-accent hover:bg-custom-accent-hover text-black transition-all duration-300 hover:-translate-y-0.5 shadow-lg shadow-custom-accent/10" data-i18n="port-btn-book">
-                        Reservar Vía WhatsApp
+        <!-- Doble Espejo Selector UI -->
+        <section id="portfolio-workspace" class="py-12 md:py-16 px-6 relative">
+            <div class="hidden sm:flex justify-center mb-12">
+                <div class="bg-custom-card/50 backdrop-blur-md p-1.5 flex space-x-1 border border-custom/20 rounded-[10px] shadow-lg max-w-sm mx-auto">
+                    <button id="btn-profile-creativo" class="px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 active-profile-btn">
+                        Perfil Creativo
+                    </button>
+                    <button id="btn-profile-corporativo" class="px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 inactive-profile-btn">
+                        Perfil Corporativo
                     </button>
                 </div>
+            </div>
 
-                <!-- Card 2: Premium Event Coverage -->
-                <div class="bg-custom-card p-8 md:p-10 rounded-2xl border border-custom-accent/20 flex flex-col justify-between hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 relative">
-                    <!-- Premium Badge -->
-                    <span class="absolute -top-3.5 right-6 inline-flex items-center px-3 py-1 rounded-full text-xs font-extrabold tracking-wider uppercase border border-custom-accent text-black bg-custom-accent">PREMIUM</span>
-                    
-                    <div>
-                        <h3 class="text-xl sm:text-2xl font-bold mb-4 text-custom-main" data-i18n="port-rate2-title">Cobertura de Evento Premium</h3>
-                        <div class="text-3xl sm:text-4xl font-extrabold text-custom-accent mb-6" data-i18n="port-rate2-price">
-                            $150 <span class="text-xs text-custom-muted uppercase font-semibold tracking-wider ml-1">MLC / USD</span>
+            <!-- Mobile Sticky Floating Navigation Capsule -->
+            <div class="sm:hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-custom-card/50 backdrop-blur-md p-1.5 flex space-x-1 border border-custom/20 rounded-[10px] shadow-lg max-w-sm mx-auto" id="mobile-profile-selector">
+                <button id="btn-profile-creativo-mobile" class="px-4 py-2 rounded-md text-xs font-semibold transition-all duration-300 active-profile-btn">
+                    Perfil Creativo
+                </button>
+                <button id="btn-profile-corporativo-mobile" class="px-4 py-2 rounded-md text-xs font-semibold transition-all duration-300 inactive-profile-btn">
+                    Perfil Corporativo
+                </button>
+            </div>
+
+            <!-- Dynamic Container -->
+            <div id="portfolio-viewport" class="max-w-6xl mx-auto px-6 transition-all duration-300 opacity-100 transform translate-y-0">
+                <div id="pane-creativo" class="block">
+                    <!-- Editorial Masonry Gallery -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[250px]">
+                        <!-- Item 1: Vertical Large -->
+                        <div class="overflow-hidden rounded-lg group cursor-pointer relative md:col-span-2 md:row-span-2 shadow-md">
+                            <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=800&q=80&fm=webp" alt="Fashion Editorial" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <h3 class="text-white text-xl font-bold tracking-tight">Sesión Editorial</h3>
+                            </div>
                         </div>
-                        <ul class="text-custom-muted text-left mb-8 space-y-4 text-sm sm:text-base border-t border-custom/10 pt-6">
-                            <li class="flex items-start" data-i18n="port-rate2-feat1">✔ Hasta 4 horas de cobertura continua</li>
-                            <li class="flex items-start" data-i18n="port-rate2-feat2">✔ +100 fotos editadas y optimizadas</li>
-                            <li class="flex items-start" data-i18n="port-rate2-feat3">✔ Entrega en galería web privada para compartir</li>
-                            <li class="flex items-start" data-i18n="port-rate2-feat4">✔ Incluye fotos de grupo y detalles del local</li>
-                        </ul>
+                        <!-- Item 2: Square Small -->
+                        <div class="overflow-hidden rounded-lg group cursor-pointer relative shadow-md">
+                            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=600&q=80&fm=webp" alt="Wedding Portrait" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <h3 class="text-white text-xl font-bold tracking-tight">Boda en La Habana</h3>
+                            </div>
+                        </div>
+                        <!-- Item 3: Square Small -->
+                        <div class="overflow-hidden rounded-lg group cursor-pointer relative shadow-md">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80&fm=webp" alt="Portrait" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <h3 class="text-white text-xl font-bold tracking-tight">Retrato Corporativo</h3>
+                            </div>
+                        </div>
+                        <!-- Item 4: Horizontal Large -->
+                        <div class="overflow-hidden rounded-lg group cursor-pointer relative md:col-span-2 shadow-md">
+                            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80&fm=webp" alt="Event Cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <h3 class="text-white text-xl font-bold tracking-tight">Lookbook Comercial</h3>
+                            </div>
+                        </div>
+                        <!-- Item 5: Vertical Small -->
+                        <div class="overflow-hidden rounded-lg group cursor-pointer relative shadow-md">
+                            <img src="https://images.unsplash.com/photo-1492633423870-43d1acd27580?auto=format&fit=crop&w=600&q=80&fm=webp" alt="Lifestyle" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <h3 class="text-white text-xl font-bold tracking-tight">Lifestyle</h3>
+                            </div>
+                        </div>
                     </div>
-                    <button data-package="event" class="booking-btn w-full py-4 px-6 rounded-xl font-bold bg-custom-accent hover:bg-custom-accent-hover text-black transition-all duration-300 hover:-translate-y-0.5 shadow-lg shadow-custom-accent/10" data-i18n="port-btn-book">
-                        Reservar Vía WhatsApp
-                    </button>
+
+                    <!-- Services & Rates Section -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-24 mb-16">
+                        <!-- Card 1: Sesión de Retrato -->
+                        <div class="bg-custom-card p-6 rounded-lg border border-custom/10 text-center">
+                            <h3 class="text-xl font-bold mb-4 text-custom-main">Sesión de Retrato</h3>
+                            <p class="text-custom-muted mb-4 text-sm">Ideal para potenciar tu marca personal y proyectar una imagen profesional.</p>
+                            <div class="text-3xl font-bold text-custom-accent mb-6">$50 USD</div>
+                            <a href="https://wa.me/5350000000?text=Hola,%20me%20interesa%20la%20sesión%20de%20retrato" class="block w-full text-center py-3 px-4 rounded-md border-2 border-custom-accent text-custom-accent font-semibold hover:bg-custom-accent hover:text-black transition-colors" target="_blank" rel="noopener noreferrer">Solicitar Fecha</a>
+                        </div>
+
+                        <!-- Card 2: Cobertura de Bodas -->
+                        <div class="bg-custom-card p-6 rounded-lg border border-custom/10 text-center">
+                            <h3 class="text-xl font-bold mb-4 text-custom-main">Cobertura de Bodas</h3>
+                            <p class="text-custom-muted mb-4 text-sm">Servicio premium para inmortalizar cada momento especial de tu gran día.</p>
+                            <div class="text-3xl font-bold text-custom-accent mb-6">$150 USD</div>
+                            <a href="https://wa.me/5350000000?text=Hola,%20me%20interesa%20la%20cobertura%20de%20bodas" class="block w-full text-center py-3 px-4 rounded-md border-2 border-custom-accent text-custom-accent font-semibold hover:bg-custom-accent hover:text-black transition-colors" target="_blank" rel="noopener noreferrer">Solicitar Fecha</a>
+                        </div>
+
+                        <!-- Card 3: Lookbook Comercial -->
+                        <div class="bg-custom-card p-6 rounded-lg border border-custom/10 text-center">
+                            <h3 class="text-xl font-bold mb-4 text-custom-main">Lookbook Comercial</h3>
+                            <p class="text-custom-muted mb-4 text-sm">Perfecto para marcas de moda Mipyme que buscan destacar con un estilo único.</p>
+                            <div class="text-3xl font-bold text-custom-accent mb-6">$100 USD</div>
+                            <a href="https://wa.me/5350000000?text=Hola,%20me%20interesa%20el%20lookbook%20comercial" class="block w-full text-center py-3 px-4 rounded-md border-2 border-custom-accent text-custom-accent font-semibold hover:bg-custom-accent hover:text-black transition-colors" target="_blank" rel="noopener noreferrer">Solicitar Fecha</a>
+                        </div>
+                    </div>
+
+                    <section class="py-16">
+                        <div class="grid md:grid-cols-2 gap-12 items-center">
+                            <!-- Left Column (Copywriting) -->
+                            <div class="text-center md:text-left">
+                                <h2 class="text-4xl font-bold tracking-tight leading-tight mb-6 text-custom-main">
+                                    Agenda Interactiva: Tus clientes reservan, tú solo disparas.
+                                </h2>
+                                <p class="text-lg text-custom-muted leading-relaxed">
+                                    Elimina el caos de WhatsApp y los mensajes perdidos. Integramos un calendario inteligente donde tus clientes nacionales o extranjeros pueden ver tus días libres, seleccionar un paquete y reservar su sesión al instante.
+                                </p>
+                            </div>
+
+                            <!-- Right Column (Visual UI Mockup) -->
+                            <div class="flex justify-center md:justify-end">
+                                <div class="bg-custom-card border border-custom/20 rounded-lg p-6 shadow-2xl relative w-full max-w-sm">
+                                    <!-- Mockup Header -->
+                                    <div class="flex justify-between items-center mb-6">
+                                        <button class="text-custom-muted hover:text-custom-main">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+                                        </button>
+                                        <h4 class="text-lg font-semibold text-custom-main">Noviembre 2026</h4>
+                                        <button class="text-custom-muted hover:text-custom-main">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                                        </button>
+                                    </div>
+
+                                    <!-- Calendar Grid -->
+                                    <div class="grid grid-cols-7 gap-3 text-center text-sm mb-6">
+                                        <span class="text-custom-muted">Lun</span>
+                                        <span class="text-custom-muted">Mar</span>
+                                        <span class="text-custom-muted">Mié</span>
+                                        <span class="text-custom-muted">Jue</span>
+                                        <span class="text-custom-muted">Vie</span>
+                                        <span class="text-custom-muted">Sáb</span>
+                                        <span class="text-custom-muted">Dom</span>
+                                        
+                                        <!-- Placeholder days -->
+                                        <span class="text-custom-muted/50">29</span>
+                                        <span class="text-custom-muted/50">30</span>
+                                        <span class="text-custom-muted/50">31</span>
+                                        <span class="text-custom-muted">1</span>
+                                        <span class="text-custom-muted">2</span>
+                                        <span class="text-custom-muted">3</span>
+                                        <span class="text-custom-muted">4</span>
+                                        <span class="text-custom-muted">5</span>
+                                        <span class="text-custom-muted">6</span>
+                                        <span class="text-custom-muted">7</span>
+                                        <span class="text-custom-muted">8</span>
+                                        <span class="text-custom-muted">9</span>
+                                        <span class="text-custom-muted">10</span>
+                                        <span class="text-custom-muted">11</span>
+                                        <span class="text-custom-muted">12</span>
+                                        <span class="text-custom-muted">13</span>
+                                        <span class="text-custom-muted">14</span>
+                                        <span class="text-custom-muted">15</span>
+                                        <span class="text-custom-muted">16</span>
+                                        <span class="text-custom-muted">17</span>
+                                        <span class="text-custom-muted">18</span>
+                                        <span class="text-custom-muted">19</span>
+                                        <span class="text-custom-muted">20</span>
+                                        <span class="text-custom-muted">21</span>
+                                        <span class="text-custom-muted">22</span>
+                                        <span class="text-custom-muted">23</span>
+                                        <div class="relative flex items-center justify-center">
+                                            <div class="absolute w-8 h-8 rounded-full bg-[#C9A96E]"></div>
+                                            <span class="relative z-10 text-black font-semibold">24</span>
+                                        </div>
+                                        <span class="text-custom-muted">25</span>
+                                        <span class="text-custom-muted">26</span>
+                                        <span class="text-custom-muted">27</span>
+                                        <span class="text-custom-muted">28</span>
+                                        <span class="text-custom-muted">29</span>
+                                        <span class="text-custom-muted">30</span>
+                                    </div>
+
+                                    <!-- Time Slot -->
+                                    <div class="mb-6 text-center">
+                                        <span class="inline-block bg-custom-main text-custom-accent px-4 py-2 rounded-full text-sm font-medium border border-custom-accent/20">
+                                            10:00 AM - 12:00 PM
+                                        </span>
+                                    </div>
+
+                                    <!-- CTA Button -->
+                                    <button class="w-full py-3 bg-[#C9A96E] text-black font-bold rounded-md shadow-md hover:bg-opacity-90 transition-colors">
+                                        Confirmar Reserva
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div id="pane-corporativo" class="hidden">
+                    <!-- Placeholder for the structured technical CV/grid -->
+                    <div class="bg-custom-card p-8 rounded-lg border border-custom/10 text-custom-muted text-center h-96 flex items-center justify-center">
+                        <p class="text-2xl font-bold">Currículum Corporativo (Próximamente)</p>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer Section -->
-    <footer class="border-t border-custom/10 py-8 bg-custom-card/30 text-center text-sm text-custom-muted">
-        <div class="max-w-7xl mx-auto px-6">
-            <p>&copy; <span id="current-year">2026</span> Trazio Studio. <span data-i18n="footer-tagline">Trazamos herramientas web de alta velocidad para optimizar tus ventas.</span></p>
+    <!-- Footer -->
+    <footer id="footer" class="bg-[#111118] border-t border-custom/10 py-12 px-6 relative z-10 transition-colors duration-300">
+        <!-- Main Footer Grid (12 Columns on Desktop) -->
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+            
+            <!-- Column 1: Logo & Tagline (Takes 3/12 cols) -->
+            <div class="lg:col-span-3 flex flex-col items-center lg:items-start space-y-4 text-center lg:text-left">
+                <a href="index.html" class="flex items-center space-x-2 group">
+                    <img src="assets/isotype-gold.svg" class="w-8 h-8 rounded-lg shadow-md group-hover:scale-105 transition-transform duration-300" alt="Trazio Isotype">
+                    <img src="assets/logo-gold.svg" class="logo-gold h-7 w-auto transition-all duration-300" alt="Trazio Studio Logo">
+                    <img src="assets/logo-dark.svg" class="logo-dark h-7 w-auto transition-all duration-300" alt="Trazio Studio Logo">
+                </a>
+                <p class="text-custom-muted leading-relaxed text-sm max-w-xs" data-i18n="footer-tagline">Trazamos herramientas web de alta velocidad para optimizar tus ventas.</p>
+            </div>
+
+            <!-- Column 2: Quick Links (Takes 2/12 cols) -->
+            <div class="lg:col-span-2 flex flex-col items-center lg:items-start text-center lg:text-left">
+                <h3 class="text-xs font-semibold uppercase tracking-widest text-custom-main mb-4" data-i18n="footer-quick-links">Enlaces Rápidos</h3>
+                <ul class="space-y-2.5 text-sm">
+                    <li><a href="portafolio-creativo.html" class="text-custom-muted hover:text-custom-accent transition-colors duration-300 nav-link-premium inline-block" data-i18n="nav-portfolio">Portafolios</a></li>
+                    <li><a href="catalogo-pedidos.html" class="text-custom-muted hover:text-custom-accent transition-colors duration-300 nav-link-premium inline-block" data-i18n="nav-catalogs">Catálogos</a></li>
+                    <li><a href="identidad-corporativa.html" class="text-custom-muted hover:text-custom-accent transition-colors duration-300 nav-link-premium inline-block" data-i18n="nav-corporate">Empresas</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Contact & Socials (Takes 2/12 cols) -->
+            <div class="lg:col-span-2 flex flex-col items-center lg:items-start text-center lg:text-left">
+                <h3 class="text-xs font-semibold uppercase tracking-widest text-custom-main mb-4" data-i18n="footer-contact">Contacto</h3>
+                <ul class="space-y-3.5 text-sm w-full">
+                    <li>
+                        <a href="https://wa.me/5350000000?text=Hola%20Trazio%20Studio,%20quiero%20iniciar%20un%20proyecto" target="_blank" rel="noopener noreferrer" class="text-custom-muted hover:text-custom-accent transition-all duration-300 flex items-center justify-center lg:justify-start group gap-2.5">
+                            <span class="p-1.5 rounded-lg bg-custom-card border border-custom/10 text-custom-accent group-hover:border-custom-accent/30 transition-colors">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2C7.314 2 3.407 5.864 3.407 10.546c0 1.408.349 2.8.956 4.028L2 22l7.666-2.52c1.176.666 2.51.999 3.374.999h.001c4.726 0 8.633-3.863 8.633-8.545C20.674 5.864 16.766 2 12.04 2zM17.152 15.632c-.234-.116-.967-.474-1.117-.528-.15-.054-.26-.054-.37.054-.11.108-.424.528-.548.665-.124.136-.248.15-.457.054-.93-.418-1.54-1.01-2.175-1.928-.636-.92-1.066-1.85-1.423-2.457-.357-.607-.037-.936.27-.99.27-.054.597-.13.864-.424.267-.294.357-.59.5-.784.144-.196.073-.37-.036-.59-.11-.22-.968-2.324-1.325-3.18-.357-.855-.72-.74-1.002-.756-.279-.016-.598-.016-.917-.016-.319 0-.83.108-1.26.54-.43.432-1.64 1.586-1.64 3.868 0 2.28 1.678 4.475 1.916 4.788.238.313 3.303 5.034 8.04 7.025 1.18.497 2.11.79 2.846.99.736.199 1.407.153 1.93-.066.523-.22 1.637-.675 1.87-.99.234-.314.234-.582.162-.702-.072-.119-.267-.183-.557-.32z"/></svg>
+                            </span>
+                            WhatsApp
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:contacto@traziostudio.com" class="text-custom-muted hover:text-custom-accent transition-all duration-300 flex items-center justify-center lg:justify-start group gap-2.5">
+                            <span class="p-1.5 rounded-lg bg-custom-card border border-custom/10 text-custom-accent group-hover:border-custom-accent/30 transition-colors">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            </span>
+                            Email
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://facebook.com/traziostudio" target="_blank" rel="noopener noreferrer" class="text-custom-muted hover:text-custom-accent transition-all duration-300 flex items-center justify-center lg:justify-start group gap-2.5">
+                            <span class="p-1.5 rounded-lg bg-custom-card border border-custom/10 text-custom-accent group-hover:border-custom-accent/30 transition-colors">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                            </span>
+                            Facebook
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Column 4: The Unified B2B CTA Card (Takes 5/12 cols) -->
+            <div class="lg:col-span-5 w-full bg-custom-card/50 border border-custom-accent/20 p-6 rounded-lg text-left space-y-4">
+                <h3 class="text-sm font-bold text-custom-main uppercase leading-tight" data-i18n="footer-aida-text">
+                    ¿Listo para hacer crecer tu negocio?
+                </h3>
+                <p class="text-xs text-custom-muted leading-relaxed" data-i18n="footer-aida-desc">
+                    Escríbenos y cuéntanos tu idea o mándanos tu lista de precios por WhatsApp. Te preparamos una demostración interactiva totalmente gratis y adaptada a tu sector en menos de 24 horas.
+                </p>
+                <a href="https://wa.me/5350000000?text=Hola%20Trazio%20Studio,%20quiero%20solicitar%20una%20demostración%20gratuita%20para%20mi%20negocio." target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center px-6 py-3.5 bg-custom-accent hover:bg-custom-accent-hover text-black font-bold uppercase text-[11px] tracking-wider transition-all duration-300">
+                    SOLICITAR DEMOSTRACIÓN GRATIS
+                </a>
+                <p class="text-[10px] sm:text-xs text-custom-muted leading-relaxed" data-i18n="footer-microcopy">
+                    <span class="text-custom-accent">✔</span> Sin costo técnico, compromisos ni contratos de mantenimiento.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- Bottom Copyright Bar -->
+        <div class="max-w-7xl mx-auto border-t border-custom/10 mt-10 pt-6 flex flex-col items-center text-center text-[11px] text-custom-muted/80 space-y-2">
+            <p>&copy; <span id="current-year"></span> Trazio Studio. <span data-i18n="all-rights-reserved">All rights reserved.</span></p>
+            <p class="font-medium">Designed with precision by Trazio Studio</p>
         </div>
     </footer>
 
-    <!-- Bilingual, Theme & Filter Logic -->
+    <script src="./app.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const themeSwitcher = document.getElementById('theme-switcher');
-            const languageToggle = document.getElementById('language-toggle');
-            const currentLangDisplay = document.getElementById('current-lang-display');
-            const themeIconMoon = document.getElementById('theme-icon-moon');
-            const themeIconSun = document.getElementById('theme-icon-sun');
+            const viewport = document.getElementById('portfolio-viewport');
+            const paneCreativo = document.getElementById('pane-creativo');
+            const paneCorporativo = document.getElementById('pane-corporativo');
+            const btnCreativoDesktop = document.getElementById('btn-profile-creativo');
+            const btnCorporativoDesktop = document.getElementById('btn-profile-corporativo');
+            const btnCreativoMobile = document.getElementById('btn-profile-creativo-mobile');
+            const btnCorporativoMobile = document.getElementById('btn-profile-corporativo-mobile');
 
-            const translations = {
-                es: {
-                    "port-back": "← Volver",
-                    "port-hero-title": "Portafolio Creativo",
-                    "port-hero-subtitle": "Galería de momentos e historias capturadas bajo una estética moderna, minimalista y de alto impacto visual.",
-                    "port-filter-all": "Todos",
-                    "port-filter-weddings": "Bodas",
-                    "port-filter-portraits": "Retratos",
-                    "port-filter-events": "Eventos",
-                    "port-card1-title": "Boda en el Prado",
-                    "port-card1-desc": "Fotografía artística en La Habana Vieja.",
-                    "port-card2-title": "Atardecer de Amor",
-                    "port-card2-desc": "Sesión exterior íntima junto al mar.",
-                    "port-card3-title": "Mirada Interior",
-                    "port-card3-desc": "Retrato editorial con luz natural.",
-                    "port-card4-title": "Esencia Urbana",
-                    "port-card4-desc": "Fotografía callejera de alta costura.",
-                    "port-card5-title": "Gala de Negocios",
-                    "port-card5-desc": "Cobertura profesional de conferencias.",
-                    "port-card6-title": "Ritmo y Luz",
-                    "port-card6-desc": "Captura dinámica de eventos en vivo.",
-                    "port-rates-title": "Tarifas & Coberturas",
-                    "port-rates-subtitle": "Planes claros y optimizados para proyectos personales o comerciales.",
-                    "port-rate1-title": "Sesión de Retrato Estándar",
-                    "port-rate1-price": "$50 <span class='text-xs text-custom-muted uppercase font-semibold tracking-wider ml-1'>MLC / USD</span>",
-                    "port-rate1-feat1": "✔ Sesión de 1.5 horas en exteriores o estudio",
-                    "port-rate1-feat2": "✔ 15 fotos editadas en alta resolución",
-                    "port-rate1-feat3": "✔ Entrega digital en menos de 7 días",
-                    "port-rate1-feat4": "✔ Asesoría de vestuario y poses incluida",
-                    "port-rate2-title": "Cobertura de Evento Premium",
-                    "port-rate2-price": "$150 <span class='text-xs text-custom-muted uppercase font-semibold tracking-wider ml-1'>MLC / USD</span>",
-                    "port-rate2-feat1": "✔ Hasta 4 horas de cobertura continua",
-                    "port-rate2-feat2": "✔ +100 fotos editadas y optimizadas",
-                    "port-rate2-feat3": "✔ Entrega en galería web privada para compartir",
-                    "port-rate2-feat4": "✔ Incluye fotos de grupo y detalles del local",
-                    "port-btn-book": "Reservar Vía WhatsApp",
-                    "footer-tagline": "Trazamos herramientas web de alta velocidad para optimizar tus ventas."
-                },
-                en: {
-                    "port-back": "← Back",
-                    "port-hero-title": "Creative Portfolio",
-                    "port-hero-subtitle": "A gallery of moments and stories captured with a modern, minimalist, and high-impact visual aesthetic.",
-                    "port-filter-all": "All",
-                    "port-filter-weddings": "Weddings",
-                    "port-filter-portraits": "Portraits",
-                    "port-filter-events": "Events",
-                    "port-card1-title": "Prado Wedding",
-                    "port-card1-desc": "Artistic photography in Old Havana.",
-                    "port-card2-title": "Sunset of Love",
-                    "port-card2-desc": "Intimate outdoor session by the sea.",
-                    "port-card3-title": "Inner Look",
-                    "port-card3-desc": "Editorial portrait using natural light.",
-                    "port-card4-title": "Urban Essence",
-                    "port-card4-desc": "High-fashion street photography.",
-                    "port-card5-title": "Business Gala",
-                    "port-card5-desc": "Professional coverage of conferences.",
-                    "port-card6-title": "Rhythm & Light",
-                    "port-card6-desc": "Dynamic capture of live music events.",
-                    "port-rates-title": "Rates & Bookings",
-                    "port-rates-subtitle": "Clear and optimized plans for personal or commercial projects.",
-                    "port-rate1-title": "Standard Portrait Session",
-                    "port-rate1-price": "$50 <span class='text-xs text-custom-muted uppercase font-semibold tracking-wider ml-1'>MLC / USD</span>",
-                    "port-rate1-feat1": "✔ 1.5-hour session outdoors or in-studio",
-                    "port-rate1-feat2": "✔ 15 high-resolution edited photos",
-                    "port-rate1-feat3": "✔ Digital delivery in less than 7 days",
-                    "port-rate1-feat4": "✔ Wardrobe and posing guidance included",
-                    "port-rate2-title": "Premium Event Coverage",
-                    "port-rate2-price": "$150 <span class='text-xs text-custom-muted uppercase font-semibold tracking-wider ml-1'>MLC / USD</span>",
-                    "port-rate2-feat1": "✔ Up to 4 hours of continuous coverage",
-                    "port-rate2-feat2": "✔ +100 edited and optimized photos",
-                    "port-rate2-feat3": "✔ Delivered in a private web gallery ready to share",
-                    "port-rate2-feat4": "✔ Includes group shots and venue details",
-                    "port-btn-book": "Book via WhatsApp",
-                    "footer-tagline": "We build high-speed web tools to optimize your business operations."
-                }
-            };
+            const activeBtnClass = 'bg-custom-accent text-black font-bold shadow-sm rounded-lg';
+            const inactiveBtnClass = 'bg-transparent text-custom-muted hover:text-custom-main font-semibold rounded-lg';
+            const mobileActiveBtnClass = 'bg-custom-accent text-black font-bold shadow-sm rounded-lg';
+            const mobileInactiveBtnClass = 'bg-transparent text-custom-muted hover:text-custom-main font-semibold rounded-lg';
 
-            // --- Theme State Management ---
-            const applyTheme = (theme) => {
-                if (theme === 'light') {
-                    document.body.classList.add('light-theme');
-                    if (themeIconMoon) themeIconMoon.classList.add('hidden');
-                    if (themeIconSun) themeIconSun.classList.remove('hidden');
+
+            function setProfile(profile) {
+                // Apply fade-out effect
+                viewport.classList.add('opacity-0', 'translate-y-4');
+                viewport.classList.remove('opacity-100', 'translate-y-0');
+
+                setTimeout(() => {
+                    if (profile === 'creativo') {
+                        paneCreativo.classList.remove('hidden');
+                        paneCreativo.classList.add('block');
+                        paneCorporativo.classList.remove('block');
+                        paneCorporativo.classList.add('hidden');
+
+                        // Update desktop buttons
+                        btnCreativoDesktop.classList.add(activeBtnClass);
+                        btnCreativoDesktop.classList.remove(inactiveBtnClass);
+                        btnCorporativoDesktop.classList.add(inactiveBtnClass);
+                        btnCorporativoDesktop.classList.remove(activeBtnClass);
+
+                        // Update mobile buttons
+                        btnCreativoMobile.classList.add(mobileActiveBtnClass);
+                        btnCreativoMobile.classList.remove(mobileInactiveBtnClass);
+                        btnCorporativoMobile.classList.add(mobileInactiveBtnClass);
+                        btnCorporativoMobile.classList.remove(mobileActiveBtnClass);
+
+                    } else if (profile === 'corporativo') {
+                        paneCreativo.classList.remove('block');
+                        paneCreativo.classList.add('hidden');
+                        paneCorporativo.classList.remove('hidden');
+                        paneCorporativo.classList.add('block');
+
+                        // Update desktop buttons
+                        btnCreativoDesktop.classList.add(inactiveBtnClass);
+                        btnCreativoDesktop.classList.remove(activeBtnClass);
+                        btnCorporativoDesktop.classList.add(activeBtnClass);
+                        btnCorporativoDesktop.classList.remove(inactiveBtnClass);
+
+                        // Update mobile buttons
+                        btnCreativoMobile.classList.add(mobileInactiveBtnClass);
+                        btnCreativoMobile.classList.remove(mobileActiveBtnClass);
+                        btnCorporativoMobile.classList.add(mobileActiveBtnClass);
+                        btnCorporativoMobile.classList.remove(mobileInactiveBtnClass);
+                    }
+
+                    // Fade back in
+                    viewport.classList.remove('opacity-0', 'translate-y-4');
+                    viewport.classList.add('opacity-100', 'translate-y-0');
+                }, 150); // Matches the CSS transition duration
+            }
+
+            // Initial state
+            setProfile('creativo');
+
+            btnCreativoDesktop.addEventListener('click', () => setProfile('creativo'));
+            btnCorporativoDesktop.addEventListener('click', () => setProfile('corporativo'));
+            btnCreativoMobile.addEventListener('click', () => setProfile('creativo'));
+            btnCorporativoMobile.addEventListener('click', () => setProfile('corporativo'));
+
+            // Global Preferences Sync (Language and Theme)
+            // This assumes app.js handles the initial setup and provides functions/events for changes.
+            // For this skeleton, we'll just read localStorage on load.
+            const syncPreferences = () => {
+                const currentLang = localStorage.getItem('language') || 'es'; // Default to 'es'
+                document.documentElement.lang = currentLang;
+                document.getElementById('current-lang-display').textContent = currentLang.toUpperCase();
+
+                const currentTheme = localStorage.getItem('theme') || 'dark'; // Default to 'dark'
+                if (currentTheme === 'light') {
+                    document.documentElement.classList.add('light-theme');
+                    document.getElementById('theme-icon-moon').classList.add('hidden');
+                    document.getElementById('theme-icon-sun').classList.remove('hidden');
                 } else {
-                    document.body.classList.remove('light-theme');
-                    if (themeIconMoon) themeIconMoon.classList.remove('hidden');
-                    if (themeIconSun) themeIconSun.classList.add('hidden');
+                    document.documentElement.classList.remove('light-theme');
+                    document.getElementById('theme-icon-moon').classList.remove('hidden');
+                    document.getElementById('theme-icon-sun').classList.add('hidden');
                 }
             };
 
-            const toggleTheme = () => {
-                const currentTheme = localStorage.getItem('theme') || 'dark';
-                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-                localStorage.setItem('theme', newTheme);
-                applyTheme(newTheme);
-            };
+            syncPreferences(); // Apply on initial load
 
-            // --- Language State Management & Dynamic Translation ---
-            const translatePage = (lang) => {
-                document.querySelectorAll('[data-i18n]').forEach(element => {
-                    const key = element.getAttribute('data-i18n');
-                    if (translations[lang] && translations[lang][key]) {
-                        element.innerHTML = translations[lang][key];
-                    }
-                });
-                if (currentLangDisplay) {
-                    currentLangDisplay.textContent = lang.toUpperCase();
-                }
-                document.documentElement.lang = lang; // Update HTML lang attribute
-            };
+            // Listen for custom events or mutations if app.js modifies these directly
+            // For a simple setup, user would refresh or app.js would handle reactivity.
+            // A more robust solution might involve observing localStorage or custom events from app.js.
 
-            const toggleLanguage = () => {
-                const currentLang = localStorage.getItem('language') || 'es';
-                const newLang = currentLang === 'es' ? 'en' : 'es';
-                localStorage.setItem('language', newLang);
-                translatePage(newLang);
-            };
-
-            // --- Initial Setup on Load ---
-
-            // Set current year in footer safely
-            const currentYearEl = document.getElementById('current-year');
-            if (currentYearEl) {
-                currentYearEl.textContent = new Date().getFullYear();
-            }
-
-            // Apply stored theme or default to dark
-            const savedTheme = localStorage.getItem('theme') || 'dark';
-            applyTheme(savedTheme);
-
-            // Apply stored language or default to Spanish
-            const savedLanguage = localStorage.getItem('language') || 'es';
-            translatePage(savedLanguage);
-
-            // --- Event Listeners ---
-            if (themeSwitcher) {
-                themeSwitcher.addEventListener('click', toggleTheme);
-            }
-            if (languageToggle) {
-                languageToggle.addEventListener('click', toggleLanguage);
-            }
-
-            // --- 10-line vanilla JS gallery filter logic ---
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            const galleryItems = document.querySelectorAll('.gallery-item');
-            filterButtons.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    filterButtons.forEach(b => {
-                        b.classList.remove('bg-custom-accent', 'text-black', 'border-transparent');
-                        b.classList.add('border-custom/30', 'text-custom-main');
-                    });
-                    btn.classList.add('bg-custom-accent', 'text-black', 'border-transparent');
-                    btn.classList.remove('border-custom/30', 'text-custom-main');
-                    const val = btn.getAttribute('data-filter');
-                    galleryItems.forEach(item => {
-                        item.classList.toggle('hidden', val !== 'all' && item.getAttribute('data-category') !== val);
-                    });
-                });
-            });
-
-            // --- Booking Button Logic (opens dynamic WhatsApp prefilled links) ---
-            const bookingButtons = document.querySelectorAll('.booking-btn');
-            bookingButtons.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const pkg = btn.getAttribute('data-package');
-                    const lang = localStorage.getItem('language') || 'es';
-                    let msg = '';
-                    if (pkg === 'portrait') {
-                        msg = lang === 'es' 
-                            ? 'Hola Trazio Studio, me interesa agendar una Sesión de Retrato Estándar ($50 MLC/USD).' 
-                            : 'Hello Trazio Studio, I am interested in booking a Standard Portrait Session ($50 MLC/USD).';
-                    } else {
-                        msg = lang === 'es' 
-                            ? 'Hola Trazio Studio, me interesa contratar la Cobertura de Evento Premium ($150 MLC/USD).' 
-                            : 'Hello Trazio Studio, I am interested in booking the Premium Event Coverage ($150 MLC/USD).';
-                    }
-                    window.open(`https://wa.me/5350000000?text=${encodeURIComponent(msg)}`, '_blank');
-                });
-            });
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
         });
     </script>
 </body>
