@@ -40,6 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
             "card-corporate-benefit-2": "Información clara y accesible 24/7.",
             "card-corporate-benefit-3": "Fortalece la confianza de tus clientes.",
             "card-learn-more": "Saber más &rarr;",
+
+            // Etiquetas de los botones del Selector de Perfil
+            "btn-profile-creativo": "Perfil Visual / Artístico",
+            "btn-profile-corporativo": "Perfil Técnico / Consultor",
             
             // Portales - Títulos secundarios y descripciones
             "services-badge": "NUESTROS ENFOQUES",
@@ -166,6 +170,10 @@ document.addEventListener('DOMContentLoaded', () => {
             "card-corporate-benefit-2": "Clear and accessible information 24/7.",
             "card-corporate-benefit-3": "Strengthen client trust.",
             "card-learn-more": "Learn more &rarr;",
+
+            // Profile Switcher Labels
+            "btn-profile-creativo": "Visual / Artistic Profile",
+            "btn-profile-corporativo": "Technical / Consultant Profile",
             
             // Solutions Cards Detail
             "services-badge": "OUR SOLUTIONS",
