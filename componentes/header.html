@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Creativo - Trazio Studio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-custom-main text-custom-main min-h-screen flex flex-col justify-between">
+    <!-- Sticky Header -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-custom-main/80 border-b border-custom/20 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-8 md:px-12 lg:px-16 py-4 flex justify-between items-center w-full">
+            <!-- Logo / Brand -->
+            <a href="index.html" class="flex items-center space-x-1 group">
+                <!-- Isotype Only -->
+                <img src="assets/isotype-gold.svg" class="w-8 h-8 hover:scale-105 transition-transform duration-300" alt="Trazio Isotype">
+            </a>
+            
+            <!-- Navigation Links - Hidden on Mobile, Visible on Desktop -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="portafolio-creativo.html" class="nav-link-premium text-sm font-medium hover:text-custom-accent transition-colors duration-300" data-i18n="nav-portfolio">Portafolios</a>
+                <a href="catalogo-pedidos.html" class="nav-link-premium text-sm font-medium hover:text-custom-accent transition-colors duration-300" data-i18n="nav-catalogs">Catálogos</a>
+                <a href="identidad-corporativa.html" class="nav-link-premium text-sm font-medium hover:text-custom-accent transition-colors duration-300" data-i18n="nav-corporate">Empresas</a>
+            </nav>
+
+            <div class="flex items-center space-x-3">
+                <!-- Language Selector -->
+                <button id="language-toggle" class="flex items-center justify-center h-10 px-3 rounded-none bg-custom-card border border-custom/10 text-xs font-bold uppercase hover:text-custom-accent hover:border-custom/30 transition-all duration-300" title="Cambiar Idioma">
+                    <span id="current-lang-display">ES</span>
+                </button>
+                
+                <!-- Theme Switcher -->
+                <button id="theme-switcher" class="flex items-center justify-center h-10 w-10 rounded-none bg-custom-card border border-custom/10 text-custom-main hover:text-custom-accent hover:border-custom/30 transition-all duration-300" title="Cambiar Tema">
+                    <svg id="theme-icon-moon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    <svg id="theme-icon-sun" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                </button>
+
+                <!-- Header CTA Button -->
+                <a href="https://wa.me/5350000000?text=Hola,%20quiero%20iniciar%20un%20proyecto" target="_blank" rel="noopener noreferrer" class="hidden sm:flex items-center justify-center h-10 px-5 text-xs font-bold text-black uppercase tracking-wider bg-custom-accent rounded-none shadow-md shadow-custom-accent/10 hover:bg-custom-accent-hover transition-all duration-300" data-i18n="nav-cta">
+                    Iniciar Proyecto
+                </a>
+            </div>
+        </div>
+    </header>
