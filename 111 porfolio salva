@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Creativo - Trazio Studio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-custom-main text-custom-main min-h-screen flex flex-col justify-between">
+    <!-- Sticky Header -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-custom-main/80 border-b border-custom/20 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-8 md:px-12 lg:px-16 py-4 flex justify-between items-center w-full">
+            <!-- Logo / Brand -->
+            <a href="index.html" class="flex items-center space-x-1 group">
+                <!-- Isotype Only -->
+                <img src="assets/isotype-gold.svg" class="w-8 h-8 hover:scale-105 transition-transform duration-300" alt="Trazio Isotype">
+            </a>
+            
+            <!-- Navigation Links - Hidden on Mobile, Visible on Desktop -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="portafolio-creativo.html" class="nav-link-premium text-sm font-medium hover:text-custom-accent transition-colors duration-300" data-i18n="nav-portfolio">Portafolios</a>
+                <a href="catalogo-pedidos.html" class="nav-link-premium text-sm font-medium hover:text-custom-accent transition-colors duration-300" data-i18n="nav-catalogs">Catálogos</a>
+                <a href="identidad-corporativa.html" class="nav-link-premium text-sm font-medium hover:text-custom-accent transition-colors duration-300" data-i18n="nav-corporate">Empresas</a>
+            </nav>
+
+            <div class="flex items-center space-x-3">
+                <!-- Language Selector -->
+                <button id="language-toggle" class="flex items-center justify-center h-10 px-3 rounded-none bg-custom-card border border-custom/10 text-xs font-bold uppercase hover:text-custom-accent hover:border-custom/30 transition-all duration-300" title="Cambiar Idioma">
+                    <span id="current-lang-display">ES</span>
+                </button>
+                
+                <!-- Theme Switcher -->
+                <button id="theme-switcher" class="flex items-center justify-center h-10 w-10 rounded-none bg-custom-card border border-custom/10 text-custom-main hover:text-custom-accent hover:border-custom/30 transition-all duration-300" title="Cambiar Tema">
+                    <svg id="theme-icon-moon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    <svg id="theme-icon-sun" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                </button>
+
+                <!-- Header CTA Button -->
+                <a href="https://wa.me/5350000000?text=Hola,%20quiero%20iniciar%20un%20proyecto" target="_blank" rel="noopener noreferrer" class="hidden sm:flex items-center justify-center h-10 px-5 text-xs font-bold text-black uppercase tracking-wider bg-custom-accent rounded-none shadow-md shadow-custom-accent/10 hover:bg-custom-accent-hover transition-all duration-300" data-i18n="nav-cta">
+                    Iniciar Proyecto
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section id="portfolio-hero" class="max-w-4xl mx-auto px-6 py-12 md:py-16 flex flex-col items-center text-center animate-fade-in-up">
+            <img src="assets/logo-gold.svg" class="logo-gold h-14 md:h-16 mx-auto mb-6" alt="Trazio Studio">
+            <img src="assets/logo-dark.svg" class="logo-dark h-14 md:h-16 mx-auto mb-6" alt="Trazio Studio">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tighter leading-[1.1] mb-6 text-custom-main" data-i18n="port-hero-title">
+                Tu Talento merece un <span class="text-custom-accent">Escenario Internacional</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-custom-muted max-w-2xl mb-12 leading-relaxed" data-i18n="port-hero-subtitle">
+                Deja de competir en el ruido de los algoritmos de redes sociales y posiciona tu marca personal con una herramienta web de élite.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center w-full sm:w-auto">
+                <a href="#portfolio-workspace" class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 text-base font-semibold text-white bg-custom-accent rounded-xl shadow-lg shadow-custom-accent/10 hover:bg-custom-accent-hover hover:-translate-y-1 transition-all duration-300">
+                    Ver Diseños
+                </a>
+                <a href="https://wa.me/5350000000?text=Hola,%20quiero%20diseñar%20mi%20marca" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 text-base font-semibold text-custom-main bg-custom-card border border-custom/20 rounded-xl hover:bg-custom-main hover:border-custom/55 hover:-translate-y-1 transition-all duration-300">
+                    Diseñar mi Marca
+                </a>
+            </div>
+        </section>
+
+        <!-- Doble Espejo Selector UI -->
+        <section id="portfolio-workspace" class="py-12 md:py-16 px-6 relative bg-pattern-diagonal border-t border-custom/10">
+            <!-- Gradiente de luz dorado para profundidad tridimensional -->
+            <div class="absolute inset-x-0 top-0 h-[500px] pointer-events-none bg-gradient-to-b from-custom-accent/5 to-transparent blur-3xl"></div>
+            
+            <div class="hidden sm:flex justify-center mb-12 relative z-40 sticky top-20 shadow-xl backdrop-blur-xl bg-custom-card/80 p-1.5 flex space-x-1 border border-custom/20 rounded-[10px] max-w-sm mx-auto">
+                <div class="bg-custom-card/0 p-1.5 flex space-x-1 border border-custom/20 rounded-[10px] shadow-lg max-w-sm mx-auto">
+                    <button id="btn-profile-creativo" class="px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 active-profile-btn" data-i18n="btn-profile-creativo">
+                        Perfil Visual / Artístico
+                    </button>
+                    <button id="btn-profile-corporativo" class="px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 inactive-profile-btn" data-i18n="btn-profile-corporativo">
+                        Perfil Técnico / Consultor
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Sticky Floating Navigation Capsule -->
+            <div class="sm:hidden sticky top-[72px] z-40 bg-custom-card/80 backdrop-blur-xl p-1.5 flex justify-center space-x-1 border border-custom/20 rounded-[10px] shadow-xl w-full max-w-sm mx-auto mb-12" id="mobile-profile-selector">
+                <button id="btn-profile-creativo-mobile" class="px-3 py-1.5 rounded-md text-xs font-semibold transition-all duration-300 active-profile-btn" data-i18n="btn-profile-creativo">
+                    Perfil Visual / Artístico
+                </button>
+                <button id="btn-profile-corporativo-mobile" class="px-3 py-1.5 rounded-md text-xs font-semibold transition-all duration-300 inactive-profile-btn" data-i18n="btn-profile-corporativo">
+                    Perfil Técnico / Consultor
+                </button>
+            </div>
+            <!-- Dynamic Container -->
+            <div id="portfolio-viewport" class="max-w-6xl mx-auto px-6 transition-all duration-300 opacity-100 transform translate-y-0 relative z-10">
+                <div id="pane-creativo" class="block">
+                    <!-- Intro de Nichos e Información de Demo -->
+                    <div class="text-center max-w-4xl mx-auto mb-16 pt-10 animate-fade-in-up">
+                        <!-- Badge Sutil de Demo (Zero-Friction B2B) -->
+                        <div class="inline-flex items-center px-4 py-1.5 rounded-lg border border-custom-accent/30 bg-custom-accent/5 text-[9px] font-bold tracking-widest text-custom-accent uppercase mb-6" data-i18n="demo-badge-note">
+                            DEMOSTRACIÓN EN VIVO - TU WEB SERÁ 100% PERSONALIZADA A TU ESTILO
+                        </div>
+                        
+                        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tighter mb-4 text-custom-main leading-tight" data-i18n="demo-badge-title">
+                            Tu trabajo merece verse como en una galería de arte
+                        </h2>
+                        <div class="max-w-2xl mx-auto mt-8 relative">
+                            <!-- Giant Elegant Gold Quotation Mark -->
+                            <span class="text-7xl font-serif text-custom-accent/15 absolute -top-8 -left-6 leading-none pointer-events-none select-none">“</span>
+                            <p class="text-lg sm:text-xl text-custom-muted italic leading-relaxed relative z-10 font-light" data-i18n="demo-badge-subtitle">
+                                Diseñado para fotógrafos, modelos, maquilladores, diseñadores, arquitectos y cualquier creador que necesite que su trabajo impacte a primera vista. Olvídate de los límites de Instagram.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Editorial Masonry Gallery (Mathematically Perfect Asymmetrical 5-Image Grid) -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[250px]">
+                        <!-- Item 1: Vertical Destacado Izquierda (2x2) -->
+                        <div class="overflow-hidden rounded-lg group cursor-pointer relative md:col-span-2 md:row-span-2 shadow-md">
+                            <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=800&q=80&fm=webp" alt="Fashion Editorial" class="w-full h-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center rounded-lg">
+                                <h3 class="text-white text-xl font-bold tracking-tight">Sesión de Quinceañeras</h3>
+                            </div>
+                        </div>
+                        <!-- Item 2: Horizontal Superior Derecha (1x1) -->
+                        <div class="overflow-hidden rounded-lg group cursor-pointer relative md:col-span-1 md:row-span-1 shadow-md">
+                            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80&fm=webp" alt="Wedding Portrait" class="w-full h-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center rounded-lg">
+                                <h3 class="text-white text-xl font-bold tracking-tight">Bodas y Eventos</h3>
+                            </div>
+                        </div>
+                        <!-- Item 3: Cuadrado Central (1x1) -->
+                        <div class="overflow-hidden rounded-lg group cursor-pointer relative md:col-span-1 md:row-span-1 shadow-md">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80&fm=webp" alt="Portrait" class="w-full h-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center rounded-lg">
+                                <h3 class="text-white text-xl font-bold tracking-tight">Retratos para Negocios</h3>
+                            </div>
+                        </div>
+                        <!-- Item 4: Vertical Derecho (1x1) -->
+                        <div class="overflow-hidden rounded-lg group cursor-pointer relative md:col-span-1 md:row-span-1 shadow-md">
+                            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80&fm=webp" alt="Event Cover" class="w-full h-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center rounded-lg">
+                                <h3 class="text-white text-xl font-bold tracking-tight">Catálogo de Moda Mipyme</h3>
+                            </div>
+                        </div>
+                        <!-- Item 5: Horizontal Inferior Izquierda/Centro (2x1) -->
+                        <div class="overflow-hidden rounded-lg group cursor-pointer relative md:col-span-2 md:row-span-1 shadow-md">
+                            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80&fm=webp" alt="Lifestyle" class="w-full h-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center rounded-lg">
+                                <h3 class="text-white text-xl font-bold tracking-tight">Fotografía de Exteriores</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- El Artista / Biografía de Autoridad -->
+                    <div class="mt-24 max-w-5xl mx-auto">
+                        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center text-center md:text-left">
+                            <!-- Columna Izquierda (Imagen) -->
+                            <div class="md:col-span-5 flex justify-center">
+                                <div class="relative group">
+                                     <!-- Borde/Glow dorado sutil detrás -->
+                                     <div class="absolute inset-0 bg-custom-accent/10 rounded-2xl blur-xl group-hover:bg-custom-accent/20 transition-all duration-300"></div>
+                                     <div class="w-full h-80 bg-custom-card border border-custom-accent/30 flex flex-col items-center justify-center p-6 bg-pattern-nodes relative overflow-hidden rounded-lg group hover:border-custom-accent transition-all duration-300">
+                                         <div class="absolute inset-0 bg-custom-accent/5 blur-2xl opacity-50"></div>
+                                         
+                                         <svg class="w-16 h-16 text-custom-accent mb-4 relative z-10 transition-transform duration-500 group-hover:scale-105" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"></path>
+                                         </svg>
+                                         
+                                         <div class="w-full space-y-2 opacity-30 font-mono text-[9px] text-custom-muted mb-4 relative z-10 select-none text-center">
+                                             <div>const consultant = new TrazioStudio('Alejandro');</div>
+                                             <div>consultant.specializeIn(['Odoo ERP', 'Axispos']);</div>
+                                             <div>consultant.optimizeDatabase(); // -60% load time</div>
+                                         </div>
+                                         
+                                         <div class="text-xs font-mono text-custom-accent font-bold tracking-tight relative z-10 text-center">[ Alejandro // Systems Architect & ERP Consultant ]</div>
+                                     </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Columna Derecha (Texto) -->
+                            <div class="md:col-span-7 flex flex-col justify-center">
+                                <span class="text-custom-accent text-xs font-bold tracking-widest uppercase mb-3 block">VISIÓN CREATIVA</span>
+                                <h3 class="text-3xl sm:text-4xl font-bold text-custom-main tracking-tight leading-tight mb-6">
+                                    Capturando la esencia de momentos irrepetibles.
+                                </h3>
+                                <p class="text-custom-muted text-base sm:text-lg leading-relaxed mb-6">
+                                    Con más de 5 años de experiencia en fotografía documental y editorial, mi objetivo es transformar tu historia en una pieza de arte visual. Cada sesión es una experiencia diseñada a medida.
+                                </p>
+                                <div class="mt-2">
+                                    <span class="text-custom-accent text-2xl font-serif italic tracking-wide block">— Alejandro</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonios (Prueba Social) -->
+                    <div class="mt-24 max-w-5xl mx-auto">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <!-- Testimonio 1 -->
+                            <div class="bg-custom-card/40 p-8 rounded-2xl border border-custom/10 relative overflow-hidden flex flex-col justify-between shadow-lg group hover:border-custom-accent/20 transition-colors duration-300">
+                                <!-- Comilla gigante tenue de fondo -->
+                                <div class="absolute top-3 right-4 text-custom-accent/5 select-none pointer-events-none text-9xl font-serif">“</div>
+                                <div class="relative z-10">
+                                    <p class="text-custom-main text-base sm:text-lg italic leading-relaxed mb-6 font-light">
+                                        "Su ojo para los detalles es increíble. Las fotos de nuestra boda en La Habana superaron todas las expectativas de nuestra familia en el extranjero."
+                                    </p>
+                                </div>
+                                <div class="border-t border-custom/10 pt-4 flex items-center">
+                                    <div class="w-2 h-2 rounded-full bg-custom-accent mr-3"></div>
+                                    <span class="text-custom-main font-semibold text-sm tracking-wide">Laura & Carlos</span>
+                                </div>
+                            </div>
+
+                            <!-- Testimonio 2 -->
+                            <div class="bg-custom-card/40 p-8 rounded-2xl border border-custom/10 relative overflow-hidden flex flex-col justify-between shadow-lg group hover:border-custom-accent/20 transition-colors duration-300">
+                                <!-- Comilla gigante tenue de fondo -->
+                                <div class="absolute top-3 right-4 text-custom-accent/5 select-none pointer-events-none text-9xl font-serif">“</div>
+                                <div class="relative z-10">
+                                    <p class="text-custom-main text-base sm:text-lg italic leading-relaxed mb-6 font-light">
+                                        "Profesionalismo absoluto. La sesión fluyó de maravilla y la entrega de las fotos fue impecable. Totalmente recomendado para quinceañeras."
+                                    </p>
+                                </div>
+                                <div class="border-t border-custom/10 pt-4 flex items-center">
+                                    <div class="w-2 h-2 rounded-full bg-custom-accent mr-3"></div>
+                                    <span class="text-custom-main font-semibold text-sm tracking-wide">Marta V.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Services & Rates Section -->
+                    <div class="max-w-4xl mx-auto text-center mb-12 mt-16">
+                        <span class="inline-flex items-center px-4 py-1.5 rounded-lg border border-custom-accent/30 bg-custom-accent/5 text-[9px] font-bold tracking-widest text-custom-accent uppercase mb-4" data-i18n="demo-rates-note">
+                            TARIFAS DE DEMOSTRACIÓN - PRECIOS REALES SEGÚN PROYECTO
+                        </span>
+                        <h2 class="text-3xl sm:text-4xl font-bold tracking-tighter mb-4 text-custom-main leading-tight">
+                            Nuestros Servicios de Impacto
+                        </h2>
+                        <p class="text-lg sm:text-xl text-custom-muted max-w-2xl mx-auto leading-relaxed">
+                            Desde sesiones de retrato hasta cobertura de eventos, cada servicio está diseñado para elevar tu presencia visual.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-24 mb-16">
+                        <!-- Card 1: Sesión de Retrato -->
+                        <div class="bg-custom-card p-6 rounded-lg border border-custom/10 text-center">
+                            <h3 class="text-xl font-bold mb-4 text-custom-main">Sesión de Retrato</h3>
+                            <p class="text-custom-muted mb-4 text-sm">Ideal para potenciar tu marca personal y proyectar una imagen profesional.</p>
+                            <div class="text-3xl font-bold text-custom-accent mb-6">$50 USD</div>
+                            <a href="https://wa.me/5350000000?text=Hola,%20me%20interesa%20la%20sesión%20de%20retrato" class="block w-full text-center py-3 px-4 rounded-md border-2 border-custom-accent text-custom-accent font-semibold hover:bg-custom-accent hover:text-black transition-colors" target="_blank" rel="noopener noreferrer">Solicitar Fecha</a>
+                        </div>
+
+                        <!-- Card 2: Cobertura de Bodas -->
+                        <div class="bg-custom-card p-6 rounded-lg border border-custom/10 text-center">
+                            <h3 class="text-xl font-bold mb-4 text-custom-main">Cobertura de Bodas</h3>
+                            <p class="text-custom-muted mb-4 text-sm">Servicio premium para inmortalizar cada momento especial de tu gran día.</p>
+                            <div class="text-3xl font-bold text-custom-accent mb-6">$150 USD</div>
+                            <a href="https://wa.me/5350000000?text=Hola,%20me%20interesa%20la%20cobertura%20de%20bodas" class="block w-full text-center py-3 px-4 rounded-md border-2 border-custom-accent text-custom-accent font-semibold hover:bg-custom-accent hover:text-black transition-colors" target="_blank" rel="noopener noreferrer">Solicitar Fecha</a>
+                        </div>
+
+                        <!-- Card 3: Lookbook Comercial -->
+                        <div class="bg-custom-card p-6 rounded-lg border border-custom/10 text-center">
+                            <h3 class="text-xl font-bold mb-4 text-custom-main">Lookbook Comercial</h3>
+                            <p class="text-custom-muted mb-4 text-sm">Perfecto para marcas de moda Mipyme que buscan destacar con un estilo único.</p>
+                            <div class="text-3xl font-bold text-custom-accent mb-6">$100 USD</div>
+                            <a href="https://wa.me/5350000000?text=Hola,%20me%20interesa%20el%20lookbook%20comercial" class="block w-full text-center py-3 px-4 rounded-md border-2 border-custom-accent text-custom-accent font-semibold hover:bg-custom-accent hover:text-black transition-colors" target="_blank" rel="noopener noreferrer">Solicitar Fecha</a>
+                        </div>
+                    </div>
+
+                    <!-- Características de Autoridad para Creadores -->
+                    <section class="py-24 px-6 md:px-12 bg-custom-main border-y border-custom/10 mb-16">
+                        <div class="max-w-6xl mx-auto">
+                            <h2 class="text-3xl sm:text-4xl font-bold text-center text-custom-main mb-4 tracking-tight">Tu portafolio es tu pasaporte al mercado internacional.</h2>
+                            <p class="text-center text-custom-muted max-w-3xl mx-auto mb-16 text-base sm:text-lg leading-relaxed">No diseñamos galerías estáticas. Creamos ecosistemas de venta de alta velocidad para que tu talento capte clientes premium en cualquier parte del mundo.</p>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                                <!-- Tarjeta 1: Bilingüe B2B Instantáneo -->
+                                <div class="bg-[#1E1E2A] p-6 rounded-lg border border-white/5 hover:border-custom-accent/30 transition-all duration-300 flex flex-col justify-between group">
+                                    <div>
+                                        <!-- Icono elegante -->
+                                        <div class="text-custom-accent mb-6 w-8 h-8 opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-.778.099-1.533.284-2.253" />
+                                            </svg>
+                                        </div>
+                                        <h3 class="text-lg font-bold text-white mb-3 group-hover:text-custom-accent transition-colors duration-300">Bilingüe B2B Instantáneo</h3>
+                                        <p class="text-sm text-[#A0A0B0] leading-relaxed">Atrae a clientes extranjeros y agencias. Tu web cambia de Español a Inglés sin recargar, multiplicando tus contrataciones internacionales en divisas.</p>
+                                    </div>
+                                </div>
+
+                                <!-- Tarjeta 2: Inmunidad al Algoritmo -->
+                                <div class="bg-[#1E1E2A] p-6 rounded-lg border border-white/5 hover:border-custom-accent/30 transition-all duration-300 flex flex-col justify-between group">
+                                    <div>
+                                        <!-- Icono elegante -->
+                                        <div class="text-custom-accent mb-6 w-8 h-8 opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
+                                            </svg>
+                                        </div>
+                                        <h3 class="text-lg font-bold text-white mb-3 group-hover:text-custom-accent transition-colors duration-300">Inmunidad al Algoritmo</h3>
+                                        <p class="text-sm text-[#A0A0B0] leading-relaxed">Protege tu marca. En tu web no hay anuncios ni competencia al lado de tus fotos. Tu cliente se enfoca 100% en tu trabajo, sin las distracciones de Instagram.</p>
+                                    </div>
+                                </div>
+
+                                <!-- Tarjeta 3: Carga Ultra-Ligera (3G/4G) -->
+                                <div class="bg-[#1E1E2A] p-6 rounded-lg border border-white/5 hover:border-custom-accent/30 transition-all duration-300 flex flex-col justify-between group">
+                                    <div>
+                                        <!-- Icono elegante -->
+                                        <div class="text-custom-accent mb-6 w-8 h-8 opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
+                                            </svg>
+                                        </div>
+                                        <h3 class="text-lg font-bold text-white mb-3 group-hover:text-custom-accent transition-colors duration-300">Carga Ultra-Ligera (3G/4G)</h3>
+                                        <p class="text-sm text-[#A0A0B0] leading-relaxed">Tus fotos en alta resolución cargan en milisegundos. Usamos IA para reducir el peso visual en un 80%, ahorrando los datos móviles de tus clientes en Cuba.</p>
+                                    </div>
+                                </div>
+
+                                <!-- Tarjeta 4: Dossier PDF Exportable -->
+                                <div class="bg-[#1E1E2A] p-6 rounded-lg border border-white/5 hover:border-custom-accent/30 transition-all duration-300 flex flex-col justify-between group">
+                                    <div>
+                                        <!-- Icono elegante -->
+                                        <div class="text-custom-accent mb-6 w-8 h-8 opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m.75 12 3 3m0 0 3-3m-3 3v-6m-1.5-9H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+                                            </svg>
+                                        </div>
+                                        <h3 class="text-lg font-bold text-white mb-3 group-hover:text-custom-accent transition-colors duration-300">Dossier PDF Exportable</h3>
+                                        <p class="text-sm text-[#A0A0B0] leading-relaxed">Con un clic, tu portafolio se transforma en un documento editorial PDF listo para imprimir o enviar en licitaciones y castings internacionales.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Agenda Interactiva como bloque premium autónomo con textura Zebra -->
+                    <section class="py-16 px-6 md:px-12 rounded-2xl bg-custom-card/50 border border-custom/10 bg-pattern-nodes relative overflow-hidden mt-24 shadow-xl">
+                        <!-- Sutil halo de luz de fondo -->
+                        <div class="absolute inset-0 pointer-events-none opacity-20 dark:opacity-10">
+                            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-gradient-to-r from-custom-accent/20 to-transparent blur-3xl rounded-full"></div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
+                            <!-- Left Column (Copywriting) -->
+                            <div class="text-center md:text-left">
+                                <!-- Micro-badge de escasez -->
+                                <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-red-500/30 bg-red-500/10 text-xs font-bold tracking-wider text-red-500 dark:text-red-400 uppercase mb-4">
+                                    <span>AGENDA 2026 AL 80% DE CAPACIDAD</span>
+                                </div>
+                                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight leading-tight mb-6 text-custom-main">
+                                    Agenda Interactiva: Tus clientes reservan, tú solo disparas.
+                                </h2>
+                                <p class="text-base sm:text-lg text-custom-muted leading-relaxed">
+                                    Elimina el caos de WhatsApp y los mensajes perdidos. Integramos un calendario inteligente donde tus clientes nacionales o extranjeros pueden ver tus días libres, seleccionar un paquete y reservar su sesión al instante.
+                                </p>
+                            </div>
+
+                            <!-- Right Column (Visual UI Mockup) -->
+                            <div class="flex justify-center md:justify-end">
+                                <div class="bg-custom-card border border-custom/20 rounded-lg p-6 shadow-2xl relative w-full max-w-sm">
+                                    <!-- Mockup Header -->
+                                    <div class="flex justify-between items-center mb-6">
+                                        <button class="text-custom-muted hover:text-custom-main">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+                                        </button>
+                                        <h4 class="text-base sm:text-lg font-semibold text-custom-main">Noviembre 2026</h4>
+                                        <button class="text-custom-muted hover:text-custom-main">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                                        </button>
+                                    </div>
+
+                                    <!-- Calendar Grid -->
+                                    <div class="grid grid-cols-7 gap-2 sm:gap-3 text-center text-xs sm:text-sm mb-6">
+                                        <span class="text-custom-muted">Lun</span>
+                                        <span class="text-custom-muted">Mar</span>
+                                        <span class="text-custom-muted">Mié</span>
+                                        <span class="text-custom-muted">Jue</span>
+                                        <span class="text-custom-muted">Vie</span>
+                                        <span class="text-custom-muted">Sáb</span>
+                                        <span class="text-custom-muted">Dom</span>
+                                        
+                                        <!-- Placeholder days -->
+                                        <span class="text-custom-muted/50 w-8 h-8 flex items-center justify-center mx-auto">29</span>
+                                        <span class="text-custom-muted/50 w-8 h-8 flex items-center justify-center mx-auto">30</span>
+                                        <span class="text-custom-muted/50 w-8 h-8 flex items-center justify-center mx-auto">31</span>
+                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">1</span>
+                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">2</span>
+                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">3</span>
+                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">4</span>
+                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">5</span>
+                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">6</span>
+                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">7</span>
+                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">8</span>
+                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">9</span>
+                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">10</span>
+                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">11</span>
+                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">12</span>
+                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">13</span>
+                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">14</span>
+                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">15</span>
+                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">16</span>
+                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">17</span>
+                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">18</span>
+                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">19</span>
+                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">20</span>
+                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">21</span>
+                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">22</span>
+                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">23</span>
+                                        <span class="calendar-day calendar-day-active bg-custom-accent text-black font-bold cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">24</span>
+                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">25</span>
+                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">26</span>
+                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">27</span>
+                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">28</span>
+                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">29</span>
+                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">30</span>
+                                    </div>
+
+                                    <!-- Time Slot -->
+                                    <div class="mb-6 text-center">
+                                        <span class="inline-block bg-custom-main text-custom-accent px-4 py-2 rounded-full text-sm font-medium border border-custom-accent/20">
+                                            10:00 AM - 12:00 PM
+                                        </span>
+                                    </div>
+
+                                    <!-- CTA Button -->
+                                    <button class="w-full py-3 bg-[#C9A96E] text-black font-bold rounded-md shadow-md hover:bg-opacity-90 transition-colors">
+                                        Confirmar Reserva
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div id="pane-corporativo" class="hidden">
+                    <!-- Technical Profile Section -->
+                    <section class="max-w-6xl mx-auto px-6 py-12">
+                        <!-- Title -->
+                        <h2 class="text-3xl md:text-4xl font-bold text-custom-main mb-8" data-i18n="corp-title"></h2>
+                        <p class="text-lg text-custom-muted mb-12" data-i18n="corp-subtitle"></p>
+
+                        <!-- AIDA Intro Block -->
+                        <div class="text-center max-w-4xl mx-auto mb-16 pt-10 animate-fade-in-up">
+                            <div class="inline-flex items-center px-4 py-1.5 rounded-lg border border-custom-accent/30 bg-custom-accent/5 text-[9px] font-bold tracking-widest text-custom-accent uppercase mb-6" data-i18n="corp-demo-badge">
+                                DEMO DE PERFIL EJECUTIVO B2B
+                            </div>
+                            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tighter mb-4 text-custom-main leading-tight" data-i18n="corp-demo-title">
+                                Tu currículum en PDF te hace ver barato. Tu <span class='text-custom-accent'>Dossier Interactivo</span> te hace ver indispensable.
+                            </h2>
+                            <p class="text-lg sm:text-xl text-custom-muted max-w-2xl mx-auto mb-12 leading-relaxed" data-i18n="corp-demo-desc">
+                                El 90% de los profesionales técnicos de alta cualificación en Cuba compiten enviando un Word plano o un PDF aburrido por correo. Si quieres cerrar contratos internacionales, licitaciones con hoteles o consultorías en divisas, necesitas demostrar autoridad antes de que te entrevisten.
+                            </p>
+                        </div>
+
+                        <!-- Export CV Button -->
+                        <div class="flex justify-center sm:justify-end">
+                            <button onclick="window.print()" class="no-print inline-flex items-center justify-center px-6 py-3.5 bg-custom-accent hover:bg-custom-accent-hover text-black font-bold uppercase text-xs tracking-wider rounded-lg shadow-md transition-all duration-300 mb-8 w-full sm:w-auto">
+                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                </svg>
+                                EXPORTAR CV PROFESIONAL (PDF)
+                            </button>
+                        </div>
+
+                        <!-- Case Studies Grid -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 pt-10">
+                            <!-- Card 1 -->
+                            <div class="bg-custom-card border border-custom/10 p-8 rounded-lg">
+                                <h3 class="text-xl font-semibold text-custom-main mb-4" data-i18n="case1-title">Automatización de Sistema de Climatización Industrial</h3>
+                                <p class="text-custom-accent font-bold mb-4" data-i18n="case1-metric">-40% Consumo Energético | 0% Paradas Críticas</p>
+                                <p class="text-custom-muted" data-i18n="case1-desc">Problema: El hotel colapsaba por picos de consumo y fallos en las manejadoras. Solución: Rediseño del sistema eléctrico de control y parametrización de variables automatizadas. Resultado: Ahorro inmediato en la factura eléctrica y control operativo 24/7.</p>
+                            </div>
+                            <!-- Card 2 -->
+                            <div class="bg-custom-card border border-custom/10 p-8 rounded-lg">
+                                <h3 class="text-xl font-semibold text-custom-main mb-4" data-i18n="case2-title">Implementación de Sistema de Control de Inventarios Mipyme</h3>
+                                <p class="text-custom-accent font-bold mb-4" data-i18n="case2-metric">100% Control de Fichas de Costo | Cero Fugas de Capital</p>
+                                <p class="text-custom-muted" data-i18n="case2-desc">Problema: Descontrol operativo en almacenes y pérdida de margen comercial en restaurante de alto volumen. Solución: Integración de sistema de gestión Odoo y Axispos a la contabilidad local. Resultado: Auditoría interna automatizada y optimización del flujo de caja.</p>
+                            </div>
+                        </div>
+
+                        <!-- Skills Matrix -->
+                        <p class="text-xs sm:text-sm text-custom-muted italic mb-6" data-i18n="skills-seo-desc">El motor de búsqueda de Google y LinkedIn indexará estas etiquetas de forma semántica, permitiendo que reclutadores de Miami o Europa te localicen por tus habilidades exactas sin que tengas que pagar publicidad.</p>
+                        <h3 class="text-2xl font-bold text-custom-main mb-6" data-i18n="skills-title"></h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <!-- Frontend -->
+                            <div>
+                                <h4 class="text-lg font-semibold text-custom-main mb-2">Frontend</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-[#1E1E2A] text-[#C9A96E] border border-custom-accent/20 rounded-[8px] px-2 py-1 text-sm">HTML5</span>
+                                    <span class="bg-[#1E1E2A] text-[#C9A96E] border border-custom-accent/20 rounded-[8px] px-2 py-1 text-sm">Tailwind CSS</span>
+                                    <span class="bg-[#1E1E2A] text-[#C9A96E] border border-custom-accent/20 rounded-[8px] px-2 py-1 text-sm">Vanilla JS</span>
+                                    <span class="bg-[#1E1E2A] text-[#C9A96E] border border-custom-accent/20 rounded-[8px] px-2 py-1 text-sm">CorelDRAW vectoring</span>
+                                </div>
+                            </div>
+                            <!-- Backend -->
+                            <div>
+                                <h4 class="text-lg font-semibold text-custom-main mb-2">Backend</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-[#1E1E2A] text-[#C9A96E] border border-custom-accent/20 rounded-[8px] px-2 py-1 text-sm">Node.js</span>
+                                    <span class="bg-[#1E1E2A] text-[#C9A96E] border border-custom-accent/20 rounded-[8px] px-2 py-1 text-sm">API REST</span>
+                                    <span class="bg-[#1E1E2A] text-[#C9A96E] border border-custom-accent/20 rounded-[8px] px-2 py-1 text-sm">SQL/NoSQL</span>
+                                    <span class="bg-[#1E1E2A] text-[#C9A96E] border border-custom-accent/20 rounded-[8px] px-2 py-1 text-sm">Git</span>
+                                </div>
+                            </div>
+                            <!-- Business & Finance -->
+                            <div>
+                                <h4 class="text-lg font-semibold text-custom-main mb-2">Business & Finance</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-[#1E1E2A] text-[#C9A96E] border border-custom-accent/20 rounded-[8px] px-2 py-1 text-sm">ERP Odoo</span>
+                                    <span class="bg-[#1E1E2A] text-[#C9A96E] border border-custom-accent/20 rounded-[8px] px-2 py-1 text-sm">Cost control</span>
+                                    <span class="bg-[#1E1E2A] text-[#C9A96E] border border-custom-accent/20 rounded-[8px] px-2 py-1 text-sm">Financial Auditing</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Reserva una Sesión Técnica Section -->
+                        <section class="py-16 px-6 md:px-12 rounded-2xl bg-custom-card/50 border border-custom/10 bg-pattern-nodes relative overflow-hidden mt-24 mb-16 shadow-xl">
+                            <!-- Sutil halo de luz de fondo -->
+                            <div class="absolute inset-0 pointer-events-none opacity-20 dark:opacity-10">
+                                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-gradient-to-r from-custom-accent/20 to-transparent blur-3xl rounded-full"></div>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
+                                <!-- Left Column (B2B Copy) -->
+                                <div class="text-center md:text-left">
+                                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight leading-tight mb-6 text-custom-main">
+                                        Reserva una Sesión Técnica
+                                    </h2>
+                                    <p class="text-base sm:text-lg text-custom-muted leading-relaxed">
+                                        Agenda una consultoría de 15 minutos de forma gratuita en mi calendario para analizar la arquitectura técnica de tu proyecto y evaluar la viabilidad del desarrollo.
+                                    </p>
+                                </div>
+
+                                <!-- Right Column (Interactive Calendar Mockup) -->
+                                <div class="flex justify-center md:justify-end">
+                                    <div class="bg-custom-card border border-custom/20 rounded-lg p-6 shadow-2xl relative w-full max-w-sm">
+                                        <!-- Mockup Header -->
+                                        <div class="flex justify-between items-center mb-6">
+                                            <button class="text-custom-muted hover:text-custom-main">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+                                            </button>
+                                            <h4 class="text-base sm:text-lg font-semibold text-custom-main">Noviembre 2026</h4>
+                                            <button class="text-custom-muted hover:text-custom-main">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                                            </button>
+                                        </div>
+
+                                        <!-- Calendar Grid -->
+                                        <div class="grid grid-cols-7 gap-2 sm:gap-3 text-center text-xs sm:text-sm mb-6">
+                                            <span class="text-custom-muted">Lun</span>
+                                            <span class="text-custom-muted">Mar</span>
+                                            <span class="text-custom-muted">Mié</span>
+                                            <span class="text-custom-muted">Jue</span>
+                                            <span class="text-custom-muted">Vie</span>
+                                            <span class="text-custom-muted">Sáb</span>
+                                            <span class="text-custom-muted">Dom</span>
+                                            
+                                            <!-- Placeholder days -->
+                                            <span class="text-custom-muted/50 w-8 h-8 flex items-center justify-center mx-auto">29</span>
+                                            <span class="text-custom-muted/50 w-8 h-8 flex items-center justify-center mx-auto">30</span>
+                                            <span class="text-custom-muted/50 w-8 h-8 flex items-center justify-center mx-auto">31</span>
+                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">1</span>
+                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">2</span>
+                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">3</span>
+                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">4</span>
+                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">5</span>
+                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">6</span>
+                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">7</span>
+                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">8</span>
+                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">9</span>
+                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">10</span>
+                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">11</span>
+                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">12</span>
+                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">13</span>
+                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">14</span>
+                                            <span class="calendar-day-tech calendar-day-tech-active bg-custom-accent text-black font-bold cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">15</span>
+                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">16</span>
+                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">17</span>
+                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">18</span>
+                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">19</span>
+                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">20</span>
+                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">21</span>
+                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">22</span>
+                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">23</span>
+                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">24</span>
+                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">25</span>
+                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">26</span>
+                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">27</span>
+                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">28</span>
+                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">29</span>
+                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">30</span>
+                                        </div>
+
+                                        <!-- Time Slot -->
+                                        <div class="mb-6 text-center">
+                                            <span class="inline-block bg-custom-main text-custom-accent px-4 py-2 rounded-full text-sm font-medium border border-custom-accent/20">
+                                                10:00 AM - 12:00 PM
+                                            </span>
+                                        </div>
+
+                                        <!-- CTA Button -->
+                                        <button class="w-full py-3 bg-[#C9A96E] text-black font-bold rounded-md shadow-md hover:bg-opacity-90 transition-colors">
+                                            Confirmar Reserva
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-[#111118] border-t border-custom/10 py-12 px-6 relative z-10 transition-colors duration-300">
+        <!-- Main Footer Grid (12 Columns on Desktop) -->
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+            
+            <!-- Column 1: Logo & Tagline (Takes 3/12 cols) -->
+            <div class="lg:col-span-3 flex flex-col items-center lg:items-start space-y-4 text-center lg:text-left">
+                <a href="index.html" class="flex items-center space-x-2 group">
+                    <img src="assets/isotype-gold.svg" class="w-8 h-8 rounded-lg shadow-md group-hover:scale-105 transition-transform duration-300" alt="Trazio Isotype">
+                    <img src="assets/logo-gold.svg" class="logo-gold h-7 w-auto transition-all duration-300" alt="Trazio Studio Logo">
+                    <img src="assets/logo-dark.svg" class="logo-dark h-7 w-auto transition-all duration-300" alt="Trazio Studio Logo">
+                </a>
+                <p class="text-custom-muted leading-relaxed text-sm max-w-xs" data-i18n="footer-tagline">Trazamos herramientas web de alta velocidad para optimizar tus ventas.</p>
+            </div>
+
+            <!-- Column 2: Quick Links (Takes 2/12 cols) -->
+            <div class="lg:col-span-2 flex flex-col items-center lg:items-start text-center lg:text-left">
+                <h3 class="text-xs font-semibold uppercase tracking-widest text-custom-main mb-4" data-i18n="footer-quick-links">Enlaces Rápidos</h3>
+                <ul class="space-y-2.5 text-sm">
+                    <li><a href="portafolio-creativo.html" class="text-custom-muted hover:text-custom-accent transition-colors duration-300 nav-link-premium inline-block" data-i18n="nav-portfolio">Portafolios</a></li>
+                    <li><a href="catalogo-pedidos.html" class="text-custom-muted hover:text-custom-accent transition-colors duration-300 nav-link-premium inline-block" data-i18n="nav-catalogs">Catálogos</a></li>
+                    <li><a href="identidad-corporativa.html" class="text-custom-muted hover:text-custom-accent transition-colors duration-300 nav-link-premium inline-block" data-i18n="nav-corporate">Empresas</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Contact & Socials (Takes 2/12 cols) -->
+            <div class="lg:col-span-2 flex flex-col items-center lg:items-start text-center lg:text-left">
+                <h3 class="text-xs font-semibold uppercase tracking-widest text-custom-main mb-4" data-i18n="footer-contact">Contacto</h3>
+                <ul class="space-y-3.5 text-sm w-full">
+                    <li>
+                        <a href="https://wa.me/5350000000?text=Hola%20Trazio%20Studio,%20quiero%20iniciar%20un%20proyecto" target="_blank" rel="noopener noreferrer" class="text-custom-muted hover:text-custom-accent transition-all duration-300 flex items-center justify-center lg:justify-start group gap-2.5">
+                            <span class="p-1.5 rounded-lg bg-custom-card border border-custom/10 text-custom-accent group-hover:border-custom-accent/30 transition-colors">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2C7.314 2 3.407 5.864 3.407 10.546c0 1.408.349 2.8.956 4.028L2 22l7.666-2.52c1.176.666 2.51.999 3.374.999h.001c4.726 0 8.633-3.863 8.633-8.545C20.674 5.864 16.766 2 12.04 2zM17.152 15.632c-.234-.116-.967-.474-1.117-.528-.15-.054-.26-.054-.37.054-.11.108-.424.528-.548.665-.124.136-.248.15-.457.054-.93-.418-1.54-1.01-2.175-1.928-.636-.92-1.066-1.85-1.423-2.457-.357-.607-.037-.936.27-.99.27-.054.597-.13.864-.424.267-.294.357-.59.5-.784.144-.196.073-.37-.036-.59-.11-.22-.968-2.324-1.325-3.18-.357-.855-.72-.74-1.002-.756-.279-.016-.598-.016-.917-.016-.319 0-.83.108-1.26.54-.43.432-1.64 1.586-1.64 3.868 0 2.28 1.678 4.475 1.916 4.788.238.313 3.303 5.034 8.04 7.025 1.18.497 2.11.79 2.846.99.736.199 1.407.153 1.93-.066.523-.22 1.637-.675 1.87-.99.234-.314.234-.582.162-.702-.072-.119-.267-.183-.557-.32z"/></svg>
+                            </span>
+                            WhatsApp
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:contacto@traziostudio.com" class="text-custom-muted hover:text-custom-accent transition-all duration-300 flex items-center justify-center lg:justify-start group gap-2.5">
+                            <span class="p-1.5 rounded-lg bg-custom-card border border-custom/10 text-custom-accent group-hover:border-custom-accent/30 transition-colors">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            </span>
+                            Email
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://facebook.com/traziostudio" target="_blank" rel="noopener noreferrer" class="text-custom-muted hover:text-custom-accent transition-all duration-300 flex items-center justify-center lg:justify-start group gap-2.5">
+                            <span class="p-1.5 rounded-lg bg-custom-card border border-custom/10 text-custom-accent group-hover:border-custom-accent/30 transition-colors">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                            </span>
+                            Facebook
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Column 4: The Unified B2B CTA Card (Takes 5/12 cols) -->
+            <div class="lg:col-span-5 w-full bg-custom-card/50 border border-custom-accent/20 p-6 rounded-lg text-left space-y-4">
+                <h3 class="text-sm font-bold text-custom-main uppercase leading-tight" data-i18n="footer-aida-text">
+                    ¿Listo para hacer crecer tu negocio?
+                </h3>
+                <p class="text-xs text-custom-muted leading-relaxed" data-i18n="footer-aida-desc">
+                    Escríbenos y cuéntanos tu idea o mándanos tu lista de precios por WhatsApp. Te preparamos una demostración interactiva totalmente gratis y adaptada a tu sector en menos de 24 horas.
+                </p>
+                <a href="https://wa.me/5350000000?text=Hola%20Trazio%20Studio,%20quiero%20solicitar%20una%20demostración%20gratuita%20para%20mi%20negocio." target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center px-6 py-3.5 bg-custom-accent hover:bg-custom-accent-hover text-black font-bold uppercase text-[11px] tracking-wider transition-all duration-300">
+                    SOLICITAR DEMOSTRACIÓN GRATIS
+                </a>
+                <p class="text-[10px] sm:text-xs text-custom-muted leading-relaxed" data-i18n="footer-microcopy">
+                    <span class="text-custom-accent">✔</span> Sin costo técnico, compromisos ni contratos de mantenimiento.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- Bottom Copyright Bar -->
+        <div class="max-w-7xl mx-auto border-t border-custom/10 mt-10 pt-6 flex flex-col items-center text-center text-[11px] text-custom-muted/80 space-y-2">
+            <p>&copy; <span id="current-year"></span> Trazio Studio. <span data-i18n="all-rights-reserved">All rights reserved.</span></p>
+            <p class="font-medium">Designed with precision by Trazio Studio</p>
+        </div>
+    </footer>
+
+    <script src="./app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const viewport = document.getElementById('portfolio-viewport');
+            const paneCreativo = document.getElementById('pane-creativo');
+            const paneCorporativo = document.getElementById('pane-corporativo');
+            const btnCreativoDesktop = document.getElementById('btn-profile-creativo');
+            const btnCorporativoDesktop = document.getElementById('btn-profile-corporativo');
+            const btnCreativoMobile = document.getElementById('btn-profile-creativo-mobile');
+            const btnCorporativoMobile = document.getElementById('btn-profile-corporativo-mobile');
+
+            const activeBtnClass = 'bg-custom-accent text-black font-bold shadow-sm rounded-lg';
+            const inactiveBtnClass = 'bg-transparent text-custom-muted hover:text-custom-main font-semibold rounded-lg';
+            const mobileActiveBtnClass = 'bg-custom-accent text-black font-bold shadow-sm rounded-lg';
+            const mobileInactiveBtnClass = 'bg-transparent text-custom-muted hover:text-custom-main font-semibold rounded-lg';
+
+            // Helper functions to safely add/remove classes containing spaces
+            function addClasses(element, classesString) {
+                const classes = classesString.split(' ').filter(c => c.trim() !== '');
+                element.classList.add(...classes);
+            }
+
+            function removeClasses(element, classesString) {
+                const classes = classesString.split(' ').filter(c => c.trim() !== '');
+                element.classList.remove(...classes);
+            }
+
+            function setProfile(profile) {
+                // Apply fade-out effect
+                viewport.classList.add('opacity-0', 'translate-y-4');
+                viewport.classList.remove('opacity-100', 'translate-y-0');
+
+                setTimeout(() => {
+                     if (profile === 'creativo') {
+                         paneCreativo.classList.remove('hidden');
+                         paneCreativo.classList.add('block');
+                         paneCorporativo.classList.remove('block');
+                         paneCorporativo.classList.add('hidden');
+
+                         // Update desktop buttons
+                         addClasses(btnCreativoDesktop, activeBtnClass);
+                         removeClasses(btnCreativoDesktop, inactiveBtnClass);
+                         addClasses(btnCorporativoDesktop, inactiveBtnClass);
+                         removeClasses(btnCorporativoDesktop, activeBtnClass);
+
+                         // Update mobile buttons
+                         addClasses(btnCreativoMobile, mobileActiveBtnClass);
+                         removeClasses(btnCreativoMobile, mobileInactiveBtnClass);
+                         addClasses(btnCorporativoMobile, mobileInactiveBtnClass);
+                         removeClasses(btnCorporativoMobile, mobileActiveBtnClass);
+
+                     } else if (profile === 'corporativo') {
+                         paneCreativo.classList.remove('block');
+                         paneCreativo.classList.add('hidden');
+                         paneCorporativo.classList.remove('hidden');
+                         paneCorporativo.classList.add('block');
+
+                         // Update desktop buttons
+                         addClasses(btnCreativoDesktop, inactiveBtnClass);
+                         removeClasses(btnCreativoDesktop, activeBtnClass);
+                         addClasses(btnCorporativoDesktop, activeBtnClass);
+                         removeClasses(btnCorporativoDesktop, inactiveBtnClass);
+
+                         // Update mobile buttons
+                         addClasses(btnCreativoMobile, mobileInactiveBtnClass);
+                         removeClasses(btnCreativoMobile, mobileActiveBtnClass);
+                         addClasses(btnCorporativoMobile, mobileActiveBtnClass);
+                         removeClasses(btnCorporativoMobile, mobileInactiveBtnClass);
+                     }
+
+                     // Fade back in
+                     viewport.classList.remove('opacity-0', 'translate-y-4');
+                     viewport.classList.add('opacity-100', 'translate-y-0');
+                 }, 150); // Matches the CSS transition duration
+             }
+
+            // Initial state
+            setProfile('creativo');
+
+            btnCreativoDesktop.addEventListener('click', () => setProfile('creativo'));
+            btnCorporativoDesktop.addEventListener('click', () => setProfile('corporativo'));
+            btnCreativoMobile.addEventListener('click', () => setProfile('creativo'));
+            btnCorporativoMobile.addEventListener('click', () => setProfile('corporativo'));
+
+            // Global Preferences Sync (Language and Theme)
+            // This assumes app.js handles the initial setup and provides functions/events for changes.
+            // For this skeleton, we'll just read localStorage on load.
+            const syncPreferences = () => {
+                const currentLang = localStorage.getItem('language') || 'es'; // Default to 'es'
+                document.documentElement.lang = currentLang;
+                document.getElementById('current-lang-display').textContent = currentLang.toUpperCase();
+
+                const currentTheme = localStorage.getItem('theme') || 'dark'; // Default to 'dark'
+                if (currentTheme === 'light') {
+                    document.documentElement.classList.add('light-theme');
+                    document.getElementById('theme-icon-moon').classList.add('hidden');
+                    document.getElementById('theme-icon-sun').classList.remove('hidden');
+                } else {
+                    document.documentElement.classList.remove('light-theme');
+                    document.getElementById('theme-icon-moon').classList.remove('hidden');
+                    document.getElementById('theme-icon-sun').classList.add('hidden');
+                }
+            };
+
+            syncPreferences(); // Apply on initial load
+
+            // Listen for custom events or mutations if app.js modifies these directly
+            // For a simple setup, user would refresh or app.js would handle reactivity.
+            // A more robust solution might involve observing localStorage or custom events from app.js.
+
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+            // Interactive Calendar Date Selection Effect
+            const calendarDays = document.querySelectorAll('.calendar-day');
+            if (calendarDays && calendarDays.length > 0) {
+                calendarDays.forEach(day => {
+                    day.addEventListener('click', () => {
+                        const activeDay = document.querySelector('.calendar-day-active');
+                        if (activeDay) {
+                            activeDay.classList.remove('bg-custom-accent', 'text-black', 'font-bold', 'calendar-day-active');
+                        }
+                        day.classList.add('bg-custom-accent', 'text-black', 'font-bold', 'calendar-day-active');
+                    });
+                });
+            }
+
+            // Technical Calendar Date Selection Effect
+            const techDays = document.querySelectorAll('.calendar-day-tech');
+            if (techDays && techDays.length > 0) {
+                techDays.forEach(day => {
+                    day.addEventListener('click', () => {
+                        const activeTechDay = document.querySelector('.calendar-day-tech-active');
+                        if (activeTechDay) {
+                            activeTechDay.classList.remove('bg-custom-accent', 'text-black', 'font-bold', 'calendar-day-tech-active');
+                        }
+                        day.classList.add('bg-custom-accent', 'text-black', 'font-bold', 'calendar-day-tech-active');
+                    });
+                });
+            }
+        });
+
+        // Dynamic Dictionary Translations
+        const translations = {
+            "es": {
+                "nav-portfolio": "Portafolios",
+                "nav-catalogs": "Catálogos",
+                "nav-corporate": "Empresas",
+                "nav-cta": "Iniciar Proyecto",
+                "port-hero-title": "Tu Talento merece un <span class=\"text-custom-accent\">Escenario Internacional</span>",
+                "port-hero-subtitle": "Deja de competir en el ruido de los algoritmos de redes sociales y posiciona tu marca personal con una herramienta web de élite.",
+                "demo-badge-note": "DEMOSTRACIÓN EN VIVO - TU WEB SERÁ 100% PERSONALIZADA A TU ESTILO",
+                "demo-badge-title": "Tu trabajo merece verse como en una galería de arte",
+                "demo-badge-subtitle": "Diseñado para fotógrafos, modelos, maquilladores, diseñadores, arquitectos y cualquier creador que necesite que su trabajo impacte a primera vista. Olvídate de los límites de Instagram.",
+                "demo-rates-note": "TARIFAS DE DEMOSTRACIÓN - PRECIOS REALES SEGÚN PROYECTO",
+                "btn-profile-creativo": "Perfil Visual / Artístico",
+                "btn-profile-corporativo": "Perfil Técnico / Consultor",
+                "corp-title": "Perfil Técnico / Consultor",
+                "corp-subtitle": "Demuestra tu autoridad técnica con un dossier interactivo que convierte visitas en contratos.",
+                "case-title": "Casos de Estudio",
+                "case-problem": "Problema",
+                "case-solution": "Solución",
+                "case-roi": "ROI",
+                "skills-title": "Habilidades Especializadas",
+                "footer-tagline": "Trazamos herramientas web de alta velocidad para optimizar tus ventas.",
+                "footer-quick-links": "Enlaces Rápidos",
+                "footer-contact": "Contacto",
+                "footer-aida-text": "¿Listo para hacer crecer tu negocio?",
+                "footer-aida-desc": "Escríbenos y cuéntanos tu idea o mándanos tu lista de precios por WhatsApp. Te preparamos una demostración interactiva totalmente gratis y adaptada a tu sector en menos de 24 horas.",
+                "footer-microcopy": "<span class=\"text-custom-accent\">✔</span> Sin costo técnico, compromisos ni contratos de mantenimiento.",
+                "all-rights-reserved": "Todos los derechos reservados.",
+                "corp-demo-badge": "DEMO DE PERFIL EJECUTIVO B2B",
+                "corp-demo-title": "Tu currículum en PDF te hace ver barato. Tu <span class='text-custom-accent'>Dossier Interactivo</span> te hace ver indispensable.",
+                "corp-demo-desc": "El 90% de los profesionales técnicos de alta cualificación en Cuba compiten enviando un Word plano o un PDF aburrido por correo. Si quieres cerrar contratos internacionales, licitaciones con hoteles o consultorías en divisas, necesitas demostrar autoridad antes de que te entrevisten.",
+                "case1-title": "Automatización de Sistema de Climatización Industrial",
+                "case1-metric": "⚡ -40% Consumo Energético | 0% Paradas Críticas",
+                "case1-desc": "Problema: El hotel colapsaba por picos de consumo y fallos en las manejadoras. Solución: Rediseño del sistema eléctrico de control y parametrización de variables automatizadas. Resultado: Ahorro inmediato en la factura eléctrica y control operativo 24/7.",
+                "case2-title": "Implementación de Sistema de Control de Inventarios Mipyme",
+                "case2-metric": "📈 100% Control de Fichas de Costo | Cero Fugas de Capital",
+                "case2-desc": "Problema: Descontrol operativo en almacenes y pérdida de margen comercial en restaurante de alto volumen. Solución: Integración de sistema de gestión Odoo y Axispos a la contabilidad local. Resultado: Auditoría interna automatizada y optimización del flujo de caja.",
+                "skills-seo-desc": "El motor de búsqueda de Google y LinkedIn indexará estas etiquetas de forma semántica, permitiendo que reclutadores de Miami o Europa te localicen por tus habilidades exactas sin que tengas que pagar publicidad."
+            },
+            "en": {
+                "nav-portfolio": "Portfolios",
+                "nav-catalogs": "Catalogs",
+                "nav-corporate": "Corporate",
+                "nav-cta": "Start Project",
+                "port-hero-title": "Your Talent deserves an <span class=\"text-custom-accent\">International Stage</span>",
+                "port-hero-subtitle": "Stop competing in the noise of social media algorithms and position your personal brand with an elite web tool.",
+                "demo-badge-note": "LIVE DEMO - YOUR WEBSITE WILL BE 100% CUSTOMIZED TO YOUR STYLE",
+                "demo-badge-title": "Your work deserves to be seen like in an art gallery",
+                "demo-badge-subtitle": "Designed for photographers, models, makeup artists, designers, architects, and any creator who needs their work to make an immediate impact. Forget the limits of Instagram.",
+                "demo-rates-note": "DEMONSTRATION RATES - REAL PRICES ACCORDING TO PROJECT",
+                "btn-profile-creativo": "Visual / Artistic Profile",
+                "btn-profile-corporativo": "Technical / Consultant Profile",
+                "corp-title": "Technical / Consultant Profile",
+                "corp-subtitle": "Demonstrate your technical authority with an interactive dossier that converts visits into contracts.",
+                "case-title": "Case Studies",
+                "case-problem": "Problem",
+                "case-solution": "Solution",
+                "case-roi": "ROI",
+                "skills-title": "Specialized Skills",
+                "footer-tagline": "We design high-speed web tools to optimize your sales.",
+                "footer-quick-links": "Quick Links",
+                "footer-contact": "Contact",
+                "footer-aida-text": "Ready to grow your business?",
+                "footer-aida-desc": "Write to us and tell us your idea or send us your price list via WhatsApp. We will prepare a completely free interactive demonstration tailored to your sector in less than 24 hours.",
+                "footer-microcopy": "<span class=\"text-custom-accent\">✔</span> No technical cost, commitments, or maintenance contracts.",
+                "all-rights-reserved": "All rights reserved.",
+                "corp-demo-badge": "B2B EXECUTIVE PROFILE DEMO",
+                "corp-demo-title": "Your PDF resume makes you look cheap. Your <span class='text-custom-accent'>Interactive Dossier</span> makes you indispensable.",
+                "corp-demo-desc": "90% of highly qualified technical professionals in Cuba compete by sending a plain Word document or a boring PDF by email. If you want to close international contracts, tenders with hotels, or consulting in foreign currency, you need to demonstrate authority before you are interviewed.",
+                "case1-title": "Industrial HVAC System Automation",
+                "case1-metric": "⚡ -40% Energy Consumption | 0% Critical Downtime",
+                "case1-desc": "Problem: The hotel collapsed due to consumption peaks and air handler failures. Solution: Redesign of the electrical control system and parameterization of automated variables. Result: Immediate savings on the electricity bill and 24/7 operational control.",
+                "case2-title": "SME Inventory Control System Implementation",
+                "case2-metric": "📈 100% Cost Sheet Control | Zero Capital Leaks",
+                "case2-desc": "Problem: Operational disarray in warehouses and loss of commercial margin in high-volume restaurant. Solution: Integration of Odoo and Axispos management system with local accounting. Result: Automated internal audit and cash flow optimization.",
+                "skills-seo-desc": "Google and LinkedIn's search engine will semantically index these tags, allowing recruiters from Miami or Europe to locate you by your exact skills without you having to pay for advertising."
+            }
+        };
+
+        function applyTranslations() {
+            const currentLang = localStorage.getItem('language') || 'es';
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[currentLang] && translations[currentLang][key]) {
+                    element.innerHTML = translations[currentLang][key];
+                }
+            });
+        }
+
+        // Override the language toggle to also apply new translations
+        const originalLanguageToggle = document.getElementById('language-toggle');
+        if (originalLanguageToggle) {
+            originalLanguageToggle.removeEventListener('click', window.toggleLanguage); // Remove old listener if exists
+            originalLanguageToggle.addEventListener('click', () => {
+                let currentLang = localStorage.getItem('language') || 'es';
+                let newLang = currentLang === 'es' ? 'en' : 'es';
+                localStorage.setItem('language', newLang);
+                document.documentElement.lang = newLang;
+                document.getElementById('current-lang-display').textContent = newLang.toUpperCase();
+                applyTranslations(); // Apply new translations
+            });
+        }
+
+        // Initial application of translations
+        applyTranslations();
+    </script>
+</body>
+</html>

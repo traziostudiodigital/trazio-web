@@ -3,7 +3,7 @@
  * -----------
  * Simple offline HTML compiler.
  *
- * It reads the master template located at `plantillas/portafolio.template.html`
+ * It reads the master template located at `plantillas/portafolio-creativo.template.html`
  * and replaces every include comment of the form:
  *   <!-- @@include(componentes/filename.html) -->
  * with the contents of the referenced component file inside the `componentes/`
@@ -11,21 +11,19 @@
  * `portafolio-creativo.html`.
  *
  * The script uses only Node's built‑in `fs` and `path` modules – no external
- * dependencies are required, making it 100 % offline and zero‑dependency.
+ * dependencies are required, making it 100% offline and zero‑dependency.
  */
 
 const fs = require('fs');
 const path = require('path');
 
-// Paths (relative to the project root)
-const TEMPLATE_PATH = path.join(__dirname, 'plantillas', 'portafolio.template.html');
+// Paths (relative to the project root) - CORREGIDO AQUÍ
+const TEMPLATE_PATH = path.join(__dirname, 'plantillas', 'portafolio-creativo.template.html');
 const OUTPUT_PATH = path.join(__dirname, 'portafolio-creativo.html');
 const COMPONENTS_DIR = path.join(__dirname, 'componentes');
 
 /**
  * Reads a file synchronously and returns its content as a string.
- * If the file does not exist, an error is thrown – this makes debugging
- * easier because the script will stop with a clear message.
  */
 function readFileSyncSafe(filePath) {
     return fs.readFileSync(filePath, { encoding: 'utf8' });
@@ -33,9 +31,6 @@ function readFileSyncSafe(filePath) {
 
 /**
  * Replaces all include directives in the supplied HTML string.
- * The directive syntax is exactly:
- *   <!-- @@include(componentes/filename.html) -->
- * The captured group (filename.html) is resolved against the COMPONENTS_DIR.
  */
 function replaceIncludes(html) {
     const includeRegex = /<!--\s*@@include\((componentes\/[^)]+)\)\s*-->/g;
