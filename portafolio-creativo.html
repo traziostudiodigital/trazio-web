@@ -49,55 +49,51 @@
         </div>
     </header>
 
-    <main class="flex-grow">
-        <!-- Hero Section -->
-        <section id="portfolio-hero" class="max-w-4xl mx-auto px-6 py-12 md:py-16 flex flex-col items-center text-center animate-fade-in-up">
-            <img src="assets/logo-gold.svg" class="logo-gold h-14 md:h-16 mx-auto mb-6" alt="Trazio Studio">
-            <img src="assets/logo-dark.svg" class="logo-dark h-14 md:h-16 mx-auto mb-6" alt="Trazio Studio">
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tighter leading-[1.1] mb-6 text-custom-main" data-i18n="port-hero-title">
-                Tu Talento merece un <span class="text-custom-accent">Escenario Internacional</span>
-            </h1>
-            <p class="text-lg sm:text-xl text-custom-muted max-w-2xl mb-12 leading-relaxed" data-i18n="port-hero-subtitle">
-                Deja de competir en el ruido de los algoritmos de redes sociales y posiciona tu marca personal con una herramienta web de élite.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center w-full sm:w-auto">
-                <a href="#portfolio-workspace" class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 text-base font-semibold text-white bg-custom-accent rounded-xl shadow-lg shadow-custom-accent/10 hover:bg-custom-accent-hover hover:-translate-y-1 transition-all duration-300">
-                    Ver Diseños
-                </a>
-                <a href="https://wa.me/5350000000?text=Hola,%20quiero%20diseñar%20mi%20marca" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 text-base font-semibold text-custom-main bg-custom-card border border-custom/20 rounded-xl hover:bg-custom-main hover:border-custom/55 hover:-translate-y-1 transition-all duration-300">
-                    Diseñar mi Marca
-                </a>
-            </div>
-        </section>
+<main class="flex-grow">
+    <section id="portfolio-hero" class="max-w-4xl mx-auto px-6 py-12 md:py-16 flex flex-col items-center text-center animate-fade-in-up">
+    <img src="assets/logo-gold.svg" class="logo-gold h-14 md:h-16 mx-auto mb-6" alt="Trazio Studio">
+    <img src="assets/logo-dark.svg" class="logo-dark h-14 md:h-16 mx-auto mb-6" alt="Trazio Studio">
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tighter leading-[1.1] mb-6 text-custom-main" data-i18n="port-hero-title">
+        Tu Talento merece un <span class="text-custom-accent">Escenario Internacional</span>
+    </h1>
+    <p class="text-lg sm:text-xl text-custom-muted max-w-2xl mb-12 leading-relaxed" data-i18n="port-hero-subtitle">
+        Deja de competir en el ruido de los algoritmos de redes sociales y posiciona tu marca personal con una herramienta web de élite.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center w-full sm:w-auto">
+        <a href="#portfolio-workspace" class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 text-base font-semibold text-white bg-custom-accent rounded-xl shadow-lg shadow-custom-accent/10 hover:bg-custom-accent-hover hover:-translate-y-1 transition-all duration-300">
+            Ver Diseños
+        </a>
+        <a href="https://wa.me/5350000000?text=Hola,%20quiero%20diseñar%20mi%20marca" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 text-base font-semibold text-custom-main bg-custom-card border border-custom/20 rounded-xl hover:bg-custom-main hover:border-custom/55 hover:-translate-y-1 transition-all duration-300">
+            Diseñar mi Marca
+        </a>
+    </div>
+</section>
 
-        <!-- Doble Espejo Selector UI -->
-        <section id="portfolio-workspace" class="py-12 md:py-16 px-6 relative bg-pattern-diagonal border-t border-custom/10">
-            <!-- Gradiente de luz dorado para profundidad tridimensional -->
-            <div class="absolute inset-x-0 top-0 h-[500px] pointer-events-none bg-gradient-to-b from-custom-accent/5 to-transparent blur-3xl"></div>
-            
-            <div class="hidden sm:flex justify-center mb-12 relative z-40 sticky top-20 shadow-xl backdrop-blur-xl bg-custom-card/80 p-1.5 flex space-x-1 border border-custom/20 rounded-[10px] max-w-sm mx-auto">
-                <div class="bg-custom-card/0 p-1.5 flex space-x-1 border border-custom/20 rounded-[10px] shadow-lg max-w-sm mx-auto">
-                    <button id="btn-profile-creativo" class="px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 active-profile-btn" data-i18n="btn-profile-creativo">
-                        Perfil Visual / Artístico
-                    </button>
-                    <button id="btn-profile-corporativo" class="px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 inactive-profile-btn" data-i18n="btn-profile-corporativo">
-                        Perfil Técnico / Consultor
-                    </button>
-                </div>
-            </div>
+    <!-- Selector Doble Espejo -->
+    <div class="hidden sm:flex justify-center mb-12 relative z-40 sticky top-20 shadow-xl backdrop-blur-xl bg-custom-card/80 p-1.5 flex space-x-1 border border-custom/20 rounded-[10px] max-w-sm mx-auto">
+        <div class="bg-custom-card/0 p-1.5 flex space-x-1 border border-custom/20 rounded-[10px] shadow-lg max-w-sm mx-auto">
+            <button id="btn-profile-creativo" class="px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 active-profile-btn" data-i18n="btn-profile-creativo">
+                Perfil Visual / Artístico
+            </button>
+            <button id="btn-profile-corporativo" class="px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 inactive-profile-btn" data-i18n="btn-profile-corporativo">
+                Perfil Técnico / Consultor
+            </button>
+        </div>
+    </div>
 
-            <!-- Mobile Sticky Floating Navigation Capsule -->
-            <div class="sm:hidden sticky top-[72px] z-40 bg-custom-card/80 backdrop-blur-xl p-1.5 flex justify-center space-x-1 border border-custom/20 rounded-[10px] shadow-xl w-full max-w-sm mx-auto mb-12" id="mobile-profile-selector">
-                <button id="btn-profile-creativo-mobile" class="px-3 py-1.5 rounded-md text-xs font-semibold transition-all duration-300 active-profile-btn" data-i18n="btn-profile-creativo">
-                    Perfil Visual / Artístico
-                </button>
-                <button id="btn-profile-corporativo-mobile" class="px-3 py-1.5 rounded-md text-xs font-semibold transition-all duration-300 inactive-profile-btn" data-i18n="btn-profile-corporativo">
-                    Perfil Técnico / Consultor
-                </button>
-            </div>
-            <!-- Dynamic Container -->
-            <div id="portfolio-viewport" class="max-w-6xl mx-auto px-6 transition-all duration-300 opacity-100 transform translate-y-0 relative z-10">
-                <div id="pane-creativo" class="block">
+    <!-- Mobile Sticky Floating Navigation Capsule -->
+    <div class="sm:hidden sticky top-[72px] z-40 bg-custom-card/80 backdrop-blur-xl p-1.5 flex justify-center space-x-1 border border-custom/20 rounded-[10px] shadow-xl w-full max-w-sm mx-auto mb-12" id="mobile-profile-selector">
+        <button id="btn-profile-creativo-mobile" class="px-3 py-1.5 rounded-md text-xs font-semibold transition-all duration-300 active-profile-btn" data-i18n="btn-profile-creativo">
+            Perfil Visual / Artístico
+        </button>
+        <button id="btn-profile-corporativo-mobile" class="px-3 py-1.5 rounded-md text-xs font-semibold transition-all duration-300 inactive-profile-btn" data-i18n="btn-profile-corporativo">
+            Perfil Técnico / Consultor
+        </button>
+    </div>
+
+    <!-- Contenedor Dinámico de los Perfiles -->
+    <div id="portfolio-viewport" class="max-w-6xl mx-auto px-6 transition-all duration-300">
+                        <div id="pane-creativo" class="block">
                     <!-- Intro de Nichos e Información de Demo -->
                     <div class="text-center max-w-4xl mx-auto mb-16 pt-10 animate-fade-in-up">
                         <!-- Badge Sutil de Demo (Zero-Friction B2B) -->
@@ -605,343 +601,132 @@
                                         </button>
                                     </div>
                                 </div>
-                            </div>
-                        </section>
-                    </section>
-                </div>
-            </div>
-        </section>
-    </main>
 
-    <!-- Footer -->
-    <footer id="footer" class="bg-[#111118] border-t border-custom/10 py-12 px-6 relative z-10 transition-colors duration-300">
-        <!-- Main Footer Grid (12 Columns on Desktop) -->
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-            
-            <!-- Column 1: Logo & Tagline (Takes 3/12 cols) -->
-            <div class="lg:col-span-3 flex flex-col items-center lg:items-start space-y-4 text-center lg:text-left">
-                <a href="index.html" class="flex items-center space-x-2 group">
-                    <img src="assets/isotype-gold.svg" class="w-8 h-8 rounded-lg shadow-md group-hover:scale-105 transition-transform duration-300" alt="Trazio Isotype">
-                    <img src="assets/logo-gold.svg" class="logo-gold h-7 w-auto transition-all duration-300" alt="Trazio Studio Logo">
-                    <img src="assets/logo-dark.svg" class="logo-dark h-7 w-auto transition-all duration-300" alt="Trazio Studio Logo">
-                </a>
-                <p class="text-custom-muted leading-relaxed text-sm max-w-xs" data-i18n="footer-tagline">Trazamos herramientas web de alta velocidad para optimizar tus ventas.</p>
-            </div>
+        ﻿<div id=" pane-corporativo\ class=\hidden animate-fade-in-up\>
+ <!-- Bloque Introductorio de Autoridad -->
+ <section class=\max-w-4xl mx-auto px-6 py-12 text-center\>
+ <span class=\inline-block px-3 py-1 rounded-full border border-[#C9A96E]/30 text-xs font-bold uppercase tracking-wider text-[#C9A96E] mb-4\>
+ DEMO DE PERFIL EJECUTIVO B2B
+ </span>
+ <h2 class=\text-3xl md:text-5xl font-bold tracking-tight mb-6 text-custom-main\>
+ Tu currículum en PDF te hace ver barato...
+ </h2>
+ <p class=\text-base sm:text-lg text-custom-muted max-w-2xl mx-auto leading-relaxed\>
+ El 90% de los profesionales técnicos de alta cualificación en Cuba compiten enviando un Word plano o un PDF aburrido por correo. Si quieres cerrar contratos internacionales, licitaciones con hoteles o consultorías en divisas, necesitas demostrar autoridad antes de que te entrevisten.
+ </p>
+ </section>
 
-            <!-- Column 2: Quick Links (Takes 2/12 cols) -->
-            <div class="lg:col-span-2 flex flex-col items-center lg:items-start text-center lg:text-left">
-                <h3 class="text-xs font-semibold uppercase tracking-widest text-custom-main mb-4" data-i18n="footer-quick-links">Enlaces Rápidos</h3>
-                <ul class="space-y-2.5 text-sm">
-                    <li><a href="portafolio-creativo.html" class="text-custom-muted hover:text-custom-accent transition-colors duration-300 nav-link-premium inline-block" data-i18n="nav-portfolio">Portafolios</a></li>
-                    <li><a href="catalogo-pedidos.html" class="text-custom-muted hover:text-custom-accent transition-colors duration-300 nav-link-premium inline-block" data-i18n="nav-catalogs">Catálogos</a></li>
-                    <li><a href="identidad-corporativa.html" class="text-custom-muted hover:text-custom-accent transition-colors duration-300 nav-link-premium inline-block" data-i18n="nav-corporate">Empresas</a></li>
-                </ul>
-            </div>
+ <!-- Casos de Éxito de Alto Impacto -->
+ <section class=\max-w-6xl mx-auto px-6 py-8\>
+ <div class=\grid grid-cols-1 md:grid-cols-2 gap-8\>
+ <!-- Caso 1 -->
+ <div class=\bg-custom-card p-8 rounded-lg border border-custom/10 hover:border-[#C9A96E]/30 transition-all duration-300\>
+ <span class=\text-xs font-bold text-[#C9A96E] uppercase tracking-wider\>CASO DE ÉXITO // INGENIERÍA</span>
+ <h3 class=\text-xl font-bold mt-2 mb-4 text-custom-main\>Automatización de Sistema de Climatización Industrial</h3>
+ <div class=\inline-block bg-custom-main px-3 py-1 rounded text-xs font-semibold text-custom-accent mb-4 border border-[#C9A96E]/10\>
+ -40% Consumo Energético | 0% Paradas Críticas
+ </div>
+ <p class=\text-sm text-custom-muted leading-relaxed\>
+ <strong>Problema:</strong> El sistema de climatización de un hotel colapsaba por picos de consumo y fallos en las manejadoras.<br>
+ <strong>Solución:</strong> Rediseño completo del sistema eléctrico de control y automatización de variables en tiempo real.<br>
+ <strong>Resultado:</strong> Ahorro inmediato del 40% en la factura eléctrica del hotel y control operativo 24/7 sin fallos.
+ </p>
+ </div>
+ <!-- Caso 2 -->
+ <div class=\bg-custom-card p-8 rounded-lg border border-custom/10 hover:border-[#C9A96E]/30 transition-all duration-300\>
+ <span class=\text-xs font-bold text-[#C9A96E] uppercase tracking-wider\>CASO DE ÉXITO // ERP & SISTEMAS</span>
+ <h3 class=\text-xl font-bold mt-2 mb-4 text-custom-main\>Implementación de Control de Inventarios Mipyme</h3>
+ <div class=\inline-block bg-custom-main px-3 py-1 rounded text-xs font-semibold text-custom-accent mb-4 border border-[#C9A96E]/10\>
+ 100% Control de Fichas de Costo | Cero Fugas de Capital
+ </div>
+ <p class=\text-sm text-custom-muted leading-relaxed\>
+ <strong>Problema:</strong> Descontrol operativo en almacén principal y pérdida de margen de ganancias en restaurante de alto volumen.<br>
+ <strong>Solución:</strong> Integración del sistema ERP Odoo y Axispos acoplado a la contabilidad y costos locales.<br>
+ <strong>Resultado:</strong> Auditoría interna automatizada y optimización del 100% del flujo de caja.
+ </p>
+ </div>
+ </div>
+ </section>
 
-            <!-- Column 3: Contact & Socials (Takes 2/12 cols) -->
-            <div class="lg:col-span-2 flex flex-col items-center lg:items-start text-center lg:text-left">
-                <h3 class="text-xs font-semibold uppercase tracking-widest text-custom-main mb-4" data-i18n="footer-contact">Contacto</h3>
-                <ul class="space-y-3.5 text-sm w-full">
-                    <li>
-                        <a href="https://wa.me/5350000000?text=Hola%20Trazio%20Studio,%20quiero%20iniciar%20un%20proyecto" target="_blank" rel="noopener noreferrer" class="text-custom-muted hover:text-custom-accent transition-all duration-300 flex items-center justify-center lg:justify-start group gap-2.5">
-                            <span class="p-1.5 rounded-lg bg-custom-card border border-custom/10 text-custom-accent group-hover:border-custom-accent/30 transition-colors">
-                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2C7.314 2 3.407 5.864 3.407 10.546c0 1.408.349 2.8.956 4.028L2 22l7.666-2.52c1.176.666 2.51.999 3.374.999h.001c4.726 0 8.633-3.863 8.633-8.545C20.674 5.864 16.766 2 12.04 2zM17.152 15.632c-.234-.116-.967-.474-1.117-.528-.15-.054-.26-.054-.37.054-.11.108-.424.528-.548.665-.124.136-.248.15-.457.054-.93-.418-1.54-1.01-2.175-1.928-.636-.92-1.066-1.85-1.423-2.457-.357-.607-.037-.936.27-.99.27-.054.597-.13.864-.424.267-.294.357-.59.5-.784.144-.196.073-.37-.036-.59-.11-.22-.968-2.324-1.325-3.18-.357-.855-.72-.74-1.002-.756-.279-.016-.598-.016-.917-.016-.319 0-.83.108-1.26.54-.43.432-1.64 1.586-1.64 3.868 0 2.28 1.678 4.475 1.916 4.788.238.313 3.303 5.034 8.04 7.025 1.18.497 2.11.79 2.846.99.736.199 1.407.153 1.93-.066.523-.22 1.637-.675 1.87-.99.234-.314.234-.582.162-.702-.072-.119-.267-.183-.557-.32z"/></svg>
-                            </span>
-                            WhatsApp
-                        </a>
-                    </li>
-                    <li>
-                        <a href="mailto:contacto@traziostudio.com" class="text-custom-muted hover:text-custom-accent transition-all duration-300 flex items-center justify-center lg:justify-start group gap-2.5">
-                            <span class="p-1.5 rounded-lg bg-custom-card border border-custom/10 text-custom-accent group-hover:border-custom-accent/30 transition-colors">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                            </span>
-                            Email
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://facebook.com/traziostudio" target="_blank" rel="noopener noreferrer" class="text-custom-muted hover:text-custom-accent transition-all duration-300 flex items-center justify-center lg:justify-start group gap-2.5">
-                            <span class="p-1.5 rounded-lg bg-custom-card border border-custom/10 text-custom-accent group-hover:border-custom-accent/30 transition-colors">
-                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                            </span>
-                            Facebook
-                        </a>
-                    </li>
-                </ul>
-            </div>
+ <!-- Bloque CTA Reserva -->
+ <section class=\max-w-4xl mx-auto px-6 py-12\>
+ <div class=\bg-[#111118] p-8 rounded-lg border border-custom/10 text-center\>
+ <h3 class=\text-xl font-bold text-white mb-4\>¿Listo para elevar tu perfil profesional?</h3>
+ <button class=\w-full py-3 bg-[#C9A96E] text-black font-bold rounded-md hover:bg-opacity-90 transition-colors\>
+ RESERVAR SERVICIO (DEMO)
+ </button>
+ </div>
+ </section>
+</div>
 
-            <!-- Column 4: The Unified B2B CTA Card (Takes 5/12 cols) -->
-            <div class="lg:col-span-5 w-full bg-custom-card/50 border border-custom-accent/20 p-6 rounded-lg text-left space-y-4">
-                <h3 class="text-sm font-bold text-custom-main uppercase leading-tight" data-i18n="footer-aida-text">
-                    ¿Listo para hacer crecer tu negocio?
-                </h3>
-                <p class="text-xs text-custom-muted leading-relaxed" data-i18n="footer-aida-desc">
-                    Escríbenos y cuéntanos tu idea o mándanos tu lista de precios por WhatsApp. Te preparamos una demostración interactiva totalmente gratis y adaptada a tu sector en menos de 24 horas.
-                </p>
-                <a href="https://wa.me/5350000000?text=Hola%20Trazio%20Studio,%20quiero%20solicitar%20una%20demostración%20gratuita%20para%20mi%20negocio." target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center px-6 py-3.5 bg-custom-accent hover:bg-custom-accent-hover text-black font-bold uppercase text-[11px] tracking-wider transition-all duration-300">
-                    SOLICITAR DEMOSTRACIÓN GRATIS
-                </a>
-                <p class="text-[10px] sm:text-xs text-custom-muted leading-relaxed" data-i18n="footer-microcopy">
-                    <span class="text-custom-accent">✔</span> Sin costo técnico, compromisos ni contratos de mantenimiento.
-                </p>
-            </div>
+    </div>
+</main>
 
+<!-- Footer -->
+<footer id="footer" class="bg-[#111118] border-t border-custom/10 py-12 px-6 relative z-10 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        <!-- Column 1: Logo & Tagline -->
+        <div class="lg:col-span-3 flex flex-col items-center lg:items-start space-y-4 text-center lg:text-left">
+            <a href="index.html" class="flex items-center space-x-2 group">
+                <img src="assets/isotype-gold.svg" class="w-8 h-8 rounded-lg shadow-md group-hover:scale-105 transition-transform duration-300" alt="Trazio Isotype">
+                <img src="assets/logo-gold.svg" class="logo-gold h-7 w-auto transition-all duration-300" alt="Trazio Studio Logo">
+                <img src="assets/logo-dark.svg" class="logo-dark h-7 w-auto transition-all duration-300" alt="Trazio Studio Logo">
+            </a>
+            <p class="text-custom-muted leading-relaxed text-sm max-w-xs" data-i18n="footer-tagline">Trazamos herramientas web de alta velocidad para optimizar tus ventas.</p>
         </div>
-
-        <!-- Bottom Copyright Bar -->
-        <div class="max-w-7xl mx-auto border-t border-custom/10 mt-10 pt-6 flex flex-col items-center text-center text-[11px] text-custom-muted/80 space-y-2">
-            <p>&copy; <span id="current-year"></span> Trazio Studio. <span data-i18n="all-rights-reserved">All rights reserved.</span></p>
-            <p class="font-medium">Designed with precision by Trazio Studio</p>
+        <!-- Column 2: Quick Links -->
+        <div class="lg:col-span-2 flex flex-col items-center lg:items-start text-center lg:text-left">
+            <h3 class="text-xs font-semibold uppercase tracking-widest text-custom-main mb-4" data-i18n="footer-quick-links">Enlaces Rápidos</h3>
+            <ul class="space-y-2.5 text-sm">
+                <li><a href="portafolio-creativo.html" class="text-custom-muted hover:text-custom-accent transition-colors duration-300 nav-link-premium" data-i18n="nav-portfolio">Portafolios</a></li>
+                <li><a href="catalogo-pedidos.html" class="text-custom-muted hover:text-custom-accent transition-colors duration-300 nav-link-premium" data-i18n="nav-catalogs">Catálogos</a></li>
+                <li><a href="identidad-corporativa.html" class="text-custom-muted hover:text-custom-accent transition-colors duration-300 nav-link-premium" data-i18n="nav-corporate">Empresas</a></li>
+            </ul>
         </div>
-    </footer>
-
+        <!-- Column 3: Contact & Socials -->
+        <div class="lg:col-span-2 flex flex-col items-center lg:items-start text-center lg:text-left">
+            <h3 class="text-xs font-semibold uppercase tracking-widest text-custom-main mb-4" data-i18n="footer-contact">Contacto</h3>
+            <ul class="space-y-3.5 text-sm w-full">
+                <li>
+                    <a href="https://wa.me/5350000000?text=Hola%20Trazio%20Studio,%20quiero%20iniciar%20un%20proyecto" target="_blank" rel="noopener noreferrer" class="text-custom-muted hover:text-custom-accent flex items-center justify-center lg:justify-start group gap-2.5">
+                        <span class="p-1.5 rounded-lg bg-custom-card border border-custom/10 text-custom-accent group-hover:border-custom-accent/30 transition-colors">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2C7.314 2 3.407 5.864 3.407 10.546c0 1.408.349 2.8.956 4.028L2 22l7.666-2.52c1.176.666 2.51.999 3.374.999h.001c4.726 0 8.633-3.863 8.633-8.545C20.674 5.864 16.766 2 12.04 2zM17.152 15.632c-.234-.116-.967-.474-1.117-.528-.15-.054-.26-.054-.37.054-.11.108-.424.528-.548.665-.124.136-.248.15-.457.054-.93-.418-1.54-1.01-2.175-1.928-.636-.92-1.066-1.85-1.423-2.457-.357-.607-.037-.936.27-.99.27-.054.597-.13.864-.424.267-.294.357-.59.5-.784.144-.196.073-.37-.036-.59-.11-.22-.968-2.324-1.325-3.18-.357-.855-.72-.74-1.002-.756-.279-.016-.598-.016-.917-.016-.319 0-.83.108-1.26.54-.43.432-1.64 1.586-1.64 3.868 0 2.28 1.678 4.475 1.916 4.788.238.313 3.303 5.034 8.04 7.025 1.18.497 2.11.79 2.846.99.736.199 1.407.153 1.93-.066.523-.22 1.637-.675 1.87-.99.234-.314.234-.582.162-.702-.072-.119-.267-.183-.557-.32z"/></svg>
+                        </span>
+                        WhatsApp
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:contacto@traziostudio.com" class="text-custom-muted hover:text-custom-accent flex items-center justify-center lg:justify-start group gap-2.5">
+                        <span class="p-1.5 rounded-lg bg-custom-card border border-custom/10 text-custom-accent group-hover:border-custom-accent/30 transition-colors">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        </span>
+                        Email
+                    </a>
+                </li>
+                <li>
+                    <a href="https://facebook.com/traziostudio" target="_blank" rel="noopener noreferrer" class="text-custom-muted hover:text-custom-accent flex items-center justify-center lg:justify-start group gap-2.5">
+                        <span class="p-1.5 rounded-lg bg-custom-card border border-custom/10 text-custom-accent group-hover:border-custom-accent/30 transition-colors">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </span>
+                        Facebook
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- Column 4: Unified B2B CTA Card -->
+        <div class="lg:col-span-5 w-full bg-custom-card/50 border border-custom-accent/20 p-6 rounded-lg text-left space-y-4">
+            <h3 class="text-sm font-bold text-custom-main uppercase" data-i18n="footer-aida-text">¿Listo para hacer crecer tu negocio?</h3>
+            <p class="text-xs text-custom-muted" data-i18n="footer-aida-desc">Escríbenos y cuéntanos tu idea o mándanos tu lista de precios por WhatsApp. Te preparamos una demostración interactiva totalmente gratis y adaptada a tu sector en menos de 24 horas.</p>
+            <a href="https://wa.me/5350000000?text=Hola%20Trazio%20Studio,%20quiero%20solicitar%20una%20demostración%20gratuita%20para%20mi%20negocio." target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center px-6 py-3.5 bg-custom-accent hover:bg-custom-accent-hover text-black font-bold uppercase text-[11px] tracking-wider transition-all duration-300">
+                SOLICITAR DEMOSTRACIÓN GRATIS
+            </a>
+            <p class="text-[10px] sm:text-xs text-custom-muted" data-i18n="footer-microcopy"><span class="text-custom-accent">✔</span> Sin costo técnico, compromisos ni contratos de mantenimiento.</p>
+        </div>
+    </div>
+    <!-- Bottom Copyright Bar -->
+    <div class="max-w-7xl mx-auto border-t border-custom/10 mt-10 pt-6 flex flex-col items-center text-center text-[11px] text-custom-muted/80 space-y-2">
+        <p>&copy; <span id="current-year"></span> Trazio Studio. <span data-i18n="all-rights-reserved">All rights reserved.</span></p>
+        <p class="font-medium">Designed with precision by Trazio Studio</p>
+    </div>
     <script src="./app.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const viewport = document.getElementById('portfolio-viewport');
-            const paneCreativo = document.getElementById('pane-creativo');
-            const paneCorporativo = document.getElementById('pane-corporativo');
-            const btnCreativoDesktop = document.getElementById('btn-profile-creativo');
-            const btnCorporativoDesktop = document.getElementById('btn-profile-corporativo');
-            const btnCreativoMobile = document.getElementById('btn-profile-creativo-mobile');
-            const btnCorporativoMobile = document.getElementById('btn-profile-corporativo-mobile');
-
-            const activeBtnClass = 'bg-custom-accent text-black font-bold shadow-sm rounded-lg';
-            const inactiveBtnClass = 'bg-transparent text-custom-muted hover:text-custom-main font-semibold rounded-lg';
-            const mobileActiveBtnClass = 'bg-custom-accent text-black font-bold shadow-sm rounded-lg';
-            const mobileInactiveBtnClass = 'bg-transparent text-custom-muted hover:text-custom-main font-semibold rounded-lg';
-
-            // Helper functions to safely add/remove classes containing spaces
-            function addClasses(element, classesString) {
-                const classes = classesString.split(' ').filter(c => c.trim() !== '');
-                element.classList.add(...classes);
-            }
-
-            function removeClasses(element, classesString) {
-                const classes = classesString.split(' ').filter(c => c.trim() !== '');
-                element.classList.remove(...classes);
-            }
-
-            function setProfile(profile) {
-                // Apply fade-out effect
-                viewport.classList.add('opacity-0', 'translate-y-4');
-                viewport.classList.remove('opacity-100', 'translate-y-0');
-
-                setTimeout(() => {
-                     if (profile === 'creativo') {
-                         paneCreativo.classList.remove('hidden');
-                         paneCreativo.classList.add('block');
-                         paneCorporativo.classList.remove('block');
-                         paneCorporativo.classList.add('hidden');
-
-                         // Update desktop buttons
-                         addClasses(btnCreativoDesktop, activeBtnClass);
-                         removeClasses(btnCreativoDesktop, inactiveBtnClass);
-                         addClasses(btnCorporativoDesktop, inactiveBtnClass);
-                         removeClasses(btnCorporativoDesktop, activeBtnClass);
-
-                         // Update mobile buttons
-                         addClasses(btnCreativoMobile, mobileActiveBtnClass);
-                         removeClasses(btnCreativoMobile, mobileInactiveBtnClass);
-                         addClasses(btnCorporativoMobile, mobileInactiveBtnClass);
-                         removeClasses(btnCorporativoMobile, mobileActiveBtnClass);
-
-                     } else if (profile === 'corporativo') {
-                         paneCreativo.classList.remove('block');
-                         paneCreativo.classList.add('hidden');
-                         paneCorporativo.classList.remove('hidden');
-                         paneCorporativo.classList.add('block');
-
-                         // Update desktop buttons
-                         addClasses(btnCreativoDesktop, inactiveBtnClass);
-                         removeClasses(btnCreativoDesktop, activeBtnClass);
-                         addClasses(btnCorporativoDesktop, activeBtnClass);
-                         removeClasses(btnCorporativoDesktop, inactiveBtnClass);
-
-                         // Update mobile buttons
-                         addClasses(btnCreativoMobile, mobileInactiveBtnClass);
-                         removeClasses(btnCreativoMobile, mobileActiveBtnClass);
-                         addClasses(btnCorporativoMobile, mobileActiveBtnClass);
-                         removeClasses(btnCorporativoMobile, mobileInactiveBtnClass);
-                     }
-
-                     // Fade back in
-                     viewport.classList.remove('opacity-0', 'translate-y-4');
-                     viewport.classList.add('opacity-100', 'translate-y-0');
-                 }, 150); // Matches the CSS transition duration
-             }
-
-            // Initial state
-            setProfile('creativo');
-
-            btnCreativoDesktop.addEventListener('click', () => setProfile('creativo'));
-            btnCorporativoDesktop.addEventListener('click', () => setProfile('corporativo'));
-            btnCreativoMobile.addEventListener('click', () => setProfile('creativo'));
-            btnCorporativoMobile.addEventListener('click', () => setProfile('corporativo'));
-
-            // Global Preferences Sync (Language and Theme)
-            // This assumes app.js handles the initial setup and provides functions/events for changes.
-            // For this skeleton, we'll just read localStorage on load.
-            const syncPreferences = () => {
-                const currentLang = localStorage.getItem('language') || 'es'; // Default to 'es'
-                document.documentElement.lang = currentLang;
-                document.getElementById('current-lang-display').textContent = currentLang.toUpperCase();
-
-                const currentTheme = localStorage.getItem('theme') || 'dark'; // Default to 'dark'
-                if (currentTheme === 'light') {
-                    document.documentElement.classList.add('light-theme');
-                    document.getElementById('theme-icon-moon').classList.add('hidden');
-                    document.getElementById('theme-icon-sun').classList.remove('hidden');
-                } else {
-                    document.documentElement.classList.remove('light-theme');
-                    document.getElementById('theme-icon-moon').classList.remove('hidden');
-                    document.getElementById('theme-icon-sun').classList.add('hidden');
-                }
-            };
-
-            syncPreferences(); // Apply on initial load
-
-            // Listen for custom events or mutations if app.js modifies these directly
-            // For a simple setup, user would refresh or app.js would handle reactivity.
-            // A more robust solution might involve observing localStorage or custom events from app.js.
-
-            // Set current year in footer
-            document.getElementById('current-year').textContent = new Date().getFullYear();
-            // Interactive Calendar Date Selection Effect
-            const calendarDays = document.querySelectorAll('.calendar-day');
-            if (calendarDays && calendarDays.length > 0) {
-                calendarDays.forEach(day => {
-                    day.addEventListener('click', () => {
-                        const activeDay = document.querySelector('.calendar-day-active');
-                        if (activeDay) {
-                            activeDay.classList.remove('bg-custom-accent', 'text-black', 'font-bold', 'calendar-day-active');
-                        }
-                        day.classList.add('bg-custom-accent', 'text-black', 'font-bold', 'calendar-day-active');
-                    });
-                });
-            }
-
-            // Technical Calendar Date Selection Effect
-            const techDays = document.querySelectorAll('.calendar-day-tech');
-            if (techDays && techDays.length > 0) {
-                techDays.forEach(day => {
-                    day.addEventListener('click', () => {
-                        const activeTechDay = document.querySelector('.calendar-day-tech-active');
-                        if (activeTechDay) {
-                            activeTechDay.classList.remove('bg-custom-accent', 'text-black', 'font-bold', 'calendar-day-tech-active');
-                        }
-                        day.classList.add('bg-custom-accent', 'text-black', 'font-bold', 'calendar-day-tech-active');
-                    });
-                });
-            }
-        });
-
-        // Dynamic Dictionary Translations
-        const translations = {
-            "es": {
-                "nav-portfolio": "Portafolios",
-                "nav-catalogs": "Catálogos",
-                "nav-corporate": "Empresas",
-                "nav-cta": "Iniciar Proyecto",
-                "port-hero-title": "Tu Talento merece un <span class=\"text-custom-accent\">Escenario Internacional</span>",
-                "port-hero-subtitle": "Deja de competir en el ruido de los algoritmos de redes sociales y posiciona tu marca personal con una herramienta web de élite.",
-                "demo-badge-note": "DEMOSTRACIÓN EN VIVO - TU WEB SERÁ 100% PERSONALIZADA A TU ESTILO",
-                "demo-badge-title": "Tu trabajo merece verse como en una galería de arte",
-                "demo-badge-subtitle": "Diseñado para fotógrafos, modelos, maquilladores, diseñadores, arquitectos y cualquier creador que necesite que su trabajo impacte a primera vista. Olvídate de los límites de Instagram.",
-                "demo-rates-note": "TARIFAS DE DEMOSTRACIÓN - PRECIOS REALES SEGÚN PROYECTO",
-                "btn-profile-creativo": "Perfil Visual / Artístico",
-                "btn-profile-corporativo": "Perfil Técnico / Consultor",
-                "corp-title": "Perfil Técnico / Consultor",
-                "corp-subtitle": "Demuestra tu autoridad técnica con un dossier interactivo que convierte visitas en contratos.",
-                "case-title": "Casos de Estudio",
-                "case-problem": "Problema",
-                "case-solution": "Solución",
-                "case-roi": "ROI",
-                "skills-title": "Habilidades Especializadas",
-                "footer-tagline": "Trazamos herramientas web de alta velocidad para optimizar tus ventas.",
-                "footer-quick-links": "Enlaces Rápidos",
-                "footer-contact": "Contacto",
-                "footer-aida-text": "¿Listo para hacer crecer tu negocio?",
-                "footer-aida-desc": "Escríbenos y cuéntanos tu idea o mándanos tu lista de precios por WhatsApp. Te preparamos una demostración interactiva totalmente gratis y adaptada a tu sector en menos de 24 horas.",
-                "footer-microcopy": "<span class=\"text-custom-accent\">✔</span> Sin costo técnico, compromisos ni contratos de mantenimiento.",
-                "all-rights-reserved": "Todos los derechos reservados.",
-                "corp-demo-badge": "DEMO DE PERFIL EJECUTIVO B2B",
-                "corp-demo-title": "Tu currículum en PDF te hace ver barato. Tu <span class='text-custom-accent'>Dossier Interactivo</span> te hace ver indispensable.",
-                "corp-demo-desc": "El 90% de los profesionales técnicos de alta cualificación en Cuba compiten enviando un Word plano o un PDF aburrido por correo. Si quieres cerrar contratos internacionales, licitaciones con hoteles o consultorías en divisas, necesitas demostrar autoridad antes de que te entrevisten.",
-                "case1-title": "Automatización de Sistema de Climatización Industrial",
-                "case1-metric": "⚡ -40% Consumo Energético | 0% Paradas Críticas",
-                "case1-desc": "Problema: El hotel colapsaba por picos de consumo y fallos en las manejadoras. Solución: Rediseño del sistema eléctrico de control y parametrización de variables automatizadas. Resultado: Ahorro inmediato en la factura eléctrica y control operativo 24/7.",
-                "case2-title": "Implementación de Sistema de Control de Inventarios Mipyme",
-                "case2-metric": "📈 100% Control de Fichas de Costo | Cero Fugas de Capital",
-                "case2-desc": "Problema: Descontrol operativo en almacenes y pérdida de margen comercial en restaurante de alto volumen. Solución: Integración de sistema de gestión Odoo y Axispos a la contabilidad local. Resultado: Auditoría interna automatizada y optimización del flujo de caja.",
-                "skills-seo-desc": "El motor de búsqueda de Google y LinkedIn indexará estas etiquetas de forma semántica, permitiendo que reclutadores de Miami o Europa te localicen por tus habilidades exactas sin que tengas que pagar publicidad."
-            },
-            "en": {
-                "nav-portfolio": "Portfolios",
-                "nav-catalogs": "Catalogs",
-                "nav-corporate": "Corporate",
-                "nav-cta": "Start Project",
-                "port-hero-title": "Your Talent deserves an <span class=\"text-custom-accent\">International Stage</span>",
-                "port-hero-subtitle": "Stop competing in the noise of social media algorithms and position your personal brand with an elite web tool.",
-                "demo-badge-note": "LIVE DEMO - YOUR WEBSITE WILL BE 100% CUSTOMIZED TO YOUR STYLE",
-                "demo-badge-title": "Your work deserves to be seen like in an art gallery",
-                "demo-badge-subtitle": "Designed for photographers, models, makeup artists, designers, architects, and any creator who needs their work to make an immediate impact. Forget the limits of Instagram.",
-                "demo-rates-note": "DEMONSTRATION RATES - REAL PRICES ACCORDING TO PROJECT",
-                "btn-profile-creativo": "Visual / Artistic Profile",
-                "btn-profile-corporativo": "Technical / Consultant Profile",
-                "corp-title": "Technical / Consultant Profile",
-                "corp-subtitle": "Demonstrate your technical authority with an interactive dossier that converts visits into contracts.",
-                "case-title": "Case Studies",
-                "case-problem": "Problem",
-                "case-solution": "Solution",
-                "case-roi": "ROI",
-                "skills-title": "Specialized Skills",
-                "footer-tagline": "We design high-speed web tools to optimize your sales.",
-                "footer-quick-links": "Quick Links",
-                "footer-contact": "Contact",
-                "footer-aida-text": "Ready to grow your business?",
-                "footer-aida-desc": "Write to us and tell us your idea or send us your price list via WhatsApp. We will prepare a completely free interactive demonstration tailored to your sector in less than 24 hours.",
-                "footer-microcopy": "<span class=\"text-custom-accent\">✔</span> No technical cost, commitments, or maintenance contracts.",
-                "all-rights-reserved": "All rights reserved.",
-                "corp-demo-badge": "B2B EXECUTIVE PROFILE DEMO",
-                "corp-demo-title": "Your PDF resume makes you look cheap. Your <span class='text-custom-accent'>Interactive Dossier</span> makes you indispensable.",
-                "corp-demo-desc": "90% of highly qualified technical professionals in Cuba compete by sending a plain Word document or a boring PDF by email. If you want to close international contracts, tenders with hotels, or consulting in foreign currency, you need to demonstrate authority before you are interviewed.",
-                "case1-title": "Industrial HVAC System Automation",
-                "case1-metric": "⚡ -40% Energy Consumption | 0% Critical Downtime",
-                "case1-desc": "Problem: The hotel collapsed due to consumption peaks and air handler failures. Solution: Redesign of the electrical control system and parameterization of automated variables. Result: Immediate savings on the electricity bill and 24/7 operational control.",
-                "case2-title": "SME Inventory Control System Implementation",
-                "case2-metric": "📈 100% Cost Sheet Control | Zero Capital Leaks",
-                "case2-desc": "Problem: Operational disarray in warehouses and loss of commercial margin in high-volume restaurant. Solution: Integration of Odoo and Axispos management system with local accounting. Result: Automated internal audit and cash flow optimization.",
-                "skills-seo-desc": "Google and LinkedIn's search engine will semantically index these tags, allowing recruiters from Miami or Europe to locate you by your exact skills without you having to pay for advertising."
-            }
-        };
-
-        function applyTranslations() {
-            const currentLang = localStorage.getItem('language') || 'es';
-            const elements = document.querySelectorAll('[data-i18n]');
-            elements.forEach(element => {
-                const key = element.getAttribute('data-i18n');
-                if (translations[currentLang] && translations[currentLang][key]) {
-                    element.innerHTML = translations[currentLang][key];
-                }
-            });
-        }
-
-        // Override the language toggle to also apply new translations
-        const originalLanguageToggle = document.getElementById('language-toggle');
-        if (originalLanguageToggle) {
-            originalLanguageToggle.removeEventListener('click', window.toggleLanguage); // Remove old listener if exists
-            originalLanguageToggle.addEventListener('click', () => {
-                let currentLang = localStorage.getItem('language') || 'es';
-                let newLang = currentLang === 'es' ? 'en' : 'es';
-                localStorage.setItem('language', newLang);
-                document.documentElement.lang = newLang;
-                document.getElementById('current-lang-display').textContent = newLang.toUpperCase();
-                applyTranslations(); // Apply new translations
-            });
-        }
-
-        // Initial application of translations
-        applyTranslations();
-    </script>
-</body>
-</html>
+</footer>

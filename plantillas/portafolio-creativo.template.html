@@ -1,11 +1,32 @@
 <!-- @@include(componentes/header.html) -->
-<!-- @@include(componentes/portfolio-hero.html) -->
 
 <main class="flex-grow">
-    <div id="portfolio-workspace" class="sticky top-20 z-40 bg-custom-main/80 backdrop-blur-md shadow-xl border-b border-custom/5 py-4 mb-12">
-        <!-- Switcher / Pills buttons are inside index.html workspace, make sure the wrapper structure and toggles are placed here cleanly as defined in JS -->
+    <!-- @@include(componentes/portfolio-hero.html) -->
+
+    <!-- Selector Doble Espejo -->
+    <div class="hidden sm:flex justify-center mb-12 relative z-40 sticky top-20 shadow-xl backdrop-blur-xl bg-custom-card/80 p-1.5 flex space-x-1 border border-custom/20 rounded-[10px] max-w-sm mx-auto">
+        <div class="bg-custom-card/0 p-1.5 flex space-x-1 border border-custom/20 rounded-[10px] shadow-lg max-w-sm mx-auto">
+            <button id="btn-profile-creativo" class="px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 active-profile-btn" data-i18n="btn-profile-creativo">
+                Perfil Visual / Artístico
+            </button>
+            <button id="btn-profile-corporativo" class="px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 inactive-profile-btn" data-i18n="btn-profile-corporativo">
+                Perfil Técnico / Consultor
+            </button>
+        </div>
     </div>
-    <div id="portfolio-viewport" class="max-w-6xl mx-auto px-6 transition-all duration-300 opacity-100 transform translate-y-0">
+
+    <!-- Mobile Sticky Floating Navigation Capsule -->
+    <div class="sm:hidden sticky top-[72px] z-40 bg-custom-card/80 backdrop-blur-xl p-1.5 flex justify-center space-x-1 border border-custom/20 rounded-[10px] shadow-xl w-full max-w-sm mx-auto mb-12" id="mobile-profile-selector">
+        <button id="btn-profile-creativo-mobile" class="px-3 py-1.5 rounded-md text-xs font-semibold transition-all duration-300 active-profile-btn" data-i18n="btn-profile-creativo">
+            Perfil Visual / Artístico
+        </button>
+        <button id="btn-profile-corporativo-mobile" class="px-3 py-1.5 rounded-md text-xs font-semibold transition-all duration-300 inactive-profile-btn" data-i18n="btn-profile-corporativo">
+            Perfil Técnico / Consultor
+        </button>
+    </div>
+
+    <!-- Contenedor Dinámico de los Perfiles -->
+    <div id="portfolio-viewport" class="max-w-6xl mx-auto px-6 transition-all duration-300">
         <!-- @@include(componentes/portfolio-creative.html) -->
         <!-- @@include(componentes/portfolio-technical.html) -->
     </div>
