@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -68,32 +68,32 @@
         </a>
     </div>
 </section>
+    
+    <!-- Navegación Sticky (Pills) -->
+                <div class="hidden sm:flex justify-center mb-12 relative z-40 sticky top-20 shadow-xl backdrop-blur-xl bg-custom-card/80 p-1.5 flex space-x-1 border border-custom/20 rounded-[10px] max-w-sm mx-auto">
+                <div class="bg-custom-card/0 p-1.5 flex space-x-1 border border-custom/20 rounded-[10px] shadow-lg max-w-sm mx-auto">
+                    <button id="btn-profile-creativo" class="px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 active-profile-btn" data-i18n="btn-profile-creativo">
+                        Perfil Visual / Artístico
+                    </button>
+                    <button id="btn-profile-corporativo" class="px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 inactive-profile-btn" data-i18n="btn-profile-corporativo">
+                        Perfil Técnico / Consultor
+                    </button>
+                </div>
+            </div>
 
-    <!-- Selector Doble Espejo -->
-    <div class="hidden sm:flex justify-center mb-12 relative z-40 sticky top-20 shadow-xl backdrop-blur-xl bg-custom-card/80 p-1.5 flex space-x-1 border border-custom/20 rounded-[10px] max-w-sm mx-auto">
-        <div class="bg-custom-card/0 p-1.5 flex space-x-1 border border-custom/20 rounded-[10px] shadow-lg max-w-sm mx-auto">
-            <button id="btn-profile-creativo" class="px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 active-profile-btn" data-i18n="btn-profile-creativo">
-                Perfil Visual / Artístico
-            </button>
-            <button id="btn-profile-corporativo" class="px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 inactive-profile-btn" data-i18n="btn-profile-corporativo">
-                Perfil Técnico / Consultor
-            </button>
-        </div>
-    </div>
+            <!-- Mobile Sticky Floating Navigation Capsule -->
+            <div class="sm:hidden sticky top-[72px] z-40 bg-custom-card/80 backdrop-blur-xl p-1.5 flex justify-center space-x-1 border border-custom/20 rounded-[10px] shadow-xl w-full max-w-sm mx-auto mb-12" id="mobile-profile-selector">
+                <button id="btn-profile-creativo-mobile" class="px-3 py-1.5 rounded-md text-xs font-semibold transition-all duration-300 active-profile-btn" data-i18n="btn-profile-creativo">
+                        Perfil Visual / Artístico
+                </button>
+                <button id="btn-profile-corporativo-mobile" class="px-3 py-1.5 rounded-md text-xs font-semibold transition-all duration-300 inactive-profile-btn" data-i18n="btn-profile-corporativo">
+                        Perfil Técnico / Consultor
+                </button>
+            </div>
 
-    <!-- Mobile Sticky Floating Navigation Capsule -->
-    <div class="sm:hidden sticky top-[72px] z-40 bg-custom-card/80 backdrop-blur-xl p-1.5 flex justify-center space-x-1 border border-custom/20 rounded-[10px] shadow-xl w-full max-w-sm mx-auto mb-12" id="mobile-profile-selector">
-        <button id="btn-profile-creativo-mobile" class="px-3 py-1.5 rounded-md text-xs font-semibold transition-all duration-300 active-profile-btn" data-i18n="btn-profile-creativo">
-            Perfil Visual / Artístico
-        </button>
-        <button id="btn-profile-corporativo-mobile" class="px-3 py-1.5 rounded-md text-xs font-semibold transition-all duration-300 inactive-profile-btn" data-i18n="btn-profile-corporativo">
-            Perfil Técnico / Consultor
-        </button>
-    </div>
-
-    <!-- Contenedor Dinámico de los Perfiles -->
+    <!-- Contenedor Dinámico -->
     <div id="portfolio-viewport" class="max-w-6xl mx-auto px-6 transition-all duration-300">
-                        <div id="pane-creativo" class="block">
+        <div id="pane-creativo" class="block">
                     <!-- Intro de Nichos e Información de Demo -->
                     <div class="text-center max-w-4xl mx-auto mb-16 pt-10 animate-fade-in-up">
                         <!-- Badge Sutil de Demo (Zero-Friction B2B) -->
@@ -281,327 +281,155 @@
                                         <div class="text-custom-accent mb-6 w-8 h-8 opacity-80 group-hover:opacity-100 transition-opacity duration-300">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-.778.099-1.533.284-2.253" />
-                                            </svg>
-                                        </div>
-                                        <h3 class="text-lg font-bold text-white mb-3 group-hover:text-custom-accent transition-colors duration-300">Bilingüe B2B Instantáneo</h3>
-                                        <p class="text-sm text-[#A0A0B0] leading-relaxed">Atrae a clientes extranjeros y agencias. Tu web cambia de Español a Inglés sin recargar, multiplicando tus contrataciones internacionales en divisas.</p>
-                                    </div>
-                                </div>
-
-                                <!-- Tarjeta 2: Inmunidad al Algoritmo -->
-                                <div class="bg-[#1E1E2A] p-6 rounded-lg border border-white/5 hover:border-custom-accent/30 transition-all duration-300 flex flex-col justify-between group">
-                                    <div>
-                                        <!-- Icono elegante -->
-                                        <div class="text-custom-accent mb-6 w-8 h-8 opacity-80 group-hover:opacity-100 transition-opacity duration-300">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
-                                            </svg>
-                                        </div>
-                                        <h3 class="text-lg font-bold text-white mb-3 group-hover:text-custom-accent transition-colors duration-300">Inmunidad al Algoritmo</h3>
-                                        <p class="text-sm text-[#A0A0B0] leading-relaxed">Protege tu marca. En tu web no hay anuncios ni competencia al lado de tus fotos. Tu cliente se enfoca 100% en tu trabajo, sin las distracciones de Instagram.</p>
-                                    </div>
-                                </div>
-
-                                <!-- Tarjeta 3: Carga Ultra-Ligera (3G/4G) -->
-                                <div class="bg-[#1E1E2A] p-6 rounded-lg border border-white/5 hover:border-custom-accent/30 transition-all duration-300 flex flex-col justify-between group">
-                                    <div>
-                                        <!-- Icono elegante -->
-                                        <div class="text-custom-accent mb-6 w-8 h-8 opacity-80 group-hover:opacity-100 transition-opacity duration-300">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
-                                            </svg>
-                                        </div>
-                                        <h3 class="text-lg font-bold text-white mb-3 group-hover:text-custom-accent transition-colors duration-300">Carga Ultra-Ligera (3G/4G)</h3>
-                                        <p class="text-sm text-[#A0A0B0] leading-relaxed">Tus fotos en alta resolución cargan en milisegundos. Usamos IA para reducir el peso visual en un 80%, ahorrando los datos móviles de tus clientes en Cuba.</p>
-                                    </div>
-                                </div>
-
-                                <!-- Tarjeta 4: Dossier PDF Exportable -->
-                                <div class="bg-[#1E1E2A] p-6 rounded-lg border border-white/5 hover:border-custom-accent/30 transition-all duration-300 flex flex-col justify-between group">
-                                    <div>
-                                        <!-- Icono elegante -->
-                                        <div class="text-custom-accent mb-6 w-8 h-8 opacity-80 group-hover:opacity-100 transition-opacity duration-300">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m.75 12 3 3m0 0 3-3m-3 3v-6m-1.5-9H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
-                                            </svg>
-                                        </div>
-                                        <h3 class="text-lg font-bold text-white mb-3 group-hover:text-custom-accent transition-colors duration-300">Dossier PDF Exportable</h3>
-                                        <p class="text-sm text-[#A0A0B0] leading-relaxed">Con un clic, tu portafolio se transforma en un documento editorial PDF listo para imprimir o enviar en licitaciones y castings internacionales.</p>
-                                    </div>
-                                </div>
-                            </div>
+                            </svg>
                         </div>
-                    </section>
-
-                    <!-- Agenda Interactiva como bloque premium autónomo con textura Zebra -->
-                    <section class="py-16 px-6 md:px-12 rounded-2xl bg-custom-card/50 border border-custom/10 bg-pattern-nodes relative overflow-hidden mt-24 shadow-xl">
-                        <!-- Sutil halo de luz de fondo -->
-                        <div class="absolute inset-0 pointer-events-none opacity-20 dark:opacity-10">
-                            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-gradient-to-r from-custom-accent/20 to-transparent blur-3xl rounded-full"></div>
-                        </div>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
-                            <!-- Left Column (Copywriting) -->
-                            <div class="text-center md:text-left">
-                                <!-- Micro-badge de escasez -->
-                                <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-red-500/30 bg-red-500/10 text-xs font-bold tracking-wider text-red-500 dark:text-red-400 uppercase mb-4">
-                                    <span>AGENDA 2026 AL 80% DE CAPACIDAD</span>
-                                </div>
-                                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight leading-tight mb-6 text-custom-main">
-                                    Agenda Interactiva: Tus clientes reservan, tú solo disparas.
-                                </h2>
-                                <p class="text-base sm:text-lg text-custom-muted leading-relaxed">
-                                    Elimina el caos de WhatsApp y los mensajes perdidos. Integramos un calendario inteligente donde tus clientes nacionales o extranjeros pueden ver tus días libres, seleccionar un paquete y reservar su sesión al instante.
-                                </p>
-                            </div>
-
-                            <!-- Right Column (Visual UI Mockup) -->
-                            <div class="flex justify-center md:justify-end">
-                                <div class="bg-custom-card border border-custom/20 rounded-lg p-6 shadow-2xl relative w-full max-w-sm">
-                                    <!-- Mockup Header -->
-                                    <div class="flex justify-between items-center mb-6">
-                                        <button class="text-custom-muted hover:text-custom-main">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
-                                        </button>
-                                        <h4 class="text-base sm:text-lg font-semibold text-custom-main">Noviembre 2026</h4>
-                                        <button class="text-custom-muted hover:text-custom-main">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-                                        </button>
-                                    </div>
-
-                                    <!-- Calendar Grid -->
-                                    <div class="grid grid-cols-7 gap-2 sm:gap-3 text-center text-xs sm:text-sm mb-6">
-                                        <span class="text-custom-muted">Lun</span>
-                                        <span class="text-custom-muted">Mar</span>
-                                        <span class="text-custom-muted">Mié</span>
-                                        <span class="text-custom-muted">Jue</span>
-                                        <span class="text-custom-muted">Vie</span>
-                                        <span class="text-custom-muted">Sáb</span>
-                                        <span class="text-custom-muted">Dom</span>
-                                        
-                                        <!-- Placeholder days -->
-                                        <span class="text-custom-muted/50 w-8 h-8 flex items-center justify-center mx-auto">29</span>
-                                        <span class="text-custom-muted/50 w-8 h-8 flex items-center justify-center mx-auto">30</span>
-                                        <span class="text-custom-muted/50 w-8 h-8 flex items-center justify-center mx-auto">31</span>
-                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">1</span>
-                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">2</span>
-                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">3</span>
-                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">4</span>
-                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">5</span>
-                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">6</span>
-                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">7</span>
-                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">8</span>
-                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">9</span>
-                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">10</span>
-                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">11</span>
-                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">12</span>
-                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">13</span>
-                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">14</span>
-                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">15</span>
-                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">16</span>
-                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">17</span>
-                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">18</span>
-                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">19</span>
-                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">20</span>
-                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">21</span>
-                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">22</span>
-                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">23</span>
-                                        <span class="calendar-day calendar-day-active bg-custom-accent text-black font-bold cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">24</span>
-                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">25</span>
-                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">26</span>
-                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">27</span>
-                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">28</span>
-                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">29</span>
-                                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">30</span>
-                                    </div>
-
-                                    <!-- Time Slot -->
-                                    <div class="mb-6 text-center">
-                                        <span class="inline-block bg-custom-main text-custom-accent px-4 py-2 rounded-full text-sm font-medium border border-custom-accent/20">
-                                            10:00 AM - 12:00 PM
-                                        </span>
-                                    </div>
-
-                                    <!-- CTA Button -->
-                                    <button class="w-full py-3 bg-[#C9A96E] text-black font-bold rounded-md shadow-md hover:bg-opacity-90 transition-colors">
-                                        Confirmar Reserva
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+                        <h3 class="text-lg font-bold text-white mb-3 group-hover:text-custom-accent transition-colors duration-300">Bilingüe B2B Instantáneo</h3>
+                        <p class="text-sm text-[#A0A0B0] leading-relaxed">Atrae a clientes extranjeros y agencias. Tu web cambia de Español a Inglés sin recargar, multiplicando tus contrataciones internacionales en divisas.</p>
+                    </div>
                 </div>
-                <div id="pane-corporativo" class="hidden">
-                    <!-- Technical Profile Section -->
-                    <section class="max-w-6xl mx-auto px-6 py-12">
-                        <!-- Title -->
-                        <h2 class="text-3xl md:text-4xl font-bold text-custom-main mb-8" data-i18n="corp-title"></h2>
-                        <p class="text-lg text-custom-muted mb-12" data-i18n="corp-subtitle"></p>
 
-                        <!-- AIDA Intro Block -->
-                        <div class="text-center max-w-4xl mx-auto mb-16 pt-10 animate-fade-in-up">
-                            <div class="inline-flex items-center px-4 py-1.5 rounded-lg border border-custom-accent/30 bg-custom-accent/5 text-[9px] font-bold tracking-widest text-custom-accent uppercase mb-6" data-i18n="corp-demo-badge">
-                                DEMO DE PERFIL EJECUTIVO B2B
-                            </div>
-                            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tighter mb-4 text-custom-main leading-tight" data-i18n="corp-demo-title">
-                                Tu currículum en PDF te hace ver barato. Tu <span class='text-custom-accent'>Dossier Interactivo</span> te hace ver indispensable.
-                            </h2>
-                            <p class="text-lg sm:text-xl text-custom-muted max-w-2xl mx-auto mb-12 leading-relaxed" data-i18n="corp-demo-desc">
-                                El 90% de los profesionales técnicos de alta cualificación en Cuba compiten enviando un Word plano o un PDF aburrido por correo. Si quieres cerrar contratos internacionales, licitaciones con hoteles o consultorías en divisas, necesitas demostrar autoridad antes de que te entrevisten.
-                            </p>
+                <!-- Tarjeta 2: Inmunidad al Algoritmo -->
+                <div class="bg-[#1E1E2A] p-6 rounded-lg border border-white/5 hover:border-custom-accent/30 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <!-- Icono elegante -->
+                        <div class="text-custom-accent mb-6 w-8 h-8 opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
+                            </svg>
                         </div>
+                        <h3 class="text-lg font-bold text-white mb-3 group-hover:text-custom-accent transition-colors duration-300">Inmunidad al Algoritmo</h3>
+                        <p class="text-sm text-[#A0A0B0] leading-relaxed">Protege tu marca. En tu web no hay anuncios ni competencia al lado de tus fotos. Tu cliente se enfoca 100% en tu trabajo, sin las distracciones de Instagram.</p>
+                    </div>
+                </div>
 
-                        <!-- Export CV Button -->
-                        <div class="flex justify-center sm:justify-end">
-                            <button onclick="window.print()" class="no-print inline-flex items-center justify-center px-6 py-3.5 bg-custom-accent hover:bg-custom-accent-hover text-black font-bold uppercase text-xs tracking-wider rounded-lg shadow-md transition-all duration-300 mb-8 w-full sm:w-auto">
-                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                                </svg>
-                                EXPORTAR CV PROFESIONAL (PDF)
-                            </button>
+                <!-- Tarjeta 3: Carga Ultra-Ligera (3G/4G) -->
+                <div class="bg-[#1E1E2A] p-6 rounded-lg border border-white/5 hover:border-custom-accent/30 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <!-- Icono elegante -->
+                        <div class="text-custom-accent mb-6 w-8 h-8 opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
+                            </svg>
                         </div>
+                        <h3 class="text-lg font-bold text-white mb-3 group-hover:text-custom-accent transition-colors duration-300">Carga Ultra-Ligera (3G/4G)</h3>
+                        <p class="text-sm text-[#A0A0B0] leading-relaxed">Tus fotos en alta resolución cargan en milisegundos. Usamos IA para reducir el peso visual en un 80%, ahorrando los datos móviles de tus clientes en Cuba.</p>
+                    </div>
+                </div>
 
-                        <!-- Case Studies Grid -->
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 pt-10">
-                            <!-- Card 1 -->
-                            <div class="bg-custom-card border border-custom/10 p-8 rounded-lg">
-                                <h3 class="text-xl font-semibold text-custom-main mb-4" data-i18n="case1-title">Automatización de Sistema de Climatización Industrial</h3>
-                                <p class="text-custom-accent font-bold mb-4" data-i18n="case1-metric">-40% Consumo Energético | 0% Paradas Críticas</p>
-                                <p class="text-custom-muted" data-i18n="case1-desc">Problema: El hotel colapsaba por picos de consumo y fallos en las manejadoras. Solución: Rediseño del sistema eléctrico de control y parametrización de variables automatizadas. Resultado: Ahorro inmediato en la factura eléctrica y control operativo 24/7.</p>
-                            </div>
-                            <!-- Card 2 -->
-                            <div class="bg-custom-card border border-custom/10 p-8 rounded-lg">
-                                <h3 class="text-xl font-semibold text-custom-main mb-4" data-i18n="case2-title">Implementación de Sistema de Control de Inventarios Mipyme</h3>
-                                <p class="text-custom-accent font-bold mb-4" data-i18n="case2-metric">100% Control de Fichas de Costo | Cero Fugas de Capital</p>
-                                <p class="text-custom-muted" data-i18n="case2-desc">Problema: Descontrol operativo en almacenes y pérdida de margen comercial en restaurante de alto volumen. Solución: Integración de sistema de gestión Odoo y Axispos a la contabilidad local. Resultado: Auditoría interna automatizada y optimización del flujo de caja.</p>
-                            </div>
+                <!-- Tarjeta 4: Dossier PDF Exportable -->
+                <div class="bg-[#1E1E2A] p-6 rounded-lg border border-white/5 hover:border-custom-accent/30 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <!-- Icono elegante -->
+                        <div class="text-custom-accent mb-6 w-8 h-8 opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m.75 12 3 3m0 0 3-3m-3 3v-6m-1.5-9H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+                            </svg>
                         </div>
+                        <h3 class="text-lg font-bold text-white mb-3 group-hover:text-custom-accent transition-colors duration-300">Dossier PDF Exportable</h3>
+                        <p class="text-sm text-[#A0A0B0] leading-relaxed">Con un clic, tu portafolio se transforma en un documento editorial PDF listo para imprimir o enviar en licitaciones y castings internacionales.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                        <!-- Skills Matrix -->
-                        <p class="text-xs sm:text-sm text-custom-muted italic mb-6" data-i18n="skills-seo-desc">El motor de búsqueda de Google y LinkedIn indexará estas etiquetas de forma semántica, permitiendo que reclutadores de Miami o Europa te localicen por tus habilidades exactas sin que tengas que pagar publicidad.</p>
-                        <h3 class="text-2xl font-bold text-custom-main mb-6" data-i18n="skills-title"></h3>
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                            <!-- Frontend -->
-                            <div>
-                                <h4 class="text-lg font-semibold text-custom-main mb-2">Frontend</h4>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="bg-[#1E1E2A] text-[#C9A96E] border border-custom-accent/20 rounded-[8px] px-2 py-1 text-sm">HTML5</span>
-                                    <span class="bg-[#1E1E2A] text-[#C9A96E] border border-custom-accent/20 rounded-[8px] px-2 py-1 text-sm">Tailwind CSS</span>
-                                    <span class="bg-[#1E1E2A] text-[#C9A96E] border border-custom-accent/20 rounded-[8px] px-2 py-1 text-sm">Vanilla JS</span>
-                                    <span class="bg-[#1E1E2A] text-[#C9A96E] border border-custom-accent/20 rounded-[8px] px-2 py-1 text-sm">CorelDRAW vectoring</span>
-                                </div>
-                            </div>
-                            <!-- Backend -->
-                            <div>
-                                <h4 class="text-lg font-semibold text-custom-main mb-2">Backend</h4>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="bg-[#1E1E2A] text-[#C9A96E] border border-custom-accent/20 rounded-[8px] px-2 py-1 text-sm">Node.js</span>
-                                    <span class="bg-[#1E1E2A] text-[#C9A96E] border border-custom-accent/20 rounded-[8px] px-2 py-1 text-sm">API REST</span>
-                                    <span class="bg-[#1E1E2A] text-[#C9A96E] border border-custom-accent/20 rounded-[8px] px-2 py-1 text-sm">SQL/NoSQL</span>
-                                    <span class="bg-[#1E1E2A] text-[#C9A96E] border border-custom-accent/20 rounded-[8px] px-2 py-1 text-sm">Git</span>
-                                </div>
-                            </div>
-                            <!-- Business & Finance -->
-                            <div>
-                                <h4 class="text-lg font-semibold text-custom-main mb-2">Business & Finance</h4>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="bg-[#1E1E2A] text-[#C9A96E] border border-custom-accent/20 rounded-[8px] px-2 py-1 text-sm">ERP Odoo</span>
-                                    <span class="bg-[#1E1E2A] text-[#C9A96E] border border-custom-accent/20 rounded-[8px] px-2 py-1 text-sm">Cost control</span>
-                                    <span class="bg-[#1E1E2A] text-[#C9A96E] border border-custom-accent/20 rounded-[8px] px-2 py-1 text-sm">Financial Auditing</span>
-                                </div>
-                            </div>
-                        </div>
+    <!-- Agenda Interactiva como bloque premium autónomo con textura Zebra -->
+    <section class="py-16 px-6 md:px-12 rounded-2xl bg-custom-card/50 border border-custom/10 bg-pattern-nodes relative overflow-hidden mt-24 shadow-xl">
+        <!-- Sutil halo de luz de fondo -->
+        <div class="absolute inset-0 pointer-events-none opacity-20 dark:opacity-10">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-gradient-to-r from-custom-accent/20 to-transparent blur-3xl rounded-full"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
+            <!-- Left Column (Copywriting) -->
+            <div class="text-center md:text-left">
+                <!-- Micro-badge de escasez -->
+                <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-red-500/30 bg-red-500/10 text-xs font-bold tracking-wider text-red-500 dark:text-red-400 uppercase mb-4">
+                    <span>AGENDA 2026 AL 80% DE CAPACIDAD</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight leading-tight mb-6 text-custom-main">
+                    Agenda Interactiva: Tus clientes reservan, tú solo disparas.
+                </h2>
+                <p class="text-base sm:text-lg text-custom-muted leading-relaxed">
+                    Elimina el caos de WhatsApp y los mensajes perdidos. Integramos un calendario inteligente donde tus clientes nacionales o extranjeros pueden ver tus días libres, seleccionar un paquete y reservar su sesión al instante.
+                </p>
+            </div>
 
-                        <!-- Reserva una Sesión Técnica Section -->
-                        <section class="py-16 px-6 md:px-12 rounded-2xl bg-custom-card/50 border border-custom/10 bg-pattern-nodes relative overflow-hidden mt-24 mb-16 shadow-xl">
-                            <!-- Sutil halo de luz de fondo -->
-                            <div class="absolute inset-0 pointer-events-none opacity-20 dark:opacity-10">
-                                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-gradient-to-r from-custom-accent/20 to-transparent blur-3xl rounded-full"></div>
-                            </div>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
-                                <!-- Left Column (B2B Copy) -->
-                                <div class="text-center md:text-left">
-                                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight leading-tight mb-6 text-custom-main">
-                                        Reserva una Sesión Técnica
-                                    </h2>
-                                    <p class="text-base sm:text-lg text-custom-muted leading-relaxed">
-                                        Agenda una consultoría de 15 minutos de forma gratuita en mi calendario para analizar la arquitectura técnica de tu proyecto y evaluar la viabilidad del desarrollo.
-                                    </p>
-                                </div>
+            <!-- Right Column (Visual UI Mockup) -->
+            <div class="flex justify-center md:justify-end">
+                <div class="bg-custom-card border border-custom/20 rounded-lg p-6 shadow-2xl relative w-full max-w-sm">
+                    <!-- Mockup Header -->
+                    <div class="flex justify-between items-center mb-6">
+                        <button class="text-custom-muted hover:text-custom-main">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+                        </button>
+                        <h4 class="text-base sm:text-lg font-semibold text-custom-main">Noviembre 2026</h4>
+                        <button class="text-custom-muted hover:text-custom-main">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                        </button>
+                    </div>
 
-                                <!-- Right Column (Interactive Calendar Mockup) -->
-                                <div class="flex justify-center md:justify-end">
-                                    <div class="bg-custom-card border border-custom/20 rounded-lg p-6 shadow-2xl relative w-full max-w-sm">
-                                        <!-- Mockup Header -->
-                                        <div class="flex justify-between items-center mb-6">
-                                            <button class="text-custom-muted hover:text-custom-main">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
-                                            </button>
-                                            <h4 class="text-base sm:text-lg font-semibold text-custom-main">Noviembre 2026</h4>
-                                            <button class="text-custom-muted hover:text-custom-main">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-                                            </button>
-                                        </div>
+                    <!-- Calendar Grid -->
+                    <div class="grid grid-cols-7 gap-2 sm:gap-3 text-center text-xs sm:text-sm mb-6">
+                        <span class="text-custom-muted">Lun</span>
+                        <span class="text-custom-muted">Mar</span>
+                        <span class="text-custom-muted">Mié</span>
+                        <span class="text-custom-muted">Jue</span>
+                        <span class="text-custom-muted">Vie</span>
+                        <span class="text-custom-muted">Sáb</span>
+                        <span class="text-custom-muted">Dom</span>
+                        
+                        <!-- Placeholder days -->
+                        <span class="text-custom-muted/50 w-8 h-8 flex items-center justify-center mx-auto">29</span>
+                        <span class="text-custom-muted/50 w-8 h-8 flex items-center justify-center mx-auto">30</span>
+                        <span class="text-custom-muted/50 w-8 h-8 flex items-center justify-center mx-auto">31</span>
+                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">1</span>
+                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">2</span>
+                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">3</span>
+                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">4</span>
+                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">5</span>
+                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">6</span>
+                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">7</span>
+                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">8</span>
+                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">9</span>
+                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">10</span>
+                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">11</span>
+                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">12</span>
+                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">13</span>
+                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">14</span>
+                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">15</span>
+                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">16</span>
+                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">17</span>
+                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">18</span>
+                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">19</span>
+                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">20</span>
+                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">21</span>
+                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">22</span>
+                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">23</span>
+                        <span class="calendar-day calendar-day-active bg-custom-accent text-black font-bold cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">24</span>
+                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">25</span>
+                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">26</span>
+                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">27</span>
+                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">28</span>
+                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">29</span>
+                        <span class="calendar-day text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">30</span>
+                    </div>
 
-                                        <!-- Calendar Grid -->
-                                        <div class="grid grid-cols-7 gap-2 sm:gap-3 text-center text-xs sm:text-sm mb-6">
-                                            <span class="text-custom-muted">Lun</span>
-                                            <span class="text-custom-muted">Mar</span>
-                                            <span class="text-custom-muted">Mié</span>
-                                            <span class="text-custom-muted">Jue</span>
-                                            <span class="text-custom-muted">Vie</span>
-                                            <span class="text-custom-muted">Sáb</span>
-                                            <span class="text-custom-muted">Dom</span>
-                                            
-                                            <!-- Placeholder days -->
-                                            <span class="text-custom-muted/50 w-8 h-8 flex items-center justify-center mx-auto">29</span>
-                                            <span class="text-custom-muted/50 w-8 h-8 flex items-center justify-center mx-auto">30</span>
-                                            <span class="text-custom-muted/50 w-8 h-8 flex items-center justify-center mx-auto">31</span>
-                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">1</span>
-                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">2</span>
-                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">3</span>
-                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">4</span>
-                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">5</span>
-                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">6</span>
-                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">7</span>
-                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">8</span>
-                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">9</span>
-                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">10</span>
-                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">11</span>
-                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">12</span>
-                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">13</span>
-                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">14</span>
-                                            <span class="calendar-day-tech calendar-day-tech-active bg-custom-accent text-black font-bold cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">15</span>
-                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">16</span>
-                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">17</span>
-                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">18</span>
-                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">19</span>
-                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">20</span>
-                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">21</span>
-                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">22</span>
-                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">23</span>
-                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">24</span>
-                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">25</span>
-                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">26</span>
-                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">27</span>
-                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">28</span>
-                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">29</span>
-                                            <span class="calendar-day-tech text-custom-muted hover:text-custom-accent cursor-pointer transition-all duration-200 w-8 h-8 flex items-center justify-center rounded-full mx-auto">30</span>
-                                        </div>
+                    <!-- Time Slot -->
+                    <div class="mb-6 text-center">
+                        <span class="inline-block bg-custom-main text-custom-accent px-4 py-2 rounded-full text-sm font-medium border border-custom-accent/20">
+                            10:00 AM - 12:00 PM
+                        </span>
+                    </div>
 
-                                        <!-- Time Slot -->
-                                        <div class="mb-6 text-center">
-                                            <span class="inline-block bg-custom-main text-custom-accent px-4 py-2 rounded-full text-sm font-medium border border-custom-accent/20">
-                                                10:00 AM - 12:00 PM
-                                            </span>
-                                        </div>
-
-                                        <!-- CTA Button -->
-                                        <button class="w-full py-3 bg-[#C9A96E] text-black font-bold rounded-md shadow-md hover:bg-opacity-90 transition-colors">
-                                            Confirmar Reserva
-                                        </button>
-                                    </div>
-                                </div>
-
+                    <!-- CTA Button -->
+                    <button class="w-full py-3 bg-[#C9A96E] text-black font-bold rounded-md shadow-md hover:bg-opacity-90 transition-colors">
+                        Confirmar Reserva
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
         ﻿<div id=" pane-corporativo\ class=\hidden animate-fade-in-up\>
  <!-- Bloque Introductorio de Autoridad -->
  <section class=\max-w-4xl mx-auto px-6 py-12 text-center\>
@@ -658,7 +486,6 @@
  </div>
  </section>
 </div>
-
     </div>
 </main>
 
@@ -730,3 +557,83 @@
     </div>
     <script src="./app.js"></script>
 </footer>
+
+<!-- Script de Control Interactivo -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const paneCreativo = document.getElementById('pane-creativo');
+    const paneCorporativo = document.getElementById('pane-corporativo');
+    const viewport = document.getElementById('portfolio-viewport');
+
+    const btnCreativoDesktop = document.getElementById('btn-profile-creativo');
+    const btnCorporativoDesktop = document.getElementById('btn-profile-corporativo');
+    const btnCreativoMobile = document.getElementById('btn-profile-creativo-mobile');
+    const btnCorporativoMobile = document.getElementById('btn-profile-corporativo-mobile');
+
+    const activeBtnClasses = 'bg-custom-accent text-black font-bold shadow-sm rounded-lg';
+    const inactiveBtnClasses = 'bg-transparent text-custom-muted hover:text-custom-main font-semibold rounded-lg';
+
+    function applyClasses(element, classesToAdd, classesToRemove) {
+        if (!element) return;
+        classesToRemove.split(' ').forEach(cls => element.classList.remove(cls));
+        classesToAdd.split(' ').forEach(cls => element.classList.add(cls));
+    }
+
+    function setProfile(profile) {
+        if (!viewport) return;
+        viewport.classList.add('opacity-0', 'translate-y-4');
+        viewport.classList.remove('opacity-100', 'translate-y-0');
+
+        setTimeout(() => {
+            if (profile === 'creativo') {
+                if (paneCreativo) { paneCreativo.classList.remove('hidden'); paneCreativo.classList.add('block'); }
+                if (paneCorporativo) { paneCorporativo.classList.remove('block'); paneCorporativo.classList.add('hidden'); }
+
+                applyClasses(btnCreativoDesktop, activeBtnClasses, inactiveBtnClasses);
+                applyClasses(btnCorporativoDesktop, inactiveBtnClasses, activeBtnClasses);
+                applyClasses(btnCreativoMobile, activeBtnClasses, inactiveBtnClasses);
+                applyClasses(btnCorporativoMobile, inactiveBtnClasses, activeBtnClasses);
+
+            } else if (profile === 'corporativo') {
+                if (paneCreativo) { paneCreativo.classList.remove('block'); paneCreativo.classList.add('hidden'); }
+                if (paneCorporativo) { paneCorporativo.classList.remove('hidden'); paneCorporativo.classList.add('block'); }
+
+                applyClasses(btnCreativoDesktop, inactiveBtnClasses, activeBtnClasses);
+                applyClasses(btnCorporativoDesktop, activeBtnClasses, inactiveBtnClasses);
+                applyClasses(btnCreativoMobile, inactiveBtnClasses, activeBtnClasses);
+                applyClasses(btnCorporativoMobile, activeBtnClasses, inactiveBtnClasses);
+            }
+
+            viewport.classList.remove('opacity-0', 'translate-y-4');
+            viewport.classList.add('opacity-100', 'translate-y-0');
+        }, 150);
+    }
+
+    // Initial state
+    setProfile('creativo');
+
+    if (btnCreativoDesktop) btnCreativoDesktop.addEventListener('click', () => setProfile('creativo'));
+    if (btnCorporativoDesktop) btnCorporativoDesktop.addEventListener('click', () => setProfile('corporativo'));
+    if (btnCreativoMobile) btnCreativoMobile.addEventListener('click', () => setProfile('creativo'));
+    if (btnCorporativoMobile) btnCorporativoMobile.addEventListener('click', () => setProfile('corporativo'));
+
+    // Interactividad del Calendario
+    document.querySelectorAll('[id*="calendar-grid"] span, #tech-calendar-grid span').forEach(day => {
+        day.addEventListener('click', () => {
+            if (day.classList.contains('text-custom-muted/30') || day.classList.contains('text-custom-muted/50')) return;
+            const grid = day.closest('[id*="calendar-grid"]') || day.closest('#tech-calendar-grid');
+            if (!grid) return;
+
+            grid.querySelectorAll('.absolute.w-7.h-7.rounded-full').forEach(el => el.remove());
+            grid.querySelectorAll('span').forEach(s => s.classList.remove('text-black', 'font-bold', 'relative', 'z-10'));
+
+            const circle = document.createElement('div');
+            circle.className = 'absolute w-7 h-7 rounded-full bg-[#C9A96E]';
+            circle.style.top = '50%'; circle.style.left = '50%'; circle.style.transform = 'translate(-50%, -50%)';
+            
+            day.classList.add('text-black', 'font-bold', 'relative', 'z-10');
+            day.appendChild(circle);
+        });
+    });
+});
+</script>
