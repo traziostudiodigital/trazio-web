@@ -8,7 +8,9 @@
 
     <!-- Contenedor Dinámico -->
     <div id="portfolio-viewport" class="max-w-6xl mx-auto px-6 transition-all duration-300">
-        <!-- @@include(componentes/portfolio-creative.html) -->
+        <!-- @@include(componentes/portfolio-creative-gallery.html) -->
+     <!-- @@include(componentes/portfolio-creative-rates.html) -->
+     <!-- @@include(componentes/portfolio-calendar-creative.html) -->
         <!-- @@include(componentes/portfolio-technical.html) -->
     </div>
 </main>
@@ -74,23 +76,32 @@ document.addEventListener('DOMContentLoaded', () => {
     if (btnCreativoMobile) btnCreativoMobile.addEventListener('click', () => setProfile('creativo'));
     if (btnCorporativoMobile) btnCorporativoMobile.addEventListener('click', () => setProfile('corporativo'));
 
-    // Interactividad del Calendario
-    document.querySelectorAll('[id*="calendar-grid"] span, #tech-calendar-grid span').forEach(day => {
-        day.addEventListener('click', () => {
-            if (day.classList.contains('text-custom-muted/30') || day.classList.contains('text-custom-muted/50')) return;
-            const grid = day.closest('[id*="calendar-grid"]') || day.closest('#tech-calendar-grid');
-            if (!grid) return;
-
-            grid.querySelectorAll('.absolute.w-7.h-7.rounded-full').forEach(el => el.remove());
-            grid.querySelectorAll('span').forEach(s => s.classList.remove('text-black', 'font-bold', 'relative', 'z-10'));
-
-            const circle = document.createElement('div');
-            circle.className = 'absolute w-7 h-7 rounded-full bg-[#C9A96E]';
-            circle.style.top = '50%'; circle.style.left = '50%'; circle.style.transform = 'translate(-50%, -50%)';
-            
-            day.classList.add('text-black', 'font-bold', 'relative', 'z-10');
-            day.appendChild(circle);
+    // Safe Interactive Booking Calendar for Creative Profile
+    const calendarDays = document.querySelectorAll('.calendar-day');
+    if (calendarDays && calendarDays.length > 0) {
+        calendarDays.forEach(day => {
+            day.addEventListener('click', () => {
+                const activeDay = document.querySelector('.calendar-day-active');
+                if (activeDay) {
+                    activeDay.classList.remove('bg-custom-accent', 'text-black', 'font-bold', 'calendar-day-active');
+                }
+                day.classList.add('bg-custom-accent', 'text-black', 'font-bold', 'calendar-day-active');
+            });
         });
-    });
+    }
+
+    // Safe Interactive Booking Calendar for Technical Profile
+    const techDays = document.querySelectorAll('.calendar-day-tech');
+    if (techDays && techDays.length > 0) {
+        techDays.forEach(day => {
+            day.addEventListener('click', () => {
+                const activeTechDay = document.querySelector('.calendar-day-tech-active');
+                if (activeTechDay) {
+                    activeTechDay.classList.remove('bg-custom-accent', 'text-black', 'font-bold', 'calendar-day-tech-active');
+                }
+                day.classList.add('bg-custom-accent', 'text-black', 'font-bold', 'calendar-day-tech-active');
+            });
+        });
+    }
 });
 </script>
