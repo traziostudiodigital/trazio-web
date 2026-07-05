@@ -1,20 +1,22 @@
-            <div class="hidden sm:flex justify-center mb-12 relative z-40 sticky top-20 shadow-xl backdrop-blur-xl bg-custom-card/80 p-1.5 flex space-x-1 border border-custom/20 rounded-[10px] max-w-sm mx-auto">
-                <div class="bg-custom-card/0 p-1.5 flex space-x-1 border border-custom/20 rounded-[10px] shadow-lg max-w-sm mx-auto">
-                    <button id="btn-profile-creativo" class="px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 active-profile-btn" data-i18n="btn-profile-creativo">
-                        Perfil Visual / Artístico
-                    </button>
-                    <button id="btn-profile-corporativo" class="px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 inactive-profile-btn" data-i18n="btn-profile-corporativo">
-                        Perfil Técnico / Consultor
-                    </button>
-                </div>
-            </div>
+<div class="sticky top-20 z-40 w-full flex justify-center pointer-events-none mt-8 hidden sm:flex">
+  <div class="pointer-events-auto bg-custom-card/80 backdrop-blur-xl p-1.5 flex justify-center space-x-1 border border-custom/20 rounded-[10px] shadow-lg max-w-fit mx-auto">
+    <button id="btn-profile-creativo" class="px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 bg-custom-main text-custom-accent border border-custom-accent/30 shadow-md" data-i18n="btn-profile-creativo">
+      Perfil Visual / Artístico
+    </button>
+    <button id="btn-profile-corporativo" class="px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 text-custom-muted hover:text-custom-main" data-i18n="btn-profile-corporativo">
+      Perfil Técnico / Consultor
+    </button>
+  </div>
+</div>
 
-            <!-- Mobile Sticky Floating Navigation Capsule -->
-            <div class="sm:hidden sticky top-[72px] z-40 bg-custom-card/80 backdrop-blur-xl p-1.5 flex justify-center space-x-1 border border-custom/20 rounded-[10px] shadow-xl w-full max-w-sm mx-auto mb-12" id="mobile-profile-selector">
-                <button id="btn-profile-creativo-mobile" class="px-3 py-1.5 rounded-md text-xs font-semibold transition-all duration-300 active-profile-btn" data-i18n="btn-profile-creativo">
-                        Perfil Visual / Artístico
-                </button>
-                <button id="btn-profile-corporativo-mobile" class="px-3 py-1.5 rounded-md text-xs font-semibold transition-all duration-300 inactive-profile-btn" data-i18n="btn-profile-corporativo">
-                        Perfil Técnico / Consultor
-                </button>
-            </div>
+<!-- Mobile Sticky Floating Navigation Capsule -->
+<div class="sm:hidden sticky top-[72px] z-40 w-full flex justify-center pointer-events-none mt-8" id="mobile-profile-selector">
+  <div class="pointer-events-auto bg-custom-card/80 backdrop-blur-xl p-1.5 flex justify-center space-x-1 border border-custom/20 rounded-[10px] shadow-lg max-w-fit mx-auto">
+    <button id="btn-profile-creativo-mobile" class="px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 bg-custom-main text-custom-accent border border-custom-accent/30 shadow-md" data-i18n="btn-profile-creativo">
+      Perfil Visual / Artístico
+    </button>
+    <button id="btn-profile-corporativo-mobile" class="px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 text-custom-muted hover:text-custom-main" data-i18n="btn-profile-corporativo">
+      Perfil Técnico / Consultor
+    </button>
+  </div>
+</div>

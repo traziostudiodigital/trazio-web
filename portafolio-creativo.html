@@ -51,16 +51,20 @@
 
 <main class="flex-grow">
     <section id="portfolio-hero" class="max-w-4xl mx-auto px-6 py-12 md:py-16 flex flex-col items-center text-center animate-fade-in-up">
+    <!-- Badge superior -->
+    <div class="inline-flex items-center rounded-full border-custom/30 text-custom-accent bg-custom-accent/5 px-3 py-1 text-sm font-medium mb-6">
+        La era del currículum aburrido ha muerto
+    </div>
     <img src="assets/logo-gold.svg" class="logo-gold h-14 md:h-16 mx-auto mb-6" alt="Trazio Studio">
     <img src="assets/logo-dark.svg" class="logo-dark h-14 md:h-16 mx-auto mb-6" alt="Trazio Studio">
     <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tighter leading-[1.1] mb-6 text-custom-main" data-i18n="port-hero-title">
-        Tu Talento merece un <span class="text-custom-accent">Escenario Internacional</span>
+        Tu talento necesita un <span class="text-custom-accent">Escenario Internacional</span>
     </h1>
     <p class="text-lg sm:text-xl text-custom-muted max-w-2xl mb-12 leading-relaxed" data-i18n="port-hero-subtitle">
-        Deja de competir en el ruido de los algoritmos de redes sociales y posiciona tu marca personal con una herramienta web de élite.
+        Deja de rogar por WhatsApp y empieza a filtrar clientes de alto nivel. Diseñamos tu escaparate digital bilingüe de alta velocidad para Cuba y el mundo. Posiciona tu prestigio, automatiza tus reservas y cobra lo que realmente vales.
     </p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center items-center w-full sm:w-auto">
-        <a href="#portfolio-workspace" class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 text-base font-semibold text-white bg-custom-accent rounded-xl shadow-lg shadow-custom-accent/10 hover:bg-custom-accent-hover hover:-translate-y-1 transition-all duration-300">
+        <a href="https://wa.me/5350000000?text=Hola,%20quiero%20diseñar%20mi%20marca" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 text-base font-semibold text-white bg-custom-accent rounded-xl shadow-lg shadow-custom-accent/10 hover:bg-custom-accent-hover hover:-translate-y-1 transition-all duration-300">
             Ver Diseños
         </a>
         <a href="https://wa.me/5350000000?text=Hola,%20quiero%20diseñar%20mi%20marca" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 text-base font-semibold text-custom-main bg-custom-card border border-custom/20 rounded-xl hover:bg-custom-main hover:border-custom/55 hover:-translate-y-1 transition-all duration-300">
@@ -70,26 +74,29 @@
 </section>
     
     <!-- Navegación Sticky (Pills) -->
-                <div class="hidden sm:flex justify-center mb-12 relative z-40 sticky top-20 shadow-xl backdrop-blur-xl bg-custom-card/80 p-1.5 flex space-x-1 border border-custom/20 rounded-[10px] max-w-sm mx-auto">
-                <div class="bg-custom-card/0 p-1.5 flex space-x-1 border border-custom/20 rounded-[10px] shadow-lg max-w-sm mx-auto">
-                    <button id="btn-profile-creativo" class="px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 active-profile-btn" data-i18n="btn-profile-creativo">
-                        Perfil Visual / Artístico
-                    </button>
-                    <button id="btn-profile-corporativo" class="px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 inactive-profile-btn" data-i18n="btn-profile-corporativo">
-                        Perfil Técnico / Consultor
-                    </button>
-                </div>
-            </div>
+    <div class="sticky top-20 z-40 w-full flex justify-center pointer-events-none mt-8 hidden sm:flex">
+  <div class="pointer-events-auto bg-custom-card/80 backdrop-blur-xl p-1.5 flex justify-center space-x-1 border border-custom/20 rounded-[10px] shadow-lg max-w-fit mx-auto">
+    <button id="btn-profile-creativo" class="px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 bg-custom-main text-custom-accent border border-custom-accent/30 shadow-md" data-i18n="btn-profile-creativo">
+      Perfil Visual / Artístico
+    </button>
+    <button id="btn-profile-corporativo" class="px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 text-custom-muted hover:text-custom-main" data-i18n="btn-profile-corporativo">
+      Perfil Técnico / Consultor
+    </button>
+  </div>
+</div>
 
-            <!-- Mobile Sticky Floating Navigation Capsule -->
-            <div class="sm:hidden sticky top-[72px] z-40 bg-custom-card/80 backdrop-blur-xl p-1.5 flex justify-center space-x-1 border border-custom/20 rounded-[10px] shadow-xl w-full max-w-sm mx-auto mb-12" id="mobile-profile-selector">
-                <button id="btn-profile-creativo-mobile" class="px-3 py-1.5 rounded-md text-xs font-semibold transition-all duration-300 active-profile-btn" data-i18n="btn-profile-creativo">
-                        Perfil Visual / Artístico
-                </button>
-                <button id="btn-profile-corporativo-mobile" class="px-3 py-1.5 rounded-md text-xs font-semibold transition-all duration-300 inactive-profile-btn" data-i18n="btn-profile-corporativo">
-                        Perfil Técnico / Consultor
-                </button>
-            </div>
+<!-- Mobile Sticky Floating Navigation Capsule -->
+<div class="sm:hidden sticky top-[72px] z-40 w-full flex justify-center pointer-events-none mt-8" id="mobile-profile-selector">
+  <div class="pointer-events-auto bg-custom-card/80 backdrop-blur-xl p-1.5 flex justify-center space-x-1 border border-custom/20 rounded-[10px] shadow-lg max-w-fit mx-auto">
+    <button id="btn-profile-creativo-mobile" class="px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 bg-custom-main text-custom-accent border border-custom-accent/30 shadow-md" data-i18n="btn-profile-creativo">
+      Perfil Visual / Artístico
+    </button>
+    <button id="btn-profile-corporativo-mobile" class="px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 text-custom-muted hover:text-custom-main" data-i18n="btn-profile-corporativo">
+      Perfil Técnico / Consultor
+    </button>
+  </div>
+</div>
+
 
     <!-- Contenedor Dinámico -->
     <div id="portfolio-viewport" class="max-w-6xl mx-auto px-6 transition-all duration-300">
@@ -108,7 +115,7 @@
                             <!-- Giant Elegant Gold Quotation Mark -->
                             <span class="text-7xl font-serif text-custom-accent/15 absolute -top-8 -left-6 leading-none pointer-events-none select-none">“</span>
                             <p class="text-lg sm:text-xl text-custom-muted italic leading-relaxed relative z-10 font-light" data-i18n="demo-badge-subtitle">
-                                Diseñado para fotógrafos, modelos, maquilladores, diseñadores, arquitectos y cualquier creador que necesite que su trabajo impacte a primera vista. Olvídate de los límites de Instagram.
+                                Diseñado para fotógrafos, modelos, estilistas y cualquier creador que necesite que su trabajo impacte a primera vista. Olvídate de los límites de Instagram.
                             </p>
                         </div>
                     </div>
@@ -160,49 +167,49 @@
                                     Invertir en tu arte nunca fue tan fácil
                                 </h2>
                                 <p class="text-lg sm:text-xl text-custom-muted leading-relaxed font-light" data-i18n="creative-rates-description">
-                                    Tarifas claras y transparentes para que tu talento brille sin sorpresas. Elige el plan que mejor se adapte a tus necesidades y comienza a impactar.
+                                    Tarifas claras y transparentes para que tu talento brille sin sorpresas. Elige el servicio que mejor se adapte a tus necesidades y comienza a impactar.
                                 </p>
                             </div>
 
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                                <!-- Tarjeta de Precio 1: Básico -->
+                                <!-- Tarjeta de Servicio 1: Sesión Creativa / Retratos -->
                                 <div class="bg-custom-card/40 border border-custom/10 p-8 rounded-2xl flex flex-col items-center text-center shadow-lg hover:border-custom-accent/20 transition-colors duration-300">
-                                    <span class="text-custom-accent text-sm font-bold uppercase mb-3 block" data-i18n="creative-basic-plan">PLAN BÁSICO</span>
-                                    <h3 class="text-3xl font-bold text-custom-main mb-6" data-i18n="creative-basic-price"><span class="text-lg align-super">$</span>99<span class="text-base font-normal text-custom-muted">/mes</span></h3>
-                                    <ul class="text-custom-muted text-left space-y-3 mb-8">
-                                        <li class="flex items-center"><svg class="w-5 h-5 text-custom-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-i18n="creative-basic-feature1">Dominio Personalizado</span></li>
-                                        <li class="flex items-center"><svg class="w-5 h-5 text-custom-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-i18n="creative-basic-feature2">5 Páginas</span></li>
-                                        <li class="flex items-center"><svg class="w-5 h-5 text-custom-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-i18n="creative-basic-feature3">Galería Masonry</span></li>
-                                        <li class="flex items-center"><svg class="w-5 h-5 text-custom-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-i18n="creative-basic-feature4">Optimización SEO Básica</span></li>
+                                    <span class="text-custom-accent text-sm font-bold uppercase mb-3 block">SESIÓN CREATIVA / RETRATOS</span>
+                                    <h3 class="text-3xl font-bold text-custom-main mb-6"><span class="text-lg align-super">$</span>50<span class="text-base font-normal text-custom-muted"> USD</span></h3>
+                                    <ul class="text-custom-muted text-left space-y-3 mb-8 w-full">
+                                        <li class="flex items-center"><svg class="w-5 h-5 text-custom-accent mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Retratos profesionales de alta gama</span></li>
+                                        <li class="flex items-center"><svg class="w-5 h-5 text-custom-accent mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>1 locación o exteriores</span></li>
+                                        <li class="flex items-center"><svg class="w-5 h-5 text-custom-accent mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>10 fotos editadas en alta resolución</span></li>
+                                        <li class="flex items-center"><svg class="w-5 h-5 text-custom-accent mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Entrega digital en 5 días hábiles</span></li>
                                     </ul>
-                                    <button class="mt-auto bg-custom-accent text-custom-dark font-bold py-3 px-8 rounded-full hover:bg-opacity-90 transition-colors" data-i18n="creative-get-started">Comenzar</button>
+                                    <button class="mt-auto bg-custom-accent text-custom-dark font-bold py-3 px-8 rounded-full hover:bg-opacity-90 transition-colors w-full">RESERVAR SERVICIO (DEMO)</button>
                                 </div>
-                                <!-- Tarjeta de Precio 2: Estándar (Destacado) -->
-                                <div class="bg-custom-accent/10 border border-custom-accent p-8 rounded-2xl flex flex-col items-center text-center shadow-2xl scale-105 relative">
-                                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-custom-accent text-custom-dark text-xs font-bold uppercase px-4 py-2 rounded-full" data-i18n="creative-popular">Popular</div>
-                                    <span class="text-custom-accent text-sm font-bold uppercase mb-3 block mt-6" data-i18n="creative-standard-plan">PLAN ESTÁNDAR</span>
-                                    <h3 class="text-3xl font-bold text-custom-main mb-6" data-i18n="creative-standard-price"><span class="text-lg align-super">$</span>199<span class="text-base font-normal text-custom-muted">/mes</span></h3>
-                                    <ul class="text-custom-muted text-left space-y-3 mb-8">
-                                        <li class="flex items-center"><svg class="w-5 h-5 text-custom-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-i18n="creative-standard-feature1">Todo lo del Básico +</span></li>
-                                        <li class="flex items-center"><svg class="w-5 h-5 text-custom-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-i18n="creative-standard-feature2">10 Páginas</span></li>
-                                        <li class="flex items-center"><svg class="w-5 h-5 text-custom-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-i18n="creative-standard-feature3">Integración con Instagram</span></li>
-                                        <li class="flex items-center"><svg class="w-5 h-5 text-custom-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-i18n="creative-standard-feature4">Análisis de Competencia</span></li>
-                                        <li class="flex items-center"><svg class="w-5 h-5 text-custom-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-i18n="creative-standard-feature5">Soporte Prioritario 24/7</span></li>
-                                    </ul>
-                                    <button class="mt-auto bg-custom-accent text-custom-dark font-bold py-3 px-8 rounded-full hover:bg-opacity-90 transition-colors" data-i18n="creative-choose-plan">Elegir Plan</button>
-                                </div>
-                                <!-- Tarjeta de Precio 3: Premium -->
+                                <!-- Tarjeta de Servicio 2: Diseño / Dirección de Arte -->
                                 <div class="bg-custom-card/40 border border-custom/10 p-8 rounded-2xl flex flex-col items-center text-center shadow-lg hover:border-custom-accent/20 transition-colors duration-300">
-                                    <span class="text-custom-accent text-sm font-bold uppercase mb-3 block" data-i18n="creative-premium-plan">PLAN PREMIUM</span>
-                                    <h3 class="text-3xl font-bold text-custom-main mb-6" data-i18n="creative-premium-price"><span class="text-lg align-super">$</span>349<span class="text-base font-normal text-custom-muted">/mes</span></h3>
-                                    <ul class="text-custom-muted text-left space-y-3 mb-8">
-                                        <li class="flex items-center"><svg class="w-5 h-5 text-custom-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-i18n="creative-premium-feature1">Todo lo del Estándar +</span></li>
-                                        <li class="flex items-center"><svg class="w-5 h-5 text-custom-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-i18n="creative-premium-feature2">Páginas Ilimitadas</span></li>
-                                        <li class="flex items-center"><svg class="w-5 h-5 text-custom-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-i18n="creative-premium-feature3">Estrategia de Contenido IA</span></li>
-                                        <li class="flex items-center"><svg class="w-5 h-5 text-custom-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-i18n="creative-premium-feature4">Optimización de Carga Ultra Rápida</span></li>
-                                        <li class="flex items-center"><svg class="w-5 h-5 text-custom-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-i18n="creative-premium-feature5">Consultoría Mensual Dedicada</span></li>
+                                    <span class="text-custom-accent text-sm font-bold uppercase mb-3 block">DISEÑO / DIRECCIÓN DE ARTE</span>
+                                    <h3 class="text-3xl font-bold text-custom-main mb-6"><span class="text-lg align-super">$</span>150<span class="text-base font-normal text-custom-muted"> USD</span></h3>
+                                    <ul class="text-custom-muted text-left space-y-3 mb-8 w-full">
+                                        <li class="flex items-center"><svg class="w-5 h-5 text-custom-accent mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Conceptualización y moodboard creativo</span></li>
+                                        <li class="flex items-center"><svg class="w-5 h-5 text-custom-accent mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Diseño de branding o identidad visual</span></li>
+                                        <li class="flex items-center"><svg class="w-5 h-5 text-custom-accent mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Dirección de arte para sesiones fotográficas</span></li>
+                                        <li class="flex items-center"><svg class="w-5 h-5 text-custom-accent mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Soporte y consultoría durante el proyecto</span></li>
                                     </ul>
-                                    <button class="mt-auto bg-custom-accent text-custom-dark font-bold py-3 px-8 rounded-full hover:bg-opacity-90 transition-colors" data-i18n="creative-contact-sales">Contactar Ventas</button>
+                                    <button class="mt-auto bg-custom-accent text-custom-dark font-bold py-3 px-8 rounded-full hover:bg-opacity-90 transition-colors w-full">RESERVAR SERVICIO (DEMO)</button>
+                                </div>
+                                <!-- Tarjeta de Servicio 3: Servicio / Asesoría Premium (Destacada) -->
+                                <div class="border-double-gold p-1 bg-custom-accent/10 flex flex-col scale-105 relative shadow-2xl">
+                                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-custom-accent text-custom-dark text-xs font-bold uppercase px-4 py-2 rounded-full z-20">Premium</div>
+                                    <div class="bg-custom-card/85 p-8 rounded-lg flex flex-col items-center text-center h-full">
+                                        <span class="text-custom-accent text-sm font-bold uppercase mb-3 block mt-4">SERVICIO / ASESORÍA PREMIUM</span>
+                                        <h3 class="text-3xl font-bold text-custom-main mb-6"><span class="text-lg align-super">$</span>100<span class="text-base font-normal text-custom-muted"> USD</span></h3>
+                                        <ul class="text-custom-muted text-left space-y-3 mb-8 w-full">
+                                            <li class="flex items-center"><svg class="w-5 h-5 text-custom-accent mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Sesión de asesoría estratégica 1-a-1</span></li>
+                                            <li class="flex items-center"><svg class="w-5 h-5 text-custom-accent mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Plan de acción para tu marca personal</span></li>
+                                            <li class="flex items-center"><svg class="w-5 h-5 text-custom-accent mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Dirección y producción completa</span></li>
+                                            <li class="flex items-center"><svg class="w-5 h-5 text-custom-accent mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Soporte VIP y acompañamiento de arte</span></li>
+                                        </ul>
+                                        <button class="mt-auto bg-custom-accent text-custom-dark font-bold py-3 px-8 rounded-full hover:bg-opacity-90 transition-colors w-full">RESERVAR SERVICIO (DEMO)</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -232,42 +239,48 @@
 
             <!-- Calendar Grid -->
             <div class="bg-custom-card border border-custom/10 rounded-2xl p-6 shadow-xl w-full max-w-sm mx-auto">
+                <!-- Badge de Capacidad -->
+                <div class="flex justify-center mb-4">
+                    <span class="px-3 py-1 rounded-full bg-custom-accent/10 text-custom-accent text-[10px] font-bold border border-custom-accent/20">
+                        🔥 AGENDA 2026 AL 80% DE CAPACIDAD
+                    </span>
+                </div>
                 <h4 class="text-custom-main text-lg font-semibold mb-4 text-center">Noviembre 2026</h4>
                 <div class="grid grid-cols-7 text-center text-xs font-medium text-custom-muted mb-4">
                     <span>Lun</span><span>Mar</span><span>Mié</span><span>Jue</span><span>Vie</span><span>Sáb</span><span>Dom</span>
                 </div>
                 <div class="grid grid-cols-7 gap-y-2 text-center text-sm">
                     <span class="w-8 h-8"></span><span class="w-8 h-8"></span><span class="w-8 h-8"></span><span class="w-8 h-8"></span>
-                    <span class="w-8 h-8 hover:text-custom-accent cursor-pointer">1</span>
-                    <span class="w-8 h-8 hover:text-custom-accent cursor-pointer">2</span>
-                    <span class="w-8 h-8 hover:text-custom-accent cursor-pointer">3</span>
-                    <span class="w-8 h-8 hover:text-custom-accent cursor-pointer">4</span>
-                    <span class="w-8 h-8 hover:text-custom-accent cursor-pointer">5</span>
-                    <span class="w-8 h-8 hover:text-custom-accent cursor-pointer">6</span>
-                    <span class="w-8 h-8 hover:text-custom-accent cursor-pointer">7</span>
-                    <span class="w-8 h-8 hover:text-custom-accent cursor-pointer">8</span>
-                    <span class="w-8 h-8 hover:text-custom-accent cursor-pointer">9</span>
-                    <span class="w-8 h-8 hover:text-custom-accent cursor-pointer">10</span>
-                    <span class="w-8 h-8 hover:text-custom-accent cursor-pointer">11</span>
-                    <span class="w-8 h-8 hover:text-custom-accent cursor-pointer">12</span>
-                    <span class="w-8 h-8 hover:text-custom-accent cursor-pointer">13</span>
-                    <span class="w-8 h-8 hover:text-custom-accent cursor-pointer">14</span>
-                    <span class="w-8 h-8 hover:text-custom-accent cursor-pointer">15</span>
-                    <span class="w-8 h-8 hover:text-custom-accent cursor-pointer">16</span>
-                    <span class="w-8 h-8 hover:text-custom-accent cursor-pointer">17</span>
-                    <span class="w-8 h-8 hover:text-custom-accent cursor-pointer">18</span>
-                    <span class="w-8 h-8 hover:text-custom-accent cursor-pointer">19</span>
-                    <span class="w-8 h-8 hover:text-custom-accent cursor-pointer">20</span>
-                    <span class="w-8 h-8 hover:text-custom-accent cursor-pointer">21</span>
-                    <span class="w-8 h-8 hover:text-custom-accent cursor-pointer">22</span>
-                    <span class="w-8 h-8 bg-custom-accent text-black font-bold rounded-full">23</span>
-                    <span class="w-8 h-8 hover:text-custom-accent cursor-pointer">24</span>
-                    <span class="w-8 h-8 hover:text-custom-accent cursor-pointer">25</span>
-                    <span class="w-8 h-8 hover:text-custom-accent cursor-pointer">26</span>
-                    <span class="w-8 h-8 hover:text-custom-accent cursor-pointer">27</span>
-                    <span class="w-8 h-8 hover:text-custom-accent cursor-pointer">28</span>
-                    <span class="w-8 h-8 hover:text-custom-accent cursor-pointer">29</span>
-                    <span class="w-8 h-8 hover:text-custom-accent cursor-pointer">30</span>
+                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">1</span>
+                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">2</span>
+                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">3</span>
+                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">4</span>
+                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">5</span>
+                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">6</span>
+                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">7</span>
+                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">8</span>
+                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">9</span>
+                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">10</span>
+                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">11</span>
+                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">12</span>
+                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">13</span>
+                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">14</span>
+                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">15</span>
+                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">16</span>
+                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">17</span>
+                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">18</span>
+                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">19</span>
+                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">20</span>
+                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">21</span>
+                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">22</span>
+                    <span class="w-8 h-8 flex items-center justify-center bg-custom-accent text-black font-bold rounded-full cursor-pointer calendar-day-active">23</span>
+                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">24</span>
+                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">25</span>
+                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">26</span>
+                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">27</span>
+                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">28</span>
+                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">29</span>
+                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">30</span>
                 </div>
                 <div class="mt-6 text-center">
                     <span class="bg-custom-main text-custom-accent px-4 py-2 rounded-full text-sm">10:00 AM - 12:00 PM</span>
@@ -284,10 +297,10 @@
  DEMO DE PERFIL EJECUTIVO B2B
  </span>
  <h2 class=\text-3xl md:text-5xl font-bold tracking-tight mb-6 text-custom-main\>
- Tu currículum en PDF te hace ver barato...
+ Tu currículum en PDF te hace ver barato. Tu Dossier Interactivo te hace ver indispensable.
  </h2>
  <p class=\text-base sm:text-lg text-custom-muted max-w-2xl mx-auto leading-relaxed\>
- El 90% de los profesionales técnicos de alta cualificación en Cuba compiten enviando un Word plano o un PDF aburrido por correo. Si quieres cerrar contratos internacionales, licitaciones con hoteles o consultorías en divisas, necesitas demostrar autoridad antes de que te entrevisten.
+ El 90% de los ingenieros y consultores técnicos en Cuba compiten enviando un Word plano. Si quieres cerrar contratos internacionales, licitaciones con hoteles o consultorías en divisas, necesitas demostrar impacto financiero antes de que te entrevisten.
  </p>
  </section>
 
@@ -353,13 +366,19 @@
     
     <!-- Name Tag -->
     <div class="text-xs font-mono text-[#C9A96E] font-bold relative z-10">
-        [ Alejandro // Systems Architect ]
+        [ Alejandro // Systems Architect & ERP Consultant ]
     </div>
 </div>
     
 
 </div>
 ```
+    <div class="max-w-4xl mx-auto px-6 py-4 text-center">
+        <button class="w-full md:w-auto px-8 py-3 bg-[#C9A96E] text-black font-bold rounded-md hover:bg-opacity-90 transition-colors" onclick="window.print()">
+            EXPORTAR CV PROFESIONAL (PDF)
+        </button>
+    </div>
+</div>
     </div>
 </main>
 

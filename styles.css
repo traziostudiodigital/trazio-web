@@ -194,3 +194,44 @@ header a:active img {
   background-color: transparent;
   opacity: 0.04; /* Contraste muy bajo */
 }
+
+@media print {
+    header, footer, nav, .hide-on-print, .no-print, button, .animate-fade-in-up {
+        display: none !important;
+    }
+
+    body {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+        margin: 0;
+        padding: 0;
+        box-shadow: none !important;
+        -webkit-print-color-adjust: exact; /* For better print background colors */
+        print-color-adjust: exact;
+    }
+
+    /* Optimize for A4 size */
+    @page {
+        size: A4;
+        margin: 1cm; /* Adjust margins as needed */
+    }
+
+    /* Remove shadows from all elements */
+    * {
+        box-shadow: none !important;
+        text-shadow: none !important;
+        -webkit-box-shadow: none !important;
+        -moz-box-shadow: none !important;
+    }
+
+    /* Ensure text is black for readability */
+    .text-custom-main, .text-custom-muted, h1, h2, h3, h4, h5, h6, p, span, div {
+        color: #000000 !important;
+    }
+
+    /* Ensure links are black and not underlined unless specified */
+    a {
+        color: #000000 !important;
+        text-decoration: none !important;
+    }
+}

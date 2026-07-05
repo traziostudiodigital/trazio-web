@@ -478,6 +478,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- COMENTARIO: Lógica de selección de días en el calendario con delegación de eventos ---
+    document.addEventListener('click', function(e) {
+        // Verificar si el elemento clickeado o uno de sus padres tiene la clase 'calendar-day-active'
+        const clickedDay = e.target.closest('.calendar-day-active');
+
+        // Solo proceder si se hizo clic en un día activo del calendario
+        if (clickedDay) {
+            // Encontrar todos los días que pueden ser activos en el calendario
+            const allCalendarDays = document.querySelectorAll('.calendar-day-active');
+
+            // Remover la clase de selección de todos los días, si la tienen
+            allCalendarDays.forEach(day => {
+                day.classList.remove('bg-custom-accent', 'text-black', 'font-bold');
+            });
+
+            // Aplicar la clase de selección EXCLUSIVAMENTE al día clickeado
+            clickedDay.classList.add('bg-custom-accent', 'text-black', 'font-bold');
+        }
+    });
+
+    // --- COMENTARIO: Enlace Seguro de Eventos de Interacción del Sistema ---
+
     // --- COMENTARIO: Enlace Seguro de Eventos de Interacción del Sistema ---
     if (themeSwitcher) {
         themeSwitcher.addEventListener('click', toggleTheme);
