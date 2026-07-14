@@ -1,90 +1,109 @@
-﻿```html
-<div id=" pane-corporativo\ class=\hidden animate-fade-in-up\>
- <!-- Bloque Introductorio de Autoridad -->
- <section class=\max-w-4xl mx-auto px-6 py-12 text-center\>
- <span class=\inline-block px-3 py-1 rounded-full border border-[#C9A96E]/30 text-xs font-bold uppercase tracking-wider text-[#C9A96E] mb-4\>
- DEMO DE PERFIL EJECUTIVO B2B
- </span>
- <h2 class=\text-3xl md:text-5xl font-bold tracking-tight mb-6 text-custom-main\>
- Tu currículum en PDF te hace ver barato. Tu Dossier Interactivo te hace ver indispensable.
- </h2>
- <p class=\text-base sm:text-lg text-custom-muted max-w-2xl mx-auto leading-relaxed\>
+﻿<div id="seccion-tecnica" class="hidden w-full py-16 px-4 md:px-8 max-w-7xl mx-auto text-white">
+  <!-- Layout Principal en Grid -->
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-16">
+
+    <!-- Columna Izquierda: Copy de Autoridad + Tech Card (5 de 12 Cols) -->
+    <div class="lg:col-span-5 space-y-8">
+      <div class="space-y-4">
+        <span class="text-xs font-bold tracking-widest text-[#C9A96E] uppercase bg-[#C9A96E]/10 px-3 py-1 rounded-full">
+          Dossier de Ingeniería Elite
+        </span>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-white leading-tight">
+          Tu currículum en PDF te hace ver barato. <br>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#C9A96E] to-[#E1C285]">
+            Tu Dossier Interactivo te hace ver indispensable.
+          </span>
+        </h2>
+        <p class="text-gray-400 text-base md:text-lg leading-relaxed">
  El 90% de los ingenieros y consultores técnicos en Cuba compiten enviando un Word plano. Si quieres cerrar contratos internacionales, licitaciones con hoteles o consultorías en divisas, necesitas demostrar impacto financiero antes de que te entrevisten.
  </p>
- </section>
+ </div>
 
- <!-- Casos de Éxito de Alto Impacto -->
- <section class=\max-w-6xl mx-auto px-6 py-8\>
- <div class=\grid grid-cols-1 md:grid-cols-2 gap-8\>
- <!-- Caso 1 -->
- <div class=\bg-custom-card p-8 rounded-lg border border-custom/10 hover:border-[#C9A96E]/30 transition-all duration-300\>
- <span class=\text-xs font-bold text-[#C9A96E] uppercase tracking-wider\>CASO DE ÉXITO // INGENIERÍA</span>
- <h3 class=\text-xl font-bold mt-2 mb-4 text-custom-main\>Automatización de Sistema de Climatización Industrial</h3>
- <div class=\inline-block bg-custom-main px-3 py-1 rounded text-xs font-semibold text-custom-accent mb-4 border border-[#C9A96E]/10\>
- -40% Consumo Energético | 0% Paradas Críticas
+      <!-- Tech Card de Alejandro (Simulación de Entorno de Desarrollo) -->
+      <div class="bg-[#1E1E2A] border border-[#C9A96E] rounded-lg p-6 font-mono text-xs md:text-sm shadow-lg hover:shadow-[#C9A96E]/10 transition-all duration-300">
+        <!-- Cabecera de Ventana IDE -->
+        <div class="flex items-center justify-between pb-4 border-b border-gray-800 mb-4">
+          <div class="flex space-x-1.5">
+            <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-green-500/80 inline-block"></span>
  </div>
- <p class=\text-sm text-custom-muted leading-relaxed\>
- <strong>Problema:</strong> El sistema de climatización de un hotel colapsaba por picos de consumo y fallos en las manejadoras.<br>
- <strong>Solución:</strong> Rediseño completo del sistema eléctrico de control y automatización de variables en tiempo real.<br>
- <strong>Resultado:</strong> Ahorro inmediato del 40% en la factura eléctrica del hotel y control operativo 24/7 sin fallos.
- </p>
+          <span class="text-xs text-gray-500 select-none">architect_profile.py</span>
  </div>
- <!-- Caso 2 -->
- <div class=\bg-custom-card p-8 rounded-lg border border-custom/10 hover:border-[#C9A96E]/30 transition-all duration-300\>
- <span class=\text-xs font-bold text-[#C9A96E] uppercase tracking-wider\>CASO DE ÉXITO // ERP & SISTEMAS</span>
- <h3 class=\text-xl font-bold mt-2 mb-4 text-custom-main\>Implementación de Control de Inventarios Mipyme</h3>
- <div class=\inline-block bg-custom-main px-3 py-1 rounded text-xs font-semibold text-custom-accent mb-4 border border-[#C9A96E]/10\>
- 100% Control de Fichas de Costo | Cero Fugas de Capital
- </div>
- <p class=\text-sm text-custom-muted leading-relaxed\>
- <strong>Problema:</strong> Descontrol operativo en almacén principal y pérdida de margen de ganancias en restaurante de alto volumen.<br>
- <strong>Solución:</strong> Integración del sistema ERP Odoo y Axispos acoplado a la contabilidad y costos locales.<br>
- <strong>Resultado:</strong> Auditoría interna automatizada y optimización del 100% del flujo de caja.
- </p>
- </div>
- </div>
- </section>
 
- <!-- Bloque CTA Reserva -->
- <section class=\max-w-4xl mx-auto px-6 py-12\>
- <div class=\bg-[#111118] p-8 rounded-lg border border-custom/10 text-center\>
- <h3 class=\text-xl font-bold text-white mb-4\>¿Listo para elevar tu perfil profesional?</h3>
- <button class=\w-full py-3 bg-[#C9A96E] text-black font-bold rounded-md hover:bg-opacity-90 transition-colors\>
- RESERVAR SERVICIO (DEMO)
- </button>
+        <!-- Líneas de Código de Sintaxis Limpia -->
+        <div class="space-y-1 text-gray-300">
+          <p><span class="text-[#C9A96E]">class</span> <span class="text-emerald-400">ConsultantProfile</span>:</p>
+          <p class="pl-4"><span class="text-blue-400">identity</span> = <span class="text-emerald-300">"[ Alejandro // Systems Architect & ERP Consultant ]"</span></p>
+          <p class="pl-4"><span class="text-blue-400">focus</span> = <span class="text-emerald-300">"Industrial ROI & System Reliability"</span></p>
+          <p class="pl-4"><span class="text-blue-400">status</span> = <span class="text-emerald-300">"Ready for International Contracts"</span></p>
+          <p class="text-gray-500 mt-4">// [ Alejandro // Systems Architect & ERP Consultant ]</p>
  </div>
- </section>
-    <!-- Brutalist Tech Card -->
-<div class="w-full max-w-md mx-auto bg-[#1E1E2A] border border-[#C9A96E]/30 rounded-lg p-8 relative overflow-hidden flex flex-col items-center justify-center text-center group hover:border-[#C9A96E] transition-colors duration-300">
-    <!-- Background Glow -->
-    <div class="absolute inset-0 bg-[#C9A96E]/5 blur-xl"></div>
-    
-    <!-- Avatar Icon -->
-    <div class="w-16 h-16 rounded-full bg-[#111118] border border-[#C9A96E]/50 flex items-center justify-center mb-6 relative z-10">
-        <svg class="w-8 h-8 text-[#C9A96E]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"></path>
+ </div>
+ </div>
+
+    <!-- Columna Derecha: Casos de Éxito ROI (7 de 12 Cols) -->
+    <div class="lg:col-span-7 space-y-6">
+      <h3 class="text-xl font-semibold text-gray-200 flex items-center gap-2">
+        <svg class="w-5 h-5 text-[#C9A96E]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
         </svg>
-    </div>
+        Casos de Éxito de Alto Impacto Financiero
+      </h3>
     
-    <!-- Code Lines -->
-    <div class="space-y-2 font-mono text-[10px] text-[#8B7355] mb-6 relative z-10 w-full text-left bg-[#111118] p-3 rounded border border-white/5">
-        <p><span class="text-pink-500">const</span> <span class="text-blue-400">consultant</span> = <span class="text-pink-500">new</span> <span class="text-yellow-200">TrazioStudio</span>('Alejandro');</p>
-        <p><span class="text-blue-400">consultant</span>.<span class="text-yellow-200">specializeIn</span>(['Odoo ERP', 'Axispos']);</p>
-        <p class="text-green-600/70">// -60% load time</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Tarjeta 1 -->
+        <div class="bg-custom-card border border-custom/10 rounded-xl p-6 flex flex-col justify-between hover:border-[#C9A96E]/30 transition-all duration-300 min-h-[200px]">
+          <div>
+            <div class="w-8 h-8 rounded-lg bg-[#C9A96E]/10 flex items-center justify-center mb-4">
+              <span class="text-[#C9A96E] font-bold text-sm">01</span>
     </div>
-    
-    <!-- Name Tag -->
-    <div class="text-xs font-mono text-[#C9A96E] font-bold relative z-10">
-        [ Alejandro // Systems Architect & ERP Consultant ]
+            <h4 class="text-lg font-bold text-white mb-2 leading-snug">
+              Automatización de Sistema de Climatización Industrial
+            </h4>
     </div>
+          <div class="mt-4 pt-4 border-t border-gray-800/60">
+            <span class="text-xs uppercase text-gray-400 block mb-1">Métrica Destacada</span>
+            <p class="text-sm font-semibold text-[#C9A96E] tracking-tight">
+              -40% Consumo Energético | 0% Paradas Críticas
+            </p>
 </div>
-    
+</div>
 
-</div>
-```
-    <div class="max-w-4xl mx-auto px-6 py-4 text-center">
-        <button class="w-full md:w-auto px-8 py-3 bg-[#C9A96E] text-black font-bold rounded-md hover:bg-opacity-90 transition-colors" onclick="window.print()">
-            EXPORTAR CV PROFESIONAL (PDF)
-        </button>
+        <!-- Tarjeta 2 -->
+        <div class="bg-custom-card border border-custom/10 rounded-xl p-6 flex flex-col justify-between hover:border-[#C9A96E]/30 transition-all duration-300 min-h-[200px]">
+          <div>
+            <div class="w-8 h-8 rounded-lg bg-[#C9A96E]/10 flex items-center justify-center mb-4">
+              <span class="text-[#C9A96E] font-bold text-sm">02</span>
     </div>
+            <h4 class="text-lg font-bold text-white mb-2 leading-snug">
+              Implementación de Control de Inventarios Mipyme
+            </h4>
+</div>
+          <div class="mt-4 pt-4 border-t border-gray-800/60">
+            <span class="text-xs uppercase text-gray-400 block mb-1">Métrica Destacada</span>
+            <p class="text-sm font-semibold text-[#C9A96E] tracking-tight">
+              100% Control de Fichas de Costo | Cero Fugas de Capital
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bloque CTA Reserva -->
+  <section class="max-w-4xl mx-auto px-6 py-12">
+    <div class="bg-[#111118] p-8 rounded-lg border border-custom/10 text-center">
+      <h3 class="text-xl font-bold text-white mb-4">¿Listo para elevar tu perfil profesional?</h3>
+      <button class="w-full py-3 bg-[#C9A96E] text-black font-bold rounded-md hover:bg-opacity-90 transition-colors">
+        RESERVAR SERVICIO (DEMO)
+      </button>
+    </div>
+  </section>
+
+  <div class="max-w-4xl mx-auto px-6 py-4 text-center">
+    <button class="w-full md:w-auto px-8 py-3 bg-[#C9A96E] text-black font-bold rounded-md hover:bg-opacity-90 transition-colors" onclick="window.print()">
+      EXPORTAR CV PROFESIONAL (PDF)
+    </button>
+  </div>
 </div>
