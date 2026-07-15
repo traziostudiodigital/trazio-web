@@ -24,7 +24,18 @@
             
             <!-- Navigation Links - Hidden on Mobile, Visible on Desktop -->
             <nav class="hidden md:flex items-center space-x-8">
-                <a href="portafolio-creativo.html" class="nav-link-premium text-sm font-medium hover:text-custom-accent transition-colors duration-300" data-i18n="nav-portfolio">Portafolios</a>
+                <div class="relative group">
+                    <button class="nav-link-premium text-sm font-medium hover:text-custom-accent transition-colors duration-300 flex items-center">
+                        Portafolios
+                        <svg class="w-2.5 h-2.5 ml-2 transition-transform duration-300 group-hover:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                        </svg>
+                    </button>
+                    <div class="absolute top-full left-0 mt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 bg-custom-card/95 backdrop-blur-xl border border-custom/20 rounded-xl shadow-2xl p-2 flex flex-col gap-1">
+                        <a href="portafolio-creativo.html" class="px-4 py-3 rounded-lg text-sm font-medium text-custom-muted hover:text-custom-accent hover:bg-custom-main transition-colors">Perfil Visual / Artístico</a>
+                        <a href="portafolio-tecnico.html" class="px-4 py-3 rounded-lg text-sm font-medium text-custom-muted hover:text-custom-accent hover:bg-custom-main transition-colors">Perfil Técnico / Consultor</a>
+                    </div>
+                </div>
                 <a href="catalogo-pedidos.html" class="nav-link-premium text-sm font-medium hover:text-custom-accent transition-colors duration-300" data-i18n="nav-catalogs">Catálogos</a>
                 <a href="identidad-corporativa.html" class="nav-link-premium text-sm font-medium hover:text-custom-accent transition-colors duration-300" data-i18n="nav-corporate">Empresas</a>
             </nav>
@@ -72,34 +83,33 @@
         </a>
     </div>
 </section>
-    
-    <!-- Navegación Sticky (Pills) -->
-    <div class="sticky top-20 z-40 w-full flex justify-center pointer-events-none mt-8 hidden sm:flex">
-  <div class="pointer-events-auto bg-custom-card/80 backdrop-blur-xl p-1.5 flex justify-center space-x-1 border border-custom/20 rounded-[10px] shadow-lg max-w-fit mx-auto">
-    <button id="btn-profile-creativo" class="px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 bg-custom-main text-custom-accent border border-custom-accent/30 shadow-md" data-i18n="btn-profile-creativo">
-      Perfil Visual / Artístico
-    </button>
-    <button id="btn-profile-corporativo" class="px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 text-custom-muted hover:text-custom-main" data-i18n="btn-profile-corporativo">
-      Perfil Técnico / Consultor
-    </button>
-  </div>
+    <!-- Falsa Pestaña: Estado CREATIVO Activo -->
+<div class="sticky top-20 z-40 w-full flex justify-center pointer-events-none mt-8 hidden sm:flex">
+    <div class="pointer-events-auto bg-custom-card/80 backdrop-blur-xl p-1.5 flex justify-center space-x-1 border border-custom/20 rounded-[10px] shadow-lg">
+        <!-- ACTIVO -->
+        <a href="portafolio-creativo.html" class="px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 bg-custom-main text-custom-accent border border-custom-accent/30 shadow-md">
+            Perfil Visual / Artístico
+        </a>
+        <!-- INACTIVO (Enlace a la otra página) -->
+        <a href="portafolio-tecnico.html" class="px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 text-custom-muted border border-transparent hover:text-custom-main">
+            Perfil Técnico / Consultor
+        </a>
+    </div>
 </div>
 
-<!-- Mobile Sticky Floating Navigation Capsule -->
-<div class="sm:hidden sticky top-[72px] z-40 w-full flex justify-center pointer-events-none mt-8" id="mobile-profile-selector">
-  <div class="pointer-events-auto bg-custom-card/80 backdrop-blur-xl p-1.5 flex justify-center space-x-1 border border-custom/20 rounded-[10px] shadow-lg max-w-fit mx-auto">
-    <button id="btn-profile-creativo-mobile" class="px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 bg-custom-main text-custom-accent border border-custom-accent/30 shadow-md" data-i18n="btn-profile-creativo">
-      Perfil Visual / Artístico
-    </button>
-    <button id="btn-profile-corporativo-mobile" class="px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 text-custom-muted hover:text-custom-main" data-i18n="btn-profile-corporativo">
-      Perfil Técnico / Consultor
-    </button>
-  </div>
+<!-- Versión Mobile -->
+<div class="sm:hidden sticky top-[72px] z-40 w-full flex justify-center pointer-events-none mt-8">
+    <div class="pointer-events-auto bg-custom-card/80 backdrop-blur-xl p-1.5 flex justify-center space-x-1 border border-custom/20 rounded-[10px] shadow-lg">
+        <a href="portafolio-creativo.html" class="px-4 py-2.5 rounded-lg text-xs font-semibold transition-all duration-300 bg-custom-main text-custom-accent border border-custom-accent/30 shadow-md">
+            Visual / Artístico
+        </a>
+        <a href="portafolio-tecnico.html" class="px-4 py-2.5 rounded-lg text-xs font-semibold transition-all duration-300 text-custom-muted border border-transparent hover:text-custom-main">
+            Técnico / Consultor
+        </a>
+    </div>
 </div>
 
-
-    <!-- Contenedor Dinámico -->
-    <div id="portfolio-viewport" class="max-w-6xl mx-auto px-6 transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-6">
         <div id="pane-creativo" class="block">
                     <!-- Intro de Nichos e Información de Demo -->
                     <div class="text-center max-w-4xl mx-auto mb-16 pt-10 animate-fade-in-up">
@@ -158,8 +168,8 @@
                             </div>
                         </div>
                     </div>
-                         <!-- Seccion de Tarifas y Servicios -->
-                    <section id="rates" class="py-16 md:py-24 bg-custom-secondary relative">
+                            <!-- Seccion de Tarifas y Servicios -->
+                    <section id="rates" class="mt-20 py-16 md:py-24 bg-custom-secondary relative">
                         <div class="container mx-auto px-6 relative z-10">
                             <div class="text-center max-w-4xl mx-auto mb-16">
                                 <span class="text-custom-accent text-sm font-bold tracking-widest uppercase mb-4 block" data-i18n="creative-rates-subtitle">NUESTRAS TARIFAS Y SERVICIOS</span>
@@ -182,7 +192,7 @@
                                         <li class="flex items-center"><svg class="w-5 h-5 text-custom-accent mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>10 fotos editadas en alta resolución</span></li>
                                         <li class="flex items-center"><svg class="w-5 h-5 text-custom-accent mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Entrega digital en 5 días hábiles</span></li>
                                     </ul>
-                                    <button class="mt-auto bg-custom-accent text-custom-dark font-bold py-3 px-8 rounded-full hover:bg-opacity-90 transition-colors w-full">RESERVAR SERVICIO (DEMO)</button>
+                                    <a href="https://wa.me/5350000000?text=Hola,%20quiero%20reservar%20este%20servicio%20creativo" target="_blank" class="mt-auto bg-custom-accent text-custom-dark font-bold py-3 px-8 rounded-full hover:bg-opacity-90 transition-colors w-full">RESERVAR SERVICIO (DEMO)</a>
                                 </div>
                                 <!-- Tarjeta de Servicio 2: Diseño / Dirección de Arte -->
                                 <div class="bg-custom-card/40 border border-custom/10 p-8 rounded-2xl flex flex-col items-center text-center shadow-lg hover:border-custom-accent/20 transition-colors duration-300">
@@ -194,7 +204,7 @@
                                         <li class="flex items-center"><svg class="w-5 h-5 text-custom-accent mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Dirección de arte para sesiones fotográficas</span></li>
                                         <li class="flex items-center"><svg class="w-5 h-5 text-custom-accent mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Soporte y consultoría durante el proyecto</span></li>
                                     </ul>
-                                    <button class="mt-auto bg-custom-accent text-custom-dark font-bold py-3 px-8 rounded-full hover:bg-opacity-90 transition-colors w-full">RESERVAR SERVICIO (DEMO)</button>
+                                    <a href="https://wa.me/5350000000?text=Hola,%20quiero%20reservar%20este%20servicio%20creativo" target="_blank" class="mt-auto bg-custom-accent text-custom-dark font-bold py-3 px-8 rounded-full hover:bg-opacity-90 transition-colors w-full">RESERVAR SERVICIO (DEMO)</a>
                                 </div>
                                 <!-- Tarjeta de Servicio 3: Servicio / Asesoría Premium (Destacada) -->
                                 <div class="border-double-gold p-1 bg-custom-accent/10 flex flex-col scale-105 relative shadow-2xl">
@@ -208,13 +218,13 @@
                                             <li class="flex items-center"><svg class="w-5 h-5 text-custom-accent mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Dirección y producción completa</span></li>
                                             <li class="flex items-center"><svg class="w-5 h-5 text-custom-accent mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Soporte VIP y acompañamiento de arte</span></li>
                                         </ul>
-                                        <button class="mt-auto bg-custom-accent text-custom-dark font-bold py-3 px-8 rounded-full hover:bg-opacity-90 transition-colors w-full">RESERVAR SERVICIO (DEMO)</button>
+                                        <a href="https://wa.me/5350000000?text=Hola,%20quiero%20reservar%20este%20servicio%20creativo" target="_blank" class="mt-auto bg-custom-accent text-custom-dark font-bold py-3 px-8 rounded-full hover:bg-opacity-90 transition-colors w-full">RESERVAR SERVICIO (DEMO)</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </section>
-     <!-- Agenda Interactiva como bloque premium autónomo con textura Zebra -->
+        <!-- Agenda Interactiva como bloque premium autónomo con textura Zebra -->
     <section class="py-16 px-6 md:px-12 rounded-2xl bg-custom-card/50 border border-custom/10 bg-pattern-nodes relative overflow-hidden mt-24 shadow-xl">
         <div class="absolute inset-0 pointer-events-none opacity-20 dark:opacity-10">
             <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-gradient-to-r from-custom-accent/20 to-transparent blur-3xl rounded-full"></div>
@@ -285,120 +295,10 @@
                 <div class="mt-6 text-center">
                     <span class="bg-custom-main text-custom-accent px-4 py-2 rounded-full text-sm">10:00 AM - 12:00 PM</span>
                 </div>
-                <button class="w-full mt-6 py-3 bg-[#C9A96E] text-black font-bold rounded-md">Confirmar Reserva</button>
+                <a href="https://wa.me/5350000000?text=Hola,%20quiero%20confirmar%20una%20fecha%20en%20tu%20agenda" target="_blank" class="w-full mt-6 py-3 bg-[#C9A96E] text-black font-bold rounded-md">Confirmar Reserva</a>
             </div>
         </div>
     </section>
-        ﻿<div id="seccion-tecnica" class="hidden w-full py-16 px-4 md:px-8 max-w-7xl mx-auto text-white">
-  <!-- Layout Principal en Grid -->
-  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-16">
-
-    <!-- Columna Izquierda: Copy de Autoridad + Tech Card (5 de 12 Cols) -->
-    <div class="lg:col-span-5 space-y-8">
-      <div class="space-y-4">
-        <span class="text-xs font-bold tracking-widest text-[#C9A96E] uppercase bg-[#C9A96E]/10 px-3 py-1 rounded-full">
-          Dossier de Ingeniería Elite
-        </span>
-        <h2 class="text-3xl md:text-4xl font-extrabold text-white leading-tight">
-          Tu currículum en PDF te hace ver barato. <br>
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#C9A96E] to-[#E1C285]">
-            Tu Dossier Interactivo te hace ver indispensable.
-          </span>
-        </h2>
-        <p class="text-gray-400 text-base md:text-lg leading-relaxed">
- El 90% de los ingenieros y consultores técnicos en Cuba compiten enviando un Word plano. Si quieres cerrar contratos internacionales, licitaciones con hoteles o consultorías en divisas, necesitas demostrar impacto financiero antes de que te entrevisten.
- </p>
- </div>
-
-      <!-- Tech Card de Alejandro (Simulación de Entorno de Desarrollo) -->
-      <div class="bg-[#1E1E2A] border border-[#C9A96E] rounded-lg p-6 font-mono text-xs md:text-sm shadow-lg hover:shadow-[#C9A96E]/10 transition-all duration-300">
-        <!-- Cabecera de Ventana IDE -->
-        <div class="flex items-center justify-between pb-4 border-b border-gray-800 mb-4">
-          <div class="flex space-x-1.5">
-            <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
-            <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
-            <span class="w-3 h-3 rounded-full bg-green-500/80 inline-block"></span>
- </div>
-          <span class="text-xs text-gray-500 select-none">architect_profile.py</span>
- </div>
-
-        <!-- Líneas de Código de Sintaxis Limpia -->
-        <div class="space-y-1 text-gray-300">
-          <p><span class="text-[#C9A96E]">class</span> <span class="text-emerald-400">ConsultantProfile</span>:</p>
-          <p class="pl-4"><span class="text-blue-400">identity</span> = <span class="text-emerald-300">"[ Alejandro // Systems Architect & ERP Consultant ]"</span></p>
-          <p class="pl-4"><span class="text-blue-400">focus</span> = <span class="text-emerald-300">"Industrial ROI & System Reliability"</span></p>
-          <p class="pl-4"><span class="text-blue-400">status</span> = <span class="text-emerald-300">"Ready for International Contracts"</span></p>
-          <p class="text-gray-500 mt-4">// [ Alejandro // Systems Architect & ERP Consultant ]</p>
- </div>
- </div>
- </div>
-
-    <!-- Columna Derecha: Casos de Éxito ROI (7 de 12 Cols) -->
-    <div class="lg:col-span-7 space-y-6">
-      <h3 class="text-xl font-semibold text-gray-200 flex items-center gap-2">
-        <svg class="w-5 h-5 text-[#C9A96E]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-        </svg>
-        Casos de Éxito de Alto Impacto Financiero
-      </h3>
-    
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <!-- Tarjeta 1 -->
-        <div class="bg-custom-card border border-custom/10 rounded-xl p-6 flex flex-col justify-between hover:border-[#C9A96E]/30 transition-all duration-300 min-h-[200px]">
-          <div>
-            <div class="w-8 h-8 rounded-lg bg-[#C9A96E]/10 flex items-center justify-center mb-4">
-              <span class="text-[#C9A96E] font-bold text-sm">01</span>
-    </div>
-            <h4 class="text-lg font-bold text-white mb-2 leading-snug">
-              Automatización de Sistema de Climatización Industrial
-            </h4>
-    </div>
-          <div class="mt-4 pt-4 border-t border-gray-800/60">
-            <span class="text-xs uppercase text-gray-400 block mb-1">Métrica Destacada</span>
-            <p class="text-sm font-semibold text-[#C9A96E] tracking-tight">
-              -40% Consumo Energético | 0% Paradas Críticas
-            </p>
-</div>
-</div>
-
-        <!-- Tarjeta 2 -->
-        <div class="bg-custom-card border border-custom/10 rounded-xl p-6 flex flex-col justify-between hover:border-[#C9A96E]/30 transition-all duration-300 min-h-[200px]">
-          <div>
-            <div class="w-8 h-8 rounded-lg bg-[#C9A96E]/10 flex items-center justify-center mb-4">
-              <span class="text-[#C9A96E] font-bold text-sm">02</span>
-    </div>
-            <h4 class="text-lg font-bold text-white mb-2 leading-snug">
-              Implementación de Control de Inventarios Mipyme
-            </h4>
-</div>
-          <div class="mt-4 pt-4 border-t border-gray-800/60">
-            <span class="text-xs uppercase text-gray-400 block mb-1">Métrica Destacada</span>
-            <p class="text-sm font-semibold text-[#C9A96E] tracking-tight">
-              100% Control de Fichas de Costo | Cero Fugas de Capital
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Bloque CTA Reserva -->
-  <section class="max-w-4xl mx-auto px-6 py-12">
-    <div class="bg-[#111118] p-8 rounded-lg border border-custom/10 text-center">
-      <h3 class="text-xl font-bold text-white mb-4">¿Listo para elevar tu perfil profesional?</h3>
-      <button class="w-full py-3 bg-[#C9A96E] text-black font-bold rounded-md hover:bg-opacity-90 transition-colors">
-        RESERVAR SERVICIO (DEMO)
-      </button>
-    </div>
-  </section>
-
-  <div class="max-w-4xl mx-auto px-6 py-4 text-center">
-    <button class="w-full md:w-auto px-8 py-3 bg-[#C9A96E] text-black font-bold rounded-md hover:bg-opacity-90 transition-colors" onclick="window.print()">
-      EXPORTAR CV PROFESIONAL (PDF)
-    </button>
-  </div>
-</div>
-
     </div>
 </main>
 
@@ -470,92 +370,3 @@
     </div>
     <script src="./app.js"></script>
 </footer>
-
-<!-- Script de Control Interactivo -->
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const paneCreativo = document.getElementById('pane-creativo');
-    const paneCorporativo = document.getElementById('pane-corporativo');
-    const viewport = document.getElementById('portfolio-viewport');
-
-    const btnCreativoDesktop = document.getElementById('btn-profile-creativo');
-    const btnCorporativoDesktop = document.getElementById('btn-profile-corporativo');
-    const btnCreativoMobile = document.getElementById('btn-profile-creativo-mobile');
-    const btnCorporativoMobile = document.getElementById('btn-profile-corporativo-mobile');
-
-    const activeBtnClasses = 'bg-custom-accent text-black font-bold shadow-sm rounded-lg';
-    const inactiveBtnClasses = 'bg-transparent text-custom-muted hover:text-custom-main font-semibold rounded-lg';
-
-    function applyClasses(element, classesToAdd, classesToRemove) {
-        if (!element) return;
-        classesToRemove.split(' ').forEach(cls => element.classList.remove(cls));
-        classesToAdd.split(' ').forEach(cls => element.classList.add(cls));
-    }
-
-    function setProfile(profile) {
-        if (!viewport) return;
-        viewport.classList.add('opacity-0', 'translate-y-4');
-        viewport.classList.remove('opacity-100', 'translate-y-0');
-
-        setTimeout(() => {
-            if (profile === 'creativo') {
-                if (paneCreativo) { paneCreativo.classList.remove('hidden'); paneCreativo.classList.add('block'); }
-                if (paneCorporativo) { paneCorporativo.classList.remove('block'); paneCorporativo.classList.add('hidden'); }
-
-                applyClasses(btnCreativoDesktop, activeBtnClasses, inactiveBtnClasses);
-                applyClasses(btnCorporativoDesktop, inactiveBtnClasses, activeBtnClasses);
-                applyClasses(btnCreativoMobile, activeBtnClasses, inactiveBtnClasses);
-                applyClasses(btnCorporativoMobile, inactiveBtnClasses, activeBtnClasses);
-
-            } else if (profile === 'corporativo') {
-                if (paneCreativo) { paneCreativo.classList.remove('block'); paneCreativo.classList.add('hidden'); }
-                if (paneCorporativo) { paneCorporativo.classList.remove('hidden'); paneCorporativo.classList.add('block'); }
-
-                applyClasses(btnCreativoDesktop, inactiveBtnClasses, activeBtnClasses);
-                applyClasses(btnCorporativoDesktop, activeBtnClasses, inactiveBtnClasses);
-                applyClasses(btnCreativoMobile, inactiveBtnClasses, activeBtnClasses);
-                applyClasses(btnCorporativoMobile, activeBtnClasses, inactiveBtnClasses);
-            }
-
-            viewport.classList.remove('opacity-0', 'translate-y-4');
-            viewport.classList.add('opacity-100', 'translate-y-0');
-        }, 150);
-    }
-
-    // Initial state
-    setProfile('creativo');
-
-    if (btnCreativoDesktop) btnCreativoDesktop.addEventListener('click', () => setProfile('creativo'));
-    if (btnCorporativoDesktop) btnCorporativoDesktop.addEventListener('click', () => setProfile('corporativo'));
-    if (btnCreativoMobile) btnCreativoMobile.addEventListener('click', () => setProfile('creativo'));
-    if (btnCorporativoMobile) btnCorporativoMobile.addEventListener('click', () => setProfile('corporativo'));
-
-    // Safe Interactive Booking Calendar for Creative Profile
-    const calendarDays = document.querySelectorAll('.calendar-day');
-    if (calendarDays && calendarDays.length > 0) {
-        calendarDays.forEach(day => {
-            day.addEventListener('click', () => {
-                const activeDay = document.querySelector('.calendar-day-active');
-                if (activeDay) {
-                    activeDay.classList.remove('bg-custom-accent', 'text-black', 'font-bold', 'calendar-day-active');
-                }
-                day.classList.add('bg-custom-accent', 'text-black', 'font-bold', 'calendar-day-active');
-            });
-        });
-    }
-
-    // Safe Interactive Booking Calendar for Technical Profile
-    const techDays = document.querySelectorAll('.calendar-day-tech');
-    if (techDays && techDays.length > 0) {
-        techDays.forEach(day => {
-            day.addEventListener('click', () => {
-                const activeTechDay = document.querySelector('.calendar-day-tech-active');
-                if (activeTechDay) {
-                    activeTechDay.classList.remove('bg-custom-accent', 'text-black', 'font-bold', 'calendar-day-tech-active');
-                }
-                day.classList.add('bg-custom-accent', 'text-black', 'font-bold', 'calendar-day-tech-active');
-            });
-        });
-    }
-});
-</script>

@@ -2,106 +2,13 @@
 
 <main class="flex-grow">
     <!-- @@include(componentes/portfolio-hero.html) -->
-    
-    <!-- Navegación Sticky (Pills) -->
-    <!-- @@include(componentes/portfolio-nav.html) -->
+    <!-- @@include(componentes/portfolio-nav-creative.html) -->
 
-    <!-- Contenedor Dinámico -->
-    <div id="portfolio-viewport" class="max-w-6xl mx-auto px-6 transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-6">
         <!-- @@include(componentes/portfolio-creative-gallery.html) -->
-     <!-- @@include(componentes/portfolio-creative-rates.html) -->
-     <!-- @@include(componentes/portfolio-calendar-creative.html) -->
-        <!-- @@include(componentes/portfolio-technical.html) -->
+        <!-- @@include(componentes/portfolio-creative-rates.html) -->
+        <!-- @@include(componentes/portfolio-calendar-creative.html) -->
     </div>
 </main>
 
 <!-- @@include(componentes/footer.html) -->
-
-<!-- Script de Control Interactivo -->
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const paneCreativo = document.getElementById('pane-creativo');
-    const paneCorporativo = document.getElementById('pane-corporativo');
-    const viewport = document.getElementById('portfolio-viewport');
-
-    const btnCreativoDesktop = document.getElementById('btn-profile-creativo');
-    const btnCorporativoDesktop = document.getElementById('btn-profile-corporativo');
-    const btnCreativoMobile = document.getElementById('btn-profile-creativo-mobile');
-    const btnCorporativoMobile = document.getElementById('btn-profile-corporativo-mobile');
-
-    const activeBtnClasses = 'bg-custom-accent text-black font-bold shadow-sm rounded-lg';
-    const inactiveBtnClasses = 'bg-transparent text-custom-muted hover:text-custom-main font-semibold rounded-lg';
-
-    function applyClasses(element, classesToAdd, classesToRemove) {
-        if (!element) return;
-        classesToRemove.split(' ').forEach(cls => element.classList.remove(cls));
-        classesToAdd.split(' ').forEach(cls => element.classList.add(cls));
-    }
-
-    function setProfile(profile) {
-        if (!viewport) return;
-        viewport.classList.add('opacity-0', 'translate-y-4');
-        viewport.classList.remove('opacity-100', 'translate-y-0');
-
-        setTimeout(() => {
-            if (profile === 'creativo') {
-                if (paneCreativo) { paneCreativo.classList.remove('hidden'); paneCreativo.classList.add('block'); }
-                if (paneCorporativo) { paneCorporativo.classList.remove('block'); paneCorporativo.classList.add('hidden'); }
-
-                applyClasses(btnCreativoDesktop, activeBtnClasses, inactiveBtnClasses);
-                applyClasses(btnCorporativoDesktop, inactiveBtnClasses, activeBtnClasses);
-                applyClasses(btnCreativoMobile, activeBtnClasses, inactiveBtnClasses);
-                applyClasses(btnCorporativoMobile, inactiveBtnClasses, activeBtnClasses);
-
-            } else if (profile === 'corporativo') {
-                if (paneCreativo) { paneCreativo.classList.remove('block'); paneCreativo.classList.add('hidden'); }
-                if (paneCorporativo) { paneCorporativo.classList.remove('hidden'); paneCorporativo.classList.add('block'); }
-
-                applyClasses(btnCreativoDesktop, inactiveBtnClasses, activeBtnClasses);
-                applyClasses(btnCorporativoDesktop, activeBtnClasses, inactiveBtnClasses);
-                applyClasses(btnCreativoMobile, inactiveBtnClasses, activeBtnClasses);
-                applyClasses(btnCorporativoMobile, activeBtnClasses, inactiveBtnClasses);
-            }
-
-            viewport.classList.remove('opacity-0', 'translate-y-4');
-            viewport.classList.add('opacity-100', 'translate-y-0');
-        }, 150);
-    }
-
-    // Initial state
-    setProfile('creativo');
-
-    if (btnCreativoDesktop) btnCreativoDesktop.addEventListener('click', () => setProfile('creativo'));
-    if (btnCorporativoDesktop) btnCorporativoDesktop.addEventListener('click', () => setProfile('corporativo'));
-    if (btnCreativoMobile) btnCreativoMobile.addEventListener('click', () => setProfile('creativo'));
-    if (btnCorporativoMobile) btnCorporativoMobile.addEventListener('click', () => setProfile('corporativo'));
-
-    // Safe Interactive Booking Calendar for Creative Profile
-    const calendarDays = document.querySelectorAll('.calendar-day');
-    if (calendarDays && calendarDays.length > 0) {
-        calendarDays.forEach(day => {
-            day.addEventListener('click', () => {
-                const activeDay = document.querySelector('.calendar-day-active');
-                if (activeDay) {
-                    activeDay.classList.remove('bg-custom-accent', 'text-black', 'font-bold', 'calendar-day-active');
-                }
-                day.classList.add('bg-custom-accent', 'text-black', 'font-bold', 'calendar-day-active');
-            });
-        });
-    }
-
-    // Safe Interactive Booking Calendar for Technical Profile
-    const techDays = document.querySelectorAll('.calendar-day-tech');
-    if (techDays && techDays.length > 0) {
-        techDays.forEach(day => {
-            day.addEventListener('click', () => {
-                const activeTechDay = document.querySelector('.calendar-day-tech-active');
-                if (activeTechDay) {
-                    activeTechDay.classList.remove('bg-custom-accent', 'text-black', 'font-bold', 'calendar-day-tech-active');
-                }
-                day.classList.add('bg-custom-accent', 'text-black', 'font-bold', 'calendar-day-tech-active');
-            });
-        });
-    }
-});
-</script>

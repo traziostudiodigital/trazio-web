@@ -341,7 +341,7 @@ document.addEventListener('DOMContentLoaded', () => {
         currentYearEl.textContent = new Date().getFullYear();
     }
 
-    // Inicializar el tema basado en la memoria del navegador o el predeterminado oscurecido
+    // Inicializar el tema basado en la memoria del navegador o el predeterminado oscuro
     const savedTheme = localStorage.getItem('theme') || 'dark';
     applyTheme(savedTheme);
     
@@ -357,7 +357,35 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedLanguage = localStorage.getItem('language') || 'es';
     translatePage(savedLanguage);
 
-    // --- COMENTARIO: Lógica Interactiva de la Galería de Demostraciones (Cambio de Pestañas con transiciones CSS) ---
+    // --- COMENTARIO: Inicialización del Estado Visual del Doble Espejo ---
+    const inicializarDobleEspejo = () => {
+        const seccionCreativa = document.getElementById('seccion-creativa');
+        const seccionTecnica = document.getElementById('seccion-tecnica');
+        
+        const btnCreativo = document.getElementById('btn-profile-creativo');
+        const btnTecnico = document.getElementById('btn-profile-corporativo');
+        const btnCreativoMob = document.getElementById('btn-profile-creativo-mobile');
+        const btnTecnicoMob = document.getElementById('btn-profile-corporativo-mobile');
+
+        const activeClasses = ['bg-custom-main', 'text-custom-accent', 'border', 'border-custom-accent/30', 'shadow-md'];
+        const inactiveClasses = ['text-custom-muted', 'border-transparent'];
+
+        if (seccionCreativa && seccionTecnica) {
+            seccionCreativa.classList.remove('hidden');
+            seccionTecnica.classList.add('hidden'); // Asegurar perfil técnico oculto al inicio
+
+            // Forzar estados visuales de botones activos
+            if (btnCreativo) { btnCreativo.classList.remove(...inactiveClasses); btnCreativo.classList.add(...activeClasses); }
+            if (btnCreativoMob) { btnCreativoMob.classList.remove(...inactiveClasses); btnCreativoMob.classList.add(...activeClasses); }
+            
+            // Forzar estados visuales de botones inactivos
+            if (btnTecnico) { btnTecnico.classList.remove(...activeClasses); btnTecnico.classList.add(...inactiveClasses); }
+            if (btnTecnicoMob) { btnTecnicoMob.classList.remove(...activeClasses); btnTecnicoMob.classList.add(...inactiveClasses); }
+        }
+    };
+    inicializarDobleEspejo();
+
+    // --- COMENTARIO: Lógica de la Galería de Demostraciones (Cambio de Pestañas) ---
     const tabButtons = document.querySelectorAll('.demo-tab-btn');
     const demoPanes = document.querySelectorAll('.demo-content-pane');
 
@@ -366,33 +394,26 @@ document.addEventListener('DOMContentLoaded', () => {
             button.addEventListener('click', () => {
                 const target = button.getAttribute('data-demo-target');
 
-                // Desactivar el estado visual activo de todos los botones
                 tabButtons.forEach(btn => {
                     btn.classList.remove('text-custom-accent', 'bg-custom-main', 'border', 'border-custom-accent/20', 'shadow-md');
                     btn.classList.add('text-custom-muted', 'hover:text-custom-main');
                 });
 
-                // Activar visualmente el botón seleccionado por el usuario
                 button.classList.add('text-custom-accent', 'bg-custom-main', 'border', 'border-custom-accent/20', 'shadow-md');
                 button.classList.remove('text-custom-muted', 'hover:text-custom-main');
 
-                // Ocultar todos los contenedores de previsualización de demos con animación suave
                 if (demoPanes) {
                     demoPanes.forEach(pane => {
                         pane.classList.add('hidden');
-                        pane.classList.remove('block');
+                        pane.classList.remove('block', 'opacity-100', 'scale-100');
                         pane.classList.add('opacity-0', 'scale-95');
-                        pane.classList.remove('opacity-100', 'scale-100');
                     });
                 }
 
-                // Mostrar el panel activo que corresponde al botón seleccionado
                 const activePane = document.getElementById(target);
                 if (activePane) {
                     activePane.classList.remove('hidden');
                     activePane.classList.add('block');
-                    
-                    // Pequeño retardo de ticks del navegador para disparar la animación de escalado y opacidad
                     setTimeout(() => {
                         activePane.classList.remove('opacity-0', 'scale-95');
                         activePane.classList.add('opacity-100', 'scale-100');
@@ -402,9 +423,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- COMENTARIO: Acordeón Dinámico de FAQ con colapso animado y control mutuo ---
+    // --- COMENTARIO: Acordeón FAQ ---
     const accordionItems = document.querySelectorAll('.accordion-item');
-
     if (accordionItems && accordionItems.length > 0) {
         accordionItems.forEach(item => {
             const header = item.querySelector('.accordion-header');
@@ -415,7 +435,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 header.addEventListener('click', () => {
                     const wasActive = item.classList.contains('active');
 
-                    // Cerrar de forma automática todos los demás acordeones abiertos (Transición limpia y enfocada)
                     accordionItems.forEach(otherItem => {
                         if (otherItem !== item && otherItem.classList.contains('active')) {
                             otherItem.classList.remove('active');
@@ -426,7 +445,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                     });
 
-                    // Alternar el estado activo del acordeón actual
                     if (wasActive) {
                         item.classList.remove('active');
                         if (content) content.style.maxHeight = null;
@@ -441,70 +459,58 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- COMENTARIO: Gestión del Formulario de Captura / Lead, formateando textos y redireccionando a WhatsApp ---
+    // --- COMENTARIO: Formulario de Contacto ---
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
+            const name = document.getElementById('name')?.value.trim() || '';
+            const business = document.getElementById('business')?.value.trim() || '';
+            const whatsapp = document.getElementById('whatsapp')?.value.trim() || '';
+            const solution = document.getElementById('solution')?.value.trim() || '';
 
-            const nameEl = document.getElementById('name');
-            const businessEl = document.getElementById('business');
-            const whatsappEl = document.getElementById('whatsapp');
-            const solutionEl = document.getElementById('solution');
-
-            const name = nameEl ? nameEl.value.trim() : '';
-            const business = businessEl ? businessEl.value.trim() : '';
-            const whatsapp = whatsappEl ? whatsappEl.value.trim() : '';
-            const solution = solutionEl ? solutionEl.value.trim() : '';
-
-            // Validación de seguridad de entradas requeridas
             if (!name || !business || !whatsapp || !solution) {
-                alert('Por favor, rellene todos los campos del formulario.');
+                alert('Por favor, rellene todos los campos.');
                 return;
             }
 
-            // Codificar el texto de solicitud comercial para la API de WhatsApp de forma profesional
             const message = encodeURIComponent(
                 `Hola Trazio Studio, quiero agendar mi auditoría digital para ${business}. ` +
                 `Mi nombre es ${name}, mi número de WhatsApp es ${whatsapp}, y me interesa la solución: ${solution}.`
             );
-
-            // Redireccionar al WhatsApp oficial de Trazio Studio
-            const whatsappUrl = `https://wa.me/5350000000?text=${message}`;
-            window.open(whatsappUrl, '_blank');
-
-            // Limpiar los datos introducidos del formulario
+            window.open(`https://wa.me/5350000000?text=${message}`, '_blank');
             contactForm.reset();
         });
     }
 
-    // --- COMENTARIO: Lógica de selección de días en el calendario con delegación de eventos ---
-    document.addEventListener('click', function(e) {
-        // Verificar si el elemento clickeado o uno de sus padres tiene la clase 'calendar-day-active'
-        const clickedDay = e.target.closest('.calendar-day-active');
+ // --- COMENTARIO: Escuchadores del Sistema (Temas e Idiomas) ---
+    if (themeSwitcher) themeSwitcher.addEventListener('click', toggleTheme);
+    if (languageToggle) languageToggle.addEventListener('click', toggleLanguage);
 
-        // Solo proceder si se hizo clic en un día activo del calendario
-        if (clickedDay) {
-            // Encontrar todos los días que pueden ser activos en el calendario
-            const allCalendarDays = document.querySelectorAll('.calendar-day-active');
+    // --- COMENTARIO: Unificación de Eventos Dinámicos de Click (Calendarios) ---
+    document.addEventListener('click', (e) => {
+        
+        // 1. Calendario Creativo
+        const creativeDay = e.target.closest('.calendar-day');
+        if (creativeDay) {
+            const activeDay = document.querySelector('.calendar-day-active');
+            if (activeDay) {
+                activeDay.classList.remove('bg-custom-accent', 'text-black', 'font-bold', 'calendar-day-active');
+            }
+            creativeDay.classList.add('bg-custom-accent', 'text-black', 'font-bold', 'calendar-day-active');
+            return;
+        }
 
-            // Remover la clase de selección de todos los días, si la tienen
-            allCalendarDays.forEach(day => {
-                day.classList.remove('bg-custom-accent', 'text-black', 'font-bold');
-            });
-
-            // Aplicar la clase de selección EXCLUSIVAMENTE al día clickeado
-            clickedDay.classList.add('bg-custom-accent', 'text-black', 'font-bold');
+        // 2. Calendario Técnico
+        const techDay = e.target.closest('.calendar-day-tech');
+        if (techDay) {
+            const activeTechDay = document.querySelector('.calendar-day-tech-active');
+            if (activeTechDay) {
+                activeTechDay.classList.remove('bg-custom-accent', 'text-black', 'font-bold', 'calendar-day-tech-active');
+            }
+            techDay.classList.add('bg-custom-accent', 'text-black', 'font-bold', 'calendar-day-tech-active');
+            return;
         }
     });
 
-    // --- COMENTARIO: Enlace Seguro de Eventos de Interacción del Sistema ---
-
-    // --- COMENTARIO: Enlace Seguro de Eventos de Interacción del Sistema ---
-    if (themeSwitcher) {
-        themeSwitcher.addEventListener('click', toggleTheme);
-    }
-    if (languageToggle) {
-        languageToggle.addEventListener('click', toggleLanguage);
-    }
-});
+}); // Cierre seguro del DOMContentLoaded global

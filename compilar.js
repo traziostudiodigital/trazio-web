@@ -1,63 +1,57 @@
 /**
- * compilar.js
- * -----------
- * Simple offline HTML compiler.
- *
- * It reads the master template located at `plantillas/portafolio-creativo.template.html`
- * and replaces every include comment of the form:
- *   <!-- @@include(componentes/filename.html) -->
- * with the contents of the referenced component file inside the `componentes/`
- * directory. The final compiled HTML is written to the project root as
- * `portafolio-creativo.html`.
- *
- * The script uses only Node's built‑in `fs` and `path` modules – no external
- * dependencies are required, making it 100% offline and zero‑dependency.
+ * compilar.js - Trazio Studio Multi-Template Compiler
+ * Lee todas las plantillas `.template.html` en /plantillas/
+ * y las compila a la raíz del proyecto sin librerías externas.
  */
 
 const fs = require('fs');
 const path = require('path');
 
-// Paths (relative to the project root) - CORREGIDO AQUÍ
-const TEMPLATE_PATH = path.join(__dirname, 'plantillas', 'portafolio-creativo.template.html');
-const OUTPUT_PATH = path.join(__dirname, 'portafolio-creativo.html');
-const COMPONENTS_DIR = path.join(__dirname, 'componentes');
+const PLANTILLAS_DIR = path.join(__dirname, 'plantillas');
+const ROOT_DIR = __dirname;
 
-/**
- * Reads a file synchronously and returns its content as a string.
- */
 function readFileSyncSafe(filePath) {
     return fs.readFileSync(filePath, { encoding: 'utf8' });
 }
 
-/**
- * Replaces all include directives in the supplied HTML string.
- */
 function replaceIncludes(html) {
     const includeRegex = /<!--\s*@@include\((componentes\/[^)]+)\)\s*-->/g;
     return html.replace(includeRegex, (match, relativePath) => {
         const componentPath = path.join(__dirname, relativePath);
         if (!fs.existsSync(componentPath)) {
-            console.error(`Component not found: ${componentPath}`);
-            return match; // leave the original comment so the user can see the issue
+            console.error(`❌ Componente no encontrado: ${componentPath}`);
+            return match;
         }
         return readFileSyncSafe(componentPath);
     });
 }
 
-function compile() {
-    if (!fs.existsSync(TEMPLATE_PATH)) {
-        console.error(`Template file not found at ${TEMPLATE_PATH}`);
+function compileAll() {
+    if (!fs.existsSync(PLANTILLAS_DIR)) {
+        console.error(`❌ El directorio de plantillas no existe: ${PLANTILLAS_DIR}`);
         process.exit(1);
     }
 
-    const templateContent = readFileSyncSafe(TEMPLATE_PATH);
-    const compiledContent = replaceIncludes(templateContent);
+    const templateFiles = fs.readdirSync(PLANTILLAS_DIR).filter(file => file.endsWith('.template.html'));
 
-    fs.writeFileSync(OUTPUT_PATH, compiledContent, { encoding: 'utf8' });
-    console.log(`✅ Compiled HTML written to ${OUTPUT_PATH}`);
+    if (templateFiles.length === 0) {
+        console.log('⚠️ No se encontraron archivos .template.html en plantillas/');
+        return;
+    }
+
+    templateFiles.forEach(file => {
+        const templatePath = path.join(PLANTILLAS_DIR, file);
+        const outputFileName = file.replace('.template.html', '.html');
+        const outputPath = path.join(ROOT_DIR, outputFileName);
+
+        const templateContent = readFileSyncSafe(templatePath);
+        const compiledContent = replaceIncludes(templateContent);
+
+        fs.writeFileSync(outputPath, compiledContent, { encoding: 'utf8' });
+        console.log(`✅ Compilado con éxito: ${file} ➔ ${outputFileName}`);
+    });
 }
 
-// Execute when the script is run directly
 if (require.main === module) {
-    compile();
+    compileAll();
 }

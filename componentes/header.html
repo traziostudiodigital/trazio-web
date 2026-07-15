@@ -24,7 +24,18 @@
             
             <!-- Navigation Links - Hidden on Mobile, Visible on Desktop -->
             <nav class="hidden md:flex items-center space-x-8">
-                <a href="portafolio-creativo.html" class="nav-link-premium text-sm font-medium hover:text-custom-accent transition-colors duration-300" data-i18n="nav-portfolio">Portafolios</a>
+                <div class="relative group">
+                    <button class="nav-link-premium text-sm font-medium hover:text-custom-accent transition-colors duration-300 flex items-center">
+                        Portafolios
+                        <svg class="w-2.5 h-2.5 ml-2 transition-transform duration-300 group-hover:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                        </svg>
+                    </button>
+                    <div class="absolute top-full left-0 mt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 bg-custom-card/95 backdrop-blur-xl border border-custom/20 rounded-xl shadow-2xl p-2 flex flex-col gap-1">
+                        <a href="portafolio-creativo.html" class="px-4 py-3 rounded-lg text-sm font-medium text-custom-muted hover:text-custom-accent hover:bg-custom-main transition-colors">Perfil Visual / Artístico</a>
+                        <a href="portafolio-tecnico.html" class="px-4 py-3 rounded-lg text-sm font-medium text-custom-muted hover:text-custom-accent hover:bg-custom-main transition-colors">Perfil Técnico / Consultor</a>
+                    </div>
+                </div>
                 <a href="catalogo-pedidos.html" class="nav-link-premium text-sm font-medium hover:text-custom-accent transition-colors duration-300" data-i18n="nav-catalogs">Catálogos</a>
                 <a href="identidad-corporativa.html" class="nav-link-premium text-sm font-medium hover:text-custom-accent transition-colors duration-300" data-i18n="nav-corporate">Empresas</a>
             </nav>
