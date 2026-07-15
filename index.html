@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trazio Studio</title>
+    <title>Portafolio Creativo - Trazio Studio</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Custom Styles -->
@@ -17,14 +17,25 @@
     <header class="sticky top-0 z-50 backdrop-blur-md bg-custom-main/80 border-b border-custom/20 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-8 md:px-12 lg:px-16 py-4 flex justify-between items-center w-full">
             <!-- Logo / Brand -->
-            <a href="#" class="flex items-center space-x-1 group">
+            <a href="index.html" class="flex items-center space-x-1 group">
                 <!-- Isotype Only -->
                 <img src="assets/isotype-gold.svg" class="w-8 h-8 hover:scale-105 transition-transform duration-300" alt="Trazio Isotype">
             </a>
             
             <!-- Navigation Links - Hidden on Mobile, Visible on Desktop -->
             <nav class="hidden md:flex items-center space-x-8">
-                <a href="portafolio-creativo.html" class="nav-link-premium text-sm font-medium hover:text-custom-accent transition-colors duration-300" data-i18n="nav-portfolio">Portafolios</a>
+                <div class="relative group">
+                    <button class="nav-link-premium text-sm font-medium hover:text-custom-accent transition-colors duration-300 flex items-center">
+                        Portafolios
+                        <svg class="w-2.5 h-2.5 ml-2 transition-transform duration-300 group-hover:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                        </svg>
+                    </button>
+                    <div class="absolute top-full left-0 mt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 bg-custom-card/95 backdrop-blur-xl border border-custom/20 rounded-xl shadow-2xl p-2 flex flex-col gap-1">
+                        <a href="portafolio-creativo.html" class="px-4 py-3 rounded-lg text-sm font-medium text-custom-muted hover:text-custom-accent hover:bg-custom-main transition-colors">Perfil Visual / Artístico</a>
+                        <a href="portafolio-tecnico.html" class="px-4 py-3 rounded-lg text-sm font-medium text-custom-muted hover:text-custom-accent hover:bg-custom-main transition-colors">Perfil Técnico / Consultor</a>
+                    </div>
+                </div>
                 <a href="catalogo-pedidos.html" class="nav-link-premium text-sm font-medium hover:text-custom-accent transition-colors duration-300" data-i18n="nav-catalogs">Catálogos</a>
                 <a href="identidad-corporativa.html" class="nav-link-premium text-sm font-medium hover:text-custom-accent transition-colors duration-300" data-i18n="nav-corporate">Empresas</a>
             </nav>
@@ -49,9 +60,8 @@
         </div>
     </header>
 
-    <!-- COMENTARIO: Sección Hero - Inicio del Embudo de Conversión. Densidad visual optimizada y pesos tipográficos premium -->
-    <main class="flex-grow">
-        <section id="hero" class="max-w-4xl mx-auto px-6 py-12 md:py-16 flex flex-col items-center text-center animate-fade-in-up">
+<main class="flex-grow">
+    <section id="hero" class="max-w-4xl mx-auto px-6 py-12 md:py-16 flex flex-col items-center text-center animate-fade-in-up">
             <!-- Full Logotype -->
             <img src="assets/logo-gold.svg" class="logo-gold h-14 md:h-16 mx-auto mb-6" alt="Trazio Studio">
             <img src="assets/logo-dark.svg" class="logo-dark h-14 md:h-16 mx-auto mb-6" alt="Trazio Studio">
@@ -81,8 +91,7 @@
                 </a>
             </div>
         </section>
-
-        <!-- COMENTARIO: Sección Soluciones - Tarjetas interactivas con espaciado optimizado y tipografía refinada -->
+    <!-- COMENTARIO: Sección Soluciones - Tarjetas interactivas con espaciado optimizado y tipografía refinada -->
         <section id="solutions" class="relative py-16 md:py-20 px-6 overflow-hidden radial-glow-solutions bg-pattern-diagonal">
             <div class="max-w-7xl mx-auto text-center relative z-10">
                 <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase border border-custom/30 text-custom-accent bg-custom-accent/5 mb-4" data-i18n="solutions-portal-badge">Nuestras Soluciones Digitales</span>
@@ -140,8 +149,7 @@
                 </div>
             </div>
         </section>
-
-        <!-- COMENTARIO: Sección Proceso - Embudo paso a paso premium con traducción mejorada y alta velocidad -->
+    <!-- COMENTARIO: Sección Proceso - Embudo paso a paso premium con traducción mejorada y alta velocidad -->
         <section id="process" class="relative py-16 md:py-20 px-6 border-t border-custom/10 overflow-hidden bg-pattern-nodes">
             <div class="absolute inset-0 pointer-events-none opacity-20 dark:opacity-10">
                 <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[350px] bg-gradient-to-r from-custom-accent/20 to-transparent blur-3xl rounded-full"></div>
@@ -185,8 +193,7 @@
                 </div>
             </div>
         </section>
-
-        <!-- COMENTARIO: Sección Quiénes Somos / La Diferencia Trazio - Conexión de propuesta de valor premium para el mercado cubano -->
+     <!-- COMENTARIO: Sección Quiénes Somos / La Diferencia Trazio - Conexión de propuesta de valor premium para el mercado cubano -->
         <section id="about" class="relative py-16 md:py-20 px-6 border-t border-custom/10 overflow-hidden bg-custom-card/30 bg-pattern-diagonal">
             <div class="absolute inset-0 pointer-events-none z-0">
                 <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-custom-accent/5 rounded-full blur-[100px]"></div>
@@ -266,8 +273,8 @@
                 </div>
             </div>
         </section>
-
-        <!-- COMENTARIO: Sección Galería de Demos Interactiva - Visualización interactiva premium de productos de alta velocidad -->
+    
+    <!-- COMENTARIO: Sección Galería de Demos Interactiva - Visualización interactiva premium de productos de alta velocidad -->
         <section id="demo-gallery" class="relative py-16 md:py-20 px-6 border-t border-custom/10 bg-custom-main/30 overflow-hidden bg-pattern-diagonal">
             <div class="absolute inset-x-0 top-0 h-[500px] pointer-events-none bg-gradient-to-b from-custom-accent/5 to-transparent blur-3xl"></div>
 
@@ -510,13 +517,12 @@
                 </div>
             </div>
         </section>
-    </main>
+</main>
 
+<!-- Footer -->
 <footer id="footer" class="bg-[#111118] border-t border-custom/10 py-12 px-6 relative z-10 transition-colors duration-300">
-    <!-- Main Footer Grid (12 Columns on Desktop) -->
     <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-        
-        <!-- Column 1: Logo & Tagline (Takes 3/12 cols) -->
+        <!-- Column 1: Logo & Tagline -->
         <div class="lg:col-span-3 flex flex-col items-center lg:items-start space-y-4 text-center lg:text-left">
             <a href="index.html" class="flex items-center space-x-2 group">
                 <img src="assets/isotype-gold.svg" class="w-8 h-8 rounded-lg shadow-md group-hover:scale-105 transition-transform duration-300" alt="Trazio Isotype">
@@ -525,23 +531,21 @@
             </a>
             <p class="text-custom-muted leading-relaxed text-sm max-w-xs" data-i18n="footer-tagline">Trazamos herramientas web de alta velocidad para optimizar tus ventas.</p>
         </div>
-
-        <!-- Column 2: Quick Links (Takes 2/12 cols) -->
+        <!-- Column 2: Quick Links -->
         <div class="lg:col-span-2 flex flex-col items-center lg:items-start text-center lg:text-left">
             <h3 class="text-xs font-semibold uppercase tracking-widest text-custom-main mb-4" data-i18n="footer-quick-links">Enlaces Rápidos</h3>
             <ul class="space-y-2.5 text-sm">
-                <li><a href="portafolio-creativo.html" class="text-custom-muted hover:text-custom-accent transition-colors duration-300 nav-link-premium inline-block" data-i18n="nav-portfolio">Portafolios</a></li>
-                <li><a href="catalogo-pedidos.html" class="text-custom-muted hover:text-custom-accent transition-colors duration-300 nav-link-premium inline-block" data-i18n="nav-catalogs">Catálogos</a></li>
-                <li><a href="identidad-corporativa.html" class="text-custom-muted hover:text-custom-accent transition-colors duration-300 nav-link-premium inline-block" data-i18n="nav-corporate">Empresas</a></li>
+                <li><a href="portafolio-creativo.html" class="text-custom-muted hover:text-custom-accent transition-colors duration-300 nav-link-premium" data-i18n="nav-portfolio">Portafolios</a></li>
+                <li><a href="catalogo-pedidos.html" class="text-custom-muted hover:text-custom-accent transition-colors duration-300 nav-link-premium" data-i18n="nav-catalogs">Catálogos</a></li>
+                <li><a href="identidad-corporativa.html" class="text-custom-muted hover:text-custom-accent transition-colors duration-300 nav-link-premium" data-i18n="nav-corporate">Empresas</a></li>
             </ul>
         </div>
-
-        <!-- Column 3: Contact & Socials (Takes 2/12 cols) -->
+        <!-- Column 3: Contact & Socials -->
         <div class="lg:col-span-2 flex flex-col items-center lg:items-start text-center lg:text-left">
             <h3 class="text-xs font-semibold uppercase tracking-widest text-custom-main mb-4" data-i18n="footer-contact">Contacto</h3>
             <ul class="space-y-3.5 text-sm w-full">
                 <li>
-                    <a href="https://wa.me/5350000000?text=Hola%20Trazio%20Studio,%20quiero%20iniciar%20un%20proyecto" target="_blank" rel="noopener noreferrer" class="text-custom-muted hover:text-custom-accent transition-all duration-300 flex items-center justify-center lg:justify-start group gap-2.5">
+                    <a href="https://wa.me/5350000000?text=Hola%20Trazio%20Studio,%20quiero%20iniciar%20un%20proyecto" target="_blank" rel="noopener noreferrer" class="text-custom-muted hover:text-custom-accent flex items-center justify-center lg:justify-start group gap-2.5">
                         <span class="p-1.5 rounded-lg bg-custom-card border border-custom/10 text-custom-accent group-hover:border-custom-accent/30 transition-colors">
                             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2C7.314 2 3.407 5.864 3.407 10.546c0 1.408.349 2.8.956 4.028L2 22l7.666-2.52c1.176.666 2.51.999 3.374.999h.001c4.726 0 8.633-3.863 8.633-8.545C20.674 5.864 16.766 2 12.04 2zM17.152 15.632c-.234-.116-.967-.474-1.117-.528-.15-.054-.26-.054-.37.054-.11.108-.424.528-.548.665-.124.136-.248.15-.457.054-.93-.418-1.54-1.01-2.175-1.928-.636-.92-1.066-1.85-1.423-2.457-.357-.607-.037-.936.27-.99.27-.054.597-.13.864-.424.267-.294.357-.59.5-.784.144-.196.073-.37-.036-.59-.11-.22-.968-2.324-1.325-3.18-.357-.855-.72-.74-1.002-.756-.279-.016-.598-.016-.917-.016-.319 0-.83.108-1.26.54-.43.432-1.64 1.586-1.64 3.868 0 2.28 1.678 4.475 1.916 4.788.238.313 3.303 5.034 8.04 7.025 1.18.497 2.11.79 2.846.99.736.199 1.407.153 1.93-.066.523-.22 1.637-.675 1.87-.99.234-.314.234-.582.162-.702-.072-.119-.267-.183-.557-.32z"/></svg>
                         </span>
@@ -549,7 +553,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="mailto:contacto@traziostudio.com" class="text-custom-muted hover:text-custom-accent transition-all duration-300 flex items-center justify-center lg:justify-start group gap-2.5">
+                    <a href="mailto:contacto@traziostudio.com" class="text-custom-muted hover:text-custom-accent flex items-center justify-center lg:justify-start group gap-2.5">
                         <span class="p-1.5 rounded-lg bg-custom-card border border-custom/10 text-custom-accent group-hover:border-custom-accent/30 transition-colors">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                         </span>
@@ -557,7 +561,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="https://facebook.com/traziostudio" target="_blank" rel="noopener noreferrer" class="text-custom-muted hover:text-custom-accent transition-all duration-300 flex items-center justify-center lg:justify-start group gap-2.5">
+                    <a href="https://facebook.com/traziostudio" target="_blank" rel="noopener noreferrer" class="text-custom-muted hover:text-custom-accent flex items-center justify-center lg:justify-start group gap-2.5">
                         <span class="p-1.5 rounded-lg bg-custom-card border border-custom/10 text-custom-accent group-hover:border-custom-accent/30 transition-colors">
                             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                         </span>
@@ -566,32 +570,20 @@
                 </li>
             </ul>
         </div>
-
-        <!-- Column 4: The Unified B2B CTA Card (Takes 5/12 cols) -->
+        <!-- Column 4: Unified B2B CTA Card -->
         <div class="lg:col-span-5 w-full bg-custom-card/50 border border-custom-accent/20 p-6 rounded-lg text-left space-y-4">
-            <h3 class="text-sm font-bold text-custom-main uppercase leading-tight" data-i18n="footer-aida-text">
-                ¿Listo para hacer crecer tu negocio?
-            </h3>
-            <p class="text-xs text-custom-muted leading-relaxed" data-i18n="footer-aida-desc">
-                Escríbenos y cuéntanos tu idea o mándanos tu lista de precios por WhatsApp. Te preparamos una demostración interactiva totalmente gratis y adaptada a tu sector en menos de 24 horas.
-            </p>
-            <a href="https://wa.me/5350000000?text=Hola%20Trazio%20Studio,%20quiero%20solicitar%20una%20demostración%20gratuita%20para%20mi%20negocio." target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center px-6 py-3.5 bg-custom-accent hover:bg-custom-accent-hover text-black font-bold uppercase text-[11px] tracking-wider transition-all duration-300" data-i18n="footer-aida-cta">
+            <h3 class="text-sm font-bold text-custom-main uppercase" data-i18n="footer-aida-text">¿Listo para hacer crecer tu negocio?</h3>
+            <p class="text-xs text-custom-muted" data-i18n="footer-aida-desc">Escríbenos y cuéntanos tu idea o mándanos tu lista de precios por WhatsApp. Te preparamos una demostración interactiva totalmente gratis y adaptada a tu sector en menos de 24 horas.</p>
+            <a href="https://wa.me/5350000000?text=Hola%20Trazio%20Studio,%20quiero%20solicitar%20una%20demostración%20gratuita%20para%20mi%20negocio." target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center px-6 py-3.5 bg-custom-accent hover:bg-custom-accent-hover text-black font-bold uppercase text-[11px] tracking-wider transition-all duration-300">
                 SOLICITAR DEMOSTRACIÓN GRATIS
             </a>
-            <p class="text-[10px] sm:text-xs text-custom-muted leading-relaxed" data-i18n="footer-microcopy">
-                <span class="text-custom-accent">✔</span> Sin costo técnico, compromisos ni contratos de mantenimiento.
-            </p>
+            <p class="text-[10px] sm:text-xs text-custom-muted" data-i18n="footer-microcopy"><span class="text-custom-accent">✔</span> Sin costo técnico, compromisos ni contratos de mantenimiento.</p>
         </div>
-
     </div>
-
     <!-- Bottom Copyright Bar -->
     <div class="max-w-7xl mx-auto border-t border-custom/10 mt-10 pt-6 flex flex-col items-center text-center text-[11px] text-custom-muted/80 space-y-2">
         <p>&copy; <span id="current-year"></span> Trazio Studio. <span data-i18n="all-rights-reserved">All rights reserved.</span></p>
         <p class="font-medium">Designed with precision by Trazio Studio</p>
     </div>
-</footer>
-
     <script src="./app.js"></script>
-</body>
-</html>
+</footer>
