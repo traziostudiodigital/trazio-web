@@ -61,17 +61,28 @@
     </header>
 
 <main class="flex-grow">
-    <section id="portfolio-hero" class="max-w-4xl mx-auto px-6 py-12 md:py-16 flex flex-col items-center text-center animate-fade-in-up">
+    <section id="portfolio-hero" class="max-w-4xl mx-auto px-6 py-12 md:py-16 flex flex-col items-center text-center animate-fadea_in-up">
+    <style>
+        /* Floating animation for logos */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 3s easea_in-out infinite;
+        }
+    </style>
     <!-- Badge superior -->
     <div class="inline-flex items-center rounded-full border-custom/30 text-custom-accent bg-custom-accent/5 px-3 py-1 text-sm font-medium mb-6">
         La era del currículum aburrido ha muerto
     </div>
-    <img src="assets/logo-gold.svg" class="logo-gold h-14 md:h-16 mx-auto mb-6" alt="Trazio Studio">
-    <img src="assets/logo-dark.svg" class="logo-dark h-14 md:h-16 mx-auto mb-6" alt="Trazio Studio">
-    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tighter leading-[1.1] mb-6 text-custom-main" data-i18n="port-hero-title">
+    <img src="assets/logo-gold.svg" class="logo-gold h-14 md:h-16 mx-auto mb-6 animate-float" alt="Trazio Studio">
+    <img src="assets/logo-dark.svg" class="logo-dark h-14 md:h-16 mx-auto mb-6 animate-float" alt="Trazio Studio">
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tighter leading-[1.1] mb-6 text-custom-main" dataa_i18n="port-hero-title">
         Tu talento necesita un <span class="text-custom-accent">Escenario Internacional</span>
     </h1>
-    <p class="text-lg sm:text-xl text-custom-muted max-w-2xl mb-12 leading-relaxed" data-i18n="port-hero-subtitle">
+    <p class="text-lg sm:text-xl text-custom-muted max-w-2xl mb-12 leading-relaxed" dataa_i18n="port-hero-subtitle">
         Deja de rogar por WhatsApp y empieza a filtrar clientes de alto nivel. Diseñamos tu escaparate digital bilingüe de alta velocidad para Cuba y el mundo. Posiciona tu prestigio, automatiza tus reservas y cobra lo que realmente vales.
     </p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center items-center w-full sm:w-auto">
@@ -84,30 +95,20 @@
     </div>
 </section>
     <!-- Falsa Pestaña: Estado CREATIVO Activo -->
-<div class="sticky top-20 z-40 w-full flex justify-center pointer-events-none mt-8 hidden sm:flex">
-    <div class="pointer-events-auto bg-custom-card/80 backdrop-blur-xl p-1.5 flex justify-center space-x-1 border border-custom/20 rounded-[10px] shadow-lg">
+<div class="sticky top-[72px] sm:top-20 z-40 w-full flex justify-center pointer-events-none mt-8 px-4">
+    <div class="pointer-events-auto bg-custom-card/90 backdrop-blur-xl p-1.5 flex justify-center items-center space-x-1 border border-custom/20 rounded-xl shadow-xl">
         <!-- ACTIVO -->
-        <a href="portafolio-creativo.html" class="px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 bg-custom-main text-custom-accent border border-custom-accent/30 shadow-md">
+        <a href="portafolio-creativo.html" class="px-4 py-2.5 sm:px-6 sm:py-3 rounded-lg text-xs sm:text-sm font-bold transition-all duration-300 bg-custom-accent text-slate-950 border border-custom-accent/30 shadow-[0_4px_12px_rgba(var(--custom-accent),0.25)] hover:opacity-90">
             Perfil Visual / Artístico
         </a>
-        <!-- INACTIVO (Enlace a la otra página) -->
-        <a href="portafolio-tecnico.html" class="px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 text-custom-muted border border-transparent hover:text-custom-main">
+        <!-- INACTIVO -->
+        <a href="portafolio-tecnico.html" class="px-4 py-2.5 sm:px-6 sm:py-3 rounded-lg text-xs sm:text-sm font-semibold transition-all duration-300 text-custom-muted border border-transparent hover:text-custom-main hover:bg-custom-main/5">
             Perfil Técnico / Consultor
         </a>
     </div>
 </div>
 
-<!-- Versión Mobile -->
-<div class="sm:hidden sticky top-[72px] z-40 w-full flex justify-center pointer-events-none mt-8">
-    <div class="pointer-events-auto bg-custom-card/80 backdrop-blur-xl p-1.5 flex justify-center space-x-1 border border-custom/20 rounded-[10px] shadow-lg">
-        <a href="portafolio-creativo.html" class="px-4 py-2.5 rounded-lg text-xs font-semibold transition-all duration-300 bg-custom-main text-custom-accent border border-custom-accent/30 shadow-md">
-            Visual / Artístico
-        </a>
-        <a href="portafolio-tecnico.html" class="px-4 py-2.5 rounded-lg text-xs font-semibold transition-all duration-300 text-custom-muted border border-transparent hover:text-custom-main">
-            Técnico / Consultor
-        </a>
-    </div>
-</div>
+
 
     <div class="max-w-6xl mx-auto px-6">
         <div id="pane-creativo" class="block">

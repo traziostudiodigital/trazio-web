@@ -61,17 +61,28 @@
     </header>
 
 <main class="flex-grow">
-    <section id="portfolio-hero" class="max-w-4xl mx-auto px-6 py-12 md:py-16 flex flex-col items-center text-center animate-fade-in-up">
+    <section id="portfolio-hero" class="max-w-4xl mx-auto px-6 py-12 md:py-16 flex flex-col items-center text-center animate-fadea_in-up">
+    <style>
+        /* Floating animation for logos */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 3s easea_in-out infinite;
+        }
+    </style>
     <!-- Badge superior -->
     <div class="inline-flex items-center rounded-full border-custom/30 text-custom-accent bg-custom-accent/5 px-3 py-1 text-sm font-medium mb-6">
         La era del currículum aburrido ha muerto
     </div>
-    <img src="assets/logo-gold.svg" class="logo-gold h-14 md:h-16 mx-auto mb-6" alt="Trazio Studio">
-    <img src="assets/logo-dark.svg" class="logo-dark h-14 md:h-16 mx-auto mb-6" alt="Trazio Studio">
-    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tighter leading-[1.1] mb-6 text-custom-main" data-i18n="port-hero-title">
+    <img src="assets/logo-gold.svg" class="logo-gold h-14 md:h-16 mx-auto mb-6 animate-float" alt="Trazio Studio">
+    <img src="assets/logo-dark.svg" class="logo-dark h-14 md:h-16 mx-auto mb-6 animate-float" alt="Trazio Studio">
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tighter leading-[1.1] mb-6 text-custom-main" dataa_i18n="port-hero-title">
         Tu talento necesita un <span class="text-custom-accent">Escenario Internacional</span>
     </h1>
-    <p class="text-lg sm:text-xl text-custom-muted max-w-2xl mb-12 leading-relaxed" data-i18n="port-hero-subtitle">
+    <p class="text-lg sm:text-xl text-custom-muted max-w-2xl mb-12 leading-relaxed" dataa_i18n="port-hero-subtitle">
         Deja de rogar por WhatsApp y empieza a filtrar clientes de alto nivel. Diseñamos tu escaparate digital bilingüe de alta velocidad para Cuba y el mundo. Posiciona tu prestigio, automatiza tus reservas y cobra lo que realmente vales.
     </p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center items-center w-full sm:w-auto">
@@ -84,139 +95,140 @@
     </div>
 </section>
     <!-- Falsa Pestaña: Estado TÉCNICO Activo -->
-<div class="sticky top-20 z-40 w-full flex justify-center pointer-events-none mt-8 hidden sm:flex">
-    <div class="pointer-events-auto bg-custom-card/80 backdrop-blur-xl p-1.5 flex justify-center space-x-1 border border-custom/20 rounded-[10px] shadow-lg">
-        <!-- INACTIVO (Enlace a la otra página) -->
-        <a href="portafolio-creativo.html" class="px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 text-custom-muted border border-transparent hover:text-custom-main">
+<div class="sticky top-[72px] sm:top-20 z-40 w-full flex justify-center pointer-events-none mt-8 px-4">
+    <div class="pointer-events-auto bg-custom-card/90 backdrop-blur-xl p-1.5 flex justify-center items-center space-x-1 border border-custom/20 rounded-xl shadow-xl">
+        <!-- INACTIVO -->
+        <a href="portafolio-creativo.html" class="px-4 py-2.5 sm:px-6 sm:py-3 rounded-lg text-xs sm:text-sm font-semibold transition-all duration-300 text-custom-muted border border-transparent hover:text-custom-main hover:bg-custom-main/5">
             Perfil Visual / Artístico
         </a>
         <!-- ACTIVO -->
-        <a href="portafolio-tecnico.html" class="px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 bg-custom-main text-custom-accent border border-custom-accent/30 shadow-md">
+
+        <a href="portafolio-tecnico.html" class="px-4 py-2.5 sm:px-6 sm:py-3 rounded-lg text-xs sm:text-sm font-bold transition-all duration-300 bg-custom-accent text-slate-950 border border-custom-accent/30 shadow-[0_4px_12px_rgba(var(--custom-accent),0.25)] hover:opacity-90">
             Perfil Técnico / Consultor
         </a>
     </div>
 </div>
 
-<!-- Versión Mobile -->
-<div class="sm:hidden sticky top-[72px] z-40 w-full flex justify-center pointer-events-none mt-8">
-    <div class="pointer-events-auto bg-custom-card/80 backdrop-blur-xl p-1.5 flex justify-center space-x-1 border border-custom/20 rounded-[10px] shadow-lg">
-        <a href="portafolio-creativo.html" class="px-4 py-2.5 rounded-lg text-xs font-semibold transition-all duration-300 text-custom-muted border border-transparent hover:text-custom-main">
-            Visual / Artístico
-        </a>
-        <a href="portafolio-tecnico.html" class="px-4 py-2.5 rounded-lg text-xs font-semibold transition-all duration-300 bg-custom-main text-custom-accent border border-custom-accent/30 shadow-md">
-            Técnico / Consultor
-        </a>
-    </div>
-</div>
 
     <div class="max-w-6xl mx-auto px-6">
-        ﻿  <!-- Layout Principal en Grid -->
-  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-16">
+        ﻿  <section class="w-full max-w-4xl mx-auto text-center px-6 py-16 animate-fade-in-up">
+    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase border border-custom/30 text-custom-accent bg-custom-accent/5 mb-6">
+        DISEÑADO PARA INGENIEROS, DESARROLLADORES Y CONSULTORES
+    </span>
+    <h2 class="text-4xl sm:text-5xl font-bold tracking-tighter mb-6 text-custom-main leading-tight">
+        Un profesional de alto nivel no envía un currículum en Word.
+    </h2>
+    <p class="text-lg text-custom-muted max-w-2xl mx-auto leading-relaxed">
+        Si quieres ganar licitaciones con empresas extranjeras, hoteles o Mipymes de gran volumen, tu presencia digital debe transmitir autoridad. Te construimos un Dossier Interactivo que demuestra tu impacto financiero y técnico antes de que digas la primera palabra.
+    </p>
+</section>
 
-    <!-- Columna Izquierda: Copy de Autoridad + Tech Card (5 de 12 Cols) -->
-    <div class="lg:col-span-5 space-y-8">
-      <div class="space-y-4">
-        <span class="text-xs font-bold tracking-widest text-[#C9A96E] uppercase bg-[#C9A96E]/10 px-3 py-1 rounded-full">
-          Dossier de Ingeniería Elite
-        </span>
-        <h2 class="text-3xl md:text-4xl font-extrabold text-white leading-tight">
-          Tu currículum en PDF te hace ver barato. <br>
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#C9A96E] to-[#E1C285]">
-            Tu Dossier Interactivo te hace ver indispensable.
-          </span>
-        </h2>
-        <p class="text-gray-400 text-base md:text-lg leading-relaxed">
- El 90% de los ingenieros y consultores técnicos en Cuba compiten enviando un Word plano. Si quieres cerrar contratos internacionales, licitaciones con hoteles o consultorías en divisas, necesitas demostrar impacto financiero antes de que te entrevisten.
- </p>
- </div>
-
-      <!-- Tech Card de Alejandro (Simulación de Entorno de Desarrollo) -->
-      <div class="bg-[#1E1E2A] border border-[#C9A96E] rounded-lg p-6 font-mono text-xs md:text-sm shadow-lg hover:shadow-[#C9A96E]/10 transition-all duration-300">
-        <!-- Cabecera de Ventana IDE -->
-        <div class="flex items-center justify-between pb-4 border-b border-gray-800 mb-4">
-          <div class="flex space-x-1.5">
-            <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
-            <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
-            <span class="w-3 h-3 rounded-full bg-green-500/80 inline-block"></span>
- </div>
-          <span class="text-xs text-gray-500 select-none">architect_profile.py</span>
- </div>
-
-        <!-- Líneas de Código de Sintaxis Limpia -->
-        <div class="space-y-1 text-gray-300">
-          <p><span class="text-[#C9A96E]">class</span> <span class="text-emerald-400">ConsultantProfile</span>:</p>
-          <p class="pl-4"><span class="text-blue-400">identity</span> = <span class="text-emerald-300">"[ Alejandro // Systems Architect & ERP Consultant ]"</span></p>
-          <p class="pl-4"><span class="text-blue-400">focus</span> = <span class="text-emerald-300">"Industrial ROI & System Reliability"</span></p>
-          <p class="pl-4"><span class="text-blue-400">status</span> = <span class="text-emerald-300">"Ready for International Contracts"</span></p>
-          <p class="text-gray-500 mt-4">// [ Alejandro // Systems Architect & ERP Consultant ]</p>
- </div>
- </div>
- </div>
-
-    <!-- Columna Derecha: Casos de Éxito ROI (7 de 12 Cols) -->
-    <div class="lg:col-span-7 space-y-6">
-      <h3 class="text-xl font-semibold text-gray-200 flex items-center gap-2">
-        <svg class="w-5 h-5 text-[#C9A96E]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-        </svg>
-        Casos de Éxito de Alto Impacto Financiero
-      </h3>
-    
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<section class="max-w-6xl mx-auto px-6 mb-20">
+    <p class="text-sm text-custom-muted text-center mb-8 font-medium">Tus habilidades indexadas en Google. Los reclutadores internacionales te encontrarán por tu Stack Tecnológico.</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <!-- Tarjeta 1 -->
-        <div class="bg-custom-card border border-custom/10 rounded-xl p-6 flex flex-col justify-between hover:border-[#C9A96E]/30 transition-all duration-300 min-h-[200px]">
-          <div>
-            <div class="w-8 h-8 rounded-lg bg-[#C9A96E]/10 flex items-center justify-center mb-4">
-              <span class="text-[#C9A96E] font-bold text-sm">01</span>
-    </div>
-            <h4 class="text-lg font-bold text-white mb-2 leading-snug">
-              Automatización de Sistema de Climatización Industrial
-            </h4>
-    </div>
-          <div class="mt-4 pt-4 border-t border-gray-800/60">
-            <span class="text-xs uppercase text-gray-400 block mb-1">Métrica Destacada</span>
-            <p class="text-sm font-semibold text-[#C9A96E] tracking-tight">
-              -40% Consumo Energético | 0% Paradas Críticas
-            </p>
-</div>
-</div>
-
-        <!-- Tarjeta 2 -->
-        <div class="bg-custom-card border border-custom/10 rounded-xl p-6 flex flex-col justify-between hover:border-[#C9A96E]/30 transition-all duration-300 min-h-[200px]">
-          <div>
-            <div class="w-8 h-8 rounded-lg bg-[#C9A96E]/10 flex items-center justify-center mb-4">
-              <span class="text-[#C9A96E] font-bold text-sm">02</span>
-    </div>
-            <h4 class="text-lg font-bold text-white mb-2 leading-snug">
-              Implementación de Control de Inventarios Mipyme
-            </h4>
-</div>
-          <div class="mt-4 pt-4 border-t border-gray-800/60">
-            <span class="text-xs uppercase text-gray-400 block mb-1">Métrica Destacada</span>
-            <p class="text-sm font-semibold text-[#C9A96E] tracking-tight">
-              100% Control de Fichas de Costo | Cero Fugas de Capital
-            </p>
-          </div>
+        <div class="bg-custom-card border border-custom/10 p-6 rounded-xl">
+            <h3 class="text-lg font-bold text-custom-main mb-4">Software & IT</h3>
+            <div class="flex flex-wrap gap-2">
+                <span class="bg-custom-main border border-custom/20 text-custom-accent font-mono text-xs px-2.5 py-1 rounded-md">Python</span>
+                <span class="bg-custom-main border border-custom/20 text-custom-accent font-mono text-xs px-2.5 py-1 rounded-md">React.js</span>
+                <span class="bg-custom-main border border-custom/20 text-custom-accent font-mono text-xs px-2.5 py-1 rounded-md">AWS</span>
+                <span class="bg-custom-main border border-custom/20 text-custom-accent font-mono text-xs px-2.5 py-1 rounded-md">Arquitectura Cloud</span>
+            </div>
         </div>
-      </div>
+        <!-- Tarjeta 2 -->
+        <div class="bg-custom-card border border-custom/10 p-6 rounded-xl">
+            <h3 class="text-lg font-bold text-custom-main mb-4">Ingeniería & Control</h3>
+            <div class="flex flex-wrap gap-2">
+                <span class="bg-custom-main border border-custom/20 text-custom-accent font-mono text-xs px-2.5 py-1 rounded-md">AutoCAD</span>
+                <span class="bg-custom-main border border-custom/20 text-custom-accent font-mono text-xs px-2.5 py-1 rounded-md">Sistemas SCADA</span>
+                <span class="bg-custom-main border border-custom/20 text-custom-accent font-mono text-xs px-2.5 py-1 rounded-md">Eficiencia Energética</span>
+            </div>
+        </div>
+        <!-- Tarjeta 3 -->
+        <div class="bg-custom-card border border-custom/10 p-6 rounded-xl">
+            <h3 class="text-lg font-bold text-custom-main mb-4">Consultoría B2B</h3>
+            <div class="flex flex-wrap gap-2">
+                <span class="bg-custom-main border border-custom/20 text-custom-accent font-mono text-xs px-2.5 py-1 rounded-md">Odoo ERP</span>
+                <span class="bg-custom-main border border-custom/20 text-custom-accent font-mono text-xs px-2.5 py-1 rounded-md">Auditoría Fiscal</span>
+                <span class="bg-custom-main border border-custom/20 text-custom-accent font-mono text-xs px-2.5 py-1 rounded-md">PowerBI</span>
+            </div>
+        </div>
     </div>
-  </div>
+</section>
 
-  <!-- Bloque CTA Reserva -->
-  <section class="max-w-4xl mx-auto px-6 py-12">
-    <div class="bg-[#111118] p-8 rounded-lg border border-custom/10 text-center">
-      <h3 class="text-xl font-bold text-white mb-4">¿Listo para elevar tu perfil profesional?</h3>
-      <button class="w-full py-3 bg-[#C9A96E] text-black font-bold rounded-md hover:bg-opacity-90 transition-colors">
-        RESERVAR SERVICIO (DEMO)
-      </button>
+<section class="max-w-6xl mx-auto px-6 mb-20">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-custom-card/30 border border-custom/10 rounded-2xl p-8 md:p-12">
+        <!-- Columna Izquierda (Texto) -->
+        <div>
+            <h2 class="text-3xl font-bold text-custom-main mb-6 leading-tight">Filtra a tus clientes. Así se verá tu formulario de contacto profesional.</h2>
+            <p class="text-custom-muted text-lg">Diseñado para descartar curiosos y captar leads cualificados. El formulario exige datos clave antes de que el mensaje llegue a tu WhatsApp o Correo.</p>
+        </div>
+        <!-- Columna Derecha (Mockup del Formulario) -->
+        <div class="bg-custom-card border border-custom/20 p-6 md:p-8 rounded-xl shadow-2xl">
+            <form>
+                <input type="text" placeholder="Nombre de la Empresa" class="w-full bg-custom-main border border-custom/10 rounded-lg p-3 text-sm text-custom-main mb-4 focus:border-custom-accent outline-none">
+                <input type="text" placeholder="Presupuesto Estimado (Ej: +$1,000 USD)" class="w-full bg-custom-main border border-custom/10 rounded-lg p-3 text-sm text-custom-main mb-4 focus:border-custom-accent outline-none">
+                <textarea placeholder="Descripción del Problema Técnico" rows="3" class="w-full bg-custom-main border border-custom/10 rounded-lg p-3 text-sm text-custom-main mb-4 focus:border-custom-accent outline-none"></textarea>
+                <button type="submit" class="w-full bg-custom-accent hover:bg-custom-accent-hover text-black font-bold py-4 rounded-lg uppercase tracking-wider text-sm transition-colors">SOLICITAR AUDITORÍA TÉCNICA</button>
+            </form>
+        </div>
     </div>
-  </section>
+</section>
 
-  <div class="max-w-4xl mx-auto px-6 py-4 text-center">
-    <button class="w-full md:w-auto px-8 py-3 bg-[#C9A96E] text-black font-bold rounded-md hover:bg-opacity-90 transition-colors" onclick="window.print()">
-      EXPORTAR CV PROFESIONAL (PDF)
-    </button>
-  </div>
+<section class="max-w-6xl mx-auto px-6 mb-24">
+    <h2 class="text-3xl md:text-4xl font-bold text-custom-main mb-12 text-center">El Ecosistema de Contratación</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <!-- Bloque 1: Exportador PDF Inteligente -->
+        <div class="flex flex-col items-center text-center md:items-start md:text-left p-6 bg-custom-card border border-custom/10 rounded-xl hover:-translate-y-2 transition-transform duration-300">
+            <svg class="w-8 h-8 text-custom-accent mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zM6 4h7v5h5v11H6V4zM12 10v6m-3-3l3 3 3-3"></path>
+            </svg>
+            <h3 class="text-lg font-bold text-custom-main mb-3">Exportador PDF Inteligente</h3>
+            <p class="text-sm text-custom-muted leading-relaxed">Con un clic, tu web se formatea y se descarga como un Currículum Ejecutivo en PDF, listo para enviar a Recursos Humanos.</p>
+        </div>
+        <!-- Bloque 2: Sincronización LinkedIn -->
+        <div class="flex flex-col items-center text-center md:items-start md:text-left p-6 bg-custom-card border border-custom/10 rounded-xl hover:-translate-y-2 transition-transform duration-300">
+            <svg class="w-8 h-8 text-custom-accent mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12c0 4.418-4.03 8-9 8s-9-3.582-9-8 4.03-8 9-8 9 3.582 9 8zM8 12h.01M12 12h.01M16 12h.01"></path>
+            </svg>
+            <h3 class="text-lg font-bold text-custom-main mb-3">Sincronización LinkedIn</h3>
+            <p class="text-sm text-custom-muted leading-relaxed">Conectamos tu portafolio directamente con tu perfil de LinkedIn para crear un embudo de reclutamiento perfecto.</p>
+        </div>
+        <!-- Bloque 3: Formulario de Filtrado B2B -->
+        <div class="flex flex-col items-center text-center md:items-start md:text-left p-6 bg-custom-card border border-custom/10 rounded-xl hover:-translate-y-2 transition-transform duration-300">
+            <svg class="w-8 h-8 text-custom-accent mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6h18L13 14v5l-3 2v-7L3 6z"></path>
+            </svg>
+            <h3 class="text-lg font-bold text-custom-main mb-3">Formulario de Filtrado B2B</h3>
+            <p class="text-sm text-custom-muted leading-relaxed">No recibas mensajes vacíos. Integramos un formulario que obliga al cliente a especificar su presupuesto y el alcance del proyecto antes de contactarte.</p>
+        </div>
+    </div>
+</section>
+
+<section class="max-w-6xl mx-auto px-6 mb-20">
+    <h2 class="text-3xl md:text-4xl font-bold text-custom-main mb-12 text-center">No digas lo que haces. Demuestra lo que resuelves.</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Tarjeta 1 -->
+        <div class="bg-custom-card border border-custom/10 rounded-2xl p-8 hover:-translate-y-2 transition-transform duration-300 relative overflow-hidden">
+            <span class="text-xs font-bold tracking-widest text-custom-muted uppercase mb-3 block">CASO DE ÉXITO // LOGÍSTICA</span>
+            <h3 class="text-2xl font-bold text-custom-main mb-6 leading-snug">Implementación de Odoo para Importadora Mipyme</h3>
+            <div class="bg-custom-accent/10 border-l-4 border-custom-accent p-4 mb-6 rounded-r-lg">
+                <p class="text-custom-accent font-bold text-lg">Cero Fugas de Inventario | +25% Margen de Ganancia</p>
+            </div>
+            <p class="text-custom-muted leading-relaxed text-sm">El cliente perdía trazabilidad en sus contenedores. Se parametrizó un sistema ERP completo enlazado a la contabilidad cubana, automatizando las fichas de costo y el control de almacén en tiempo real.</p>
+        </div>
+        <!-- Tarjeta 2 -->
+        <div class="bg-custom-card border border-custom/10 rounded-2xl p-8 hover:-translate-y-2 transition-transform duration-300 relative overflow-hidden">
+            <span class="text-xs font-bold tracking-widest text-custom-muted uppercase mb-3 block">CASO DE ÉXITO // INFRAESTRUCTURA</span>
+            <h3 class="text-2xl font-bold text-custom-main mb-6 leading-snug">Optimización de Red Eléctrica en Complejo Hotelero</h3>
+            <div class="bg-custom-accent/10 border-l-4 border-custom-accent p-4 mb-6 rounded-r-lg">
+                <p class="text-custom-accent font-bold text-lg">-30% Consumo Energético Mensual</p>
+            </div>
+            <p class="text-custom-muted leading-relaxed text-sm">Rediseño de los cuadros de control y automatización de las bombas de clima mediante sensores IoT. El proyecto se amortizó en los primeros 4 meses de operación.</p>
+        </div>
+    </div>
+</section>
 
     </div>
 </main>

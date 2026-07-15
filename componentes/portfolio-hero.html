@@ -1,14 +1,25 @@
-<section id="portfolio-hero" class="max-w-4xl mx-auto px-6 py-12 md:py-16 flex flex-col items-center text-center animate-fade-in-up">
+<section id="portfolio-hero" class="max-w-4xl mx-auto px-6 py-12 md:py-16 flex flex-col items-center text-center animate-fadea_in-up">
+    <style>
+        /* Floating animation for logos */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 3s easea_in-out infinite;
+        }
+    </style>
     <!-- Badge superior -->
     <div class="inline-flex items-center rounded-full border-custom/30 text-custom-accent bg-custom-accent/5 px-3 py-1 text-sm font-medium mb-6">
         La era del currículum aburrido ha muerto
     </div>
-    <img src="assets/logo-gold.svg" class="logo-gold h-14 md:h-16 mx-auto mb-6" alt="Trazio Studio">
-    <img src="assets/logo-dark.svg" class="logo-dark h-14 md:h-16 mx-auto mb-6" alt="Trazio Studio">
-    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tighter leading-[1.1] mb-6 text-custom-main" data-i18n="port-hero-title">
+    <img src="assets/logo-gold.svg" class="logo-gold h-14 md:h-16 mx-auto mb-6 animate-float" alt="Trazio Studio">
+    <img src="assets/logo-dark.svg" class="logo-dark h-14 md:h-16 mx-auto mb-6 animate-float" alt="Trazio Studio">
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tighter leading-[1.1] mb-6 text-custom-main" dataa_i18n="port-hero-title">
         Tu talento necesita un <span class="text-custom-accent">Escenario Internacional</span>
     </h1>
-    <p class="text-lg sm:text-xl text-custom-muted max-w-2xl mb-12 leading-relaxed" data-i18n="port-hero-subtitle">
+    <p class="text-lg sm:text-xl text-custom-muted max-w-2xl mb-12 leading-relaxed" dataa_i18n="port-hero-subtitle">
         Deja de rogar por WhatsApp y empieza a filtrar clientes de alto nivel. Diseñamos tu escaparate digital bilingüe de alta velocidad para Cuba y el mundo. Posiciona tu prestigio, automatiza tus reservas y cobra lo que realmente vales.
     </p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center items-center w-full sm:w-auto">
