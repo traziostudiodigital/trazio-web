@@ -73,30 +73,39 @@
             animation: float 3s easea_in-out infinite;
         }
     </style>
+    
     <!-- Badge superior -->
-    <div class="inline-flex items-center rounded-full border-custom/30 text-custom-accent bg-custom-accent/5 px-3 py-1 text-sm font-medium mb-6">
-        La era del currículum aburrido ha muerto
-    </div>
+    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase border border-custom/30 text-custom-accent bg-custom-accent/5 mb-6">
+        ✨ DEMOSTRACIÓN INTERACTIVA: ASÍ SE VERÁ TU FUTURA WEB
+    </span>
+
     <img src="assets/logo-gold.svg" class="logo-gold h-14 md:h-16 mx-auto mb-6 animate-float" alt="Trazio Studio">
     <img src="assets/logo-dark.svg" class="logo-dark h-14 md:h-16 mx-auto mb-6 animate-float" alt="Trazio Studio">
-    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tighter leading-[1.1] mb-6 text-custom-main" dataa_i18n="port-hero-title">
-        Tu talento necesita un <span class="text-custom-accent">Escenario Internacional</span>
+
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tighter leading-[1.1] mb-6 text-custom-main">
+        Tu talento merece un <span class="text-custom-accent">Escenario Internacional</span>
     </h1>
-    <p class="text-lg sm:text-xl text-custom-muted max-w-2xl mb-12 leading-relaxed" dataa_i18n="port-hero-subtitle">
-        Deja de rogar por WhatsApp y empieza a filtrar clientes de alto nivel. Diseñamos tu escaparate digital bilingüe de alta velocidad para Cuba y el mundo. Posiciona tu prestigio, automatiza tus reservas y cobra lo que realmente vales.
+
+    <p class="text-lg sm:text-xl text-custom-muted max-w-2xl mb-12 leading-relaxed">
+        Una plataforma bilingüe, rápida y diseñada para que clientes en Cuba y el mundo valoren tu trabajo, consulten tus tarifas y reserven sin fricción.
     </p>
+
     <div class="flex flex-col sm:flex-row gap-4 justify-center items-center w-full sm:w-auto">
-        <a href="https://wa.me/5350000000?text=Hola,%20quiero%20diseñar%20mi%20marca" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 text-base font-semibold text-white bg-custom-accent rounded-xl shadow-lg shadow-custom-accent/10 hover:bg-custom-accent-hover hover:-translate-y-1 transition-all duration-300">
-            Ver Diseños
+        <a href="#portfolio-workspace" class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 text-base font-semibold text-white bg-custom-accent rounded-xl shadow-lg shadow-custom-accent/10 hover:bg-custom-accent-hover hover:-translate-y-1 transition-all duration-300">
+            Explorar Demo
         </a>
-        <a href="https://wa.me/5350000000?text=Hola,%20quiero%20diseñar%20mi%20marca" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 text-base font-semibold text-custom-main bg-custom-card border border-custom/20 rounded-xl hover:bg-custom-main hover:border-custom/55 hover:-translate-y-1 transition-all duration-300">
-            Diseñar mi Marca
+        <a href="https://wa.me/5350000000?text=Hola,%20quiero%20cotizar%20mi%20web" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 text-base font-semibold text-custom-main bg-custom-card border border-custom/20 rounded-xl hover:bg-custom-main hover:border-custom/55 hover:-translate-y-1 transition-all duration-300">
+            Cotizar mi Web
         </a>
     </div>
 </section>
     
     <!-- Navegación Sticky (Pills) con Perfil Técnico Activo -->
-    <!-- Falsa Pestaña: Estado TÉCNICO Activo -->
+    <div class="w-full text-center mt-8 mb-2 px-6">
+    <p class="text-xs sm:text-sm text-custom-muted uppercase tracking-widest font-semibold">Selecciona tu industria para ver una demostración adaptada:</p>
+</div>
+
+<!-- Falsa Pestaña: Estado TÉCNICO Activo -->
 <div class="sticky top-[72px] sm:top-20 z-40 w-full flex justify-center pointer-events-none mt-8 px-4">
     <div class="pointer-events-auto bg-custom-card/90 backdrop-blur-xl p-1.5 flex justify-center items-center space-x-1 border border-custom/20 rounded-xl shadow-xl">
         <!-- INACTIVO -->
@@ -113,7 +122,7 @@
 
 
     <!-- FLUJO MODULAR TÉCNICO (Orden Estratégico) -->
-    <div class="max-w-6xl mx-auto px-6">
+    <div id="portfolio-workspace" class="max-w-6xl mx-auto px-6 pt-8">
         <!-- 1. El Dolor del Profesional -->
         <section class="w-full max-w-4xl mx-auto text-center px-6 py-16 animate-fade-in-up">
     <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase border border-custom/30 text-custom-accent bg-custom-accent/5 mb-6">
@@ -223,6 +232,22 @@
 </section>
     </div>
 </main>
+
+<!-- Botón Flotante Global -->
+<!-- Botón Flotante Global de WhatsApp -->
+<div class="fixed bottom-6 right-6 z-50 group">
+    <!-- Tooltip -->
+    <div class="absolute right-full top-1/2 -translate-y-1/2 mr-4 px-3 py-1.5 bg-custom-card border border-custom/20 text-custom-main text-xs font-semibold rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 whitespace-nowrap shadow-xl">
+        Cotizar mi Web
+        <!-- Flechita del tooltip -->
+        <div class="absolute top-1/2 -right-1 -translate-y-1/2 w-2 h-2 bg-custom-card border-t border-r border-custom/20 transform rotate-45"></div>
+    </div>
+    
+    <!-- Botón -->
+    <a href="https://wa.me/5350000000?text=Hola%20Trazio%20Studio,%20quiero%20cotizar%20mi%20web" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-14 h-14 bg-[#25D366] text-white rounded-full shadow-[0_4px_14px_rgba(37,211,102,0.4)] hover:scale-110 hover:shadow-[0_6px_20px_rgba(37,211,102,0.6)] transition-all duration-300">
+        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2C7.314 2 3.407 5.864 3.407 10.546c0 1.408.349 2.8.956 4.028L2 22l7.666-2.52c1.176.666 2.51.999 3.374.999h.001c4.726 0 8.633-3.863 8.633-8.545C20.674 5.864 16.766 2 12.04 2zM17.152 15.632c-.234-.116-.967-.474-1.117-.528-.15-.054-.26-.054-.37.054-.11.108-.424.528-.548.665-.124.136-.248.15-.457.054-.93-.418-1.54-1.01-2.175-1.928-.636-.92-1.066-1.85-1.423-2.457-.357-.607-.037-.936.27-.99.27-.054.597-.13.864-.424.267-.294.357-.59.5-.784.144-.196.073-.37-.036-.59-.11-.22-.968-2.324-1.325-3.18-.357-.855-.72-.74-1.002-.756-.279-.016-.598-.016-.917-.016-.319 0-.83.108-1.26.54-.43.432-1.64 1.586-1.64 3.868 0 2.28 1.678 4.475 1.916 4.788.238.313 3.303 5.034 8.04 7.025 1.18.497 2.11.79 2.846.99.736.199 1.407.153 1.93-.066.523-.22 1.637-.675 1.87-.99.234-.314.234-.582.162-.702-.072-.119-.267-.183-.557-.32z"/></svg>
+    </a>
+</div>
 
 <!-- Footer -->
 <footer id="footer" class="bg-[#111118] border-t border-custom/10 py-12 px-6 relative z-10 transition-colors duration-300">

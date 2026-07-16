@@ -1,75 +1,54 @@
-<!-- Agenda Interactiva como bloque premium autónomo con textura Zebra -->
-    <section class="py-16 px-6 md:px-12 rounded-2xl bg-custom-card/50 border border-custom/10 bg-pattern-nodes relative overflow-hidden mt-24 shadow-xl">
-        <div class="absolute inset-0 pointer-events-none opacity-20 dark:opacity-10">
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-gradient-to-r from-custom-accent/20 to-transparent blur-3xl rounded-full"></div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
-            <div class="text-center md:text-left">
-                <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-red-500/30 bg-red-500/10 text-[8px] font-semibold uppercase text-red-400 mb-4">
-                    <span>Alta demanda — Sólo 3 cupos restantes</span>
-                </div>
-                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tighter text-custom-main leading-tight mb-6">
-                    Tu Talento, Nuestra Plataforma: Juntos, Hacemos Magia.
-                </h2>
-                <p class="text-lg sm:text-xl text-custom-muted leading-relaxed mb-8 font-light">
-                    Nuestra agenda interactiva es tu asistente personal. Tus clientes pueden ver tu disponibilidad y reservar una sesión o consulta directamente, todo en tiempo real.
-                </p>
-                <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
-                    <a href="https://wa.me/5350000000" target="_blank" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-semibold rounded-full shadow-sm text-custom-dark bg-custom-accent hover:bg-custom-accent/90 transition-colors w-full sm:w-auto">
-                        Reservar Ahora
-                    </a>
-                </div>
+<section class="max-w-6xl mx-auto px-6 mb-24">
+    <div class="bg-custom-card/30 border border-custom/10 rounded-2xl p-8 md:p-12 relative overflow-hidden">
+        <!-- Fondo decorativo -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-custom-accent/5 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none"></div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+            <!-- Textos -->
+            <div>
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-[10px] sm:text-xs font-bold tracking-wider uppercase border border-custom-accent/50 text-custom-accent bg-custom-accent/10 mb-6">
+                    🔥 EJEMPLO DE GATILLO DE VENTAS: AGENDA AL 80%
+                </span>
+                <h2 class="text-3xl md:text-4xl font-bold text-custom-main mb-6 leading-tight">Automatiza tus reservas y recupera tu tiempo.</h2>
+                <p class="text-custom-muted text-lg mb-8">Tu cliente entra, ve tus días libres, elige hora y te llega la solicitud. Se acabó el ida y vuelta de "¿tienes tiempo el jueves?" por WhatsApp.</p>
+                <a href="#footer" class="inline-flex items-center text-custom-accent font-semibold hover:text-custom-main transition-colors">
+                    Quiero esta agenda en mi web <span class="ml-2">→</span>
+                </a>
             </div>
 
-            <!-- Calendar Grid -->
-            <div class="bg-custom-card border border-custom/10 rounded-2xl p-6 shadow-xl w-full max-w-sm mx-auto">
-                <!-- Badge de Capacidad -->
-                <div class="flex justify-center mb-4">
-                    <span class="px-3 py-1 rounded-full bg-custom-accent/10 text-custom-accent text-[10px] font-bold border border-custom-accent/20">
-                        🔥 AGENDA 2026 AL 80% DE CAPACIDAD
-                    </span>
+            <!-- Calendario UI -->
+            <div class="bg-[#1A1A24] border border-custom/20 rounded-xl p-6 shadow-2xl max-w-sm mx-auto w-full">
+                <div class="text-center mb-6">
+                    <h3 class="text-lg font-bold text-custom-main">Noviembre 2026</h3>
                 </div>
-                <h4 class="text-custom-main text-lg font-semibold mb-4 text-center">Noviembre 2026</h4>
-                <div class="grid grid-cols-7 text-center text-xs font-medium text-custom-muted mb-4">
-                    <span>Lun</span><span>Mar</span><span>Mié</span><span>Jue</span><span>Vie</span><span>Sáb</span><span>Dom</span>
+                <div class="grid grid-cols-7 gap-2 text-center text-xs font-medium text-custom-muted mb-4">
+                    <div>Lun</div><div>Mar</div><div>Mié</div><div>Jue</div><div>Vie</div><div>Sáb</div><div>Dom</div>
                 </div>
-                <div class="grid grid-cols-7 gap-y-2 text-center text-sm">
-                    <span class="w-8 h-8"></span><span class="w-8 h-8"></span><span class="w-8 h-8"></span><span class="w-8 h-8"></span>
-                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">1</span>
-                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">2</span>
-                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">3</span>
-                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">4</span>
-                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">5</span>
-                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">6</span>
-                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">7</span>
-                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">8</span>
-                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">9</span>
-                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">10</span>
-                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">11</span>
-                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">12</span>
-                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">13</span>
-                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">14</span>
-                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">15</span>
-                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">16</span>
-                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">17</span>
-                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">18</span>
-                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">19</span>
-                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">20</span>
-                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">21</span>
-                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">22</span>
-                    <span class="w-8 h-8 flex items-center justify-center bg-custom-accent text-black font-bold rounded-full cursor-pointer calendar-day-active">23</span>
-                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">24</span>
-                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">25</span>
-                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">26</span>
-                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">27</span>
-                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">28</span>
-                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">29</span>
-                    <span class="w-8 h-8 flex items-center justify-center hover:text-custom-accent cursor-pointer calendar-day-active">30</span>
+                <div class="grid grid-cols-7 gap-2 text-center text-sm">
+                    <!-- Días vacíos -->
+                    <div></div><div></div><div></div><div></div>
+                    <!-- Días -->
+                    <div class="py-2 text-custom-muted opacity-50 cursor-not-allowed">1</div>
+                    <div class="py-2 text-custom-muted opacity-50 cursor-not-allowed">2</div>
+                    <div class="py-2 text-custom-muted opacity-50 cursor-not-allowed">3</div>
+                    <div class="py-2 calendar-day cursor-pointer hover:bg-custom-card rounded-md transition-colors">4</div>
+                    <div class="py-2 calendar-day cursor-pointer hover:bg-custom-card rounded-md transition-colors">5</div>
+                    <div class="py-2 calendar-day cursor-pointer hover:bg-custom-card rounded-md transition-colors">6</div>
+                    <div class="py-2 calendar-day cursor-pointer hover:bg-custom-card rounded-md transition-colors">7</div>
+                    <div class="py-2 calendar-day calendar-day-active bg-custom-accent text-black font-bold rounded-md cursor-pointer transition-colors shadow-md shadow-custom-accent/20">8</div>
+                    <div class="py-2 calendar-day cursor-pointer hover:bg-custom-card rounded-md transition-colors">9</div>
+                    <div class="py-2 calendar-day cursor-pointer hover:bg-custom-card rounded-md transition-colors">10</div>
+                    <div class="py-2 calendar-day cursor-pointer hover:bg-custom-card rounded-md transition-colors">11</div>
+                    <div class="py-2 calendar-day cursor-pointer hover:bg-custom-card rounded-md transition-colors">12</div>
+                    <div class="py-2 text-custom-muted opacity-50 cursor-not-allowed">13</div>
+                    <div class="py-2 text-custom-muted opacity-50 cursor-not-allowed">14</div>
+                    <div class="py-2 calendar-day cursor-pointer hover:bg-custom-card rounded-md transition-colors">15</div>
                 </div>
-                <div class="mt-6 text-center">
-                    <span class="bg-custom-main text-custom-accent px-4 py-2 rounded-full text-sm">10:00 AM - 12:00 PM</span>
+                <div class="mt-6 pt-6 border-t border-custom/10">
+                    <div class="bg-custom-card text-custom-main text-xs text-center py-2 rounded-md mb-4 border border-custom/20">10:00 AM - 12:00 PM</div>
+                    <a href="https://wa.me/5350000000?text=Hola,%20quiero%20confirmar%20una%20fecha%20en%20tu%20agenda" target="_blank" class="block w-full bg-custom-accent hover:bg-custom-accent-hover text-black font-bold py-3 rounded-lg text-sm text-center transition-colors">Confirmar Reserva</a>
                 </div>
-                <a href="https://wa.me/5350000000?text=Hola,%20quiero%20confirmar%20una%20fecha%20en%20tu%20agenda" target="_blank" class="w-full mt-6 py-3 bg-[#C9A96E] text-black font-bold rounded-md">Confirmar Reserva</a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
