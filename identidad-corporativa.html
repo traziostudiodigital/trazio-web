@@ -98,7 +98,8 @@
 </section>
     
     <!-- 2. Demo Dinámica -->
-    <section id="demo-interactiva" class="max-w-6xl mx-auto px-6 mb-20 relative bg-pattern-diagonal">
+    <section id="demo-interactiva" class="relative bg-pattern-diagonal mb-20">
+    <div class="max-w-4xl mx-auto px-10 py-8"></div>
     <div class="text-center mb-10 animate-fade-in-up">
         <span class="inline-flex items-center gap-2 bg-custom-accent text-black text-[10px] font-black uppercase px-3 py-1 rounded-full tracking-wide">
             <span class="relative flex h-1.5 w-1.5 shrink-0" aria-hidden="true">
@@ -288,45 +289,64 @@
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
         </a>
     </div>
+    </div>
 </section>
 
     <!-- 3. El Poder del Correo -->
     <section class="max-w-5xl mx-auto px-6 mb-24">
-  <div class="bg-custom-card/50 border border-custom/20 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 md:gap-12 shadow-xl shadow-custom/5 relative overflow-hidden">
-    
-    <!-- Lado Izquierdo: Icono SVG premium con halo -->
+  <div class="bg-custom-card border-double-gold rounded-lg p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 md:gap-12 shadow-xl shadow-black/20 relative overflow-hidden transition-all duration-300 ease-in-out hover:shadow-2xl hover:shadow-custom-accent/5">
+
+    <!-- Lado Izquierdo: Icono premium con halo + flotación -->
     <div class="flex-shrink-0 relative">
-      <div class="absolute inset-0 bg-custom-accent/20 blur-2xl rounded-full"></div>
-      <div class="relative w-28 h-28 md:w-36 md:h-36 rounded-full border border-custom-accent/30 bg-custom-accent/5 backdrop-blur-sm flex items-center justify-center">
-        <svg class="w-16 h-16 md:w-20 md:h-20 text-custom-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+      <div class="absolute inset-0 bg-custom-accent/20 blur-2xl rounded-full pointer-events-none" aria-hidden="true"></div>
+      <div class="relative w-28 h-28 md:w-36 md:h-36 rounded-full border border-custom-accent/30 bg-custom-accent/5 backdrop-blur-sm flex items-center justify-center animate-float">
+        <svg class="w-16 h-16 md:w-20 md:h-20 text-custom-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
           <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75l2.25 2.25 3.75-3.75" opacity="0.6"/>
         </svg>
       </div>
     </div>
 
-    <!-- Lado Derecho: Badge, H2, Párrafo y micro-CTA -->
-    <div class="flex-1">
+    <!-- Lado Derecho: Badge, H2, Comparativa Antes/Después, Párrafo y CTA -->
+    <div class="flex-1 text-center md:text-left">
       <span class="inline-flex items-center gap-2 bg-custom-accent/10 border border-custom-accent/20 text-custom-accent text-xs font-semibold tracking-wider px-3 py-1 rounded-full mb-4">
         <span class="w-1.5 h-1.5 rounded-full bg-custom-accent"></span>
         DOMINIOS Y CORREOS CORPORATIVOS
       </span>
-      
-      <h2 class="text-3xl font-bold text-custom-main mb-4 leading-tight">
-        Un correo <span class="text-custom-accent/70 line-through decoration-custom-accent/40">@gmail.com</span> destruye tu credibilidad.
+
+      <h2 class="text-2xl md:text-3xl font-bold text-custom-main mb-4 leading-tight">
+        Un correo @gmail.com destruye tu credibilidad.
       </h2>
-      
-      <p class="text-custom-muted leading-relaxed mb-6">
-        Nos encargamos de todo el trámite técnico. Registramos tu dominio propio 
-        <span class="text-custom-main font-medium">(tuempresa.com)</span> y configuramos correos corporativos 
+
+      <!-- Comparativa visual Antes/Después -->
+      <div class="flex flex-wrap items-center justify-center md:justify-start gap-2 mb-6">
+        <span class="inline-flex items-center gap-1.5 bg-red-500/10 border border-red-500/20 text-red-400/70 text-xs font-medium px-3 py-1.5 rounded-full line-through decoration-red-400/40">
+          <svg class="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          contacto@gmail.com
+        </span>
+        <svg class="w-4 h-4 text-custom-muted shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        <span class="inline-flex items-center gap-1.5 bg-custom-accent/10 border border-custom-accent/30 text-custom-accent text-xs font-semibold px-3 py-1.5 rounded-full">
+          <svg class="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+          ventas@tuempresa.com
+        </span>
+      </div>
+
+      <p class="text-custom-muted leading-relaxed mb-6 text-sm md:text-base">
+        Nos encargamos de todo el trámite técnico. Registramos tu dominio propio
+        <span class="text-custom-main font-medium">(tuempresa.com)</span> y configuramos correos corporativos
         <span class="text-custom-main font-medium">(ventas@tuempresa.com)</span> para que negocies al nivel de las grandes corporaciones.
       </p>
 
-      <div class="flex items-center gap-2 text-sm text-custom-accent/80">
-        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
-        </svg>
-        <span>Configuración y soporte incluidos</span>
+      <div class="flex flex-col sm:flex-row items-center md:items-start gap-4">
+        <!-- CTA: ajustar href al ancla real de contacto/cotización -->
+        <a href="#contacto" class="inline-flex items-center justify-center gap-2 bg-custom-accent text-black text-sm font-bold px-6 py-3 rounded-lg hover:brightness-110 transition-all duration-300 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-card w-full sm:w-auto">
+          Reservar mi dominio y correo
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        </a>
+        <div class="flex items-center gap-2 text-sm text-custom-accent/80">
+          <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+          <span>Configuración y soporte incluidos</span>
+        </div>
       </div>
     </div>
   </div>
@@ -334,182 +354,257 @@
 
     <!-- 4. Proceso de Trabajo -->
     <section class="max-w-6xl mx-auto px-6 mb-24">
-  <header class="text-center mb-16">
-    <span class="inline-block text-custom-accent text-sm font-semibold tracking-[0.2em] uppercase mb-3">
-      Metodología
-    </span>
-    <h2 class="text-center text-3xl sm:text-4xl font-bold mb-4 tracking-tight text-white">
-      Nuestro Proceso Llave en Mano
-    </h2>
-    <p class="text-custom-text/70 max-w-2xl mx-auto leading-relaxed">
-      Un sistema diseñado para convertir tu visión en una experiencia digital de alto impacto, sin fricciones.
-    </p>
-  </header>
+  <div class="relative bg-custom-card border-double-gold rounded-lg overflow-hidden bg-pattern-nodes px-6 py-14 md:px-12 md:py-20 shadow-2xl shadow-black/30">
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
-    <!-- Línea conectora decorativa (solo desktop) -->
-    <div class="hidden lg:block absolute top-12 left-0 right-0 h-px bg-gradient-to-r from-transparent via-custom-accent/30 to-transparent"></div>
+    <header class="text-center mb-14 md:mb-16 relative">
+      <span class="inline-flex items-center gap-2 text-custom-accent text-xs font-semibold tracking-[0.2em] uppercase mb-3">
+        <span class="w-6 h-px bg-custom-accent/50"></span>
+        Metodología
+        <span class="w-6 h-px bg-custom-accent/50"></span>
+      </span>
+      <h2 class="text-center text-3xl sm:text-4xl font-bold mb-4 tracking-tight text-custom-main">
+        Nuestro Proceso Llave en Mano
+      </h2>
+      <p class="text-custom-muted max-w-2xl mx-auto leading-relaxed text-sm md:text-base">
+        Un sistema diseñado para convertir tu visión en una experiencia digital de alto impacto, sin fricciones.
+      </p>
+    </header>
 
-    <!-- Paso 1 -->
-    <div class="group relative p-6 border border-custom/10 bg-custom-card rounded-xl hover:-translate-y-2 hover:border-custom-accent/40 hover:shadow-[0_8px_30px_-12px_rgba(212,175,55,0.25)] transition-all duration-300">
-      <div class="bg-custom-accent/10 text-custom-accent font-black text-2xl w-12 h-12 flex items-center justify-center rounded-lg mb-5 group-hover:scale-105 transition-transform">
-        1
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+      <!-- Línea conectora decorativa (solo desktop) -->
+      <div class="hidden lg:block absolute top-12 left-0 right-0 h-px bg-gradient-to-r from-transparent via-custom-accent/40 to-transparent" aria-hidden="true"></div>
+
+      <!-- Paso 1 -->
+      <div class="group relative p-6 bg-custom-main border border-custom rounded-lg overflow-hidden hover:-translate-y-1.5 hover:border-custom-accent transition-all duration-300 ease-in-out hover:shadow-[0_12px_32px_-12px_rgba(0,0,0,0.6)]">
+        <span class="absolute -top-3 -right-2 text-7xl font-black text-custom-accent/5 group-hover:text-custom-accent/10 transition-all duration-300 ease-in-out select-none leading-none" aria-hidden="true">01</span>
+        <div class="relative">
+          <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-custom-accent/10 border border-custom-accent/20 text-custom-accent mb-5 group-hover:scale-105 group-hover:bg-custom-accent/15 transition-all duration-300 ease-in-out">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 17.25a6.75 6.75 0 100-13.5 6.75 6.75 0 000 13.5zM19.5 19.5l-4.36-4.36"/></svg>
+          </div>
+          <span class="block text-[11px] font-bold text-custom-accent tracking-widest uppercase mb-1">Paso 01</span>
+          <h3 class="text-lg font-bold mb-2 text-custom-main tracking-tight">Diagnóstico</h3>
+          <p class="text-custom-muted text-sm leading-relaxed">Analizamos tu modelo de negocio y competencia.</p>
+        </div>
       </div>
-      <h3 class="text-lg font-semibold mb-2 text-white tracking-tight">Diagnóstico</h3>
-      <p class="text-custom-text/80 text-sm leading-relaxed">Analizamos tu modelo de negocio y competencia.</p>
+
+      <!-- Paso 2 -->
+      <div class="group relative p-6 bg-custom-main border border-custom rounded-lg overflow-hidden hover:-translate-y-1.5 hover:border-custom-accent transition-all duration-300 ease-in-out hover:shadow-[0_12px_32px_-12px_rgba(0,0,0,0.6)]">
+        <span class="absolute -top-3 -right-2 text-7xl font-black text-custom-accent/5 group-hover:text-custom-accent/10 transition-all duration-300 ease-in-out select-none leading-none" aria-hidden="true">02</span>
+        <div class="relative">
+          <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-custom-accent/10 border border-custom-accent/20 text-custom-accent mb-5 group-hover:scale-105 group-hover:bg-custom-accent/15 transition-all duration-300 ease-in-out">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487z"/></svg>
+          </div>
+          <span class="block text-[11px] font-bold text-custom-accent tracking-widest uppercase mb-1">Paso 02</span>
+          <h3 class="text-lg font-bold mb-2 text-custom-main tracking-tight">Propuesta</h3>
+          <p class="text-custom-muted text-sm leading-relaxed">Estructuramos el diseño y los textos persuasivos.</p>
+        </div>
+      </div>
+
+      <!-- Paso 3 -->
+      <div class="group relative p-6 bg-custom-main border border-custom rounded-lg overflow-hidden hover:-translate-y-1.5 hover:border-custom-accent transition-all duration-300 ease-in-out hover:shadow-[0_12px_32px_-12px_rgba(0,0,0,0.6)]">
+        <span class="absolute -top-3 -right-2 text-7xl font-black text-custom-accent/5 group-hover:text-custom-accent/10 transition-all duration-300 ease-in-out select-none leading-none" aria-hidden="true">03</span>
+        <div class="relative">
+          <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-custom-accent/10 border border-custom-accent/20 text-custom-accent mb-5 group-hover:scale-105 group-hover:bg-custom-accent/15 transition-all duration-300 ease-in-out">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25M6.75 17.25L1.5 12l5.25-5.25M14.25 3.75l-4.5 16.5"/></svg>
+          </div>
+          <span class="block text-[11px] font-bold text-custom-accent tracking-widest uppercase mb-1">Paso 03</span>
+          <h3 class="text-lg font-bold mb-2 text-custom-main tracking-tight">Desarrollo</h3>
+          <p class="text-custom-muted text-sm leading-relaxed">Programación estática de alta velocidad.</p>
+        </div>
+      </div>
+
+      <!-- Paso 4 -->
+      <div class="group relative p-6 bg-custom-main border border-custom rounded-lg overflow-hidden hover:-translate-y-1.5 hover:border-custom-accent transition-all duration-300 ease-in-out hover:shadow-[0_12px_32px_-12px_rgba(0,0,0,0.6)]">
+        <span class="absolute -top-3 -right-2 text-7xl font-black text-custom-accent/5 group-hover:text-custom-accent/10 transition-all duration-300 ease-in-out select-none leading-none" aria-hidden="true">04</span>
+        <div class="relative">
+          <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-custom-accent/10 border border-custom-accent/20 text-custom-accent mb-5 group-hover:scale-105 group-hover:bg-custom-accent/15 transition-all duration-300 ease-in-out">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.63 8.72m5.96 5.65a14.98 14.98 0 01-5.96-5.65m0 0a14.98 14.98 0 00-5.16 6.32m0 0a6 6 0 00-.4 7.06l1.16-.7m-.76-6.36l4.34 4.34"/></svg>
+          </div>
+          <span class="block text-[11px] font-bold text-custom-accent tracking-widest uppercase mb-1">Paso 04</span>
+          <h3 class="text-lg font-bold mb-2 text-custom-main tracking-tight">Lanzamiento</h3>
+          <p class="text-custom-muted text-sm leading-relaxed">Entrega, correos activos y capacitación.</p>
+        </div>
+      </div>
     </div>
 
-    <!-- Paso 2 -->
-    <div class="group relative p-6 border border-custom/10 bg-custom-card rounded-xl hover:-translate-y-2 hover:border-custom-accent/40 hover:shadow-[0_8px_30px_-12px_rgba(212,175,55,0.25)] transition-all duration-300">
-      <div class="bg-custom-accent/10 text-custom-accent font-black text-2xl w-12 h-12 flex items-center justify-center rounded-lg mb-5 group-hover:scale-105 transition-transform">
-        2
+    <!-- Barra de confianza inferior -->
+    <div class="mt-12 pt-6 border-t border-custom flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-xs text-custom-muted">
+      <div class="flex items-center gap-2">
+        <svg class="w-4 h-4 text-custom-accent shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2"/><circle cx="12" cy="12" r="9" stroke-linecap="round"/></svg>
+        Tiempo promedio: 15–20 días
       </div>
-      <h3 class="text-lg font-semibold mb-2 text-white tracking-tight">Propuesta</h3>
-      <p class="text-custom-text/80 text-sm leading-relaxed">Estructuramos el diseño y los textos persuasivos.</p>
-    </div>
-
-    <!-- Paso 3 -->
-    <div class="group relative p-6 border border-custom/10 bg-custom-card rounded-xl hover:-translate-y-2 hover:border-custom-accent/40 hover:shadow-[0_8px_30px_-12px_rgba(212,175,55,0.25)] transition-all duration-300">
-      <div class="bg-custom-accent/10 text-custom-accent font-black text-2xl w-12 h-12 flex items-center justify-center rounded-lg mb-5 group-hover:scale-105 transition-transform">
-        3
+      <div class="flex items-center gap-2">
+        <svg class="w-4 h-4 text-custom-accent shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75M3.75 21.75h16.5a1.5 1.5 0 001.5-1.5v-7.5a1.5 1.5 0 00-1.5-1.5H3.75a1.5 1.5 0 00-1.5 1.5v7.5a1.5 1.5 0 001.5 1.5z"/></svg>
+        Soporte técnico incluido
       </div>
-      <h3 class="text-lg font-semibold mb-2 text-white tracking-tight">Desarrollo</h3>
-      <p class="text-custom-text/80 text-sm leading-relaxed">Programación estática de alta velocidad.</p>
-    </div>
-
-    <!-- Paso 4 -->
-    <div class="group relative p-6 border border-custom/10 bg-custom-card rounded-xl hover:-translate-y-2 hover:border-custom-accent/40 hover:shadow-[0_8px_30px_-12px_rgba(212,175,55,0.25)] transition-all duration-300">
-      <div class="bg-custom-accent/10 text-custom-accent font-black text-2xl w-12 h-12 flex items-center justify-center rounded-lg mb-5 group-hover:scale-105 transition-transform">
-        4
-      </div>
-      <h3 class="text-lg font-semibold mb-2 text-white tracking-tight">Lanzamiento</h3>
-      <p class="text-custom-text/80 text-sm leading-relaxed">Entrega, correos activos y capacitación.</p>
     </div>
   </div>
 </section>
 
     <!-- 5. Paquetes y Precios -->
-    <section class="max-w-6xl mx-auto px-6 mb-24 py-12">
-    <h2 class="text-3xl font-bold text-center mb-16 text-custom-main tracking-tight">Soluciones a la medida de tu crecimiento</h2>
+    <section id="paquetes" class="max-w-6xl mx-auto px-6 mb-24 py-16 relative">
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
+    <!-- Divisor sutil de separación con la sección anterior -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-px bg-gradient-to-r from-transparent via-custom-accent/25 to-transparent" aria-hidden="true"></div>
+
+    <header class="text-center mb-16 animate-fade-in-up">
+        <span class="inline-flex items-center gap-2 text-custom-accent text-xs font-semibold tracking-[0.2em] uppercase mb-3">
+            <span class="w-6 h-px bg-custom-accent/50"></span>
+            Planes y Paquetes
+            <span class="w-6 h-px bg-custom-accent/50"></span>
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-custom-main tracking-tight mb-4">Soluciones a la medida de tu crecimiento</h2>
+        <p class="text-custom-muted max-w-xl mx-auto leading-relaxed text-sm md:text-base">Elige el paquete que se ajusta a tu etapa actual. Sin letra pequeña, sin sorpresas.</p>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-stretch">
 
         <!-- Paquete Presencia Digital -->
-        <div class="p-10 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-custom/10 bg-custom-card/50 text-custom-main flex flex-col h-full backdrop-blur-sm transition-all duration-300 hover:shadow-[0_8px_40px_rgb(0,0,0,0.18)] hover:-translate-y-1">
-            <h3 class="text-2xl font-semibold mb-6">Presencia Digital</h3>
-            <ul class="space-y-4 flex-grow mb-10">
-                <li class="flex items-center">
-                    <svg class="text-custom-accent w-5 h-5 mr-4 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                    </svg>
-                    <span>Landing Page de Alto Impacto</span>
+        <div class="group p-8 md:p-10 rounded-lg border border-custom bg-custom-card text-custom-main flex flex-col h-full transition-all duration-300 ease-in-out hover:border-custom-accent/40 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/30">
+            <div class="inline-flex items-center justify-center w-11 h-11 rounded-lg bg-custom-accent/10 border border-custom-accent/20 text-custom-accent mb-5">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-6.75 18h9.75"/></svg>
+            </div>
+            <h3 class="text-xl font-bold mb-1">Presencia Digital</h3>
+            <p class="text-xs text-custom-accent/70 font-medium mb-6 uppercase tracking-wide">Ideal para arrancar</p>
+            <ul class="space-y-3.5 flex-grow mb-8">
+                <li class="flex items-start gap-3">
+                    <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    <span class="text-sm text-custom-muted">Landing Page de Alto Impacto</span>
                 </li>
-                <li class="flex items-center">
-                    <svg class="text-custom-accent w-5 h-5 mr-4 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                    </svg>
-                    <span>Botón directo a WhatsApp</span>
+                <li class="flex items-start gap-3">
+                    <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    <span class="text-sm text-custom-muted">Botón directo a WhatsApp</span>
                 </li>
-                <li class="flex items-center">
-                    <svg class="text-custom-accent w-5 h-5 mr-4 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                    </svg>
-                    <span>Optimización Móvil</span>
+                <li class="flex items-start gap-3">
+                    <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    <span class="text-sm text-custom-muted">Optimización Móvil</span>
                 </li>
             </ul>
-            <a href="https://wa.me/TU_NUMERO_WHATSAPP" target="_blank" class="block w-full text-center py-3.5 rounded-xl font-bold transition-all duration-300 mt-auto border border-custom/20 text-custom-main hover:bg-custom/10 hover:border-custom/40 hover:shadow-md">Cotizar Paquete</a>
+            <a href="https://wa.me/TU_NUMERO_WHATSAPP" target="_blank" rel="noopener" class="block w-full text-center py-3.5 rounded-lg font-bold text-sm transition-all duration-300 ease-in-out mt-auto border border-custom text-custom-main hover:border-custom-accent hover:text-custom-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-card">Cotizar Paquete</a>
         </div>
 
         <!-- Paquete Corporativa Estándar (MÁS ELEGIDO) -->
-        <div class="p-10 rounded-2xl shadow-[0_20px_60px_-10px_rgba(0,0,0,0.3)] border-custom-accent/50 bg-custom-card transform md:scale-105 relative z-10 text-custom-main flex flex-col h-full backdrop-blur-md transition-all duration-300 hover:shadow-[0_25px_70px_-10px_rgba(0,0,0,0.35)] hover:md:scale-[1.07]">
-            <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-custom-accent text-black text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg">MÁS ELEGIDO</span>
-            <h3 class="text-2xl font-semibold mb-6">Corporativa Estándar</h3>
-            <ul class="space-y-4 flex-grow mb-10">
-                <li class="flex items-center">
-                    <svg class="text-custom-accent w-5 h-5 mr-4 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                    </svg>
-                    <span>Todo lo de Presencia Digital</span>
+        <div class="group relative p-8 md:p-10 rounded-lg border-double-gold bg-custom-card text-custom-main flex flex-col h-full md:scale-105 z-10 transition-all duration-300 ease-in-out hover:md:scale-[1.07] hover:shadow-2xl hover:shadow-custom-accent/10">
+            <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-custom-accent text-black text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg whitespace-nowrap">⭐ Más Elegido</span>
+            <div class="inline-flex items-center justify-center w-11 h-11 rounded-lg bg-custom-accent/15 border border-custom-accent/30 text-custom-accent mb-5">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6 21v-3.375c0-.621.504-1.125 1.125-1.125h1.5c.621 0 1.125.504 1.125 1.125V21"/></svg>
+            </div>
+            <h3 class="text-xl font-bold mb-1">Corporativa Estándar</h3>
+            <p class="text-xs text-custom-accent font-medium mb-6 uppercase tracking-wide">Ideal para crecer</p>
+            <ul class="space-y-3.5 flex-grow mb-8">
+                <li class="flex items-start gap-3">
+                    <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    <span class="text-sm text-custom-main font-medium">Todo lo de Presencia Digital</span>
                 </li>
-                <li class="flex items-center">
-                    <svg class="text-custom-accent w-5 h-5 mr-4 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                    </svg>
-                    <span>Dominio y Correo Profesional</span>
+                <li class="flex items-start gap-3">
+                    <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    <span class="text-sm text-custom-muted">Dominio y Correo Profesional</span>
                 </li>
-                <li class="flex items-center">
-                    <svg class="text-custom-accent w-5 h-5 mr-4 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                    </svg>
-                    <span>Catálogo de Servicios</span>
+                <li class="flex items-start gap-3">
+                    <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    <span class="text-sm text-custom-muted">Catálogo de Servicios</span>
                 </li>
-                <li class="flex items-center">
-                    <svg class="text-custom-accent w-5 h-5 mr-4 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                    </svg>
-                    <span>Bilingüe (ES/EN)</span>
+                <li class="flex items-start gap-3">
+                    <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    <span class="text-sm text-custom-muted">Bilingüe (ES/EN)</span>
                 </li>
             </ul>
-            <a href="https://wa.me/TU_NUMERO_WHATSAPP" target="_blank" class="block w-full text-center py-3.5 rounded-xl font-bold transition-all duration-300 mt-auto bg-custom-accent text-black hover:bg-custom-accent/80 hover:shadow-[0_8px_20px_rgba(202,138,4,0.4)]">Cotizar Paquete</a>
+            <a href="https://wa.me/TU_NUMERO_WHATSAPP" target="_blank" rel="noopener" class="block w-full text-center py-3.5 rounded-lg font-bold text-sm transition-all duration-300 ease-in-out mt-auto bg-custom-accent text-black hover:brightness-110 hover:shadow-[0_8px_24px_-4px_rgba(0,0,0,0.4)] focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-card">Cotizar Paquete</a>
         </div>
 
         <!-- Paquete Corporativa Plus -->
-        <div class="p-10 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-custom/10 bg-custom-card/50 text-custom-main flex flex-col h-full backdrop-blur-sm transition-all duration-300 hover:shadow-[0_8px_40px_rgb(0,0,0,0.18)] hover:-translate-y-1">
-            <h3 class="text-2xl font-semibold mb-6">Corporativa Plus</h3>
-            <ul class="space-y-4 flex-grow mb-10">
-                <li class="flex items-center">
-                    <svg class="text-custom-accent w-5 h-5 mr-4 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                    </svg>
-                    <span>Todo lo Estándar</span>
+        <div class="group p-8 md:p-10 rounded-lg border border-custom bg-custom-card text-custom-main flex flex-col h-full transition-all duration-300 ease-in-out hover:border-custom-accent/40 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/30">
+            <div class="inline-flex items-center justify-center w-11 h-11 rounded-lg bg-custom-accent/10 border border-custom-accent/20 text-custom-accent mb-5">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 4.5v15m6-15v15M3.75 4.5h16.5c.621 0 1.125.504 1.125 1.125v12.75c0 .621-.504 1.125-1.125 1.125H3.75A1.125 1.125 0 012.625 18.375V5.625c0-.621.504-1.125 1.125-1.125z"/></svg>
+            </div>
+            <h3 class="text-xl font-bold mb-1">Corporativa Plus</h3>
+            <p class="text-xs text-custom-accent/70 font-medium mb-6 uppercase tracking-wide">Ideal para escalar</p>
+            <ul class="space-y-3.5 flex-grow mb-8">
+                <li class="flex items-start gap-3">
+                    <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    <span class="text-sm text-custom-muted">Todo lo Estándar</span>
                 </li>
-                <li class="flex items-center">
-                    <svg class="text-custom-accent w-5 h-5 mr-4 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                    </svg>
-                    <span>Formulario de Filtrado B2B</span>
+                <li class="flex items-start gap-3">
+                    <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    <span class="text-sm text-custom-muted">Formulario de Filtrado B2B</span>
                 </li>
-                <li class="flex items-center">
-                    <svg class="text-custom-accent w-5 h-5 mr-4 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                    </svg>
-                    <span>Exportador de Dossier PDF</span>
+                <li class="flex items-start gap-3">
+                    <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    <span class="text-sm text-custom-muted">Exportador de Dossier PDF</span>
                 </li>
-                <li class="flex items-center">
-                    <svg class="text-custom-accent w-5 h-5 mr-4 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                    </svg>
-                    <span>Selector Dinámico de Rubros</span>
+                <li class="flex items-start gap-3">
+                    <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    <span class="text-sm text-custom-muted">Selector Dinámico de Rubros</span>
                 </li>
             </ul>
-            <a href="https://wa.me/TU_NUMERO_WHATSAPP" target="_blank" class="block w-full text-center py-3.5 rounded-xl font-bold transition-all duration-300 mt-auto border border-custom/20 text-custom-main hover:bg-custom/10 hover:border-custom/40 hover:shadow-md">Cotizar Paquete</a>
+            <a href="https://wa.me/TU_NUMERO_WHATSAPP" target="_blank" rel="noopener" class="block w-full text-center py-3.5 rounded-lg font-bold text-sm transition-all duration-300 ease-in-out mt-auto border border-custom text-custom-main hover:border-custom-accent hover:text-custom-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-card">Cotizar Paquete</a>
         </div>
 
     </div>
+
+    <!-- Microcopy de apoyo a la decisión -->
+    <p class="text-center text-xs text-custom-muted mt-10">
+        ¿No sabes cuál elegir? <a href="https://wa.me/TU_NUMERO_WHATSAPP" target="_blank" rel="noopener" class="text-custom-accent font-medium hover:underline">Escríbenos</a> y te ayudamos a decidir sin compromiso.
+    </p>
 </section>
 
     <!-- 6. Preguntas Frecuentes -->
     <section class="max-w-4xl mx-auto px-6 mb-24">
-  <h2 class="text-3xl font-bold mb-10 text-custom-main text-center">
-    Preguntas Frecuentes
-  </h2>
-  <div class="space-y-6">
-    <div class="bg-custom-card p-6 md:p-8 rounded-2xl border border-custom/10 hover:border-custom-accent/40 shadow-sm hover:shadow-xl hover:shadow-custom-accent/5 transition-all duration-300 ease-out">
-      <h4 class="font-bold text-custom-accent mb-3 text-lg">
-        ¿Necesito pagar mantenimiento mensual?
-      </h4>
-      <p class="text-sm md:text-base text-custom-muted leading-relaxed">
-        No. Utilizamos arquitectura estática moderna. Haces un pago único por el desarrollo y te ahorras los costosos mantenimientos de servidores tradicionales.
-      </p>
+  <div class="relative bg-custom-card border-double-gold bg-pattern-diagonal rounded-lg overflow-hidden px-6 py-14 md:px-10 md:py-16">
+
+    <header class="text-center mb-12">
+      <span class="inline-flex items-center gap-2 text-custom-accent text-xs font-semibold tracking-[0.2em] uppercase mb-3">
+        <span class="w-6 h-px bg-custom-accent/50"></span>
+        Resolvemos tus dudas
+        <span class="w-6 h-px bg-custom-accent/50"></span>
+      </span>
+      <h2 class="text-3xl font-bold text-custom-main tracking-tight">
+        Preguntas Frecuentes
+      </h2>
+    </header>
+
+    <div class="space-y-4">
+      <!-- FAQ 1 -->
+      <details class="group bg-custom-main border border-custom rounded-lg overflow-hidden transition-all duration-300 ease-in-out open:border-custom-accent/40" open>
+        <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden select-none">
+          <div class="flex items-center gap-4">
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-custom-accent/10 border border-custom-accent/20 text-custom-accent text-sm font-black shrink-0">?</span>
+            <h4 class="font-bold text-custom-main text-base md:text-lg">¿Necesito pagar mantenimiento mensual?</h4>
+          </div>
+          <svg class="w-5 h-5 text-custom-accent shrink-0 transition-transform duration-300 ease-in-out group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </summary>
+        <div class="px-6 pb-6 pl-[4.5rem]">
+          <p class="text-sm md:text-base text-custom-muted leading-relaxed">
+            No. Utilizamos arquitectura estática moderna. Haces un pago único por el desarrollo y te ahorras los costosos mantenimientos de servidores tradicionales.
+          </p>
+        </div>
+      </details>
+
+      <!-- FAQ 2 -->
+      <details class="group bg-custom-main border border-custom rounded-lg overflow-hidden transition-all duration-300 ease-in-out open:border-custom-accent/40">
+        <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden select-none">
+          <div class="flex items-center gap-4">
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-custom-accent/10 border border-custom-accent/20 text-custom-accent text-sm font-black shrink-0">?</span>
+            <h4 class="font-bold text-custom-main text-base md:text-lg">¿Funciona bien con la conexión de Cuba?</h4>
+          </div>
+          <svg class="w-5 h-5 text-custom-accent shrink-0 transition-transform duration-300 ease-in-out group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </summary>
+        <div class="px-6 pb-6 pl-[4.5rem]">
+          <p class="text-sm md:text-base text-custom-muted leading-relaxed">
+            Sí. Es nuestra mayor ventaja. Optimizamos el código y las imágenes para que tu web cargue en milisegundos incluso en redes 3G inestables.
+          </p>
+        </div>
+      </details>
     </div>
-    <div class="bg-custom-card p-6 md:p-8 rounded-2xl border border-custom/10 hover:border-custom-accent/40 shadow-sm hover:shadow-xl hover:shadow-custom-accent/5 transition-all duration-300 ease-out">
-      <h4 class="font-bold text-custom-accent mb-3 text-lg">
-        ¿Funciona bien con la conexión de Cuba?
-      </h4>
-      <p class="text-sm md:text-base text-custom-muted leading-relaxed">
-        Sí. Es nuestra mayor ventaja. Optimizamos el código y las imágenes para que tu web cargue en milisegundos incluso en redes 3G inestables.
-      </p>
-    </div>
+
+    <!-- Fallback de contacto si no encontró su respuesta -->
+    <p class="text-center text-xs text-custom-muted mt-10">
+      ¿Tienes otra duda? <a href="#contacto" class="text-custom-accent font-medium hover:underline">Escríbenos directo</a>.
+    </p>
   </div>
 </section>
 

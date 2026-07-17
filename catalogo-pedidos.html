@@ -1,244 +1,271 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogos Digitales para Mipymes en Cuba | Trazio Studio</title>
-    <meta name="description" content="Automatiza tus ventas en Cuba con catálogos digitales de alta velocidad. Ideales para Mipymes, restaurantes y tiendas. Pedidos directos a WhatsApp, carga instantánea y sin costos mensuales.">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
-</head>
-<body class="bg-custom-main text-custom-main min-h-screen flex flex-col transition-colors duration-300">
+<main class="flex-grow">
+    <!-- 1. Hero del Catálogo -->
+    <section id="catalog-hero" class="max-w-5xl mx-auto px-6 py-12 md:py-16 flex flex-col items-center text-center animate-fade-in-up">
+    <style>
+        /* Floating animation for logos */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+    
+    <!-- Badge superior -->
+    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase border border-custom/30 text-custom-accent bg-custom-accent/5 mb-6">
+        ✨ VENTAS AUTOMATIZADAS: TU TIENDA 24/7 EN CUBA
+    </span>
 
-    <!-- Header -->
-    <header class="sticky top-0 z-40 backdrop-blur-md bg-custom-main/90 border-b border-custom/10 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-8 md:px-12 lg:px-16 py-4 flex justify-between items-center w-full">
-            <a href="index.html" class="flex items-center space-x-2 group">
-                <img src="assets/isotype-gold.svg" class="w-8 h-8 rounded-lg shadow-md hover:scale-105 transition-transform duration-300" alt="Trazio Isotype">
-            </a>
-            <div class="flex items-center space-x-3">
-                <button id="lang-toggle-btn" class="flex items-center justify-center h-10 px-3 rounded-lg bg-custom-card border border-custom/10 text-xs font-bold uppercase hover:text-custom-accent hover:border-custom/30 transition-all duration-300" title="Cambiar Idioma">
-                    <span id="current-lang-text">ES</span>
-                </button>
-                <button id="theme-toggle-btn" class="flex items-center justify-center h-10 w-10 rounded-lg bg-custom-card border border-custom/10 text-custom-main hover:text-custom-accent hover:border-custom/30 transition-all duration-300" title="Cambiar Tema">
-                    <svg id="theme-moon-svg" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
-                    <svg id="theme-sun-svg" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
-                </button>
-                <a href="https://wa.me/5350000000?text=Hola,%20quiero%20iniciar%20un%20proyecto" target="_blank" rel="noopener noreferrer" class="hidden sm:flex items-center justify-center h-10 px-5 text-xs font-bold text-black uppercase tracking-wider bg-custom-accent rounded-lg shadow-md shadow-custom-accent/10 hover:bg-custom-accent-hover transition-all duration-300" data-i18n="nav-cta">
-                    Iniciar Proyecto
-                </a>
-            </div>
+    <!-- Logos de la marca (Alternancia Claro/Oscuro según el tema del sitio) -->
+    <img src="assets/logo-gold.svg" class="logo-gold h-14 md:h-16 mx-auto mb-6 animate-float" alt="Trazio Studio">
+    <img src="assets/logo-dark.svg" class="logo-dark h-14 md:h-16 mx-auto mb-6 animate-float" alt="Trazio Studio">
+
+    <!-- Título Principal -->
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tighter leading-[1.1] mb-6 text-custom-main">
+        Automatiza tus Ventas en Cuba con un <span class="text-custom-accent">Catálogo que Carga al Instante</span>
+    </h1>
+
+    <!-- Subtítulo descriptivo -->
+    <p class="text-lg sm:text-xl text-custom-muted max-w-3xl mb-12 leading-relaxed">
+        Olvídate de los pesados archivos PDF que consumen los megas de tus clientes. Ofrece una experiencia de compra rápida, interactiva y con pedidos que llegan directo a tu WhatsApp.
+    </p>
+
+    <!-- Botones de Acción Estilizados -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center w-full sm:w-auto">
+        <a href="#demos" class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 text-base font-semibold text-white bg-custom-accent rounded-xl shadow-lg shadow-custom-accent/10 hover:bg-custom-accent-hover hover:-translate-y-1 transition-all duration-300">
+            Ver Demos Interactivas
+        </a>
+        <a href="https://wa.me/5350000000" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 text-base font-semibold text-custom-main bg-custom-card border border-custom/20 rounded-xl hover:bg-custom-main hover:border-custom/55 hover:-translate-y-1 transition-all duration-300">
+            Quiero mi Catálogo
+        </a>
+    </div>
+
+    <!-- Micro-copy de valor añadido con icono de reloj -->
+    <p class="mt-10 text-sm text-custom-muted max-w-2xl mx-auto font-medium leading-relaxed">
+        ⏱️ Recupera hasta 3 horas al día: tu catálogo atiende y ordena los pedidos por ti, mientras tú te enfocas en lo que de verdad hace crecer tu negocio.
+    </p>
+</section>
+    
+    <!-- 2. Los 4 Pilares de Valor (Bento Grid) -->
+    <section class="max-w-6xl mx-auto px-6 mb-24">
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+    <!-- Tarjeta 1: CERO COSTO MENSUAL (Ancha - 7 Cols) -->
+    <div class="group relative overflow-hidden md:col-span-7 bg-gradient-to-b from-custom-card/50 to-custom-card/10 border border-custom/10 p-8 md:p-10 rounded-3xl hover:border-custom-accent/30 hover:shadow-[0_20px_50px_rgba(212,175,55,0.05)] transition-all duration-500 hover:-translate-y-1">
+      <!-- Glow effect en hover -->
+      <div class="absolute inset-0 bg-gradient-to-br from-custom-accent/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+      
+      <div class="relative z-10">
+        <!-- Icono con contenedor premium -->
+        <div class="inline-flex items-center justify-center p-3 rounded-xl bg-custom-accent/5 border border-custom-accent/10 mb-6 group-hover:scale-110 group-hover:bg-custom-accent/10 group-hover:border-custom-accent/20 transition-all duration-500">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7 text-custom-accent">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659L9 10.18M12 18v3.016M12 6v-3m-1.071 1.967A4.5 4.5 0 1114.017 9.602" />
+          </svg>
         </div>
-    </header>
+        <h3 class="text-xl font-bold text-custom-heading mb-3 uppercase tracking-wider transition-colors duration-300 group-hover:text-custom-accent">Cero costo mensual</h3>
+        <p class="text-custom-text leading-relaxed">
+          Sin rentas de servidores. 
+          <span class="text-custom-muted/80 italic mt-2 block border-l-2 border-custom-accent/20 pl-3">Pagas una vez y es tuyo para siempre; no dependes de mensualidades para que tu negocio exista en internet.</span>
+        </p>
+      </div>
+    </div>
 
-    <main class="flex-grow">
-        <!-- Hero Section -->
-        <section id="cat-hero" class="relative py-20 px-6 overflow-hidden border-b border-custom/10 bg-custom-main">
-            <div class="max-w-4xl mx-auto text-center flex flex-col items-center">
-                <div class="mb-6">
-                    <img src="assets/logo-gold.svg" class="logo-gold h-14 md:h-16 mx-auto mb-6 animate-float" alt="Trazio Studio">
-                    <img src="assets/logo-dark.svg" class="logo-dark h-14 md:h-16 mx-auto mb-6 animate-float" alt="Trazio Studio">
-                </div>
-                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tighter leading-[1.15] mb-6 text-custom-main font-heading" data-i18n="cat-hero-title">
-                    Automatiza tus Ventas en Cuba con un <span class="text-custom-accent">Catálogo que Carga al Instante</span>
-                </h1>
-                <p class="text-lg sm:text-xl text-custom-muted max-w-2xl mb-12 leading-relaxed font-body" data-i18n="cat-hero-subtitle">
-                    Olvídate de los pesados archivos PDF que consumen los megas de tus clientes. Ofrece una experiencia de compra rápida, interactiva y con pedidos que llegan directo a tu WhatsApp.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center w-full sm:w-auto">
-                    <a href="#demo-area" class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 text-sm font-bold text-black bg-custom-accent rounded-lg shadow-lg hover:bg-custom-accent-hover transition-all duration-300 uppercase tracking-wider" data-i18n="cat-hero-cta-primary">Ver Demos Interactivas</a>
-                    <a href="https://wa.me/5350000000?text=Hola%20Trazio%20Studio,%20quiero%20más%20información%20sobre%20el%20Catálogo%20de%20Pedidos" target="_blank" class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 text-sm font-bold text-custom-main bg-custom-card border border-custom/20 rounded-lg hover:bg-custom-main transition-all duration-300 uppercase tracking-wider" data-i18n="cat-hero-cta-secondary">Quiero mi Catálogo</a>
-                </div>
-                <p class="text-xs sm:text-sm text-custom-muted/80 mt-6 leading-relaxed max-w-md mx-auto" data-i18n="hero-microcopy"><span class="text-custom-accent mr-1.5">•</span>Deja de ser un esclavo de tu WhatsApp. Automatiza tus pedidos y recupera hasta 3 horas al día.</p>
-            </div>
-        </section>
-
-        <!-- Bento Grid -->
-        <section id="cat-bento" class="bg-pattern-diagonal border-b border-custom/10">
-            <div class="max-w-7xl mx-auto px-6 py-16">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="bg-custom-card border border-custom/10 p-6 rounded-lg group hover:border-custom-accent/30 transition-all">
-                        <svg class="w-8 h-8 text-custom-accent mb-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20"/><path d="M12 6v12"/><path d="M15 8H10.5a2.5 2.5 0 0 0 0 5H14a2.5 2.5 0 0 1 0 5H9"/></svg>
-                        <h3 class="text-lg font-bold uppercase mb-3" data-i18n="cat-bento-title-1">Cero Costo Mensual</h3>
-                        <p class="text-xs text-custom-muted" data-i18n="cat-bento-desc-1">Sin suscripciones recurrentes. Un único pago inicial de desarrollo.</p>
-                    </div>
-                    <div class="bg-custom-card border border-custom/10 p-6 rounded-lg group hover:border-custom-accent/30 transition-all">
-                        <svg class="w-8 h-8 text-custom-accent mb-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-                        <h3 class="text-lg font-bold uppercase mb-3" data-i18n="cat-bento-title-2">Velocidad Extrema</h3>
-                        <p class="text-xs text-custom-muted" data-i18n="cat-bento-desc-2">Carga en milisegundos incluso con datos móviles limitados.</p>
-                    </div>
-                    <div class="bg-custom-card border border-custom/10 p-6 rounded-lg group hover:border-custom-accent/30 transition-all">
-                        <svg class="w-8 h-8 text-custom-accent mb-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20"/><path d="m14 14 4 4"/><path d="M11 14 a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>
-                        <h3 class="text-lg font-bold uppercase mb-3" data-i18n="cat-bento-title-3">Ventas en Google</h3>
-                        <p class="text-xs text-custom-muted" data-i18n="cat-bento-desc-3">Indexación optimizada para aparecer en las búsquedas de tus clientes.</p>
-                    </div>
-                    <div class="bg-custom-card border border-custom/10 p-6 rounded-lg group hover:border-custom-accent/30 transition-all">
-                        <svg class="w-8 h-8 text-custom-accent mb-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20"/><line x1="4" y1="8" x2="20" y2="8"/><line x1="4" y1="16" x2="20" y2="16"/><rect x="8" y="5" width="3" height="6" fill="currentColor"/><rect x="14" y="13" width="3" height="6" fill="currentColor"/></svg>
-                        <h3 class="text-lg font-bold uppercase mb-3" data-i18n="cat-bento-title-4">Autogestionable</h3>
-                        <p class="text-xs text-custom-muted" data-i18n="cat-bento-desc-4">Actualiza precios y stock instantáneamente de forma sencilla.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Demo Area -->
-        <section id="demo-area" class="py-16 px-6">
-            <div class="max-w-7xl mx-auto">
-                <div class="text-center max-w-2xl mx-auto mb-12">
-                    <h2 class="text-3xl font-bold mb-4" data-i18n="demo-title">Demos Interactivas</h2>
-                    <p class="text-sm text-custom-muted" data-i18n="demo-subtitle">Prueba los nichos disponibles.</p>
-                </div>
-                <div class="flex flex-col sm:flex-row justify-center items-center gap-4 w-full max-w-3xl mx-auto mb-10 px-6">
-                    <button id="btn-niche-comida" class="w-full sm:w-auto sm:min-w-[240px] px-6 py-3.5 text-xs font-bold uppercase bg-custom-accent text-black hover:opacity-95 transition-all duration-300 text-center rounded-lg shadow-md">Restaurantes y Cafés</button>
-                    <button id="btn-niche-ropa" class="w-full sm:w-auto sm:min-w-[240px] px-6 py-3.5 text-xs font-bold uppercase text-custom-main bg-custom-card border border-custom/20 hover:text-custom-accent hover:border-custom/40 transition-all duration-300 text-center rounded-lg">Tiendas y Combos Mipyme</button>
-                    <button id="btn-niche-servicios" class="w-full sm:w-auto sm:min-w-[240px] px-6 py-3.5 text-xs font-bold uppercase text-custom-main bg-custom-card border border-custom/20 hover:text-custom-accent hover:border-custom/40 transition-all duration-300 text-center rounded-lg">Servicios Profesionales</button>
-                </div>
-                <div id="catalog-items-grid" class="flex flex-wrap justify-center gap-8 w-full max-w-6xl mx-auto px-6 py-4"></div>
-                <div id="menu-container" class="hidden"></div>
-            </div>
-        </section>
-
-        <!-- Agitation Block (PAS) -->
-        <section class="bg-custom-main border-y border-custom-accent/40 py-16 px-6">
-            <div class="max-w-3xl mx-auto text-center">
-                <h3 class="text-2xl md:text-3xl font-bold text-custom-accent mb-6" data-i18n="pas-title">¿Cuánto te cuesta seguir vendiendo a la antigua?</h3>
-                <p class="text-base md:text-lg text-custom-muted leading-relaxed" data-i18n="pas-desc">Mientras dedicas 15 minutos de chat para cerrar una venta básica enviando PDFs pesados de 20MB, tus competidores reciben pedidos listos y organizados en su WhatsApp en solo 3 clics. No pierdas más clientes por demoras en tus respuestas.</p>
-            </div>
-        </section>
-
-        <!-- Proceso Llave en Mano -->
-        <section id="turnkey-process" class="py-20 px-6 border-t border-custom/10 bg-pattern-nodes"></section>
-
-        <!-- Soporte Local -->
-        <section id="local-support" class="py-16 md:py-20 px-6 border-t border-custom/10 bg-custom-card/30"></section>
-
-        <!-- Section: Business FAQ Accordion -->
-        <section id="demo-faq" class="py-16 px-6 border-t border-custom/10 bg-pattern-diagonal relative z-10">
-            <div class="max-w-3xl mx-auto">
-                <div class="text-center mb-12">
-                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase border border-custom/30 text-custom-accent bg-custom-accent/5 mb-4" data-i18n="demo-faq-badge">DUDAS COMERCIALES</span>
-                    <h2 class="text-3xl font-bold tracking-tighter text-custom-main" data-i18n="demo-faq-title">Preguntas de negocios como el tuyo</h2>
-                </div>
-                
-                <div class="space-y-4">
-                    <!-- Item 1 -->
-                    <div class="demo-faq-item bg-custom-card p-5 border border-custom/10 cursor-pointer hover:border-custom-accent/30 transition-all duration-300">
-                        <div class="demo-faq-header flex justify-between items-center">
-                            <h3 class="text-base font-bold uppercase text-custom-main transition-colors duration-300 hover:text-custom-accent" data-i18n="demo-faq-q1">¿Tengo que pagar comisiones por las ventas que realice?</h3>
-                            <span class="demo-faq-icon text-custom-accent font-extrabold text-base transition-transform duration-300">+</span>
-                        </div>
-                        <div class="demo-faq-content overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
-                            <p class="pt-4 text-xs sm:text-sm text-custom-muted leading-relaxed" data-i18n="demo-faq-a1">No. El catálogo es 100% de tu propiedad. No cobramos comisiones por pedido, no hay intermediarios y el flujo de caja va directo a tus manos.</p>
-                        </div>
-                    </div>
-                    <!-- Item 2 -->
-                    <div class="demo-faq-item bg-custom-card p-5 border border-custom/10 cursor-pointer hover:border-custom-accent/30 transition-all duration-300">
-                        <div class="demo-faq-header flex justify-between items-center">
-                            <h3 class="text-base font-bold uppercase text-custom-main transition-colors duration-300 hover:text-custom-accent" data-i18n="demo-faq-q2">¿Cómo actualizo mis productos o precios si el mercado cambia?</h3>
-                            <span class="demo-faq-icon text-custom-accent font-extrabold text-base transition-transform duration-300">+</span>
-                        </div>
-                        <div class="demo-faq-content overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
-                            <p class="pt-4 text-xs sm:text-sm text-custom-muted leading-relaxed" data-i18n="demo-faq-a2">Te entregamos un panel de administración ultra-lígero que puedes abrir desde tu teléfono móvil. Cambias un precio, editas un producto o desactivas el stock en 30 segundos sin depender de un programador.</p>
-                        </div>
-                    </div>
-                    <!-- Item 3 -->
-                    <div class="demo-faq-item bg-custom-card p-5 border border-custom/10 cursor-pointer hover:border-custom-accent/30 transition-all duration-300">
-                        <div class="demo-faq-header flex justify-between items-center">
-                            <h3 class="text-base font-bold uppercase text-custom-main transition-colors duration-300 hover:text-custom-accent" data-i18n="demo-faq-q3">¿Qué pasa si mi teléfono está apagado o no tengo datos en el momento de un pedido?</h3>
-                            <span class="demo-faq-icon text-custom-accent font-extrabold text-base transition-transform duration-300">+</span>
-                        </div>
-                        <div class="demo-faq-content overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
-                            <p class="pt-4 text-xs sm:text-sm text-custom-muted leading-relaxed" data-i18n="demo-faq-a3">Tus clientes pueden seguir navegando y armando sus pedidos las 24 horas del día. Los pedidos quedan listos en espera y te llegarán organizados a tu WhatsApp en cuanto tu teléfono recupere la conexión.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section: High-Converting Double-Border B2B CTA Box -->
-        <section id="demo-cta-box" class="py-12 px-6 bg-custom-main relative z-10">
-            <div class="max-w-4xl mx-auto p-1 border-double-gold">
-                <div class="bg-custom-card p-8 md:p-10 rounded-lg flex flex-col md:flex-row items-center gap-8 text-center md:text-left">
-                    <!-- Left Col (Persuasive Text) -->
-                    <div class="flex-1 space-y-3">
-                        <h3 class="text-xl sm:text-2xl font-bold text-white uppercase tracking-tight" data-i18n="cbox-title">Una sola inversión, cero mensualidades.</h3>
-                        <p class="text-xs sm:text-sm text-custom-muted leading-relaxed" data-i18n="cbox-desc">El costo de implementar tu catálogo equivale a lo que pierde tu negocio en una sola semana por clientes que se van con la competencia debido a la demora en WhatsApp. Automatiza tu operación hoy y recupera tu inversión en menos de 30 días.</p>
-                    </div>
-                    <!-- Right Col (Instant WhatsApp Action) -->
-                    <div class="flex flex-col items-center justify-center w-full md:w-auto md:min-w-[300px] space-y-4">
-                        <a href="https://wa.me/5350000000?text=Hola%20Trazio%20Studio,%20quiero%20probar%20mi%20menú%20gratis%20en%20su%20sistema." target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center px-6 py-4 bg-custom-accent hover:bg-custom-accent-hover text-black font-bold uppercase text-xs tracking-wider rounded-lg shadow-lg shadow-custom-accent/10 transition-all duration-300" data-i18n="cbox-btn">PROBAR MI MENÚ GRATIS</a>
-                        <p class="text-[10px] sm:text-xs text-custom-muted" data-i18n="cbox-microcopy">✓ Diseñamos una maqueta de prueba interactiva con tus propios productos sin que pagues nada.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer id="footer" class="bg-[#111118] border-t border-custom/10 py-12 px-6 relative z-10 transition-colors duration-300">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-            <div class="lg:col-span-3 flex flex-col items-center lg:items-start space-y-4 text-center lg:text-left">
-                <a href="index.html" class="flex items-center space-x-2 group">
-                    <img src="assets/isotype-gold.svg" class="w-8 h-8 rounded-lg shadow-md group-hover:scale-105 transition-transform duration-300" alt="Trazio Isotype">
-                    <img src="assets/logo-gold.svg" class="logo-gold h-7 w-auto transition-all duration-300" alt="Trazio Studio Logo">
-                    <img src="assets/logo-dark.svg" class="logo-dark h-7 w-auto transition-all duration-300" alt="Trazio Studio Logo">
-                </a>
-                <p class="text-custom-muted leading-relaxed text-sm max-w-xs" data-i18n="footer-tagline">Trazamos herramientas web de alta velocidad para optimizar tus ventas.</p>
-            </div>
-            <div class="lg:col-span-2 flex flex-col items-center lg:items-start text-center lg:text-left">
-                <h3 class="text-xs font-semibold uppercase tracking-widest text-custom-main mb-4" data-i18n="footer-quick-links">Enlaces Rápidos</h3>
-                <ul class="space-y-2.5 text-sm">
-                    <li><a href="portafolio-creativo.html" class="text-custom-muted hover:text-custom-accent transition-colors duration-300 nav-link-premium inline-block" data-i18n="nav-portfolio">Portafolios</a></li>
-                    <li><a href="catalogo-pedidos.html" class="text-custom-muted hover:text-custom-accent transition-colors duration-300 nav-link-premium inline-block" data-i18n="nav-catalogs">Catálogos</a></li>
-                    <li><a href="identidad-corporativa.html" class="text-custom-muted hover:text-custom-accent transition-colors duration-300 nav-link-premium inline-block" data-i18n="nav-corporate">Empresas</a></li>
-                </ul>
-            </div>
-            <div class="lg:col-span-2 flex flex-col items-center lg:items-start text-center lg:text-left">
-                <h3 class="text-xs font-semibold uppercase tracking-widest text-custom-main mb-4" data-i18n="footer-contact">Contacto</h3>
-                <ul class="space-y-3.5 text-sm w-full">
-                    <li>
-                        <a href="https://wa.me/5350000000?text=Hola%20Trazio%20Studio,%20quiero%20iniciar%20un%20proyecto" target="_blank" rel="noopener noreferrer" class="text-custom-muted hover:text-custom-accent transition-all duration-300 flex items-center justify-center lg:justify-start group gap-2.5">
-                            <span class="p-1.5 rounded-lg bg-custom-card border border-custom/10 text-custom-accent group-hover:border-custom-accent/30 transition-colors">
-                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2C7.314 2 3.407 5.864 3.407 10.546c0 1.408.349 2.8.956 4.028L2 22l7.666-2.52c1.176.666 2.51.999 3.374.999h.001c4.726 0 8.633-3.863 8.633-8.545C20.674 5.864 16.766 2 12.04 2zM17.152 15.632c-.234-.116-.967-.474-1.117-.528-.15-.054-.26-.054-.37.054-.11.108-.424.528-.548.665-.124.136-.248.15-.457.054-.93-.418-1.54-1.01-2.175-1.928-.636-.92-1.066-1.85-1.423-2.457-.357-.607-.037-.936.27-.99.27-.054.597-.13.864-.424.267-.294.357-.59.5-.784.144-.196.073-.37-.036-.59-.11-.22-.968-2.324-1.325-3.18-.357-.855-.72-.74-1.002-.756-.279-.016-.598-.016-.917-.016-.319 0-.83.108-1.26.54-.43.432-1.64 1.586-1.64 3.868 0 2.28 1.678 4.475 1.916 4.788.238.313 3.303 5.034 8.04 7.025 1.18.497 2.11.79 2.846.99.736.199 1.407.153 1.93-.066.523-.22 1.637-.675 1.87-.99.234-.314.234-.582.162-.702-.072-.119-.267-.183-.557-.32z"/></svg>
-                            </span>
-                            WhatsApp
-                        </a>
-                    </li>
-                    <li>
-                        <a href="mailto:contacto@traziostudio.com" class="text-custom-muted hover:text-custom-accent transition-all duration-300 flex items-center justify-center lg:justify-start group gap-2.5">
-                            <span class="p-1.5 rounded-lg bg-custom-card border border-custom/10 text-custom-accent group-hover:border-custom-accent/30 transition-colors">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                            </span>
-                            Email
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://facebook.com/traziostudio" target="_blank" rel="noopener noreferrer" class="text-custom-muted hover:text-custom-accent transition-all duration-300 flex items-center justify-center lg:justify-start group gap-2.5">
-                            <span class="p-1.5 rounded-lg bg-custom-card border border-custom/10 text-custom-accent group-hover:border-custom-accent/30 transition-colors">
-                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                            </span>
-                            Facebook
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="lg:col-span-5 w-full bg-custom-card/50 border border-custom-accent/20 p-6 rounded-lg text-left space-y-4">
-                <h3 class="text-sm font-bold text-custom-main uppercase leading-tight" data-i18n="footer-aida-text">¿Listo para hacer crecer tu negocio?</h3>
-                <p class="text-xs text-custom-muted leading-relaxed" data-i18n="footer-aida-desc">Escríbenos y cuéntanos tu idea o mándanos tu lista de precios por WhatsApp. Te preparamos una demostración interactiva totalmente gratis y adaptada a tu sector en menos de 24 horas.</p>
-                <a href="https://wa.me/5350000000?text=Hola%20Trazio%20Studio,%20quiero%20solicitar%20una%20demostración%20gratuita%20para%20mi%20negocio." target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center px-6 py-3.5 bg-custom-accent hover:bg-custom-accent-hover text-black font-bold uppercase text-[11px] tracking-wider transition-all duration-300" data-i18n="footer-aida-cta">SOLICITAR DEMOSTRACIÓN GRATIS</a>
-                <p class="text-[10px] sm:text-xs text-custom-muted leading-relaxed" data-i18n="footer-microcopy"><span class="text-custom-accent">✔</span> Sin costo técnico, compromisos ni contratos de mantenimiento.</p>
-            </div>
+    <!-- Tarjeta 2: VELOCIDAD EXTREMA (Estrecha - 5 Cols) -->
+    <div class="group relative overflow-hidden md:col-span-5 bg-gradient-to-b from-custom-card/50 to-custom-card/10 border border-custom/10 p-8 md:p-10 rounded-3xl hover:border-custom-accent/30 hover:shadow-[0_20px_50px_rgba(212,175,55,0.05)] transition-all duration-500 hover:-translate-y-1">
+      <div class="absolute inset-0 bg-gradient-to-br from-custom-accent/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+      
+      <div class="relative z-10">
+        <div class="inline-flex items-center justify-center p-3 rounded-xl bg-custom-accent/5 border border-custom-accent/10 mb-6 group-hover:scale-110 group-hover:bg-custom-accent/10 group-hover:border-custom-accent/20 transition-all duration-500">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7 text-custom-accent">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+          </svg>
         </div>
-        <div class="max-w-7xl mx-auto border-t border-custom/10 mt-10 pt-6 flex flex-col items-center text-center text-[11px] text-custom-muted/80 space-y-2">
-            <p>&copy; <span id="current-year"></span> Trazio Studio. <span data-i18n="all-rights-reserved">All rights reserved.</span></p>
-            <p class="font-medium">Designed with precision by Trazio Studio</p>
-        </div>
-    </footer>
+        <h3 class="text-xl font-bold text-custom-heading mb-3 uppercase tracking-wider transition-colors duration-300 group-hover:text-custom-accent">Velocidad extrema</h3>
+        <p class="text-custom-text leading-relaxed">
+          Optimizado para Cuba. 
+          <span class="text-custom-muted/80 italic mt-2 block border-l-2 border-custom-accent/20 pl-3">Tu cliente ve todo el catálogo aunque tenga poco saldo de datos — no se va para la competencia por la demora en cargar.</span>
+        </p>
+      </div>
+    </div>
 
-    <script src="menu-data.js"></script>
-    <script src="catalog-app.js"></script>
-</body>
-</html>
+    <!-- Tarjeta 3: VENTAS EN GOOGLE (Estrecha - 5 Cols) -->
+    <div class="group relative overflow-hidden md:col-span-5 bg-gradient-to-b from-custom-card/50 to-custom-card/10 border border-custom/10 p-8 md:p-10 rounded-3xl hover:border-custom-accent/30 hover:shadow-[0_20px_50px_rgba(212,175,55,0.05)] transition-all duration-500 hover:-translate-y-1">
+      <div class="absolute inset-0 bg-gradient-to-br from-custom-accent/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+      
+      <div class="relative z-10">
+        <div class="inline-flex items-center justify-center p-3 rounded-xl bg-custom-accent/5 border border-custom-accent/10 mb-6 group-hover:scale-110 group-hover:bg-custom-accent/10 group-hover:border-custom-accent/20 transition-all duration-500">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7 text-custom-accent">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-custom-heading mb-3 uppercase tracking-wider transition-colors duration-300 group-hover:text-custom-accent">Ventas en Google</h3>
+        <p class="text-custom-text leading-relaxed">
+          SEO Local Integrado. 
+          <span class="text-custom-muted/80 italic mt-2 block border-l-2 border-custom-accent/20 pl-3">Cuando alguien busca tu tipo de negocio en tu zona, apareces tú — no solo tu perfil de Instagram.</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- Tarjeta 4: AUTOGESTIONABLE (Ancha - 7 Cols) -->
+    <div class="group relative overflow-hidden md:col-span-7 bg-gradient-to-b from-custom-card/50 to-custom-card/10 border border-custom/10 p-8 md:p-10 rounded-3xl hover:border-custom-accent/30 hover:shadow-[0_20px_50px_rgba(212,175,55,0.05)] transition-all duration-500 hover:-translate-y-1">
+      <div class="absolute inset-0 bg-gradient-to-br from-custom-accent/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+      
+      <div class="relative z-10">
+        <div class="inline-flex items-center justify-center p-3 rounded-xl bg-custom-accent/5 border border-custom-accent/10 mb-6 group-hover:scale-110 group-hover:bg-custom-accent/10 group-hover:border-custom-accent/20 transition-all duration-500">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7 text-custom-accent">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.375 19.5h17.25m-17.25 0a1.125 1.125 0 01-1.125-1.125M3.375 19.5l1.5-15m0 0a1.125 1.125 0 011.125-1.125h12.75a1.125 1.125 0 011.125 1.125l1.5 15m-15 0v1.125c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V19.5M7.5 8.25h9m-9 3H12m-4.5 3h3" />
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-custom-heading mb-3 uppercase tracking-wider transition-colors duration-300 group-hover:text-custom-accent">Autogestionable</h3>
+        <p class="text-custom-text leading-relaxed">
+          Control total de tu inventario. 
+          <span class="text-custom-muted/80 italic mt-2 block border-l-2 border-custom-accent/20 pl-3">Actualiza precios o marca productos agotados desde tu móvil usando una simple hoja de cálculo. Cero código.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- 3. Demo Interactiva y Herramientas -->
+    <section id="demos" class="max-w-6xl mx-auto px-6 mb-24">
+  <h2 class="text-3xl font-bold mb-4 text-custom-main text-center">Explora nuestras Demos</h2>
+  <p class="text-sm text-custom-muted max-w-2xl mx-auto text-center mb-10">Prueba cómo compraría tu cliente: elige un rubro de ejemplo, añade productos al carrito y mira cómo se arma el pedido, listo para llegarte por WhatsApp.</p>
+
+  <div id="catalog-industry-selector" class="flex flex-wrap justify-center gap-3 mb-12">
+    <button data-target="demo-restaurante" class="bg-custom-accent text-black px-5 py-2.5 rounded-full text-sm font-bold transition-all">Restaurantes & Cafeterías</button>
+    <button data-target="demo-tienda" class="bg-custom-card border border-custom/20 text-custom-muted hover:border-custom-accent px-5 py-2.5 rounded-full text-sm font-bold transition-all">Tiendas & Boutiques</button>
+    <button data-target="demo-servicios" class="bg-custom-card border border-custom/20 text-custom-muted hover:border-custom-accent px-5 py-2.5 rounded-full text-sm font-bold transition-all">Servicios & Barberías</button>
+  </div>
+
+  <div id="catalog-demo-wrapper" class="bg-custom-card/30 border border-custom/10 rounded-2xl p-8 mb-8">
+    <div id="demo-restaurante" class="demo-pane block">
+      Mockup de Restaurante aquí
+      <button onclick="addToCart('Pizza', 10)" class="mt-4 bg-white text-black px-4 py-2 rounded">Añadir Pizza</button>
+    </div>
+    <div id="demo-tienda" class="demo-pane hidden">
+      Mockup de Tienda aquí
+    </div>
+    <div id="demo-servicios" class="demo-pane hidden">
+      Mockup de Servicios aquí
+    </div>
+    
+    <!-- Estos elementos son necesarios para que el script no falle -->
+    <div id="whatsapp-bubble" class="hidden">
+      <p id="whatsapp-bubble-text"></p>
+    </div>
+    <p id="whatsapp-input-preview"></p>
+    <p id="cart-total">$0.00</p>
+    <span id="demo-mock-url"></span>
+    <span id="whatsapp-bot-name"></span>
+  </div>
+</section>
+
+<!-- Script para la Lógica Interactiva de la Demo -->
+<script>
+  let cart = [];
+  let currentIndustry = 'demo-restaurante';
+
+  const industryUrls = {
+    'demo-restaurante': 'LaRusticaMenu.trazio.app',
+    'demo-tienda': 'AuraShop.trazio.app',
+    'demo-servicios': 'ValkiriaBarber.trazio.app'
+  };
+
+  const industryBotNames = {
+    'demo-restaurante': 'La Rústica Pizzería 🍕',
+    'demo-tienda': 'Aura Concept Store 🛍️',
+    'demo-servicios': 'Valkiria Barber & Club 💈'
+  };
+
+  // Reemplaza todo el bloque anterior de "Selector de Rubros" por este:
+  document.querySelectorAll('#catalog-industry-selector button').forEach(button => {
+    button.addEventListener('click', () => {
+      const target = button.getAttribute('data-target');
+      
+      document.querySelectorAll('#catalog-industry-selector button').forEach(btn => {
+        btn.classList.remove('bg-custom-accent', 'text-black', 'shadow-[0_0_20px_rgba(212,175,55,0.3)]');
+        btn.classList.add('bg-custom-card', 'border', 'border-custom/20', 'text-custom-muted');
+      });
+
+      button.classList.add('bg-custom-accent', 'text-black', 'shadow-[0_0_20px_rgba(212,175,55,0.3)]');
+      button.classList.remove('bg-custom-card', 'border', 'border-custom/20', 'text-custom-muted');
+
+      document.querySelectorAll('.demo-pane').forEach(pane => {
+        pane.classList.add('hidden');
+        pane.classList.remove('block');
+      });
+      document.getElementById(target).classList.remove('hidden');
+      document.getElementById(target).classList.add('block');
+
+      currentIndustry = target;
+      if(document.getElementById('demo-mock-url')) document.getElementById('demo-mock-url').textContent = industryUrls[target];
+      if(document.getElementById('whatsapp-bot-name')) document.getElementById('whatsapp-bot-name').textContent = industryBotNames[target];
+
+      clearCart();
+    });
+  });
+
+  // Agregar al Carrito
+  function addToCart(name, price) {
+    const existing = cart.find(item => item.name === name);
+    if (existing) {
+      existing.qty += 1;
+    } else {
+      cart.push({ name, price, qty: 1 });
+    }
+    updateSandbox();
+  }
+
+  // Limpiar Carrito
+  function clearCart() {
+    cart = [];
+    updateSandbox();
+  }
+
+  // Actualizar UI del Simulador
+  function updateSandbox() {
+    const bubble = document.getElementById('whatsapp-bubble');
+    const bubbleText = document.getElementById('whatsapp-bubble-text');
+    const inputPreview = document.getElementById('whatsapp-input-preview');
+    const totalEl = document.getElementById('cart-total');
+
+    if (cart.length === 0) {
+      bubble.classList.add('hidden');
+      inputPreview.textContent = 'Selecciona ítems...';
+      totalEl.textContent = '$0.00';
+      return;
+    }
+
+    bubble.classList.remove('hidden');
+
+    let total = 0;
+    let message = `*NUEVO PEDIDO 📥*\n`;
+    message += `━━━━━━━━━━━━━━━━━\n`;
+    
+    cart.forEach(item => {
+      const subtotal = item.price * item.qty;
+      total += subtotal;
+      message += `• *${item.qty}x* ${item.name} (_$${item.price.toFixed(2)} c/u_)\n`;
+    });
+
+    message += `━━━━━━━━━━━━━━━━━\n`;
+    message += `*Total a Pagar:* $${total.toFixed(2)}\n\n`;
+    message += `📍 *Entrega:* Delivery\n`;
+    message += `🏠 *Dirección:* Av. Principal 123`;
+
+    bubbleText.textContent = message;
+    inputPreview.textContent = `Enviar pedido ($${total.toFixed(2)})`;
+    totalEl.textContent = `$${total.toFixed(2)}`;
+      }
+
+  // Simular Envío de Mensaje de WhatsApp
+  function sendSimulatedOrder() {
+    if (cart.length === 0) {
+      alert("¡Tu carrito está vacío! Añade productos para simular el envío.");
+      return;
+    }
+    alert("🚀 ¡Simulación Exitosa!\n\nEn tu tienda real, esto abrirá WhatsApp automáticamente con el mensaje formateado listo para enviar sin que tu cliente tenga que escribir nada.");
+  }
+</script>
+</main>
