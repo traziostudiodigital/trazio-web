@@ -98,125 +98,195 @@
 </section>
     
     <!-- 2. Demo Dinámica -->
-    <section id="demo-interactiva" class="max-w-6xl mx-auto px-6 mb-20">
-    <div class="text-center mb-10">
-        <span class="bg-custom-accent text-black text-[10px] font-black uppercase px-3 py-1 rounded-full">👇 DEMOSTRACIÓN EN VIVO 👇</span>
-        <h2 class="text-2xl font-bold mt-4">Así se vería tu empresa. Elige tu sector:</h2>
+    <section id="demo-interactiva" class="max-w-6xl mx-auto px-6 mb-20 relative bg-pattern-diagonal">
+    <div class="text-center mb-10 animate-fade-in-up">
+        <span class="inline-flex items-center gap-2 bg-custom-accent text-black text-[10px] font-black uppercase px-3 py-1 rounded-full tracking-wide">
+            <span class="relative flex h-1.5 w-1.5 shrink-0" aria-hidden="true">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-black opacity-60"></span>
+                <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-black"></span>
+            </span>
+            👇 DEMOSTRACIÓN EN VIVO 👇
+        </span>
+        <h2 class="text-2xl md:text-3xl font-bold mt-4 text-custom-main">Así se vería tu empresa. Elige tu sector:</h2>
+        <p class="text-sm text-custom-muted mt-2 max-w-md mx-auto">Interfaces reales, adaptadas a tu operación diaria.</p>
     </div>
+
     <!-- Selector de Rubros (Chips) -->
-    <div class="flex flex-wrap justify-center gap-2 mb-12" id="industry-selector">
-        <button data-target="demo-construccion" class="px-4 py-2 rounded-full text-xs font-bold bg-custom-accent text-black transition-all">Construcción & Industria</button>
-        <button data-target="demo-gastronomia" class="px-4 py-2 rounded-full text-xs font-bold bg-custom-card border border-custom/20 text-custom-muted hover:border-custom-accent transition-all">Gastronomía & Retail</button>
-        <button data-target="demo-servicios" class="px-4 py-2 rounded-full text-xs font-bold bg-custom-card border border-custom/20 text-custom-muted hover:border-custom-accent transition-all">Servicios Profesionales</button>
+    <div class="flex flex-wrap justify-center gap-2 mb-10 md:mb-12" id="industry-selector" role="tablist">
+        <button type="button" id="tab-construccion" data-target="demo-construccion" role="tab" aria-selected="true" aria-controls="demo-construccion" class="flex items-center gap-2 px-4 py-2.5 rounded-lg text-xs font-bold bg-custom-accent text-black transition-all duration-300 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-main">
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-4h6v4M9 11h.01M15 11h.01"/></svg>
+            Construcción & Industria
+        </button>
+        <button type="button" id="tab-gastronomia" data-target="demo-gastronomia" role="tab" aria-selected="false" aria-controls="demo-gastronomia" class="flex items-center gap-2 px-4 py-2.5 rounded-lg text-xs font-bold bg-custom-card border border-custom text-custom-muted hover:border-custom-accent hover:text-custom-accent transition-all duration-300 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-main">
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 8h14l-1 12H6L5 8zm2 0V6a5 5 0 0110 0v2"/></svg>
+            Gastronomía & Retail
+        </button>
+        <button type="button" id="tab-servicios" data-target="demo-servicios" role="tab" aria-selected="false" aria-controls="demo-servicios" class="flex items-center gap-2 px-4 py-2.5 rounded-lg text-xs font-bold bg-custom-card border border-custom text-custom-muted hover:border-custom-accent hover:text-custom-accent transition-all duration-300 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-main">
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M7 3h10v18H7zM10 7h4M10 11h4M10 15h4"/></svg>
+            Servicios Profesionales
+        </button>
     </div>
+
     <!-- Contenedores Dinámicos -->
-    <div id="demo-content-wrapper">
-        <!-- Panel Construcción (Simular Laptop Mac) -->
-        <div id="demo-construccion" class="demo-panel block animate-fade-in-up bg-[#111118] border border-custom/10 rounded-xl overflow-hidden shadow-2xl">
-            <!-- Barra superior Mac -->
-            <div class="bg-[#1a1a24] px-4 py-3 flex items-center gap-2 border-b border-custom/5">
-                <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
-                <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
-                <div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+    <div id="demo-content-wrapper" class="relative">
+        <div class="absolute -inset-6 bg-custom-accent/10 blur-3xl rounded-full -z-10 pointer-events-none" aria-hidden="true"></div>
+
+        <!-- Panel Construcción -->
+        <div id="demo-construccion" role="tabpanel" aria-labelledby="tab-construccion" tabindex="0" class="demo-panel block animate-fade-in-up bg-custom-main border-double-gold rounded-lg overflow-hidden shadow-2xl">
+            <div class="bg-custom-main px-4 py-3 flex items-center gap-3 border-b border-custom">
+                <div class="flex gap-1.5 shrink-0" aria-hidden="true">
+                    <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                    <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                    <div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+                </div>
+                <div class="flex-1 flex justify-center">
+                    <div class="bg-custom-card text-custom-muted text-[10px] px-3 py-1 rounded-md border border-custom truncate max-w-[240px]">app.nexoindustrial.com/dashboard</div>
+                </div>
             </div>
             <div class="p-6 md:p-8" id="mockup-construccion-content">
-                <div class="flex items-center justify-between mb-1">
-                    <h3 class="text-xl font-bold text-white">NEXO Industrial</h3>
-                    <span class="text-[10px] font-bold uppercase tracking-wider text-custom-accent border border-custom-accent/30 px-2 py-1 rounded">Sector Industrial</span>
+                <div class="flex items-center justify-between mb-1 gap-3">
+                    <h3 class="text-xl font-bold text-custom-main">NEXO Industrial</h3>
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-custom-accent border border-custom-accent/30 px-2 py-1 rounded-md whitespace-nowrap">Sector Industrial</span>
                 </div>
                 <p class="text-sm text-custom-muted mb-6">Climatización industrial eficiente</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="bg-[#1a1a24] border border-custom/10 rounded-lg p-4 hover:border-custom-accent/40 transition-all">
+                    <div class="bg-custom-card border border-custom rounded-lg p-4 hover:border-custom-accent transition-all duration-300 ease-in-out">
                         <div class="flex items-center gap-3 mb-3">
-                            <svg class="w-8 h-8 text-custom-accent" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-4h6v4M9 11h.01M15 11h.01"/></svg>
-                            <h4 class="text-sm font-bold text-white">Planta Cervecera Centro</h4>
+                            <div class="bg-custom-accent/10 p-2 rounded-lg">
+                                <svg class="w-5 h-5 text-custom-accent" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-4h6v4M9 11h.01M15 11h.01"/></svg>
+                            </div>
+                            <h4 class="text-sm font-bold text-custom-main">Planta Cervecera Centro</h4>
                         </div>
-                        <div class="flex justify-between text-xs text-custom-muted mb-2"><span>Capacidad</span><span class="text-white">120,000 BTU</span></div>
-                        <div class="flex justify-between text-xs text-custom-muted mb-2"><span>Eficiencia</span><span class="text-custom-accent">94.2%</span></div>
-                        <svg class="w-full h-10 mt-2" viewBox="0 0 100 30" preserveAspectRatio="none"><polyline points="0,25 20,18 40,22 60,10 80,14 100,5" fill="none" stroke="#C9A96E" stroke-width="2"/></svg>
+                        <div class="flex justify-between text-xs text-custom-muted mb-2"><span>Capacidad</span><span class="text-custom-main font-semibold">120,000 BTU</span></div>
+                        <div class="flex justify-between text-xs text-custom-muted mb-2"><span>Eficiencia</span><span class="text-custom-accent font-semibold">94.2%</span></div>
+                        <svg class="w-full h-12 mt-2 text-custom-accent" viewBox="0 0 100 30" preserveAspectRatio="none">
+                            <defs>
+                                <linearGradient id="gradCons1" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0%" stop-color="currentColor" stop-opacity="0.35"/>
+                                    <stop offset="100%" stop-color="currentColor" stop-opacity="0"/>
+                                </linearGradient>
+                            </defs>
+                            <path d="M0,25 L20,18 L40,22 L60,10 L80,14 L100,5 L100,30 L0,30 Z" fill="url(#gradCons1)"/>
+                            <polyline points="0,25 20,18 40,22 60,10 80,14 100,5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
                     </div>
-                    <div class="bg-[#1a1a24] border border-custom/10 rounded-lg p-4 hover:border-custom-accent/40 transition-all">
+                    <div class="bg-custom-card border border-custom rounded-lg p-4 hover:border-custom-accent transition-all duration-300 ease-in-out">
                         <div class="flex items-center gap-3 mb-3">
-                            <svg class="w-8 h-8 text-custom-accent" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v16h16M8 12l3-3 3 3 4-4"/></svg>
-                            <h4 class="text-sm font-bold text-white">Logística Frío Norte</h4>
+                            <div class="bg-custom-accent/10 p-2 rounded-lg">
+                                <svg class="w-5 h-5 text-custom-accent" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v16h16M8 12l3-3 3 3 4-4"/></svg>
+                            </div>
+                            <h4 class="text-sm font-bold text-custom-main">Logística Frío Norte</h4>
                         </div>
-                        <div class="flex justify-between text-xs text-custom-muted mb-2"><span>Temp. Mín.</span><span class="text-white">-22°C</span></div>
-                        <div class="flex justify-between text-xs text-custom-muted mb-2"><span>Uptime</span><span class="text-custom-accent">99.1%</span></div>
-                        <svg class="w-full h-10 mt-2" viewBox="0 0 100 30" preserveAspectRatio="none"><rect x="5" y="10" width="12" height="18" fill="#C9A96E" opacity="0.7"/><rect x="25" y="5" width="12" height="23" fill="#C9A96E" opacity="0.7"/><rect x="45" y="14" width="12" height="14" fill="#C9A96E" opacity="0.7"/><rect x="65" y="8" width="12" height="20" fill="#C9A96E" opacity="0.7"/><rect x="85" y="2" width="10" height="26" fill="#C9A96E"/></svg>
+                        <div class="flex justify-between text-xs text-custom-muted mb-2"><span>Temp. Mín.</span><span class="text-custom-main font-semibold">-22°C</span></div>
+                        <div class="flex justify-between text-xs text-custom-muted mb-2"><span>Uptime</span><span class="text-custom-accent font-semibold">99.1%</span></div>
+                        <svg class="w-full h-12 mt-2 text-custom-accent" viewBox="0 0 100 30" preserveAspectRatio="none">
+                            <rect x="5" y="10" width="12" height="18" fill="currentColor" opacity="0.4" rx="1"/>
+                            <rect x="25" y="5" width="12" height="23" fill="currentColor" opacity="0.4" rx="1"/>
+                            <rect x="45" y="14" width="12" height="14" fill="currentColor" opacity="0.4" rx="1"/>
+                            <rect x="65" y="8" width="12" height="20" fill="currentColor" opacity="0.6" rx="1"/>
+                            <rect x="85" y="2" width="10" height="26" fill="currentColor" rx="1"/>
+                        </svg>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Panel Gastronomía (Simular Laptop Mac) -->
-        <div id="demo-gastronomia" class="demo-panel hidden animate-fade-in-up bg-[#111118] border border-custom/10 rounded-xl overflow-hidden shadow-2xl mt-0">
-            <!-- Barra superior Mac -->
-            <div class="bg-[#1a1a24] px-4 py-3 flex items-center gap-2 border-b border-custom/5">
-                <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
-                <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
-                <div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+
+        <!-- Panel Gastronomía -->
+        <div id="demo-gastronomia" role="tabpanel" aria-labelledby="tab-gastronomia" tabindex="0" class="demo-panel hidden animate-fade-in-up bg-custom-main border-double-gold rounded-lg overflow-hidden shadow-2xl">
+            <div class="bg-custom-main px-4 py-3 flex items-center gap-3 border-b border-custom">
+                <div class="flex gap-1.5 shrink-0" aria-hidden="true">
+                    <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                    <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                    <div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+                </div>
+                <div class="flex-1 flex justify-center">
+                    <div class="bg-custom-card text-custom-muted text-[10px] px-3 py-1 rounded-md border border-custom truncate max-w-[240px]">app.saborhabana.com/inventario</div>
+                </div>
             </div>
             <div class="p-6 md:p-8" id="mockup-gastronomia-content">
-                <div class="flex items-center justify-between mb-1">
-                    <h3 class="text-xl font-bold text-white">Sabor Habana Import</h3>
-                    <span class="text-[10px] font-bold uppercase tracking-wider text-custom-accent border border-custom-accent/30 px-2 py-1 rounded">Mayorista</span>
+                <div class="flex items-center justify-between mb-1 gap-3">
+                    <h3 class="text-xl font-bold text-custom-main">Sabor Habana Import</h3>
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-custom-accent border border-custom-accent/30 px-2 py-1 rounded-md whitespace-nowrap">Mayorista</span>
                 </div>
                 <p class="text-sm text-custom-muted mb-6">Distribución mayorista para Mipymes</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="bg-[#1a1a24] border border-custom/10 rounded-lg p-4 hover:border-custom-accent/40 transition-all">
-                        <div class="flex items-center justify-between mb-3">
+                    <div class="bg-custom-card border border-custom rounded-lg p-4 hover:border-custom-accent transition-all duration-300 ease-in-out">
+                        <div class="flex items-center justify-between mb-3 gap-2">
                             <div class="flex items-center gap-3">
-                                <svg class="w-8 h-8 text-custom-accent" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 8h14l-1 12H6L5 8zm2 0V6a5 5 0 0110 0v2"/></svg>
-                                <h4 class="text-sm font-bold text-white">Café Premium 1kg</h4>
+                                <div class="bg-custom-accent/10 p-2 rounded-lg">
+                                    <svg class="w-5 h-5 text-custom-accent" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 8h14l-1 12H6L5 8zm2 0V6a5 5 0 0110 0v2"/></svg>
+                                </div>
+                                <h4 class="text-sm font-bold text-custom-main">Café Premium 1kg</h4>
                             </div>
-                            <span class="text-[10px] font-bold bg-green-900/40 text-green-400 px-2 py-1 rounded">En Stock: 340</span>
+                            <span class="text-[10px] font-bold bg-green-500/10 text-green-400 border border-green-500/20 px-2 py-1 rounded-md whitespace-nowrap">En Stock: 340</span>
                         </div>
                         <p class="text-xs text-custom-muted">Origen: Granja Oriental · Tueste medio</p>
                     </div>
-                    <div class="bg-[#1a1a24] border border-custom/10 rounded-lg p-4 hover:border-custom-accent/40 transition-all">
-                        <div class="flex items-center justify-between mb-3">
+                    <div class="bg-custom-card border border-custom rounded-lg p-4 hover:border-custom-accent transition-all duration-300 ease-in-out">
+                        <div class="flex items-center justify-between mb-3 gap-2">
                             <div class="flex items-center gap-3">
-                                <svg class="w-8 h-8 text-custom-accent" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 7l9-4 9 4-9 4-9-4zm0 0v10l9 4 9-4V7M12 11v10"/></svg>
-                                <h4 class="text-sm font-bold text-white">Lácteos Envío Frío</h4>
+                                <div class="bg-custom-accent/10 p-2 rounded-lg">
+                                    <svg class="w-5 h-5 text-custom-accent" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 7l9-4 9 4-9 4-9-4zm0 0v10l9 4 9-4V7M12 11v10"/></svg>
+                                </div>
+                                <h4 class="text-sm font-bold text-custom-main">Lácteos Envío Frío</h4>
                             </div>
-                            <span class="text-[10px] font-bold bg-red-900/40 text-red-400 px-2 py-1 rounded">Bajo: 28</span>
+                            <span class="text-[10px] font-bold bg-red-500/10 text-red-400 border border-red-500/20 px-2 py-1 rounded-md whitespace-nowrap">Bajo: 28</span>
                         </div>
                         <p class="text-xs text-custom-muted">Logística 24h · 12 provincias</p>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Panel Servicios (Simular Laptop Mac) -->
-        <div id="demo-servicios" class="demo-panel hidden animate-fade-in-up bg-[#111118] border border-custom/10 rounded-xl overflow-hidden shadow-2xl mt-0">
-            <!-- Barra superior Mac -->
-            <div class="bg-[#1a1a24] px-4 py-3 flex items-center gap-2 border-b border-custom/5">
-                <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
-                <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
-                <div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+
+        <!-- Panel Servicios -->
+        <div id="demo-servicios" role="tabpanel" aria-labelledby="tab-servicios" tabindex="0" class="demo-panel hidden animate-fade-in-up bg-custom-main border-double-gold rounded-lg overflow-hidden shadow-2xl">
+            <div class="bg-custom-main px-4 py-3 flex items-center gap-3 border-b border-custom">
+                <div class="flex gap-1.5 shrink-0" aria-hidden="true">
+                    <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                    <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                    <div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+                </div>
+                <div class="flex-1 flex justify-center">
+                    <div class="bg-custom-card text-custom-muted text-[10px] px-3 py-1 rounded-md border border-custom truncate max-w-[240px]">app.consultoratcp.com/panel</div>
+                </div>
             </div>
             <div class="p-6 md:p-8" id="mockup-servicios-content">
-                <div class="flex items-center justify-between mb-1">
-                    <h3 class="text-xl font-bold text-white">Consultora Global TCP</h3>
-                    <span class="text-[10px] font-bold uppercase tracking-wider text-custom-accent border border-custom-accent/30 px-2 py-1 rounded">Asesoría</span>
+                <div class="flex items-center justify-between mb-1 gap-3">
+                    <h3 class="text-xl font-bold text-custom-main">Consultora Global TCP</h3>
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-custom-accent border border-custom-accent/30 px-2 py-1 rounded-md whitespace-nowrap">Asesoría</span>
                 </div>
                 <p class="text-sm text-custom-muted mb-6">Asesoría legal/contable blindada</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="bg-[#1a1a24] border border-custom/10 rounded-lg p-4 hover:border-custom-accent/40 transition-all">
+                    <div class="bg-custom-card border border-custom rounded-lg p-4 hover:border-custom-accent transition-all duration-300 ease-in-out">
                         <div class="flex items-center gap-3 mb-3">
-                            <svg class="w-8 h-8 text-custom-accent" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 3h10v18H7zM10 7h4M10 11h4M10 15h4"/></svg>
-                            <h4 class="text-sm font-bold text-white">Defensa Legal Corporativa</h4>
+                            <div class="bg-custom-accent/10 p-2 rounded-lg">
+                                <svg class="w-5 h-5 text-custom-accent" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 3h10v18H7zM10 7h4M10 11h4M10 15h4"/></svg>
+                            </div>
+                            <h4 class="text-sm font-bold text-custom-main">Defensa Legal Corporativa</h4>
                         </div>
                         <p class="text-xs text-custom-muted">Contratos · Litigios · Compliance</p>
                     </div>
-                    <div class="bg-[#1a1a24] border border-custom/10 rounded-lg p-4 hover:border-custom-accent/40 transition-all">
+                    <div class="bg-custom-card border border-custom rounded-lg p-4 hover:border-custom-accent transition-all duration-300 ease-in-out">
                         <div class="flex items-center gap-3 mb-3">
-                            <svg class="w-8 h-8 text-custom-accent" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18M5 7h14M5 7l-2 6h6l-2-6zm14 0l-2 6h6l-2-6zM3 13a3 3 0 006 0M15 13a3 3 0 006 0"/></svg>
-                            <h4 class="text-sm font-bold text-white">Auditoría Contable TCP</h4>
+                            <div class="bg-custom-accent/10 p-2 rounded-lg">
+                                <svg class="w-5 h-5 text-custom-accent" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18M5 7h14M5 7l-2 6h6l-2-6zm14 0l-2 6h6l-2-6zM3 13a3 3 0 006 0M15 13a3 3 0 006 0"/></svg>
+                            </div>
+                            <h4 class="text-sm font-bold text-custom-main">Auditoría Contable TCP</h4>
                         </div>
                         <p class="text-xs text-custom-muted">Fiscal · Nómina · Reporting</p>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- CTA post-demo: ajustar href al ancla real de contacto/cotización -->
+    <div class="mt-8 text-center animate-fade-in-up">
+        <p class="text-sm text-custom-muted mb-4">¿Quieres una interfaz así para tu negocio?</p>
+        <a href="#contacto" class="inline-flex items-center gap-2 bg-custom-accent text-black text-sm font-bold px-6 py-3 rounded-lg hover:brightness-110 transition-all duration-300 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-main">
+            Solicitar mi demo personalizada
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        </a>
     </div>
 </section>
 
