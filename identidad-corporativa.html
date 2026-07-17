@@ -3,612 +3,555 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexo - Mantenimiento & Construcción | Demo Corporativa B2B</title>
+    <title>Portafolio Creativo - Trazio Studio</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Custom Styles -->
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        /* Clases específicas para dar un look B2B de arquitectura y tecnología */
-        .tech-pattern {
-            background-image: radial-gradient(rgba(201, 169, 110, 0.08) 1.5px, transparent 1.5px);
-            background-size: 24px 24px;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
-<body class="bg-custom-main text-custom-main min-h-screen flex flex-col justify-between tech-pattern">
-    <!-- Header -->
-    <header class="sticky top-0 z-50 backdrop-blur-md bg-custom-main/95 border-b border-custom/20 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center w-full">
-            <!-- Back to Home Link -->
-            <a href="index.html" class="flex items-center space-x-2 text-xs sm:text-sm font-medium text-custom-muted hover:text-custom-accent transition-colors duration-300">
-                <span data-i18n="back-to-home">← Volver al inicio</span>
+<body class="bg-custom-main text-custom-main min-h-screen flex flex-col justify-between">
+    <!-- Sticky Header -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-custom-main/80 border-b border-custom/20 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-8 md:px-12 lg:px-16 py-4 flex justify-between items-center w-full">
+            <!-- Logo / Brand -->
+            <a href="index.html" class="flex items-center space-x-1 group">
+                <!-- Isotype Only -->
+                <img src="assets/isotype-gold.svg" class="w-8 h-8 hover:scale-105 transition-transform duration-300" alt="Trazio Isotype">
             </a>
             
-            <!-- Corporate Brand Logo -->
-            <div class="flex items-center space-x-2.5">
-                <!-- Architectural/Technical Isotype Look -->
-                <div class="w-9 h-9 rounded-lg bg-custom-card border-2 border-custom-accent/30 flex items-center justify-center shadow-md">
-                    <svg class="w-5 h-5 text-custom-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-.778.099-1.533.284-2.253" />
-                    </svg>
+            <!-- Navigation Links - Hidden on Mobile, Visible on Desktop -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <div class="relative group">
+                    <button class="nav-link-premium text-sm font-medium hover:text-custom-accent transition-colors duration-300 flex items-center">
+                        Portafolios
+                        <svg class="w-2.5 h-2.5 ml-2 transition-transform duration-300 group-hover:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                        </svg>
+                    </button>
+                    <div class="absolute top-full left-0 mt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 bg-custom-card/95 backdrop-blur-xl border border-custom/20 rounded-xl shadow-2xl p-2 flex flex-col gap-1">
+                        <a href="portafolio-creativo.html" class="px-4 py-3 rounded-lg text-sm font-medium text-custom-muted hover:text-custom-accent hover:bg-custom-main transition-colors">Perfil Visual / Artístico</a>
+                        <a href="portafolio-tecnico.html" class="px-4 py-3 rounded-lg text-sm font-medium text-custom-muted hover:text-custom-accent hover:bg-custom-main transition-colors">Perfil Técnico / Consultor</a>
+                    </div>
                 </div>
-                <div class="flex flex-col text-left">
-                    <span class="text-base font-extrabold tracking-wider text-custom-main font-display">NEXO</span>
-                    <span class="text-[9px] font-semibold text-custom-accent tracking-widest -mt-1">CONSTRUCCIÓN</span>
-                </div>
-            </div>
+                <a href="catalogo-pedidos.html" class="nav-link-premium text-sm font-medium hover:text-custom-accent transition-colors duration-300" data-i18n="nav-catalogs">Catálogos</a>
+                <a href="identidad-corporativa.html" class="nav-link-premium text-sm font-medium hover:text-custom-accent transition-colors duration-300" data-i18n="nav-corporate">Empresas</a>
+            </nav>
 
-            <!-- Toggles and Language -->
             <div class="flex items-center space-x-3">
                 <!-- Language Selector -->
-                <button id="language-toggle" class="p-2 rounded-lg bg-custom-card border border-custom/10 text-xs font-semibold uppercase hover:text-custom-accent hover:border-custom/30 transition-all duration-300" title="Change Language / Cambiar Idioma">
+                <button id="language-toggle" class="flex items-center justify-center h-10 px-3 rounded-none bg-custom-card border border-custom/10 text-xs font-bold uppercase hover:text-custom-accent hover:border-custom/30 transition-all duration-300" title="Cambiar Idioma">
                     <span id="current-lang-display">ES</span>
                 </button>
                 
                 <!-- Theme Switcher -->
-                <button id="theme-switcher" class="p-2 rounded-lg bg-custom-card border border-custom/10 text-custom-main hover:text-custom-accent hover:border-custom/30 transition-all duration-300" title="Toggle Theme / Cambiar Tema">
-                    <svg id="theme-icon-moon" class="w-4.5 h-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
-                    </svg>
-                    <svg id="theme-icon-sun" class="w-4.5 h-4.5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                    </svg>
+                <button id="theme-switcher" class="flex items-center justify-center h-10 w-10 rounded-none bg-custom-card border border-custom/10 text-custom-main hover:text-custom-accent hover:border-custom/30 transition-all duration-300" title="Cambiar Tema">
+                    <svg id="theme-icon-moon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    <svg id="theme-icon-sun" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
                 </button>
+
+                <!-- Header CTA Button -->
+                <a href="https://wa.me/5350000000?text=Hola,%20quiero%20iniciar%20un%20proyecto" target="_blank" rel="noopener noreferrer" class="hidden sm:flex items-center justify-center h-10 px-5 text-xs font-bold text-black uppercase tracking-wider bg-custom-accent rounded-none shadow-md shadow-custom-accent/10 hover:bg-custom-accent-hover transition-all duration-300" data-i18n="nav-cta">
+                    Iniciar Proyecto
+                </a>
             </div>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="flex-grow">
-        <!-- Hero Section -->
-        <section class="max-w-6xl mx-auto px-6 py-16 md:py-24 text-center relative overflow-hidden">
-            <!-- Glowing accent in background -->
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[250px] bg-custom-accent/5 blur-3xl rounded-full pointer-events-none"></div>
+<main class="flex-grow">
+    <!-- 1. Hero B2B -->
+    <section class="max-w-5xl mx-auto px-6 py-16 text-center animate-fade-in-up">
+    <style>
+        /* Floating animation for logos */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
 
-            <div class="relative z-10 max-w-3xl mx-auto">
-                <!-- Badge -->
-                <span class="inline-flex items-center px-3.5 py-1 rounded-full text-xs font-bold tracking-wider uppercase border border-custom-accent/30 text-custom-accent bg-custom-accent/5 mb-6" data-i18n="corp-hero-badge">
-                    CONFIANZA B2B Y CAPACIDAD CERTIFICADA
-                </span>
+    <img src="assets/logo-gold.svg" class="logo-gold h-14 md:h-16 mx-auto mb-6 animate-float" alt="Trazio Studio">
+    <img src="assets/logo-dark.svg" class="logo-dark h-14 md:h-16 mx-auto mb-6 animate-float" alt="Trazio Studio">
 
-                <!-- Title -->
-                <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-[1.15] mb-6 text-custom-main font-display" data-i18n="corp-hero-title">
-                    Soluciones de Infraestructura y Mantenimiento Industrial
-                </h1>
-
-                <!-- Subtitle -->
-                <p class="text-base sm:text-lg text-custom-muted max-w-2xl mx-auto mb-10 leading-relaxed" data-i18n="corp-hero-subtitle">
-                    Garantizamos la continuidad operativa de tu empresa con ingeniería de primer nivel, equipos modernos y el cumplimiento de los estándares de seguridad industrial más estrictos en Cuba.
-                </p>
-
-                <!-- CTA Button -->
-                <div class="flex justify-center">
-                    <a href="#quote" class="inline-flex items-center justify-center px-7 py-3.5 text-sm font-semibold text-white bg-custom-accent rounded-lg hover:bg-custom-accent-hover hover:-translate-y-0.5 transition-all duration-300 shadow-lg shadow-custom-accent/10" data-i18n="corp-hero-cta">
-                        Solicitar Presupuesto Técnico
-                    </a>
-                </div>
+    <p class="text-xs font-bold text-custom-muted uppercase tracking-widest mb-4">
+        Para empresas privadas cubanas: MIPYMES, Cooperativas y TCP
+    </p>
+    <h1 class="text-4xl md:text-6xl font-bold tracking-tighter mb-6 text-custom-main">
+        Tu negocio mueve miles. <br><span class="text-custom-accent">Que tu imagen no diga lo contrario.</span>
+    </h1>
+    <p class="text-lg text-custom-muted max-w-3xl mx-auto mb-8 leading-relaxed">
+        Cierra contratos grandes, transmite seguridad a proveedores extranjeros y deja de operar exclusivamente por WhatsApp. Construimos la fachada corporativa de alta velocidad que tu empresa necesita para dominar el mercado.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a href="#demo-interactiva" class="px-8 py-4 text-sm font-bold text-black bg-custom-accent rounded-lg hover:bg-opacity-90 transition-all">
+            Explorar Demo Interactiva
+        </a>
+        <a href="https://wa.me/5350000000?text=Hola,%20quiero%20cotizar%20una%20web%20corporativa" target="_blank" class="px-8 py-4 text-sm font-bold text-custom-main border border-custom/20 rounded-lg hover:border-custom-accent transition-all">
+            Cotizar mi Web Corporativa
+        </a>
+    </div>
+</section>
+    
+    <!-- 2. Demo Dinámica -->
+    <section id="demo-interactiva" class="max-w-6xl mx-auto px-6 mb-20">
+    <div class="text-center mb-10">
+        <span class="bg-custom-accent text-black text-[10px] font-black uppercase px-3 py-1 rounded-full">👇 DEMOSTRACIÓN EN VIVO 👇</span>
+        <h2 class="text-2xl font-bold mt-4">Así se vería tu empresa. Elige tu sector:</h2>
+    </div>
+    <!-- Selector de Rubros (Chips) -->
+    <div class="flex flex-wrap justify-center gap-2 mb-12" id="industry-selector">
+        <button data-target="demo-construccion" class="px-4 py-2 rounded-full text-xs font-bold bg-custom-accent text-black transition-all">Construcción & Industria</button>
+        <button data-target="demo-gastronomia" class="px-4 py-2 rounded-full text-xs font-bold bg-custom-card border border-custom/20 text-custom-muted hover:border-custom-accent transition-all">Gastronomía & Retail</button>
+        <button data-target="demo-servicios" class="px-4 py-2 rounded-full text-xs font-bold bg-custom-card border border-custom/20 text-custom-muted hover:border-custom-accent transition-all">Servicios Profesionales</button>
+    </div>
+    <!-- Contenedores Dinámicos -->
+    <div id="demo-content-wrapper">
+        <!-- Panel Construcción (Simular Laptop Mac) -->
+        <div id="demo-construccion" class="demo-panel block animate-fade-in-up bg-[#111118] border border-custom/10 rounded-xl overflow-hidden shadow-2xl">
+            <!-- Barra superior Mac -->
+            <div class="bg-[#1a1a24] px-4 py-3 flex items-center gap-2 border-b border-custom/5">
+                <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                <div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
             </div>
-        </section>
-
-        <!-- About Us / Splited Section -->
-        <section class="border-t border-custom/10 bg-custom-card/30 py-16 md:py-24 px-6 relative">
-            <div class="max-w-6xl mx-auto">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                    <!-- Left: Mission & Certifications (7 cols) -->
-                    <div class="lg:col-span-7 space-y-6 text-left">
-                        <span class="text-xs font-bold tracking-widest text-custom-accent uppercase" data-i18n="corp-about-badge">QUIÉNES SOMOS</span>
-                        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-custom-main font-display" data-i18n="corp-about-title">Tu aliado estratégico en ingeniería y mantenimiento</h2>
-                        <p class="text-custom-muted leading-relaxed text-sm sm:text-base" data-i18n="corp-about-desc">
-                            Nexo es una MIPYME líder dedicada al diseño, mantenimiento e integración de infraestructura corporativa e industrial. Nos enfocamos en ofrecer soluciones seguras, eficientes y confiables para empresas comerciales, hoteleras y logísticas en todo el país.
-                        </p>
-                        
-                        <div class="border-t border-custom/10 pt-6 space-y-3">
-                            <h4 class="text-xs sm:text-sm font-bold text-custom-main uppercase tracking-wider" data-i18n="corp-about-cert">Certificaciones de Seguridad:</h4>
-                            <ul class="space-y-2 text-xs sm:text-sm text-custom-muted">
-                                <li class="flex items-center"><span class="text-custom-accent mr-2.5">✔</span> <span data-i18n="corp-about-cert-1">Licencia de Seguridad y Salud en el Trabajo</span></li>
-                                <li class="flex items-center"><span class="text-custom-accent mr-2.5">✔</span> <span data-i18n="corp-about-cert-2">Personal de ingeniería certificado y homologado</span></li>
-                                <li class="flex items-center"><span class="text-custom-accent mr-2.5">✔</span> <span data-i18n="corp-about-cert-3">Cumplimiento de normas técnicas nacionales de construcción</span></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Right: Key Numbers / Metrics (5 cols) -->
-                    <div class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6 w-full">
-                        <!-- Stat Card 1 -->
-                        <div class="p-6 bg-custom-card rounded-xl border border-custom/10 flex items-center space-x-5 hover:border-custom-accent/30 transition-colors duration-300">
-                            <div class="w-12 h-12 rounded-lg bg-custom-accent/10 flex items-center justify-center flex-shrink-0 text-custom-accent text-xl">🏗️</div>
-                            <div class="text-left">
-                                <h4 class="text-2xl font-extrabold text-custom-main font-display" data-i18n="corp-metric-1-num">+50</h4>
-                                <p class="text-xs text-custom-muted" data-i18n="corp-metric-1-label">Obras Completadas</p>
-                            </div>
-                        </div>
-                        
-                        <!-- Stat Card 2 -->
-                        <div class="p-6 bg-custom-card rounded-xl border border-custom/10 flex items-center space-x-5 hover:border-custom-accent/30 transition-colors duration-300">
-                            <div class="w-12 h-12 rounded-lg bg-custom-accent/10 flex items-center justify-center flex-shrink-0 text-custom-accent text-xl">🛡️</div>
-                            <div class="text-left">
-                                <h4 class="text-2xl font-extrabold text-custom-main font-display" data-i18n="corp-metric-2-num">100%</h4>
-                                <p class="text-xs text-custom-muted" data-i18n="corp-metric-2-label">Seguridad Garantizada</p>
-                            </div>
-                        </div>
-
-                        <!-- Stat Card 3 -->
-                        <div class="p-6 bg-custom-card rounded-xl border border-custom/10 flex items-center space-x-5 hover:border-custom-accent/30 transition-colors duration-300 sm:col-span-2 lg:col-span-1">
-                            <div class="w-12 h-12 rounded-lg bg-custom-accent/10 flex items-center justify-center flex-shrink-0 text-custom-accent text-xl">🚨</div>
-                            <div class="text-left">
-                                <h4 class="text-2xl font-extrabold text-custom-main font-display" data-i18n="corp-metric-3-num">24/7</h4>
-                                <p class="text-xs text-custom-muted" data-i18n="corp-metric-3-label">Soporte de Emergencias</p>
-                            </div>
-                        </div>
-                    </div>
+            <div class="p-6 md:p-8" id="mockup-construccion-content">
+                <div class="flex items-center justify-between mb-1">
+                    <h3 class="text-xl font-bold text-white">NEXO Industrial</h3>
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-custom-accent border border-custom-accent/30 px-2 py-1 rounded">Sector Industrial</span>
                 </div>
-            </div>
-        </section>
-
-        <!-- Services Section (B2B) -->
-        <section class="border-t border-custom/10 py-16 md:py-24 px-6 relative">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="text-xs font-bold tracking-widest text-custom-accent uppercase" data-i18n="corp-services-badge">NUESTROS SERVICIOS</span>
-                    <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-custom-main font-display mt-2" data-i18n="corp-services-title">Capacidades técnicas de alto nivel para tu negocio</h2>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Card 1: Obra Civil -->
-                    <div class="bg-custom-card p-8 rounded-xl border border-custom/10 hover:-translate-y-1.5 hover:border-custom-accent/40 hover:shadow-xl transition-all duration-300 flex flex-col justify-between text-left">
-                        <div class="space-y-4">
-                            <div class="w-11 h-11 rounded-lg bg-[#2E2820] flex items-center justify-center text-custom-accent text-lg">🧱</div>
-                            <h3 class="text-lg font-bold text-custom-main font-display" data-i18n="corp-services-card-1-title">Obra Civil & Remodelación</h3>
-                            <p class="text-xs sm:text-sm text-custom-muted leading-relaxed" data-i18n="corp-services-card-1-desc">Construcción comercial, remodelación de oficinas y mantenimiento de fachadas con acabados de alta calidad profesional.</p>
+                <p class="text-sm text-custom-muted mb-6">Climatización industrial eficiente</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-[#1a1a24] border border-custom/10 rounded-lg p-4 hover:border-custom-accent/40 transition-all">
+                        <div class="flex items-center gap-3 mb-3">
+                            <svg class="w-8 h-8 text-custom-accent" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-4h6v4M9 11h.01M15 11h.01"/></svg>
+                            <h4 class="text-sm font-bold text-white">Planta Cervecera Centro</h4>
                         </div>
+                        <div class="flex justify-between text-xs text-custom-muted mb-2"><span>Capacidad</span><span class="text-white">120,000 BTU</span></div>
+                        <div class="flex justify-between text-xs text-custom-muted mb-2"><span>Eficiencia</span><span class="text-custom-accent">94.2%</span></div>
+                        <svg class="w-full h-10 mt-2" viewBox="0 0 100 30" preserveAspectRatio="none"><polyline points="0,25 20,18 40,22 60,10 80,14 100,5" fill="none" stroke="#C9A96E" stroke-width="2"/></svg>
                     </div>
-
-                    <!-- Card 2: Climatización Industrial -->
-                    <div class="bg-custom-card p-8 rounded-xl border border-custom/10 hover:-translate-y-1.5 hover:border-custom-accent/40 hover:shadow-xl transition-all duration-300 flex flex-col justify-between text-left">
-                        <div class="space-y-4">
-                            <div class="w-11 h-11 rounded-lg bg-[#2E2820] flex items-center justify-center text-custom-accent text-lg">❄️</div>
-                            <h3 class="text-lg font-bold text-custom-main font-display" data-i18n="corp-services-card-2-title">Climatización Industrial</h3>
-                            <p class="text-xs sm:text-sm text-custom-muted leading-relaxed" data-i18n="corp-services-card-2-desc">Diseño, instalación y mantenimiento preventivo/correctivo de sistemas HVAC de gran capacidad para hoteles e industrias.</p>
+                    <div class="bg-[#1a1a24] border border-custom/10 rounded-lg p-4 hover:border-custom-accent/40 transition-all">
+                        <div class="flex items-center gap-3 mb-3">
+                            <svg class="w-8 h-8 text-custom-accent" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v16h16M8 12l3-3 3 3 4-4"/></svg>
+                            <h4 class="text-sm font-bold text-white">Logística Frío Norte</h4>
                         </div>
-                    </div>
-
-                    <!-- Card 3: Sistemas Eléctricos -->
-                    <div class="bg-custom-card p-8 rounded-xl border border-custom/10 hover:-translate-y-1.5 hover:border-custom-accent/40 hover:shadow-xl transition-all duration-300 flex flex-col justify-between text-left">
-                        <div class="space-y-4">
-                            <div class="w-11 h-11 rounded-lg bg-[#2E2820] flex items-center justify-center text-custom-accent text-lg">⚡</div>
-                            <h3 class="text-lg font-bold text-custom-main font-display" data-i18n="corp-services-card-3-title">Sistemas Eléctricos</h3>
-                            <p class="text-xs sm:text-sm text-custom-muted leading-relaxed" data-i18n="corp-services-card-3-desc">Instalaciones eléctricas de media y baja tensión, sistemas de respaldo energético y automatización de tableros de control.</p>
-                        </div>
+                        <div class="flex justify-between text-xs text-custom-muted mb-2"><span>Temp. Mín.</span><span class="text-white">-22°C</span></div>
+                        <div class="flex justify-between text-xs text-custom-muted mb-2"><span>Uptime</span><span class="text-custom-accent">99.1%</span></div>
+                        <svg class="w-full h-10 mt-2" viewBox="0 0 100 30" preserveAspectRatio="none"><rect x="5" y="10" width="12" height="18" fill="#C9A96E" opacity="0.7"/><rect x="25" y="5" width="12" height="23" fill="#C9A96E" opacity="0.7"/><rect x="45" y="14" width="12" height="14" fill="#C9A96E" opacity="0.7"/><rect x="65" y="8" width="12" height="20" fill="#C9A96E" opacity="0.7"/><rect x="85" y="2" width="10" height="26" fill="#C9A96E"/></svg>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Projects Gallery Section -->
-        <section class="border-t border-custom/10 bg-custom-card/30 py-16 md:py-24 px-6 relative">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="text-xs font-bold tracking-widest text-custom-accent uppercase" data-i18n="corp-projects-badge">PORTAFOLIO DE OBRAS</span>
-                    <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-custom-main font-display mt-2" data-i18n="corp-projects-title">Garantía de ejecución y resultados</h2>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Project 1 -->
-                    <div class="bg-custom-card rounded-xl border border-custom/10 overflow-hidden group hover:border-custom-accent/30 hover:-translate-y-1 transition-all duration-300 text-left">
-                        <div class="aspect-video w-full bg-neutral-900 relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80" alt="Mantenimiento Hotel Habana" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80">
-                        </div>
-                        <div class="p-6 space-y-2">
-                            <span class="text-[10px] font-bold text-custom-accent tracking-widest uppercase">LA HABANA</span>
-                            <h3 class="text-base sm:text-lg font-bold text-custom-main font-display" data-i18n="corp-projects-card-1-title">Mantenimiento Hotel Habana</h3>
-                            <p class="text-xs text-custom-muted leading-relaxed" data-i18n="corp-projects-card-1-desc">Rehabilitación completa de sistemas de climatización e iluminación eficiente en áreas comunes.</p>
-                        </div>
-                    </div>
-
-                    <!-- Project 2 -->
-                    <div class="bg-custom-card rounded-xl border border-custom/10 overflow-hidden group hover:border-custom-accent/30 hover:-translate-y-1 transition-all duration-300 text-left">
-                        <div class="aspect-video w-full bg-neutral-900 relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" alt="Remodelación Oficinas Comerciales" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80">
-                        </div>
-                        <div class="p-6 space-y-2">
-                            <span class="text-[10px] font-bold text-custom-accent tracking-widest uppercase">CORP DESIGN</span>
-                            <h3 class="text-base sm:text-lg font-bold text-custom-main font-display" data-i18n="corp-projects-card-2-title">Remodelación Oficinas Comerciales</h3>
-                            <p class="text-xs text-custom-muted leading-relaxed" data-i18n="corp-projects-card-2-desc">Rediseño y adecuación estructural para espacios de oficinas corporativas modernas en la capital.</p>
-                        </div>
-                    </div>
-
-                    <!-- Project 3 -->
-                    <div class="bg-custom-card rounded-xl border border-custom/10 overflow-hidden group hover:border-custom-accent/30 hover:-translate-y-1 transition-all duration-300 text-left">
-                        <div class="aspect-video w-full bg-neutral-900 relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80" alt="Logística y Montaje de Almacén" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80">
-                        </div>
-                        <div class="p-6 space-y-2">
-                            <span class="text-[10px] font-bold text-custom-accent tracking-widest uppercase">INDUSTRIAS</span>
-                            <h3 class="text-base sm:text-lg font-bold text-custom-main font-display" data-i18n="corp-projects-card-3-title">Logística y Montaje de Almacén</h3>
-                            <p class="text-xs text-custom-muted leading-relaxed" data-i18n="corp-projects-card-3-desc">Instalaciones eléctricas industriales y montaje de estanterías metálicas de alta resistencia.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Email & Credibility Callout Block -->
-        <section class="border-t border-custom/10 py-16 md:py-24 px-6 relative overflow-hidden">
-            <!-- Background grids and subtle lights -->
-            <div class="absolute inset-0 pointer-events-none opacity-20">
-                <div class="absolute top-1/2 left-1/3 -translate-y-1/2 w-[600px] h-[300px] bg-gradient-to-r from-custom-accent/10 to-transparent blur-3xl rounded-full"></div>
-            </div>
-
-            <div class="max-w-4xl mx-auto relative z-10 text-center">
-                <div class="bg-gradient-to-b from-[#181822] to-[#101018] dark:from-[#1E1E2A] dark:to-[#111118] border border-custom-accent/20 rounded-2xl p-8 sm:p-12 shadow-2xl relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-custom-accent/5 rounded-full blur-2xl pointer-events-none"></div>
-
-                    <span class="inline-flex items-center px-3.5 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase border border-custom-accent/30 text-custom-accent bg-custom-accent/5 mb-6" data-i18n="corp-credibility-badge">
-                        CREDIBILIDAD CORPORATIVA
-                    </span>
-                    
-                    <h2 class="text-xl sm:text-2xl md:text-3xl font-extrabold tracking-tight text-custom-main font-display mb-4" data-i18n="corp-credibility-title">
-                        La seriedad que tus clientes exigen
-                    </h2>
-                    
-                    <p class="text-xs sm:text-sm text-custom-muted leading-relaxed max-w-2xl mx-auto mb-10" data-i18n="corp-credibility-desc">
-                        Para cerrar contratos corporativos con embajadas, empresas extranjeras o firmas estatales, un correo gratuito <code class="text-custom-accent">@gmail.com</code> resta seriedad. Trazio Studio te configura correos profesionales sin coste adicional.
-                    </p>
-
-                    <!-- Interactive Emails Mockup Box -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl mx-auto mb-8">
-                        <!-- Email Card 1 -->
-                        <div class="p-4 bg-custom-main border border-custom/10 rounded-xl text-left flex items-center space-x-4 shadow-sm group hover:border-custom-accent/30 transition-colors">
-                            <div class="w-10 h-10 rounded-lg bg-custom-accent/10 flex items-center justify-center text-custom-accent text-base">✉️</div>
-                            <div>
-                                <h5 class="text-[10px] font-bold text-custom-accent uppercase tracking-wider" data-i18n="corp-credibility-b1">Administración:</h5>
-                                <p class="text-xs font-semibold text-custom-main font-mono mt-0.5" data-i18n="corp-credibility-b1-email">administracion@tuempresa.com</p>
-                            </div>
-                        </div>
-
-                        <!-- Email Card 2 -->
-                        <div class="p-4 bg-custom-main border border-custom/10 rounded-xl text-left flex items-center space-x-4 shadow-sm group hover:border-custom-accent/30 transition-colors">
-                            <div class="w-10 h-10 rounded-lg bg-custom-accent/10 flex items-center justify-center text-custom-accent text-base">💼</div>
-                            <div>
-                                <h5 class="text-[10px] font-bold text-custom-accent uppercase tracking-wider" data-i18n="corp-credibility-b2">Área Comercial:</h5>
-                                <p class="text-xs font-semibold text-custom-main font-mono mt-0.5" data-i18n="corp-credibility-b2-email">comercial@tuempresa.com</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <p class="text-[10px] sm:text-xs font-medium text-custom-muted" data-i18n="corp-credibility-footer">
-                        Tu marca corporativa con un aspecto premium, seguro y confiable.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Request a Quote Form Section -->
-        <section id="quote" class="border-t border-custom/10 py-16 md:py-24 px-6 relative bg-custom-card/20">
-            <div class="max-w-4xl mx-auto">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="text-xs font-bold tracking-widest text-custom-accent uppercase" data-i18n="corp-quote-badge">SOLICITUD DE COTIZACIÓN</span>
-                    <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-custom-main font-display mt-2" data-i18n="corp-quote-title">Inicia tu proyecto de infraestructura</h2>
-                    <p class="text-xs sm:text-sm text-custom-muted leading-relaxed mt-3" data-i18n="corp-quote-subtitle">
-                        Completa el formulario y nuestro equipo de ingenieros redactará una propuesta técnica y económica detallada en menos de 48 horas.
-                    </p>
-                </div>
-
-                <div class="max-w-xl mx-auto bg-custom-card p-6 sm:p-10 rounded-xl border border-custom/10 shadow-lg relative overflow-hidden">
-                    <form id="quote-form" class="space-y-6 relative z-10 text-left">
-                        <!-- Company Name -->
-                        <div>
-                            <label for="company-name" class="block text-xs font-bold text-custom-main uppercase tracking-wider mb-2" data-i18n="corp-form-company">Nombre de la Empresa / Mipyme</label>
-                            <input type="text" id="company-name" name="company_name" placeholder="Ej. Comercial S.A." class="w-full px-4 py-3 bg-custom-main border border-custom/20 rounded-lg text-custom-main placeholder-custom-muted focus:outline-none focus:ring-2 focus:ring-custom-accent focus:border-transparent form-input-gold transition-all duration-300 text-sm" required>
-                        </div>
-
-                        <!-- Contact Person -->
-                        <div>
-                            <label for="contact-person" class="block text-xs font-bold text-custom-main uppercase tracking-wider mb-2" data-i18n="corp-form-contact">Persona de Contacto</label>
-                            <input type="text" id="contact-person" name="contact_person" placeholder="Ej. Ing. Carlos Pérez" class="w-full px-4 py-3 bg-custom-main border border-custom/20 rounded-lg text-custom-main placeholder-custom-muted focus:outline-none focus:ring-2 focus:ring-custom-accent focus:border-transparent form-input-gold transition-all duration-300 text-sm" required>
-                        </div>
-
-                        <!-- Service Required Selector -->
-                        <div>
-                            <label for="service-required" class="block text-xs font-bold text-custom-main uppercase tracking-wider mb-2" data-i18n="corp-form-service">Servicio Requerido</label>
-                            <select id="service-required" name="service_required" class="w-full px-4 py-3 bg-custom-main border border-custom/20 rounded-lg text-custom-main focus:outline-none focus:ring-2 focus:ring-custom-accent focus:border-transparent form-input-gold transition-all duration-300 text-sm" required>
-                                <option value="Obra Civil & Remodelación" data-i18n="corp-form-service-opt1">Obra Civil & Remodelación</option>
-                                <option value="Climatización Industrial (HVAC)" data-i18n="corp-form-service-opt2">Climatización Industrial (HVAC)</option>
-                                <option value="Sistemas Eléctricos & Energía" data-i18n="corp-form-service-opt3">Sistemas Eléctricos & Energía</option>
-                                <option value="Otro servicio industrial" data-i18n="corp-form-service-opt4">Otro servicio industrial</option>
-                            </select>
-                        </div>
-
-                        <!-- Project Description -->
-                        <div>
-                            <label for="project-desc" class="block text-xs font-bold text-custom-main uppercase tracking-wider mb-2" data-i18n="corp-form-desc">Descripción del Proyecto</label>
-                            <textarea id="project-desc" name="project_desc" rows="4" placeholder="Por favor, describa brevemente el alcance del proyecto, ubicación aproximada y plazos estimados..." class="w-full px-4 py-3 bg-custom-main border border-custom/20 rounded-lg text-custom-main placeholder-custom-muted focus:outline-none focus:ring-2 focus:ring-custom-accent focus:border-transparent form-input-gold transition-all duration-300 text-sm" required></textarea>
-                        </div>
-
-                        <!-- Submission Button -->
-                        <button type="submit" class="w-full inline-flex items-center justify-center px-6 py-4 text-sm font-semibold text-white bg-custom-accent rounded-lg shadow-lg shadow-custom-accent/10 hover:bg-custom-accent-hover hover:-translate-y-0.5 transition-all duration-300" data-i18n="corp-form-btn">
-                            Enviar Cotización por WhatsApp
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-custom-main border-t border-custom/10 py-10 px-6 relative z-10 text-center">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-custom-muted">
-            <!-- Footer Branding -->
-            <div class="flex items-center space-x-2 text-left">
-                <div class="w-7 h-7 rounded bg-custom-card border border-custom-accent/30 flex items-center justify-center text-xs font-extrabold text-custom-accent">N</div>
-                <div class="flex flex-col">
-                    <span class="font-bold text-custom-main">NEXO Mantenimiento</span>
-                    <span class="text-[8px] -mt-1 font-semibold text-custom-accent">MIPYME INDUSTRIAL</span>
-                </div>
-            </div>
-
-            <!-- Legal disclaimer -->
-            <p class="max-w-md text-xs leading-relaxed" data-i18n="corp-footer-text">
-                Soluciones de ingeniería y mantenimiento con la máxima garantía jurídica y técnica para el sector empresarial cubano.
-            </p>
-
-            <!-- Copyright -->
-            <p class="text-xs">
-                &copy; <span id="current-year"></span> NEXO S.R.L. Demo de Trazio Studio.
-            </p>
         </div>
-    </footer>
+        <!-- Panel Gastronomía (Simular Laptop Mac) -->
+        <div id="demo-gastronomia" class="demo-panel hidden animate-fade-in-up bg-[#111118] border border-custom/10 rounded-xl overflow-hidden shadow-2xl mt-0">
+            <!-- Barra superior Mac -->
+            <div class="bg-[#1a1a24] px-4 py-3 flex items-center gap-2 border-b border-custom/5">
+                <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                <div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+            </div>
+            <div class="p-6 md:p-8" id="mockup-gastronomia-content">
+                <div class="flex items-center justify-between mb-1">
+                    <h3 class="text-xl font-bold text-white">Sabor Habana Import</h3>
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-custom-accent border border-custom-accent/30 px-2 py-1 rounded">Mayorista</span>
+                </div>
+                <p class="text-sm text-custom-muted mb-6">Distribución mayorista para Mipymes</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-[#1a1a24] border border-custom/10 rounded-lg p-4 hover:border-custom-accent/40 transition-all">
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="flex items-center gap-3">
+                                <svg class="w-8 h-8 text-custom-accent" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 8h14l-1 12H6L5 8zm2 0V6a5 5 0 0110 0v2"/></svg>
+                                <h4 class="text-sm font-bold text-white">Café Premium 1kg</h4>
+                            </div>
+                            <span class="text-[10px] font-bold bg-green-900/40 text-green-400 px-2 py-1 rounded">En Stock: 340</span>
+                        </div>
+                        <p class="text-xs text-custom-muted">Origen: Granja Oriental · Tueste medio</p>
+                    </div>
+                    <div class="bg-[#1a1a24] border border-custom/10 rounded-lg p-4 hover:border-custom-accent/40 transition-all">
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="flex items-center gap-3">
+                                <svg class="w-8 h-8 text-custom-accent" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 7l9-4 9 4-9 4-9-4zm0 0v10l9 4 9-4V7M12 11v10"/></svg>
+                                <h4 class="text-sm font-bold text-white">Lácteos Envío Frío</h4>
+                            </div>
+                            <span class="text-[10px] font-bold bg-red-900/40 text-red-400 px-2 py-1 rounded">Bajo: 28</span>
+                        </div>
+                        <p class="text-xs text-custom-muted">Logística 24h · 12 provincias</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Panel Servicios (Simular Laptop Mac) -->
+        <div id="demo-servicios" class="demo-panel hidden animate-fade-in-up bg-[#111118] border border-custom/10 rounded-xl overflow-hidden shadow-2xl mt-0">
+            <!-- Barra superior Mac -->
+            <div class="bg-[#1a1a24] px-4 py-3 flex items-center gap-2 border-b border-custom/5">
+                <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                <div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+            </div>
+            <div class="p-6 md:p-8" id="mockup-servicios-content">
+                <div class="flex items-center justify-between mb-1">
+                    <h3 class="text-xl font-bold text-white">Consultora Global TCP</h3>
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-custom-accent border border-custom-accent/30 px-2 py-1 rounded">Asesoría</span>
+                </div>
+                <p class="text-sm text-custom-muted mb-6">Asesoría legal/contable blindada</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-[#1a1a24] border border-custom/10 rounded-lg p-4 hover:border-custom-accent/40 transition-all">
+                        <div class="flex items-center gap-3 mb-3">
+                            <svg class="w-8 h-8 text-custom-accent" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 3h10v18H7zM10 7h4M10 11h4M10 15h4"/></svg>
+                            <h4 class="text-sm font-bold text-white">Defensa Legal Corporativa</h4>
+                        </div>
+                        <p class="text-xs text-custom-muted">Contratos · Litigios · Compliance</p>
+                    </div>
+                    <div class="bg-[#1a1a24] border border-custom/10 rounded-lg p-4 hover:border-custom-accent/40 transition-all">
+                        <div class="flex items-center gap-3 mb-3">
+                            <svg class="w-8 h-8 text-custom-accent" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18M5 7h14M5 7l-2 6h6l-2-6zm14 0l-2 6h6l-2-6zM3 13a3 3 0 006 0M15 13a3 3 0 006 0"/></svg>
+                            <h4 class="text-sm font-bold text-white">Auditoría Contable TCP</h4>
+                        </div>
+                        <p class="text-xs text-custom-muted">Fiscal · Nómina · Reporting</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <!-- Translation Engine & Theme Switcher Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const themeSwitcher = document.getElementById('theme-switcher');
-            const languageToggle = document.getElementById('language-toggle');
-            const currentLangDisplay = document.getElementById('current-lang-display');
-            const themeIconMoon = document.getElementById('theme-icon-moon');
-            const themeIconSun = document.getElementById('theme-icon-sun');
+    <!-- 3. El Poder del Correo -->
+    <section class="max-w-5xl mx-auto px-6 mb-24">
+  <div class="bg-custom-card/50 border border-custom/20 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 md:gap-12 shadow-xl shadow-custom/5 relative overflow-hidden">
+    
+    <!-- Lado Izquierdo: Icono SVG premium con halo -->
+    <div class="flex-shrink-0 relative">
+      <div class="absolute inset-0 bg-custom-accent/20 blur-2xl rounded-full"></div>
+      <div class="relative w-28 h-28 md:w-36 md:h-36 rounded-full border border-custom-accent/30 bg-custom-accent/5 backdrop-blur-sm flex items-center justify-center">
+        <svg class="w-16 h-16 md:w-20 md:h-20 text-custom-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75l2.25 2.25 3.75-3.75" opacity="0.6"/>
+        </svg>
+      </div>
+    </div>
 
-            // --- Dictionary (ES / EN) for Nexo ---
-            const translations = {
-                es: {
-                    "back-to-home": "← Volver al inicio",
-                    "corp-hero-badge": "CONFIANZA B2B Y CAPACIDAD CERTIFICADA",
-                    "corp-hero-title": "Soluciones de Infraestructura y Mantenimiento Industrial",
-                    "corp-hero-subtitle": "Garantizamos la continuidad operativa de tu empresa con ingeniería de primer nivel, equipos modernos y el cumplimiento de los estándares de seguridad industrial más estrictos en Cuba.",
-                    "corp-hero-cta": "Solicitar Presupuesto Técnico",
-                    "corp-about-badge": "QUIÉNES SOMOS",
-                    "corp-about-title": "Tu aliado estratégico en ingeniería y mantenimiento",
-                    "corp-about-desc": "Nexo es una MIPYME líder dedicada al diseño, mantenimiento e integración de infraestructura corporativa e industrial. Nos enfocamos en ofrecer soluciones seguras, eficientes y confiables para empresas comerciales, hoteleras y logísticas en todo el país.",
-                    "corp-about-cert": "Certificaciones de Seguridad:",
-                    "corp-about-cert-1": "Licencia de Seguridad y Salud en el Trabajo",
-                    "corp-about-cert-2": "Personal de ingeniería certificado y homologado",
-                    "corp-about-cert-3": "Cumplimiento de normas técnicas nacionales de construcción",
-                    "corp-metric-1-num": "+50",
-                    "corp-metric-1-label": "Obras Completadas",
-                    "corp-metric-2-num": "100%",
-                    "corp-metric-2-label": "Seguridad Garantizada",
-                    "corp-metric-3-num": "24/7",
-                    "corp-metric-3-label": "Soporte de Emergencias",
-                    "corp-services-badge": "NUESTROS SERVICIOS",
-                    "corp-services-title": "Capacidades técnicas de alto nivel para tu negocio",
-                    "corp-services-card-1-title": "Obra Civil & Remodelación",
-                    "corp-services-card-1-desc": "Construcción comercial, remodelación de oficinas y mantenimiento de fachadas con acabados de alta calidad profesional.",
-                    "corp-services-card-2-title": "Climatización Industrial",
-                    "corp-services-card-2-desc": "Diseño, instalación y mantenimiento preventivo/correctivo de sistemas HVAC de gran capacidad para hoteles e industrias.",
-                    "corp-services-card-3-title": "Sistemas Eléctricos",
-                    "corp-services-card-3-desc": "Instalaciones eléctricas de media y baja tensión, sistemas de respaldo energético y automatización de tableros de control.",
-                    "corp-projects-badge": "PORTAFOLIO DE OBRAS",
-                    "corp-projects-title": "Garantía de ejecución y resultados",
-                    "corp-projects-card-1-title": "Mantenimiento Hotel Habana",
-                    "corp-projects-card-1-desc": "Rehabilitación completa de sistemas de climatización e iluminación eficiente en áreas comunes.",
-                    "corp-projects-card-2-title": "Remodelación Oficinas Comerciales",
-                    "corp-projects-card-2-desc": "Rediseño y adecuación estructural para espacios de oficinas corporativas modernas en la capital.",
-                    "corp-projects-card-3-title": "Logística y Montaje de Almacén",
-                    "corp-projects-card-3-desc": "Instalaciones eléctricas industriales y montaje de estanterías metálicas de alta resistencia.",
-                    "corp-credibility-badge": "CREDIBILIDAD CORPORATIVA",
-                    "corp-credibility-title": "La seriedad que tus clientes exigen",
-                    "corp-credibility-desc": "Para cerrar contratos corporativos con embajadas, empresas extranjeras o firmas estatales, un correo gratuito @gmail.com resta seriedad. Trazio Studio te configura correos profesionales sin coste adicional.",
-                    "corp-credibility-b1": "Administración:",
-                    "corp-credibility-b1-email": "administracion@tuempresa.com",
-                    "corp-credibility-b2": "Área Comercial:",
-                    "corp-credibility-b2-email": "comercial@tuempresa.com",
-                    "corp-credibility-footer": "Tu marca corporativa con un aspecto premium, seguro y confiable.",
-                    "corp-quote-badge": "SOLICITUD DE COTIZACIÓN",
-                    "corp-quote-title": "Inicia tu proyecto de infraestructura",
-                    "corp-quote-subtitle": "Completa el formulario y nuestro equipo de ingenieros redactará una propuesta técnica y económica detallada en menos de 48 horas.",
-                    "corp-form-company": "Nombre de la Empresa / Mipyme",
-                    "corp-form-company-placeholder": "Ej. Comercial S.A.",
-                    "corp-form-contact": "Persona de Contacto",
-                    "corp-form-contact-placeholder": "Ej. Ing. Carlos Pérez",
-                    "corp-form-service": "Servicio Requerido",
-                    "corp-form-service-opt1": "Obra Civil & Remodelación",
-                    "corp-form-service-opt2": "Climatización Industrial (HVAC)",
-                    "corp-form-service-opt3": "Sistemas Eléctricos & Energía",
-                    "corp-form-service-opt4": "Otro servicio industrial",
-                    "corp-form-desc": "Descripción del Proyecto",
-                    "corp-form-desc-placeholder": "Por favor, describa brevemente el alcance del proyecto, ubicación aproximada y plazos estimados...",
-                    "corp-form-btn": "Enviar Cotización por WhatsApp",
-                    "corp-footer-text": "Soluciones de ingeniería y mantenimiento con la máxima garantía jurídica y técnica para el sector empresarial cubano."
-                },
-                en: {
-                    "back-to-home": "← Back to Home",
-                    "corp-hero-badge": "B2B TRUST & CERTIFIED CAPACITY",
-                    "corp-hero-title": "Industrial Infrastructure and Maintenance Solutions",
-                    "corp-hero-subtitle": "We guarantee your company's operational continuity with top-tier engineering, modern equipment, and compliance with the strictest industrial safety standards in Cuba.",
-                    "corp-hero-cta": "Request Technical Estimate",
-                    "corp-about-badge": "ABOUT US",
-                    "corp-about-title": "Your strategic partner in engineering and maintenance",
-                    "corp-about-desc": "Nexo is a leading private business (Mipyme) dedicated to the design, maintenance, and integration of corporate and industrial infrastructure. We focus on delivering safe, efficient, and reliable solutions for commercial, hotel, and logistics enterprises across the country.",
-                    "corp-about-cert": "Safety Certifications:",
-                    "corp-about-cert-1": "Occupational Health and Safety License",
-                    "corp-about-cert-2": "Certified and fully approved engineering staff",
-                    "corp-about-cert-3": "Compliance with national technical construction codes",
-                    "corp-metric-1-num": "+50",
-                    "corp-metric-1-label": "Projects Completed",
-                    "corp-metric-2-num": "100%",
-                    "corp-metric-2-label": "Safety Guaranteed",
-                    "corp-metric-3-num": "24/7",
-                    "corp-metric-3-label": "Emergency Support",
-                    "corp-services-badge": "OUR SERVICES",
-                    "corp-services-title": "High-level technical capacities for your business",
-                    "corp-services-card-1-title": "Civil Work & Remodeling",
-                    "corp-services-card-1-desc": "Commercial construction, office remodeling, and facade maintenance with high professional quality finishes.",
-                    "corp-services-card-2-title": "Industrial Climatization",
-                    "corp-services-card-2-desc": "Design, installation, and preventive/corrective maintenance of large-capacity HVAC systems for hotels and industries.",
-                    "corp-services-card-3-title": "Electrical Systems",
-                    "corp-services-card-3-desc": "Medium and low voltage electrical installations, backup power systems, and automation of control panels.",
-                    "corp-projects-badge": "PORTFOLIO OF WORKS",
-                    "corp-projects-title": "Guaranteed execution and results",
-                    "corp-projects-card-1-title": "Habana Hotel Maintenance",
-                    "corp-projects-card-1-desc": "Complete rehabilitation of HVAC systems and efficient lighting in common areas.",
-                    "corp-projects-card-2-title": "Commercial Office Remodeling",
-                    "corp-projects-card-2-desc": "Structural redesign and adaptation for modern corporate office spaces in the capital.",
-                    "corp-projects-card-3-title": "Warehouse Logistics & Assembly",
-                    "corp-projects-card-3-desc": "Industrial electrical installations and assembly of high-strength metallic shelving units.",
-                    "corp-credibility-badge": "CORPORATE CREDIBILITY",
-                    "corp-credibility-title": "The seriousness your clients demand",
-                    "corp-credibility-desc": "To close corporate contracts with embassies, foreign companies, or state firms, a free @gmail.com email reduces professional authority. Trazio Studio sets up professional emails at no extra cost.",
-                    "corp-credibility-b1": "Administration:",
-                    "corp-credibility-b1-email": "administration@yourcompany.com",
-                    "corp-credibility-b2": "Sales Department:",
-                    "corp-credibility-b2-email": "sales@yourcompany.com",
-                    "corp-credibility-footer": "Your corporate brand with a premium, secure, and reliable look.",
-                    "corp-quote-badge": "REQUEST A QUOTE",
-                    "corp-quote-title": "Start your infrastructure project",
-                    "corp-quote-subtitle": "Complete the form, and our engineering team will draft a detailed technical and economic proposal in less than 48 hours.",
-                    "corp-form-company": "Company / Business Name",
-                    "corp-form-company-placeholder": "E.g. Commercial S.A.",
-                    "corp-form-contact": "Contact Person",
-                    "corp-form-contact-placeholder": "E.g. Eng. Carlos Perez",
-                    "corp-form-service": "Service Required",
-                    "corp-form-service-opt1": "Civil Work & Remodeling",
-                    "corp-form-service-opt2": "Industrial Climatization (HVAC)",
-                    "corp-form-service-opt3": "Electrical Systems & Power",
-                    "corp-form-service-opt4": "Other industrial service",
-                    "corp-form-desc": "Project Description",
-                    "corp-form-desc-placeholder": "Please briefly describe the scope of the project, approximate location, and estimated timelines...",
-                    "corp-form-btn": "Send Quote via WhatsApp",
-                    "corp-footer-text": "Engineering and maintenance solutions with maximum legal and technical guarantee for the Cuban business sector."
-                }
-            };
+    <!-- Lado Derecho: Badge, H2, Párrafo y micro-CTA -->
+    <div class="flex-1">
+      <span class="inline-flex items-center gap-2 bg-custom-accent/10 border border-custom-accent/20 text-custom-accent text-xs font-semibold tracking-wider px-3 py-1 rounded-full mb-4">
+        <span class="w-1.5 h-1.5 rounded-full bg-custom-accent"></span>
+        DOMINIOS Y CORREOS CORPORATIVOS
+      </span>
+      
+      <h2 class="text-3xl font-bold text-custom-main mb-4 leading-tight">
+        Un correo <span class="text-custom-accent/70 line-through decoration-custom-accent/40">@gmail.com</span> destruye tu credibilidad.
+      </h2>
+      
+      <p class="text-custom-muted leading-relaxed mb-6">
+        Nos encargamos de todo el trámite técnico. Registramos tu dominio propio 
+        <span class="text-custom-main font-medium">(tuempresa.com)</span> y configuramos correos corporativos 
+        <span class="text-custom-main font-medium">(ventas@tuempresa.com)</span> para que negocies al nivel de las grandes corporaciones.
+      </p>
 
-            // --- Theme Handling ---
-            const applyTheme = (theme) => {
-                if (theme === 'light') {
-                    document.body.classList.add('light-theme');
-                    if (themeIconMoon) themeIconMoon.classList.add('hidden');
-                    if (themeIconSun) themeIconSun.classList.remove('hidden');
-                } else {
-                    document.body.classList.remove('light-theme');
-                    if (themeIconMoon) themeIconMoon.classList.remove('hidden');
-                    if (themeIconSun) themeIconSun.classList.add('hidden');
-                }
-            };
+      <div class="flex items-center gap-2 text-sm text-custom-accent/80">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
+        </svg>
+        <span>Configuración y soporte incluidos</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-            const toggleTheme = () => {
-                let currentTheme = localStorage.getItem('theme') || 'dark';
-                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-                localStorage.setItem('theme', newTheme);
-                applyTheme(newTheme);
-            };
+    <!-- 4. Proceso de Trabajo -->
+    <section class="max-w-6xl mx-auto px-6 mb-24">
+  <header class="text-center mb-16">
+    <span class="inline-block text-custom-accent text-sm font-semibold tracking-[0.2em] uppercase mb-3">
+      Metodología
+    </span>
+    <h2 class="text-center text-3xl sm:text-4xl font-bold mb-4 tracking-tight text-white">
+      Nuestro Proceso Llave en Mano
+    </h2>
+    <p class="text-custom-text/70 max-w-2xl mx-auto leading-relaxed">
+      Un sistema diseñado para convertir tu visión en una experiencia digital de alto impacto, sin fricciones.
+    </p>
+  </header>
 
-            // --- Translation Handling ---
-            const translatePage = (lang) => {
-                document.querySelectorAll('[data-i18n]').forEach(element => {
-                    const key = element.getAttribute('data-i18n');
-                    if (translations[lang] && translations[lang][key]) {
-                        element.innerHTML = translations[lang][key];
-                    }
-                });
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+    <!-- Línea conectora decorativa (solo desktop) -->
+    <div class="hidden lg:block absolute top-12 left-0 right-0 h-px bg-gradient-to-r from-transparent via-custom-accent/30 to-transparent"></div>
 
-                // Form Placeholders Translation
-                const companyNameInput = document.getElementById('company-name');
-                const contactPersonInput = document.getElementById('contact-person');
-                const projectDescTextarea = document.getElementById('project-desc');
+    <!-- Paso 1 -->
+    <div class="group relative p-6 border border-custom/10 bg-custom-card rounded-xl hover:-translate-y-2 hover:border-custom-accent/40 hover:shadow-[0_8px_30px_-12px_rgba(212,175,55,0.25)] transition-all duration-300">
+      <div class="bg-custom-accent/10 text-custom-accent font-black text-2xl w-12 h-12 flex items-center justify-center rounded-lg mb-5 group-hover:scale-105 transition-transform">
+        1
+      </div>
+      <h3 class="text-lg font-semibold mb-2 text-white tracking-tight">Diagnóstico</h3>
+      <p class="text-custom-text/80 text-sm leading-relaxed">Analizamos tu modelo de negocio y competencia.</p>
+    </div>
 
-                if (companyNameInput) {
-                    companyNameInput.placeholder = translations[lang][lang === 'es' ? 'corp-form-company-placeholder' : 'corp-form-company-placeholder'] || 'Ej. Comercial S.A.';
-                }
-                if (contactPersonInput) {
-                    contactPersonInput.placeholder = translations[lang][lang === 'es' ? 'corp-form-contact-placeholder' : 'corp-form-contact-placeholder'] || 'Ej. Ing. Carlos Pérez';
-                }
-                if (projectDescTextarea) {
-                    projectDescTextarea.placeholder = translations[lang][lang === 'es' ? 'corp-form-desc-placeholder' : 'corp-form-desc-placeholder'] || 'Por favor, describa brevemente...';
-                }
+    <!-- Paso 2 -->
+    <div class="group relative p-6 border border-custom/10 bg-custom-card rounded-xl hover:-translate-y-2 hover:border-custom-accent/40 hover:shadow-[0_8px_30px_-12px_rgba(212,175,55,0.25)] transition-all duration-300">
+      <div class="bg-custom-accent/10 text-custom-accent font-black text-2xl w-12 h-12 flex items-center justify-center rounded-lg mb-5 group-hover:scale-105 transition-transform">
+        2
+      </div>
+      <h3 class="text-lg font-semibold mb-2 text-white tracking-tight">Propuesta</h3>
+      <p class="text-custom-text/80 text-sm leading-relaxed">Estructuramos el diseño y los textos persuasivos.</p>
+    </div>
 
-                if (currentLangDisplay) {
-                    currentLangDisplay.textContent = lang.toUpperCase();
-                }
-                document.documentElement.lang = lang;
-            };
+    <!-- Paso 3 -->
+    <div class="group relative p-6 border border-custom/10 bg-custom-card rounded-xl hover:-translate-y-2 hover:border-custom-accent/40 hover:shadow-[0_8px_30px_-12px_rgba(212,175,55,0.25)] transition-all duration-300">
+      <div class="bg-custom-accent/10 text-custom-accent font-black text-2xl w-12 h-12 flex items-center justify-center rounded-lg mb-5 group-hover:scale-105 transition-transform">
+        3
+      </div>
+      <h3 class="text-lg font-semibold mb-2 text-white tracking-tight">Desarrollo</h3>
+      <p class="text-custom-text/80 text-sm leading-relaxed">Programación estática de alta velocidad.</p>
+    </div>
 
-            const toggleLanguage = () => {
-                let currentLang = localStorage.getItem('language') || 'es';
-                const newLang = currentLang === 'es' ? 'en' : 'es';
-                localStorage.setItem('language', newLang);
-                translatePage(newLang);
-            };
+    <!-- Paso 4 -->
+    <div class="group relative p-6 border border-custom/10 bg-custom-card rounded-xl hover:-translate-y-2 hover:border-custom-accent/40 hover:shadow-[0_8px_30px_-12px_rgba(212,175,55,0.25)] transition-all duration-300">
+      <div class="bg-custom-accent/10 text-custom-accent font-black text-2xl w-12 h-12 flex items-center justify-center rounded-lg mb-5 group-hover:scale-105 transition-transform">
+        4
+      </div>
+      <h3 class="text-lg font-semibold mb-2 text-white tracking-tight">Lanzamiento</h3>
+      <p class="text-custom-text/80 text-sm leading-relaxed">Entrega, correos activos y capacitación.</p>
+    </div>
+  </div>
+</section>
 
-            // --- Listeners and Boot ---
-            if (themeSwitcher) {
-                themeSwitcher.addEventListener('click', toggleTheme);
-            }
-            if (languageToggle) {
-                languageToggle.addEventListener('click', toggleLanguage);
-            }
+    <!-- 5. Paquetes y Precios -->
+    <section class="max-w-6xl mx-auto px-6 mb-24 py-12">
+    <h2 class="text-3xl font-bold text-center mb-16 text-custom-main tracking-tight">Soluciones a la medida de tu crecimiento</h2>
 
-            // Sync year in footer
-            const currentYearEl = document.getElementById('current-year');
-            if (currentYearEl) {
-                currentYearEl.textContent = new Date().getFullYear();
-            }
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
 
-            // Boot state sync
-            const savedTheme = localStorage.getItem('theme') || 'dark';
-            applyTheme(savedTheme);
+        <!-- Paquete Presencia Digital -->
+        <div class="p-10 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-custom/10 bg-custom-card/50 text-custom-main flex flex-col h-full backdrop-blur-sm transition-all duration-300 hover:shadow-[0_8px_40px_rgb(0,0,0,0.18)] hover:-translate-y-1">
+            <h3 class="text-2xl font-semibold mb-6">Presencia Digital</h3>
+            <ul class="space-y-4 flex-grow mb-10">
+                <li class="flex items-center">
+                    <svg class="text-custom-accent w-5 h-5 mr-4 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span>Landing Page de Alto Impacto</span>
+                </li>
+                <li class="flex items-center">
+                    <svg class="text-custom-accent w-5 h-5 mr-4 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span>Botón directo a WhatsApp</span>
+                </li>
+                <li class="flex items-center">
+                    <svg class="text-custom-accent w-5 h-5 mr-4 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span>Optimización Móvil</span>
+                </li>
+            </ul>
+            <a href="https://wa.me/TU_NUMERO_WHATSAPP" target="_blank" class="block w-full text-center py-3.5 rounded-xl font-bold transition-all duration-300 mt-auto border border-custom/20 text-custom-main hover:bg-custom/10 hover:border-custom/40 hover:shadow-md">Cotizar Paquete</a>
+        </div>
 
-            const savedLanguage = localStorage.getItem('language') || 'es';
-            translatePage(savedLanguage);
+        <!-- Paquete Corporativa Estándar (MÁS ELEGIDO) -->
+        <div class="p-10 rounded-2xl shadow-[0_20px_60px_-10px_rgba(0,0,0,0.3)] border-custom-accent/50 bg-custom-card transform md:scale-105 relative z-10 text-custom-main flex flex-col h-full backdrop-blur-md transition-all duration-300 hover:shadow-[0_25px_70px_-10px_rgba(0,0,0,0.35)] hover:md:scale-[1.07]">
+            <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-custom-accent text-black text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg">MÁS ELEGIDO</span>
+            <h3 class="text-2xl font-semibold mb-6">Corporativa Estándar</h3>
+            <ul class="space-y-4 flex-grow mb-10">
+                <li class="flex items-center">
+                    <svg class="text-custom-accent w-5 h-5 mr-4 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span>Todo lo de Presencia Digital</span>
+                </li>
+                <li class="flex items-center">
+                    <svg class="text-custom-accent w-5 h-5 mr-4 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span>Dominio y Correo Profesional</span>
+                </li>
+                <li class="flex items-center">
+                    <svg class="text-custom-accent w-5 h-5 mr-4 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span>Catálogo de Servicios</span>
+                </li>
+                <li class="flex items-center">
+                    <svg class="text-custom-accent w-5 h-5 mr-4 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span>Bilingüe (ES/EN)</span>
+                </li>
+            </ul>
+            <a href="https://wa.me/TU_NUMERO_WHATSAPP" target="_blank" class="block w-full text-center py-3.5 rounded-xl font-bold transition-all duration-300 mt-auto bg-custom-accent text-black hover:bg-custom-accent/80 hover:shadow-[0_8px_20px_rgba(202,138,4,0.4)]">Cotizar Paquete</a>
+        </div>
 
-            // Form Submit to WhatsApp
-            const quoteForm = document.getElementById('quote-form');
-            if (quoteForm) {
-                quoteForm.addEventListener('submit', (e) => {
-                    e.preventDefault();
+        <!-- Paquete Corporativa Plus -->
+        <div class="p-10 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-custom/10 bg-custom-card/50 text-custom-main flex flex-col h-full backdrop-blur-sm transition-all duration-300 hover:shadow-[0_8px_40px_rgb(0,0,0,0.18)] hover:-translate-y-1">
+            <h3 class="text-2xl font-semibold mb-6">Corporativa Plus</h3>
+            <ul class="space-y-4 flex-grow mb-10">
+                <li class="flex items-center">
+                    <svg class="text-custom-accent w-5 h-5 mr-4 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span>Todo lo Estándar</span>
+                </li>
+                <li class="flex items-center">
+                    <svg class="text-custom-accent w-5 h-5 mr-4 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span>Formulario de Filtrado B2B</span>
+                </li>
+                <li class="flex items-center">
+                    <svg class="text-custom-accent w-5 h-5 mr-4 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span>Exportador de Dossier PDF</span>
+                </li>
+                <li class="flex items-center">
+                    <svg class="text-custom-accent w-5 h-5 mr-4 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span>Selector Dinámico de Rubros</span>
+                </li>
+            </ul>
+            <a href="https://wa.me/TU_NUMERO_WHATSAPP" target="_blank" class="block w-full text-center py-3.5 rounded-xl font-bold transition-all duration-300 mt-auto border border-custom/20 text-custom-main hover:bg-custom/10 hover:border-custom/40 hover:shadow-md">Cotizar Paquete</a>
+        </div>
 
-                    const company = document.getElementById('company-name').value.trim();
-                    const contact = document.getElementById('contact-person').value.trim();
-                    const service = document.getElementById('service-required').value;
-                    const desc = document.getElementById('project-desc').value.trim();
+    </div>
+</section>
 
-                    if (!company || !contact || !service || !desc) {
-                        alert(localStorage.getItem('language') === 'en' ? 'Please fill all fields.' : 'Por favor, rellene todos los campos.');
-                        return;
-                    }
+    <!-- 6. Preguntas Frecuentes -->
+    <section class="max-w-4xl mx-auto px-6 mb-24">
+  <h2 class="text-3xl font-bold mb-10 text-custom-main text-center">
+    Preguntas Frecuentes
+  </h2>
+  <div class="space-y-6">
+    <div class="bg-custom-card p-6 md:p-8 rounded-2xl border border-custom/10 hover:border-custom-accent/40 shadow-sm hover:shadow-xl hover:shadow-custom-accent/5 transition-all duration-300 ease-out">
+      <h4 class="font-bold text-custom-accent mb-3 text-lg">
+        ¿Necesito pagar mantenimiento mensual?
+      </h4>
+      <p class="text-sm md:text-base text-custom-muted leading-relaxed">
+        No. Utilizamos arquitectura estática moderna. Haces un pago único por el desarrollo y te ahorras los costosos mantenimientos de servidores tradicionales.
+      </p>
+    </div>
+    <div class="bg-custom-card p-6 md:p-8 rounded-2xl border border-custom/10 hover:border-custom-accent/40 shadow-sm hover:shadow-xl hover:shadow-custom-accent/5 transition-all duration-300 ease-out">
+      <h4 class="font-bold text-custom-accent mb-3 text-lg">
+        ¿Funciona bien con la conexión de Cuba?
+      </h4>
+      <p class="text-sm md:text-base text-custom-muted leading-relaxed">
+        Sí. Es nuestra mayor ventaja. Optimizamos el código y las imágenes para que tu web cargue en milisegundos incluso en redes 3G inestables.
+      </p>
+    </div>
+  </div>
+</section>
 
-                    const currentLang = localStorage.getItem('language') || 'es';
-                    const messageText = currentLang === 'en' ? 
-                        `Hello NEXO, we want to request a quote.\n\n` +
-                        `• *Company/Business:* ${company}\n` +
-                        `• *Contact Person:* ${contact}\n` +
-                        `• *Service Required:* ${service}\n` +
-                        `• *Description:* ${desc}` :
-                        `Hola NEXO, deseamos solicitar una cotización comercial.\n\n` +
-                        `• *Empresa/Negocio:* ${company}\n` +
-                        `• *Persona de Contacto:* ${contact}\n` +
-                        `• *Servicio Requerido:* ${service}\n` +
-                        `• *Descripción:* ${desc}`;
+    <!-- 7. CTA Final y PDF -->
+    <section class="max-w-4xl mx-auto px-6 mb-24 text-center">
+  <div class="group relative bg-custom-card/30 border border-custom/10 rounded-2xl p-10 md:p-16 shadow-lg shadow-custom/5 hover:shadow-xl hover:shadow-custom-accent/10 transition-all duration-300 backdrop-blur-sm overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-custom-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+    <div class="relative">
+      <h2 class="text-3xl md:text-4xl font-bold text-custom-main mb-4 tracking-tight">Da el salto corporativo hoy.</h2>
+      <p class="text-custom-muted mb-8 max-w-xl mx-auto leading-relaxed">Escríbenos por WhatsApp para agendar una auditoría gratuita de tu negocio.</p>
+      <a href="https://wa.me/5350000000?text=Hola,%20quiero%20cotizar%20mi%20web%20corporativa"
+        class="inline-block px-8 py-4 bg-custom-accent text-black font-bold rounded-lg hover:bg-custom-accent-hover hover:-translate-y-0.5 transition-all duration-200 mb-10 shadow-md hover:shadow-custom-accent/30">
+        Contactar por WhatsApp
+      </a>
+      <div class="mt-8 pt-8 border-t border-custom/10 text-center">
+        <p class="text-xs text-custom-muted mb-4 uppercase tracking-widest">¿Necesitas presentar esta información a tus socios?</p>
+        <button onclick="window.print()"
+          class="px-6 py-3 text-xs font-bold text-custom-main border border-custom/20 rounded-lg hover:border-custom-accent hover:text-custom-accent transition-all duration-200 inline-flex items-center justify-center mx-auto gap-2 bg-custom-card hover:bg-custom-card/60">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z">
+            </path>
+          </svg>
+          Descargar Propuesta en PDF
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
 
-                    const whatsappUrl = `https://wa.me/5350000000?text=${encodeURIComponent(messageText)}`;
-                    window.open(whatsappUrl, '_blank');
-                    quoteForm.reset();
-                });
-            }
-        });
-    </script>
-</body>
-</html>
+<!-- Botón Flotante Global -->
+<!-- Botón Flotante Global de WhatsApp -->
+<div class="fixed bottom-6 right-6 z-50 group">
+    <!-- Tooltip -->
+    <div class="absolute right-full top-1/2 -translate-y-1/2 mr-4 px-3 py-1.5 bg-custom-card border border-custom/20 text-custom-main text-xs font-semibold rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 whitespace-nowrap shadow-xl">
+        Cotizar mi Web
+        <!-- Flechita del tooltip -->
+        <div class="absolute top-1/2 -right-1 -translate-y-1/2 w-2 h-2 bg-custom-card border-t border-r border-custom/20 transform rotate-45"></div>
+    </div>
+    
+    <!-- Botón -->
+    <a href="https://wa.me/5350000000?text=Hola%20Trazio%20Studio,%20quiero%20cotizar%20mi%20web" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-14 h-14 bg-[#25D366] text-white rounded-full shadow-[0_4px_14px_rgba(37,211,102,0.4)] hover:scale-110 hover:shadow-[0_6px_20px_rgba(37,211,102,0.6)] transition-all duration-300">
+        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2C7.314 2 3.407 5.864 3.407 10.546c0 1.408.349 2.8.956 4.028L2 22l7.666-2.52c1.176.666 2.51.999 3.374.999h.001c4.726 0 8.633-3.863 8.633-8.545C20.674 5.864 16.766 2 12.04 2zM17.152 15.632c-.234-.116-.967-.474-1.117-.528-.15-.054-.26-.054-.37.054-.11.108-.424.528-.548.665-.124.136-.248.15-.457.054-.93-.418-1.54-1.01-2.175-1.928-.636-.92-1.066-1.85-1.423-2.457-.357-.607-.037-.936.27-.99.27-.054.597-.13.864-.424.267-.294.357-.59.5-.784.144-.196.073-.37-.036-.59-.11-.22-.968-2.324-1.325-3.18-.357-.855-.72-.74-1.002-.756-.279-.016-.598-.016-.917-.016-.319 0-.83.108-1.26.54-.43.432-1.64 1.586-1.64 3.868 0 2.28 1.678 4.475 1.916 4.788.238.313 3.303 5.034 8.04 7.025 1.18.497 2.11.79 2.846.99.736.199 1.407.153 1.93-.066.523-.22 1.637-.675 1.87-.99.234-.314.234-.582.162-.702-.072-.119-.267-.183-.557-.32z"/></svg>
+    </a>
+</div>
+
+<!-- Footer -->
+<footer id="footer" class="bg-[#111118] border-t border-custom/10 py-12 px-6 relative z-10 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        <!-- Column 1: Logo & Tagline -->
+        <div class="lg:col-span-3 flex flex-col items-center lg:items-start space-y-4 text-center lg:text-left">
+            <a href="index.html" class="flex items-center space-x-2 group">
+                <img src="assets/isotype-gold.svg" class="w-8 h-8 rounded-lg shadow-md group-hover:scale-105 transition-transform duration-300" alt="Trazio Isotype">
+                <img src="assets/logo-gold.svg" class="logo-gold h-7 w-auto transition-all duration-300" alt="Trazio Studio Logo">
+                <img src="assets/logo-dark.svg" class="logo-dark h-7 w-auto transition-all duration-300" alt="Trazio Studio Logo">
+            </a>
+            <p class="text-custom-muted leading-relaxed text-sm max-w-xs" data-i18n="footer-tagline">Trazamos herramientas web de alta velocidad para optimizar tus ventas.</p>
+        </div>
+        <!-- Column 2: Quick Links -->
+        <div class="lg:col-span-2 flex flex-col items-center lg:items-start text-center lg:text-left">
+            <h3 class="text-xs font-semibold uppercase tracking-widest text-custom-main mb-4" data-i18n="footer-quick-links">Enlaces Rápidos</h3>
+            <ul class="space-y-2.5 text-sm">
+                <li><a href="portafolio-creativo.html" class="text-custom-muted hover:text-custom-accent transition-colors duration-300 nav-link-premium" data-i18n="nav-portfolio">Portafolios</a></li>
+                <li><a href="catalogo-pedidos.html" class="text-custom-muted hover:text-custom-accent transition-colors duration-300 nav-link-premium" data-i18n="nav-catalogs">Catálogos</a></li>
+                <li><a href="identidad-corporativa.html" class="text-custom-muted hover:text-custom-accent transition-colors duration-300 nav-link-premium" data-i18n="nav-corporate">Empresas</a></li>
+            </ul>
+        </div>
+        <!-- Column 3: Contact & Socials -->
+        <div class="lg:col-span-2 flex flex-col items-center lg:items-start text-center lg:text-left">
+            <h3 class="text-xs font-semibold uppercase tracking-widest text-custom-main mb-4" data-i18n="footer-contact">Contacto</h3>
+            <ul class="space-y-3.5 text-sm w-full">
+                <li>
+                    <a href="https://wa.me/5350000000?text=Hola%20Trazio%20Studio,%20quiero%20iniciar%20un%20proyecto" target="_blank" rel="noopener noreferrer" class="text-custom-muted hover:text-custom-accent flex items-center justify-center lg:justify-start group gap-2.5">
+                        <span class="p-1.5 rounded-lg bg-custom-card border border-custom/10 text-custom-accent group-hover:border-custom-accent/30 transition-colors">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2C7.314 2 3.407 5.864 3.407 10.546c0 1.408.349 2.8.956 4.028L2 22l7.666-2.52c1.176.666 2.51.999 3.374.999h.001c4.726 0 8.633-3.863 8.633-8.545C20.674 5.864 16.766 2 12.04 2zM17.152 15.632c-.234-.116-.967-.474-1.117-.528-.15-.054-.26-.054-.37.054-.11.108-.424.528-.548.665-.124.136-.248.15-.457.054-.93-.418-1.54-1.01-2.175-1.928-.636-.92-1.066-1.85-1.423-2.457-.357-.607-.037-.936.27-.99.27-.054.597-.13.864-.424.267-.294.357-.59.5-.784.144-.196.073-.37-.036-.59-.11-.22-.968-2.324-1.325-3.18-.357-.855-.72-.74-1.002-.756-.279-.016-.598-.016-.917-.016-.319 0-.83.108-1.26.54-.43.432-1.64 1.586-1.64 3.868 0 2.28 1.678 4.475 1.916 4.788.238.313 3.303 5.034 8.04 7.025 1.18.497 2.11.79 2.846.99.736.199 1.407.153 1.93-.066.523-.22 1.637-.675 1.87-.99.234-.314.234-.582.162-.702-.072-.119-.267-.183-.557-.32z"/></svg>
+                        </span>
+                        WhatsApp
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:contacto@traziostudio.com" class="text-custom-muted hover:text-custom-accent flex items-center justify-center lg:justify-start group gap-2.5">
+                        <span class="p-1.5 rounded-lg bg-custom-card border border-custom/10 text-custom-accent group-hover:border-custom-accent/30 transition-colors">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        </span>
+                        Email
+                    </a>
+                </li>
+                <li>
+                    <a href="https://facebook.com/traziostudio" target="_blank" rel="noopener noreferrer" class="text-custom-muted hover:text-custom-accent flex items-center justify-center lg:justify-start group gap-2.5">
+                        <span class="p-1.5 rounded-lg bg-custom-card border border-custom/10 text-custom-accent group-hover:border-custom-accent/30 transition-colors">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </span>
+                        Facebook
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- Column 4: Unified B2B CTA Card -->
+        <div class="lg:col-span-5 w-full bg-custom-card/50 border border-custom-accent/20 p-6 rounded-lg text-left space-y-4">
+            <h3 class="text-sm font-bold text-custom-main uppercase" data-i18n="footer-aida-text">¿Listo para hacer crecer tu negocio?</h3>
+            <p class="text-xs text-custom-muted" data-i18n="footer-aida-desc">Escríbenos y cuéntanos tu idea o mándanos tu lista de precios por WhatsApp. Te preparamos una demostración interactiva totalmente gratis y adaptada a tu sector en menos de 24 horas.</p>
+            <a href="https://wa.me/5350000000?text=Hola%20Trazio%20Studio,%20quiero%20solicitar%20una%20demostración%20gratuita%20para%20mi%20negocio." target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center px-6 py-3.5 bg-custom-accent hover:bg-custom-accent-hover text-black font-bold uppercase text-[11px] tracking-wider transition-all duration-300">
+                SOLICITAR DEMOSTRACIÓN GRATIS
+            </a>
+            <p class="text-[10px] sm:text-xs text-custom-muted" data-i18n="footer-microcopy"><span class="text-custom-accent">✔</span> Sin costo técnico, compromisos ni contratos de mantenimiento.</p>
+        </div>
+    </div>
+    <!-- Bottom Copyright Bar -->
+    <div class="max-w-7xl mx-auto border-t border-custom/10 mt-10 pt-6 flex flex-col items-center text-center text-[11px] text-custom-muted/80 space-y-2">
+        <p>&copy; <span id="current-year"></span> Trazio Studio. <span data-i18n="all-rights-reserved">All rights reserved.</span></p>
+        <p class="font-medium">Designed with precision by Trazio Studio</p>
+    </div>
+    <script src="./app.js"></script>
+</footer>

@@ -513,4 +513,35 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // --- COMENTARIO: Selector de Rubros (Identidad Corporativa) ---
+    const industrySelector = document.getElementById('industry-selector');
+    if (industrySelector) {
+        const buttons = industrySelector.querySelectorAll('button');
+        const panels = document.querySelectorAll('.demo-panel');
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // 1. Resetear todos los botones a inactivos
+                buttons.forEach(b => {
+                    b.classList.remove('bg-custom-accent', 'text-black');
+                    b.classList.add('bg-custom-card', 'border', 'border-custom/20', 'text-custom-muted');
+                });
+                // 2. Activar el botón clickeado
+                btn.classList.remove('bg-custom-card', 'border', 'border-custom/20', 'text-custom-muted');
+                btn.classList.add('bg-custom-accent', 'text-black');
+                // 3. Ocultar todos los paneles
+                panels.forEach(p => {
+                    p.classList.remove('block');
+                    p.classList.add('hidden');
+                });
+                // 4. Mostrar el panel objetivo
+                const targetId = btn.getAttribute('data-target');
+                const targetPanel = document.getElementById(targetId);
+                if (targetPanel) {
+                    targetPanel.classList.remove('hidden');
+                    targetPanel.classList.add('block');
+                }
+            });
+        });
+    }
+
 }); // Cierre seguro del DOMContentLoaded global
