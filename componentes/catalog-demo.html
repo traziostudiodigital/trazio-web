@@ -1,206 +1,540 @@
-<section id="demos" class="max-w-6xl mx-auto px-6 mb-24 bg-custom-main animate-fade-in-up">
-    <h2 class="text-center font-outfit tracking-tight text-custom-main text-3xl font-bold mb-4">
-        Explora nuestras Demos
+<section id="demos" class="max-w-6xl mx-auto px-6 mb-24">
+
+  <header class="text-center max-w-2xl mx-auto mb-10">
+    <span class="inline-flex items-center gap-2 text-custom-accent text-xs font-semibold tracking-[0.2em] uppercase mb-3">
+      <span class="w-6 h-px bg-custom-accent/50"></span>
+      Pruébalo Tú Mismo
+      <span class="w-6 h-px bg-custom-accent/50"></span>
+    </span>
+    <h2 class="font-outfit tracking-tight text-custom-main text-3xl md:text-4xl font-bold mb-4">
+      Explora nuestras Demos
     </h2>
-    <p class="text-center font-inter text-custom-muted text-sm max-w-2xl mx-auto mb-10">
-        Prueba cómo compraría tu cliente: elige un rubro de ejemplo, añade productos al carrito y mira cómo se arma el pedido automático listo para WhatsApp.
+    <p class="font-inter text-custom-muted text-sm md:text-base leading-relaxed">
+      Prueba cómo compraría tu cliente: elige un rubro de ejemplo, añade productos al carrito y mira cómo se arma el pedido automático listo para WhatsApp.
     </p>
+  </header>
 
-    <!-- Selector de Industrias -->
-    <div id="catalog-industry-selector" class="flex flex-wrap justify-center gap-3 mb-12">
-        <button data-target="demo-restaurante" class="rounded-lg bg-custom-accent text-black px-5 py-2.5 font-bold transition-all duration-300 ease-in-out hover:scale-105">
-            Restaurantes & Cafeterías
-        </button>
-        <button data-target="demo-tienda" class="rounded-lg bg-custom-card border border-custom text-custom-muted hover:border-custom-accent px-5 py-2.5 font-bold transition-all duration-300 ease-in-out">
-            Tiendas & Boutiques
-        </button>
-        <button data-target="demo-servicios" class="rounded-lg bg-custom-card border border-custom text-custom-muted hover:border-custom-accent px-5 py-2.5 font-bold transition-all duration-300 ease-in-out">
-            Servicios & Barberías
-        </button>
-    </div>
+  <!-- Selector de Industrias -->
+  <div id="catalog-industry-selector" role="tablist" aria-label="Selector de rubro" class="flex flex-wrap justify-center gap-3 mb-10">
+    <button type="button" id="tab-btn-restaurante" data-target="demo-restaurante" role="tab" aria-selected="true" aria-controls="demo-restaurante" class="rounded-lg bg-custom-accent text-black px-5 py-2.5 font-bold transition-all duration-300 ease-in-out hover:scale-105 inline-flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-main">
+      <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v6.75a2.25 2.25 0 01-2.25 2.25v0a2.25 2.25 0 01-2.25-2.25V3M6 3v18m9.75-18c-1.243 0-2.25 2.015-2.25 4.5s1.007 4.5 2.25 4.5 2.25-2.015 2.25-4.5-1.007-4.5-2.25-4.5zm0 9V21"/></svg>
+      Restaurantes & Cafeterías
+    </button>
+    <button type="button" id="tab-btn-tienda" data-target="demo-tienda" role="tab" aria-selected="false" aria-controls="demo-tienda" class="rounded-lg bg-custom-card border border-custom text-custom-muted hover:border-custom-accent hover:text-custom-accent px-5 py-2.5 font-bold transition-all duration-300 ease-in-out inline-flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-main">
+      <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007z"/></svg>
+      Tiendas & Boutiques
+    </button>
+    <button type="button" id="tab-btn-servicios" data-target="demo-servicios" role="tab" aria-selected="false" aria-controls="demo-servicios" class="rounded-lg bg-custom-card border border-custom text-custom-muted hover:border-custom-accent hover:text-custom-accent px-5 py-2.5 font-bold transition-all duration-300 ease-in-out inline-flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-main">
+      <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6.5" cy="6" r="2.25"/><circle cx="6.5" cy="18" r="2.25"/><path stroke-linecap="round" stroke-linejoin="round" d="M8.2 7.5L20 19M8.2 16.5L20 5"/></svg>
+      Servicios & Barberías
+    </button>
+  </div>
 
-    <!-- Contenedor Principal de Visualización -->
-    <div id="catalog-demo-wrapper" class="bg-custom-card border border-custom rounded-lg p-6 md:p-10 mb-8 relative overflow-hidden bg-pattern-diagonal animate-fade-in-up">
-        
-        <!-- 1. PANEL RESTAURANTE -->
-        <div id="demo-restaurante" class="demo-panel block animate-fade-in-up">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                <div>
-                    <h3 class="font-outfit text-2xl font-bold text-custom-main mb-4">Menú Digital Interactivo</h3>
-                    <p class="font-inter text-sm text-custom-muted leading-relaxed mb-4">
-                        Tus comensales escanean el código QR en la mesa, seleccionan sus platillos favoritos con agregados y envían el pedido estructurado directo a tu cocina por WhatsApp. Sin esperas, sin errores de comandas y optimizando la rotación de mesas al máximo.
-                    </p>
-                </div>
-                <!-- Smartphone Mockup -->
-                <div class="relative max-w-[250px] mx-auto w-full aspect-[9/18] bg-neutral-950 border-[10px] border-neutral-800 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.7)] rounded-[34px] overflow-hidden flex flex-col transition-transform duration-300 ease-in-out hover:scale-[1.03]">
-                    <!-- Status Bar -->
-                    <div class="flex justify-between items-center px-4 pt-1.5 pb-1 text-[9px] text-gray-500 font-mono">
-                        <span>9:41</span>
-                        <div class="w-12 h-3.5 bg-black rounded-full absolute left-1/2 -translate-x-1/2 top-1"></div>
-                        <div class="flex items-center gap-1">📶 🔋</div>
-                    </div>
-                    <!-- App Body -->
-                    <div class="flex-grow bg-custom-main pt-4 px-3 flex flex-col justify-between">
-                        <div>
-                            <div class="border-b border-custom/10 pb-2 mb-3 flex justify-between items-center">
-                                <span class="text-[11px] font-bold text-custom-main">Bella Italia 🍕</span>
-                                <span class="text-[10px] bg-custom-accent/10 text-custom-accent px-1.5 py-0.5 rounded font-bold">🛒 2 prod</span>
-                            </div>
-                            <div class="space-y-2">
-                                <div class="bg-custom-card p-2 rounded border border-custom/5 flex justify-between items-center text-[10px]">
-                                    <div><p class="font-medium">Pizza Margarita</p><p class="text-[8px] text-custom-muted">Salsa, queso, albahaca</p></div>
-                                    <div class="flex items-center gap-2"><span class="font-bold text-custom-accent">$8.00</span><button class="w-4 h-4 bg-custom-accent text-black rounded flex items-center justify-center font-bold">+</button></div>
-                                </div>
-                                <div class="bg-custom-card p-2 rounded border border-custom/5 flex justify-between items-center text-[10px]">
-                                    <div><p class="font-medium">Focaccia de Ajo</p><p class="text-[8px] text-custom-muted">Aceite de oliva, romero</p></div>
-                                    <div class="flex items-center gap-2"><span class="font-bold text-custom-accent">$4.00</span><button class="w-4 h-4 bg-custom-accent text-black rounded flex items-center justify-center font-bold">+</button></div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- WhatsApp Action Button -->
-                        <div class="mb-3 p-2.5 bg-emerald-600 text-white text-center text-[10px] font-bold rounded-md cursor-pointer hover:bg-emerald-500 transition-colors duration-300 flex items-center justify-center gap-1 shadow-lg shadow-emerald-900/40">
-                            <span>Enviar pedido ($12.00)</span> ➔
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <!-- Contenedor Principal de Visualización -->
+  <div id="catalog-demo-wrapper" class="bg-custom-card border-double-gold bg-pattern-diagonal rounded-lg p-6 md:p-10 mb-8 relative overflow-hidden">
+
+    <!-- 1. PANEL RESTAURANTE -->
+    <div id="demo-restaurante" class="demo-panel block animate-fade-in-up" role="tabpanel" aria-labelledby="tab-btn-restaurante" tabindex="0">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <span class="inline-flex items-center gap-2 text-custom-accent text-xs font-semibold tracking-wider uppercase mb-4">
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-6.75 18h9.75"/></svg>
+            Así se ve en el móvil de tu cliente
+          </span>
+          <h3 class="font-outfit text-2xl font-bold text-custom-main mb-4">Menú Digital Interactivo</h3>
+          <p class="font-inter text-sm text-custom-muted leading-relaxed mb-6">
+            Tus comensales escanean el código QR en la mesa, seleccionan sus platillos favoritos con agregados y envían el pedido estructurado directo a tu cocina por WhatsApp. Sin esperas, sin errores de comandas y optimizando la rotación de mesas al máximo.
+          </p>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-custom-accent shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              <span class="text-sm text-custom-muted">Cero errores de comanda: el pedido llega ya escrito</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-custom-accent shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              <span class="text-sm text-custom-muted">Rotación de mesas más rápida en horas pico</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-custom-accent shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              <span class="text-sm text-custom-muted">Pedido directo a cocina, sin llamar al mesero</span>
+            </li>
+          </ul>
         </div>
 
-        <!-- 2. PANEL TIENDA -->
-        <div id="demo-tienda" class="demo-panel hidden animate-fade-in-up">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                <div>
-                    <h3 class="font-outfit text-2xl font-bold text-custom-main mb-4">Catálogo de Productos Automático</h3>
-                    <p class="font-inter text-sm text-custom-muted leading-relaxed mb-4">
-                        Exhibe prendas, calzado o accesorios con variantes de colores y tallas. Tus clientes exploran tu stock desde el móvil, seleccionan sus especificaciones y el carrito genera una orden de compra impecable para despachar de inmediato.
-                    </p>
-                </div>
-                <!-- Smartphone Mockup -->
-                <div class="relative max-w-[250px] mx-auto w-full aspect-[9/18] bg-neutral-950 border-[10px] border-neutral-800 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.7)] rounded-[34px] overflow-hidden flex flex-col transition-transform duration-300 ease-in-out hover:scale-[1.03]">
-                    <div class="flex-between px-4 pt-1.5 pb-1 text-[9px] text-gray-500 font-mono flex justify-between items-center">
-                        <span>9:41</span>
-                        <div class="w-12 h-3.5 bg-black rounded-full absolute left-1/2 -translate-x-1/2 top-1"></div>
-                        <div class="flex items-center gap-1">📶 🔋</div>
-                    </div>
-                    <div class="flex-grow bg-custom-main pt-4 px-3 flex flex-col justify-between">
-                        <div>
-                            <div class="border-b border-custom/10 pb-2 mb-3 flex justify-between items-center">
-                                <span class="text-[11px] font-bold text-custom-main">Vogue Habana 👗</span>
-                                <span class="text-[10px] bg-custom-accent/10 text-custom-accent px-1.5 py-0.5 rounded font-bold">🛒 1 prod</span>
-                            </div>
-                            <div class="space-y-2">
-                                <div class="bg-custom-card p-2 rounded border border-custom/5 flex justify-between items-center text-[10px]">
-                                    <div><p class="font-medium">Pulover Oversized</p><p class="text-[8px] text-custom-muted">Talla L / Negro Cotton</p></div>
-                                    <div class="flex items-center gap-2"><span class="font-bold text-custom-accent">$25.00</span><button class="w-4 h-4 bg-custom-accent text-black rounded flex items-center justify-center font-bold">+</button></div>
-                                </div>
-                                <div class="bg-custom-card p-2 rounded border border-custom/5 flex justify-between items-center text-[10px] opacity-60">
-                                    <div><p class="font-medium">Lentes de Sol Retro</p><p class="text-[8px] text-custom-muted">Protección UV400</p></div>
-                                    <div class="flex items-center gap-2"><span class="font-bold text-custom-accent">$15.00</span><button class="w-4 h-4 bg-custom-accent text-black rounded flex items-center justify-center font-bold">+</button></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-3 p-2.5 bg-emerald-600 text-white text-center text-[10px] font-bold rounded-md cursor-pointer hover:bg-emerald-500 transition-colors duration-300 flex items-center justify-center gap-1 shadow-lg shadow-emerald-900/40">
-                            <span>Enviar pedido ($25.00)</span> ➔
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 3. PANEL SERVICIOS -->
-        <div id="demo-servicios" class="demo-panel hidden animate-fade-in-up">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                <div>
-                    <h3 class="font-outfit text-2xl font-bold text-custom-main mb-4">Portal de Reservas & Servicios</h3>
-                    <p class="font-inter text-sm text-custom-muted leading-relaxed mb-4">
-                        Ideal para barberías, salones de estética o consultorios. Muestra tus servicios con tarifas claras y permite que tus clientes agenden su cita seleccionando fecha y hora, enviando la confirmación de la reserva automatizada a tu chat.
-                    </p>
-                </div>
-                <!-- Smartphone Mockup -->
-                <div class="relative max-w-[250px] mx-auto w-full aspect-[9/18] bg-neutral-950 border-[10px] border-neutral-800 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.7)] rounded-[34px] overflow-hidden flex flex-col transition-transform duration-300 ease-in-out hover:scale-[1.03]">
-                    <div class="flex-between px-4 pt-1.5 pb-1 text-[9px] text-gray-500 font-mono flex justify-between items-center">
-                        <span>9:41</span>
-                        <div class="w-12 h-3.5 bg-black rounded-full absolute left-1/2 -translate-x-1/2 top-1"></div>
-                        <div class="flex items-center gap-1">📶 🔋</div>
-                    </div>
-                    <div class="flex-grow bg-custom-main pt-4 px-3 flex flex-col justify-between">
-                        <div>
-                            <div class="border-b border-custom/10 pb-2 mb-3 flex justify-between items-center">
-                                <span class="text-[11px] font-bold text-custom-main">Barber Club ✂️</span>
-                                <span class="text-[10px] bg-custom-accent/10 text-custom-accent px-1.5 py-0.5 rounded font-bold">📅 Turno</span>
-                            </div>
-                            <div class="space-y-2">
-                                <div class="bg-custom-card p-2 rounded border border-custom/5 flex justify-between items-center text-[10px]">
-                                    <div><p class="font-medium">Corte + Barba Premium</p><p class="text-[8px] text-custom-accent">Sábado - 4:00 PM</p></div>
-                                    <div class="flex items-center gap-2"><span class="font-bold text-custom-accent">$12.00</span><button class="w-4 h-4 bg-custom-accent text-black rounded flex items-center justify-center font-bold">✓</button></div>
-                                </div>
-                                <div class="bg-custom-card p-2 rounded border border-custom/5 flex justify-between items-center text-[10px] opacity-60">
-                                    <div><p class="font-medium">Tratamiento Facial</p><p class="text-[8px] text-custom-muted">Exfoliación e hidratación</p></div>
-                                    <div class="flex items-center gap-2"><span class="font-bold text-custom-accent">$8.00</span><button class="w-4 h-4 border border-custom text-custom-muted rounded flex items-center justify-center font-bold">+</button></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-3 p-2.5 bg-emerald-600 text-white text-center text-[10px] font-bold rounded-md cursor-pointer hover:bg-emerald-500 transition-colors duration-300 flex items-center justify-center gap-1 shadow-lg shadow-emerald-900/40">
-                            <span>Reservar Cita ($12.00)</span> ➔
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-   <!-- Barra de Herramientas Virales (Toolbar) -->
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-6 bg-custom-card border border-custom rounded-lg p-4 max-w-3xl mx-auto shadow-lg mt-8">
-        <!-- Botón 1: Compartir -->
-        <button id="btn-share-catalog" class="flex items-center gap-3 text-custom-main hover:text-custom-accent transition-colors duration-300 ease-in-out group relative">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle>
-                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
-            </svg>
-            <span class="font-bold text-sm">Compartir Catálogo</span>
-            <span class="absolute -top-10 left-1/2 -translate-x-1/2 bg-black border border-custom text-custom-main text-[11px] px-2.5 py-1 rounded shadow-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out whitespace-nowrap pointer-events-none">
-                Ideal para reenviar en grupos de WhatsApp
+        <div class="relative">
+          <div class="absolute inset-0 bg-custom-accent/15 blur-3xl rounded-full pointer-events-none" aria-hidden="true"></div>
+          <div class="flex justify-center mb-4 relative">
+            <span class="inline-flex items-center gap-1.5 text-[10px] font-semibold text-custom-accent bg-custom-accent/10 border border-custom-accent/20 px-2.5 py-1 rounded-full animate-float">
+              <svg class="w-3 h-3 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg>
+              Toca los botones + para simular tu pedido
             </span>
-        </button>
-
-        <!-- Separador -->
-        <div class="hidden sm:block w-px h-6 bg-custom/20"></div>
-
-        <!-- Botón 2: Código QR -->
-        <button id="btn-qr-catalog" class="flex items-center gap-3 text-custom-main hover:text-custom-accent transition-colors duration-300 ease-in-out group relative">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect>
-                <rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect>
-            </svg>
-            <span class="font-bold text-sm">Generar QR de Mesa</span>
-            <span class="absolute -top-10 left-1/2 -translate-x-1/2 bg-black border border-custom text-custom-main text-[11px] px-2.5 py-1 rounded shadow-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out whitespace-nowrap pointer-events-none">
-                Imprime y ponlo en tus mesas físicas
-            </span>
-        </button>
+          </div>
+          <div class="relative max-w-[250px] mx-auto w-full aspect-[9/18] bg-neutral-950 border-[10px] border-neutral-800 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.7)] rounded-[34px] overflow-hidden flex flex-col transition-transform duration-300 ease-in-out hover:scale-[1.03]">
+            <div class="relative flex justify-between items-center px-5 pt-1.5 pb-1 text-[9px] text-neutral-400 font-mono shrink-0">
+              <span>9:41</span>
+              <div class="w-12 h-3.5 bg-black rounded-full absolute left-1/2 -translate-x-1/2 top-1" aria-hidden="true"></div>
+              <div class="flex items-center gap-1.5">
+                <svg class="w-3.5 h-3" viewBox="0 0 20 12" fill="currentColor" aria-hidden="true"><rect x="0" y="7" width="3" height="5" rx="0.5"/><rect x="5" y="5" width="3" height="7" rx="0.5"/><rect x="10" y="3" width="3" height="9" rx="0.5"/><rect x="15" y="0" width="3" height="12" rx="0.5"/></svg>
+                <svg class="w-5 h-3" viewBox="0 0 26 12" fill="none" aria-hidden="true"><rect x="0.5" y="0.5" width="21" height="11" rx="2.5" stroke="currentColor"/><rect x="2" y="2" width="18" height="8" rx="1.2" fill="currentColor"/><rect x="22.5" y="4" width="2" height="4" rx="1" fill="currentColor"/></svg>
+              </div>
+            </div>
+            <div class="flex-grow bg-custom-main pt-4 px-3 flex flex-col justify-between overflow-hidden">
+              <div>
+                <div class="border-b border-custom pb-2.5 mb-3 flex justify-between items-center">
+                  <div class="flex items-center gap-1.5">
+                    <div class="w-4 h-4 rounded bg-custom-accent/15 flex items-center justify-center text-custom-accent shrink-0">
+                      <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v6.75a2.25 2.25 0 01-2.25 2.25v0a2.25 2.25 0 01-2.25-2.25V3M6 3v18m9.75-18c-1.243 0-2.25 2.015-2.25 4.5s1.007 4.5 2.25 4.5 2.25-2.015 2.25-4.5-1.007-4.5-2.25-4.5zm0 9V21"/></svg>
+                    </div>
+                    <span class="text-[11px] font-bold text-custom-main">Bella Italia</span>
+                  </div>
+                  <span class="inline-flex items-center gap-1 text-[10px] bg-custom-accent/10 text-custom-accent px-1.5 py-0.5 rounded font-bold">
+                    <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.836l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"/></svg>
+                    <span class="cart-badge-count" aria-live="polite">2</span> prod
+                  </span>
+                </div>
+                <div class="space-y-2">
+                  <div class="cart-item bg-custom-card p-2.5 rounded-md border border-custom flex justify-between items-center text-[10px] transition-opacity duration-300 ease-in-out" data-price="8.00" data-name="Pizza Margarita" data-added="true">
+                    <div><p class="font-medium text-custom-main">Pizza Margarita</p><p class="text-[8px] text-custom-muted">Salsa, queso, albahaca</p></div>
+                    <div class="flex items-center gap-2 shrink-0">
+                      <span class="font-bold text-custom-accent">$8.00</span>
+                      <button type="button" class="cart-toggle-btn w-5 h-5 bg-custom-accent text-black rounded flex items-center justify-center transition-all duration-300 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent" aria-label="Quitar del pedido" aria-pressed="true">
+                        <svg class="icon-check w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                        <svg class="icon-plus w-3 h-3 hidden" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="cart-item bg-custom-card p-2.5 rounded-md border border-custom flex justify-between items-center text-[10px] transition-opacity duration-300 ease-in-out" data-price="4.00" data-name="Focaccia de Ajo" data-added="true">
+                    <div><p class="font-medium text-custom-main">Focaccia de Ajo</p><p class="text-[8px] text-custom-muted">Aceite de oliva, romero</p></div>
+                    <div class="flex items-center gap-2 shrink-0">
+                      <span class="font-bold text-custom-accent">$4.00</span>
+                      <button type="button" class="cart-toggle-btn w-5 h-5 bg-custom-accent text-black rounded flex items-center justify-center transition-all duration-300 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent" aria-label="Quitar del pedido" aria-pressed="true">
+                        <svg class="icon-check w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                        <svg class="icon-plus w-3 h-3 hidden" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="h-1 w-20 bg-custom-muted/25 rounded-full mx-auto mb-2" aria-hidden="true"></div>
+                <!-- Ajusta TU_NUMERO_WHATSAPP -->
+                <a href="#" target="_blank" rel="noopener" data-wa-base="https://wa.me/TU_NUMERO_WHATSAPP" data-wa-prefix="Hola, quiero hacer este pedido:" class="wa-order-btn mb-3 p-2.5 bg-emerald-600 text-white text-center text-[10px] font-bold rounded-md hover:bg-emerald-500 transition-all duration-300 ease-in-out flex items-center justify-center gap-1.5 shadow-lg shadow-emerald-900/40">
+                  <svg class="w-3 h-3 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.001 2C6.478 2 2 6.478 2 12c0 1.821.487 3.53 1.338 5.001L2.05 21.95l5.096-1.267A9.953 9.953 0 0012 22c5.523 0 10-4.478 10-10S17.524 2 12.001 2zm0 18.14a8.115 8.115 0 01-4.135-1.13l-.297-.176-3.077.766.813-2.995-.194-.308A8.126 8.126 0 013.86 12c0-4.494 3.647-8.14 8.14-8.14 4.494 0 8.14 3.646 8.14 8.14 0 4.493-3.646 8.14-8.14 8.14z"/></svg>
+                  <span>Enviar pedido (<span class="cart-total-value" aria-live="polite">$12.00</span>)</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!-- 2. PANEL TIENDA -->
+    <div id="demo-tienda" class="demo-panel hidden animate-fade-in-up" role="tabpanel" aria-labelledby="tab-btn-tienda" tabindex="0">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <span class="inline-flex items-center gap-2 text-custom-accent text-xs font-semibold tracking-wider uppercase mb-4">
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-6.75 18h9.75"/></svg>
+            Así se ve en el móvil de tu cliente
+          </span>
+          <h3 class="font-outfit text-2xl font-bold text-custom-main mb-4">Catálogo de Productos Automático</h3>
+          <p class="font-inter text-sm text-custom-muted leading-relaxed mb-6">
+            Exhibe prendas, calzado o accesorios con variantes de colores y tallas. Tus clientes exploran tu stock desde el móvil, seleccionan sus especificaciones y el carrito genera una orden de compra impecable para despachar de inmediato.
+          </p>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-custom-accent shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              <span class="text-sm text-custom-muted">Variantes de talla y color sin generar confusión</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-custom-accent shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              <span class="text-sm text-custom-muted">Catálogo siempre actualizado, sin publicar 20 veces</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-custom-accent shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              <span class="text-sm text-custom-muted">El cliente ve el precio real antes de escribirte</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="relative">
+          <div class="absolute inset-0 bg-custom-accent/15 blur-3xl rounded-full pointer-events-none" aria-hidden="true"></div>
+          <div class="flex justify-center mb-4 relative">
+            <span class="inline-flex items-center gap-1.5 text-[10px] font-semibold text-custom-accent bg-custom-accent/10 border border-custom-accent/20 px-2.5 py-1 rounded-full animate-float">
+              <svg class="w-3 h-3 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg>
+              Toca los botones + para simular tu pedido
+            </span>
+          </div>
+          <div class="relative max-w-[250px] mx-auto w-full aspect-[9/18] bg-neutral-950 border-[10px] border-neutral-800 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.7)] rounded-[34px] overflow-hidden flex flex-col transition-transform duration-300 ease-in-out hover:scale-[1.03]">
+            <div class="relative flex justify-between items-center px-5 pt-1.5 pb-1 text-[9px] text-neutral-400 font-mono shrink-0">
+              <span>9:41</span>
+              <div class="w-12 h-3.5 bg-black rounded-full absolute left-1/2 -translate-x-1/2 top-1" aria-hidden="true"></div>
+              <div class="flex items-center gap-1.5">
+                <svg class="w-3.5 h-3" viewBox="0 0 20 12" fill="currentColor" aria-hidden="true"><rect x="0" y="7" width="3" height="5" rx="0.5"/><rect x="5" y="5" width="3" height="7" rx="0.5"/><rect x="10" y="3" width="3" height="9" rx="0.5"/><rect x="15" y="0" width="3" height="12" rx="0.5"/></svg>
+                <svg class="w-5 h-3" viewBox="0 0 26 12" fill="none" aria-hidden="true"><rect x="0.5" y="0.5" width="21" height="11" rx="2.5" stroke="currentColor"/><rect x="2" y="2" width="18" height="8" rx="1.2" fill="currentColor"/><rect x="22.5" y="4" width="2" height="4" rx="1" fill="currentColor"/></svg>
+              </div>
+            </div>
+            <div class="flex-grow bg-custom-main pt-4 px-3 flex flex-col justify-between overflow-hidden">
+              <div>
+                <div class="border-b border-custom pb-2.5 mb-3 flex justify-between items-center">
+                  <div class="flex items-center gap-1.5">
+                    <div class="w-4 h-4 rounded bg-custom-accent/15 flex items-center justify-center text-custom-accent shrink-0">
+                      <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007z"/></svg>
+                    </div>
+                    <span class="text-[11px] font-bold text-custom-main">Vogue Habana</span>
+                  </div>
+                  <span class="inline-flex items-center gap-1 text-[10px] bg-custom-accent/10 text-custom-accent px-1.5 py-0.5 rounded font-bold">
+                    <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.836l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"/></svg>
+                    <span class="cart-badge-count" aria-live="polite">1</span> prod
+                  </span>
+                </div>
+                <div class="space-y-2">
+                  <div class="cart-item bg-custom-card p-2.5 rounded-md border border-custom flex justify-between items-center text-[10px] transition-opacity duration-300 ease-in-out" data-price="25.00" data-name="Pulover Oversized" data-added="true">
+                    <div><p class="font-medium text-custom-main">Pulover Oversized</p><p class="text-[8px] text-custom-muted">Talla L / Negro Cotton</p></div>
+                    <div class="flex items-center gap-2 shrink-0">
+                      <span class="font-bold text-custom-accent">$25.00</span>
+                      <button type="button" class="cart-toggle-btn w-5 h-5 bg-custom-accent text-black rounded flex items-center justify-center transition-all duration-300 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent" aria-label="Quitar del pedido" aria-pressed="true">
+                        <svg class="icon-check w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                        <svg class="icon-plus w-3 h-3 hidden" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="cart-item bg-custom-card p-2.5 rounded-md border border-custom flex justify-between items-center text-[10px] opacity-60 transition-opacity duration-300 ease-in-out" data-price="15.00" data-name="Lentes de Sol Retro" data-added="false">
+                    <div><p class="font-medium text-custom-main">Lentes de Sol Retro</p><p class="text-[8px] text-custom-muted">Protección UV400</p></div>
+                    <div class="flex items-center gap-2 shrink-0">
+                      <span class="font-bold text-custom-accent">$15.00</span>
+                      <button type="button" class="cart-toggle-btn w-5 h-5 border border-custom text-custom-muted rounded flex items-center justify-center transition-all duration-300 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent" aria-label="Agregar al pedido" aria-pressed="false">
+                        <svg class="icon-check w-3 h-3 hidden" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                        <svg class="icon-plus w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="h-1 w-20 bg-custom-muted/25 rounded-full mx-auto mb-2" aria-hidden="true"></div>
+                <a href="#" target="_blank" rel="noopener" data-wa-base="https://wa.me/TU_NUMERO_WHATSAPP" data-wa-prefix="Hola, quiero comprar estos productos:" class="wa-order-btn mb-3 p-2.5 bg-emerald-600 text-white text-center text-[10px] font-bold rounded-md hover:bg-emerald-500 transition-all duration-300 ease-in-out flex items-center justify-center gap-1.5 shadow-lg shadow-emerald-900/40">
+                  <svg class="w-3 h-3 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.001 2C6.478 2 2 6.478 2 12c0 1.821.487 3.53 1.338 5.001L2.05 21.95l5.096-1.267A9.953 9.953 0 0012 22c5.523 0 10-4.478 10-10S17.524 2 12.001 2zm0 18.14a8.115 8.115 0 01-4.135-1.13l-.297-.176-3.077.766.813-2.995-.194-.308A8.126 8.126 0 013.86 12c0-4.494 3.647-8.14 8.14-8.14 4.494 0 8.14 3.646 8.14 8.14 0 4.493-3.646 8.14-8.14 8.14z"/></svg>
+                  <span>Enviar pedido (<span class="cart-total-value" aria-live="polite">$25.00</span>)</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. PANEL SERVICIOS -->
+    <div id="demo-servicios" class="demo-panel hidden animate-fade-in-up" role="tabpanel" aria-labelledby="tab-btn-servicios" tabindex="0">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <span class="inline-flex items-center gap-2 text-custom-accent text-xs font-semibold tracking-wider uppercase mb-4">
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-6.75 18h9.75"/></svg>
+            Así se ve en el móvil de tu cliente
+          </span>
+          <h3 class="font-outfit text-2xl font-bold text-custom-main mb-4">Portal de Reservas & Servicios</h3>
+          <p class="font-inter text-sm text-custom-muted leading-relaxed mb-6">
+            Ideal para barberías, salones de estética o consultorios. Muestra tus servicios con tarifas claras y permite que tus clientes agenden su cita seleccionando fecha y hora, enviando la confirmación de la reserva automatizada a tu chat.
+          </p>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-custom-accent shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              <span class="text-sm text-custom-muted">Reservas sin llamar ni esperar respuesta</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-custom-accent shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              <span class="text-sm text-custom-muted">Tu agenda se organiza sola, sin choques de horario</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-custom-accent shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              <span class="text-sm text-custom-muted">Confirmación automática que reduce las inasistencias</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="relative">
+          <div class="absolute inset-0 bg-custom-accent/15 blur-3xl rounded-full pointer-events-none" aria-hidden="true"></div>
+          <div class="flex justify-center mb-4 relative">
+            <span class="inline-flex items-center gap-1.5 text-[10px] font-semibold text-custom-accent bg-custom-accent/10 border border-custom-accent/20 px-2.5 py-1 rounded-full animate-float">
+              <svg class="w-3 h-3 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg>
+              Toca los botones para simular tu reserva
+            </span>
+          </div>
+          <div class="relative max-w-[250px] mx-auto w-full aspect-[9/18] bg-neutral-950 border-[10px] border-neutral-800 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.7)] rounded-[34px] overflow-hidden flex flex-col transition-transform duration-300 ease-in-out hover:scale-[1.03]">
+            <div class="relative flex justify-between items-center px-5 pt-1.5 pb-1 text-[9px] text-neutral-400 font-mono shrink-0">
+              <span>9:41</span>
+              <div class="w-12 h-3.5 bg-black rounded-full absolute left-1/2 -translate-x-1/2 top-1" aria-hidden="true"></div>
+              <div class="flex items-center gap-1.5">
+                <svg class="w-3.5 h-3" viewBox="0 0 20 12" fill="currentColor" aria-hidden="true"><rect x="0" y="7" width="3" height="5" rx="0.5"/><rect x="5" y="5" width="3" height="7" rx="0.5"/><rect x="10" y="3" width="3" height="9" rx="0.5"/><rect x="15" y="0" width="3" height="12" rx="0.5"/></svg>
+                <svg class="w-5 h-3" viewBox="0 0 26 12" fill="none" aria-hidden="true"><rect x="0.5" y="0.5" width="21" height="11" rx="2.5" stroke="currentColor"/><rect x="2" y="2" width="18" height="8" rx="1.2" fill="currentColor"/><rect x="22.5" y="4" width="2" height="4" rx="1" fill="currentColor"/></svg>
+              </div>
+            </div>
+            <div class="flex-grow bg-custom-main pt-4 px-3 flex flex-col justify-between overflow-hidden">
+              <div>
+                <div class="border-b border-custom pb-2.5 mb-3 flex justify-between items-center">
+                  <div class="flex items-center gap-1.5">
+                    <div class="w-4 h-4 rounded bg-custom-accent/15 flex items-center justify-center text-custom-accent shrink-0">
+                      <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6.5" cy="6" r="2"/><circle cx="6.5" cy="18" r="2"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 7.3L19 19M8 16.7L19 5"/></svg>
+                    </div>
+                    <span class="text-[11px] font-bold text-custom-main">Barber Club</span>
+                  </div>
+                  <span class="inline-flex items-center gap-1 text-[10px] bg-custom-accent/10 text-custom-accent px-1.5 py-0.5 rounded font-bold">
+                    <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3.75 18.75V7.5a2.25 2.25 0 012.25-2.25h12a2.25 2.25 0 012.25 2.25v11.25m-16.5 0A2.25 2.25 0 006 21h12a2.25 2.25 0 002.25-2.25m-16.5 0V11.25a2.25 2.25 0 012.25-2.25h12a2.25 2.25 0 012.25 2.25v7.5"/></svg>
+                    <span class="cart-badge-count" aria-live="polite">1</span> serv.
+                  </span>
+                </div>
+                <div class="space-y-2">
+                  <div class="cart-item bg-custom-card p-2.5 rounded-md border border-custom flex justify-between items-center text-[10px] transition-opacity duration-300 ease-in-out" data-price="12.00" data-name="Corte + Barba Premium" data-added="true">
+                    <div><p class="font-medium text-custom-main">Corte + Barba Premium</p><p class="text-[8px] text-custom-accent">Sábado - 4:00 PM</p></div>
+                    <div class="flex items-center gap-2 shrink-0">
+                      <span class="font-bold text-custom-accent">$12.00</span>
+                      <button type="button" class="cart-toggle-btn w-5 h-5 bg-custom-accent text-black rounded flex items-center justify-center transition-all duration-300 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent" aria-label="Quitar reserva" aria-pressed="true">
+                        <svg class="icon-check w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                        <svg class="icon-plus w-3 h-3 hidden" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="cart-item bg-custom-card p-2.5 rounded-md border border-custom flex justify-between items-center text-[10px] opacity-60 transition-opacity duration-300 ease-in-out" data-price="8.00" data-name="Tratamiento Facial" data-added="false">
+                    <div><p class="font-medium text-custom-main">Tratamiento Facial</p><p class="text-[8px] text-custom-muted">Exfoliación e hidratación</p></div>
+                    <div class="flex items-center gap-2 shrink-0">
+                      <span class="font-bold text-custom-accent">$8.00</span>
+                      <button type="button" class="cart-toggle-btn w-5 h-5 border border-custom text-custom-muted rounded flex items-center justify-center transition-all duration-300 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent" aria-label="Agregar servicio" aria-pressed="false">
+                        <svg class="icon-check w-3 h-3 hidden" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                        <svg class="icon-plus w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="h-1 w-20 bg-custom-muted/25 rounded-full mx-auto mb-2" aria-hidden="true"></div>
+                <a href="#" target="_blank" rel="noopener" data-wa-base="https://wa.me/TU_NUMERO_WHATSAPP" data-wa-prefix="Hola, quiero reservar este servicio:" class="wa-order-btn mb-3 p-2.5 bg-emerald-600 text-white text-center text-[10px] font-bold rounded-md hover:bg-emerald-500 transition-all duration-300 ease-in-out flex items-center justify-center gap-1.5 shadow-lg shadow-emerald-900/40">
+                  <svg class="w-3 h-3 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.001 2C6.478 2 2 6.478 2 12c0 1.821.487 3.53 1.338 5.001L2.05 21.95l5.096-1.267A9.953 9.953 0 0012 22c5.523 0 10-4.478 10-10S17.524 2 12.001 2zm0 18.14a8.115 8.115 0 01-4.135-1.13l-.297-.176-3.077.766.813-2.995-.194-.308A8.126 8.126 0 013.86 12c0-4.494 3.647-8.14 8.14-8.14 4.494 0 8.14 3.646 8.14 8.14 0 4.493-3.646 8.14-8.14 8.14z"/></svg>
+                  <span>Reservar Cita (<span class="cart-total-value" aria-live="polite">$12.00</span>)</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Barra de Herramientas -->
+  <div class="flex flex-col sm:flex-row items-center justify-center gap-6 bg-custom-card border border-custom rounded-lg p-4 max-w-3xl mx-auto shadow-lg">
+    <button type="button" id="btn-share-catalog" class="flex items-center gap-3 text-custom-main hover:text-custom-accent transition-colors duration-300 ease-in-out group relative focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent rounded">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle>
+        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+      </svg>
+      <span class="font-bold text-sm">Compartir Catálogo</span>
+      <span class="share-tooltip absolute -top-10 left-1/2 -translate-x-1/2 bg-black border border-custom text-custom-main text-[11px] px-2.5 py-1 rounded shadow-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out whitespace-nowrap pointer-events-none">
+        Ideal para reenviar en grupos de WhatsApp
+      </span>
+    </button>
+    <div class="hidden sm:block w-px h-6 bg-custom"></div>
+    <button type="button" id="btn-qr-catalog" class="flex items-center gap-3 text-custom-main hover:text-custom-accent transition-colors duration-300 ease-in-out group relative focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent rounded">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect>
+        <rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect>
+      </svg>
+      <span class="font-bold text-sm">Generar QR de Mesa</span>
+      <span class="absolute -top-10 left-1/2 -translate-x-1/2 bg-black border border-custom text-custom-main text-[11px] px-2.5 py-1 rounded shadow-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out whitespace-nowrap pointer-events-none">
+        Imprime y ponlo en tus mesas físicas
+      </span>
+    </button>
+  </div>
 </section>
 
-<!-- Modal Oculto Código QR (Trazio Fine Double Border Style) -->
-<div id="modal-qr" class="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center hidden z-50 p-4">
-    <div class="bg-custom-card border-double-gold p-8 max-w-xs w-full text-center relative shadow-2xl">
-        <h4 class="font-outfit text-lg font-bold text-custom-main mb-2">Tu QR de Mesa está Listo</h4>
-        <p class="font-inter text-xs text-custom-muted mb-6">Descarga este código para que tus clientes accedan escaneando desde sus teléfonos.</p>
-        
-        <!-- QR Vector Simulado -->
-        <div class="w-40 h-40 mx-auto mb-6 bg-white p-3 rounded-md flex items-center justify-center shadow-inner">
-            <svg class="w-full h-full text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M3 3h4v4H3V3zM17 3h4v4h-4V3zM3 17h4v4H3v-4zM14 14h2v2h-2v-2zM18 18h3v3h-3v-3zM14 18h2v3h-2v-3zM18 14h3v2h-3v-2zM10 10h4v2h-4v-2z" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </div>
-        
-        <!-- Acciones del Modal -->
-        <div class="space-y-2">
-            <button class="w-full bg-custom-accent text-black text-xs font-bold py-2.5 rounded transition-all duration-300 hover:scale-[1.02]">
-                Descargar PNG de Alta Calidad
-            </button>
-            <button id="close-modal-qr" class="w-full bg-transparent text-custom-muted hover:text-custom-main text-xs font-semibold py-2 transition-colors">
-                Cerrar Ventana
-            </button>
-        </div>
+<!-- Modal QR -->
+<div id="modal-qr" class="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center hidden z-50 p-4" role="dialog" aria-modal="true" aria-labelledby="modal-qr-title">
+  <div class="bg-custom-card border-double-gold rounded-lg p-8 max-w-xs w-full text-center relative shadow-2xl">
+    <button type="button" id="close-modal-qr-x" aria-label="Cerrar" class="absolute top-3 right-3 w-8 h-8 rounded-lg bg-custom-main border border-custom flex items-center justify-center text-custom-muted hover:text-custom-accent hover:border-custom-accent transition-all duration-300 ease-in-out">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+    <h4 id="modal-qr-title" class="font-outfit text-lg font-bold text-custom-main mb-2">Tu QR de Mesa está Listo</h4>
+    <p class="font-inter text-xs text-custom-muted mb-6">Descarga este código para que tus clientes accedan escaneando desde sus teléfonos.</p>
+
+    <div class="w-40 h-40 mx-auto mb-6 bg-white p-3 rounded-md shadow-inner">
+      <svg viewBox="0 0 21 21" xmlns:xlink="http://www.w3.org/1999/xlink" class="w-full h-full" shape-rendering="crispEdges">
+        <rect width="21" height="21" fill="white"/>
+        <defs>
+          <g id="qr-finder">
+            <rect width="7" height="7" fill="black"/>
+            <rect x="1" y="1" width="5" height="5" fill="white"/>
+            <rect x="2" y="2" width="3" height="3" fill="black"/>
+          </g>
+        </defs>
+        <use href="#qr-finder" xlink:href="#qr-finder" x="0" y="0"/>
+        <use href="#qr-finder" xlink:href="#qr-finder" x="14" y="0"/>
+        <use href="#qr-finder" xlink:href="#qr-finder" x="0" y="14"/>
+        <rect x="9" y="0" width="1" height="1" fill="black"/><rect x="11" y="0" width="1" height="1" fill="black"/>
+        <rect x="9" y="2" width="1" height="1" fill="black"/><rect x="12" y="2" width="1" height="1" fill="black"/>
+        <rect x="8" y="4" width="1" height="1" fill="black"/><rect x="10" y="4" width="1" height="1" fill="black"/><rect x="13" y="4" width="1" height="1" fill="black"/>
+        <rect x="9" y="6" width="1" height="1" fill="black"/><rect x="11" y="6" width="1" height="1" fill="black"/><rect x="14" y="6" width="1" height="1" fill="black"/>
+        <rect x="8" y="8" width="1" height="1" fill="black"/><rect x="10" y="8" width="1" height="1" fill="black"/><rect x="12" y="8" width="1" height="1" fill="black"/><rect x="15" y="8" width="1" height="1" fill="black"/><rect x="17" y="8" width="1" height="1" fill="black"/>
+        <rect x="9" y="9" width="1" height="1" fill="black"/><rect x="13" y="9" width="1" height="1" fill="black"/><rect x="16" y="9" width="1" height="1" fill="black"/><rect x="19" y="9" width="1" height="1" fill="black"/>
+        <rect x="8" y="10" width="1" height="1" fill="black"/><rect x="11" y="10" width="1" height="1" fill="black"/><rect x="14" y="10" width="1" height="1" fill="black"/><rect x="18" y="10" width="1" height="1" fill="black"/>
+        <rect x="9" y="11" width="1" height="1" fill="black"/><rect x="12" y="11" width="1" height="1" fill="black"/><rect x="17" y="11" width="1" height="1" fill="black"/>
+        <rect x="8" y="12" width="1" height="1" fill="black"/><rect x="10" y="12" width="1" height="1" fill="black"/><rect x="13" y="12" width="1" height="1" fill="black"/><rect x="16" y="12" width="1" height="1" fill="black"/><rect x="19" y="12" width="1" height="1" fill="black"/>
+        <rect x="9" y="16" width="1" height="1" fill="black"/><rect x="11" y="16" width="1" height="1" fill="black"/><rect x="13" y="16" width="1" height="1" fill="black"/>
+        <rect x="10" y="18" width="1" height="1" fill="black"/><rect x="12" y="18" width="1" height="1" fill="black"/><rect x="14" y="18" width="1" height="1" fill="black"/>
+        <rect x="9" y="19" width="1" height="1" fill="black"/><rect x="13" y="19" width="1" height="1" fill="black"/><rect x="16" y="19" width="1" height="1" fill="black"/>
+        <rect x="9" y="20" width="1" height="1" fill="black"/><rect x="11" y="20" width="1" height="1" fill="black"/><rect x="14" y="20" width="1" height="1" fill="black"/><rect x="17" y="20" width="1" height="1" fill="black"/>
+      </svg>
     </div>
+
+    <div class="space-y-2">
+      <button type="button" id="download-qr-btn" class="w-full bg-custom-accent text-black text-xs font-bold py-2.5 rounded-lg transition-all duration-300 ease-in-out hover:brightness-110 inline-flex items-center justify-center gap-2">
+        <svg class="w-4 h-4 shrink-0 download-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12M12 16.5V3"/></svg>
+        <svg class="w-4 h-4 shrink-0 check-icon-download hidden" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+        <span class="download-label">Descargar PNG de Alta Calidad</span>
+      </button>
+      <button type="button" id="close-modal-qr" class="w-full bg-transparent text-custom-muted hover:text-custom-main text-xs font-semibold py-2 transition-colors duration-300 ease-in-out">
+        Cerrar Ventana
+      </button>
+    </div>
+  </div>
 </div>
+
+<script>
+(function () {
+  const selector = document.getElementById('catalog-industry-selector');
+  const activeCls = 'rounded-lg bg-custom-accent text-black px-5 py-2.5 font-bold transition-all duration-300 ease-in-out hover:scale-105 inline-flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-main';
+  const inactiveCls = 'rounded-lg bg-custom-card border border-custom text-custom-muted hover:border-custom-accent hover:text-custom-accent px-5 py-2.5 font-bold transition-all duration-300 ease-in-out inline-flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-main';
+
+  if (selector) {
+    selector.addEventListener('click', function (e) {
+      const btn = e.target.closest('button[data-target]');
+      if (!btn) return;
+      selector.querySelectorAll('button[data-target]').forEach(function (b) {
+        b.className = inactiveCls;
+        b.setAttribute('aria-selected', 'false');
+      });
+      btn.className = activeCls;
+      btn.setAttribute('aria-selected', 'true');
+      document.querySelectorAll('.demo-panel').forEach(function (panel) {
+        if (panel.id === btn.dataset.target) {
+          panel.classList.remove('hidden');
+          panel.classList.add('block');
+          panel.classList.remove('animate-fade-in-up');
+          void panel.offsetWidth;
+          panel.classList.add('animate-fade-in-up');
+        } else {
+          panel.classList.add('hidden');
+          panel.classList.remove('block');
+        }
+      });
+    });
+  }
+
+  function formatPrice(n) { return '$' + n.toFixed(2); }
+
+  document.querySelectorAll('.demo-panel').forEach(function (panel) {
+    const items = panel.querySelectorAll('.cart-item');
+    const badge = panel.querySelector('.cart-badge-count');
+    const totalEl = panel.querySelector('.cart-total-value');
+    const waBtn = panel.querySelector('.wa-order-btn');
+    const waBase = waBtn ? waBtn.dataset.waBase : null;
+    const waPrefix = waBtn ? waBtn.dataset.waPrefix : '';
+
+    function recalc() {
+      let count = 0, total = 0, lines = [];
+      items.forEach(function (item) {
+        if (item.dataset.added === 'true') {
+          count++;
+          total += parseFloat(item.dataset.price);
+          lines.push('- ' + item.dataset.name + ' (' + formatPrice(parseFloat(item.dataset.price)) + ')');
+        }
+      });
+      if (badge) badge.textContent = count;
+      if (totalEl) totalEl.textContent = formatPrice(total);
+      if (waBtn) {
+        if (count === 0) {
+          waBtn.classList.add('opacity-40', 'pointer-events-none');
+        } else {
+          waBtn.classList.remove('opacity-40', 'pointer-events-none');
+          const msg = encodeURIComponent(waPrefix + '\n' + lines.join('\n') + '\nTotal: ' + formatPrice(total));
+          waBtn.href = waBase + '?text=' + msg;
+        }
+      }
+    }
+
+    items.forEach(function (item) {
+      const btn = item.querySelector('.cart-toggle-btn');
+      if (!btn) return;
+      btn.addEventListener('click', function () {
+        const wasAdded = item.dataset.added === 'true';
+        item.dataset.added = (!wasAdded).toString();
+        item.classList.toggle('opacity-60', wasAdded);
+        btn.classList.toggle('bg-custom-accent', !wasAdded);
+        btn.classList.toggle('text-black', !wasAdded);
+        btn.classList.toggle('border', wasAdded);
+        btn.classList.toggle('border-custom', wasAdded);
+        btn.classList.toggle('text-custom-muted', wasAdded);
+        btn.querySelector('.icon-plus').classList.toggle('hidden', !wasAdded);
+        btn.querySelector('.icon-check').classList.toggle('hidden', wasAdded);
+        btn.setAttribute('aria-pressed', (!wasAdded).toString());
+        recalc();
+      });
+    });
+    recalc();
+  });
+
+  const modalQr = document.getElementById('modal-qr');
+  const btnQr = document.getElementById('btn-qr-catalog');
+  const closeQr = document.getElementById('close-modal-qr');
+  const closeQrX = document.getElementById('close-modal-qr-x');
+
+  function openModal() { if (modalQr) modalQr.classList.remove('hidden'); }
+  function closeModal() { if (modalQr) modalQr.classList.add('hidden'); }
+
+  if (btnQr) btnQr.addEventListener('click', openModal);
+  if (closeQr) closeQr.addEventListener('click', closeModal);
+  if (closeQrX) closeQrX.addEventListener('click', closeModal);
+  if (modalQr) modalQr.addEventListener('click', function (e) { if (e.target === modalQr) closeModal(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+
+  const downloadBtn = document.getElementById('download-qr-btn');
+  if (downloadBtn) {
+    downloadBtn.addEventListener('click', function () {
+      const label = downloadBtn.querySelector('.download-label');
+      const dlIcon = downloadBtn.querySelector('.download-icon');
+      const okIcon = downloadBtn.querySelector('.check-icon-download');
+      const original = label.textContent;
+      label.textContent = '¡Listo para imprimir!';
+      dlIcon.classList.add('hidden');
+      okIcon.classList.remove('hidden');
+      setTimeout(function () {
+        label.textContent = original;
+        dlIcon.classList.remove('hidden');
+        okIcon.classList.add('hidden');
+      }, 1800);
+    });
+  }
+
+  const btnShare = document.getElementById('btn-share-catalog');
+  if (btnShare) {
+    btnShare.addEventListener('click', function () {
+      const shareData = { title: document.title, url: location.href };
+      if (navigator.share) {
+        navigator.share(shareData).catch(function () {});
+      } else if (navigator.clipboard) {
+        navigator.clipboard.writeText(location.href).then(function () {
+          const tip = btnShare.querySelector('.share-tooltip');
+          if (!tip) return;
+          const original = tip.textContent;
+          tip.textContent = '¡Enlace copiado!';
+          tip.classList.remove('opacity-0');
+          tip.classList.add('opacity-100');
+          setTimeout(function () {
+            tip.textContent = original;
+            tip.classList.add('opacity-0');
+            tip.classList.remove('opacity-100');
+          }, 1800);
+        });
+      }
+    });
+  }
+})();
+</script>
