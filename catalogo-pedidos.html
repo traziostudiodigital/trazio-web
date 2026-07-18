@@ -195,123 +195,471 @@
         Explora nuestras Demos
     </h2>
     <p class="text-center font-inter text-custom-muted text-sm max-w-2xl mx-auto mb-10">
-        Prueba cómo compraría tu cliente: elige un rubro de ejemplo, añade productos al carrito y mira cómo se arma el pedido, listo para llegarte por WhatsApp.
+        Prueba cómo compraría tu cliente: elige un rubro de ejemplo, añade productos al carrito y mira cómo se arma el pedido automático listo para WhatsApp.
     </p>
 
+    <!-- Selector de Industrias -->
     <div id="catalog-industry-selector" class="flex flex-wrap justify-center gap-3 mb-12">
-        <button data-target="demo-restaurante" class="rounded-lg bg-custom-accent text-black px-5 py-2.5 font-bold transition-all duration-300 hover:scale-105">
+        <button data-target="demo-restaurante" class="rounded-lg bg-custom-accent text-black px-5 py-2.5 font-bold transition-all duration-300 ease-in-out hover:scale-105">
             Restaurantes & Cafeterías
         </button>
-        <button data-target="demo-tienda" class="rounded-lg bg-custom-card border border-custom text-custom-muted hover:border-custom-accent px-5 py-2.5 font-bold transition-all duration-300">
+        <button data-target="demo-tienda" class="rounded-lg bg-custom-card border border-custom text-custom-muted hover:border-custom-accent px-5 py-2.5 font-bold transition-all duration-300 ease-in-out">
             Tiendas & Boutiques
         </button>
-        <button data-target="demo-servicios" class="rounded-lg bg-custom-card border border-custom text-custom-muted hover:border-custom-accent px-5 py-2.5 font-bold transition-all duration-300">
+        <button data-target="demo-servicios" class="rounded-lg bg-custom-card border border-custom text-custom-muted hover:border-custom-accent px-5 py-2.5 font-bold transition-all duration-300 ease-in-out">
             Servicios & Barberías
         </button>
     </div>
 
     <!-- Contenedor Principal de Visualización -->
-    <div id="catalog-demo-wrapper" class="bg-custom-card border border-custom rounded-lg p-8 mb-8 relative overflow-hidden bg-pattern-diagonal">
+    <div id="catalog-demo-wrapper" class="bg-custom-card border border-custom rounded-lg p-6 md:p-10 mb-8 relative overflow-hidden bg-pattern-diagonal animate-fade-in-up">
         
-        <!-- Panel Restaurante -->
+        <!-- 1. PANEL RESTAURANTE -->
         <div id="demo-restaurante" class="demo-panel block animate-fade-in-up">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <!-- Columna Izquierda (Texto) -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div>
-                    <h3 class="text-custom-main font-outfit text-xl font-bold mb-2">Menú Digital Interactivo</h3>
-                    <p class="text-custom-muted font-inter text-sm leading-relaxed">
-                        Tus comensales escanean el código QR en la mesa, seleccionan sus platillos con aditivos o términos de cocción, y envían el pedido directamente a tu cocina o barra a través de un mensaje estructurado de WhatsApp.
+                    <h3 class="font-outfit text-2xl font-bold text-custom-main mb-4">Menú Digital Interactivo</h3>
+                    <p class="font-inter text-sm text-custom-muted leading-relaxed mb-4">
+                        Tus comensales escanean el código QR en la mesa, seleccionan sus platillos favoritos con agregados y envían el pedido estructurado directo a tu cocina por WhatsApp. Sin esperas, sin errores de comandas y optimizando la rotación de mesas al máximo.
                     </p>
                 </div>
-                <!-- Columna Derecha (Visual) -->
-                <div class="border-double-gold bg-custom-main rounded-lg p-8 text-center animate-float flex flex-col justify-center items-center min-h-[280px]">
-                    <span class="text-[10px] uppercase tracking-widest text-custom-accent font-bold mb-3 px-2.5 py-1 bg-custom-accent/10 rounded-full border border-custom-accent/20 animate-pulse">Demo Activa</span>
-                    <h4 class="text-custom-main font-outfit text-lg font-bold mb-1">Mockup de Interfaz Restaurante</h4>
-                    <p class="text-xs text-custom-muted max-w-[200px]">Vista interactiva de platillos y carrito de compras inteligente.</p>
+                <!-- Smartphone Mockup -->
+                <div class="relative max-w-[250px] mx-auto w-full aspect-[9/18] bg-neutral-950 border-[10px] border-neutral-800 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.7)] rounded-[34px] overflow-hidden flex flex-col transition-transform duration-300 ease-in-out hover:scale-[1.03]">
+                    <!-- Status Bar -->
+                    <div class="flex justify-between items-center px-4 pt-1.5 pb-1 text-[9px] text-gray-500 font-mono">
+                        <span>9:41</span>
+                        <div class="w-12 h-3.5 bg-black rounded-full absolute left-1/2 -translate-x-1/2 top-1"></div>
+                        <div class="flex items-center gap-1">📶 🔋</div>
+                    </div>
+                    <!-- App Body -->
+                    <div class="flex-grow bg-custom-main pt-4 px-3 flex flex-col justify-between">
+                        <div>
+                            <div class="border-b border-custom/10 pb-2 mb-3 flex justify-between items-center">
+                                <span class="text-[11px] font-bold text-custom-main">Bella Italia 🍕</span>
+                                <span class="text-[10px] bg-custom-accent/10 text-custom-accent px-1.5 py-0.5 rounded font-bold">🛒 2 prod</span>
+                            </div>
+                            <div class="space-y-2">
+                                <div class="bg-custom-card p-2 rounded border border-custom/5 flex justify-between items-center text-[10px]">
+                                    <div><p class="font-medium">Pizza Margarita</p><p class="text-[8px] text-custom-muted">Salsa, queso, albahaca</p></div>
+                                    <div class="flex items-center gap-2"><span class="font-bold text-custom-accent">$8.00</span><button class="w-4 h-4 bg-custom-accent text-black rounded flex items-center justify-center font-bold">+</button></div>
+                                </div>
+                                <div class="bg-custom-card p-2 rounded border border-custom/5 flex justify-between items-center text-[10px]">
+                                    <div><p class="font-medium">Focaccia de Ajo</p><p class="text-[8px] text-custom-muted">Aceite de oliva, romero</p></div>
+                                    <div class="flex items-center gap-2"><span class="font-bold text-custom-accent">$4.00</span><button class="w-4 h-4 bg-custom-accent text-black rounded flex items-center justify-center font-bold">+</button></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- WhatsApp Action Button -->
+                        <div class="mb-3 p-2.5 bg-emerald-600 text-white text-center text-[10px] font-bold rounded-md cursor-pointer hover:bg-emerald-500 transition-colors duration-300 flex items-center justify-center gap-1 shadow-lg shadow-emerald-900/40">
+                            <span>Enviar pedido ($12.00)</span> ➔
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Panel Tienda -->
-        <div id="demo-tienda" class="demo-panel hidden">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <!-- Columna Izquierda (Texto) -->
+        <!-- 2. PANEL TIENDA -->
+        <div id="demo-tienda" class="demo-panel hidden animate-fade-in-up">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div>
-                    <h3 class="text-custom-main font-outfit text-xl font-bold mb-2">Catálogo de Moda & Boutiques</h3>
-                    <p class="text-custom-muted font-inter text-sm leading-relaxed">
-                        Muestra tus colecciones con variantes de tallas, colores y control de stock en tiempo real. Una experiencia de compra fluida que incrementa el ticket promedio sin fricciones ni registros obligatorios.
+                    <h3 class="font-outfit text-2xl font-bold text-custom-main mb-4">Catálogo de Productos Automático</h3>
+                    <p class="font-inter text-sm text-custom-muted leading-relaxed mb-4">
+                        Exhibe prendas, calzado o accesorios con variantes de colores y tallas. Tus clientes exploran tu stock desde el móvil, seleccionan sus especificaciones y el carrito genera una orden de compra impecable para despachar de inmediato.
                     </p>
                 </div>
-                <!-- Columna Derecha (Visual) -->
-                <div class="border-double-gold bg-custom-main rounded-lg p-8 text-center animate-float flex flex-col justify-center items-center min-h-[280px]">
-                    <span class="text-[10px] uppercase tracking-widest text-custom-accent font-bold mb-3 px-2.5 py-1 bg-custom-accent/10 rounded-full border border-custom-accent/20 animate-pulse">Demo Activa</span>
-                    <h4 class="text-custom-main font-outfit text-lg font-bold mb-1">Mockup de Interfaz Tienda</h4>
-                    <p class="text-xs text-custom-muted max-w-[200px]">Carrusel de productos con selector de variantes y tallaje.</p>
+                <!-- Smartphone Mockup -->
+                <div class="relative max-w-[250px] mx-auto w-full aspect-[9/18] bg-neutral-950 border-[10px] border-neutral-800 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.7)] rounded-[34px] overflow-hidden flex flex-col transition-transform duration-300 ease-in-out hover:scale-[1.03]">
+                    <div class="flex-between px-4 pt-1.5 pb-1 text-[9px] text-gray-500 font-mono flex justify-between items-center">
+                        <span>9:41</span>
+                        <div class="w-12 h-3.5 bg-black rounded-full absolute left-1/2 -translate-x-1/2 top-1"></div>
+                        <div class="flex items-center gap-1">📶 🔋</div>
+                    </div>
+                    <div class="flex-grow bg-custom-main pt-4 px-3 flex flex-col justify-between">
+                        <div>
+                            <div class="border-b border-custom/10 pb-2 mb-3 flex justify-between items-center">
+                                <span class="text-[11px] font-bold text-custom-main">Vogue Habana 👗</span>
+                                <span class="text-[10px] bg-custom-accent/10 text-custom-accent px-1.5 py-0.5 rounded font-bold">🛒 1 prod</span>
+                            </div>
+                            <div class="space-y-2">
+                                <div class="bg-custom-card p-2 rounded border border-custom/5 flex justify-between items-center text-[10px]">
+                                    <div><p class="font-medium">Pulover Oversized</p><p class="text-[8px] text-custom-muted">Talla L / Negro Cotton</p></div>
+                                    <div class="flex items-center gap-2"><span class="font-bold text-custom-accent">$25.00</span><button class="w-4 h-4 bg-custom-accent text-black rounded flex items-center justify-center font-bold">+</button></div>
+                                </div>
+                                <div class="bg-custom-card p-2 rounded border border-custom/5 flex justify-between items-center text-[10px] opacity-60">
+                                    <div><p class="font-medium">Lentes de Sol Retro</p><p class="text-[8px] text-custom-muted">Protección UV400</p></div>
+                                    <div class="flex items-center gap-2"><span class="font-bold text-custom-accent">$15.00</span><button class="w-4 h-4 bg-custom-accent text-black rounded flex items-center justify-center font-bold">+</button></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3 p-2.5 bg-emerald-600 text-white text-center text-[10px] font-bold rounded-md cursor-pointer hover:bg-emerald-500 transition-colors duration-300 flex items-center justify-center gap-1 shadow-lg shadow-emerald-900/40">
+                            <span>Enviar pedido ($25.00)</span> ➔
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Panel Servicios -->
-        <div id="demo-servicios" class="demo-panel hidden">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <!-- Columna Izquierda (Texto) -->
+        <!-- 3. PANEL SERVICIOS -->
+        <div id="demo-servicios" class="demo-panel hidden animate-fade-in-up">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div>
-                    <h3 class="text-custom-main font-outfit text-xl font-bold mb-2">Reserva de Turnos & Barberías</h3>
-                    <p class="text-custom-muted font-inter text-sm leading-relaxed">
-                        Permite que tus clientes elijan el profesional, visualicen las horas libres y reserven el servicio directamente desde el catálogo, recibiendo una confirmación automática con toda la información.
+                    <h3 class="font-outfit text-2xl font-bold text-custom-main mb-4">Portal de Reservas & Servicios</h3>
+                    <p class="font-inter text-sm text-custom-muted leading-relaxed mb-4">
+                        Ideal para barberías, salones de estética o consultorios. Muestra tus servicios con tarifas claras y permite que tus clientes agenden su cita seleccionando fecha y hora, enviando la confirmación de la reserva automatizada a tu chat.
                     </p>
                 </div>
-                <!-- Columna Derecha (Visual) -->
-                <div class="border-double-gold bg-custom-main rounded-lg p-8 text-center animate-float flex flex-col justify-center items-center min-h-[280px]">
-                    <span class="text-[10px] uppercase tracking-widest text-custom-accent font-bold mb-3 px-2.5 py-1 bg-custom-accent/10 rounded-full border border-custom-accent/20 animate-pulse">Demo Activa</span>
-                    <h4 class="text-custom-main font-outfit text-lg font-bold mb-1">Mockup de Interfaz Servicios</h4>
-                    <p class="text-xs text-custom-muted max-w-[200px]">Agenda digital integrada para selección de turnos y profesionales.</p>
+                <!-- Smartphone Mockup -->
+                <div class="relative max-w-[250px] mx-auto w-full aspect-[9/18] bg-neutral-950 border-[10px] border-neutral-800 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.7)] rounded-[34px] overflow-hidden flex flex-col transition-transform duration-300 ease-in-out hover:scale-[1.03]">
+                    <div class="flex-between px-4 pt-1.5 pb-1 text-[9px] text-gray-500 font-mono flex justify-between items-center">
+                        <span>9:41</span>
+                        <div class="w-12 h-3.5 bg-black rounded-full absolute left-1/2 -translate-x-1/2 top-1"></div>
+                        <div class="flex items-center gap-1">📶 🔋</div>
+                    </div>
+                    <div class="flex-grow bg-custom-main pt-4 px-3 flex flex-col justify-between">
+                        <div>
+                            <div class="border-b border-custom/10 pb-2 mb-3 flex justify-between items-center">
+                                <span class="text-[11px] font-bold text-custom-main">Barber Club ✂️</span>
+                                <span class="text-[10px] bg-custom-accent/10 text-custom-accent px-1.5 py-0.5 rounded font-bold">📅 Turno</span>
+                            </div>
+                            <div class="space-y-2">
+                                <div class="bg-custom-card p-2 rounded border border-custom/5 flex justify-between items-center text-[10px]">
+                                    <div><p class="font-medium">Corte + Barba Premium</p><p class="text-[8px] text-custom-accent">Sábado - 4:00 PM</p></div>
+                                    <div class="flex items-center gap-2"><span class="font-bold text-custom-accent">$12.00</span><button class="w-4 h-4 bg-custom-accent text-black rounded flex items-center justify-center font-bold">✓</button></div>
+                                </div>
+                                <div class="bg-custom-card p-2 rounded border border-custom/5 flex justify-between items-center text-[10px] opacity-60">
+                                    <div><p class="font-medium">Tratamiento Facial</p><p class="text-[8px] text-custom-muted">Exfoliación e hidratación</p></div>
+                                    <div class="flex items-center gap-2"><span class="font-bold text-custom-accent">$8.00</span><button class="w-4 h-4 border border-custom text-custom-muted rounded flex items-center justify-center font-bold">+</button></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3 p-2.5 bg-emerald-600 text-white text-center text-[10px] font-bold rounded-md cursor-pointer hover:bg-emerald-500 transition-colors duration-300 flex items-center justify-center gap-1 shadow-lg shadow-emerald-900/40">
+                            <span>Reservar Cita ($12.00)</span> ➔
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-<div class="flex flex-col sm:flex-row items-center justify-center gap-6 bg-custom-card border border-custom/20 rounded-xl p-4 max-w-3xl mx-auto shadow-lg mt-8">
-      <!-- Botón 1: Compartir -->
-      <button id="btn-share-catalog" class="flex items-center gap-3 text-custom-main hover:text-custom-accent transition-colors group relative">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
-          <circle cx="18" cy="5" r="3"></circle>
-          <circle cx="6" cy="12" r="3"></circle>
-          <circle cx="18" cy="19" r="3"></circle>
-          <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
-          <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
-        </svg>
-        <span class="font-bold text-sm">Compartir Catálogo</span>
-        <span class="absolute -top-10 left-1/2 -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
-          Ideal para reenviar en grupos de WhatsApp
-        </span>
-      </button>
+    </div>
 
-      <!-- Separador -->
-      <div class="hidden sm:block w-px h-8 bg-custom/20"></div>
+   <!-- Barra de Herramientas Virales (Toolbar) -->
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-6 bg-custom-card border border-custom rounded-lg p-4 max-w-3xl mx-auto shadow-lg mt-8">
+        <!-- Botón 1: Compartir -->
+        <button id="btn-share-catalog" class="flex items-center gap-3 text-custom-main hover:text-custom-accent transition-colors duration-300 ease-in-out group relative">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle>
+                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+            </svg>
+            <span class="font-bold text-sm">Compartir Catálogo</span>
+            <span class="absolute -top-10 left-1/2 -translate-x-1/2 bg-black border border-custom text-custom-main text-[11px] px-2.5 py-1 rounded shadow-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out whitespace-nowrap pointer-events-none">
+                Ideal para reenviar en grupos de WhatsApp
+            </span>
+        </button>
 
-      <!-- Botón 2: Código QR -->
-      <button id="btn-qr-catalog" class="flex items-center gap-3 text-custom-main hover:text-custom-accent transition-colors group relative">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
-          <rect width="5" height="5" x="3" y="3" rx="1"></rect>
-          <rect width="5" height="5" x="16" y="3" rx="1"></rect>
-          <rect width="5" height="5" x="3" y="16" rx="1"></rect>
-          <path d="M21 16h-3a2 2 0 0 0-2 2v3"></path>
-          <path d="M21 21v-2a2 2 0 0 0-2-2h-2"></path>
-          <path d="M11 3h1"></path>
-          <path d="M12 7v3a1 1 0 0 1-1 1H8"></path>
-          <path d="M12 12V8"></path>
-          <path d="M3 12h1"></path>
-          <path d="M16 11h2a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-1a1 1 0 0 1 1-1Z"></path>
-          <path d="M7 12H5a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-1a1 1 0 0 0-1-1Z"></path>
-          <path d="M12 15v2a1 1 0 0 1-1 1h-1"></path>
-        </svg>
-        <span class="font-bold text-sm">Generar QR de Mesa</span>
-        <span class="absolute -top-10 left-1/2 -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
-          Imprímelo para que tus clientes pidan desde el local
-        </span>
-      </button>
+        <!-- Separador -->
+        <div class="hidden sm:block w-px h-6 bg-custom/20"></div>
+
+        <!-- Botón 2: Código QR -->
+        <button id="btn-qr-catalog" class="flex items-center gap-3 text-custom-main hover:text-custom-accent transition-colors duration-300 ease-in-out group relative">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect>
+            </svg>
+            <span class="font-bold text-sm">Generar QR de Mesa</span>
+            <span class="absolute -top-10 left-1/2 -translate-x-1/2 bg-black border border-custom text-custom-main text-[11px] px-2.5 py-1 rounded shadow-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out whitespace-nowrap pointer-events-none">
+                Imprime y ponlo en tus mesas físicas
+            </span>
+        </button>
     </div>
 </section>
+
+<!-- Modal Oculto Código QR (Trazio Fine Double Border Style) -->
+<div id="modal-qr" class="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center hidden z-50 p-4">
+    <div class="bg-custom-card border-double-gold p-8 max-w-xs w-full text-center relative shadow-2xl">
+        <h4 class="font-outfit text-lg font-bold text-custom-main mb-2">Tu QR de Mesa está Listo</h4>
+        <p class="font-inter text-xs text-custom-muted mb-6">Descarga este código para que tus clientes accedan escaneando desde sus teléfonos.</p>
+        
+        <!-- QR Vector Simulado -->
+        <div class="w-40 h-40 mx-auto mb-6 bg-white p-3 rounded-md flex items-center justify-center shadow-inner">
+            <svg class="w-full h-full text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M3 3h4v4H3V3zM17 3h4v4h-4V3zM3 17h4v4H3v-4zM14 14h2v2h-2v-2zM18 18h3v3h-3v-3zM14 18h2v3h-2v-3zM18 14h3v2h-3v-2zM10 10h4v2h-4v-2z" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+        
+        <!-- Acciones del Modal -->
+        <div class="space-y-2">
+            <button class="w-full bg-custom-accent text-black text-xs font-bold py-2.5 rounded transition-all duration-300 hover:scale-[1.02]">
+                Descargar PNG de Alta Calidad
+            </button>
+            <button id="close-modal-qr" class="w-full bg-transparent text-custom-muted hover:text-custom-main text-xs font-semibold py-2 transition-colors">
+                Cerrar Ventana
+            </button>
+        </div>
+    </div>
+</div>
+
+    <!-- 4. Testimonios (Prueba Social) -->
+    <section class="max-w-6xl mx-auto px-6 mb-24">
+  <div class="text-center">
+    <span
+      class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase border border-custom/30 text-custom-accent bg-custom-accent/5 mb-4"
+      >PRUEBA SOCIAL</span
+    >
+    <h2 class="text-3xl font-bold text-custom-main mb-4">
+      Lo que dicen nuestros clientes
+    </h2>
+    <p class="text-custom-muted text-sm md:text-base mb-12">
+      Negocios reales en Cuba que ya automatizaron sus ventas.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <!-- Testimonio 1 -->
+    <div class="group relative p-8 bg-custom-main border border-custom rounded-2xl overflow-hidden hover:-translate-y-1.5 hover:border-custom-accent transition-all duration-300 ease-in-out hover:shadow-[0_12px_32px_-12px_rgba(0,0,0,0.6)] mt-4">
+      <span class="absolute -top-3 -right-2 text-7xl font-black text-custom-accent/5 group-hover:text-custom-accent/10 transition-all duration-300 ease-in-out select-none leading-none" aria-hidden="true">“</span>
+      <div class="relative">
+        <div
+          class="absolute -top-5 right-8 text-6xl text-custom-accent opacity-20 font-serif"
+        >
+          “
+        </div>
+        <p class="text-custom-main text-lg italic mb-6 relative z-10">
+          Desde que usamos el catálogo, las colas en el mostrador bajaron a la
+          mitad. La gente llega con el pedido hecho por WhatsApp.
+        </p>
+        <div class="flex items-center">
+          <div
+            class="w-12 h-12 rounded-full bg-custom-accent/10 border border-custom-accent/20 text-custom-accent flex items-center justify-center font-bold text-lg mr-4 group-hover:scale-105 transition-all duration-300 ease-in-out"
+          >
+            CL
+          </div>
+          <div>
+            <p class="font-semibold text-custom-main">Cafetería La Esquina</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonio 2 -->
+    <div class="group relative p-8 bg-custom-main border border-custom rounded-2xl overflow-hidden hover:-translate-y-1.5 hover:border-custom-accent transition-all duration-300 ease-in-out hover:shadow-[0_12px_32px_-12px_rgba(0,0,0,0.6)] mt-4">
+      <span class="absolute -top-3 -right-2 text-7xl font-black text-custom-accent/5 group-hover:text-custom-accent/10 transition-all duration-300 ease-in-out select-none leading-none" aria-hidden="true">“</span>
+      <div class="relative">
+        <div
+          class="absolute -top-5 right-8 text-6xl text-custom-accent opacity-20 font-serif"
+        >
+          “
+        </div>
+        <p class="text-custom-main text-lg italic mb-6 relative z-10">
+          Me ahorra horas de estar mandando fotos de ropa por privado. Le paso el
+          link a mis clientes y ellos solos llenan el carrito.
+        </p>
+        <div class="flex items-center">
+          <div
+            class="w-12 h-12 rounded-full bg-custom-accent/10 border border-custom-accent/20 text-custom-accent flex items-center justify-center font-bold text-lg mr-4 group-hover:scale-105 transition-all duration-300 ease-in-out"
+          >
+            BH
+          </div>
+          <div>
+            <p class="font-semibold text-custom-main">Boutique Habana</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- 5. Preguntas Frecuentes (FAQ) -->
+    <section class="max-w-4xl mx-auto px-6 mb-24">
+  <div class="relative bg-custom-card border-double-gold bg-pattern-diagonal rounded-lg overflow-hidden px-6 py-14 md:px-10 md:py-16">
+
+    <header class="text-center mb-12">
+      <span class="inline-flex items-center gap-2 text-custom-accent text-xs font-semibold tracking-[0.2em] uppercase mb-3">
+        <span class="w-6 h-px bg-custom-accent/50"></span>
+        Despeja tus dudas
+        <span class="w-6 h-px bg-custom-accent/50"></span>
+      </span>
+      <h2 class="text-3xl font-bold text-custom-main tracking-tight">
+        Preguntas Frecuentes
+      </h2>
+    </header>
+
+    <div class="space-y-4">
+      <!-- FAQ 1: Actualización -->
+      <details class="group bg-custom-main border border-custom rounded-lg overflow-hidden transition-all duration-300 ease-in-out open:border-custom-accent/40" open>
+        <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden select-none">
+          <div class="flex items-center gap-4">
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-custom-accent/10 border border-custom-accent/20 text-custom-accent text-sm font-black shrink-0">?</span>
+            <h4 class="font-bold text-custom-main text-base md:text-lg">¿Cómo actualizo mis productos o precios?</h4>
+          </div>
+          <svg class="w-5 h-5 text-custom-accent shrink-0 transition-transform duration-300 ease-in-out group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </summary>
+        <div class="px-6 pb-6 pl-[4.5rem]">
+          <p class="text-sm md:text-base text-custom-muted leading-relaxed">
+            Tu inventario vive en una lista tan simple como una hoja de cálculo en tu teléfono. Cambias un precio, guardas, y tu catálogo se actualiza al instante sin depender de un programador.
+          </p>
+        </div>
+      </details>
+
+      <!-- FAQ 2: Monedas -->
+      <details class="group bg-custom-main border border-custom rounded-lg overflow-hidden transition-all duration-300 ease-in-out open:border-custom-accent/40">
+        <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden select-none">
+          <div class="flex items-center gap-4">
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-custom-accent/10 border border-custom-accent/20 text-custom-accent text-sm font-black shrink-0">?</span>
+            <h4 class="font-bold text-custom-main text-base md:text-lg">¿Puedo mostrar precios en USD y CUP?</h4>
+          </div>
+          <svg class="w-5 h-5 text-custom-accent shrink-0 transition-transform duration-300 ease-in-out group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </summary>
+        <div class="px-6 pb-6 pl-[4.5rem]">
+          <p class="text-sm md:text-base text-custom-muted leading-relaxed">
+            Sí. Tu catálogo puede mostrar ambos precios fijos o incluir un selector para que tu cliente elija cómo prefiere ver el valor, evitando confusiones al pagar.
+          </p>
+        </div>
+      </details>
+
+      <!-- FAQ 3: Mantenimiento (Shared with Corp) -->
+      <details class="group bg-custom-main border border-custom rounded-lg overflow-hidden transition-all duration-300 ease-in-out open:border-custom-accent/40">
+        <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden select-none">
+          <div class="flex items-center gap-4">
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-custom-accent/10 border border-custom-accent/20 text-custom-accent text-sm font-black shrink-0">?</span>
+            <h4 class="font-bold text-custom-main text-base md:text-lg">¿Necesito pagar mantenimiento mensual?</h4>
+          </div>
+          <svg class="w-5 h-5 text-custom-accent shrink-0 transition-transform duration-300 ease-in-out group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </summary>
+        <div class="px-6 pb-6 pl-[4.5rem]">
+          <p class="text-sm md:text-base text-custom-muted leading-relaxed">
+            No. Haces un pago único por el desarrollo y te ahorras los costosos mantenimientos de servidores tradicionales gracias a nuestra arquitectura estática.
+          </p>
+        </div>
+      </details>
+
+      <!-- FAQ 4: Conexión (Shared with Corp) -->
+      <details class="group bg-custom-main border border-custom rounded-lg overflow-hidden transition-all duration-300 ease-in-out open:border-custom-accent/40">
+        <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden select-none">
+          <div class="flex items-center gap-4">
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-custom-accent/10 border border-custom-accent/20 text-custom-accent text-sm font-black shrink-0">?</span>
+            <h4 class="font-bold text-custom-main text-base md:text-lg">¿Funciona bien con la conexión de Cuba?</h4>
+          </div>
+          <svg class="w-5 h-5 text-custom-accent shrink-0 transition-transform duration-300 ease-in-out group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </summary>
+        <div class="px-6 pb-6 pl-[4.5rem]">
+          <p class="text-sm md:text-base text-custom-muted leading-relaxed">
+            Es nuestra especialidad. Optimizamos el catálogo para que cargue en milisegundos incluso en redes 3G, garantizando que no pierdas ventas por lentitud.
+          </p>
+        </div>
+      </details>
+    </div>
+
+    <p class="text-center text-xs text-custom-muted mt-10">
+      ¿Tienes otra duda? <a href="#contacto" class="text-custom-accent font-medium hover:underline">Escríbenos directo</a>.
+    </p>
+  </div>
+</section>
+
+    <!-- 6. Proceso y CTA Final -->
+    <section class="max-w-4xl mx-auto px-6 mb-24 text-center">
+  <div class="group relative bg-custom-card border-double-gold bg-pattern-nodes rounded-lg p-10 md:p-16 shadow-2xl shadow-black/30 hover:shadow-custom-accent/10 transition-all duration-300 ease-in-out overflow-hidden">
+
+    <!-- Halo de énfasis detrás del contenido -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-72 h-72 bg-custom-accent/15 blur-3xl rounded-full pointer-events-none" aria-hidden="true"></div>
+
+    <div class="relative">
+      <!-- Etiqueta superior -->
+      <span class="inline-flex items-center gap-2 text-custom-accent text-xs font-semibold tracking-[0.2em] uppercase mb-5">
+        <span class="w-6 h-px bg-custom-accent/50"></span>
+        Cómo Funciona
+        <span class="w-6 h-px bg-custom-accent/50"></span>
+      </span>
+
+      <!-- Mini-Proceso Visual -->
+      <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 mb-12">
+        <!-- Paso 1 -->
+        <div class="flex flex-col items-center">
+          <span class="text-custom-accent font-black text-xl mb-2">1.</span>
+          <p class="text-sm text-custom-muted font-medium">Nos escribes tu idea.</p>
+        </div>
+
+        <!-- Flecha -->
+        <div class="hidden md:block text-custom/20 text-2xl" aria-hidden="true">→</div>
+
+        <!-- Paso 2 -->
+        <div class="flex flex-col items-center">
+          <span class="text-custom-accent font-black text-xl mb-2">2.</span>
+          <p class="text-sm text-custom-muted font-medium">Armamos una maqueta gratis con tus productos.</p>
+        </div>
+
+        <!-- Flecha -->
+        <div class="hidden md:block text-custom/20 text-2xl" aria-hidden="true">→</div>
+
+        <!-- Paso 3 -->
+        <div class="flex flex-col items-center">
+          <span class="text-custom-accent font-black text-xl mb-2">3.</span>
+          <p class="text-sm text-custom-muted font-medium">Apruebas y lanzamos tu web.</p>
+        </div>
+      </div>
+
+      <!-- Caja CTA Final -->
+      <h2 class="text-3xl md:text-4xl font-bold text-custom-main mb-4 tracking-tight">¿Listo para automatizar tus ventas?</h2>
+      <p class="text-custom-muted mb-8 max-w-xl mx-auto leading-relaxed text-sm md:text-base">
+        Escríbenos por WhatsApp y te preparamos una demostración interactiva totalmente gratis y adaptada a tu sector en menos de 24 horas.
+      </p>
+
+      <!-- Chips de confianza -->
+      <div class="flex flex-wrap items-center justify-center gap-3 mb-9">
+        <span class="inline-flex items-center gap-1.5 bg-custom-main border border-custom text-custom-muted text-xs px-3 py-1.5 rounded-full">
+          <svg class="w-3.5 h-3.5 text-custom-accent shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+          Demo gratis 24h
+        </span>
+        <span class="inline-flex items-center gap-1.5 bg-custom-main border border-custom text-custom-muted text-xs px-3 py-1.5 rounded-full">
+          <svg class="w-3.5 h-3.5 text-custom-accent shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+          Sin compromiso
+        </span>
+      </div>
+
+      <a href="https://wa.me/5350000000?text=Hola,%20quiero%20solicitar%20una%20maqueta%20gratis%20para%20mi%20catálogo"
+        target="_blank" rel="noopener"
+        class="inline-flex items-center gap-2.5 px-8 py-4 bg-custom-accent text-black font-bold rounded-lg hover:brightness-110 hover:-translate-y-0.5 transition-all duration-300 ease-in-out shadow-md hover:shadow-[0_12px_28px_-6px_rgba(0,0,0,0.5)] focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-card">
+        <svg class="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.001 2C6.478 2 2 6.478 2 12c0 1.821.487 3.53 1.338 5.001L2.05 21.95l5.096-1.267A9.953 9.953 0 0012 22c5.523 0 10-4.478 10-10S17.524 2 12.001 2zm0 18.14a8.115 8.115 0 01-4.135-1.13l-.297-.176-3.077.766.813-2.995-.194-.308A8.126 8.126 0 013.86 12c0-4.494 3.647-8.14 8.14-8.14 4.494 0 8.14 3.646 8.14 8.14 0 4.493-3.646 8.14-8.14 8.14z"/></svg>
+        Contactar por WhatsApp
+      </a>
+
+      <!-- Acción secundaria -->
+      <div class="mt-9 pt-8 border-t border-custom">
+        <p class="text-xs text-custom-muted mb-4 uppercase tracking-widest">¿Quieres revisarlo con tu equipo?</p>
+        <button type="button" onclick="window.print()"
+          class="px-6 py-3 text-xs font-bold text-custom-main bg-custom-main border border-custom rounded-lg hover:border-custom-accent hover:text-custom-accent transition-all duration-300 ease-in-out inline-flex items-center justify-center mx-auto gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-card">
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
+          </svg>
+          Descargar Propuesta en PDF
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
 </main>
+
+<!-- Botón Flotante Global -->
+<!-- Botón Flotante Global de WhatsApp -->
+<div class="fixed bottom-6 right-6 z-50 group">
+    <!-- Tooltip -->
+    <div class="absolute right-full top-1/2 -translate-y-1/2 mr-4 px-3 py-1.5 bg-custom-card border border-custom/20 text-custom-main text-xs font-semibold rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 whitespace-nowrap shadow-xl">
+        Cotizar mi Web
+        <!-- Flechita del tooltip -->
+        <div class="absolute top-1/2 -right-1 -translate-y-1/2 w-2 h-2 bg-custom-card border-t border-r border-custom/20 transform rotate-45"></div>
+    </div>
+    
+    <!-- Botón -->
+    <a href="https://wa.me/5350000000?text=Hola%20Trazio%20Studio,%20quiero%20cotizar%20mi%20web" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-14 h-14 bg-[#25D366] text-white rounded-full shadow-[0_4px_14px_rgba(37,211,102,0.4)] hover:scale-110 hover:shadow-[0_6px_20px_rgba(37,211,102,0.6)] transition-all duration-300">
+        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2C7.314 2 3.407 5.864 3.407 10.546c0 1.408.349 2.8.956 4.028L2 22l7.666-2.52c1.176.666 2.51.999 3.374.999h.001c4.726 0 8.633-3.863 8.633-8.545C20.674 5.864 16.766 2 12.04 2zM17.152 15.632c-.234-.116-.967-.474-1.117-.528-.15-.054-.26-.054-.37.054-.11.108-.424.528-.548.665-.124.136-.248.15-.457.054-.93-.418-1.54-1.01-2.175-1.928-.636-.92-1.066-1.85-1.423-2.457-.357-.607-.037-.936.27-.99.27-.054.597-.13.864-.424.267-.294.357-.59.5-.784.144-.196.073-.37-.036-.59-.11-.22-.968-2.324-1.325-3.18-.357-.855-.72-.74-1.002-.756-.279-.016-.598-.016-.917-.016-.319 0-.83.108-1.26.54-.43.432-1.64 1.586-1.64 3.868 0 2.28 1.678 4.475 1.916 4.788.238.313 3.303 5.034 8.04 7.025 1.18.497 2.11.79 2.846.99.736.199 1.407.153 1.93-.066.523-.22 1.637-.675 1.87-.99.234-.314.234-.582.162-.702-.072-.119-.267-.183-.557-.32z"/></svg>
+    </a>
+</div>
 
 <!-- Footer -->
 <footer id="footer" class="bg-[#111118] border-t border-custom/10 py-12 px-6 relative z-10 transition-colors duration-300">

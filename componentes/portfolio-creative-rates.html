@@ -1,65 +1,110 @@
 <section class="max-w-6xl mx-auto px-6 mb-24 mt-20">
+  <div class="relative bg-custom-card border-double-gold bg-pattern-diagonal rounded-lg overflow-hidden px-6 py-14 md:px-12 md:py-16">
+
     <!-- Banner Destacado de Demostración -->
-    <div class="w-full max-w-3xl mx-auto bg-custom-accent text-black text-center py-3 px-4 rounded-xl mb-10 font-extrabold tracking-widest uppercase text-sm shadow-[0_0_20px_rgba(201,169,110,0.3)] animate-pulse">
-        👇 SIMULADOR DE TARIFAS: ASÍ VENDERÁS TUS SERVICIOS 👇
+    <div class="w-full max-w-3xl mx-auto bg-custom-accent text-black text-center py-3 px-4 rounded-lg mb-10 font-extrabold tracking-widest uppercase text-xs md:text-sm shadow-[0_0_24px_rgba(201,169,110,0.35)] flex items-center justify-center gap-2">
+      <span class="relative flex h-2 w-2 shrink-0" aria-hidden="true">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-black opacity-50"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-black"></span>
+      </span>
+      Simulador de Tarifas: Así Venderás Tus Servicios
     </div>
 
-    <div class="text-center max-w-3xl mx-auto mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold text-custom-main mb-6">Filtra a los curiosos y cierra ventas más rápido.</h2>
-        <p class="text-custom-muted text-lg">Muestra tus paquetes de forma clara para que el cliente te contacte listo para pagar, sin tener que explicar tus precios 10 veces al día.</p>
+    <div class="text-center max-w-3xl mx-auto mb-14 md:mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-custom-main mb-6 tracking-tight">Filtra a los curiosos y cierra ventas más rápido.</h2>
+      <p class="text-custom-muted text-base md:text-lg leading-relaxed">Muestra tus paquetes de forma clara para que el cliente te contacte listo para pagar, sin tener que explicar tus precios 10 veces al día.</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Tarjeta 1 -->
-        <div class="bg-custom-card p-8 rounded-2xl border border-custom/10 flex flex-col justify-between hover:-translate-y-2 transition-transform duration-300">
-            <div>
-                <h3 class="text-sm font-bold text-custom-accent uppercase tracking-wider mb-2">Sesión Creativa / Retratos</h3>
-                <div class="text-4xl font-bold text-custom-main mb-6">$50 <span class="text-lg text-custom-muted font-normal">USD</span></div>
-                <ul class="space-y-3 mb-8 text-sm text-custom-muted">
-                    <li class="flex items-start"><span class="text-custom-accent mr-2">✔</span> Retratos profesionales de alta gama</li>
-                    <li class="flex items-start"><span class="text-custom-accent mr-2">✔</span> 1 locación o exteriores</li>
-                    <li class="flex items-start"><span class="text-custom-accent mr-2">✔</span> 10 fotos editadas en alta resolución</li>
-                </ul>
-            </div>
-            <div>
-                <p class="text-xs text-custom-accent/80 italic mb-4 text-center">"Tu cliente sabe exactamente qué incluye antes de escribirte."</p>
-                <a href="https://wa.me/5350000000?text=Hola,%20quiero%20reservar%20este%20servicio%20creativo" target="_blank" class="block w-full py-4 rounded-lg font-bold text-sm tracking-wider uppercase text-center transition-all duration-300 bg-custom-main border border-custom/20 text-custom-main hover:border-custom-accent">RESERVAR SERVICIO (DEMO)</a>
-            </div>
-        </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-stretch">
 
-        <!-- Tarjeta 2 -->
-        <div class="bg-custom-card p-8 rounded-2xl border border-custom/10 flex flex-col justify-between hover:-translate-y-2 transition-transform duration-300">
-            <div>
-                <h3 class="text-sm font-bold text-custom-accent uppercase tracking-wider mb-2">Diseño / Dirección de Arte</h3>
-                <div class="text-4xl font-bold text-custom-main mb-6">$150 <span class="text-lg text-custom-muted font-normal">USD</span></div>
-                <ul class="space-y-3 mb-8 text-sm text-custom-muted">
-                    <li class="flex items-start"><span class="text-custom-accent mr-2">✔</span> Conceptualización y moodboard</li>
-                    <li class="flex items-start"><span class="text-custom-accent mr-2">✔</span> Diseño de branding visual</li>
-                    <li class="flex items-start"><span class="text-custom-accent mr-2">✔</span> Dirección de arte para sesiones</li>
-                </ul>
-            </div>
-            <div>
-                <p class="text-xs text-custom-accent/80 italic mb-4 text-center">"Evita regateos mostrando el valor real de tu trabajo."</p>
-                <a href="https://wa.me/5350000000?text=Hola,%20quiero%20reservar%20este%20servicio%20creativo" target="_blank" class="block w-full py-4 rounded-lg font-bold text-sm tracking-wider uppercase text-center transition-all duration-300 bg-custom-main border border-custom/20 text-custom-main hover:border-custom-accent">RESERVAR SERVICIO (DEMO)</a>
-            </div>
+      <!-- Tarjeta 1 -->
+      <div class="group bg-custom-main p-8 rounded-lg border border-custom flex flex-col justify-between hover:-translate-y-1 hover:border-custom-accent/40 hover:shadow-2xl hover:shadow-black/30 transition-all duration-300 ease-in-out">
+        <div>
+          <h3 class="text-sm font-bold text-custom-accent uppercase tracking-wider mb-2">Sesión Creativa / Retratos</h3>
+          <div class="flex items-baseline gap-2 mb-6 pb-6 border-b border-custom">
+            <span class="text-4xl font-bold text-custom-main">$50</span>
+            <span class="text-lg text-custom-muted font-normal">USD</span>
+          </div>
+          <ul class="space-y-3 mb-8 text-sm text-custom-muted">
+            <li class="flex items-start gap-2.5">
+              <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              <span>Retratos profesionales de alta gama</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              <span>1 locación o exteriores</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              <span>10 fotos editadas en alta resolución</span>
+            </li>
+          </ul>
         </div>
+        <div>
+          <p class="text-xs text-custom-accent/80 italic mb-4 text-center border-t border-custom pt-4">"Tu cliente sabe exactamente qué incluye antes de escribirte."</p>
+          <a href="https://wa.me/5350000000?text=Hola,%20quiero%20reservar%20este%20servicio%20creativo" target="_blank" rel="noopener" class="block w-full py-4 rounded-lg font-bold text-sm tracking-wider uppercase text-center transition-all duration-300 ease-in-out bg-custom-card border border-custom text-custom-main hover:border-custom-accent hover:text-custom-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-main">Reservar Servicio (Demo)</a>
+        </div>
+      </div>
 
-        <!-- Tarjeta 3 (Premium) -->
-        <div class="border-double-gold bg-custom-main relative p-8 flex flex-col justify-between hover:-translate-y-2 transition-transform duration-300">
-            <span class="absolute top-0 right-0 bg-custom-accent text-black text-[10px] font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg uppercase tracking-wider">Más Popular</span>
-            <div>
-                <h3 class="text-sm font-bold text-custom-accent uppercase tracking-wider mb-2">Servicio / Asesoría Premium</h3>
-                <div class="text-4xl font-bold text-custom-main mb-6">$100 <span class="text-lg text-custom-muted font-normal">USD</span></div>
-                <ul class="space-y-3 mb-8 text-sm text-custom-muted">
-                    <li class="flex items-start"><span class="text-custom-accent mr-2">✔</span> Sesión de asesoría estratégica 1-a-1</li>
-                    <li class="flex items-start"><span class="text-custom-accent mr-2">✔</span> Plan de acción para tu marca</li>
-                    <li class="flex items-start"><span class="text-custom-accent mr-2">✔</span> Soporte VIP y acompañamiento</li>
-                </ul>
-            </div>
-            <div>
-                <p class="text-xs text-custom-accent/80 italic mb-4 text-center">"Posiciona tus servicios más caros como la opción ideal."</p>
-                <a href="https://wa.me/5350000000?text=Hola,%20quiero%20reservar%20este%20servicio%20creativo" target="_blank" class="block w-full py-4 rounded-lg font-bold text-sm tracking-wider uppercase text-center transition-all duration-300 bg-custom-accent text-black hover:bg-custom-accent-hover">RESERVAR SERVICIO (DEMO)</a>
-            </div>
+      <!-- Tarjeta 2 -->
+      <div class="group bg-custom-main p-8 rounded-lg border border-custom flex flex-col justify-between hover:-translate-y-1 hover:border-custom-accent/40 hover:shadow-2xl hover:shadow-black/30 transition-all duration-300 ease-in-out">
+        <div>
+          <h3 class="text-sm font-bold text-custom-accent uppercase tracking-wider mb-2">Diseño / Dirección de Arte</h3>
+          <div class="flex items-baseline gap-2 mb-6 pb-6 border-b border-custom">
+            <span class="text-4xl font-bold text-custom-main">$150</span>
+            <span class="text-lg text-custom-muted font-normal">USD</span>
+          </div>
+          <ul class="space-y-3 mb-8 text-sm text-custom-muted">
+            <li class="flex items-start gap-2.5">
+              <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              <span>Conceptualización y moodboard</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              <span>Diseño de branding visual</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              <span>Dirección de arte para sesiones</span>
+            </li>
+          </ul>
         </div>
+        <div>
+          <p class="text-xs text-custom-accent/80 italic mb-4 text-center border-t border-custom pt-4">"Evita regateos mostrando el valor real de tu trabajo."</p>
+          <a href="https://wa.me/5350000000?text=Hola,%20quiero%20reservar%20este%20servicio%20creativo" target="_blank" rel="noopener" class="block w-full py-4 rounded-lg font-bold text-sm tracking-wider uppercase text-center transition-all duration-300 ease-in-out bg-custom-card border border-custom text-custom-main hover:border-custom-accent hover:text-custom-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-main">Reservar Servicio (Demo)</a>
+        </div>
+      </div>
+
+      <!-- Tarjeta 3 (Premium) -->
+      <div class="group border-double-gold bg-custom-main rounded-lg relative p-8 flex flex-col justify-between hover:-translate-y-1 hover:shadow-2xl hover:shadow-custom-accent/10 transition-all duration-300 ease-in-out">
+        <span class="absolute top-0 right-0 bg-custom-accent text-black text-[10px] font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg uppercase tracking-wider">Más Popular</span>
+        <div>
+          <h3 class="text-sm font-bold text-custom-accent uppercase tracking-wider mb-2">Servicio / Asesoría Premium</h3>
+          <div class="flex items-baseline gap-2 mb-6 pb-6 border-b border-custom-accent/20">
+            <span class="text-4xl font-bold text-custom-main">$100</span>
+            <span class="text-lg text-custom-muted font-normal">USD</span>
+          </div>
+          <ul class="space-y-3 mb-8 text-sm text-custom-muted">
+            <li class="flex items-start gap-2.5">
+              <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              <span>Sesión de asesoría estratégica 1-a-1</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              <span>Plan de acción para tu marca</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              <span>Soporte VIP y acompañamiento</span>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-xs text-custom-accent/80 italic mb-4 text-center border-t border-custom-accent/20 pt-4">"Posiciona tus servicios más caros como la opción ideal."</p>
+          <a href="https://wa.me/5350000000?text=Hola,%20quiero%20reservar%20este%20servicio%20creativo" target="_blank" rel="noopener" class="block w-full py-4 rounded-lg font-bold text-sm tracking-wider uppercase text-center transition-all duration-300 ease-in-out bg-custom-accent text-black hover:brightness-110 hover:shadow-[0_8px_24px_-4px_rgba(0,0,0,0.4)] focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-main">Reservar Servicio (Demo)</a>
+        </div>
+      </div>
+
     </div>
+  </div>
 </section>

@@ -593,11 +593,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- COMENTARIO: Modal QR (Simulación) ---
+// --- COMENTARIO: Modal QR Real (Identidad de Catálogos) ---
     const btnQR = document.getElementById('btn-qr-catalog');
-    if (btnQR) {
-        btnQR.addEventListener('click', () => {
-            alert('En la versión final, esto abrirá un modal con un Código QR listo para imprimir y poner en las mesas de tu local.');
+    const modalQR = document.getElementById('modal-qr');
+
+    if (btnQR && modalQR) {
+        // Abrir el modal al hacer clic en el botón
+        btnQR.addEventListener('click', (e) => {
+            e.preventDefault();
+            modalQR.classList.remove('hidden');
+        });
+
+        // Cerrar el modal al hacer clic fuera de la tarjeta o en el botón de cerrar
+        modalQR.addEventListener('click', (e) => {
+            if (e.target === modalQR || e.target.closest('#btn-close-qr')) {
+                modalQR.classList.add('hidden');
+            }
         });
     }
 
