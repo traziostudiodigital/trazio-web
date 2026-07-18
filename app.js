@@ -543,5 +543,62 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+// --- COMENTARIO: Selector de Rubros (Catálogos) ---
+    const catalogSelector = document.getElementById('catalog-industry-selector');
+    if (catalogSelector) {
+        const buttons = catalogSelector.querySelectorAll('button');
+        const panels = document.querySelectorAll('#catalog-demo-wrapper > div');
+
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                buttons.forEach(b => {
+                    b.classList.remove('bg-custom-accent', 'text-black');
+                    b.classList.add('bg-custom-card', 'border', 'border-custom/20', 'text-custom-muted');
+                });
+                btn.classList.remove('bg-custom-card', 'border', 'border-custom/20', 'text-custom-muted');
+                btn.classList.add('bg-custom-accent', 'text-black');
+
+                panels.forEach(p => {
+                    p.classList.remove('block');
+                    p.classList.add('hidden');
+                });
+
+                const targetId = btn.getAttribute('data-target');
+                const targetPanel = document.getElementById(targetId);
+                if (targetPanel) {
+                    targetPanel.classList.remove('hidden');
+                    targetPanel.classList.add('block');
+                }
+            });
+        });
+    }
+
+    // --- COMENTARIO: API de Compartir Nativa ---
+    const btnShare = document.getElementById('btn-share-catalog');
+    if (btnShare) {
+        btnShare.addEventListener('click', async () => {
+            if (navigator.share) {
+                try {
+                    await navigator.share({
+                        title: 'Mi Catálogo Digital',
+                        text: 'Mira nuestros productos y haz tu pedido por WhatsApp:',
+                        url: window.location.href
+                    });
+                } catch (err) {
+                    console.log('Error al compartir:', err);
+                }
+            } else {
+                alert('La función de compartir no está soportada en este navegador de escritorio. Úsala en tu móvil.');
+            }
+        });
+    }
+
+    // --- COMENTARIO: Modal QR (Simulación) ---
+    const btnQR = document.getElementById('btn-qr-catalog');
+    if (btnQR) {
+        btnQR.addEventListener('click', () => {
+            alert('En la versión final, esto abrirá un modal con un Código QR listo para imprimir y poner en las mesas de tu local.');
+        });
+    }
 
 }); // Cierre seguro del DOMContentLoaded global

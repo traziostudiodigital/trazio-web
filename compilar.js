@@ -13,9 +13,10 @@ const ROOT_DIR = __dirname;
 function readFileSyncSafe(filePath) {
     return fs.readFileSync(filePath, { encoding: 'utf8' });
 }
-
 function replaceIncludes(html) {
-    const includeRegex = /<!--\s*@@include\((componentes\/[^)]+)\)\s*-->/g;
+    // Esta nueva expresión regular detecta el include opcionalmente envuelto en comentarios HTML, 
+    // con o sin guiones extra, y maneja cualquier espacio en blanco intermedio.
+    const includeRegex = /(?:<!--\s*)?@@include\((componentes\/[^)]+)\)(?:\s*-->)?/g;
     return html.replace(includeRegex, (match, relativePath) => {
         const componentPath = path.join(__dirname, relativePath);
         if (!fs.existsSync(componentPath)) {

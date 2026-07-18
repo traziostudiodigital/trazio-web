@@ -1,3 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Creativo - Trazio Studio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-custom-main text-custom-main min-h-screen flex flex-col justify-between">
+    <!-- Sticky Header -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-custom-main/80 border-b border-custom/20 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-8 md:px-12 lg:px-16 py-4 flex justify-between items-center w-full">
+            <!-- Logo / Brand -->
+            <a href="index.html" class="flex items-center space-x-1 group">
+                <!-- Isotype Only -->
+                <img src="assets/isotype-gold.svg" class="w-8 h-8 hover:scale-105 transition-transform duration-300" alt="Trazio Isotype">
+            </a>
+            
+            <!-- Navigation Links - Hidden on Mobile, Visible on Desktop -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <div class="relative group">
+                    <button class="nav-link-premium text-sm font-medium hover:text-custom-accent transition-colors duration-300 flex items-center">
+                        Portafolios
+                        <svg class="w-2.5 h-2.5 ml-2 transition-transform duration-300 group-hover:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                        </svg>
+                    </button>
+                    <div class="absolute top-full left-0 mt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 bg-custom-card/95 backdrop-blur-xl border border-custom/20 rounded-xl shadow-2xl p-2 flex flex-col gap-1">
+                        <a href="portafolio-creativo.html" class="px-4 py-3 rounded-lg text-sm font-medium text-custom-muted hover:text-custom-accent hover:bg-custom-main transition-colors">Perfil Visual / Artístico</a>
+                        <a href="portafolio-tecnico.html" class="px-4 py-3 rounded-lg text-sm font-medium text-custom-muted hover:text-custom-accent hover:bg-custom-main transition-colors">Perfil Técnico / Consultor</a>
+                    </div>
+                </div>
+                <a href="catalogo-pedidos.html" class="nav-link-premium text-sm font-medium hover:text-custom-accent transition-colors duration-300" data-i18n="nav-catalogs">Catálogos</a>
+                <a href="identidad-corporativa.html" class="nav-link-premium text-sm font-medium hover:text-custom-accent transition-colors duration-300" data-i18n="nav-corporate">Empresas</a>
+            </nav>
+
+            <div class="flex items-center space-x-3">
+                <!-- Language Selector -->
+                <button id="language-toggle" class="flex items-center justify-center h-10 px-3 rounded-none bg-custom-card border border-custom/10 text-xs font-bold uppercase hover:text-custom-accent hover:border-custom/30 transition-all duration-300" title="Cambiar Idioma">
+                    <span id="current-lang-display">ES</span>
+                </button>
+                
+                <!-- Theme Switcher -->
+                <button id="theme-switcher" class="flex items-center justify-center h-10 w-10 rounded-none bg-custom-card border border-custom/10 text-custom-main hover:text-custom-accent hover:border-custom/30 transition-all duration-300" title="Cambiar Tema">
+                    <svg id="theme-icon-moon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    <svg id="theme-icon-sun" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                </button>
+
+                <!-- Header CTA Button -->
+                <a href="https://wa.me/5350000000?text=Hola,%20quiero%20iniciar%20un%20proyecto" target="_blank" rel="noopener noreferrer" class="hidden sm:flex items-center justify-center h-10 px-5 text-xs font-bold text-black uppercase tracking-wider bg-custom-accent rounded-none shadow-md shadow-custom-accent/10 hover:bg-custom-accent-hover transition-all duration-300" data-i18n="nav-cta">
+                    Iniciar Proyecto
+                </a>
+            </div>
+        </div>
+    </header>
+
 <main class="flex-grow">
     <!-- 1. Hero del Catálogo -->
     <section id="catalog-hero" class="max-w-5xl mx-auto px-6 py-12 md:py-16 flex flex-col items-center text-center animate-fade-in-up">
@@ -128,144 +190,194 @@
 </section>
 
     <!-- 3. Demo Interactiva y Herramientas -->
-    <section id="demos" class="max-w-6xl mx-auto px-6 mb-24">
-  <h2 class="text-3xl font-bold mb-4 text-custom-main text-center">Explora nuestras Demos</h2>
-  <p class="text-sm text-custom-muted max-w-2xl mx-auto text-center mb-10">Prueba cómo compraría tu cliente: elige un rubro de ejemplo, añade productos al carrito y mira cómo se arma el pedido, listo para llegarte por WhatsApp.</p>
+    <section id="demos" class="max-w-6xl mx-auto px-6 mb-24 bg-custom-main animate-fade-in-up">
+    <h2 class="text-center font-outfit tracking-tight text-custom-main text-3xl font-bold mb-4">
+        Explora nuestras Demos
+    </h2>
+    <p class="text-center font-inter text-custom-muted text-sm max-w-2xl mx-auto mb-10">
+        Prueba cómo compraría tu cliente: elige un rubro de ejemplo, añade productos al carrito y mira cómo se arma el pedido, listo para llegarte por WhatsApp.
+    </p>
 
-  <div id="catalog-industry-selector" class="flex flex-wrap justify-center gap-3 mb-12">
-    <button data-target="demo-restaurante" class="bg-custom-accent text-black px-5 py-2.5 rounded-full text-sm font-bold transition-all">Restaurantes & Cafeterías</button>
-    <button data-target="demo-tienda" class="bg-custom-card border border-custom/20 text-custom-muted hover:border-custom-accent px-5 py-2.5 rounded-full text-sm font-bold transition-all">Tiendas & Boutiques</button>
-    <button data-target="demo-servicios" class="bg-custom-card border border-custom/20 text-custom-muted hover:border-custom-accent px-5 py-2.5 rounded-full text-sm font-bold transition-all">Servicios & Barberías</button>
-  </div>
+    <div id="catalog-industry-selector" class="flex flex-wrap justify-center gap-3 mb-12">
+        <button data-target="demo-restaurante" class="rounded-lg bg-custom-accent text-black px-5 py-2.5 font-bold transition-all duration-300 hover:scale-105">
+            Restaurantes & Cafeterías
+        </button>
+        <button data-target="demo-tienda" class="rounded-lg bg-custom-card border border-custom text-custom-muted hover:border-custom-accent px-5 py-2.5 font-bold transition-all duration-300">
+            Tiendas & Boutiques
+        </button>
+        <button data-target="demo-servicios" class="rounded-lg bg-custom-card border border-custom text-custom-muted hover:border-custom-accent px-5 py-2.5 font-bold transition-all duration-300">
+            Servicios & Barberías
+        </button>
+    </div>
 
-  <div id="catalog-demo-wrapper" class="bg-custom-card/30 border border-custom/10 rounded-2xl p-8 mb-8">
-    <div id="demo-restaurante" class="demo-pane block">
-      Mockup de Restaurante aquí
-      <button onclick="addToCart('Pizza', 10)" class="mt-4 bg-white text-black px-4 py-2 rounded">Añadir Pizza</button>
+    <!-- Contenedor Principal de Visualización -->
+    <div id="catalog-demo-wrapper" class="bg-custom-card border border-custom rounded-lg p-8 mb-8 relative overflow-hidden bg-pattern-diagonal">
+        
+        <!-- Panel Restaurante -->
+        <div id="demo-restaurante" class="demo-panel block animate-fade-in-up">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <!-- Columna Izquierda (Texto) -->
+                <div>
+                    <h3 class="text-custom-main font-outfit text-xl font-bold mb-2">Menú Digital Interactivo</h3>
+                    <p class="text-custom-muted font-inter text-sm leading-relaxed">
+                        Tus comensales escanean el código QR en la mesa, seleccionan sus platillos con aditivos o términos de cocción, y envían el pedido directamente a tu cocina o barra a través de un mensaje estructurado de WhatsApp.
+                    </p>
+                </div>
+                <!-- Columna Derecha (Visual) -->
+                <div class="border-double-gold bg-custom-main rounded-lg p-8 text-center animate-float flex flex-col justify-center items-center min-h-[280px]">
+                    <span class="text-[10px] uppercase tracking-widest text-custom-accent font-bold mb-3 px-2.5 py-1 bg-custom-accent/10 rounded-full border border-custom-accent/20 animate-pulse">Demo Activa</span>
+                    <h4 class="text-custom-main font-outfit text-lg font-bold mb-1">Mockup de Interfaz Restaurante</h4>
+                    <p class="text-xs text-custom-muted max-w-[200px]">Vista interactiva de platillos y carrito de compras inteligente.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Panel Tienda -->
+        <div id="demo-tienda" class="demo-panel hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <!-- Columna Izquierda (Texto) -->
+                <div>
+                    <h3 class="text-custom-main font-outfit text-xl font-bold mb-2">Catálogo de Moda & Boutiques</h3>
+                    <p class="text-custom-muted font-inter text-sm leading-relaxed">
+                        Muestra tus colecciones con variantes de tallas, colores y control de stock en tiempo real. Una experiencia de compra fluida que incrementa el ticket promedio sin fricciones ni registros obligatorios.
+                    </p>
+                </div>
+                <!-- Columna Derecha (Visual) -->
+                <div class="border-double-gold bg-custom-main rounded-lg p-8 text-center animate-float flex flex-col justify-center items-center min-h-[280px]">
+                    <span class="text-[10px] uppercase tracking-widest text-custom-accent font-bold mb-3 px-2.5 py-1 bg-custom-accent/10 rounded-full border border-custom-accent/20 animate-pulse">Demo Activa</span>
+                    <h4 class="text-custom-main font-outfit text-lg font-bold mb-1">Mockup de Interfaz Tienda</h4>
+                    <p class="text-xs text-custom-muted max-w-[200px]">Carrusel de productos con selector de variantes y tallaje.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Panel Servicios -->
+        <div id="demo-servicios" class="demo-panel hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <!-- Columna Izquierda (Texto) -->
+                <div>
+                    <h3 class="text-custom-main font-outfit text-xl font-bold mb-2">Reserva de Turnos & Barberías</h3>
+                    <p class="text-custom-muted font-inter text-sm leading-relaxed">
+                        Permite que tus clientes elijan el profesional, visualicen las horas libres y reserven el servicio directamente desde el catálogo, recibiendo una confirmación automática con toda la información.
+                    </p>
+                </div>
+                <!-- Columna Derecha (Visual) -->
+                <div class="border-double-gold bg-custom-main rounded-lg p-8 text-center animate-float flex flex-col justify-center items-center min-h-[280px]">
+                    <span class="text-[10px] uppercase tracking-widest text-custom-accent font-bold mb-3 px-2.5 py-1 bg-custom-accent/10 rounded-full border border-custom-accent/20 animate-pulse">Demo Activa</span>
+                    <h4 class="text-custom-main font-outfit text-lg font-bold mb-1">Mockup de Interfaz Servicios</h4>
+                    <p class="text-xs text-custom-muted max-w-[200px]">Agenda digital integrada para selección de turnos y profesionales.</p>
+                </div>
+            </div>
+        </div>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-6 bg-custom-card border border-custom/20 rounded-xl p-4 max-w-3xl mx-auto shadow-lg mt-8">
+      <!-- Botón 1: Compartir -->
+      <button id="btn-share-catalog" class="flex items-center gap-3 text-custom-main hover:text-custom-accent transition-colors group relative">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+          <circle cx="18" cy="5" r="3"></circle>
+          <circle cx="6" cy="12" r="3"></circle>
+          <circle cx="18" cy="19" r="3"></circle>
+          <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+          <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+        </svg>
+        <span class="font-bold text-sm">Compartir Catálogo</span>
+        <span class="absolute -top-10 left-1/2 -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+          Ideal para reenviar en grupos de WhatsApp
+        </span>
+      </button>
+
+      <!-- Separador -->
+      <div class="hidden sm:block w-px h-8 bg-custom/20"></div>
+
+      <!-- Botón 2: Código QR -->
+      <button id="btn-qr-catalog" class="flex items-center gap-3 text-custom-main hover:text-custom-accent transition-colors group relative">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+          <rect width="5" height="5" x="3" y="3" rx="1"></rect>
+          <rect width="5" height="5" x="16" y="3" rx="1"></rect>
+          <rect width="5" height="5" x="3" y="16" rx="1"></rect>
+          <path d="M21 16h-3a2 2 0 0 0-2 2v3"></path>
+          <path d="M21 21v-2a2 2 0 0 0-2-2h-2"></path>
+          <path d="M11 3h1"></path>
+          <path d="M12 7v3a1 1 0 0 1-1 1H8"></path>
+          <path d="M12 12V8"></path>
+          <path d="M3 12h1"></path>
+          <path d="M16 11h2a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-1a1 1 0 0 1 1-1Z"></path>
+          <path d="M7 12H5a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-1a1 1 0 0 0-1-1Z"></path>
+          <path d="M12 15v2a1 1 0 0 1-1 1h-1"></path>
+        </svg>
+        <span class="font-bold text-sm">Generar QR de Mesa</span>
+        <span class="absolute -top-10 left-1/2 -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+          Imprímelo para que tus clientes pidan desde el local
+        </span>
+      </button>
     </div>
-    <div id="demo-tienda" class="demo-pane hidden">
-      Mockup de Tienda aquí
-    </div>
-    <div id="demo-servicios" class="demo-pane hidden">
-      Mockup de Servicios aquí
-    </div>
-    
-    <!-- Estos elementos son necesarios para que el script no falle -->
-    <div id="whatsapp-bubble" class="hidden">
-      <p id="whatsapp-bubble-text"></p>
-    </div>
-    <p id="whatsapp-input-preview"></p>
-    <p id="cart-total">$0.00</p>
-    <span id="demo-mock-url"></span>
-    <span id="whatsapp-bot-name"></span>
-  </div>
 </section>
-
-<!-- Script para la Lógica Interactiva de la Demo -->
-<script>
-  let cart = [];
-  let currentIndustry = 'demo-restaurante';
-
-  const industryUrls = {
-    'demo-restaurante': 'LaRusticaMenu.trazio.app',
-    'demo-tienda': 'AuraShop.trazio.app',
-    'demo-servicios': 'ValkiriaBarber.trazio.app'
-  };
-
-  const industryBotNames = {
-    'demo-restaurante': 'La Rústica Pizzería 🍕',
-    'demo-tienda': 'Aura Concept Store 🛍️',
-    'demo-servicios': 'Valkiria Barber & Club 💈'
-  };
-
-  // Reemplaza todo el bloque anterior de "Selector de Rubros" por este:
-  document.querySelectorAll('#catalog-industry-selector button').forEach(button => {
-    button.addEventListener('click', () => {
-      const target = button.getAttribute('data-target');
-      
-      document.querySelectorAll('#catalog-industry-selector button').forEach(btn => {
-        btn.classList.remove('bg-custom-accent', 'text-black', 'shadow-[0_0_20px_rgba(212,175,55,0.3)]');
-        btn.classList.add('bg-custom-card', 'border', 'border-custom/20', 'text-custom-muted');
-      });
-
-      button.classList.add('bg-custom-accent', 'text-black', 'shadow-[0_0_20px_rgba(212,175,55,0.3)]');
-      button.classList.remove('bg-custom-card', 'border', 'border-custom/20', 'text-custom-muted');
-
-      document.querySelectorAll('.demo-pane').forEach(pane => {
-        pane.classList.add('hidden');
-        pane.classList.remove('block');
-      });
-      document.getElementById(target).classList.remove('hidden');
-      document.getElementById(target).classList.add('block');
-
-      currentIndustry = target;
-      if(document.getElementById('demo-mock-url')) document.getElementById('demo-mock-url').textContent = industryUrls[target];
-      if(document.getElementById('whatsapp-bot-name')) document.getElementById('whatsapp-bot-name').textContent = industryBotNames[target];
-
-      clearCart();
-    });
-  });
-
-  // Agregar al Carrito
-  function addToCart(name, price) {
-    const existing = cart.find(item => item.name === name);
-    if (existing) {
-      existing.qty += 1;
-    } else {
-      cart.push({ name, price, qty: 1 });
-    }
-    updateSandbox();
-  }
-
-  // Limpiar Carrito
-  function clearCart() {
-    cart = [];
-    updateSandbox();
-  }
-
-  // Actualizar UI del Simulador
-  function updateSandbox() {
-    const bubble = document.getElementById('whatsapp-bubble');
-    const bubbleText = document.getElementById('whatsapp-bubble-text');
-    const inputPreview = document.getElementById('whatsapp-input-preview');
-    const totalEl = document.getElementById('cart-total');
-
-    if (cart.length === 0) {
-      bubble.classList.add('hidden');
-      inputPreview.textContent = 'Selecciona ítems...';
-      totalEl.textContent = '$0.00';
-      return;
-    }
-
-    bubble.classList.remove('hidden');
-
-    let total = 0;
-    let message = `*NUEVO PEDIDO 📥*\n`;
-    message += `━━━━━━━━━━━━━━━━━\n`;
-    
-    cart.forEach(item => {
-      const subtotal = item.price * item.qty;
-      total += subtotal;
-      message += `• *${item.qty}x* ${item.name} (_$${item.price.toFixed(2)} c/u_)\n`;
-    });
-
-    message += `━━━━━━━━━━━━━━━━━\n`;
-    message += `*Total a Pagar:* $${total.toFixed(2)}\n\n`;
-    message += `📍 *Entrega:* Delivery\n`;
-    message += `🏠 *Dirección:* Av. Principal 123`;
-
-    bubbleText.textContent = message;
-    inputPreview.textContent = `Enviar pedido ($${total.toFixed(2)})`;
-    totalEl.textContent = `$${total.toFixed(2)}`;
-      }
-
-  // Simular Envío de Mensaje de WhatsApp
-  function sendSimulatedOrder() {
-    if (cart.length === 0) {
-      alert("¡Tu carrito está vacío! Añade productos para simular el envío.");
-      return;
-    }
-    alert("🚀 ¡Simulación Exitosa!\n\nEn tu tienda real, esto abrirá WhatsApp automáticamente con el mensaje formateado listo para enviar sin que tu cliente tenga que escribir nada.");
-  }
-</script>
 </main>
+
+<!-- Footer -->
+<footer id="footer" class="bg-[#111118] border-t border-custom/10 py-12 px-6 relative z-10 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        <!-- Column 1: Logo & Tagline -->
+        <div class="lg:col-span-3 flex flex-col items-center lg:items-start space-y-4 text-center lg:text-left">
+            <a href="index.html" class="flex items-center space-x-2 group">
+                <img src="assets/isotype-gold.svg" class="w-8 h-8 rounded-lg shadow-md group-hover:scale-105 transition-transform duration-300" alt="Trazio Isotype">
+                <img src="assets/logo-gold.svg" class="logo-gold h-7 w-auto transition-all duration-300" alt="Trazio Studio Logo">
+                <img src="assets/logo-dark.svg" class="logo-dark h-7 w-auto transition-all duration-300" alt="Trazio Studio Logo">
+            </a>
+            <p class="text-custom-muted leading-relaxed text-sm max-w-xs" data-i18n="footer-tagline">Trazamos herramientas web de alta velocidad para optimizar tus ventas.</p>
+        </div>
+        <!-- Column 2: Quick Links -->
+        <div class="lg:col-span-2 flex flex-col items-center lg:items-start text-center lg:text-left">
+            <h3 class="text-xs font-semibold uppercase tracking-widest text-custom-main mb-4" data-i18n="footer-quick-links">Enlaces Rápidos</h3>
+            <ul class="space-y-2.5 text-sm">
+                <li><a href="portafolio-creativo.html" class="text-custom-muted hover:text-custom-accent transition-colors duration-300 nav-link-premium" data-i18n="nav-portfolio">Portafolios</a></li>
+                <li><a href="catalogo-pedidos.html" class="text-custom-muted hover:text-custom-accent transition-colors duration-300 nav-link-premium" data-i18n="nav-catalogs">Catálogos</a></li>
+                <li><a href="identidad-corporativa.html" class="text-custom-muted hover:text-custom-accent transition-colors duration-300 nav-link-premium" data-i18n="nav-corporate">Empresas</a></li>
+            </ul>
+        </div>
+        <!-- Column 3: Contact & Socials -->
+        <div class="lg:col-span-2 flex flex-col items-center lg:items-start text-center lg:text-left">
+            <h3 class="text-xs font-semibold uppercase tracking-widest text-custom-main mb-4" data-i18n="footer-contact">Contacto</h3>
+            <ul class="space-y-3.5 text-sm w-full">
+                <li>
+                    <a href="https://wa.me/5350000000?text=Hola%20Trazio%20Studio,%20quiero%20iniciar%20un%20proyecto" target="_blank" rel="noopener noreferrer" class="text-custom-muted hover:text-custom-accent flex items-center justify-center lg:justify-start group gap-2.5">
+                        <span class="p-1.5 rounded-lg bg-custom-card border border-custom/10 text-custom-accent group-hover:border-custom-accent/30 transition-colors">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2C7.314 2 3.407 5.864 3.407 10.546c0 1.408.349 2.8.956 4.028L2 22l7.666-2.52c1.176.666 2.51.999 3.374.999h.001c4.726 0 8.633-3.863 8.633-8.545C20.674 5.864 16.766 2 12.04 2zM17.152 15.632c-.234-.116-.967-.474-1.117-.528-.15-.054-.26-.054-.37.054-.11.108-.424.528-.548.665-.124.136-.248.15-.457.054-.93-.418-1.54-1.01-2.175-1.928-.636-.92-1.066-1.85-1.423-2.457-.357-.607-.037-.936.27-.99.27-.054.597-.13.864-.424.267-.294.357-.59.5-.784.144-.196.073-.37-.036-.59-.11-.22-.968-2.324-1.325-3.18-.357-.855-.72-.74-1.002-.756-.279-.016-.598-.016-.917-.016-.319 0-.83.108-1.26.54-.43.432-1.64 1.586-1.64 3.868 0 2.28 1.678 4.475 1.916 4.788.238.313 3.303 5.034 8.04 7.025 1.18.497 2.11.79 2.846.99.736.199 1.407.153 1.93-.066.523-.22 1.637-.675 1.87-.99.234-.314.234-.582.162-.702-.072-.119-.267-.183-.557-.32z"/></svg>
+                        </span>
+                        WhatsApp
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:contacto@traziostudio.com" class="text-custom-muted hover:text-custom-accent flex items-center justify-center lg:justify-start group gap-2.5">
+                        <span class="p-1.5 rounded-lg bg-custom-card border border-custom/10 text-custom-accent group-hover:border-custom-accent/30 transition-colors">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        </span>
+                        Email
+                    </a>
+                </li>
+                <li>
+                    <a href="https://facebook.com/traziostudio" target="_blank" rel="noopener noreferrer" class="text-custom-muted hover:text-custom-accent flex items-center justify-center lg:justify-start group gap-2.5">
+                        <span class="p-1.5 rounded-lg bg-custom-card border border-custom/10 text-custom-accent group-hover:border-custom-accent/30 transition-colors">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </span>
+                        Facebook
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- Column 4: Unified B2B CTA Card -->
+        <div class="lg:col-span-5 w-full bg-custom-card/50 border border-custom-accent/20 p-6 rounded-lg text-left space-y-4">
+            <h3 class="text-sm font-bold text-custom-main uppercase" data-i18n="footer-aida-text">¿Listo para hacer crecer tu negocio?</h3>
+            <p class="text-xs text-custom-muted" data-i18n="footer-aida-desc">Escríbenos y cuéntanos tu idea o mándanos tu lista de precios por WhatsApp. Te preparamos una demostración interactiva totalmente gratis y adaptada a tu sector en menos de 24 horas.</p>
+            <a href="https://wa.me/5350000000?text=Hola%20Trazio%20Studio,%20quiero%20solicitar%20una%20demostración%20gratuita%20para%20mi%20negocio." target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center px-6 py-3.5 bg-custom-accent hover:bg-custom-accent-hover text-black font-bold uppercase text-[11px] tracking-wider transition-all duration-300">
+                SOLICITAR DEMOSTRACIÓN GRATIS
+            </a>
+            <p class="text-[10px] sm:text-xs text-custom-muted" data-i18n="footer-microcopy"><span class="text-custom-accent">✔</span> Sin costo técnico, compromisos ni contratos de mantenimiento.</p>
+        </div>
+    </div>
+    <!-- Bottom Copyright Bar -->
+    <div class="max-w-7xl mx-auto border-t border-custom/10 mt-10 pt-6 flex flex-col items-center text-center text-[11px] text-custom-muted/80 space-y-2">
+        <p>&copy; <span id="current-year"></span> Trazio Studio. <span data-i18n="all-rights-reserved">All rights reserved.</span></p>
+        <p class="font-medium">Designed with precision by Trazio Studio</p>
+    </div>
+    <script src="./app.js"></script>
+</footer>

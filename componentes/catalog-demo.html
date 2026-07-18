@@ -1,0 +1,121 @@
+<section id="demos" class="max-w-6xl mx-auto px-6 mb-24 bg-custom-main animate-fade-in-up">
+    <h2 class="text-center font-outfit tracking-tight text-custom-main text-3xl font-bold mb-4">
+        Explora nuestras Demos
+    </h2>
+    <p class="text-center font-inter text-custom-muted text-sm max-w-2xl mx-auto mb-10">
+        Prueba cómo compraría tu cliente: elige un rubro de ejemplo, añade productos al carrito y mira cómo se arma el pedido, listo para llegarte por WhatsApp.
+    </p>
+
+    <div id="catalog-industry-selector" class="flex flex-wrap justify-center gap-3 mb-12">
+        <button data-target="demo-restaurante" class="rounded-lg bg-custom-accent text-black px-5 py-2.5 font-bold transition-all duration-300 hover:scale-105">
+            Restaurantes & Cafeterías
+        </button>
+        <button data-target="demo-tienda" class="rounded-lg bg-custom-card border border-custom text-custom-muted hover:border-custom-accent px-5 py-2.5 font-bold transition-all duration-300">
+            Tiendas & Boutiques
+        </button>
+        <button data-target="demo-servicios" class="rounded-lg bg-custom-card border border-custom text-custom-muted hover:border-custom-accent px-5 py-2.5 font-bold transition-all duration-300">
+            Servicios & Barberías
+        </button>
+    </div>
+
+    <!-- Contenedor Principal de Visualización -->
+    <div id="catalog-demo-wrapper" class="bg-custom-card border border-custom rounded-lg p-8 mb-8 relative overflow-hidden bg-pattern-diagonal">
+        
+        <!-- Panel Restaurante -->
+        <div id="demo-restaurante" class="demo-panel block animate-fade-in-up">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <!-- Columna Izquierda (Texto) -->
+                <div>
+                    <h3 class="text-custom-main font-outfit text-xl font-bold mb-2">Menú Digital Interactivo</h3>
+                    <p class="text-custom-muted font-inter text-sm leading-relaxed">
+                        Tus comensales escanean el código QR en la mesa, seleccionan sus platillos con aditivos o términos de cocción, y envían el pedido directamente a tu cocina o barra a través de un mensaje estructurado de WhatsApp.
+                    </p>
+                </div>
+                <!-- Columna Derecha (Visual) -->
+                <div class="border-double-gold bg-custom-main rounded-lg p-8 text-center animate-float flex flex-col justify-center items-center min-h-[280px]">
+                    <span class="text-[10px] uppercase tracking-widest text-custom-accent font-bold mb-3 px-2.5 py-1 bg-custom-accent/10 rounded-full border border-custom-accent/20 animate-pulse">Demo Activa</span>
+                    <h4 class="text-custom-main font-outfit text-lg font-bold mb-1">Mockup de Interfaz Restaurante</h4>
+                    <p class="text-xs text-custom-muted max-w-[200px]">Vista interactiva de platillos y carrito de compras inteligente.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Panel Tienda -->
+        <div id="demo-tienda" class="demo-panel hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <!-- Columna Izquierda (Texto) -->
+                <div>
+                    <h3 class="text-custom-main font-outfit text-xl font-bold mb-2">Catálogo de Moda & Boutiques</h3>
+                    <p class="text-custom-muted font-inter text-sm leading-relaxed">
+                        Muestra tus colecciones con variantes de tallas, colores y control de stock en tiempo real. Una experiencia de compra fluida que incrementa el ticket promedio sin fricciones ni registros obligatorios.
+                    </p>
+                </div>
+                <!-- Columna Derecha (Visual) -->
+                <div class="border-double-gold bg-custom-main rounded-lg p-8 text-center animate-float flex flex-col justify-center items-center min-h-[280px]">
+                    <span class="text-[10px] uppercase tracking-widest text-custom-accent font-bold mb-3 px-2.5 py-1 bg-custom-accent/10 rounded-full border border-custom-accent/20 animate-pulse">Demo Activa</span>
+                    <h4 class="text-custom-main font-outfit text-lg font-bold mb-1">Mockup de Interfaz Tienda</h4>
+                    <p class="text-xs text-custom-muted max-w-[200px]">Carrusel de productos con selector de variantes y tallaje.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Panel Servicios -->
+        <div id="demo-servicios" class="demo-panel hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <!-- Columna Izquierda (Texto) -->
+                <div>
+                    <h3 class="text-custom-main font-outfit text-xl font-bold mb-2">Reserva de Turnos & Barberías</h3>
+                    <p class="text-custom-muted font-inter text-sm leading-relaxed">
+                        Permite que tus clientes elijan el profesional, visualicen las horas libres y reserven el servicio directamente desde el catálogo, recibiendo una confirmación automática con toda la información.
+                    </p>
+                </div>
+                <!-- Columna Derecha (Visual) -->
+                <div class="border-double-gold bg-custom-main rounded-lg p-8 text-center animate-float flex flex-col justify-center items-center min-h-[280px]">
+                    <span class="text-[10px] uppercase tracking-widest text-custom-accent font-bold mb-3 px-2.5 py-1 bg-custom-accent/10 rounded-full border border-custom-accent/20 animate-pulse">Demo Activa</span>
+                    <h4 class="text-custom-main font-outfit text-lg font-bold mb-1">Mockup de Interfaz Servicios</h4>
+                    <p class="text-xs text-custom-muted max-w-[200px]">Agenda digital integrada para selección de turnos y profesionales.</p>
+                </div>
+            </div>
+        </div>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-6 bg-custom-card border border-custom/20 rounded-xl p-4 max-w-3xl mx-auto shadow-lg mt-8">
+      <!-- Botón 1: Compartir -->
+      <button id="btn-share-catalog" class="flex items-center gap-3 text-custom-main hover:text-custom-accent transition-colors group relative">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+          <circle cx="18" cy="5" r="3"></circle>
+          <circle cx="6" cy="12" r="3"></circle>
+          <circle cx="18" cy="19" r="3"></circle>
+          <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+          <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+        </svg>
+        <span class="font-bold text-sm">Compartir Catálogo</span>
+        <span class="absolute -top-10 left-1/2 -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+          Ideal para reenviar en grupos de WhatsApp
+        </span>
+      </button>
+
+      <!-- Separador -->
+      <div class="hidden sm:block w-px h-8 bg-custom/20"></div>
+
+      <!-- Botón 2: Código QR -->
+      <button id="btn-qr-catalog" class="flex items-center gap-3 text-custom-main hover:text-custom-accent transition-colors group relative">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+          <rect width="5" height="5" x="3" y="3" rx="1"></rect>
+          <rect width="5" height="5" x="16" y="3" rx="1"></rect>
+          <rect width="5" height="5" x="3" y="16" rx="1"></rect>
+          <path d="M21 16h-3a2 2 0 0 0-2 2v3"></path>
+          <path d="M21 21v-2a2 2 0 0 0-2-2h-2"></path>
+          <path d="M11 3h1"></path>
+          <path d="M12 7v3a1 1 0 0 1-1 1H8"></path>
+          <path d="M12 12V8"></path>
+          <path d="M3 12h1"></path>
+          <path d="M16 11h2a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-1a1 1 0 0 1 1-1Z"></path>
+          <path d="M7 12H5a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-1a1 1 0 0 0-1-1Z"></path>
+          <path d="M12 15v2a1 1 0 0 1-1 1h-1"></path>
+        </svg>
+        <span class="font-bold text-sm">Generar QR de Mesa</span>
+        <span class="absolute -top-10 left-1/2 -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+          Imprímelo para que tus clientes pidan desde el local
+        </span>
+      </button>
+    </div>
+</section>
