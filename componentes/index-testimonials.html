@@ -1,36 +1,58 @@
-<section class="relative py-20 px-6 mb-16 border-y border-custom/10 bg-custom-card/20 overflow-hidden">
-  <!-- Fondo: Añade un div absoluto de fondo con la clase bg-mesh-dots absolute inset-0 z-0 -->
-  <div class="bg-mesh-dots absolute inset-0 z-0"></div>
+<!-- Sección de Testimonios del Home (Totalmente Auditada) -->
+<section class="relative py-20 px-6 mb-16 border-y border-custom/10 bg-custom-card/10 overflow-hidden">
+    <!-- Fondo de puntitos sutiles -->
+    <div class="bg-mesh-dots absolute inset-0 z-0 pointer-events-none"></div>
+    
+    <!-- Contenedor Principal -->
+    <div class="max-w-7xl mx-auto relative z-10">
+        
+        <!-- Cabecera -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase border border-custom/30 text-custom-accent bg-custom-accent/5 mb-4">
+                PRUEBA SOCIAL
+            </span>
+            <h2 class="text-3xl md:text-4xl font-bold text-custom-main">Resultados reales en el mercado cubano.</h2>
+        </div>
 
-  <div class="relative z-10">
-    <!-- Cabecera (z-10 relativa): H2 centrado "Resultados reales en el mercado cubano." -->
-    <h2 class="text-3xl md:text-4xl font-bold text-custom-main mb-12 text-center">Resultados reales en el mercado cubano.</h2>
+        <!-- Grid de 3 Columnas -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <!-- Tarjeta 1 (Catálogos) -->
+            <div class="bg-custom-card/90 backdrop-blur-sm border border-custom/20 p-8 rounded-2xl relative hover:-translate-y-2 transition-transform duration-300 shadow-xl flex flex-col justify-between min-h-[280px]">
+                <div class="absolute -top-5 right-8 text-6xl text-custom-accent opacity-20 font-serif select-none">"</div>
+                <p class="text-custom-main text-base italic mb-6 relative z-10 leading-relaxed">
+                    "Desde que usamos el catálogo de Trazio, las colas en el mostrador bajaron a la mitad. La gente llega con el pedido hecho por WhatsApp."
+                </p>
+                <div>
+                    <h4 class="text-sm font-bold text-custom-main">Cafetería La Esquina</h4>
+                    <span class="text-xs text-custom-accent uppercase font-semibold tracking-wider">Catálogos</span>
+                </div>
+            </div>
 
-    <!-- Grid (z-10 relativa): 3 columnas -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-      <!-- Tarjeta 1 -->
-      <div class="bg-custom-card/90 backdrop-blur-sm border border-custom/20 p-8 rounded-2xl relative hover:-translate-y-2 transition-transform duration-300 shadow-xl">
-        <!-- Comillas: Un icono SVG pequeño o un caracter de comilla sutil en color dorado -->
-        <svg class="w-8 h-8 text-custom-accent mb-4" fill="currentColor" viewBox="0 0 24 24" stroke-width="0" stroke="currentColor" aria-hidden="true">
-          <path d="M4.583 6.446c-.71-.87-.71-2.28 0-3.15.71-.87 1.86-.87 2.57 0l4.31 5.28c.71.87.71 2.28 0 3.15-.71.87-1.86.87-2.57 0l-4.31-5.28zm10 0c-.71-.87-.71-2.28 0-3.15.71-.87 1.86-.87 2.57 0l4.31 5.28c.71.87.71 2.28 0 3.15-.71.87-1.86.87-2.57 0l-4.31-5.28z"/>
-        </svg>
-        <p class="text-custom-text mb-6">Desde que usamos el catálogo de Trazio, las colas en el mostrador bajaron a la mitad. La gente llega con el pedido hecho por WhatsApp.</p>
-        <p class="font-semibold text-custom-main">Cafetería La Esquina</p>
-        <span class="inline-block bg-custom-accent/20 text-custom-accent text-xs font-semibold px-3 py-1 rounded-full mt-2">Catálogos</span>
-      </div>
+            <!-- Tarjeta 2 (Portafolios) -->
+            <div class="bg-custom-card/90 backdrop-blur-sm border border-custom/20 p-8 rounded-2xl relative hover:-translate-y-2 transition-transform duration-300 shadow-xl flex flex-col justify-between min-h-[280px]">
+                <div class="absolute -top-5 right-8 text-6xl text-custom-accent opacity-20 font-serif select-none">"</div>
+                <p class="text-custom-main text-base italic mb-6 relative z-10 leading-relaxed">
+                    "Mi portafolio carga tan rápido que mis clientes en Miami piensan que tengo servidores allá. Pude subir mis tarifas de fotografía un 30%."
+                </p>
+                <div>
+                    <h4 class="text-sm font-bold text-custom-main">Alejandro, Fotógrafo</h4>
+                    <span class="text-xs text-custom-accent uppercase font-semibold tracking-wider">Portafolios</span>
+                </div>
+            </div>
 
-      <!-- Tarjeta 2 -->
-      <div class="bg-custom-card/90 backdrop-blur-sm border border-custom/20 p-8 rounded-2xl relative hover:-translate-y-2 transition-transform duration-300 shadow-xl">
-        <!-- Comillas -->
-        <svg class="w-8 h-8 text-custom-accent mb-4" fill="currentColor" viewBox="0 0 24 24" stroke-width="0" stroke="currentColor" aria-hidden="true">
-          <path d="M4.583 6.446c-.71-.87-.71-2.28 0-3.15.71-.87 1.86-.87 2.57 0l4.31 5.28c.71.87.71 2.28 0 3.15-.71.87-1.86.87-2.57 0l-4.31-5.28zm10 0c-.71-.87-.71-2.28 0-3.15.71-.87 1.86-.87 2.57 0l4.31 5.28c.71.87.71 2.28 0 3.15-.71.87-1.86.87-2.57 0l-4.31-5.28z"/>
-        </svg>
-        <p class="text-custom-text mb-6">Mi portafolio carga tan rápido que mis clientes en Miami piensan que tengo servidores allá. Pude subir mis tarifas de fotografía un 30%.</p>
-        <p class="font-semibold text-custom-main">Alejandro, Fotógrafo</p>
-        <span class="inline-block bg-custom-accent/20 text-custom-accent text-xs font-semibold px-3 py-1 rounded-full mt-2">Portafolios</span>
-      </div>
+            <!-- Tarjeta 3 (Corporativo) -->
+            <div class="bg-custom-card/90 backdrop-blur-sm border border-custom/20 p-8 rounded-2xl relative hover:-translate-y-2 transition-transform duration-300 shadow-xl flex flex-col justify-between min-h-[280px]">
+                <div class="absolute -top-5 right-8 text-6xl text-custom-accent opacity-20 font-serif select-none">"</div>
+                <p class="text-custom-main text-base italic mb-6 relative z-10 leading-relaxed">
+                    "Tener correos corporativos y una web seria nos permitió ganar nuestra primera licitación con una cadena hotelera. Inversión recuperada en un mes."
+                </p>
+                <div>
+                    <h4 class="text-sm font-bold text-custom-main">NEXO Mantenimiento</h4>
+                    <span class="text-xs text-custom-accent uppercase font-semibold tracking-wider">Corporativo</span>
+                </div>
+            </div>
 
-      <!-- Tarjeta 3 -->
-      <div class="bg-custom-card/90 backdrop-blur-sm border border-custom/20 p-8 rounded-2xl relative hover:-translate-y-2 transition-transform duration-300 shadow-xl">
-        <!-- Comillas -->
-        <svg class="w-8 h-8 text-custom-accent mb-4" fill="currentColor" viewBox="0 0 24 24" stroke-
+        </div> <!-- Fin del Grid -->
+    </div> <!-- Fin del Contenedor Principal -->
+</section>
