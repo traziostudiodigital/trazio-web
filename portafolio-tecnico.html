@@ -330,70 +330,126 @@
 </div>
 
 <!-- Footer -->
-<footer id="footer" class="bg-[#111118] border-t border-custom/10 py-12 px-6 relative z-10 transition-colors duration-300">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-        <!-- Column 1: Logo & Tagline -->
-        <div class="lg:col-span-3 flex flex-col items-center lg:items-start space-y-4 text-center lg:text-left">
-            <a href="index.html" class="flex items-center space-x-2 group">
-                <img src="assets/isotype-gold.svg" class="w-8 h-8 rounded-lg shadow-md group-hover:scale-105 transition-transform duration-300" alt="Trazio Isotype">
-                <img src="assets/logo-gold.svg" class="logo-gold h-7 w-auto transition-all duration-300" alt="Trazio Studio Logo">
-                <img src="assets/logo-dark.svg" class="logo-dark h-7 w-auto transition-all duration-300" alt="Trazio Studio Logo">
-            </a>
-            <p class="text-custom-muted leading-relaxed text-sm max-w-xs" data-i18n="footer-tagline">Trazamos herramientas web de alta velocidad para optimizar tus ventas.</p>
+<footer id="footer" class="relative z-10 bg-custom-main border-t border-custom">
+    <div class="max-w-7xl mx-auto px-6 py-16">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8">
+
+            <!-- Columna 1: Logo & Tagline -->
+            <div class="lg:col-span-3 flex flex-col items-center lg:items-start space-y-5 text-center lg:text-left">
+                <a href="index.html" class="flex items-center gap-2 group">
+                    <img src="assets/isotype-gold.svg" class="w-8 h-8 rounded-lg shadow-md group-hover:scale-105 transition-transform duration-300 ease-in-out" alt="Trazio Isotype">
+                    <img src="assets/logo-gold.svg" class="logo-gold h-7 w-auto transition-all duration-300 ease-in-out" alt="Trazio Studio Logo">
+                    <img src="assets/logo-dark.svg" class="logo-dark h-7 w-auto transition-all duration-300 ease-in-out" alt="Trazio Studio Logo">
+                </a>
+                <p class="text-custom-muted leading-relaxed text-sm max-w-xs" data-i18n="footer-tagline">Trazamos herramientas web de alta velocidad para optimizar tus ventas.</p>
+
+                <!-- Síguenos -->
+                <div>
+                    <span class="block text-[11px] font-semibold uppercase tracking-widest text-custom-muted mb-3" data-i18n="footer-follow">Síguenos</span>
+                    <div class="flex items-center gap-2.5">
+                        <!-- TODO: reemplazar con tu usuario real de Instagram -->
+                        <a href="https://instagram.com/traziostudio" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="p-2 rounded-lg bg-custom-card border border-custom text-custom-accent hover:border-custom-accent hover:-translate-y-0.5 transition-all duration-300 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-main">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
+                                <rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.9" fill="currentColor" stroke="none"/>
+                            </svg>
+                        </a>
+                        <!-- TODO: reemplazar con tu página real de Facebook -->
+                        <a href="https://facebook.com/traziostudio" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="p-2 rounded-lg bg-custom-card border border-custom text-custom-accent hover:border-custom-accent hover:-translate-y-0.5 transition-all duration-300 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-main">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Columna 2: Soluciones -->
+            <div class="lg:col-span-2 flex flex-col items-center lg:items-start text-center lg:text-left">
+                <h3 class="text-xs font-semibold uppercase tracking-widest text-custom-main mb-4" data-i18n="footer-quick-links">Soluciones</h3>
+                <nav aria-label="Enlaces rápidos a soluciones">
+                    <ul class="space-y-2.5 text-sm">
+                        <li>
+                            <a href="catalogo-pedidos.html" class="group text-custom-muted hover:text-custom-accent transition-colors duration-300 ease-in-out nav-link-premium inline-flex items-center gap-1.5" data-i18n="nav-catalogs">
+                                Catálogos
+                                <svg class="w-3 h-3 shrink-0 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 ease-in-out" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="portafolio-creativo.html" class="group text-custom-muted hover:text-custom-accent transition-colors duration-300 ease-in-out nav-link-premium inline-flex items-center gap-1.5" data-i18n="nav-portfolio">
+                                Portafolios
+                                <svg class="w-3 h-3 shrink-0 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 ease-in-out" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="identidad-corporativa.html" class="group text-custom-muted hover:text-custom-accent transition-colors duration-300 ease-in-out nav-link-premium inline-flex items-center gap-1.5" data-i18n="nav-corporate">
+                                Empresas
+                                <svg class="w-3 h-3 shrink-0 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 ease-in-out" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Columna 3: Conecta con Nosotros -->
+            <div class="lg:col-span-3 flex flex-col items-center lg:items-start text-center lg:text-left w-full">
+                <h3 class="text-xs font-semibold uppercase tracking-widest text-custom-main mb-4" data-i18n="footer-contact">Conecta con Nosotros</h3>
+
+                <!-- WhatsApp: canal principal -->
+                <a href="https://wa.me/5350000000?text=Hola%20Trazio%20Studio,%20quiero%20iniciar%20un%20proyecto" target="_blank" rel="noopener noreferrer" class="group w-full flex items-center gap-3 p-3 rounded-lg bg-custom-card border border-custom hover:border-custom-accent/50 transition-all duration-300 ease-in-out mb-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-main">
+                    <span class="p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 shrink-0">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C7.314 2 3.407 5.864 3.407 10.546c0 1.408.349 2.8.956 4.028L2 22l7.666-2.52c1.176.666 2.51.999 3.374.999h.001c4.726 0 8.633-3.863 8.633-8.545C20.674 5.864 16.766 2 12.04 2zM17.152 15.632c-.234-.116-.967-.474-1.117-.528-.15-.054-.26-.054-.37.054-.11.108-.424.528-.548.665-.124.136-.248.15-.457.054-.93-.418-1.54-1.01-2.175-1.928-.636-.92-1.066-1.85-1.423-2.457-.357-.607-.037-.936.27-.99.27-.054.597-.13.864-.424.267-.294.357-.59.5-.784.144-.196.073-.37-.036-.59-.11-.22-.968-2.324-1.325-3.18-.357-.855-.72-.74-1.002-.756-.279-.016-.598-.016-.917-.016-.319 0-.83.108-1.26.54-.43.432-1.64 1.586-1.64 3.868 0 2.28 1.678 4.475 1.916 4.788.238.313 3.303 5.034 8.04 7.025 1.18.497 2.11.79 2.846.99.736.199 1.407.153 1.93-.066.523-.22 1.637-.675 1.87-.99.234-.314.234-.582.162-.702-.072-.119-.267-.183-.557-.32z"/></svg>
+                    </span>
+                    <span class="flex-1 min-w-0">
+                        <span class="block text-sm font-bold text-custom-main group-hover:text-custom-accent transition-colors duration-300 ease-in-out" data-i18n="footer-whatsapp-label">WhatsApp Directo</span>
+                        <span class="block text-[11px] text-custom-muted" data-i18n="footer-whatsapp-desc">La vía más rápida para cotizar</span>
+                    </span>
+                    <svg class="w-4 h-4 text-custom-muted shrink-0 group-hover:text-custom-accent group-hover:translate-x-0.5 transition-all duration-300 ease-in-out" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                </a>
+
+                <!-- Email -->
+                <a href="mailto:contacto@traziostudio.com" class="group w-full flex items-center gap-3 p-3 rounded-lg hover:bg-custom-card transition-all duration-300 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-main">
+                    <span class="p-2 rounded-lg bg-custom-card border border-custom text-custom-accent shrink-0 group-hover:border-custom-accent/50 transition-colors duration-300 ease-in-out">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    </span>
+                    <span class="text-sm text-custom-muted group-hover:text-custom-main transition-colors duration-300 ease-in-out">contacto@traziostudio.com</span>
+                </a>
+            </div>
+
+            <!-- Columna 4: CTA Card -->
+            <div class="lg:col-span-4 w-full bg-custom-card border-double-gold rounded-lg p-6 text-left space-y-4 h-fit">
+                <h3 class="text-sm font-bold text-custom-main uppercase tracking-wide" data-i18n="footer-aida-text">¿Listo para hacer crecer tu negocio?</h3>
+                <p class="text-xs text-custom-muted leading-relaxed" data-i18n="footer-aida-desc">Escríbenos y cuéntanos tu idea o mándanos tu lista de precios por WhatsApp. Te preparamos una demostración interactiva totalmente gratis y adaptada a tu sector en menos de 24 horas.</p>
+                <a href="https://wa.me/5350000000?text=Hola%20Trazio%20Studio,%20quiero%20solicitar%20una%20demostraci%C3%B3n%20gratuita%20para%20mi%20negocio." target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-custom-accent hover:brightness-110 text-black font-bold uppercase text-[11px] tracking-wider rounded-lg transition-all duration-300 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-card">
+                    Solicitar Demostración Gratis
+                    <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                </a>
+                <p class="text-[11px] text-custom-muted flex items-center gap-1.5" data-i18n="footer-microcopy">
+                    <svg class="w-3.5 h-3.5 text-custom-accent shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    Sin costo técnico, compromisos ni contratos de mantenimiento.
+                </p>
+            </div>
         </div>
-        <!-- Column 2: Quick Links -->
-        <div class="lg:col-span-2 flex flex-col items-center lg:items-start text-center lg:text-left">
-            <h3 class="text-xs font-semibold uppercase tracking-widest text-custom-main mb-4" data-i18n="footer-quick-links">Enlaces Rápidos</h3>
-            <ul class="space-y-2.5 text-sm">
-                <li><a href="portafolio-creativo.html" class="text-custom-muted hover:text-custom-accent transition-colors duration-300 nav-link-premium" data-i18n="nav-portfolio">Portafolios</a></li>
-                <li><a href="catalogo-pedidos.html" class="text-custom-muted hover:text-custom-accent transition-colors duration-300 nav-link-premium" data-i18n="nav-catalogs">Catálogos</a></li>
-                <li><a href="identidad-corporativa.html" class="text-custom-muted hover:text-custom-accent transition-colors duration-300 nav-link-premium" data-i18n="nav-corporate">Empresas</a></li>
-            </ul>
-        </div>
-        <!-- Column 3: Contact & Socials -->
-        <div class="lg:col-span-2 flex flex-col items-center lg:items-start text-center lg:text-left">
-            <h3 class="text-xs font-semibold uppercase tracking-widest text-custom-main mb-4" data-i18n="footer-contact">Contacto</h3>
-            <ul class="space-y-3.5 text-sm w-full">
-                <li>
-                    <a href="https://wa.me/5350000000?text=Hola%20Trazio%20Studio,%20quiero%20iniciar%20un%20proyecto" target="_blank" rel="noopener noreferrer" class="text-custom-muted hover:text-custom-accent flex items-center justify-center lg:justify-start group gap-2.5">
-                        <span class="p-1.5 rounded-lg bg-custom-card border border-custom/10 text-custom-accent group-hover:border-custom-accent/30 transition-colors">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2C7.314 2 3.407 5.864 3.407 10.546c0 1.408.349 2.8.956 4.028L2 22l7.666-2.52c1.176.666 2.51.999 3.374.999h.001c4.726 0 8.633-3.863 8.633-8.545C20.674 5.864 16.766 2 12.04 2zM17.152 15.632c-.234-.116-.967-.474-1.117-.528-.15-.054-.26-.054-.37.054-.11.108-.424.528-.548.665-.124.136-.248.15-.457.054-.93-.418-1.54-1.01-2.175-1.928-.636-.92-1.066-1.85-1.423-2.457-.357-.607-.037-.936.27-.99.27-.054.597-.13.864-.424.267-.294.357-.59.5-.784.144-.196.073-.37-.036-.59-.11-.22-.968-2.324-1.325-3.18-.357-.855-.72-.74-1.002-.756-.279-.016-.598-.016-.917-.016-.319 0-.83.108-1.26.54-.43.432-1.64 1.586-1.64 3.868 0 2.28 1.678 4.475 1.916 4.788.238.313 3.303 5.034 8.04 7.025 1.18.497 2.11.79 2.846.99.736.199 1.407.153 1.93-.066.523-.22 1.637-.675 1.87-.99.234-.314.234-.582.162-.702-.072-.119-.267-.183-.557-.32z"/></svg>
-                        </span>
-                        WhatsApp
-                    </a>
-                </li>
-                <li>
-                    <a href="mailto:contacto@traziostudio.com" class="text-custom-muted hover:text-custom-accent flex items-center justify-center lg:justify-start group gap-2.5">
-                        <span class="p-1.5 rounded-lg bg-custom-card border border-custom/10 text-custom-accent group-hover:border-custom-accent/30 transition-colors">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                        </span>
-                        Email
-                    </a>
-                </li>
-                <li>
-                    <a href="https://facebook.com/traziostudio" target="_blank" rel="noopener noreferrer" class="text-custom-muted hover:text-custom-accent flex items-center justify-center lg:justify-start group gap-2.5">
-                        <span class="p-1.5 rounded-lg bg-custom-card border border-custom/10 text-custom-accent group-hover:border-custom-accent/30 transition-colors">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                        </span>
-                        Facebook
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <!-- Column 4: Unified B2B CTA Card -->
-        <div class="lg:col-span-5 w-full bg-custom-card/50 border border-custom-accent/20 p-6 rounded-lg text-left space-y-4">
-            <h3 class="text-sm font-bold text-custom-main uppercase" data-i18n="footer-aida-text">¿Listo para hacer crecer tu negocio?</h3>
-            <p class="text-xs text-custom-muted" data-i18n="footer-aida-desc">Escríbenos y cuéntanos tu idea o mándanos tu lista de precios por WhatsApp. Te preparamos una demostración interactiva totalmente gratis y adaptada a tu sector en menos de 24 horas.</p>
-            <a href="https://wa.me/5350000000?text=Hola%20Trazio%20Studio,%20quiero%20solicitar%20una%20demostración%20gratuita%20para%20mi%20negocio." target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center px-6 py-3.5 bg-custom-accent hover:bg-custom-accent-hover text-black font-bold uppercase text-[11px] tracking-wider transition-all duration-300">
-                SOLICITAR DEMOSTRACIÓN GRATIS
-            </a>
-            <p class="text-[10px] sm:text-xs text-custom-muted" data-i18n="footer-microcopy"><span class="text-custom-accent">✔</span> Sin costo técnico, compromisos ni contratos de mantenimiento.</p>
+
+        <!-- Barra Inferior -->
+        <div class="border-t border-custom mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+            <div class="text-[11px] text-custom-muted space-y-1">
+                <p>&copy; <span id="current-year"></span> Trazio Studio. <span data-i18n="all-rights-reserved">Todos los derechos reservados.</span></p>
+                <p class="font-medium" data-i18n="footer-signature">Diseñado con precisión por Trazio Studio</p>
+            </div>
+            <button type="button" id="back-to-top" class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-custom-muted hover:text-custom-accent transition-colors duration-300 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent rounded" data-i18n="footer-back-to-top">
+                Volver arriba
+                <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/></svg>
+            </button>
         </div>
     </div>
-    <!-- Bottom Copyright Bar -->
-    <div class="max-w-7xl mx-auto border-t border-custom/10 mt-10 pt-6 flex flex-col items-center text-center text-[11px] text-custom-muted/80 space-y-2">
-        <p>&copy; <span id="current-year"></span> Trazio Studio. <span data-i18n="all-rights-reserved">All rights reserved.</span></p>
-        <p class="font-medium">Designed with precision by Trazio Studio</p>
-    </div>
+
+    <script>
+        (function () {
+            var y = document.getElementById('current-year');
+            if (y) y.textContent = new Date().getFullYear();
+            var top = document.getElementById('back-to-top');
+            if (top) top.addEventListener('click', function () {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        })();
+    </script>
     <script src="./app.js"></script>
 </footer>
