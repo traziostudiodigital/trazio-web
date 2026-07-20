@@ -1,58 +1,100 @@
-<!-- Sección de Testimonios del Home (Totalmente Auditada) -->
-<section class="relative py-20 px-6 mb-16 border-y border-custom/10 bg-custom-card/10 overflow-hidden">
-    <!-- Fondo de puntitos sutiles -->
-    <div class="bg-mesh-dots absolute inset-0 z-0 pointer-events-none"></div>
-    
+<!-- Sección de Testimonios del Home -->
+<section class="relative py-20 px-6 mb-16 border-y border-custom bg-custom-card bg-pattern-nodes overflow-hidden">
+
     <!-- Contenedor Principal -->
     <div class="max-w-7xl mx-auto relative z-10">
-        
+
         <!-- Cabecera -->
         <div class="text-center max-w-3xl mx-auto mb-16">
-            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase border border-custom/30 text-custom-accent bg-custom-accent/5 mb-4">
-                PRUEBA SOCIAL
+            <span class="inline-flex items-center gap-2 text-custom-accent text-xs font-semibold tracking-[0.2em] uppercase mb-4">
+                <span class="w-6 h-px bg-custom-accent/50"></span>
+                Prueba Social
+                <span class="w-6 h-px bg-custom-accent/50"></span>
             </span>
-            <h2 class="text-3xl md:text-4xl font-bold text-custom-main">Resultados reales en el mercado cubano.</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-custom-main tracking-tight">Resultados reales en el mercado cubano.</h2>
         </div>
 
         <!-- Grid de 3 Columnas -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+
             <!-- Tarjeta 1 (Catálogos) -->
-            <div class="bg-custom-card/90 backdrop-blur-sm border border-custom/20 p-8 rounded-2xl relative hover:-translate-y-2 transition-transform duration-300 shadow-xl flex flex-col justify-between min-h-[280px]">
-                <div class="absolute -top-5 right-8 text-6xl text-custom-accent opacity-20 font-serif select-none">"</div>
-                <p class="text-custom-main text-base italic mb-6 relative z-10 leading-relaxed">
-                    "Desde que usamos el catálogo de Trazio, las colas en el mostrador bajaron a la mitad. La gente llega con el pedido hecho por WhatsApp."
-                </p>
-                <div>
-                    <h4 class="text-sm font-bold text-custom-main">Cafetería La Esquina</h4>
-                    <span class="text-xs text-custom-accent uppercase font-semibold tracking-wider">Catálogos</span>
+            <div class="group relative bg-custom-main border border-custom p-8 rounded-lg flex flex-col justify-between min-h-[280px] hover:-translate-y-1.5 hover:border-custom-accent/40 hover:shadow-2xl hover:shadow-black/30 transition-all duration-300 ease-in-out">
+                <svg class="absolute top-6 right-6 w-9 h-9 text-custom-accent/15 group-hover:text-custom-accent/25 transition-colors duration-300 ease-in-out" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M9.983 3L3 10.4v10.6h9.983V10.4H6.876C7.13 7.5 8.9 5.5 9.983 5.1V3zm11.017 0l-6.983 7.4v10.6H24V10.4h-6.107C18.147 7.5 19.917 5.5 21 5.1V3z"/>
+                </svg>
+                <div class="relative z-10">
+                    <div class="flex items-center gap-1 mb-4" aria-label="Valoración 5 de 5">
+                        <svg class="w-3.5 h-3.5 text-custom-accent" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.958a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.447a1 1 0 00-.363 1.118l1.287 3.957c.3.922-.755 1.688-1.538 1.118l-3.367-2.447a1 1 0 00-1.176 0l-3.367 2.447c-.783.57-1.838-.196-1.538-1.118l1.287-3.957a1 1 0 00-.363-1.118L2.075 9.385c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.958z"/></svg>
+                        <svg class="w-3.5 h-3.5 text-custom-accent" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.958a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.447a1 1 0 00-.363 1.118l1.287 3.957c.3.922-.755 1.688-1.538 1.118l-3.367-2.447a1 1 0 00-1.176 0l-3.367 2.447c-.783.57-1.838-.196-1.538-1.118l1.287-3.957a1 1 0 00-.363-1.118L2.075 9.385c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.958z"/></svg>
+                        <svg class="w-3.5 h-3.5 text-custom-accent" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.958a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.447a1 1 0 00-.363 1.118l1.287 3.957c.3.922-.755 1.688-1.538 1.118l-3.367-2.447a1 1 0 00-1.176 0l-3.367 2.447c-.783.57-1.838-.196-1.538-1.118l1.287-3.957a1 1 0 00-.363-1.118L2.075 9.385c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.958z"/></svg>
+                        <svg class="w-3.5 h-3.5 text-custom-accent" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.958a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.447a1 1 0 00-.363 1.118l1.287 3.957c.3.922-.755 1.688-1.538 1.118l-3.367-2.447a1 1 0 00-1.176 0l-3.367 2.447c-.783.57-1.838-.196-1.538-1.118l1.287-3.957a1 1 0 00-.363-1.118L2.075 9.385c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.958z"/></svg>
+                        <svg class="w-3.5 h-3.5 text-custom-accent" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.958a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.447a1 1 0 00-.363 1.118l1.287 3.957c.3.922-.755 1.688-1.538 1.118l-3.367-2.447a1 1 0 00-1.176 0l-3.367 2.447c-.783.57-1.838-.196-1.538-1.118l1.287-3.957a1 1 0 00-.363-1.118L2.075 9.385c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.958z"/></svg>
+                    </div>
+                    <p class="text-custom-main text-base leading-relaxed">
+                        Desde que usamos el catálogo de Trazio, las colas en el mostrador bajaron a la mitad. La gente llega con el pedido hecho por WhatsApp.
+                    </p>
+                </div>
+                <div class="relative z-10 flex items-center gap-3 mt-6 pt-6 border-t border-custom">
+                    <div class="w-10 h-10 rounded-full bg-custom-accent/10 border border-custom-accent/20 text-custom-accent flex items-center justify-center font-bold text-sm shrink-0">CE</div>
+                    <div>
+                        <h4 class="text-sm font-bold text-custom-main">Cafetería La Esquina</h4>
+                        <span class="text-[11px] text-custom-accent uppercase font-semibold tracking-wider">Catálogos</span>
+                    </div>
                 </div>
             </div>
 
             <!-- Tarjeta 2 (Portafolios) -->
-            <div class="bg-custom-card/90 backdrop-blur-sm border border-custom/20 p-8 rounded-2xl relative hover:-translate-y-2 transition-transform duration-300 shadow-xl flex flex-col justify-between min-h-[280px]">
-                <div class="absolute -top-5 right-8 text-6xl text-custom-accent opacity-20 font-serif select-none">"</div>
-                <p class="text-custom-main text-base italic mb-6 relative z-10 leading-relaxed">
-                    "Mi portafolio carga tan rápido que mis clientes en Miami piensan que tengo servidores allá. Pude subir mis tarifas de fotografía un 30%."
-                </p>
-                <div>
-                    <h4 class="text-sm font-bold text-custom-main">Alejandro, Fotógrafo</h4>
-                    <span class="text-xs text-custom-accent uppercase font-semibold tracking-wider">Portafolios</span>
+            <div class="group relative bg-custom-main border border-custom p-8 rounded-lg flex flex-col justify-between min-h-[280px] hover:-translate-y-1.5 hover:border-custom-accent/40 hover:shadow-2xl hover:shadow-black/30 transition-all duration-300 ease-in-out">
+                <svg class="absolute top-6 right-6 w-9 h-9 text-custom-accent/15 group-hover:text-custom-accent/25 transition-colors duration-300 ease-in-out" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M9.983 3L3 10.4v10.6h9.983V10.4H6.876C7.13 7.5 8.9 5.5 9.983 5.1V3zm11.017 0l-6.983 7.4v10.6H24V10.4h-6.107C18.147 7.5 19.917 5.5 21 5.1V3z"/>
+                </svg>
+                <div class="relative z-10">
+                    <div class="flex items-center gap-1 mb-4" aria-label="Valoración 5 de 5">
+                        <svg class="w-3.5 h-3.5 text-custom-accent" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.958a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.447a1 1 0 00-.363 1.118l1.287 3.957c.3.922-.755 1.688-1.538 1.118l-3.367-2.447a1 1 0 00-1.176 0l-3.367 2.447c-.783.57-1.838-.196-1.538-1.118l1.287-3.957a1 1 0 00-.363-1.118L2.075 9.385c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.958z"/></svg>
+                        <svg class="w-3.5 h-3.5 text-custom-accent" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.958a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.447a1 1 0 00-.363 1.118l1.287 3.957c.3.922-.755 1.688-1.538 1.118l-3.367-2.447a1 1 0 00-1.176 0l-3.367 2.447c-.783.57-1.838-.196-1.538-1.118l1.287-3.957a1 1 0 00-.363-1.118L2.075 9.385c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.958z"/></svg>
+                        <svg class="w-3.5 h-3.5 text-custom-accent" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.958a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.447a1 1 0 00-.363 1.118l1.287 3.957c.3.922-.755 1.688-1.538 1.118l-3.367-2.447a1 1 0 00-1.176 0l-3.367 2.447c-.783.57-1.838-.196-1.538-1.118l1.287-3.957a1 1 0 00-.363-1.118L2.075 9.385c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.958z"/></svg>
+                        <svg class="w-3.5 h-3.5 text-custom-accent" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.958a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.447a1 1 0 00-.363 1.118l1.287 3.957c.3.922-.755 1.688-1.538 1.118l-3.367-2.447a1 1 0 00-1.176 0l-3.367 2.447c-.783.57-1.838-.196-1.538-1.118l1.287-3.957a1 1 0 00-.363-1.118L2.075 9.385c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.958z"/></svg>
+                        <svg class="w-3.5 h-3.5 text-custom-accent" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.958a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.447a1 1 0 00-.363 1.118l1.287 3.957c.3.922-.755 1.688-1.538 1.118l-3.367-2.447a1 1 0 00-1.176 0l-3.367 2.447c-.783.57-1.838-.196-1.538-1.118l1.287-3.957a1 1 0 00-.363-1.118L2.075 9.385c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.958z"/></svg>
+                    </div>
+                    <p class="text-custom-main text-base leading-relaxed">
+                        Mi portafolio carga tan rápido que mis clientes en Miami piensan que tengo servidores allá. Pude subir mis tarifas de fotografía un 30%.
+                    </p>
+                </div>
+                <div class="relative z-10 flex items-center gap-3 mt-6 pt-6 border-t border-custom">
+                    <div class="w-10 h-10 rounded-full bg-custom-accent/10 border border-custom-accent/20 text-custom-accent flex items-center justify-center font-bold text-sm shrink-0">AL</div>
+                    <div>
+                        <h4 class="text-sm font-bold text-custom-main">Alejandro, Fotógrafo</h4>
+                        <span class="text-[11px] text-custom-accent uppercase font-semibold tracking-wider">Portafolios</span>
+                    </div>
                 </div>
             </div>
 
             <!-- Tarjeta 3 (Corporativo) -->
-            <div class="bg-custom-card/90 backdrop-blur-sm border border-custom/20 p-8 rounded-2xl relative hover:-translate-y-2 transition-transform duration-300 shadow-xl flex flex-col justify-between min-h-[280px]">
-                <div class="absolute -top-5 right-8 text-6xl text-custom-accent opacity-20 font-serif select-none">"</div>
-                <p class="text-custom-main text-base italic mb-6 relative z-10 leading-relaxed">
-                    "Tener correos corporativos y una web seria nos permitió ganar nuestra primera licitación con una cadena hotelera. Inversión recuperada en un mes."
-                </p>
-                <div>
-                    <h4 class="text-sm font-bold text-custom-main">NEXO Mantenimiento</h4>
-                    <span class="text-xs text-custom-accent uppercase font-semibold tracking-wider">Corporativo</span>
+            <div class="group relative bg-custom-main border border-custom p-8 rounded-lg flex flex-col justify-between min-h-[280px] hover:-translate-y-1.5 hover:border-custom-accent/40 hover:shadow-2xl hover:shadow-black/30 transition-all duration-300 ease-in-out">
+                <svg class="absolute top-6 right-6 w-9 h-9 text-custom-accent/15 group-hover:text-custom-accent/25 transition-colors duration-300 ease-in-out" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M9.983 3L3 10.4v10.6h9.983V10.4H6.876C7.13 7.5 8.9 5.5 9.983 5.1V3zm11.017 0l-6.983 7.4v10.6H24V10.4h-6.107C18.147 7.5 19.917 5.5 21 5.1V3z"/>
+                </svg>
+                <div class="relative z-10">
+                    <div class="flex items-center gap-1 mb-4" aria-label="Valoración 5 de 5">
+                        <svg class="w-3.5 h-3.5 text-custom-accent" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.958a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.447a1 1 0 00-.363 1.118l1.287 3.957c.3.922-.755 1.688-1.538 1.118l-3.367-2.447a1 1 0 00-1.176 0l-3.367 2.447c-.783.57-1.838-.196-1.538-1.118l1.287-3.957a1 1 0 00-.363-1.118L2.075 9.385c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.958z"/></svg>
+                        <svg class="w-3.5 h-3.5 text-custom-accent" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.958a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.447a1 1 0 00-.363 1.118l1.287 3.957c.3.922-.755 1.688-1.538 1.118l-3.367-2.447a1 1 0 00-1.176 0l-3.367 2.447c-.783.57-1.838-.196-1.538-1.118l1.287-3.957a1 1 0 00-.363-1.118L2.075 9.385c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.958z"/></svg>
+                        <svg class="w-3.5 h-3.5 text-custom-accent" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.958a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.447a1 1 0 00-.363 1.118l1.287 3.957c.3.922-.755 1.688-1.538 1.118l-3.367-2.447a1 1 0 00-1.176 0l-3.367 2.447c-.783.57-1.838-.196-1.538-1.118l1.287-3.957a1 1 0 00-.363-1.118L2.075 9.385c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.958z"/></svg>
+                        <svg class="w-3.5 h-3.5 text-custom-accent" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.958a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.447a1 1 0 00-.363 1.118l1.287 3.957c.3.922-.755 1.688-1.538 1.118l-3.367-2.447a1 1 0 00-1.176 0l-3.367 2.447c-.783.57-1.838-.196-1.538-1.118l1.287-3.957a1 1 0 00-.363-1.118L2.075 9.385c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.958z"/></svg>
+                        <svg class="w-3.5 h-3.5 text-custom-accent" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.958a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.447a1 1 0 00-.363 1.118l1.287 3.957c.3.922-.755 1.688-1.538 1.118l-3.367-2.447a1 1 0 00-1.176 0l-3.367 2.447c-.783.57-1.838-.196-1.538-1.118l1.287-3.957a1 1 0 00-.363-1.118L2.075 9.385c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.958z"/></svg>
+                    </div>
+                    <p class="text-custom-main text-base leading-relaxed">
+                        Tener correos corporativos y una web seria nos permitió ganar nuestra primera licitación con una cadena hotelera. Inversión recuperada en un mes.
+                    </p>
+                </div>
+                <div class="relative z-10 flex items-center gap-3 mt-6 pt-6 border-t border-custom">
+                    <div class="w-10 h-10 rounded-full bg-custom-accent/10 border border-custom-accent/20 text-custom-accent flex items-center justify-center font-bold text-sm shrink-0">NM</div>
+                    <div>
+                        <h4 class="text-sm font-bold text-custom-main">NEXO Mantenimiento</h4>
+                        <span class="text-[11px] text-custom-accent uppercase font-semibold tracking-wider">Corporativo</span>
+                    </div>
                 </div>
             </div>
 
-        </div> <!-- Fin del Grid -->
-    </div> <!-- Fin del Contenedor Principal -->
+        </div>
+    </div>
 </section>
