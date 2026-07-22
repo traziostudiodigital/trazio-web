@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@theme {
+  --color-custom-main: var(--bg-primary);
+  --color-custom-card: var(--bg-secondary);
+  --color-custom-accent: var(--accent);
+  --color-custom-accent-hover: var(--accent-muted);
+  --color-custom-muted: var(--text-muted);
+}
