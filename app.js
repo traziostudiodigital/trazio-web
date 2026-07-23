@@ -210,4 +210,154 @@ document.addEventListener('DOMContentLoaded', () => {
         const triggerDD = wrapperDD.querySelector('.dropdown-trigger');
         if(triggerDD) triggerDD.classList.add('text-custom-accent');
     }
+        // --- COMENTARIO: Lógica Completa de la Demo Interactiva de Catálogos ---
+    const catalogSelector = document.getElementById('catalog-industry-selector');
+    const activeTabClasses = ['bg-custom-accent', 'text-black', 'hover:scale-105'];
+    const inactiveTabClasses = ['bg-custom-card', 'border', 'border-custom', 'text-custom-muted', 'hover:border-custom-accent', 'hover:text-custom-accent'];
+
+    if (catalogSelector) {
+        catalogSelector.addEventListener('click', function (e) {
+            const btn = e.target.closest('button[data-demo-target]');
+            if (!btn) return;
+
+            catalogSelector.querySelectorAll('button[data-demo-target]').forEach(function (b) {
+                b.setAttribute('aria-selected', 'false');
+                inactiveTabClasses.forEach(c => b.classList.add(c));
+                activeTabClasses.forEach(c => b.classList.remove(c));
+            });
+
+            btn.setAttribute('aria-selected', 'true');
+            activeTabClasses.forEach(c => btn.classList.add(c));
+            inactiveTabClasses.forEach(c => btn.classList.remove(c));
+
+            const targetId = btn.getAttribute('data-demo-target');
+            document.querySelectorAll('.demo-panel').forEach(function (panel) {
+                if (panel.id === targetId) {
+                    panel.classList.remove('hidden');
+                    panel.classList.add('block');
+                } else {
+                    panel.classList.add('hidden');
+                    panel.classList.remove('block');
+                }
+            });
+        });
+    }
+
+    // Lógica interactiva del carrito en cada panel
+    function formatDemoPrice(n) { return '$' + n.toFixed(2); }
+
+    document.querySelectorAll('.demo-panel').forEach(function (panel) {
+        const items = panel.querySelectorAll('.cart-item');
+        const badge = panel.querySelector('.cart-badge-count');
+        const totalEl = panel.querySelector('.cart-total-value');
+        const waBtn = panel.querySelector('.wa-order-btn');
+        const waBase = 'https://wa.me/5350000000';
+        const waPrefix = waBtn ? waBtn.dataset.waPrefix : '';
+
+        function recalcPanel() {
+            let count = 0, total = 0, lines = [];
+            items.forEach(function (item) {
+                if (item.dataset.added === 'true') {
+                    count++;
+                    total += parseFloat(item.dataset.price);
+                    lines.push('- ' + item.dataset.name + ' (' + formatDemoPrice(parseFloat(item.dataset.price)) + ')');
+                }
+            });
+            if (badge) badge.textContent = count;
+            if (totalEl) totalEl.textContent = formatDemoPrice(total);
+            if (waBtn) {
+                if (count === 0) {
+                    waBtn.classList.add('opacity-40', 'pointer-events-none');
+                } else {
+                    waBtn.classList.remove('opacity-40', 'pointer-events-none');
+                    const msg = encodeURIComponent(waPrefix + '\n' + lines.join('\n') + '\nTotal: ' + formatDemoPrice(total));
+                    waBtn.href = waBase + '?text=' + msg;
+                }
+            }
+        }
+
+        items.forEach(function (item) {
+            const btn = item.querySelector('.cart-toggle-btn');
+            if (!btn) return;
+            btn.addEventListener('click', function () {
+                const wasAdded = item.dataset.added === 'true';
+                item.dataset.added = (!wasAdded).toString();
+                item.classList.toggle('opacity-60', wasAdded);
+                btn.classList.toggle('bg-custom-accent', !wasAdded);
+                btn.classList.toggle('text-black', !wasAdded);
+                btn.classList.toggle('border', wasAdded);
+                btn.classList.toggle('border-custom', wasAdded);
+                btn.classList.toggle('text-custom-muted', wasAdded);
+
+                const iconPlus = btn.querySelector('.icon-plus');
+                const iconCheck = btn.querySelector('.icon-check');
+                if (iconPlus) iconPlus.classList.toggle('hidden', !wasAdded);
+                if (iconCheck) iconCheck.classList.toggle('hidden', wasAdded);
+
+                btn.setAttribute('aria-pressed', (!wasAdded).toString());
+                recalcPanel();
+            });
+        });
+        recalcPanel();
+    });
+
+    // Control del Modal QR
+    const modalQr = document.getElementById('modal-qr');
+    const btnQrCatalog = document.getElementById('btn-qr-catalog');
+    const closeQrBtn = document.getElementById('close-modal-qr');
+    const closeQrXBtn = document.getElementById('close-modal-qr-x');
+
+    function openModalQr() { if (modalQr) modalQr.classList.remove('hidden'); }
+    function closeModalQr() { if (modalQr) modalQr.classList.add('hidden'); }
+
+    if (btnQrCatalog) btnQrCatalog.addEventListener('click', openModalQr);
+    if (closeQrBtn) closeQrBtn.addEventListener('click', closeModalQr);
+    if (closeQrXBtn) closeQrXBtn.addEventListener('click', closeModalQr);
+    if (modalQr) modalQr.addEventListener('click', function (e) { if (e.target === modalQr) closeModalQr(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModalQr(); });
+
+    // Feedback visual al descargar QR
+    const downloadQrBtn = document.getElementById('download-qr-btn');
+    if (downloadQrBtn) {
+        downloadQrBtn.addEventListener('click', function () {
+            const label = downloadQrBtn.querySelector('.download-label');
+            const dlIcon = downloadQrBtn.querySelector('.download-icon');
+            const okIcon = downloadQrBtn.querySelector('.check-icon-download');
+            if (!label || !dlIcon || !okIcon) return;
+            const original = label.textContent;
+            label.textContent = '¡Listo para imprimir!';
+            dlIcon.classList.add('hidden');
+            okIcon.classList.remove('hidden');
+            setTimeout(function () {
+                label.textContent = original;
+                dlIcon.classList.remove('hidden');
+                okIcon.classList.add('hidden');
+            }, 1800);
+        });
+    }
+
+    // Botón Compartir Catálogo
+    const btnShareCatalog = document.getElementById('btn-share-catalog');
+    if (btnShareCatalog) {
+        btnShareCatalog.addEventListener('click', function () {
+            const shareData = { title: document.title, url: location.href };
+            if (navigator.share) {
+                navigator.share(shareData).catch(function () {});
+            } else if (navigator.clipboard) {
+                navigator.clipboard.writeText(location.href).then(function () {
+                    const tip = btnShareCatalog.querySelector('.share-tooltip');
+                    if (!tip) return;
+                    const original = tip.textContent;
+                    tip.textContent = '¡Enlace copiado!';
+                    tip.classList.remove('opacity-0');
+                    tip.classList.add('opacity-100');
+                    setTimeout(function () {
+                        tip.textContent = original;
+                        tip.classList.add('opacity-0');
+                        tip.classList.remove('opacity-100');
+                    }, 1800);
+                });
+            }
+        });
+    }
 }); // Cierre seguro del DOMContentLoaded global
