@@ -1,4 +1,4 @@
-/* COMENTARIO: Esperar a que el DOM esté completamente cargado para inicializar la interactividad de Trazio Studio */
+ /* COMENTARIO: Esperar a que el DOM esté completamente cargado para inicializar la interactividad de Trazio Studio */
 document.addEventListener('DOMContentLoaded', () => {
     // Referencias a elementos del DOM globales para el control visual del sitio
     const themeSwitcher = document.getElementById('theme-switcher');
@@ -47,44 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.add('dark');
         if (themeIconMoon) themeIconMoon.classList.remove('hidden');
         if (themeIconSun) themeIconSun.classList.add('hidden');
-    }
-
-    // --- COMENTARIO: Lógica de la Galería de Demostraciones (Cambio de Pestañas) ---
-    const tabButtons = document.querySelectorAll('.demo-tab-btn');
-    const demoPanes = document.querySelectorAll('.demo-content-pane');
-
-    if (tabButtons && tabButtons.length > 0) {
-        tabButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const target = button.getAttribute('data-demo-target');
-
-                tabButtons.forEach(btn => {
-                    btn.classList.remove('text-custom-accent', 'bg-custom-main', 'border', 'border-custom-accent/20', 'shadow-md');
-                    btn.classList.add('text-custom-muted', 'hover:text-custom-main');
-                });
-
-                button.classList.add('text-custom-accent', 'bg-custom-main', 'border', 'border-custom-accent/20', 'shadow-md');
-                button.classList.remove('text-custom-muted', 'hover:text-custom-main');
-
-                if (demoPanes) {
-                    demoPanes.forEach(pane => {
-                        pane.classList.add('hidden');
-                        pane.classList.remove('block', 'opacity-100', 'scale-100');
-                        pane.classList.add('opacity-0', 'scale-95');
-                    });
-                }
-
-                const activePane = document.getElementById(target);
-                if (activePane) {
-                    activePane.classList.remove('hidden');
-                    activePane.classList.add('block');
-                    setTimeout(() => {
-                        activePane.classList.remove('opacity-0', 'scale-95');
-                        activePane.classList.add('opacity-100', 'scale-100');
-                    }, 20);
-                }
-            });
-        });
     }
 
     // --- COMENTARIO: Acordeón FAQ ---
