@@ -117,7 +117,6 @@
               </div>
               <div>
                 <div class="h-1 w-20 bg-custom-muted/25 rounded-full mx-auto mb-2" aria-hidden="true"></div>
-                <!-- Ajusta TU_NUMERO_WHATSAPP -->
                 <a href="#" target="_blank" rel="noopener" data-wa-base="https://wa.me/TU_NUMERO_WHATSAPP" data-wa-prefix="Hola, quiero hacer este pedido:" class="wa-order-btn mb-3 p-2.5 bg-emerald-600 text-white text-center text-[10px] font-bold rounded-md hover:bg-emerald-500 transition-all duration-300 ease-in-out flex items-center justify-center gap-1.5 shadow-lg shadow-emerald-900/40">
                   <svg class="w-3 h-3 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.001 2C6.478 2 2 6.478 2 12c0 1.821.487 3.53 1.338 5.001L2.05 21.95l5.096-1.267A9.953 9.953 0 0012 22c5.523 0 10-4.478 10-10S17.524 2 12.001 2zm0 18.14a8.115 8.115 0 01-4.135-1.13l-.297-.176-3.077.766.813-2.995-.194-.308A8.126 8.126 0 013.86 12c0-4.494 3.647-8.14 8.14-8.14 4.494 0 8.14 3.646 8.14 8.14 0 4.493-3.646 8.14-8.14 8.14z"/></svg>
                   <span>Enviar pedido (<span class="cart-total-value" aria-live="polite">$12.00</span>)</span>
@@ -396,145 +395,167 @@
     </div>
   </div>
 </div>
-
 <script>
 (function () {
-  const selector = document.getElementById('catalog-industry-selector');
-  const activeCls = 'rounded-lg bg-custom-accent text-black px-5 py-2.5 font-bold transition-all duration-300 ease-in-out hover:scale-105 inline-flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-main';
-  const inactiveCls = 'rounded-lg bg-custom-card border border-custom text-custom-muted hover:border-custom-accent hover:text-custom-accent px-5 py-2.5 font-bold transition-all duration-300 ease-in-out inline-flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-main';
+  function initCatalogDemo() {
+    /* 1. Navegación e intercambio de rubros */
+    const selector = document.getElementById('catalog-industry-selector');
+    const activeCls = 'rounded-lg bg-custom-accent text-black px-5 py-2.5 font-bold transition-all duration-300 ease-in-out hover:scale-105 inline-flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-main';
+    const inactiveCls = 'rounded-lg bg-custom-card border border-custom text-custom-muted hover:border-custom-accent hover:text-custom-accent px-5 py-2.5 font-bold transition-all duration-300 ease-in-out inline-flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-main';
 
-  if (selector) {
-    selector.addEventListener('click', function (e) {
-      const btn = e.target.closest('button[data-target]');
-      if (!btn) return;
-      selector.querySelectorAll('button[data-target]').forEach(function (b) {
-        b.className = inactiveCls;
-        b.setAttribute('aria-selected', 'false');
+    if (selector) {
+      selector.addEventListener('click', function (e) {
+        const btn = e.target.closest('button[data-target]');
+        if (!btn) return;
+        
+        selector.querySelectorAll('button[data-target]').forEach(function (b) {
+          b.className = inactiveCls;
+          b.setAttribute('aria-selected', 'false');
+        });
+        
+        btn.className = activeCls;
+        btn.setAttribute('aria-selected', 'true');
+        
+        const targetId = btn.getAttribute('data-target');
+        document.querySelectorAll('.demo-panel').forEach(function (panel) {
+          if (panel.id === targetId) {
+            panel.classList.remove('hidden');
+            panel.classList.add('block');
+          } else {
+            panel.classList.add('hidden');
+            panel.classList.remove('block');
+          }
+        });
       });
-      btn.className = activeCls;
-      btn.setAttribute('aria-selected', 'true');
-      document.querySelectorAll('.demo-panel').forEach(function (panel) {
-        if (panel.id === btn.dataset.target) {
-          panel.classList.remove('hidden');
-          panel.classList.add('block');
-          panel.classList.remove('animate-fade-in-up');
-          void panel.offsetWidth;
-          panel.classList.add('animate-fade-in-up');
-        } else {
-          panel.classList.add('hidden');
-          panel.classList.remove('block');
-        }
-      });
-    });
-  }
-
-  function formatPrice(n) { return '$' + n.toFixed(2); }
-
-  document.querySelectorAll('.demo-panel').forEach(function (panel) {
-    const items = panel.querySelectorAll('.cart-item');
-    const badge = panel.querySelector('.cart-badge-count');
-    const totalEl = panel.querySelector('.cart-total-value');
-    const waBtn = panel.querySelector('.wa-order-btn');
-    const waBase = waBtn ? waBtn.dataset.waBase : null;
-    const waPrefix = waBtn ? waBtn.dataset.waPrefix : '';
-
-    function recalc() {
-      let count = 0, total = 0, lines = [];
-      items.forEach(function (item) {
-        if (item.dataset.added === 'true') {
-          count++;
-          total += parseFloat(item.dataset.price);
-          lines.push('- ' + item.dataset.name + ' (' + formatPrice(parseFloat(item.dataset.price)) + ')');
-        }
-      });
-      if (badge) badge.textContent = count;
-      if (totalEl) totalEl.textContent = formatPrice(total);
-      if (waBtn) {
-        if (count === 0) {
-          waBtn.classList.add('opacity-40', 'pointer-events-none');
-        } else {
-          waBtn.classList.remove('opacity-40', 'pointer-events-none');
-          const msg = encodeURIComponent(waPrefix + '\n' + lines.join('\n') + '\nTotal: ' + formatPrice(total));
-          waBtn.href = waBase + '?text=' + msg;
-        }
-      }
     }
 
-    items.forEach(function (item) {
-      const btn = item.querySelector('.cart-toggle-btn');
-      if (!btn) return;
-      btn.addEventListener('click', function () {
-        const wasAdded = item.dataset.added === 'true';
-        item.dataset.added = (!wasAdded).toString();
-        item.classList.toggle('opacity-60', wasAdded);
-        btn.classList.toggle('bg-custom-accent', !wasAdded);
-        btn.classList.toggle('text-black', !wasAdded);
-        btn.classList.toggle('border', wasAdded);
-        btn.classList.toggle('border-custom', wasAdded);
-        btn.classList.toggle('text-custom-muted', wasAdded);
-        btn.querySelector('.icon-plus').classList.toggle('hidden', !wasAdded);
-        btn.querySelector('.icon-check').classList.toggle('hidden', wasAdded);
-        btn.setAttribute('aria-pressed', (!wasAdded).toString());
-        recalc();
+    /* 2. Lógica interactiva del carrito en la maqueta del teléfono */
+    function formatPrice(n) { return '$' + n.toFixed(2); }
+
+    document.querySelectorAll('.demo-panel').forEach(function (panel) {
+      const items = panel.querySelectorAll('.cart-item');
+      const badge = panel.querySelector('.cart-badge-count');
+      const totalEl = panel.querySelector('.cart-total-value');
+      const waBtn = panel.querySelector('.wa-order-btn');
+      
+      const waBase = "https://wa.me/5350000000"; 
+      const waPrefix = waBtn ? waBtn.dataset.waPrefix : '';
+
+      function recalc() {
+        let count = 0, total = 0, lines = [];
+        items.forEach(function (item) {
+          if (item.dataset.added === 'true') {
+            count++;
+            total += parseFloat(item.dataset.price);
+            lines.push('- ' + item.dataset.name + ' (' + formatPrice(parseFloat(item.dataset.price)) + ')');
+          }
+        });
+        if (badge) badge.textContent = count;
+        if (totalEl) totalEl.textContent = formatPrice(total);
+        if (waBtn) {
+          if (count === 0) {
+            waBtn.classList.add('opacity-40', 'pointer-events-none');
+          } else {
+            waBtn.classList.remove('opacity-40', 'pointer-events-none');
+            const msg = encodeURIComponent(waPrefix + '\n' + lines.join('\n') + '\nTotal: ' + formatPrice(total));
+            waBtn.href = waBase + '?text=' + msg;
+          }
+        }
+      }
+
+      items.forEach(function (item) {
+        const btn = item.querySelector('.cart-toggle-btn');
+        if (!btn) return;
+        btn.addEventListener('click', function () {
+          const wasAdded = item.dataset.added === 'true';
+          item.dataset.added = (!wasAdded).toString();
+          item.classList.toggle('opacity-60', wasAdded);
+          btn.classList.toggle('bg-custom-accent', !wasAdded);
+          btn.classList.toggle('text-black', !wasAdded);
+          btn.classList.toggle('border', wasAdded);
+          btn.classList.toggle('border-custom', wasAdded);
+          btn.classList.toggle('text-custom-muted', wasAdded);
+          
+          const iconPlus = btn.querySelector('.icon-plus');
+          const iconCheck = btn.querySelector('.icon-check');
+          if(iconPlus) iconPlus.classList.toggle('hidden', !wasAdded);
+          if(iconCheck) iconCheck.classList.toggle('hidden', wasAdded);
+          
+          btn.setAttribute('aria-pressed', (!wasAdded).toString());
+          recalc();
+        });
       });
+      recalc();
     });
-    recalc();
-  });
 
-  const modalQr = document.getElementById('modal-qr');
-  const btnQr = document.getElementById('btn-qr-catalog');
-  const closeQr = document.getElementById('close-modal-qr');
-  const closeQrX = document.getElementById('close-modal-qr-x');
+    /* 3. Control del Modal QR */
+    const modalQr = document.getElementById('modal-qr');
+    const btnQr = document.getElementById('btn-qr-catalog');
+    const closeQr = document.getElementById('close-modal-qr');
+    const closeQrX = document.getElementById('close-modal-qr-x');
 
-  function openModal() { if (modalQr) modalQr.classList.remove('hidden'); }
-  function closeModal() { if (modalQr) modalQr.classList.add('hidden'); }
+    function openModal() { if (modalQr) modalQr.classList.remove('hidden'); }
+    function closeModal() { if (modalQr) modalQr.classList.add('hidden'); }
 
-  if (btnQr) btnQr.addEventListener('click', openModal);
-  if (closeQr) closeQr.addEventListener('click', closeModal);
-  if (closeQrX) closeQrX.addEventListener('click', closeModal);
-  if (modalQr) modalQr.addEventListener('click', function (e) { if (e.target === modalQr) closeModal(); });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+    if (btnQr) btnQr.addEventListener('click', openModal);
+    if (closeQr) closeQr.addEventListener('click', closeModal);
+    if (closeQrX) closeQrX.addEventListener('click', closeModal);
+    if (modalQr) modalQr.addEventListener('click', function (e) { if (e.target === modalQr) closeModal(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
 
-  const downloadBtn = document.getElementById('download-qr-btn');
-  if (downloadBtn) {
-    downloadBtn.addEventListener('click', function () {
-      const label = downloadBtn.querySelector('.download-label');
-      const dlIcon = downloadBtn.querySelector('.download-icon');
-      const okIcon = downloadBtn.querySelector('.check-icon-download');
-      const original = label.textContent;
-      label.textContent = '¡Listo para imprimir!';
-      dlIcon.classList.add('hidden');
-      okIcon.classList.remove('hidden');
-      setTimeout(function () {
-        label.textContent = original;
-        dlIcon.classList.remove('hidden');
-        okIcon.classList.add('hidden');
-      }, 1800);
-    });
+    /* 4. Feedback visual al descargar QR */
+    const downloadBtn = document.getElementById('download-qr-btn');
+    if (downloadBtn) {
+      downloadBtn.addEventListener('click', function () {
+        const label = downloadBtn.querySelector('.download-label');
+        const dlIcon = downloadBtn.querySelector('.download-icon');
+        const okIcon = downloadBtn.querySelector('.check-icon-download');
+        if(!label || !dlIcon || !okIcon) return;
+        
+        const original = label.textContent;
+        label.textContent = '¡Listo para imprimir!';
+        dlIcon.classList.add('hidden');
+        okIcon.classList.remove('hidden');
+        
+        setTimeout(function () {
+          label.textContent = original;
+          dlIcon.classList.remove('hidden');
+          okIcon.classList.add('hidden');
+        }, 1800);
+      });
+    }
+
+    /* 5. Botón de Compartir */
+    const btnShare = document.getElementById('btn-share-catalog');
+    if (btnShare) {
+      btnShare.addEventListener('click', function () {
+        const shareData = { title: document.title, url: location.href };
+        if (navigator.share) {
+          navigator.share(shareData).catch(function () {});
+        } else if (navigator.clipboard) {
+          navigator.clipboard.writeText(location.href).then(function () {
+            const tip = btnShare.querySelector('.share-tooltip');
+            if (!tip) return;
+            const original = tip.textContent;
+            tip.textContent = '¡Enlace copiado!';
+            tip.classList.remove('opacity-0');
+            tip.classList.add('opacity-100');
+            setTimeout(function () {
+              tip.textContent = original;
+              tip.classList.add('opacity-0');
+              tip.classList.remove('opacity-100');
+            }, 1800);
+          });
+        }
+      });
+    }
   }
 
-  const btnShare = document.getElementById('btn-share-catalog');
-  if (btnShare) {
-    btnShare.addEventListener('click', function () {
-      const shareData = { title: document.title, url: location.href };
-      if (navigator.share) {
-        navigator.share(shareData).catch(function () {});
-      } else if (navigator.clipboard) {
-        navigator.clipboard.writeText(location.href).then(function () {
-          const tip = btnShare.querySelector('.share-tooltip');
-          if (!tip) return;
-          const original = tip.textContent;
-          tip.textContent = '¡Enlace copiado!';
-          tip.classList.remove('opacity-0');
-          tip.classList.add('opacity-100');
-          setTimeout(function () {
-            tip.textContent = original;
-            tip.classList.add('opacity-0');
-            tip.classList.remove('opacity-100');
-          }, 1800);
-        });
-      }
-    });
+  /* EJECUCIÓN A PRUEBA DE TIMING: */
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCatalogDemo);
+  } else {
+    initCatalogDemo(); /* Si el DOM ya cargó, ejecuta inmediatamente */
   }
 })();
 </script>

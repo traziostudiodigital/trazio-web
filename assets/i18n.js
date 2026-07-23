@@ -5,6 +5,7 @@
 
     window.TRAZIO_I18N = {
         es: {
+            // Navegación
             'nav-portfolio-trigger': 'Portafolios',
             'nav-portfolio-visual-title': 'Perfil Visual / Artístico',
             'nav-portfolio-visual-desc': 'Fotógrafos, diseñadores, creativos',
@@ -13,6 +14,26 @@
             'nav-catalogs': 'Catálogos',
             'nav-corporate': 'Empresas',
             'nav-cta': 'Iniciar Proyecto',
+
+            // Hero Home
+            'hero-cta-primary': 'Explorar Soluciones',
+            'hero-cta-secondary': 'Cotizar mi Proyecto',
+
+            // Tarjetas de Soluciones (Home)
+            'card-catalogs-title': 'Catálogos de Venta',
+            'card-catalogs-benefit-1': 'Muestra productos con elegancia.',
+            'card-catalogs-benefit-2': 'Pedidos directos a WhatsApp.',
+            'card-catalogs-benefit-3': 'Actualizaciones rápidas y sencillas.',
+            'card-portfolios-title': 'Portafolios Creativos',
+            'card-portfolios-benefit-1': 'Destaca tu talento.',
+            'card-portfolios-benefit-2': 'Diseño moderno y adaptable.',
+            'card-portfolios-benefit-3': 'Impacta a clientes internacionales.',
+            'card-corporate-title': 'Páginas Corporativas',
+            'card-corporate-benefit-1': 'Proyecta una imagen profesional.',
+            'card-corporate-benefit-2': 'Información clara disponible 24/7.',
+            'card-corporate-benefit-3': 'Refuerza la confianza B2B.',
+
+            // Footer
             'footer-tagline': 'Trazamos herramientas web de alta velocidad para optimizar tus ventas.',
             'footer-quick-links': 'Enlaces Rápidos',
             'footer-contact': 'Contacto',
@@ -22,6 +43,7 @@
             'all-rights-reserved': 'Todos los derechos reservados.'
         },
         en: {
+            // Navegación
             'nav-portfolio-trigger': 'Portfolios',
             'nav-portfolio-visual-title': 'Visual / Creative Profile',
             'nav-portfolio-visual-desc': 'Photographers, designers, creatives',
@@ -30,6 +52,26 @@
             'nav-catalogs': 'Catalogs',
             'nav-corporate': 'Business',
             'nav-cta': 'Start Project',
+
+            // Hero Home
+            'hero-cta-primary': 'Explore Solutions',
+            'hero-cta-secondary': 'Quote my Project',
+
+            // Tarjetas de Soluciones (Home)
+            'card-catalogs-title': 'Sales Catalogs',
+            'card-catalogs-benefit-1': 'Showcase products elegantly.',
+            'card-catalogs-benefit-2': 'Direct WhatsApp orders.',
+            'card-catalogs-benefit-3': 'Fast and easy updates.',
+            'card-portfolios-title': 'Creative Portfolios',
+            'card-portfolios-benefit-1': 'Highlight your talent.',
+            'card-portfolios-benefit-2': 'Modern & adaptive design.',
+            'card-portfolios-benefit-3': 'Impress international clients.',
+            'card-corporate-title': 'Corporate Pages',
+            'card-corporate-benefit-1': 'Project professional image.',
+            'card-corporate-benefit-2': 'Clear info accessible 24/7.',
+            'card-corporate-benefit-3': 'Strengthen B2B trust.',
+
+            // Footer
             'footer-tagline': 'We build high-speed web tools to optimize your sales.',
             'footer-quick-links': 'Quick Links',
             'footer-contact': 'Contact',

@@ -1,54 +1,186 @@
 <section class="max-w-6xl mx-auto px-6 mb-24">
-    <div class="bg-custom-card/30 border border-custom/10 rounded-2xl p-8 md:p-12 relative overflow-hidden">
-        <!-- Fondo decorativo -->
-        <div class="absolute top-0 right-0 w-64 h-64 bg-custom-accent/5 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none"></div>
-        
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
-            <!-- Textos -->
-            <div>
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-[10px] sm:text-xs font-bold tracking-wider uppercase border border-custom-accent/50 text-custom-accent bg-custom-accent/10 mb-6">
-                    🔥 EJEMPLO DE GATILLO DE VENTAS: AGENDA AL 80%
-                </span>
-                <h2 class="text-3xl md:text-4xl font-bold text-custom-main mb-6 leading-tight">Automatiza tus reservas y recupera tu tiempo.</h2>
-                <p class="text-custom-muted text-lg mb-8">Tu cliente entra, ve tus días libres, elige hora y te llega la solicitud. Se acabó el ida y vuelta de "¿tienes tiempo el jueves?" por WhatsApp.</p>
-                <a href="#footer" class="inline-flex items-center text-custom-accent font-semibold hover:text-custom-main transition-colors">
-                    Quiero esta agenda en mi web <span class="ml-2">→</span>
-                </a>
-            </div>
+  <div class="bg-custom-card border-double-gold rounded-lg p-8 md:p-12 relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-64 h-64 bg-custom-accent/10 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none" aria-hidden="true"></div>
 
-            <!-- Calendario UI -->
-            <div class="bg-[#1A1A24] border border-custom/20 rounded-xl p-6 shadow-2xl max-w-sm mx-auto w-full">
-                <div class="text-center mb-6">
-                    <h3 class="text-lg font-bold text-custom-main">Noviembre 2026</h3>
-                </div>
-                <div class="grid grid-cols-7 gap-2 text-center text-xs font-medium text-custom-muted mb-4">
-                    <div>Lun</div><div>Mar</div><div>Mié</div><div>Jue</div><div>Vie</div><div>Sáb</div><div>Dom</div>
-                </div>
-                <div class="grid grid-cols-7 gap-2 text-center text-sm">
-                    <!-- Días vacíos -->
-                    <div></div><div></div><div></div><div></div>
-                    <!-- Días -->
-                    <div class="py-2 text-custom-muted opacity-50 cursor-not-allowed">1</div>
-                    <div class="py-2 text-custom-muted opacity-50 cursor-not-allowed">2</div>
-                    <div class="py-2 text-custom-muted opacity-50 cursor-not-allowed">3</div>
-                    <div class="py-2 calendar-day cursor-pointer hover:bg-custom-card rounded-md transition-colors">4</div>
-                    <div class="py-2 calendar-day cursor-pointer hover:bg-custom-card rounded-md transition-colors">5</div>
-                    <div class="py-2 calendar-day cursor-pointer hover:bg-custom-card rounded-md transition-colors">6</div>
-                    <div class="py-2 calendar-day cursor-pointer hover:bg-custom-card rounded-md transition-colors">7</div>
-                    <div class="py-2 calendar-day calendar-day-active bg-custom-accent text-black font-bold rounded-md cursor-pointer transition-colors shadow-md shadow-custom-accent/20">8</div>
-                    <div class="py-2 calendar-day cursor-pointer hover:bg-custom-card rounded-md transition-colors">9</div>
-                    <div class="py-2 calendar-day cursor-pointer hover:bg-custom-card rounded-md transition-colors">10</div>
-                    <div class="py-2 calendar-day cursor-pointer hover:bg-custom-card rounded-md transition-colors">11</div>
-                    <div class="py-2 calendar-day cursor-pointer hover:bg-custom-card rounded-md transition-colors">12</div>
-                    <div class="py-2 text-custom-muted opacity-50 cursor-not-allowed">13</div>
-                    <div class="py-2 text-custom-muted opacity-50 cursor-not-allowed">14</div>
-                    <div class="py-2 calendar-day cursor-pointer hover:bg-custom-card rounded-md transition-colors">15</div>
-                </div>
-                <div class="mt-6 pt-6 border-t border-custom/10">
-                    <div class="bg-custom-card text-custom-main text-xs text-center py-2 rounded-md mb-4 border border-custom/20">10:00 AM - 12:00 PM</div>
-                    <a href="https://wa.me/5350000000?text=Hola,%20quiero%20confirmar%20una%20fecha%20en%20tu%20agenda" target="_blank" class="block w-full bg-custom-accent hover:bg-custom-accent-hover text-black font-bold py-3 rounded-lg text-sm text-center transition-colors">Confirmar Reserva</a>
-                </div>
-            </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+
+      <!-- Textos -->
+      <div>
+        <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[10px] sm:text-xs font-bold tracking-wider uppercase border border-custom-accent/40 text-custom-accent bg-custom-accent/10 mb-6">
+          <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          Ejemplo de Gatillo de Ventas: Agenda al 80%
+        </span>
+        <h2 class="text-3xl md:text-4xl font-bold text-custom-main mb-6 leading-tight tracking-tight">Automatiza tus reservas y recupera tu tiempo.</h2>
+        <p class="text-custom-muted text-base md:text-lg leading-relaxed mb-8">Tu cliente entra, ve tus días libres, elige hora y te llega la solicitud. Se acabó el ida y vuelta de "¿tienes tiempo el jueves?" por WhatsApp.</p>
+
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-custom-accent shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+            <span class="text-sm text-custom-muted">Cero choques de horario: solo se muestran tus espacios libres</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-custom-accent shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+            <span class="text-sm text-custom-muted">El cliente confirma solo, sin esperar tu respuesta</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-custom-accent shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+            <span class="text-sm text-custom-muted">Funciona igual para sesiones fotográficas, asesorías o consultas</span>
+          </li>
+        </ul>
+
+        <a href="https://wa.me/5350000000?text=Hola,%20quiero%20una%20agenda%20como%20esta%20en%20mi%20web" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-custom-accent font-semibold hover:gap-3 transition-all duration-300 ease-in-out">
+          Quiero esta agenda en mi web
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        </a>
+      </div>
+
+      <!-- Calendario UI -->
+      <div class="bg-custom-main border border-custom rounded-lg p-6 shadow-2xl shadow-black/30 max-w-sm mx-auto w-full">
+
+        <div class="flex items-center justify-between mb-6">
+          <button type="button" id="cal-prev" class="w-8 h-8 rounded-lg bg-custom-card border border-custom flex items-center justify-center text-custom-muted hover:text-custom-accent hover:border-custom-accent/40 transition-all duration-300 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent" aria-label="Mes anterior">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+          </button>
+          <h3 id="cal-month-label" class="text-base font-bold text-custom-main tracking-tight" aria-live="polite">Noviembre 2026</h3>
+          <button type="button" id="cal-next" class="w-8 h-8 rounded-lg bg-custom-card border border-custom flex items-center justify-center text-custom-muted hover:text-custom-accent hover:border-custom-accent/40 transition-all duration-300 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent" aria-label="Mes siguiente">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </button>
         </div>
+
+        <div class="grid grid-cols-7 gap-1.5 text-center text-[11px] font-semibold text-custom-muted mb-3">
+          <div>Lun</div><div>Mar</div><div>Mié</div><div>Jue</div><div>Vie</div><div>Sáb</div><div>Dom</div>
+        </div>
+
+        <div id="cal-days-grid" class="grid grid-cols-7 gap-1.5 text-center text-sm">
+          <!-- generado por JS -->
+        </div>
+
+        <div class="mt-6 pt-6 border-t border-custom">
+          <p class="text-[10px] font-semibold text-custom-muted uppercase tracking-wider mb-2.5">Horarios disponibles</p>
+          <div id="cal-time-slots" class="grid grid-cols-3 gap-2 mb-4">
+            <!-- generado por JS -->
+          </div>
+          <a href="#" id="cal-confirm-btn" target="_blank" rel="noopener" class="block w-full bg-custom-accent hover:brightness-110 text-black font-bold py-3 rounded-lg text-sm text-center transition-all duration-300 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-main">
+            Confirmar Reserva
+          </a>
+        </div>
+      </div>
+
     </div>
+  </div>
 </section>
+
+<script>
+(function () {
+  var months = [
+    {
+      label: 'Noviembre 2026',
+      leadingBlank: 4, // días vacíos antes del día 1 (arranca en viernes)
+      totalDays: 15,   // solo mostramos hasta el 15 en el demo
+      unavailable: [1, 2, 3, 13, 14],
+      defaultActive: 8
+    },
+    {
+      label: 'Diciembre 2026',
+      leadingBlank: 1, // arranca en martes
+      totalDays: 15,
+      unavailable: [5, 6, 12, 13],
+      defaultActive: 3
+    }
+  ];
+  var timeSlotsData = ['10:00 AM', '2:00 PM', '4:30 PM'];
+
+  var monthIndex = 0;
+  var selectedDay = months[0].defaultActive;
+  var selectedTime = timeSlotsData[0];
+
+  var grid = document.getElementById('cal-days-grid');
+  var label = document.getElementById('cal-month-label');
+  var slotsWrap = document.getElementById('cal-time-slots');
+  var confirmBtn = document.getElementById('cal-confirm-btn');
+
+  var dayBtnBase = 'py-2 rounded-md text-sm transition-all duration-300 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent';
+  var dayBtnAvailable = dayBtnBase + ' text-custom-main hover:bg-custom-card cursor-pointer';
+  var dayBtnActive = dayBtnBase + ' bg-custom-accent text-black font-bold shadow-md shadow-custom-accent/20 cursor-pointer';
+  var dayBtnDisabled = dayBtnBase + ' text-custom-muted opacity-40 cursor-not-allowed';
+
+  function renderMonth() {
+    var m = months[monthIndex];
+    label.textContent = m.label;
+    grid.innerHTML = '';
+
+    for (var i = 0; i < m.leadingBlank; i++) {
+      var blank = document.createElement('div');
+      grid.appendChild(blank);
+    }
+
+    for (var d = 1; d <= m.totalDays; d++) {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.textContent = d;
+      var isUnavailable = m.unavailable.indexOf(d) !== -1;
+      var isActive = d === selectedDay;
+
+      if (isUnavailable) {
+        btn.className = dayBtnDisabled;
+        btn.disabled = true;
+        btn.setAttribute('aria-label', 'Día ' + d + ', no disponible');
+      } else {
+        btn.className = isActive ? dayBtnActive : dayBtnAvailable;
+        btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        btn.setAttribute('aria-label', 'Día ' + d + ', disponible');
+        btn.addEventListener('click', function () {
+          selectedDay = parseInt(this.textContent, 10);
+          renderMonth();
+          updateConfirmLink();
+        });
+      }
+      grid.appendChild(btn);
+    }
+  }
+
+  function renderTimeSlots() {
+    slotsWrap.innerHTML = '';
+    timeSlotsData.forEach(function (time) {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.textContent = time;
+      var isActive = time === selectedTime;
+      btn.className = 'py-2 px-1 rounded-md text-[11px] font-semibold border transition-all duration-300 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent ' +
+        (isActive
+          ? 'bg-custom-accent text-black border-custom-accent'
+          : 'bg-custom-card text-custom-muted border-custom hover:border-custom-accent/40 hover:text-custom-accent');
+      btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      btn.addEventListener('click', function () {
+        selectedTime = this.textContent;
+        renderTimeSlots();
+        updateConfirmLink();
+      });
+      slotsWrap.appendChild(btn);
+    });
+  }
+
+  function updateConfirmLink() {
+    var m = months[monthIndex];
+    var msg = 'Hola, quiero confirmar mi reserva para el ' + selectedDay + ' de ' + m.label + ' a las ' + selectedTime;
+    confirmBtn.href = 'https://wa.me/5350000000?text=' + encodeURIComponent(msg);
+  }
+
+  document.getElementById('cal-prev').addEventListener('click', function () {
+    monthIndex = (monthIndex - 1 + months.length) % months.length;
+    selectedDay = months[monthIndex].defaultActive;
+    renderMonth();
+    updateConfirmLink();
+  });
+  document.getElementById('cal-next').addEventListener('click', function () {
+    monthIndex = (monthIndex + 1) % months.length;
+    selectedDay = months[monthIndex].defaultActive;
+    renderMonth();
+    updateConfirmLink();
+  });
+
+  renderMonth();
+  renderTimeSlots();
+  updateConfirmLink();
+})();
+</script>
