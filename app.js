@@ -273,7 +273,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Botones carrito — scoped al wrapper para no colisionar con otros listeners globales
+    // --- COMENTARIO: Botones carrito — scoped al wrapper para no colisionar con otros listeners globales ---
     const demoWrapper = document.getElementById('catalog-demo-wrapper');
     if (demoWrapper) {
         demoWrapper.addEventListener('click', function(e) {
@@ -284,27 +284,91 @@ document.addEventListener('DOMContentLoaded', () => {
             const panel = item.closest('.demo-panel');
             if (!panel) return;
 
-            const nowAdded = item.dataset.added !== 'true';
-            item.dataset.added = nowAdded.toString();
-            item.classList.toggle('opacity-60', !nowAdded);
+            // ---------- NUEVA LÓGICA ----------
+            // Para los demos de restaurante y tienda usamos cantidad (sumar)
+            // Para el demo de servicios mantenemos el comportamiento de toggle (solo 0/1)
+            const isProductDemo = panel.id === 'demo-restaurante' || panel.id === 'demo-tienda';
 
-            toggleBtn.classList.toggle('bg-custom-accent', nowAdded);
-            toggleBtn.classList.toggle('text-black', nowAdded);
-            toggleBtn.classList.toggle('border', !nowAdded);
-            toggleBtn.classList.toggle('border-custom', !nowAdded);
-            toggleBtn.classList.toggle('text-custom-muted', !nowAdded);
-            toggleBtn.setAttribute('aria-pressed', nowAdded.toString());
+            if (isProductDemo) {
+                // Lógica de cantidad
+                const currentQty = parseInt(item.dataset.qty) || 0;
+                const newQty = currentQty + 1; // siempre sumar uno al hacer click
+                item.dataset.qty = newQty;
 
-            const iconPlus = toggleBtn.querySelector('.icon-plus');
-            const iconCheck = toggleBtn.querySelector('.icon-check');
-            if (iconPlus) iconPlus.classList.toggle('hidden', nowAdded);
-            if (iconCheck) iconCheck.classList.toggle('hidden', !nowAdded);
+                const nowAdded = newQty > 0; // estado visual basado en si hay al menos una unidad
+                // Actualizar UI del botón
+                toggleBtn.classList.toggle('bg-custom-accent', nowAdded);
+                toggleBtn.classList.toggle('text-black', nowAdded);
+                toggleBtn.classList.toggle('border', !nowAdded);
+                toggleBtn.classList.toggle('border-custom', !nowAdded);
+                toggleBtn.classList.toggle('text-custom-muted', !nowAdded);
+                toggleBtn.setAttribute('aria-pressed', nowAdded.toString());
+
+                const iconPlus = toggleBtn.querySelector('.icon-plus');
+                const iconCheck = toggleBtn.querySelector('.icon-check');
+                if (iconPlus) iconPlus.classList.toggle('hidden', nowAdded);
+                if (iconCheck) iconCheck.classList.toggle('hidden', !nowAdded);
+            } else {
+                // Lógica de toggle original (para servicios)
+                const nowAdded = item.dataset.added !== 'true';
+                item.dataset.added = nowAdded.toString();
+                item.classList.toggle('opacity-60', !nowAdded);
+
+                toggleBtn.classList.toggle('bg-custom-accent', nowAdded);
+                toggleBtn.classList.toggle('text-black', nowAdded);
+                toggleBtn.classList.toggle('border', !nowAdded);
+                toggleBtn.classList.toggle('border-custom', !nowAdded);
+                toggleBtn.classList.toggle('text-custom-muted', !nowAdded);
+                toggleBtn.setAttribute('aria-pressed', nowAdded.toString());
+
+                const iconPlus = toggleBtn.querySelector('.icon-plus');
+                const iconCheck = toggleBtn.querySelector('.icon-check');
+                if (iconPlus) iconPlus.classList.toggle('hidden', nowAdded);
+                if (iconCheck) iconCheck.classList.toggle('hidden', !nowAdded);
+            }
+            // ---------- FIN NUEVA LÓGICA ----------
 
             recalcPanel(panel);
         });
     }
 
-    // Recálculo inicial de todos los paneles
+    // --- COMENTARIO: Recálculo inicial de todos los paneles ---
+    function recalcPanel(panel) {
+        let totalQty = 0;          // cantidad total de unidades
+        let totalPrice = 0;        // suma de precio * cantidad
+        const lines = [];
+
+        panel.querySelectorAll('.cart-item').forEach(function(item) {
+            // Obtener cantidad: si existe data-qty úsalo, sino interpreta data-added como 0/1
+            const qty = parseInt(item.dataset.qty) ||
+                        (item.dataset.added === 'true' ? 1 : 0);
+            if (qty <= 0) return; // ignorar items sin unidades
+
+            totalQty += qty;
+            const price = parseFloat(item.dataset.price) || 0;
+            totalPrice += price * qty;
+            lines.push('- ' + item.dataset.name + ' (' + formatDemoPrice(price) + ' × ' + qty + ')');
+        });
+
+        const badge = panel.querySelector('.cart-badge-count');
+        const totalEl = panel.querySelector('.cart-total-value');
+        const waBtn = panel.querySelector('.wa-order-btn');
+
+        if (badge) badge.textContent = totalQty;
+        if (totalEl) totalEl.textContent = formatDemoPrice(totalPrice);
+        if (waBtn) {
+            if (totalQty === 0) {
+                waBtn.classList.add('opacity-40', 'pointer-events-none');
+            } else {
+                waBtn.classList.remove('opacity-40', 'pointer-events-none');
+                const base = waBtn.dataset.waBase || 'https://wa.me/TU_NUMERO_WHATSAPP';
+                const prefix = waBtn.dataset.waPrefix || '';
+                waBtn.href = base + '?text=' + encodeURIComponent(prefix + '\n' + lines.join('\n') + '\nTotal: ' + formatDemoPrice(totalPrice));
+            }
+        }
+    }
+
+    // Ejecutar recálculo inicial en todos los paneles
     document.querySelectorAll('.demo-panel').forEach(recalcPanel);
 
     // Control del Modal QR
