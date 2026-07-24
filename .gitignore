@@ -1,3 +1,6 @@
+# Ignorar dependencias
+node_modules/
+
 # Ignorar carpetas temporales de la IA
 .trae/
 .cline/

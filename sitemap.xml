@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://traziostudio.com/index.html</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://traziostudio.com/catalogo-pedidos.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://traziostudio.com/identidad-corporativa.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://traziostudio.com/portafolio-creativo.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://traziostudio.com/portafolio-tecnico.html</loc>
+    <priority>0.8</priority>
+  </url>
+</urlset>

@@ -11,6 +11,7 @@
             'nav-portfolio-visual-desc': 'Fotógrafos, diseñadores, creativos',
             'nav-portfolio-tech-title': 'Perfil Técnico / Consultor',
             'nav-portfolio-tech-desc': 'Ingenieros, abogados, asesores',
+            'nav-portfolio': 'Portafolios',
             'nav-catalogs': 'Catálogos',
             'nav-corporate': 'Empresas',
             'nav-cta': 'Iniciar Proyecto',
@@ -35,11 +36,16 @@
 
             // Footer
             'footer-tagline': 'Trazamos herramientas web de alta velocidad para optimizar tus ventas.',
+            'footer-follow': 'Síguenos',
             'footer-quick-links': 'Enlaces Rápidos',
             'footer-contact': 'Contacto',
+            'footer-whatsapp-label': 'WhatsApp Directo',
+            'footer-whatsapp-desc': 'La vía más rápida para cotizar',
             'footer-aida-text': '¿Listo para hacer crecer tu negocio?',
             'footer-aida-desc': 'Escríbenos y cuéntanos tu idea o mándanos tu lista de precios por WhatsApp. Te preparamos una demostración interactiva totalmente gratis y adaptada a tu sector en menos de 24 horas.',
             'footer-microcopy': 'Sin costo técnico, compromisos ni contratos de mantenimiento.',
+            'footer-signature': 'Diseñado con precisión por Trazio Studio',
+            'footer-back-to-top': 'Volver arriba',
             'all-rights-reserved': 'Todos los derechos reservados.'
         },
         en: {
@@ -49,6 +55,7 @@
             'nav-portfolio-visual-desc': 'Photographers, designers, creatives',
             'nav-portfolio-tech-title': 'Technical / Consultant Profile',
             'nav-portfolio-tech-desc': 'Engineers, lawyers, advisors',
+            'nav-portfolio': 'Portfolios',
             'nav-catalogs': 'Catalogs',
             'nav-corporate': 'Business',
             'nav-cta': 'Start Project',
@@ -73,11 +80,16 @@
 
             // Footer
             'footer-tagline': 'We build high-speed web tools to optimize your sales.',
+            'footer-follow': 'Follow us',
             'footer-quick-links': 'Quick Links',
             'footer-contact': 'Contact',
+            'footer-whatsapp-label': 'Direct WhatsApp',
+            'footer-whatsapp-desc': 'The fastest way to get a quote',
             'footer-aida-text': 'Ready to grow your business?',
             'footer-aida-desc': 'Message us with your idea or send your price list on WhatsApp. We\'ll prepare a free interactive demo tailored to your industry in under 24 hours.',
             'footer-microcopy': 'No technical costs, commitments, or maintenance contracts.',
+            'footer-signature': 'Designed with precision by Trazio Studio',
+            'footer-back-to-top': 'Back to top',
             'all-rights-reserved': 'All rights reserved.'
         }
     };

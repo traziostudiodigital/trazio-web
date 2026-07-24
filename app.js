@@ -210,96 +210,102 @@ document.addEventListener('DOMContentLoaded', () => {
         const triggerDD = wrapperDD.querySelector('.dropdown-trigger');
         if(triggerDD) triggerDD.classList.add('text-custom-accent');
     }
-        // --- COMENTARIO: Lógica Completa de la Demo Interactiva de Catálogos ---
-    const catalogSelector = document.getElementById('catalog-industry-selector');
-    const activeTabClasses = ['bg-custom-accent', 'text-black', 'hover:scale-105'];
-    const inactiveTabClasses = ['bg-custom-card', 'border', 'border-custom', 'text-custom-muted', 'hover:border-custom-accent', 'hover:text-custom-accent'];
+    // --- DEMO INTERACTIVA DE CATÁLOGOS ---
 
+    function formatDemoPrice(amount) {
+        return '$' + amount.toFixed(2);
+    }
+
+    function recalcPanel(panel) {
+        let count = 0, total = 0, lines = [];
+        panel.querySelectorAll('.cart-item').forEach(function(item) {
+            if (item.dataset.added === 'true') {
+                count++;
+                const price = parseFloat(item.dataset.price) || 0;
+                total += price;
+                lines.push('- ' + item.dataset.name + ' (' + formatDemoPrice(price) + ')');
+            }
+        });
+
+        const badge = panel.querySelector('.cart-badge-count');
+        const totalEl = panel.querySelector('.cart-total-value');
+        const waBtn = panel.querySelector('.wa-order-btn');
+
+        if (badge) badge.textContent = count;
+        if (totalEl) totalEl.textContent = formatDemoPrice(total);
+        if (waBtn) {
+            if (count === 0) {
+                waBtn.classList.add('opacity-40', 'pointer-events-none');
+            } else {
+                waBtn.classList.remove('opacity-40', 'pointer-events-none');
+                const base = waBtn.dataset.waBase || 'https://wa.me/TU_NUMERO_WHATSAPP';
+                const prefix = waBtn.dataset.waPrefix || '';
+                waBtn.href = base + '?text=' + encodeURIComponent(prefix + '\n' + lines.join('\n') + '\nTotal: ' + formatDemoPrice(total));
+            }
+        }
+    }
+
+    // Tabs selector
+    const catalogSelector = document.getElementById('catalog-industry-selector');
     if (catalogSelector) {
-        catalogSelector.addEventListener('click', function (e) {
+        catalogSelector.addEventListener('click', function(e) {
             const btn = e.target.closest('button[data-demo-target]');
             if (!btn) return;
-
-            catalogSelector.querySelectorAll('button[data-demo-target]').forEach(function (b) {
-                b.setAttribute('aria-selected', 'false');
-                inactiveTabClasses.forEach(c => b.classList.add(c));
-                activeTabClasses.forEach(c => b.classList.remove(c));
+            catalogSelector.querySelectorAll('button[data-demo-target]').forEach(function(b) {
+                const isTarget = b === btn;
+                b.setAttribute('aria-selected', isTarget.toString());
+                b.classList.toggle('bg-custom-accent', isTarget);
+                b.classList.toggle('text-black', isTarget);
+                b.classList.toggle('hover:scale-105', isTarget);
+                b.classList.toggle('bg-custom-card', !isTarget);
+                b.classList.toggle('border', !isTarget);
+                b.classList.toggle('border-custom', !isTarget);
+                b.classList.toggle('text-custom-muted', !isTarget);
+                b.classList.toggle('hover:border-custom-accent', !isTarget);
+                b.classList.toggle('hover:text-custom-accent', !isTarget);
             });
-
-            btn.setAttribute('aria-selected', 'true');
-            activeTabClasses.forEach(c => btn.classList.add(c));
-            inactiveTabClasses.forEach(c => btn.classList.remove(c));
-
             const targetId = btn.getAttribute('data-demo-target');
-            document.querySelectorAll('.demo-panel').forEach(function (panel) {
-                if (panel.id === targetId) {
-                    panel.classList.remove('hidden');
-                    panel.classList.add('block');
-                } else {
-                    panel.classList.add('hidden');
-                    panel.classList.remove('block');
-                }
+            document.querySelectorAll('.demo-panel').forEach(function(panel) {
+                const show = panel.id === targetId;
+                panel.classList.toggle('hidden', !show);
+                panel.classList.toggle('block', show);
             });
         });
     }
 
-    // Lógica interactiva del carrito en cada panel
-    function formatDemoPrice(n) { return '$' + n.toFixed(2); }
+    // Botones carrito — scoped al wrapper para no colisionar con otros listeners globales
+    const demoWrapper = document.getElementById('catalog-demo-wrapper');
+    if (demoWrapper) {
+        demoWrapper.addEventListener('click', function(e) {
+            const toggleBtn = e.target.closest('.cart-toggle-btn');
+            if (!toggleBtn) return;
+            const item = toggleBtn.closest('.cart-item');
+            if (!item) return;
+            const panel = item.closest('.demo-panel');
+            if (!panel) return;
 
-    document.querySelectorAll('.demo-panel').forEach(function (panel) {
-        const items = panel.querySelectorAll('.cart-item');
-        const badge = panel.querySelector('.cart-badge-count');
-        const totalEl = panel.querySelector('.cart-total-value');
-        const waBtn = panel.querySelector('.wa-order-btn');
-        const waBase = 'https://wa.me/5350000000';
-        const waPrefix = waBtn ? waBtn.dataset.waPrefix : '';
+            const nowAdded = item.dataset.added !== 'true';
+            item.dataset.added = nowAdded.toString();
+            item.classList.toggle('opacity-60', !nowAdded);
 
-        function recalcPanel() {
-            let count = 0, total = 0, lines = [];
-            items.forEach(function (item) {
-                if (item.dataset.added === 'true') {
-                    count++;
-                    total += parseFloat(item.dataset.price);
-                    lines.push('- ' + item.dataset.name + ' (' + formatDemoPrice(parseFloat(item.dataset.price)) + ')');
-                }
-            });
-            if (badge) badge.textContent = count;
-            if (totalEl) totalEl.textContent = formatDemoPrice(total);
-            if (waBtn) {
-                if (count === 0) {
-                    waBtn.classList.add('opacity-40', 'pointer-events-none');
-                } else {
-                    waBtn.classList.remove('opacity-40', 'pointer-events-none');
-                    const msg = encodeURIComponent(waPrefix + '\n' + lines.join('\n') + '\nTotal: ' + formatDemoPrice(total));
-                    waBtn.href = waBase + '?text=' + msg;
-                }
-            }
-        }
+            toggleBtn.classList.toggle('bg-custom-accent', nowAdded);
+            toggleBtn.classList.toggle('text-black', nowAdded);
+            toggleBtn.classList.toggle('border', !nowAdded);
+            toggleBtn.classList.toggle('border-custom', !nowAdded);
+            toggleBtn.classList.toggle('text-custom-muted', !nowAdded);
+            toggleBtn.setAttribute('aria-pressed', nowAdded.toString());
 
-        items.forEach(function (item) {
-            const btn = item.querySelector('.cart-toggle-btn');
-            if (!btn) return;
-            btn.addEventListener('click', function () {
-                const wasAdded = item.dataset.added === 'true';
-                item.dataset.added = (!wasAdded).toString();
-                item.classList.toggle('opacity-60', wasAdded);
-                btn.classList.toggle('bg-custom-accent', !wasAdded);
-                btn.classList.toggle('text-black', !wasAdded);
-                btn.classList.toggle('border', wasAdded);
-                btn.classList.toggle('border-custom', wasAdded);
-                btn.classList.toggle('text-custom-muted', wasAdded);
+            const iconPlus = toggleBtn.querySelector('.icon-plus');
+            const iconCheck = toggleBtn.querySelector('.icon-check');
+            if (iconPlus) iconPlus.classList.toggle('hidden', nowAdded);
+            if (iconCheck) iconCheck.classList.toggle('hidden', !nowAdded);
 
-                const iconPlus = btn.querySelector('.icon-plus');
-                const iconCheck = btn.querySelector('.icon-check');
-                if (iconPlus) iconPlus.classList.toggle('hidden', !wasAdded);
-                if (iconCheck) iconCheck.classList.toggle('hidden', wasAdded);
-
-                btn.setAttribute('aria-pressed', (!wasAdded).toString());
-                recalcPanel();
-            });
+            recalcPanel(panel);
         });
-        recalcPanel();
-    });
+    }
+
+    // Recálculo inicial de todos los paneles
+    document.querySelectorAll('.demo-panel').forEach(recalcPanel);
 
     // Control del Modal QR
     const modalQr = document.getElementById('modal-qr');

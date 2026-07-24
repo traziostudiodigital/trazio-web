@@ -11,7 +11,13 @@ const PLANTILLAS_DIR = path.join(__dirname, 'plantillas');
 const ROOT_DIR = __dirname;
 
 function readFileSyncSafe(filePath) {
-    return fs.readFileSync(filePath, { encoding: 'utf8' });
+    try {
+        return fs.readFileSync(filePath, { encoding: 'utf8' });
+    } catch (error) {
+        console.error(`❌ ERROR: No se pudo leer el archivo: ${filePath}`);
+        console.error(`   ${error.message}`);
+        process.exit(1);
+    }
 }
 
 // Función recursiva para soportar includes dentro de includes

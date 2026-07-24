@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
+    "build": "node compilar.js",
+    "css": "npx @tailwindcss/cli -i ./input.css -o ./output.css --minify",
+    "css:watch": "npx @tailwindcss/cli -i ./input.css -o ./output.css --watch",
+    "dev": "node compilar.js && npm run css:watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

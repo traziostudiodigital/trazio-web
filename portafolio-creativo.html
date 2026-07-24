@@ -11,13 +11,15 @@
 <link rel="stylesheet" href="output.css">
 <link rel="stylesheet" href="styles.css">
 
-<!-- Google Fonts -->
+<!-- Google Fonts (carga no bloqueante) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet"></noscript>
 
 <!-- Internacionalización / Idioma -->
-<script src="assets/i18n.js"></script>
+<script src="assets/i18n.js" defer></script>
 
 <!-- SEO / GEO Schema Trazio Studio -->
 <script type="application/ld+json">
@@ -84,11 +86,11 @@
         <!-- Controles derecha -->
         <div class="flex items-center gap-2 sm:gap-3 shrink-0">
             <div class="flex items-center gap-1 p-1 rounded-lg bg-custom-card border border-custom">
-                <button id="language-toggle" class="flex items-center justify-center h-8 px-2.5 rounded-md text-xs font-bold uppercase text-custom-muted hover:text-custom-accent transition-colors duration-300 ease-in-out" title="Cambiar Idioma">
+                <button id="language-toggle" class="flex items-center justify-center h-8 px-2.5 rounded-md text-xs font-bold uppercase text-custom-muted hover:text-custom-accent transition-colors duration-300 ease-in-out" title="Cambiar Idioma" aria-label="Cambiar idioma">
                     <span id="current-lang-display">ES</span>
                 </button>
                 <div class="w-px h-5 bg-custom" aria-hidden="true"></div>
-                <button id="theme-switcher" class="flex items-center justify-center h-8 w-8 rounded-md text-custom-main hover:text-custom-accent transition-colors duration-300 ease-in-out" title="Cambiar Tema">
+                <button id="theme-switcher" class="flex items-center justify-center h-8 w-8 rounded-md text-custom-main hover:text-custom-accent transition-colors duration-300 ease-in-out" title="Cambiar Tema" aria-label="Cambiar tema claro u oscuro">
                     <svg id="theme-icon-moon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
                     <svg id="theme-icon-sun" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
                 </button>
@@ -125,7 +127,7 @@
 </header>
      
 <main class="flex-grow">
-    <section id="portfolio-hero" class="max-w-4xl mx-auto px-6 py-12 md:py-16 flex flex-col items-center text-center animate-fadea_in-up">
+    <section id="portfolio-hero" class="max-w-4xl mx-auto px-6 py-12 md:py-16 flex flex-col items-center text-center animate-fade-in-up">
     <style>
         /* Floating animation for logos */
         @keyframes float {
@@ -134,7 +136,7 @@
             100% { transform: translateY(0px); }
         }
         .animate-float {
-            animation: float 3s easea_in-out infinite;
+            animation: float 3s ease-in-out infinite;
         }
     </style>
     
@@ -216,7 +218,7 @@
           </div>
           <h3 class="text-xl font-bold text-custom-main mb-3 tracking-tight group-hover:text-custom-accent transition-colors duration-300 ease-in-out">Bilingüe Instantáneo</h3>
           <p class="text-custom-muted leading-relaxed text-sm md:text-base">
-            Tu web cambia de Español a Inglés sin recargar.
+            Tu web cambia de español a inglés sin recargar.
             <span class="text-custom-muted/80 italic mt-2 block border-l-2 border-custom-accent/30 pl-3">Ideal para captar clientes extranjeros y agencias internacionales sin fricción.</span>
           </p>
         </div>
@@ -234,7 +236,7 @@
             </div>
             <span class="text-[10px] font-bold uppercase tracking-wider text-custom-accent border border-custom-accent/30 px-2.5 py-1 rounded-md">Ideal Cuba</span>
           </div>
-          <h3 class="text-xl font-bold text-custom-main mb-3 tracking-tight group-hover:text-custom-accent transition-colors duration-300 ease-in-out">Carga Ultra-Ligera</h3>
+          <h3 class="text-xl font-bold text-custom-main mb-3 tracking-tight group-hover:text-custom-accent transition-colors duration-300 ease-in-out">Carga Ultraligera</h3>
           <p class="text-custom-muted leading-relaxed text-sm md:text-base">
             Optimizada para redes 3G/4G en Cuba.
             <span class="text-custom-muted/80 italic mt-2 block border-l-2 border-custom-accent/30 pl-3">Tus fotos cargan al instante sin consumir los megas de tu cliente.</span>
