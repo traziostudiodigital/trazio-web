@@ -1,4 +1,6 @@
-/* COMENTARIO: Esperar a que el DOM esté completamente cargado para inicializar la interactividad de Trazio Studio */
+/* ============================================================
+   TRAZIO STUDIO — Script Principal Unificado
+   ============================================================ */
 document.addEventListener('DOMContentLoaded', () => {
     const themeSwitcher = document.getElementById('theme-switcher');
     const languageToggle = document.getElementById('language-toggle');
@@ -6,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeIconMoon = document.getElementById('theme-icon-moon');
     const themeIconSun = document.getElementById('theme-icon-sun');
 
-    // --- COMENTARIO: Gestión del Estado de Temas ---
+    // --- Gestión del Estado de Temas ---
     const applyTheme = (theme) => {
         if (theme === 'light') {
             document.body.classList.add('light-theme');
@@ -28,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         applyTheme(newTheme);
     };
 
-    // --- COMENTARIO: Configuración e Inicialización en Carga Primaria ---
+    // --- Configuración e Inicialización en Carga Primaria ---
     const currentYearEl = document.getElementById('current-year');
     if (currentYearEl) currentYearEl.textContent = new Date().getFullYear();
 
@@ -41,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (themeIconSun) themeIconSun.classList.add('hidden');
     }
 
-    // --- COMENTARIO: Acordeón FAQ ---
+    // --- Acordeón FAQ ---
     const accordionItems = document.querySelectorAll('.accordion-item');
     if (accordionItems && accordionItems.length > 0) {
         accordionItems.forEach(item => {
@@ -74,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- COMENTARIO: Formulario de Contacto ---
+    // --- Formulario de Contacto ---
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
@@ -96,10 +98,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- COMENTARIO: Escuchadores del Sistema ---
+    // --- Escuchadores del Sistema ---
     if (themeSwitcher) themeSwitcher.addEventListener('click', toggleTheme);
 
-    // --- COMENTARIO: Calendarios ---
+    // --- Calendarios ---
     document.addEventListener('click', (e) => {
         const creativeDay = e.target.closest('.calendar-day');
         if (creativeDay) {
@@ -117,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- COMENTARIO: Lógica del Header ---
+    // --- Lógica del Header ---
     const btnMenu = document.getElementById('mobile-menu-btn');
     const panelMenu = document.getElementById('mobile-menu');
     const backdropMenu = document.getElementById('mobile-menu-backdrop');
@@ -164,10 +166,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if (triggerDD) triggerDD.setAttribute('aria-expanded', 'false');
             if (chevron) chevron.classList.remove('rotate-180');
         }
-        triggerDD.addEventListener('click', (e) => {
-            e.stopPropagation();
-            triggerDD.getAttribute('aria-expanded') === 'true' ? closeDD() : openDD();
-        });
+        if (triggerDD) {
+            triggerDD.addEventListener('click', (e) => {
+                e.stopPropagation();
+                triggerDD.getAttribute('aria-expanded') === 'true' ? closeDD() : openDD();
+            });
+        }
         document.addEventListener('click', (e) => {
             if (!wrapperDD.contains(e.target)) closeDD();
         });
@@ -188,162 +192,170 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ─────────────────────────────────────────────────────────────────────────
-    // --- COMENTARIO: DEMO INTERACTIVA DE CATÁLOGOS ---
+    // --- DEMO INTERACTIVA DE CATÁLOGOS (NUEVA LÓGICA OPTIMIZADA) ---
     // ─────────────────────────────────────────────────────────────────────────
+    const formatMoney = (n) => '$' + n.toFixed(2);
 
-    function formatDemoPrice(amount) {
-        return '$' + amount.toFixed(2);
-    }
-
-    // recalcPanel: única definición, detecta modo qty vs toggle por ítem
     function recalcPanel(panel) {
-        let count = 0, total = 0, lines = [];
-        panel.querySelectorAll('.cart-item').forEach(function(item) {
-            const qty = parseInt(item.dataset.qty) || 0;
-            const added = item.dataset.added === 'true';
-            const isQtyMode = item.querySelector('.cart-qty-plus') !== null;
-            if (isQtyMode) {
-                if (qty > 0) {
-                    const price = parseFloat(item.dataset.price) || 0;
-                    count += qty;
-                    total += price * qty;
-                    lines.push('- ' + item.dataset.name + ' x' + qty + ' (' + formatDemoPrice(price * qty) + ')');
-                }
+        let total = 0;
+        let units = 0;
+
+        panel.querySelectorAll('.cart-item').forEach((item) => {
+            const price = parseFloat(item.dataset.price) || 0;
+            const qty = parseInt(item.dataset.qty || '0', 10);
+            if (qty > 0) {
+                total += price * qty;
+                units += qty;
+                item.classList.remove('opacity-60');
             } else {
-                if (added) {
-                    const price = parseFloat(item.dataset.price) || 0;
-                    count++;
-                    total += price;
-                    lines.push('- ' + item.dataset.name + ' (' + formatDemoPrice(price) + ')');
-                }
+                item.classList.add('opacity-60');
             }
         });
+
         const badge = panel.querySelector('.cart-badge-count');
+        if (badge) badge.textContent = String(units);
+
         const totalEl = panel.querySelector('.cart-total-value');
-        const waBtn = panel.querySelector('.wa-order-btn');
-        if (badge) badge.textContent = count;
-        if (totalEl) totalEl.textContent = formatDemoPrice(total);
-        if (waBtn) {
-            if (count === 0) {
-                waBtn.classList.add('opacity-40', 'pointer-events-none');
-            } else {
-                waBtn.classList.remove('opacity-40', 'pointer-events-none');
-                const base = waBtn.dataset.waBase || 'https://wa.me/TU_NUMERO_WHATSAPP';
-                const prefix = waBtn.dataset.waPrefix || '';
-                waBtn.href = base + '?text=' + encodeURIComponent(prefix + '\n' + lines.join('\n') + '\nTotal: ' + formatDemoPrice(total));
-            }
-        }
+        if (totalEl) totalEl.textContent = formatMoney(total);
+
+        updateWaLink(panel, total);
     }
 
-// --- COMENTARIO: Tabs selector — catalog-demo.html (versión simplificada) ---
-const catalogSelector = document.getElementById('catalog-industry-selector');
-if (catalogSelector) {
-    catalogSelector.addEventListener('click', function(e) {
+    function updateWaLink(panel, total) {
+        const link = panel.querySelector('.wa-order-btn');
+        if (!link) return;
 
-        const btn = e.target.closest('button[data-demo-target]');
-    if (!btn) return;
+        const base = link.dataset.waBase || '';
+        const prefix = link.dataset.waPrefix || '';
+        const lines = [];
 
-    catalogSelector.querySelectorAll('button[data-demo-target]').forEach(function(b) {
-        const isActive = b === btn;
-        b.setAttribute('aria-selected', isActive.toString());
-        b.classList.toggle('bg-custom-accent', isActive);
-        b.classList.toggle('text-black', isActive);
-        b.classList.toggle('font-bold', true);
-        b.classList.toggle('bg-custom-card', !isActive);
-        b.classList.toggle('border', !isActive);
-        b.classList.toggle('border-custom', !isActive);
-        b.classList.toggle('text-custom-muted', !isActive);
-        b.classList.toggle('hover:scale-105', isActive);
-        b.classList.toggle('hover:border-custom-accent', !isActive);
-        b.classList.toggle('hover:text-custom-accent', !isActive); // <-- Corregido el doble 'hover:'
-    });
+        panel.querySelectorAll('.cart-item').forEach((item) => {
+            const qty = parseInt(item.dataset.qty || '0', 10);
+            if (qty <= 0) return;
+            const name = item.dataset.name || '';
+            const price = parseFloat(item.dataset.price) || 0;
+            const isToggle = item.dataset.mode === 'toggle';
+            const sub = (price * qty).toFixed(2);
+            lines.push('- ' + name + (isToggle ? '' : ' x' + qty) + ' ($' + sub + ')');
+        });
 
-    const targetId = btn.getAttribute('data-demo-target');
-    const nextPanel = document.getElementById(targetId);
-    if (!nextPanel) return;
+        const message = prefix + '\n' + lines.join('\n') + '\nTotal: ' + formatMoney(total);
+        link.setAttribute('href', base + '?text=' + encodeURIComponent(message));
+    }
 
-    document.querySelectorAll('#catalog-demo-wrapper .demo-panel').forEach(function(p) {
-        if (p === nextPanel) {
-            p.classList.remove('hidden');
-            p.classList.add('block');
-            p.style.display = '';
-        } else {
-            p.classList.add('hidden');
-            p.classList.remove('block');
-            p.style.display = 'none';
-        }
-    });
-});
-}
-    // --- COMENTARIO: Carrito — scoped a catalog-demo-wrapper ---
+    function setQty(item, qty) {
+        qty = Math.max(0, qty);
+        item.dataset.qty = String(qty);
+        const display = item.querySelector('.cart-qty-display');
+        if (display) display.textContent = String(qty);
+        const panel = item.closest('.demo-panel');
+        if (panel) recalcPanel(panel);
+    }
+
+    function toggleItem(item, btn) {
+        const wasAdded = item.dataset.qty === '1';
+        setQty(item, wasAdded ? 0 : 1);
+
+        btn.setAttribute('aria-pressed', String(!wasAdded));
+        btn.classList.toggle('bg-custom-accent', !wasAdded);
+        btn.classList.toggle('text-black', !wasAdded);
+        btn.classList.toggle('border', wasAdded);
+        btn.classList.toggle('border-custom', wasAdded);
+        btn.classList.toggle('text-custom-muted', wasAdded);
+
+        const iconCheck = btn.querySelector('.icon-check');
+        const iconPlus = btn.querySelector('.icon-plus');
+        if (iconCheck) iconCheck.classList.toggle('hidden', wasAdded);
+        if (iconPlus) iconPlus.classList.toggle('hidden', !wasAdded);
+        btn.setAttribute('aria-label', wasAdded ? 'Agregar servicio' : 'Quitar reserva');
+    }
+
     const demoWrapper = document.getElementById('catalog-demo-wrapper');
-    if (demoWrapper) {
-        demoWrapper.addEventListener('click', function(e) {
-            const item = e.target.closest('.cart-item');
-            if (!item) return;
-            const panel = item.closest('.demo-panel');
-            if (!panel) return;
+    const tabButtons = document.querySelectorAll('.demo-tab-btn');
 
+    if (demoWrapper) {
+        demoWrapper.addEventListener('click', (e) => {
             const plusBtn = e.target.closest('.cart-qty-plus');
             const minusBtn = e.target.closest('.cart-qty-minus');
-
-            if (plusBtn || minusBtn) {
-                let qty = parseInt(item.dataset.qty) || 0;
-                if (plusBtn) qty = Math.min(qty + 1, 9);
-                if (minusBtn) qty = Math.max(qty - 1, 0);
-                item.dataset.qty = qty;
-                item.dataset.added = qty > 0 ? 'true' : 'false';
-
-                const display = item.querySelector('.cart-qty-display');
-                if (display) display.textContent = qty;
-
-                item.classList.toggle('opacity-60', qty === 0);
-
-                const stepperEl = item.querySelector('.cart-qty-plus')?.closest('div');
-                if (stepperEl) {
-                    stepperEl.classList.toggle('border-custom-accent', qty > 0);
-                    stepperEl.classList.toggle('border-custom', qty === 0);
-                }
-
-                recalcPanel(panel);
-                return;
-            }
-
             const toggleBtn = e.target.closest('.cart-toggle-btn');
-            if (toggleBtn) {
-                const nowAdded = item.dataset.added !== 'true';
-                item.dataset.added = nowAdded.toString();
-                item.classList.toggle('opacity-60', !nowAdded);
-                toggleBtn.classList.toggle('bg-custom-accent', nowAdded);
-                toggleBtn.classList.toggle('text-black', nowAdded);
-                toggleBtn.classList.toggle('border', !nowAdded);
-                toggleBtn.classList.toggle('border-custom', !nowAdded);
-                toggleBtn.classList.toggle('text-custom-muted', !nowAdded);
-                toggleBtn.setAttribute('aria-pressed', nowAdded.toString());
-                const iconPlus = toggleBtn.querySelector('.icon-plus');
-                const iconCheck = toggleBtn.querySelector('.icon-check');
-                if (iconPlus) iconPlus.classList.toggle('hidden', nowAdded);
-                if (iconCheck) iconCheck.classList.toggle('hidden', !nowAdded);
-                recalcPanel(panel);
+
+            if (plusBtn) {
+                const item = plusBtn.closest('.cart-item');
+                setQty(item, parseInt(item.dataset.qty || '0', 10) + 1);
+            } else if (minusBtn) {
+                const item = minusBtn.closest('.cart-item');
+                setQty(item, parseInt(item.dataset.qty || '0', 10) - 1);
+            } else if (toggleBtn) {
+                const item = toggleBtn.closest('.cart-item');
+                toggleItem(item, toggleBtn);
             }
         });
     }
 
-    // --- COMENTARIO: Recálculo inicial único ---
-    document.querySelectorAll('.demo-panel').forEach(function(panel) {
-        panel.querySelectorAll('.cart-item').forEach(function(item) {
-            if (item.querySelector('.cart-qty-plus')) {
-                const qty = parseInt(item.dataset.qty) || 0;
-                const display = item.querySelector('.cart-qty-display');
-                if (display) display.textContent = qty;
-                item.classList.toggle('opacity-60', qty === 0);
-            }
+    if (tabButtons.length > 0) {
+        tabButtons.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                const targetId = btn.dataset.demoTarget;
+
+                tabButtons.forEach((b) => {
+                    const active = b === btn;
+                    b.setAttribute('aria-selected', String(active));
+                    b.classList.toggle('bg-custom-accent', active);
+                    b.classList.toggle('text-black', active);
+                    b.classList.toggle('bg-custom-card', !active);
+                    b.classList.toggle('border', !active);
+                    b.classList.toggle('border-custom', !active);
+                    b.classList.toggle('text-custom-muted', !active);
+                });
+
+                document.querySelectorAll('.demo-panel').forEach((panel) => {
+                    panel.classList.toggle('hidden', panel.id !== targetId);
+                });
+            });
         });
-        recalcPanel(panel);
-    });
+    }
+
+    // Inicialización de paneles
+    document.querySelectorAll('.demo-panel').forEach(recalcPanel);
 
     // ─────────────────────────────────────────────────────────────────────────
-    // --- COMENTARIO: Gallery Tabs — index-demo-gallery.html ---
+    // --- COMPARTIR Y MODAL DE QR (Añadido/Verificado) ---
+    // ─────────────────────────────────────────────────────────────────────────
+    const shareBtn = document.getElementById('btn-share-catalog');
+    if (shareBtn) {
+        shareBtn.addEventListener('click', async () => {
+            if (navigator.share) {
+                try {
+                    await navigator.share({
+                        title: 'Catálogo de Ventas por WhatsApp',
+                        url: window.location.href
+                    });
+                } catch (err) { /* Cancelado por el usuario */ }
+            } else {
+                navigator.clipboard.writeText(window.location.href);
+                alert('¡Enlace del catálogo copiado al portapapeles!');
+            }
+        });
+    }
+
+    const btnQr = document.getElementById('btn-qr-catalog');
+    const modalQr = document.getElementById('modal-qr');
+    const closeQr = document.getElementById('close-modal-qr');
+
+    if (btnQr && modalQr) {
+        btnQr.addEventListener('click', () => modalQr.classList.remove('hidden'));
+    }
+    if (closeQr && modalQr) {
+        closeQr.addEventListener('click', () => modalQr.classList.add('hidden'));
+    }
+    if (modalQr) {
+        modalQr.addEventListener('click', (e) => {
+            if (e.target === modalQr) modalQr.classList.add('hidden');
+        });
+    }
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // --- Gallery Tabs ---
     // ─────────────────────────────────────────────────────────────────────────
     const galleryTabs = document.getElementById('gallery-tabs');
     if (galleryTabs) {
@@ -352,32 +364,25 @@ if (catalogSelector) {
             const nextPane = document.getElementById(targetId);
             if (!nextPane || currentPane === nextPane) return;
 
-            // Ocultar el panel actual con transición
             if (currentPane) {
                 currentPane.classList.remove('block', 'opacity-100', 'scale-100');
-                currentPane.classList.add('opacity-0', 'scale-95'); // Asegura que la transición de salida se aplica
+                currentPane.classList.add('opacity-0', 'scale-95');
             }
 
-            // Preparar el siguiente panel para la transición de entrada
             nextPane.classList.remove('block', 'opacity-100', 'scale-100');
-            nextPane.classList.add('hidden', 'opacity-0', 'scale-95'); // Asegura estado inicial de oculto
+            nextPane.classList.add('hidden', 'opacity-0', 'scale-95');
 
-            // Esperar a que termine la transición de salida del panel actual (si hay)
-            // Esto es crucial para que la animación se vea suave
             setTimeout(function() {
                 if (currentPane) {
-                    currentPane.classList.remove('block', 'opacity-100', 'scale-100'); // Quitar las clases de visible
-                    currentPane.classList.add('hidden', 'opacity-0', 'scale-95'); // Asegurar que está oculto y en estado inicial
+                    currentPane.classList.remove('block', 'opacity-100', 'scale-100');
+                    currentPane.classList.add('hidden', 'opacity-0', 'scale-95');
                 }
 
-                // Mostrar el nuevo panel y animar su entrada
                 nextPane.classList.remove('hidden', 'opacity-0', 'scale-95');
-                nextPane.classList.add('block'); // Activar la visibilidad
-                // Forzar el reflow para asegurar que las propiedades de transición se apliquen desde el estado 'oculto'
+                nextPane.classList.add('block');
                 void nextPane.offsetWidth;
-                nextPane.classList.add('opacity-100', 'scale-100'); // Aplicar las clases de visible para animar
-
-            }, currentPane ? 200 : 0); // Espera 200ms si hay un panel actual, sino 0ms
+                nextPane.classList.add('opacity-100', 'scale-100');
+            }, currentPane ? 200 : 0);
         }
 
         galleryTabs.addEventListener('click', function(e) {
@@ -397,7 +402,6 @@ if (catalogSelector) {
             switchGalleryPane(btn.getAttribute('data-demo-target'));
         });
 
-        // Mini-carrito del mockup de catálogo en gallery
         const catalogPane = document.getElementById('catalog-demo');
         if (catalogPane) {
             const mockCart = { count: 2, total: 53.00 };
@@ -421,33 +425,7 @@ if (catalogSelector) {
         }
     }
 
-    // --- COMENTARIO: Modal QR ---
-    const modalQr = document.getElementById('modal-qr');
-    if (modalQr) modalQr.style.display = 'none';
-    const btnQrCatalog = document.getElementById('btn-qr-catalog');
-    const closeQrBtn = document.getElementById('close-modal-qr');
-    const closeQrXBtn = document.getElementById('close-modal-qr-x');
-
-    function openModalQr() {
-        if (modalQr) {
-            modalQr.classList.remove('hidden');
-            modalQr.style.display = 'flex'; // Asegura que se muestre como flex
-        }
-    }
-    function closeModalQr() {
-        if (modalQr) {
-            modalQr.classList.add('hidden');
-            modalQr.style.display = 'none'; // Asegura que se oculte
-        }
-    }
-
-    if (btnQrCatalog) btnQrCatalog.addEventListener('click', openModalQr);
-    if (closeQrBtn) closeQrBtn.addEventListener('click', closeModalQr);
-    if (closeQrXBtn) closeQrXBtn.addEventListener('click', closeModalQr);
-    if (modalQr) modalQr.addEventListener('click', function(e) { if (e.target === modalQr) closeModalQr(); });
-    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModalQr(); });
-
-    // --- COMENTARIO: Descarga QR ---
+    // --- Descarga QR ---
     const downloadQrBtn = document.getElementById('download-qr-btn');
     if (downloadQrBtn) {
         downloadQrBtn.addEventListener('click', function() {
@@ -467,29 +445,4 @@ if (catalogSelector) {
         });
     }
 
-    // --- COMENTARIO: Compartir Catálogo ---
-    const btnShareCatalog = document.getElementById('btn-share-catalog');
-    if (btnShareCatalog) {
-        btnShareCatalog.addEventListener('click', function() {
-            const shareData = { title: document.title, url: location.href };
-            if (navigator.share) {
-                navigator.share(shareData).catch(function() {});
-            } else if (navigator.clipboard) {
-                navigator.clipboard.writeText(location.href).then(function() {
-                    const tip = btnShareCatalog.querySelector('.share-tooltip');
-                    if (!tip) return;
-                    const original = tip.textContent;
-                    tip.textContent = '¡Enlace copiado!';
-                    tip.classList.remove('opacity-0');
-                    tip.classList.add('opacity-100');
-                    setTimeout(function() {
-                        tip.textContent = original;
-                        tip.classList.add('opacity-0');
-                        tip.classList.remove('opacity-100');
-                    }, 1800);
-                });
-            }
-        });
-    }
-
-}); // Cierre seguro del DOMContentLoaded global
+}); // Cierre del DOMContentLoaded global
