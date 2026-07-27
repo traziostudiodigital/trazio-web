@@ -1,13 +1,12 @@
- /* COMENTARIO: Esperar a que el DOM esté completamente cargado para inicializar la interactividad de Trazio Studio */
+/* COMENTARIO: Esperar a que el DOM esté completamente cargado para inicializar la interactividad de Trazio Studio */
 document.addEventListener('DOMContentLoaded', () => {
-    // Referencias a elementos del DOM globales para el control visual del sitio
     const themeSwitcher = document.getElementById('theme-switcher');
     const languageToggle = document.getElementById('language-toggle');
     const currentLangDisplay = document.getElementById('current-lang-display');
     const themeIconMoon = document.getElementById('theme-icon-moon');
     const themeIconSun = document.getElementById('theme-icon-sun');
 
-    // --- COMENTARIO: Gestión del Estado de Temas (Claro / Oscuro) con Persistencia ---
+    // --- COMENTARIO: Gestión del Estado de Temas ---
     const applyTheme = (theme) => {
         if (theme === 'light') {
             document.body.classList.add('light-theme');
@@ -30,18 +29,11 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // --- COMENTARIO: Configuración e Inicialización en Carga Primaria ---
-
-    // Asignar dinámicamente el año de copyright en el pie de página
     const currentYearEl = document.getElementById('current-year');
-    if (currentYearEl) {
-        currentYearEl.textContent = new Date().getFullYear();
-    }
+    if (currentYearEl) currentYearEl.textContent = new Date().getFullYear();
 
-    // Inicializar el tema basado en la memoria del navegador o el predeterminado oscuro
     const savedTheme = localStorage.getItem('theme') || 'dark';
     applyTheme(savedTheme);
-
-    // Forzar modo oscuro si no hay tema guardado
     if (!localStorage.getItem('theme')) {
         document.body.classList.remove('light-theme');
         document.body.classList.add('dark');
@@ -56,11 +48,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const header = item.querySelector('.accordion-header');
             const content = item.querySelector('.accordion-content');
             const icon = item.querySelector('.accordion-icon');
-
             if (header) {
                 header.addEventListener('click', () => {
                     const wasActive = item.classList.contains('active');
-
                     accordionItems.forEach(otherItem => {
                         if (otherItem !== item && otherItem.classList.contains('active')) {
                             otherItem.classList.remove('active');
@@ -70,7 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
                             if (otherIcon) otherIcon.classList.remove('rotate-45');
                         }
                     });
-
                     if (wasActive) {
                         item.classList.remove('active');
                         if (content) content.style.maxHeight = null;
@@ -94,12 +83,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const business = document.getElementById('business')?.value.trim() || '';
             const whatsapp = document.getElementById('whatsapp')?.value.trim() || '';
             const solution = document.getElementById('solution')?.value.trim() || '';
-
             if (!name || !business || !whatsapp || !solution) {
                 alert('Por favor, rellene todos los campos.');
                 return;
             }
-
             const message = encodeURIComponent(
                 `Hola Trazio Studio, quiero agendar mi auditoría digital para ${business}. ` +
                 `Mi nombre es ${name}, mi número de WhatsApp es ${whatsapp}, y me interesa la solución: ${solution}.`
@@ -109,37 +96,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- COMENTARIO: Escuchadores del Sistema (Temas e Idiomas) ---
+    // --- COMENTARIO: Escuchadores del Sistema ---
     if (themeSwitcher) themeSwitcher.addEventListener('click', toggleTheme);
 
-    // --- COMENTARIO: Unificación de Eventos Dinámicos de Click (Calendarios) ---
+    // --- COMENTARIO: Calendarios ---
     document.addEventListener('click', (e) => {
-
-        // 1. Calendario Creativo
         const creativeDay = e.target.closest('.calendar-day');
         if (creativeDay) {
             const activeDay = document.querySelector('.calendar-day-active');
-            if (activeDay) {
-                activeDay.classList.remove('bg-custom-accent', 'text-black', 'font-bold', 'calendar-day-active');
-            }
+            if (activeDay) activeDay.classList.remove('bg-custom-accent', 'text-black', 'font-bold', 'calendar-day-active');
             creativeDay.classList.add('bg-custom-accent', 'text-black', 'font-bold', 'calendar-day-active');
             return;
         }
-
-        // 2. Calendario Técnico
         const techDay = e.target.closest('.calendar-day-tech');
         if (techDay) {
             const activeTechDay = document.querySelector('.calendar-day-tech-active');
-            if (activeTechDay) {
-                activeTechDay.classList.remove('bg-custom-accent', 'text-black', 'font-bold', 'calendar-day-tech-active');
-            }
+            if (activeTechDay) activeTechDay.classList.remove('bg-custom-accent', 'text-black', 'font-bold', 'calendar-day-tech-active');
             techDay.classList.add('bg-custom-accent', 'text-black', 'font-bold', 'calendar-day-tech-active');
             return;
         }
     });
 
-
-// --- COMENTARIO: Lógica del Header (Menú Móvil y Dropdown) ---
+    // --- COMENTARIO: Lógica del Header ---
     const btnMenu = document.getElementById('mobile-menu-btn');
     const panelMenu = document.getElementById('mobile-menu');
     const backdropMenu = document.getElementById('mobile-menu-backdrop');
@@ -147,45 +125,44 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeIcon = document.getElementById('close-icon');
 
     function openMenu() {
-        if(!panelMenu) return;
+        if (!panelMenu) return;
         panelMenu.classList.remove('opacity-0', 'invisible', '-translate-y-2');
-        if(backdropMenu) backdropMenu.classList.remove('hidden');
-        if(hamburgerIcon) hamburgerIcon.classList.add('hidden');
-        if(closeIcon) closeIcon.classList.remove('hidden');
-        if(btnMenu) btnMenu.setAttribute('aria-expanded', 'true');
+        if (backdropMenu) backdropMenu.classList.remove('hidden');
+        if (hamburgerIcon) hamburgerIcon.classList.add('hidden');
+        if (closeIcon) closeIcon.classList.remove('hidden');
+        if (btnMenu) btnMenu.setAttribute('aria-expanded', 'true');
         document.body.style.overflow = 'hidden';
     }
     function closeMenu() {
-        if(!panelMenu) return;
+        if (!panelMenu) return;
         panelMenu.classList.add('opacity-0', 'invisible', '-translate-y-2');
-        if(backdropMenu) backdropMenu.classList.add('hidden');
-        if(hamburgerIcon) hamburgerIcon.classList.remove('hidden');
-        if(closeIcon) closeIcon.classList.add('hidden');
-        if(btnMenu) btnMenu.setAttribute('aria-expanded', 'false');
+        if (backdropMenu) backdropMenu.classList.add('hidden');
+        if (hamburgerIcon) hamburgerIcon.classList.remove('hidden');
+        if (closeIcon) closeIcon.classList.add('hidden');
+        if (btnMenu) btnMenu.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
     }
-    if(btnMenu) {
+    if (btnMenu) {
         btnMenu.addEventListener('click', () => {
             btnMenu.getAttribute('aria-expanded') === 'true' ? closeMenu() : openMenu();
         });
     }
-    if(backdropMenu) backdropMenu.addEventListener('click', closeMenu);
-    
+    if (backdropMenu) backdropMenu.addEventListener('click', closeMenu);
+
     const wrapperDD = document.querySelector('[data-dropdown]');
-    if(wrapperDD) {
+    if (wrapperDD) {
         const triggerDD = wrapperDD.querySelector('.dropdown-trigger');
         const ddPanel = wrapperDD.querySelector('.dropdown-panel');
         const chevron = wrapperDD.querySelector('.dropdown-chevron');
-
         function openDD() {
-            if(ddPanel) ddPanel.classList.remove('opacity-0', 'invisible', '-translate-y-2');
-            if(triggerDD) triggerDD.setAttribute('aria-expanded', 'true');
-            if(chevron) chevron.classList.add('rotate-180');
+            if (ddPanel) ddPanel.classList.remove('opacity-0', 'invisible', '-translate-y-2');
+            if (triggerDD) triggerDD.setAttribute('aria-expanded', 'true');
+            if (chevron) chevron.classList.add('rotate-180');
         }
         function closeDD() {
-            if(ddPanel) ddPanel.classList.add('opacity-0', 'invisible', '-translate-y-2');
-            if(triggerDD) triggerDD.setAttribute('aria-expanded', 'false');
-            if(chevron) chevron.classList.remove('rotate-180');
+            if (ddPanel) ddPanel.classList.add('opacity-0', 'invisible', '-translate-y-2');
+            if (triggerDD) triggerDD.setAttribute('aria-expanded', 'false');
+            if (chevron) chevron.classList.remove('rotate-180');
         }
         triggerDD.addEventListener('click', (e) => {
             e.stopPropagation();
@@ -196,7 +173,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Detección automática de página activa
     const path = window.location.pathname.split('/').pop() || 'index.html';
     let dropdownHasActive = false;
     document.querySelectorAll('[data-nav-link]').forEach(link => {
@@ -208,29 +184,43 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     if (dropdownHasActive && wrapperDD) {
         const triggerDD = wrapperDD.querySelector('.dropdown-trigger');
-        if(triggerDD) triggerDD.classList.add('text-custom-accent');
+        if (triggerDD) triggerDD.classList.add('text-custom-accent');
     }
-    // --- DEMO INTERACTIVA DE CATÁLOGOS ---
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // --- COMENTARIO: DEMO INTERACTIVA DE CATÁLOGOS ---
+    // ─────────────────────────────────────────────────────────────────────────
 
     function formatDemoPrice(amount) {
         return '$' + amount.toFixed(2);
     }
 
+    // recalcPanel: única definición, detecta modo qty vs toggle por ítem
     function recalcPanel(panel) {
         let count = 0, total = 0, lines = [];
         panel.querySelectorAll('.cart-item').forEach(function(item) {
-            if (item.dataset.added === 'true') {
-                count++;
-                const price = parseFloat(item.dataset.price) || 0;
-                total += price;
-                lines.push('- ' + item.dataset.name + ' (' + formatDemoPrice(price) + ')');
+            const qty = parseInt(item.dataset.qty) || 0;
+            const added = item.dataset.added === 'true';
+            const isQtyMode = item.querySelector('.cart-qty-plus') !== null;
+            if (isQtyMode) {
+                if (qty > 0) {
+                    const price = parseFloat(item.dataset.price) || 0;
+                    count += qty;
+                    total += price * qty;
+                    lines.push('- ' + item.dataset.name + ' x' + qty + ' (' + formatDemoPrice(price * qty) + ')');
+                }
+            } else {
+                if (added) {
+                    const price = parseFloat(item.dataset.price) || 0;
+                    count++;
+                    total += price;
+                    lines.push('- ' + item.dataset.name + ' (' + formatDemoPrice(price) + ')');
+                }
             }
         });
-
         const badge = panel.querySelector('.cart-badge-count');
         const totalEl = panel.querySelector('.cart-total-value');
         const waBtn = panel.querySelector('.wa-order-btn');
-
         if (badge) badge.textContent = count;
         if (totalEl) totalEl.textContent = formatDemoPrice(total);
         if (waBtn) {
@@ -245,151 +235,222 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Tabs selector
-    const catalogSelector = document.getElementById('catalog-industry-selector');
-    if (catalogSelector) {
-        catalogSelector.addEventListener('click', function(e) {
-            const btn = e.target.closest('button[data-demo-target]');
-            if (!btn) return;
-            catalogSelector.querySelectorAll('button[data-demo-target]').forEach(function(b) {
-                const isTarget = b === btn;
-                b.setAttribute('aria-selected', isTarget.toString());
-                b.classList.toggle('bg-custom-accent', isTarget);
-                b.classList.toggle('text-black', isTarget);
-                b.classList.toggle('hover:scale-105', isTarget);
-                b.classList.toggle('bg-custom-card', !isTarget);
-                b.classList.toggle('border', !isTarget);
-                b.classList.toggle('border-custom', !isTarget);
-                b.classList.toggle('text-custom-muted', !isTarget);
-                b.classList.toggle('hover:border-custom-accent', !isTarget);
-                b.classList.toggle('hover:text-custom-accent', !isTarget);
-            });
-            const targetId = btn.getAttribute('data-demo-target');
-            document.querySelectorAll('.demo-panel').forEach(function(panel) {
-                const show = panel.id === targetId;
-                panel.classList.toggle('hidden', !show);
-                panel.classList.toggle('block', show);
-            });
-        });
-    }
+// --- COMENTARIO: Tabs selector — catalog-demo.html (versión simplificada) ---
+const catalogSelector = document.getElementById('catalog-industry-selector');
+if (catalogSelector) {
+    catalogSelector.addEventListener('click', function(e) {
 
-    // --- COMENTARIO: Botones carrito — scoped al wrapper para no colisionar con otros listeners globales ---
+        const btn = e.target.closest('button[data-demo-target]');
+    if (!btn) return;
+
+    catalogSelector.querySelectorAll('button[data-demo-target]').forEach(function(b) {
+        const isActive = b === btn;
+        b.setAttribute('aria-selected', isActive.toString());
+        b.classList.toggle('bg-custom-accent', isActive);
+        b.classList.toggle('text-black', isActive);
+        b.classList.toggle('font-bold', true);
+        b.classList.toggle('bg-custom-card', !isActive);
+        b.classList.toggle('border', !isActive);
+        b.classList.toggle('border-custom', !isActive);
+        b.classList.toggle('text-custom-muted', !isActive);
+        b.classList.toggle('hover:scale-105', isActive);
+        b.classList.toggle('hover:border-custom-accent', !isActive);
+        b.classList.toggle('hover:text-custom-accent', !isActive); // <-- Corregido el doble 'hover:'
+    });
+
+    const targetId = btn.getAttribute('data-demo-target');
+    const nextPanel = document.getElementById(targetId);
+    if (!nextPanel) return;
+
+    document.querySelectorAll('#catalog-demo-wrapper .demo-panel').forEach(function(p) {
+        if (p === nextPanel) {
+            p.classList.remove('hidden');
+            p.classList.add('block');
+            p.style.display = '';
+        } else {
+            p.classList.add('hidden');
+            p.classList.remove('block');
+            p.style.display = 'none';
+        }
+    });
+});
+}
+    // --- COMENTARIO: Carrito — scoped a catalog-demo-wrapper ---
     const demoWrapper = document.getElementById('catalog-demo-wrapper');
     if (demoWrapper) {
         demoWrapper.addEventListener('click', function(e) {
-            const toggleBtn = e.target.closest('.cart-toggle-btn');
-            if (!toggleBtn) return;
-            const item = toggleBtn.closest('.cart-item');
+            const item = e.target.closest('.cart-item');
             if (!item) return;
             const panel = item.closest('.demo-panel');
             if (!panel) return;
 
-            // ---------- NUEVA LÓGICA ----------
-            // Para los demos de restaurante y tienda usamos cantidad (sumar)
-            // Para el demo de servicios mantenemos el comportamiento de toggle (solo 0/1)
-            const isProductDemo = panel.id === 'demo-restaurante' || panel.id === 'demo-tienda';
+            const plusBtn = e.target.closest('.cart-qty-plus');
+            const minusBtn = e.target.closest('.cart-qty-minus');
 
-            if (isProductDemo) {
-                // Lógica de cantidad
-                const currentQty = parseInt(item.dataset.qty) || 0;
-                const newQty = currentQty + 1; // siempre sumar uno al hacer click
-                item.dataset.qty = newQty;
+            if (plusBtn || minusBtn) {
+                let qty = parseInt(item.dataset.qty) || 0;
+                if (plusBtn) qty = Math.min(qty + 1, 9);
+                if (minusBtn) qty = Math.max(qty - 1, 0);
+                item.dataset.qty = qty;
+                item.dataset.added = qty > 0 ? 'true' : 'false';
 
-                const nowAdded = newQty > 0; // estado visual basado en si hay al menos una unidad
-                // Actualizar UI del botón
-                toggleBtn.classList.toggle('bg-custom-accent', nowAdded);
-                toggleBtn.classList.toggle('text-black', nowAdded);
-                toggleBtn.classList.toggle('border', !nowAdded);
-                toggleBtn.classList.toggle('border-custom', !nowAdded);
-                toggleBtn.classList.toggle('text-custom-muted', !nowAdded);
-                toggleBtn.setAttribute('aria-pressed', nowAdded.toString());
+                const display = item.querySelector('.cart-qty-display');
+                if (display) display.textContent = qty;
 
-                const iconPlus = toggleBtn.querySelector('.icon-plus');
-                const iconCheck = toggleBtn.querySelector('.icon-check');
-                if (iconPlus) iconPlus.classList.toggle('hidden', nowAdded);
-                if (iconCheck) iconCheck.classList.toggle('hidden', !nowAdded);
-            } else {
-                // Lógica de toggle original (para servicios)
+                item.classList.toggle('opacity-60', qty === 0);
+
+                const stepperEl = item.querySelector('.cart-qty-plus')?.closest('div');
+                if (stepperEl) {
+                    stepperEl.classList.toggle('border-custom-accent', qty > 0);
+                    stepperEl.classList.toggle('border-custom', qty === 0);
+                }
+
+                recalcPanel(panel);
+                return;
+            }
+
+            const toggleBtn = e.target.closest('.cart-toggle-btn');
+            if (toggleBtn) {
                 const nowAdded = item.dataset.added !== 'true';
                 item.dataset.added = nowAdded.toString();
                 item.classList.toggle('opacity-60', !nowAdded);
-
                 toggleBtn.classList.toggle('bg-custom-accent', nowAdded);
                 toggleBtn.classList.toggle('text-black', nowAdded);
                 toggleBtn.classList.toggle('border', !nowAdded);
                 toggleBtn.classList.toggle('border-custom', !nowAdded);
                 toggleBtn.classList.toggle('text-custom-muted', !nowAdded);
                 toggleBtn.setAttribute('aria-pressed', nowAdded.toString());
-
                 const iconPlus = toggleBtn.querySelector('.icon-plus');
                 const iconCheck = toggleBtn.querySelector('.icon-check');
                 if (iconPlus) iconPlus.classList.toggle('hidden', nowAdded);
                 if (iconCheck) iconCheck.classList.toggle('hidden', !nowAdded);
+                recalcPanel(panel);
             }
-            // ---------- FIN NUEVA LÓGICA ----------
-
-            recalcPanel(panel);
         });
     }
 
-    // --- COMENTARIO: Recálculo inicial de todos los paneles ---
-    function recalcPanel(panel) {
-        let totalQty = 0;          // cantidad total de unidades
-        let totalPrice = 0;        // suma de precio * cantidad
-        const lines = [];
-
+    // --- COMENTARIO: Recálculo inicial único ---
+    document.querySelectorAll('.demo-panel').forEach(function(panel) {
         panel.querySelectorAll('.cart-item').forEach(function(item) {
-            // Obtener cantidad: si existe data-qty úsalo, sino interpreta data-added como 0/1
-            const qty = parseInt(item.dataset.qty) ||
-                        (item.dataset.added === 'true' ? 1 : 0);
-            if (qty <= 0) return; // ignorar items sin unidades
+            if (item.querySelector('.cart-qty-plus')) {
+                const qty = parseInt(item.dataset.qty) || 0;
+                const display = item.querySelector('.cart-qty-display');
+                if (display) display.textContent = qty;
+                item.classList.toggle('opacity-60', qty === 0);
+            }
+        });
+        recalcPanel(panel);
+    });
 
-            totalQty += qty;
-            const price = parseFloat(item.dataset.price) || 0;
-            totalPrice += price * qty;
-            lines.push('- ' + item.dataset.name + ' (' + formatDemoPrice(price) + ' × ' + qty + ')');
+    // ─────────────────────────────────────────────────────────────────────────
+    // --- COMENTARIO: Gallery Tabs — index-demo-gallery.html ---
+    // ─────────────────────────────────────────────────────────────────────────
+    const galleryTabs = document.getElementById('gallery-tabs');
+    if (galleryTabs) {
+        function switchGalleryPane(targetId) {
+            const currentPane = document.querySelector('#demo-gallery .demo-content-pane.block');
+            const nextPane = document.getElementById(targetId);
+            if (!nextPane || currentPane === nextPane) return;
+
+            // Ocultar el panel actual con transición
+            if (currentPane) {
+                currentPane.classList.remove('block', 'opacity-100', 'scale-100');
+                currentPane.classList.add('opacity-0', 'scale-95'); // Asegura que la transición de salida se aplica
+            }
+
+            // Preparar el siguiente panel para la transición de entrada
+            nextPane.classList.remove('block', 'opacity-100', 'scale-100');
+            nextPane.classList.add('hidden', 'opacity-0', 'scale-95'); // Asegura estado inicial de oculto
+
+            // Esperar a que termine la transición de salida del panel actual (si hay)
+            // Esto es crucial para que la animación se vea suave
+            setTimeout(function() {
+                if (currentPane) {
+                    currentPane.classList.remove('block', 'opacity-100', 'scale-100'); // Quitar las clases de visible
+                    currentPane.classList.add('hidden', 'opacity-0', 'scale-95'); // Asegurar que está oculto y en estado inicial
+                }
+
+                // Mostrar el nuevo panel y animar su entrada
+                nextPane.classList.remove('hidden', 'opacity-0', 'scale-95');
+                nextPane.classList.add('block'); // Activar la visibilidad
+                // Forzar el reflow para asegurar que las propiedades de transición se apliquen desde el estado 'oculto'
+                void nextPane.offsetWidth;
+                nextPane.classList.add('opacity-100', 'scale-100'); // Aplicar las clases de visible para animar
+
+            }, currentPane ? 200 : 0); // Espera 200ms si hay un panel actual, sino 0ms
+        }
+
+        galleryTabs.addEventListener('click', function(e) {
+            const btn = e.target.closest('button[data-demo-target]');
+            if (!btn) return;
+            galleryTabs.querySelectorAll('button[data-demo-target]').forEach(function(b) {
+                const isActive = b === btn;
+                b.classList.toggle('text-custom-accent', isActive);
+                b.classList.toggle('bg-custom-main', isActive);
+                b.classList.toggle('border', isActive);
+                b.classList.toggle('border-custom-accent/20', isActive);
+                b.classList.toggle('shadow-md', isActive);
+                b.classList.toggle('text-custom-muted', !isActive);
+                b.classList.toggle('hover:text-custom-accent', !isActive);
+                b.setAttribute('aria-selected', isActive.toString());
+            });
+            switchGalleryPane(btn.getAttribute('data-demo-target'));
         });
 
-        const badge = panel.querySelector('.cart-badge-count');
-        const totalEl = panel.querySelector('.cart-total-value');
-        const waBtn = panel.querySelector('.wa-order-btn');
-
-        if (badge) badge.textContent = totalQty;
-        if (totalEl) totalEl.textContent = formatDemoPrice(totalPrice);
-        if (waBtn) {
-            if (totalQty === 0) {
-                waBtn.classList.add('opacity-40', 'pointer-events-none');
-            } else {
-                waBtn.classList.remove('opacity-40', 'pointer-events-none');
-                const base = waBtn.dataset.waBase || 'https://wa.me/TU_NUMERO_WHATSAPP';
-                const prefix = waBtn.dataset.waPrefix || '';
-                waBtn.href = base + '?text=' + encodeURIComponent(prefix + '\n' + lines.join('\n') + '\nTotal: ' + formatDemoPrice(totalPrice));
-            }
+        // Mini-carrito del mockup de catálogo en gallery
+        const catalogPane = document.getElementById('catalog-demo');
+        if (catalogPane) {
+            const mockCart = { count: 2, total: 53.00 };
+            catalogPane.addEventListener('click', function(e) {
+                const addBtn = e.target.closest('.w-6.h-6.rounded-full');
+                if (!addBtn) return;
+                const productRow = addBtn.closest('.bg-neutral-900\\/60');
+                if (!productRow) return;
+                const priceEl = productRow.querySelector('.text-custom-accent');
+                if (!priceEl) return;
+                const priceMatch = priceEl.textContent.match(/[\d.]+/);
+                if (!priceMatch) return;
+                const price = parseFloat(priceMatch[0]);
+                mockCart.count += 1;
+                mockCart.total += price;
+                const totalEl = catalogPane.querySelector('[data-i18n="mock-cat-cart-total"]');
+                if (totalEl) totalEl.textContent = 'Total: $' + mockCart.total.toFixed(2) + ' USD';
+                addBtn.classList.add('scale-125', 'bg-custom-accent/40');
+                setTimeout(() => addBtn.classList.remove('scale-125', 'bg-custom-accent/40'), 300);
+            });
         }
     }
 
-    // Ejecutar recálculo inicial en todos los paneles
-    document.querySelectorAll('.demo-panel').forEach(recalcPanel);
-
-    // Control del Modal QR
+    // --- COMENTARIO: Modal QR ---
     const modalQr = document.getElementById('modal-qr');
+    if (modalQr) modalQr.style.display = 'none';
     const btnQrCatalog = document.getElementById('btn-qr-catalog');
     const closeQrBtn = document.getElementById('close-modal-qr');
     const closeQrXBtn = document.getElementById('close-modal-qr-x');
 
-    function openModalQr() { if (modalQr) modalQr.classList.remove('hidden'); }
-    function closeModalQr() { if (modalQr) modalQr.classList.add('hidden'); }
+    function openModalQr() {
+        if (modalQr) {
+            modalQr.classList.remove('hidden');
+            modalQr.style.display = 'flex'; // Asegura que se muestre como flex
+        }
+    }
+    function closeModalQr() {
+        if (modalQr) {
+            modalQr.classList.add('hidden');
+            modalQr.style.display = 'none'; // Asegura que se oculte
+        }
+    }
 
     if (btnQrCatalog) btnQrCatalog.addEventListener('click', openModalQr);
     if (closeQrBtn) closeQrBtn.addEventListener('click', closeModalQr);
     if (closeQrXBtn) closeQrXBtn.addEventListener('click', closeModalQr);
-    if (modalQr) modalQr.addEventListener('click', function (e) { if (e.target === modalQr) closeModalQr(); });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModalQr(); });
+    if (modalQr) modalQr.addEventListener('click', function(e) { if (e.target === modalQr) closeModalQr(); });
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModalQr(); });
 
-    // Feedback visual al descargar QR
+    // --- COMENTARIO: Descarga QR ---
     const downloadQrBtn = document.getElementById('download-qr-btn');
     if (downloadQrBtn) {
-        downloadQrBtn.addEventListener('click', function () {
+        downloadQrBtn.addEventListener('click', function() {
             const label = downloadQrBtn.querySelector('.download-label');
             const dlIcon = downloadQrBtn.querySelector('.download-icon');
             const okIcon = downloadQrBtn.querySelector('.check-icon-download');
@@ -398,7 +459,7 @@ document.addEventListener('DOMContentLoaded', () => {
             label.textContent = '¡Listo para imprimir!';
             dlIcon.classList.add('hidden');
             okIcon.classList.remove('hidden');
-            setTimeout(function () {
+            setTimeout(function() {
                 label.textContent = original;
                 dlIcon.classList.remove('hidden');
                 okIcon.classList.add('hidden');
@@ -406,22 +467,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Botón Compartir Catálogo
+    // --- COMENTARIO: Compartir Catálogo ---
     const btnShareCatalog = document.getElementById('btn-share-catalog');
     if (btnShareCatalog) {
-        btnShareCatalog.addEventListener('click', function () {
+        btnShareCatalog.addEventListener('click', function() {
             const shareData = { title: document.title, url: location.href };
             if (navigator.share) {
-                navigator.share(shareData).catch(function () {});
+                navigator.share(shareData).catch(function() {});
             } else if (navigator.clipboard) {
-                navigator.clipboard.writeText(location.href).then(function () {
+                navigator.clipboard.writeText(location.href).then(function() {
                     const tip = btnShareCatalog.querySelector('.share-tooltip');
                     if (!tip) return;
                     const original = tip.textContent;
                     tip.textContent = '¡Enlace copiado!';
                     tip.classList.remove('opacity-0');
                     tip.classList.add('opacity-100');
-                    setTimeout(function () {
+                    setTimeout(function() {
                         tip.textContent = original;
                         tip.classList.add('opacity-0');
                         tip.classList.remove('opacity-100');
@@ -430,4 +491,5 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
 }); // Cierre seguro del DOMContentLoaded global
