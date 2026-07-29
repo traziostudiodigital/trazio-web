@@ -611,7 +611,56 @@
       <span class="font-bold text-sm">Generar QR de Mesa</span>
     </button>
   </div>
+  <!-- MODAL QR — IDÉNTICO al que funciona en index-demo-gallery.html -->
+<div id="modal-qr" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="modal-qr-title">
+  <div class="bg-custom-card border-double-gold rounded-lg p-8 max-w-xs w-full text-center relative shadow-2xl">
+    <button type="button" id="close-modal-qr" aria-label="Cerrar" class="absolute top-3 right-3 w-8 h-8 rounded-lg bg-custom-main border border-custom flex items-center justify-center text-custom-muted hover:text-custom-accent hover:border-custom-accent transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+    <h3 id="modal-qr-title" class="font-outfit text-lg font-bold text-custom-main mb-2">QR de tu Catálogo</h3>
+    <p class="font-inter text-xs text-custom-muted mb-6">Escanéalo desde tu teléfono para probar la demo tal como lo haría tu cliente.</p>
 
+    <div class="w-40 h-40 mx-auto mb-6 bg-white p-3 rounded-md shadow-inner">
+      <svg id="qr-svg" viewBox="0 0 21 21" xmlns:xlink="http://www.w3.org/1999/xlink" class="w-full h-full" shape-rendering="crispEdges">
+        <rect width="21" height="21" fill="white"/>
+        <defs>
+          <g id="qr-finder">
+            <rect width="7" height="7" fill="black"/>
+            <rect x="1" y="1" width="5" height="5" fill="white"/>
+            <rect x="2" y="2" width="3" height="3" fill="black"/>
+          </g>
+        </defs>
+        <use href="#qr-finder" xlink:href="#qr-finder" x="0" y="0"/>
+        <use href="#qr-finder" xlink:href="#qr-finder" x="14" y="0"/>
+        <use href="#qr-finder" xlink:href="#qr-finder" x="0" y="14"/>
+        <rect x="9" y="0" width="1" height="1" fill="black"/><rect x="11" y="0" width="1" height="1" fill="black"/>
+        <rect x="9" y="2" width="1" height="1" fill="black"/><rect x="12" y="2" width="1" height="1" fill="black"/>
+        <rect x="8" y="4" width="1" height="1" fill="black"/><rect x="10" y="4" width="1" height="1" fill="black"/><rect x="13" y="4" width="1" height="1" fill="black"/>
+        <rect x="9" y="6" width="1" height="1" fill="black"/><rect x="11" y="6" width="1" height="1" fill="black"/><rect x="14" y="6" width="1" height="1" fill="black"/>
+        <rect x="8" y="8" width="1" height="1" fill="black"/><rect x="10" y="8" width="1" height="1" fill="black"/><rect x="12" y="8" width="1" height="1" fill="black"/><rect x="15" y="8" width="1" height="1" fill="black"/><rect x="17" y="8" width="1" height="1" fill="black"/>
+        <rect x="9" y="9" width="1" height="1" fill="black"/><rect x="13" y="9" width="1" height="1" fill="black"/><rect x="16" y="9" width="1" height="1" fill="black"/><rect x="19" y="9" width="1" height="1" fill="black"/>
+        <rect x="8" y="10" width="1" height="1" fill="black"/><rect x="11" y="10" width="1" height="1" fill="black"/><rect x="14" y="10" width="1" height="1" fill="black"/><rect x="18" y="10" width="1" height="1" fill="black"/>
+        <rect x="9" y="11" width="1" height="1" fill="black"/><rect x="12" y="11" width="1" height="1" fill="black"/><rect x="17" y="11" width="1" height="1" fill="black"/>
+        <rect x="8" y="12" width="1" height="1" fill="black"/><rect x="10" y="12" width="1" height="1" fill="black"/><rect x="13" y="12" width="1" height="1" fill="black"/><rect x="16" y="12" width="1" height="1" fill="black"/><rect x="19" y="12" width="1" height="1" fill="black"/>
+        <rect x="9" y="16" width="1" height="1" fill="black"/><rect x="11" y="16" width="1" height="1" fill="black"/><rect x="13" y="16" width="1" height="1" fill="black"/>
+        <rect x="10" y="18" width="1" height="1" fill="black"/><rect x="12" y="18" width="1" height="1" fill="black"/><rect x="14" y="18" width="1" height="1" fill="black"/>
+        <rect x="9" y="19" width="1" height="1" fill="black"/><rect x="13" y="19" width="1" height="1" fill="black"/><rect x="16" y="19" width="1" height="1" fill="black"/>
+        <rect x="9" y="20" width="1" height="1" fill="black"/><rect x="11" y="20" width="1" height="1" fill="black"/><rect x="14" y="20" width="1" height="1" fill="black"/><rect x="17" y="20" width="1" height="1" fill="black"/>
+      </svg>
+    </div>
+
+    <div class="space-y-2">
+      <button type="button" id="download-qr-btn" class="w-full bg-custom-accent text-black text-xs font-bold py-2.5 rounded-lg transition-all duration-300 hover:brightness-110 inline-flex items-center justify-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent">
+        <svg class="w-4 h-4 shrink-0 download-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12M12 16.5V3"/></svg>
+        <svg class="w-4 h-4 shrink-0 check-icon-download hidden" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+        <span class="download-label">Descargar QR (SVG)</span>
+      </button>
+      <button type="button" id="close-modal-qr-secondary" class="w-full bg-transparent text-custom-muted hover:text-custom-main text-xs font-semibold py-2 transition-colors duration-300">
+        Cerrar Ventana
+      </button>
+    </div>
+  </div>
+</div>
 </section>
 
         <!-- 4. Testimonios (Prueba Social) -->

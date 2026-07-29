@@ -468,6 +468,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const btnCloseQr2 = document.getElementById('close-modal-qr-secondary'); // solo existe en algunas páginas
         const btnDownloadQr = document.getElementById('download-qr-btn');
         const btnShare = document.getElementById('btn-share-catalog');
+        const qrSvgContainer = document.getElementById('qr-svg'); // Contenedor del SVG
 
         function openModal() {
             if (!modal) return;
