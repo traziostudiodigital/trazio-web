@@ -191,89 +191,103 @@ document.addEventListener('DOMContentLoaded', () => {
         if (triggerDD) triggerDD.classList.add('text-custom-accent');
     }
 
-    // ─────────────────────────────────────────────────────────────────────────
-    // --- DEMO INTERACTIVA DE CATÁLOGOS (NUEVA LÓGICA OPTIMIZADA) ---
-    // ─────────────────────────────────────────────────────────────────────────
-    const formatMoney = (n) => '$' + n.toFixed(2);
+    // ═══════════════════════════════════════════════════════════════════════
+    // A PARTIR DE AQUÍ: las 2 demos interactivas, cada una en su propio IIFE
+    // con su propia raíz de búsqueda (querySelector siempre parte de la raíz
+    // de la sección, nunca de `document`). Esto es lo que faltaba: antes
+    // ambas demos usaban las mismas clases (.demo-tab-btn, .cart-item, etc.)
+    // y los mismos IDs de QR/Compartir, y varios handlers competían por los
+    // mismos elementos. Ahora cada bloque hace `if (!root) return;` y sale
+    // de inmediato si esa sección no existe en la página actual — así en
+    // catalogo-pedidos.html solo corre el bloque 1, en el home solo el 2,
+    // y nunca se pisan aunque compartan clases o el mismo main.js.
+    // ═══════════════════════════════════════════════════════════════════════
 
-    function recalcPanel(panel) {
-        let total = 0;
-        let units = 0;
+    // ─────────────────────────────────────────────────────────────────────
+    // 1) DEMO — Catálogo de Pedidos (catalogo-pedidos.html)
+    //    Raíz: #catalog-industry-selector (tabs) + #catalog-demo-wrapper (paneles)
+    // ─────────────────────────────────────────────────────────────────────
+    (function initCatalogPageDemo() {
+        const tabsRoot = document.getElementById('catalog-industry-selector');
+        const demoWrapper = document.getElementById('catalog-demo-wrapper');
+        if (!tabsRoot || !demoWrapper) return; // esta página no tiene esta sección
 
-        panel.querySelectorAll('.cart-item').forEach((item) => {
-            const price = parseFloat(item.dataset.price) || 0;
-            const qty = parseInt(item.dataset.qty || '0', 10);
-            if (qty > 0) {
-                total += price * qty;
-                units += qty;
-                item.classList.remove('opacity-60');
-            } else {
-                item.classList.add('opacity-60');
-            }
-        });
+        const formatMoney = (n) => '$' + n.toFixed(2);
 
-        const badge = panel.querySelector('.cart-badge-count');
-        if (badge) badge.textContent = String(units);
+        function recalcPanel(panel) {
+            let total = 0;
+            let units = 0;
 
-        const totalEl = panel.querySelector('.cart-total-value');
-        if (totalEl) totalEl.textContent = formatMoney(total);
+            panel.querySelectorAll('.cart-item').forEach((item) => {
+                const price = parseFloat(item.dataset.price) || 0;
+                const qty = parseInt(item.dataset.qty || '0', 10);
+                if (qty > 0) {
+                    total += price * qty;
+                    units += qty;
+                    item.classList.remove('opacity-60');
+                } else {
+                    item.classList.add('opacity-60');
+                }
+            });
 
-        updateWaLink(panel, total);
-    }
+            const badge = panel.querySelector('.cart-badge-count');
+            if (badge) badge.textContent = String(units);
 
-    function updateWaLink(panel, total) {
-        const link = panel.querySelector('.wa-order-btn');
-        if (!link) return;
+            const totalEl = panel.querySelector('.cart-total-value');
+            if (totalEl) totalEl.textContent = formatMoney(total);
 
-        const base = link.dataset.waBase || '';
-        const prefix = link.dataset.waPrefix || '';
-        const lines = [];
+            updateWaLink(panel, total);
+        }
 
-        panel.querySelectorAll('.cart-item').forEach((item) => {
-            const qty = parseInt(item.dataset.qty || '0', 10);
-            if (qty <= 0) return;
-            const name = item.dataset.name || '';
-            const price = parseFloat(item.dataset.price) || 0;
-            const isToggle = item.dataset.mode === 'toggle';
-            const sub = (price * qty).toFixed(2);
-            lines.push('- ' + name + (isToggle ? '' : ' x' + qty) + ' ($' + sub + ')');
-        });
+        function updateWaLink(panel, total) {
+            const link = panel.querySelector('.wa-order-btn');
+            if (!link) return;
 
-        const message = prefix + '\n' + lines.join('\n') + '\nTotal: ' + formatMoney(total);
-        link.setAttribute('href', base + '?text=' + encodeURIComponent(message));
-    }
+            const base = link.dataset.waBase || '';
+            const prefix = link.dataset.waPrefix || '';
+            const lines = [];
 
-    function setQty(item, qty) {
-        qty = Math.max(0, qty);
-        item.dataset.qty = String(qty);
-        const display = item.querySelector('.cart-qty-display');
-        if (display) display.textContent = String(qty);
-        const panel = item.closest('.demo-panel');
-        if (panel) recalcPanel(panel);
-    }
+            panel.querySelectorAll('.cart-item').forEach((item) => {
+                const qty = parseInt(item.dataset.qty || '0', 10);
+                if (qty <= 0) return;
+                const name = item.dataset.name || '';
+                const price = parseFloat(item.dataset.price) || 0;
+                const isToggle = item.dataset.mode === 'toggle';
+                const sub = (price * qty).toFixed(2);
+                lines.push('- ' + name + (isToggle ? '' : ' x' + qty) + ' ($' + sub + ')');
+            });
 
-    function toggleItem(item, btn) {
-        const wasAdded = item.dataset.qty === '1';
-        setQty(item, wasAdded ? 0 : 1);
+            const message = prefix + '\n' + lines.join('\n') + '\nTotal: ' + formatMoney(total);
+            link.setAttribute('href', base + '?text=' + encodeURIComponent(message));
+        }
 
-        btn.setAttribute('aria-pressed', String(!wasAdded));
-        btn.classList.toggle('bg-custom-accent', !wasAdded);
-        btn.classList.toggle('text-black', !wasAdded);
-        btn.classList.toggle('border', wasAdded);
-        btn.classList.toggle('border-custom', wasAdded);
-        btn.classList.toggle('text-custom-muted', wasAdded);
+        function setQty(item, qty) {
+            qty = Math.max(0, qty);
+            item.dataset.qty = String(qty);
+            const display = item.querySelector('.cart-qty-display');
+            if (display) display.textContent = String(qty);
+            const panel = item.closest('.demo-panel');
+            if (panel) recalcPanel(panel);
+        }
 
-        const iconCheck = btn.querySelector('.icon-check');
-        const iconPlus = btn.querySelector('.icon-plus');
-        if (iconCheck) iconCheck.classList.toggle('hidden', wasAdded);
-        if (iconPlus) iconPlus.classList.toggle('hidden', !wasAdded);
-        btn.setAttribute('aria-label', wasAdded ? 'Agregar servicio' : 'Quitar reserva');
-    }
+        function toggleItem(item, btn) {
+            const wasAdded = item.dataset.qty === '1';
+            setQty(item, wasAdded ? 0 : 1);
 
-    const demoWrapper = document.getElementById('catalog-demo-wrapper');
-    const tabButtons = document.querySelectorAll('.demo-tab-btn');
+            btn.setAttribute('aria-pressed', String(!wasAdded));
+            btn.classList.toggle('bg-custom-accent', !wasAdded);
+            btn.classList.toggle('text-black', !wasAdded);
+            btn.classList.toggle('border', wasAdded);
+            btn.classList.toggle('border-custom', wasAdded);
+            btn.classList.toggle('text-custom-muted', wasAdded);
 
-    if (demoWrapper) {
+            const iconCheck = btn.querySelector('.icon-check');
+            const iconPlus = btn.querySelector('.icon-plus');
+            if (iconCheck) iconCheck.classList.toggle('hidden', wasAdded);
+            if (iconPlus) iconPlus.classList.toggle('hidden', !wasAdded);
+            btn.setAttribute('aria-label', wasAdded ? 'Agregar servicio' : 'Quitar reserva');
+        }
+
         demoWrapper.addEventListener('click', (e) => {
             const plusBtn = e.target.closest('.cart-qty-plus');
             const minusBtn = e.target.closest('.cart-qty-minus');
@@ -290,9 +304,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 toggleItem(item, toggleBtn);
             }
         });
-    }
 
-    if (tabButtons.length > 0) {
+        // Tabs — escopeados a tabsRoot, NUNCA a document, para no tocar
+        // los botones .demo-tab-btn de la galería del home
+        const tabButtons = tabsRoot.querySelectorAll('.demo-tab-btn');
         tabButtons.forEach((btn) => {
             btn.addEventListener('click', () => {
                 const targetId = btn.dataset.demoTarget;
@@ -308,141 +323,236 @@ document.addEventListener('DOMContentLoaded', () => {
                     b.classList.toggle('text-custom-muted', !active);
                 });
 
-                document.querySelectorAll('.demo-panel').forEach((panel) => {
+                demoWrapper.querySelectorAll('.demo-panel').forEach((panel) => {
                     panel.classList.toggle('hidden', panel.id !== targetId);
                 });
             });
         });
-    }
 
-    // Inicialización de paneles
-    document.querySelectorAll('.demo-panel').forEach(recalcPanel);
+        demoWrapper.querySelectorAll('.demo-panel').forEach(recalcPanel);
+    })();
 
-    // ─────────────────────────────────────────────────────────────────────────
-    // --- COMPARTIR Y MODAL DE QR (Añadido/Verificado) ---
-    // ─────────────────────────────────────────────────────────────────────────
-    const shareBtn = document.getElementById('btn-share-catalog');
-    if (shareBtn) {
-        shareBtn.addEventListener('click', async () => {
-            if (navigator.share) {
-                try {
-                    await navigator.share({
-                        title: 'Catálogo de Ventas por WhatsApp',
-                        url: window.location.href
-                    });
-                } catch (err) { /* Cancelado por el usuario */ }
-            } else {
-                navigator.clipboard.writeText(window.location.href);
-                alert('¡Enlace del catálogo copiado al portapapeles!');
-            }
+    // ─────────────────────────────────────────────────────────────────────
+    // 2) DEMO — Galería del Home (#demo-gallery: Catálogo/Portafolio/Corporativo)
+    //    Raíz: #demo-gallery — todo se busca dentro de `gallery`, nunca de `document`
+    // ─────────────────────────────────────────────────────────────────────
+    (function initHomeGalleryDemo() {
+        const gallery = document.getElementById('demo-gallery');
+        if (!gallery) return; // esta página no tiene esta sección
+
+        const formatMoneyUsd = (n) => '$' + n.toFixed(2) + ' USD';
+
+        // --- Tabs con crossfade, escopeados a `gallery` ---
+        const tabButtons = gallery.querySelectorAll('.demo-tab-btn');
+        const panes = gallery.querySelectorAll('.demo-content-pane');
+
+        function activateGalleryTab(targetId) {
+            tabButtons.forEach((b) => {
+                const active = b.dataset.demoTarget === targetId;
+                b.setAttribute('aria-selected', String(active));
+                b.classList.toggle('bg-custom-accent', active);
+                b.classList.toggle('text-black', active);
+                b.classList.toggle('shadow-md', active);
+                b.classList.toggle('border', active);
+                b.classList.toggle('border-custom-accent/20', active);
+                b.classList.toggle('text-custom-muted', !active);
+            });
+
+            panes.forEach((pane) => {
+                if (pane.id === targetId) {
+                    pane.classList.remove('hidden');
+                    void pane.offsetWidth; // fuerza reflow antes de animar entrada
+                    pane.classList.remove('opacity-0', 'scale-95');
+                    pane.classList.add('opacity-100', 'scale-100');
+                } else if (!pane.classList.contains('hidden')) {
+                    pane.classList.remove('opacity-100', 'scale-100');
+                    pane.classList.add('opacity-0', 'scale-95');
+                    setTimeout(() => {
+                        if (pane.id !== targetId) pane.classList.add('hidden');
+                    }, 350);
+                }
+            });
+        }
+
+        tabButtons.forEach((btn) => {
+            btn.addEventListener('click', () => activateGalleryTab(btn.dataset.demoTarget));
         });
-    }
 
-    const btnQr = document.getElementById('btn-qr-catalog');
-    const modalQr = document.getElementById('modal-qr');
-    const closeQr = document.getElementById('close-modal-qr');
+        // --- Quick-add del panel "Catálogo Móvil", escopeado a #catalog-demo ---
+        const catalogPane = gallery.querySelector('#catalog-demo');
 
-    if (btnQr && modalQr) {
-        btnQr.addEventListener('click', () => modalQr.classList.remove('hidden'));
-    }
-    if (closeQr && modalQr) {
-        closeQr.addEventListener('click', () => modalQr.classList.add('hidden'));
-    }
-    if (modalQr) {
-        modalQr.addEventListener('click', (e) => {
-            if (e.target === modalQr) modalQr.classList.add('hidden');
+        function recalcCatalog() {
+            if (!catalogPane) return;
+            let total = 0;
+            let units = 0;
+
+            catalogPane.querySelectorAll('.cart-item').forEach((item) => {
+                const price = parseFloat(item.dataset.price) || 0;
+                const qty = parseInt(item.dataset.qty || '0', 10);
+                item.classList.toggle('opacity-60', qty === 0);
+                if (qty > 0) {
+                    total += price * qty;
+                    units += qty;
+                }
+            });
+
+            const badge = catalogPane.querySelector('.cart-badge-count');
+            if (badge) badge.textContent = String(units);
+
+            const totalEl = catalogPane.querySelector('.cart-total-value');
+            if (totalEl) totalEl.textContent = formatMoneyUsd(total);
+
+            updateGalleryWaLink(total);
+        }
+
+        function updateGalleryWaLink(total) {
+            const link = catalogPane.querySelector('.wa-order-btn');
+            if (!link) return;
+            const base = link.dataset.waBase || '';
+            const prefix = link.dataset.waPrefix || '';
+            const lines = [];
+
+            catalogPane.querySelectorAll('.cart-item').forEach((item) => {
+                const qty = parseInt(item.dataset.qty || '0', 10);
+                if (qty > 0) lines.push('- ' + item.dataset.name);
+            });
+
+            const message = prefix + '\n' + lines.join('\n') + '\nTotal: ' + formatMoneyUsd(total);
+            link.setAttribute('href', base + '?text=' + encodeURIComponent(message));
+        }
+
+        function toggleCartItem(btn) {
+            const item = btn.closest('.cart-item');
+            const wasAdded = item.dataset.qty === '1';
+            item.dataset.qty = wasAdded ? '0' : '1';
+
+            btn.setAttribute('aria-pressed', String(!wasAdded));
+            btn.setAttribute('aria-label', wasAdded ? 'Agregar al pedido' : 'Quitar del pedido');
+            btn.classList.toggle('bg-custom-accent', !wasAdded);
+            btn.classList.toggle('text-black', !wasAdded);
+            btn.classList.toggle('border', wasAdded);
+            btn.classList.toggle('border-neutral-700', wasAdded);
+            btn.classList.toggle('text-neutral-400', wasAdded);
+
+            const iconCheck = btn.querySelector('.icon-check');
+            const iconPlus = btn.querySelector('.icon-plus');
+            if (iconCheck) iconCheck.classList.toggle('hidden', wasAdded);
+            if (iconPlus) iconPlus.classList.toggle('hidden', !wasAdded);
+
+            btn.style.transform = 'scale(0.85)';
+            setTimeout(() => { btn.style.transform = ''; }, 140);
+
+            recalcCatalog();
+        }
+
+        if (catalogPane) {
+            catalogPane.addEventListener('click', (e) => {
+                const btn = e.target.closest('.cart-toggle-btn');
+                if (btn) toggleCartItem(btn);
+            });
+            recalcCatalog(); // estado inicial
+        }
+    })();
+
+    // ─────────────────────────────────────────────────────────────────────
+    // 3) COMPARTIR + MODAL QR — ÚNICA implementación, compartida por ambas
+    //    páginas. Cada página trae solo UNA instancia de #modal-qr /
+    //    #btn-share-catalog / #btn-qr-catalog, así que un solo binding por
+    //    getElementById es correcto y suficiente — el bug anterior era
+    //    tener 2-3 bloques distintos enganchados a los mismos IDs a la vez.
+    // ─────────────────────────────────────────────────────────────────────
+    (function initShareAndQr() {
+        const modal = document.getElementById('modal-qr');
+        const btnOpenQr = document.getElementById('btn-qr-catalog');
+        const btnCloseQr = document.getElementById('close-modal-qr');
+        const btnCloseQr2 = document.getElementById('close-modal-qr-secondary'); // solo existe en algunas páginas
+        const btnDownloadQr = document.getElementById('download-qr-btn');
+        const btnShare = document.getElementById('btn-share-catalog');
+
+        function openModal() {
+            if (!modal) return;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex'); // fuerza flex aunque el markup no lo traiga fijo
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            if (!modal) return;
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+
+        if (btnOpenQr) btnOpenQr.addEventListener('click', openModal);
+        if (btnCloseQr) btnCloseQr.addEventListener('click', closeModal);
+        if (btnCloseQr2) btnCloseQr2.addEventListener('click', closeModal);
+        if (modal) {
+            modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) closeModal();
         });
-    }
 
-    // ─────────────────────────────────────────────────────────────────────────
-    // --- Gallery Tabs ---
-    // ─────────────────────────────────────────────────────────────────────────
-    const galleryTabs = document.getElementById('gallery-tabs');
-    if (galleryTabs) {
-        function switchGalleryPane(targetId) {
-            const currentPane = document.querySelector('#demo-gallery .demo-content-pane.block');
-            const nextPane = document.getElementById(targetId);
-            if (!nextPane || currentPane === nextPane) return;
+        if (btnDownloadQr) {
+            btnDownloadQr.addEventListener('click', () => {
+                // Busca el SVG por id="qr-svg"; si esa página no lo tiene, toma
+                // el primer <svg> dentro del modal (robusto ante markup viejo).
+                const svg = document.getElementById('qr-svg') || (modal && modal.querySelector('svg'));
+                const label = btnDownloadQr.querySelector('.download-label');
+                const icon = btnDownloadQr.querySelector('.download-icon');
+                const check = btnDownloadQr.querySelector('.check-icon-download');
 
-            if (currentPane) {
-                currentPane.classList.remove('block', 'opacity-100', 'scale-100');
-                currentPane.classList.add('opacity-0', 'scale-95');
-            }
-
-            nextPane.classList.remove('block', 'opacity-100', 'scale-100');
-            nextPane.classList.add('hidden', 'opacity-0', 'scale-95');
-
-            setTimeout(function() {
-                if (currentPane) {
-                    currentPane.classList.remove('block', 'opacity-100', 'scale-100');
-                    currentPane.classList.add('hidden', 'opacity-0', 'scale-95');
+                if (svg) {
+                    const svgMarkup = '<?xml version="1.0" encoding="UTF-8"?>\n' + svg.outerHTML;
+                    const blob = new Blob([svgMarkup], { type: 'image/svg+xml' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'trazio-qr-catalogo.svg';
+                    document.body.appendChild(a);
+                    a.click();
+                    a.remove();
+                    URL.revokeObjectURL(url);
                 }
 
-                nextPane.classList.remove('hidden', 'opacity-0', 'scale-95');
-                nextPane.classList.add('block');
-                void nextPane.offsetWidth;
-                nextPane.classList.add('opacity-100', 'scale-100');
-            }, currentPane ? 200 : 0);
-        }
-
-        galleryTabs.addEventListener('click', function(e) {
-            const btn = e.target.closest('button[data-demo-target]');
-            if (!btn) return;
-            galleryTabs.querySelectorAll('button[data-demo-target]').forEach(function(b) {
-                const isActive = b === btn;
-                b.classList.toggle('text-custom-accent', isActive);
-                b.classList.toggle('bg-custom-main', isActive);
-                b.classList.toggle('border', isActive);
-                b.classList.toggle('border-custom-accent/20', isActive);
-                b.classList.toggle('shadow-md', isActive);
-                b.classList.toggle('text-custom-muted', !isActive);
-                b.classList.toggle('hover:text-custom-accent', !isActive);
-                b.setAttribute('aria-selected', isActive.toString());
-            });
-            switchGalleryPane(btn.getAttribute('data-demo-target'));
-        });
-
-        const catalogPane = document.getElementById('catalog-demo');
-        if (catalogPane) {
-            const mockCart = { count: 2, total: 53.00 };
-            catalogPane.addEventListener('click', function(e) {
-                const addBtn = e.target.closest('.w-6.h-6.rounded-full');
-                if (!addBtn) return;
-                const productRow = addBtn.closest('.bg-neutral-900\\/60');
-                if (!productRow) return;
-                const priceEl = productRow.querySelector('.text-custom-accent');
-                if (!priceEl) return;
-                const priceMatch = priceEl.textContent.match(/[\d.]+/);
-                if (!priceMatch) return;
-                const price = parseFloat(priceMatch[0]);
-                mockCart.count += 1;
-                mockCart.total += price;
-                const totalEl = catalogPane.querySelector('[data-i18n="mock-cat-cart-total"]');
-                if (totalEl) totalEl.textContent = 'Total: $' + mockCart.total.toFixed(2) + ' USD';
-                addBtn.classList.add('scale-125', 'bg-custom-accent/40');
-                setTimeout(() => addBtn.classList.remove('scale-125', 'bg-custom-accent/40'), 300);
+                if (icon) icon.classList.add('hidden');
+                if (check) check.classList.remove('hidden');
+                if (label) label.textContent = '¡Descargado!';
+                setTimeout(() => {
+                    if (icon) icon.classList.remove('hidden');
+                    if (check) check.classList.add('hidden');
+                    if (label) label.textContent = 'Descargar QR (SVG)';
+                }, 2000);
             });
         }
-    }
 
-    // --- Descarga QR ---
-    const downloadQrBtn = document.getElementById('download-qr-btn');
-    if (downloadQrBtn) {
-        downloadQrBtn.addEventListener('click', function() {
-            const label = downloadQrBtn.querySelector('.download-label');
-            const dlIcon = downloadQrBtn.querySelector('.download-icon');
-            const okIcon = downloadQrBtn.querySelector('.check-icon-download');
-            if (!label || !dlIcon || !okIcon) return;
-            const original = label.textContent;
-            label.textContent = '¡Listo para imprimir!';
-            dlIcon.classList.add('hidden');
-            okIcon.classList.remove('hidden');
-            setTimeout(function() {
-                label.textContent = original;
-                dlIcon.classList.remove('hidden');
-                okIcon.classList.add('hidden');
-            }, 1800);
-        });
-    }
+        if (btnShare) {
+            btnShare.addEventListener('click', async () => {
+                const shareData = { title: document.title, url: window.location.href };
+                const toast = btnShare.querySelector('.share-toast');
+
+                try {
+                    if (navigator.share) {
+                        await navigator.share(shareData);
+                        return;
+                    }
+                    await navigator.clipboard.writeText(shareData.url);
+                } catch (err) {
+                    return; // el usuario canceló el share nativo o el navegador bloqueó el portapapeles
+                }
+
+                if (toast) {
+                    toast.classList.remove('opacity-0');
+                    toast.classList.add('opacity-100');
+                    setTimeout(() => {
+                        toast.classList.remove('opacity-100');
+                        toast.classList.add('opacity-0');
+                    }, 1800);
+                } else {
+                    alert('¡Enlace copiado al portapapeles!');
+                }
+            });
+        }
+    })();
 
 }); // Cierre del DOMContentLoaded global
