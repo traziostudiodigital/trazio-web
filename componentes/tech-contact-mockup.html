@@ -1,4 +1,4 @@
-<!-- Simulador de Formulario B2B -->
+<!-- componentes/tech-contact-mockup.html -->
 <section class="max-w-5xl mx-auto px-6 mb-24">
     <div class="bg-custom-card border border-custom/20 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row gap-12 items-center shadow-2xl relative overflow-hidden">
         
@@ -18,29 +18,29 @@
             </a>
         </div>
         
-        <!-- Mockup Visual del Formulario (Inactivo) -->
+        <!-- Mockup Visual del Formulario (Activo) -->
         <div class="flex-1 w-full bg-custom-main/50 p-6 rounded-xl border border-custom/10 relative">
-            <!-- Capa invisible para bloquear clics y mostrar cursor de prohibido -->
-            <div class="absolute inset-0 z-20 cursor-not-allowed" title="Esto es una demostración visual"></div>
-            
-            <div class="space-y-4 opacity-70 pointer-events-none">
+            <!-- Formulario funcional -->
+            <form id="tech-contact-form" class="space-y-4">
                 <div>
                     <label class="block text-xs font-bold text-custom-muted mb-1.5">Empresa / Proyecto</label>
-                    <div class="w-full h-10 bg-custom-card border border-custom/20 rounded-md"></div>
+                    <input type="text" id="empresa" required class="w-full h-10 bg-custom-card border border-custom/20 rounded-md px-3 text-sm focus:outline-none focus:ring-2 focus:ring-custom-accent" placeholder="Nombre de la empresa o proyecto">
                 </div>
                 <div>
                     <label class="block text-xs font-bold text-custom-muted mb-1.5">Presupuesto Estimado</label>
-                    <div class="w-full h-10 bg-custom-card border border-custom/20 rounded-md flex items-center px-3 text-xs text-custom-muted">Ej: +$1,000 USD</div>
+                    <input type="text" id="presupuesto" required class="w-full h-10 bg-custom-card border border-custom/20 rounded-md px-3 text-sm focus:outline-none focus:ring-2 focus:ring-custom-accent" placeholder="Ej: +$1,000 USD">
                 </div>
                 <div>
                     <label class="block text-xs font-bold text-custom-muted mb-1.5">Descripción del Reto Técnico</label>
-                    <div class="w-full h-20 bg-custom-card border border-custom/20 rounded-md"></div>
+                    <textarea id="descripcion" required rows="4" class="w-full h-20 bg-custom-card border border-custom/20 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-custom-accent" placeholder="Describe brevemente el desafío técnico"></textarea>
                 </div>
-                <button class="w-full py-3 bg-custom-accent text-black font-bold uppercase text-xs tracking-wider rounded-md">
-                    Enviar Propuesta (Demo)
+                <button type="submit" id="btn-enviar" class="w-full py-3 bg-custom-accent text-black font-bold uppercase text-xs tracking-wider rounded-md hover:bg-custom-accent/90 transition-colors">
+                    Enviar Propuesta
                 </button>
-            </div>
+            </form>
         </div>
         
     </div>
 </section>
+<!-- Script separado para la lógica del formulario -->
+<script src="tech-contact-form.js" defer></script>
