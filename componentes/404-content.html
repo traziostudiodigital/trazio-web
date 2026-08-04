@@ -1,10 +1,16 @@
-<section class="min-h-[70vh] flex flex-col items-center justify-center text-center px-6 animate-fade-in-up">
-    <h1 class="text-8xl md:text-9xl font-black text-custom-accent mb-4 tracking-tighter opacity-20">404</h1>
+<section class="min-h-[70vh] flex flex-col items-center justify-center text-center px-6 relative z-10 animate-fade-in-up">
+    <!-- El 404 Gigante -->
+    <h1 class="text-8xl md:text-9xl font-black text-custom-accent mb-2 tracking-tighter opacity-20 select-none">404</h1>
+    
+    <!-- Textos -->
     <h2 class="text-3xl md:text-4xl font-bold text-custom-main mb-4">Parece que te saliste del trazo.</h2>
-    <p class="text-custom-muted mb-8 max-w-md mx-auto">
+    <p class="text-lg text-custom-muted mb-10 max-w-md mx-auto leading-relaxed">
         La página que buscas no existe, fue movida o el enlace es incorrecto. Volvamos a la mesa de diseño.
     </p>
-    <a href="index.html" class="px-8 py-3 text-sm font-bold text-custom-main border border-custom/20 rounded-lg hover:border-custom-accent transition-all">
+    
+    <!-- Botón de regreso -->
+    <a href="index.html" class="inline-flex items-center gap-2 px-8 py-4 text-sm font-bold text-black bg-custom-accent rounded-lg hover:bg-custom-accent-hover transition-all shadow-lg shadow-custom-accent/20">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
         Volver al Inicio
     </a>
 </section>
