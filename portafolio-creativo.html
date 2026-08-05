@@ -109,19 +109,19 @@
     <!-- Panel Menú Móvil -->
     <div id="mobile-menu" class="md:hidden absolute top-full left-0 right-0 z-50 opacity-0 invisible -translate-y-2 transition-all duration-300 ease-in-out bg-custom-main border-b border-custom shadow-2xl shadow-black/40 max-h-[calc(100vh-4rem)] overflow-y-auto">
         <nav class="max-w-7xl mx-auto px-5 py-5 space-y-1">
-            <a href="index.html" data-nav-link class="flex items-center gap-3 px-3 py-3 rounded-lg text-sm font-semibold text-custom-main hover:bg-custom-card transition-colors duration-300 ease-in-out">Inicio</a>
+            <a href="index.html" data-nav-link class="flex items-center gap-3 px-3 py-3 rounded-lg text-sm font-semibold text-custom-main hover:bg-custom-card transition-colors duration-300 ease-in-out" data-i18n="nav-home">Inicio</a>
             <details class="group rounded-lg border border-custom overflow-hidden">
                 <summary class="flex items-center justify-between gap-3 px-3 py-3 cursor-pointer list-none select-none text-sm font-semibold text-custom-main">
-                    <span>Portafolios</span>
+                    <span data-i18n="nav-portfolio-trigger">Portafolios</span>
                     <svg class="w-4 h-4 text-custom-accent shrink-0 transition-transform duration-300 ease-in-out group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
                 </summary>
                 <div class="px-3 pb-3 pt-1 pl-6 space-y-1">
-                    <a href="portafolio-creativo.html" data-nav-link class="block px-3 py-2.5 rounded-md text-sm text-custom-muted hover:text-custom-accent hover:bg-custom-card">Perfil Visual / Artístico</a>
-                    <a href="portafolio-tecnico.html" data-nav-link class="block px-3 py-2.5 rounded-md text-sm text-custom-muted hover:text-custom-accent hover:bg-custom-card">Perfil Técnico / Consultor</a>
+                    <a href="portafolio-creativo.html" data-nav-link class="block px-3 py-2.5 rounded-md text-sm text-custom-muted hover:text-custom-accent hover:bg-custom-card" data-i18n="nav-portfolio-visual-title">Perfil Visual / Artístico</a>
+                    <a href="portafolio-tecnico.html" data-nav-link class="block px-3 py-2.5 rounded-md text-sm text-custom-muted hover:text-custom-accent hover:bg-custom-card" data-i18n="nav-portfolio-tech-title">Perfil Técnico / Consultor</a>
                 </div>
             </details>
-            <a href="catalogo-pedidos.html" data-nav-link class="flex items-center gap-3 px-3 py-3 rounded-lg text-sm font-semibold text-custom-main hover:bg-custom-card">Catálogos</a>
-            <a href="identidad-corporativa.html" data-nav-link class="flex items-center gap-3 px-3 py-3 rounded-lg text-sm font-semibold text-custom-main hover:bg-custom-card">Empresas</a>
+            <a href="catalogo-pedidos.html" data-nav-link class="flex items-center gap-3 px-3 py-3 rounded-lg text-sm font-semibold text-custom-main hover:bg-custom-card" data-i18n="nav-catalogs">Catálogos</a>
+            <a href="identidad-corporativa.html" data-nav-link class="flex items-center gap-3 px-3 py-3 rounded-lg text-sm font-semibold text-custom-main hover:bg-custom-card" data-i18n="nav-corporate">Empresas</a>
         </nav>
     </div>
     <div id="mobile-menu-backdrop" class="md:hidden fixed inset-0 bg-black/70 z-40 hidden"></div>
@@ -142,7 +142,7 @@
     </style>
     
     <!-- Badge superior -->
-    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase border border-custom/30 text-custom-accent bg-custom-accent/5 mb-6">
+    <span data-i18n="hero-demo-badge" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase border border-custom/30 text-custom-accent bg-custom-accent/5 mb-6">
         ✨ DEMOSTRACIÓN INTERACTIVA: ASÍ SE VERÁ TU FUTURA WEB
     </span>
 
@@ -150,40 +150,39 @@
     <img src="assets/logo-dark.svg" class="logo-dark h-14 md:h-16 mx-auto mb-6 animate-float" alt="Trazio Studio">
 
     <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tighter leading-[1.1] mb-6 text-custom-main">
-        Tu talento merece un <span class="text-custom-accent">Escenario Internacional</span>
+        <span data-i18n="hero-title-p1">Tu talento merece un </span><span data-i18n="hero-title-p2" class="text-custom-accent">Escenario Internacional</span>
     </h1>
 
-    <p class="text-lg sm:text-xl text-custom-muted max-w-2xl mb-12 leading-relaxed">
+    <p data-i18n="hero-desc" class="text-lg sm:text-xl text-custom-muted max-w-2xl mb-12 leading-relaxed">
         Una plataforma bilingüe, rápida y diseñada para que clientes en Cuba y el mundo valoren tu trabajo, consulten tus tarifas y reserven sin fricción.
     </p>
 
     <div class="flex flex-col sm:flex-row gap-4 justify-center items-center w-full sm:w-auto">
-        <a href="#portfolio-workspace" class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 text-base font-semibold text-white bg-custom-accent rounded-xl shadow-lg shadow-custom-accent/10 hover:bg-custom-accent-hover hover:-translate-y-1 transition-all duration-300">
+        <a href="#portfolio-workspace" data-i18n="hero-btn-explore" class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 text-base font-semibold text-white bg-custom-accent rounded-xl shadow-lg shadow-custom-accent/10 hover:bg-custom-accent-hover hover:-translate-y-1 transition-all duration-300">
             Explorar Demo
         </a>
-        <a href="https://wa.me/5350000000?text=Hola,%20quiero%20cotizar%20mi%20web" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 text-base font-semibold text-custom-main bg-custom-card border border-custom/20 rounded-xl hover:bg-custom-main hover:border-custom/55 hover:-translate-y-1 transition-all duration-300">
+        <a href="https://wa.me/5350000000?text=Hola,%20quiero%20cotizar%20mi%20web" target="_blank" rel="noopener noreferrer" data-i18n="hero-btn-quote" class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 text-base font-semibold text-custom-main bg-custom-card border border-custom/20 rounded-xl hover:bg-custom-main hover:border-custom/55 hover:-translate-y-1 transition-all duration-300">
             Cotizar mi Web
         </a>
     </div>
 </section>
     <div class="w-full text-center mt-8 mb-2 px-6">
-    <p class="text-xs sm:text-sm text-custom-muted uppercase tracking-widest font-semibold">Selecciona tu industria para ver una demostración adaptada:</p>
+    <p data-i18n="tabs-instruction" class="text-xs sm:text-sm text-custom-muted uppercase tracking-widest font-semibold">Selecciona tu industria para ver una demostración adaptada:</p>
 </div>
 
 <!-- Falsa Pestaña: Estado CREATIVO Activo -->
 <div class="sticky top-[72px] sm:top-20 z-40 w-full flex justify-center pointer-events-none mt-8 px-4">
     <div class="pointer-events-auto bg-custom-card/90 backdrop-blur-xl p-1.5 flex justify-center items-center space-x-1 border border-custom/20 rounded-xl shadow-xl">
         <!-- ACTIVO -->
-        <a href="portafolio-creativo.html" class="px-4 py-2.5 sm:px-6 sm:py-3 rounded-lg text-xs sm:text-sm font-bold transition-all duration-300 bg-custom-accent text-slate-950 border border-custom-accent/30 shadow-[0_4px_12px_rgba(var(--custom-accent),0.25)] hover:opacity-90">
+        <a href="portafolio-creativo.html" data-i18n="tab-visual" class="px-4 py-2.5 sm:px-6 sm:py-3 rounded-lg text-xs sm:text-sm font-bold transition-all duration-300 bg-custom-accent text-slate-950 border border-custom-accent/30 shadow-[0_4px_12px_rgba(var(--custom-accent),0.25)] hover:opacity-90">
             Perfil Visual / Artístico
         </a>
         <!-- INACTIVO -->
-        <a href="portafolio-tecnico.html" class="px-4 py-2.5 sm:px-6 sm:py-3 rounded-lg text-xs sm:text-sm font-semibold transition-all duration-300 text-custom-muted border border-transparent hover:text-custom-main hover:bg-custom-main/5">
+        <a href="portafolio-tecnico.html" data-i18n="tab-technical" class="px-4 py-2.5 sm:px-6 sm:py-3 rounded-lg text-xs sm:text-sm font-semibold transition-all duration-300 text-custom-muted border border-transparent hover:text-custom-main hover:bg-custom-main/5">
             Perfil Técnico / Consultor
         </a>
     </div>
 </div>
-
 
     <div id="portfolio-workspace" class="max-w-6xl mx-auto px-6 pt-8">
         <section class="relative bg-pattern-nodes py-16 md:py-20 mb-24 overflow-hidden animate-fade-in-up">
@@ -192,13 +191,13 @@
     <header class="text-center max-w-2xl mx-auto mb-14">
       <span class="inline-flex items-center gap-2 text-custom-accent text-xs font-semibold tracking-[0.2em] uppercase mb-3">
         <span class="w-6 h-px bg-custom-accent/50"></span>
-        Ecosistema Creativo
+        <span data-i18n="features-badge-label">Ecosistema Creativo</span>
         <span class="w-6 h-px bg-custom-accent/50"></span>
       </span>
-      <h2 class="text-3xl md:text-4xl font-bold text-custom-main tracking-tight mb-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-custom-main tracking-tight mb-4" data-i18n="features-title-main">
         Más que una galería, una máquina de ventas.
       </h2>
-      <p class="text-custom-muted text-sm md:text-base leading-relaxed">
+      <p class="text-custom-muted text-sm md:text-base leading-relaxed" data-i18n="features-subtitle">
         Tu portafolio deja de ser un simple muestrario y pasa a ser una herramienta que convierte visitas en clientes.
       </p>
     </header>
@@ -215,10 +214,10 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 016-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 01-3.827-5.802" />
               </svg>
             </div>
-            <span class="text-[10px] font-bold uppercase tracking-wider text-custom-accent border border-custom-accent/30 px-2.5 py-1 rounded-md">Global</span>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-custom-accent border border-custom-accent/30 px-2.5 py-1 rounded-md" data-i18n="features-card1-badge">Global</span>
           </div>
-          <h3 class="text-xl font-bold text-custom-main mb-3 tracking-tight group-hover:text-custom-accent transition-colors duration-300 ease-in-out">Bilingüe Instantáneo</h3>
-          <p class="text-custom-muted leading-relaxed text-sm md:text-base">
+          <h3 class="text-xl font-bold text-custom-main mb-3 tracking-tight group-hover:text-custom-accent transition-colors duration-300 ease-in-out" data-i18n="features-card1-title">Bilingüe Instantáneo</h3>
+          <p class="text-custom-muted leading-relaxed text-sm md:text-base" data-i18n="features-card1-description">
             Tu web cambia de español a inglés sin recargar.
             <span class="text-custom-muted/80 italic mt-2 block border-l-2 border-custom-accent/30 pl-3">Ideal para captar clientes extranjeros y agencias internacionales sin fricción.</span>
           </p>
@@ -235,10 +234,10 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
               </svg>
             </div>
-            <span class="text-[10px] font-bold uppercase tracking-wider text-custom-accent border border-custom-accent/30 px-2.5 py-1 rounded-md">Ideal Cuba</span>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-custom-accent border border-custom-accent/30 px-2.5 py-1 rounded-md" data-i18n="features-card2-badge">Ideal Cuba</span>
           </div>
-          <h3 class="text-xl font-bold text-custom-main mb-3 tracking-tight group-hover:text-custom-accent transition-colors duration-300 ease-in-out">Carga Ultraligera</h3>
-          <p class="text-custom-muted leading-relaxed text-sm md:text-base">
+          <h3 class="text-xl font-bold text-custom-main mb-3 tracking-tight group-hover:text-custom-accent transition-colors duration-300 ease-in-out" data-i18n="features-card2-title">Carga Ultraligera</h3>
+          <p class="text-custom-muted leading-relaxed text-sm md:text-base" data-i18n="features-card2-description">
             Optimizada para redes 3G/4G en Cuba.
             <span class="text-custom-muted/80 italic mt-2 block border-l-2 border-custom-accent/30 pl-3">Tus fotos cargan al instante sin consumir los megas de tu cliente.</span>
           </p>
@@ -255,10 +254,10 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
               </svg>
             </div>
-            <span class="text-[10px] font-bold uppercase tracking-wider text-custom-accent border border-custom-accent/30 px-2.5 py-1 rounded-md">UX Premium</span>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-custom-accent border border-custom-accent/30 px-2.5 py-1 rounded-md" data-i18n="features-card3-badge">UX Premium</span>
           </div>
-          <h3 class="text-xl font-bold text-custom-main mb-3 tracking-tight group-hover:text-custom-accent transition-colors duration-300 ease-in-out">Modo Claro/Oscuro</h3>
-          <p class="text-custom-muted leading-relaxed text-sm md:text-base">
+          <h3 class="text-xl font-bold text-custom-main mb-3 tracking-tight group-hover:text-custom-accent transition-colors duration-300 ease-in-out" data-i18n="features-card3-title">Modo Claro/Oscuro</h3>
+          <p class="text-custom-muted leading-relaxed text-sm md:text-base" data-i18n="features-card3-description">
             Diseño adaptable a la preferencia del usuario.
             <span class="text-custom-muted/80 italic mt-2 block border-l-2 border-custom-accent/30 pl-3">Brinda una experiencia de lectura premium y moderna en cualquier condición de luz.</span>
           </p>
@@ -273,13 +272,13 @@
   <header class="text-center max-w-3xl mx-auto mb-12">
     <span class="inline-flex items-center gap-2 text-custom-accent text-xs font-semibold tracking-[0.2em] uppercase mb-3">
       <span class="w-6 h-px bg-custom-accent/50"></span>
-      Portafolio en Vivo
+      <span data-i18n="portfolio-live-label">Portafolio en Vivo</span>
       <span class="w-6 h-px bg-custom-accent/50"></span>
     </span>
-    <h2 class="text-3xl md:text-4xl font-bold text-custom-main mb-4 tracking-tight">
+    <h2 data-i18n="portfolio-title" class="text-3xl md:text-4xl font-bold text-custom-main mb-4 tracking-tight">
       Deja de perder tu trabajo en el algoritmo de Instagram.
     </h2>
-    <p class="text-custom-muted text-sm sm:text-base leading-relaxed">
+    <p data-i18n="portfolio-desc" class="text-custom-muted text-sm sm:text-base leading-relaxed">
       Así lucen los trabajos de otros creadores cuando dejan de vivir solo en un feed y pasan a tener una casa propia: rápida, tuya, sin likes ni algoritmos de por medio.
     </p>
   </header>
@@ -291,8 +290,8 @@
     <label for="lb-1" class="col-span-1 md:col-span-2 row-span-1 md:row-span-2 relative group block overflow-hidden rounded-lg border-double-gold bg-custom-card cursor-zoom-in">
       <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Quinceañeras" loading="eager" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110">
       <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent flex flex-col justify-end p-6">
-        <h3 class="text-xl font-bold text-white mb-0 group-hover:mb-1 transition-all duration-300 ease-in-out">Sesión de Quinceañeras</h3>
-        <p class="text-custom-accent text-sm max-h-0 opacity-0 group-hover:max-h-10 group-hover:opacity-100 transition-all duration-300 ease-in-out overflow-hidden">Galerías inmersivas con lightbox para ver cada detalle.</p>
+        <h3 data-i18n="portfolio-img1-title" class="text-xl font-bold text-white mb-0 group-hover:mb-1 transition-all duration-300 ease-in-out">Sesión de Quinceañeras</h3>
+        <p data-i18n="portfolio-img1-desc" class="text-custom-accent text-sm max-h-0 opacity-0 group-hover:max-h-10 group-hover:opacity-100 transition-all duration-300 ease-in-out overflow-hidden">Galerías inmersivas con lightbox para ver cada detalle.</p>
       </div>
       <div class="absolute top-4 right-4 w-9 h-9 rounded-lg bg-black/40 backdrop-blur-sm border border-white/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out" aria-hidden="true">
         <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9M20.25 20.25h-4.5m4.5 0v-4.5m0 4.5L15 15"/></svg>
@@ -303,8 +302,8 @@
     <label for="lb-2" class="col-span-1 row-span-1 relative group block overflow-hidden rounded-lg border border-custom bg-custom-card cursor-zoom-in">
       <img src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Bodas" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110">
       <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent flex flex-col justify-end p-5">
-        <h3 class="text-lg font-bold text-white mb-0 group-hover:mb-1 transition-all duration-300 ease-in-out">Bodas y Eventos</h3>
-        <p class="text-custom-accent text-xs max-h-0 opacity-0 group-hover:max-h-10 group-hover:opacity-100 transition-all duration-300 ease-in-out overflow-hidden">Muestra la sesión completa sin enviar 40 fotos por WhatsApp.</p>
+        <h3 data-i18n="portfolio-img2-title" class="text-lg font-bold text-white mb-0 group-hover:mb-1 transition-all duration-300 ease-in-out">Bodas y Eventos</h3>
+        <p data-i18n="portfolio-img2-desc" class="text-custom-accent text-xs max-h-0 opacity-0 group-hover:max-h-10 group-hover:opacity-100 transition-all duration-300 ease-in-out overflow-hidden">Muestra la sesión completa sin enviar 40 fotos por WhatsApp.</p>
       </div>
       <div class="absolute top-3 right-3 w-8 h-8 rounded-lg bg-black/40 backdrop-blur-sm border border-white/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out" aria-hidden="true">
         <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9M20.25 20.25h-4.5m4.5 0v-4.5m0 4.5L15 15"/></svg>
@@ -315,8 +314,8 @@
     <label for="lb-3" class="col-span-1 row-span-1 relative group block overflow-hidden rounded-lg border border-custom bg-custom-card cursor-zoom-in">
       <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Retratos" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110">
       <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent flex flex-col justify-end p-5">
-        <h3 class="text-lg font-bold text-white mb-0 group-hover:mb-1 transition-all duration-300 ease-in-out">Retratos para Negocios</h3>
-        <p class="text-custom-accent text-xs max-h-0 opacity-0 group-hover:max-h-10 group-hover:opacity-100 transition-all duration-300 ease-in-out overflow-hidden">Carga progresiva para no perder calidad.</p>
+        <h3 data-i18n="portfolio-img3-title" class="text-lg font-bold text-white mb-0 group-hover:mb-1 transition-all duration-300 ease-in-out">Retratos para Negocios</h3>
+        <p data-i18n="portfolio-img3-desc" class="text-custom-accent text-xs max-h-0 opacity-0 group-hover:max-h-10 group-hover:opacity-100 transition-all duration-300 ease-in-out overflow-hidden">Carga progresiva para no perder calidad.</p>
       </div>
       <div class="absolute top-3 right-3 w-8 h-8 rounded-lg bg-black/40 backdrop-blur-sm border border-white/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out" aria-hidden="true">
         <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9M20.25 20.25h-4.5m4.5 0v-4.5m0 4.5L15 15"/></svg>
@@ -327,8 +326,8 @@
     <label for="lb-4" class="col-span-1 row-span-1 relative group block overflow-hidden rounded-lg border border-custom bg-custom-card cursor-zoom-in">
       <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Moda" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110">
       <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent flex flex-col justify-end p-5">
-        <h3 class="text-lg font-bold text-white mb-0 group-hover:mb-1 transition-all duration-300 ease-in-out">Catálogo de Moda Mipyme</h3>
-        <p class="text-custom-accent text-xs max-h-0 opacity-0 group-hover:max-h-10 group-hover:opacity-100 transition-all duration-300 ease-in-out overflow-hidden">Protección contra descargas no autorizadas.</p>
+        <h3 data-i18n="portfolio-img4-title" class="text-lg font-bold text-white mb-0 group-hover:mb-1 transition-all duration-300 ease-in-out">Catálogo de Moda Mipyme</h3>
+        <p data-i18n="portfolio-img4-desc" class="text-custom-accent text-xs max-h-0 opacity-0 group-hover:max-h-10 group-hover:opacity-100 transition-all duration-300 ease-in-out overflow-hidden">Protección contra descargas no autorizadas.</p>
       </div>
       <div class="absolute top-3 right-3 w-8 h-8 rounded-lg bg-black/40 backdrop-blur-sm border border-white/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out" aria-hidden="true">
         <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9M20.25 20.25h-4.5m4.5 0v-4.5m0 4.5L15 15"/></svg>
@@ -339,8 +338,8 @@
     <label for="lb-5" class="col-span-1 md:col-span-2 row-span-1 relative group block overflow-hidden rounded-lg border border-custom bg-custom-card cursor-zoom-in">
       <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Exteriores" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110">
       <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent flex flex-col justify-end p-6">
-        <h3 class="text-xl font-bold text-white mb-0 group-hover:mb-1 transition-all duration-300 ease-in-out">Fotografía de Exteriores</h3>
-        <p class="text-custom-accent text-sm max-h-0 opacity-0 group-hover:max-h-10 group-hover:opacity-100 transition-all duration-300 ease-in-out overflow-hidden">Diseño adaptable a cualquier pantalla móvil.</p>
+        <h3 data-i18n="portfolio-img5-title" class="text-xl font-bold text-white mb-0 group-hover:mb-1 transition-all duration-300 ease-in-out">Fotografía de Exteriores</h3>
+        <p data-i18n="portfolio-img5-desc" class="text-custom-accent text-sm max-h-0 opacity-0 group-hover:max-h-10 group-hover:opacity-100 transition-all duration-300 ease-in-out overflow-hidden">Diseño adaptable a cualquier pantalla móvil.</p>
       </div>
       <div class="absolute top-4 right-4 w-9 h-9 rounded-lg bg-black/40 backdrop-blur-sm border border-white/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out" aria-hidden="true">
         <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9M20.25 20.25h-4.5m4.5 0v-4.5m0 4.5L15 15"/></svg>
@@ -391,7 +390,7 @@
 
   <!-- Micro CTA de cierre -->
   <p class="text-center text-sm text-custom-muted mt-10">
-    ¿Tus fotos merecen algo mejor que un feed? <a href="#contacto" class="text-custom-accent font-semibold hover:underline">Hablemos de tu galería →</a>
+    <span data-i18n="portfolio-cta-text">¿Tus fotos merecen algo mejor que un feed? </span><a href="#contacto" data-i18n="portfolio-cta-link" class="text-custom-accent font-semibold hover:underline">Hablemos de tu galería →</a>
   </p>
 </section>
         
@@ -406,11 +405,11 @@
         <div class="text-center max-w-3xl mx-auto mb-16">
             <span class="inline-flex items-center gap-2 text-custom-accent text-xs font-semibold tracking-[0.2em] uppercase mb-4">
                 <span class="w-6 h-px bg-custom-accent/50"></span>
-                Prueba Social
+                <span data-i18n="testimonials-badge">Prueba Social</span>
                 <span class="w-6 h-px bg-custom-accent/50"></span>
             </span>
-            <h2 class="text-3xl md:text-4xl font-bold text-custom-main tracking-tight mb-3">El boca a boca, ahora digitalizado.</h2>
-            <p class="text-custom-muted text-base">Integramos las reseñas de tus mejores clientes para generar confianza inmediata en quienes visitan tu perfil por primera vez.</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-custom-main tracking-tight mb-3" data-i18n="testimonials-title">El boca a boca, ahora digitalizado.</h2>
+            <p class="text-custom-muted text-base" data-i18n="testimonials-desc">Integramos las reseñas de tus mejores clientes para generar confianza inmediata en quienes visitan tu perfil por primera vez.</p>
         </div>
 
         <!-- Grid de 2 Columnas -->
@@ -429,15 +428,15 @@
                         <svg class="w-3.5 h-3.5 text-custom-accent" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.958a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.447a1 1 0 00-.363 1.118l1.287 3.957c.3.922-.755 1.688-1.538 1.118l-3.367-2.447a1 1 0 00-1.176 0l-3.367 2.447c-.783.57-1.838-.196-1.538-1.118l1.287-3.957a1 1 0 00-.363-1.118L2.075 9.385c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.958z"/></svg>
                         <svg class="w-3.5 h-3.5 text-custom-accent" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.958a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.447a1 1 0 00-.363 1.118l1.287 3.957c.3.922-.755 1.688-1.538 1.118l-3.367-2.447a1 1 0 00-1.176 0l-3.367 2.447c-.783.57-1.838-.196-1.538-1.118l1.287-3.957a1 1 0 00-.363-1.118L2.075 9.385c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.958z"/></svg>
                     </div>
-                    <p class="text-custom-main text-base leading-relaxed">
+                    <p class="text-custom-main text-base leading-relaxed" data-i18n="testimonial1-text">
                         El nivel de detalle en las fotos de nuestra boda superó las expectativas de nuestra familia en el extranjero.
                     </p>
                 </div>
                 <div class="relative z-10 flex items-center gap-3 mt-6 pt-6 border-t border-custom">
                     <div class="w-10 h-10 rounded-full bg-custom-accent/10 border border-custom-accent/20 text-custom-accent flex items-center justify-center font-bold text-sm shrink-0">LC</div>
                     <div>
-                        <h4 class="text-sm font-bold text-custom-main">Laura & Carlos</h4>
-                        <span class="text-[11px] text-custom-accent uppercase font-semibold tracking-wider">Clientes de Boda</span>
+                        <h4 class="text-sm font-bold text-custom-main" data-i18n="testimonial1-author">Laura & Carlos</h4>
+                        <span class="text-[11px] text-custom-accent uppercase font-semibold tracking-wider" data-i18n="testimonial1-role">Clientes de Boda</span>
                     </div>
                 </div>
             </div>
@@ -455,15 +454,15 @@
                         <svg class="w-3.5 h-3.5 text-custom-accent" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.958a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.447a1 1 0 00-.363 1.118l1.287 3.957c.3.922-.755 1.688-1.538 1.118l-3.367-2.447a1 1 0 00-1.176 0l-3.367 2.447c-.783.57-1.838-.196-1.538-1.118l1.287-3.957a1 1 0 00-.363-1.118L2.075 9.385c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.958z"/></svg>
                         <svg class="w-3.5 h-3.5 text-custom-accent" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.958a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.447a1 1 0 00-.363 1.118l1.287 3.957c.3.922-.755 1.688-1.538 1.118l-3.367-2.447a1 1 0 00-1.176 0l-3.367 2.447c-.783.57-1.838-.196-1.538-1.118l1.287-3.957a1 1 0 00-.363-1.118L2.075 9.385c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.958z"/></svg>
                     </div>
-                    <p class="text-custom-main text-base leading-relaxed">
+                    <p class="text-custom-main text-base leading-relaxed" data-i18n="testimonial2-text">
                         Profesionalismo absoluto. La sesión fluyó de maravilla y la entrega fue impecable.
                     </p>
                 </div>
                 <div class="relative z-10 flex items-center gap-3 mt-6 pt-6 border-t border-custom">
                     <div class="w-10 h-10 rounded-full bg-custom-accent/10 border border-custom-accent/20 text-custom-accent flex items-center justify-center font-bold text-sm shrink-0">MV</div>
                     <div>
-                        <h4 class="text-sm font-bold text-custom-main">Marta V.</h4>
-                        <span class="text-[11px] text-custom-accent uppercase font-semibold tracking-wider">Sesión de Retrato</span>
+                        <h4 class="text-sm font-bold text-custom-main" data-i18n="testimonial2-author">Marta V.</h4>
+                        <span class="text-[11px] text-custom-accent uppercase font-semibold tracking-wider" data-i18n="testimonial2-role">Sesión de Retrato</span>
                     </div>
                 </div>
             </div>
@@ -481,12 +480,12 @@
         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-black opacity-50"></span>
         <span class="relative inline-flex rounded-full h-2 w-2 bg-black"></span>
       </span>
-      Simulador de Tarifas: Así Venderás Tus Servicios
+      <span data-i18n="pricing-demo-badge">Simulador de Tarifas: Así Venderás Tus Servicios</span>
     </div>
 
     <div class="text-center max-w-3xl mx-auto mb-14 md:mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold text-custom-main mb-6 tracking-tight">Filtra a los curiosos y cierra ventas más rápido.</h2>
-      <p class="text-custom-muted text-base md:text-lg leading-relaxed">Muestra tus paquetes de forma clara para que el cliente te contacte listo para pagar, sin tener que explicar tus precios 10 veces al día.</p>
+      <h2 class="text-3xl md:text-4xl font-bold text-custom-main mb-6 tracking-tight" data-i18n="pricing-demo-title">Filtra a los curiosos y cierra ventas más rápido.</h2>
+      <p class="text-custom-muted text-base md:text-lg leading-relaxed" data-i18n="pricing-demo-desc">Muestra tus paquetes de forma clara para que el cliente te contacte listo para pagar, sin tener que explicar tus precios 10 veces al día.</p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-stretch">
@@ -494,7 +493,7 @@
       <!-- Tarjeta 1 -->
       <div class="group bg-custom-main p-8 rounded-lg border border-custom flex flex-col justify-between hover:-translate-y-1 hover:border-custom-accent/40 hover:shadow-2xl hover:shadow-black/30 transition-all duration-300 ease-in-out">
         <div>
-          <h3 class="text-sm font-bold text-custom-accent uppercase tracking-wider mb-2">Sesión Creativa / Retratos</h3>
+          <h3 class="text-sm font-bold text-custom-accent uppercase tracking-wider mb-2" data-i18n="pricing-card1-title">Sesión Creativa / Retratos</h3>
           <div class="flex items-baseline gap-2 mb-6 pb-6 border-b border-custom">
             <span class="text-4xl font-bold text-custom-main">$50</span>
             <span class="text-lg text-custom-muted font-normal">USD</span>
@@ -502,28 +501,28 @@
           <ul class="space-y-3 mb-8 text-sm text-custom-muted">
             <li class="flex items-start gap-2.5">
               <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-              <span>Retratos profesionales de alta gama</span>
+              <span data-i18n="pricing-card1-feat1">Retratos profesionales de alta gama</span>
             </li>
             <li class="flex items-start gap-2.5">
               <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-              <span>1 locación o exteriores</span>
+              <span data-i18n="pricing-card1-feat2">1 locación o exteriores</span>
             </li>
             <li class="flex items-start gap-2.5">
               <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-              <span>10 fotos editadas en alta resolución</span>
+              <span data-i18n="pricing-card1-feat3">10 fotos editadas en alta resolución</span>
             </li>
           </ul>
         </div>
         <div>
-          <p class="text-xs text-custom-accent/80 italic mb-4 text-center border-t border-custom pt-4">"Tu cliente sabe exactamente qué incluye antes de escribirte."</p>
-          <a href="https://wa.me/5350000000?text=Hola,%20quiero%20reservar%20este%20servicio%20creativo" target="_blank" rel="noopener" class="block w-full py-4 rounded-lg font-bold text-sm tracking-wider uppercase text-center transition-all duration-300 ease-in-out bg-custom-card border border-custom text-custom-main hover:border-custom-accent hover:text-custom-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-main">Reservar Servicio (Demo)</a>
+          <p class="text-xs text-custom-accent/80 italic mb-4 text-center border-t border-custom pt-4" data-i18n="pricing-card1-quote">"Tu cliente sabe exactamente qué incluye antes de escribirte."</p>
+          <a href="https://wa.me/5350000000?text=Hola,%20quiero%20reservar%20este%20servicio%20creativo" target="_blank" rel="noopener" class="block w-full py-4 rounded-lg font-bold text-sm tracking-wider uppercase text-center transition-all duration-300 ease-in-out bg-custom-card border border-custom text-custom-main hover:border-custom-accent hover:text-custom-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-main" data-i18n="pricing-btn-demo">Reservar Servicio (Demo)</a>
         </div>
       </div>
 
       <!-- Tarjeta 2 -->
       <div class="group bg-custom-main p-8 rounded-lg border border-custom flex flex-col justify-between hover:-translate-y-1 hover:border-custom-accent/40 hover:shadow-2xl hover:shadow-black/30 transition-all duration-300 ease-in-out">
         <div>
-          <h3 class="text-sm font-bold text-custom-accent uppercase tracking-wider mb-2">Diseño / Dirección de Arte</h3>
+          <h3 class="text-sm font-bold text-custom-accent uppercase tracking-wider mb-2" data-i18n="pricing-card2-title">Diseño / Dirección de Arte</h3>
           <div class="flex items-baseline gap-2 mb-6 pb-6 border-b border-custom">
             <span class="text-4xl font-bold text-custom-main">$150</span>
             <span class="text-lg text-custom-muted font-normal">USD</span>
@@ -531,29 +530,29 @@
           <ul class="space-y-3 mb-8 text-sm text-custom-muted">
             <li class="flex items-start gap-2.5">
               <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-              <span>Conceptualización y moodboard</span>
+              <span data-i18n="pricing-card2-feat1">Conceptualización y moodboard</span>
             </li>
             <li class="flex items-start gap-2.5">
               <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-              <span>Diseño de branding visual</span>
+              <span data-i18n="pricing-card2-feat2">Diseño de branding visual</span>
             </li>
             <li class="flex items-start gap-2.5">
               <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-              <span>Dirección de arte para sesiones</span>
+              <span data-i18n="pricing-card2-feat3">Dirección de arte para sesiones</span>
             </li>
           </ul>
         </div>
         <div>
-          <p class="text-xs text-custom-accent/80 italic mb-4 text-center border-t border-custom pt-4">"Evita regateos mostrando el valor real de tu trabajo."</p>
-          <a href="https://wa.me/5350000000?text=Hola,%20quiero%20reservar%20este%20servicio%20creativo" target="_blank" rel="noopener" class="block w-full py-4 rounded-lg font-bold text-sm tracking-wider uppercase text-center transition-all duration-300 ease-in-out bg-custom-card border border-custom text-custom-main hover:border-custom-accent hover:text-custom-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-main">Reservar Servicio (Demo)</a>
+          <p class="text-xs text-custom-accent/80 italic mb-4 text-center border-t border-custom pt-4" data-i18n="pricing-card2-quote">"Evita regateos mostrando el valor real de tu trabajo."</p>
+          <a href="https://wa.me/5350000000?text=Hola,%20quiero%20reservar%20este%20servicio%20creativo" target="_blank" rel="noopener" class="block w-full py-4 rounded-lg font-bold text-sm tracking-wider uppercase text-center transition-all duration-300 ease-in-out bg-custom-card border border-custom text-custom-main hover:border-custom-accent hover:text-custom-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-main" data-i18n="pricing-btn-demo">Reservar Servicio (Demo)</a>
         </div>
       </div>
 
       <!-- Tarjeta 3 (Premium) -->
       <div class="group border-double-gold bg-custom-main rounded-lg relative p-8 flex flex-col justify-between hover:-translate-y-1 hover:shadow-2xl hover:shadow-custom-accent/10 transition-all duration-300 ease-in-out">
-        <span class="absolute top-0 right-0 bg-custom-accent text-black text-[10px] font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg uppercase tracking-wider">Más Popular</span>
+        <span class="absolute top-0 right-0 bg-custom-accent text-black text-[10px] font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg uppercase tracking-wider" data-i18n="pricing-popular-tag">Más Popular</span>
         <div>
-          <h3 class="text-sm font-bold text-custom-accent uppercase tracking-wider mb-2">Servicio / Asesoría Premium</h3>
+          <h3 class="text-sm font-bold text-custom-accent uppercase tracking-wider mb-2" data-i18n="pricing-card3-title">Servicio / Asesoría Premium</h3>
           <div class="flex items-baseline gap-2 mb-6 pb-6 border-b border-custom-accent/20">
             <span class="text-4xl font-bold text-custom-main">$100</span>
             <span class="text-lg text-custom-muted font-normal">USD</span>
@@ -561,21 +560,21 @@
           <ul class="space-y-3 mb-8 text-sm text-custom-muted">
             <li class="flex items-start gap-2.5">
               <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-              <span>Sesión de asesoría estratégica 1-a-1</span>
+              <span data-i18n="pricing-card3-feat1">Sesión de asesoría estratégica 1-a-1</span>
             </li>
             <li class="flex items-start gap-2.5">
               <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-              <span>Plan de acción para tu marca</span>
+              <span data-i18n="pricing-card3-feat2">Plan de acción para tu marca</span>
             </li>
             <li class="flex items-start gap-2.5">
               <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-              <span>Soporte VIP y acompañamiento</span>
+              <span data-i18n="pricing-card3-feat3">Soporte VIP y acompañamiento</span>
             </li>
           </ul>
         </div>
         <div>
-          <p class="text-xs text-custom-accent/80 italic mb-4 text-center border-t border-custom-accent/20 pt-4">"Posiciona tus servicios más caros como la opción ideal."</p>
-          <a href="https://wa.me/5350000000?text=Hola,%20quiero%20reservar%20este%20servicio%20creativo" target="_blank" rel="noopener" class="block w-full py-4 rounded-lg font-bold text-sm tracking-wider uppercase text-center transition-all duration-300 ease-in-out bg-custom-accent text-black hover:brightness-110 hover:shadow-[0_8px_24px_-4px_rgba(0,0,0,0.4)] focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-main">Reservar Servicio (Demo)</a>
+          <p class="text-xs text-custom-accent/80 italic mb-4 text-center border-t border-custom-accent/20 pt-4" data-i18n="pricing-card3-quote">"Posiciona tus servicios más caros como la opción ideal."</p>
+          <a href="https://wa.me/5350000000?text=Hola,%20quiero%20reservar%20este%20servicio%20creativo" target="_blank" rel="noopener" class="block w-full py-4 rounded-lg font-bold text-sm tracking-wider uppercase text-center transition-all duration-300 ease-in-out bg-custom-accent text-black hover:brightness-110 hover:shadow-[0_8px_24px_-4px_rgba(0,0,0,0.4)] focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-main" data-i18n="pricing-btn-demo">Reservar Servicio (Demo)</a>
         </div>
       </div>
 
@@ -592,28 +591,28 @@
       <div>
         <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[10px] sm:text-xs font-bold tracking-wider uppercase border border-custom-accent/40 text-custom-accent bg-custom-accent/10 mb-6">
           <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-          Ejemplo de Gatillo de Ventas: Agenda al 80%
+          <span data-i18n="booking-badge">Ejemplo de Gatillo de Ventas: Agenda al 80%</span>
         </span>
-        <h2 class="text-3xl md:text-4xl font-bold text-custom-main mb-6 leading-tight tracking-tight">Automatiza tus reservas y recupera tu tiempo.</h2>
-        <p class="text-custom-muted text-base md:text-lg leading-relaxed mb-8">Tu cliente entra, ve tus días libres, elige hora y te llega la solicitud. Se acabó el ida y vuelta de "¿tienes tiempo el jueves?" por WhatsApp.</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-custom-main mb-6 leading-tight tracking-tight" data-i18n="booking-title">Automatiza tus reservas y recupera tu tiempo.</h2>
+        <p class="text-custom-muted text-base md:text-lg leading-relaxed mb-8" data-i18n="booking-desc">Tu cliente entra, ve tus días libres, elige hora y te llega la solicitud. Se acabó el ida y vuelta de "¿tienes tiempo el jueves?" por WhatsApp.</p>
 
         <ul class="space-y-3 mb-8">
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-custom-accent shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-            <span class="text-sm text-custom-muted">Cero choques de horario: solo se muestran tus espacios libres</span>
+            <span class="text-sm text-custom-muted" data-i18n="booking-bullet-1">Cero choques de horario: solo se muestran tus espacios libres</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-custom-accent shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-            <span class="text-sm text-custom-muted">El cliente confirma solo, sin esperar tu respuesta</span>
+            <span class="text-sm text-custom-muted" data-i18n="booking-bullet-2">El cliente confirma solo, sin esperar tu respuesta</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-custom-accent shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-            <span class="text-sm text-custom-muted">Funciona igual para sesiones fotográficas, asesorías o consultas</span>
+            <span class="text-sm text-custom-muted" data-i18n="booking-bullet-3">Funciona igual para sesiones fotográficas, asesorías o consultas</span>
           </li>
         </ul>
 
         <a href="https://wa.me/5350000000?text=Hola,%20quiero%20una%20agenda%20como%20esta%20en%20mi%20web" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-custom-accent font-semibold hover:gap-3 transition-all duration-300 ease-in-out">
-          Quiero esta agenda en mi web
+          <span data-i18n="booking-cta">Quiero esta agenda en mi web</span>
           <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
         </a>
       </div>
@@ -632,7 +631,7 @@
         </div>
 
         <div class="grid grid-cols-7 gap-1.5 text-center text-[11px] font-semibold text-custom-muted mb-3">
-          <div>Lun</div><div>Mar</div><div>Mié</div><div>Jue</div><div>Vie</div><div>Sáb</div><div>Dom</div>
+          <div data-i18n="cal-day-mon">Lun</div><div data-i18n="cal-day-tue">Mar</div><div data-i18n="cal-day-wed">Mié</div><div data-i18n="cal-day-thu">Jue</div><div data-i18n="cal-day-fri">Vie</div><div data-i18n="cal-day-sat">Sáb</div><div data-i18n="cal-day-sun">Dom</div>
         </div>
 
         <div id="cal-days-grid" class="grid grid-cols-7 gap-1.5 text-center text-sm">
@@ -640,11 +639,11 @@
         </div>
 
         <div class="mt-6 pt-6 border-t border-custom">
-          <p class="text-[10px] font-semibold text-custom-muted uppercase tracking-wider mb-2.5">Horarios disponibles</p>
+          <p class="text-[10px] font-semibold text-custom-muted uppercase tracking-wider mb-2.5" data-i18n="cal-slots-title">Horarios disponibles</p>
           <div id="cal-time-slots" class="grid grid-cols-3 gap-2 mb-4">
             <!-- generado por JS -->
           </div>
-          <a href="#" id="cal-confirm-btn" target="_blank" rel="noopener" class="block w-full bg-custom-accent hover:brightness-110 text-black font-bold py-3 rounded-lg text-sm text-center transition-all duration-300 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-main">
+          <a href="#" id="cal-confirm-btn" target="_blank" rel="noopener" class="block w-full bg-custom-accent hover:brightness-110 text-black font-bold py-3 rounded-lg text-sm text-center transition-all duration-300 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-main" data-i18n="cal-confirm-btn">
             Confirmar Reserva
           </a>
         </div>
@@ -659,14 +658,14 @@
   var months = [
     {
       label: 'Noviembre 2026',
-      leadingBlank: 4, // días vacíos antes del día 1 (arranca en viernes)
-      totalDays: 15,   // solo mostramos hasta el 15 en el demo
+      leadingBlank: 4, 
+      totalDays: 15,   
       unavailable: [1, 2, 3, 13, 14],
       defaultActive: 8
     },
     {
       label: 'Diciembre 2026',
-      leadingBlank: 1, // arranca en martes
+      leadingBlank: 1, 
       totalDays: 15,
       unavailable: [5, 6, 12, 13],
       defaultActive: 3
@@ -776,14 +775,14 @@
 <div class="fixed bottom-6 right-6 z-50 group">
     <!-- Tooltip -->
     <div class="absolute right-full top-1/2 -translate-y-1/2 mr-4 px-3 py-1.5 bg-custom-card border border-custom/20 text-custom-main text-xs font-semibold rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 whitespace-nowrap shadow-xl">
-        Cotizar mi Web
+        <span data-i18n="float-whatsapp-tooltip">Cotizar mi Web</span>
         <!-- Flechita del tooltip -->
         <div class="absolute top-1/2 -right-1 -translate-y-1/2 w-2 h-2 bg-custom-card border-t border-r border-custom/20 transform rotate-45"></div>
     </div>
     
     <!-- Botón -->
-    <a href="https://wa.me/5350000000?text=Hola%20Trazio%20Studio,%20quiero%20cotizar%20mi%20web" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-14 h-14 bg-[#25D366] text-white rounded-full shadow-[0_4px_14px_rgba(37,211,102,0.4)] hover:scale-110 hover:shadow-[0_6px_20px_rgba(37,211,102,0.6)] transition-all duration-300">
-        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2C7.314 2 3.407 5.864 3.407 10.546c0 1.408.349 2.8.956 4.028L2 22l7.666-2.52c1.176.666 2.51.999 3.374.999h.001c4.726 0 8.633-3.863 8.633-8.545C20.674 5.864 16.766 2 12.04 2zM17.152 15.632c-.234-.116-.967-.474-1.117-.528-.15-.054-.26-.054-.37.054-.11.108-.424.528-.548.665-.124.136-.248.15-.457.054-.93-.418-1.54-1.01-2.175-1.928-.636-.92-1.066-1.85-1.423-2.457-.357-.607-.037-.936.27-.99.27-.054.597-.13.864-.424.267-.294.357-.59.5-.784.144-.196.073-.37-.036-.59-.11-.22-.968-2.324-1.325-3.18-.357-.855-.72-.74-1.002-.756-.279-.016-.598-.016-.917-.016-.319 0-.83.108-1.26.54-.43.432-1.64 1.586-1.64 3.868 0 2.28 1.678 4.475 1.916 4.788.238.313 3.303 5.034 8.04 7.025 1.18.497 2.11.79 2.846.99.736.199 1.407.153 1.93-.066.523-.22 1.637-.675 1.87-.99.234-.314.234-.582.162-.702-.072-.119-.267-.183-.557-.32z"/></svg>
+    <a href="https://wa.me/5350000000?text=Hola%20Trazio%20Studio,%20quiero%20cotizar%20mi%20web" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-14 h-14 bg-[#25D366] text-white rounded-full shadow-[0_4px_14px_rgba(37,211,102,0.4)] hover:scale-110 hover:shadow-[0_6px_20px_rgba(37,211,102,0.6)] transition-all duration-300" aria-label="WhatsApp">
+        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C7.314 2 3.407 5.864 3.407 10.546c0 1.408.349 2.8.956 4.028L2 22l7.666-2.52c1.176.666 2.51.999 3.374.999h.001c4.726 0 8.633-3.863 8.633-8.545C20.674 5.864 16.766 2 12.04 2zM17.152 15.632c-.234-.116-.967-.474-1.117-.528-.15-.054-.26-.054-.37.054-.11.108-.424.528-.548.665-.124.136-.248.15-.457.054-.93-.418-1.54-1.01-2.175-1.928-.636-.92-1.066-1.85-1.423-2.457-.357-.607-.037-.936.27-.99.27-.054.597-.13.864-.424.267-.294.357-.59.5-.784.144-.196.073-.37-.036-.59-.11-.22-.968-2.324-1.325-3.18-.357-.855-.72-.74-1.002-.756-.279-.016-.598-.016-.917-.016-.319 0-.83.108-1.26.54-.43.432-1.64 1.586-1.64 3.868 0 2.28 1.678 4.475 1.916 4.788.238.313 3.303 5.034 8.04 7.025 1.18.497 2.11.79 2.846.99.736.199 1.407.153 1.93-.066.523-.22 1.637-.675 1.87-.99.234-.314.234-.582.162-.702-.072-.119-.267-.183-.557-.32z"/></svg>
     </a>
 </div>
 
@@ -823,25 +822,25 @@
                 <nav aria-label="Enlaces rápidos a soluciones">
                     <ul class="space-y-2.5 text-sm">
                         <li>
-                            <a href="el-studio.html" class="group text-custom-muted hover:text-custom-accent transition-colors duration-300 ease-in-out nav-link-premium inline-flex items-center gap-1.5">
+                            <a href="el-studio.html" class="group text-custom-muted hover:text-custom-accent transition-colors duration-300 ease-in-out nav-link-premium inline-flex items-center gap-1.5" data-i18n="footer-nav-studio">
                                 El Studio
                                 <svg class="w-3 h-3 shrink-0 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 ease-in-out" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
                             </a>
                         </li>
                         <li>
-                            <a href="catalogo-pedidos.html" class="group text-custom-muted hover:text-custom-accent transition-colors duration-300 ease-in-out nav-link-premium inline-flex items-center gap-1.5" data-i18n="nav-catalogs">
+                            <a href="catalogo-pedidos.html" class="group text-custom-muted hover:text-custom-accent transition-colors duration-300 ease-in-out nav-link-premium inline-flex items-center gap-1.5" data-i18n="footer-nav-catalogs">
                                 Catálogos
                                 <svg class="w-3 h-3 shrink-0 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 ease-in-out" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
                             </a>
                         </li>
                         <li>
-                            <a href="portafolio-creativo.html" class="group text-custom-muted hover:text-custom-accent transition-colors duration-300 ease-in-out nav-link-premium inline-flex items-center gap-1.5" data-i18n="nav-portfolio">
+                            <a href="portafolio-creativo.html" class="group text-custom-muted hover:text-custom-accent transition-colors duration-300 ease-in-out nav-link-premium inline-flex items-center gap-1.5" data-i18n="footer-nav-portfolio">
                                 Portafolios
                                 <svg class="w-3 h-3 shrink-0 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 ease-in-out" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
                             </a>
                         </li>
                         <li>
-                            <a href="identidad-corporativa.html" class="group text-custom-muted hover:text-custom-accent transition-colors duration-300 ease-in-out nav-link-premium inline-flex items-center gap-1.5" data-i18n="nav-corporate">
+                            <a href="identidad-corporativa.html" class="group text-custom-muted hover:text-custom-accent transition-colors duration-300 ease-in-out nav-link-premium inline-flex items-center gap-1.5" data-i18n="footer-nav-corporate">
                                 Empresas
                                 <svg class="w-3 h-3 shrink-0 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 ease-in-out" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
                             </a>
@@ -871,7 +870,7 @@
                     <span class="p-2 rounded-lg bg-custom-card border border-custom text-custom-accent shrink-0 group-hover:border-custom-accent/50 transition-colors duration-300 ease-in-out">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                     </span>
-                    <span class="text-sm text-custom-muted group-hover:text-custom-main transition-colors duration-300 ease-in-out">contacto@traziostudio.com</span>
+                    <span class="text-sm text-custom-muted group-hover:text-custom-main transition-colors duration-300 ease-in-out" data-i18n="footer-email">contacto@traziostudio.com</span>
                 </a>
             </div>
 
@@ -879,12 +878,12 @@
             <div class="lg:col-span-4 w-full bg-custom-card border-double-gold rounded-lg p-6 text-left space-y-4 h-fit">
                 <h3 class="text-sm font-bold text-custom-main uppercase tracking-wide" data-i18n="footer-aida-text">¿Listo para hacer crecer tu negocio?</h3>
                 <p class="text-xs text-custom-muted leading-relaxed" data-i18n="footer-aida-desc">Escríbenos y cuéntanos tu idea o mándanos tu lista de precios por WhatsApp. Te preparamos una demostración interactiva totalmente gratis y adaptada a tu sector en menos de 24 horas.</p>
-                <a href="https://wa.me/5350000000?text=Hola%20Trazio%20Studio,%20quiero%20solicitar%20una%20demostraci%C3%B3n%20gratuita%20para%20mi%20negocio." target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-custom-accent hover:brightness-110 text-black font-bold uppercase text-[11px] tracking-wider rounded-lg transition-all duration-300 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-card">
+                <a href="https://wa.me/5350000000?text=Hola%20Trazio%20Studio,%20quiero%20solicitar%20una%20demostraci%C3%B3n%20gratuita%20para%20mi%20negocio." target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-custom-accent hover:brightness-110 text-black font-bold uppercase text-[11px] tracking-wider rounded-lg transition-all duration-300 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-card" data-i18n="footer-cta-demo">
                     Solicitar Demostración Gratis
                     <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
                 </a>
                 <p class="text-[10px] sm:text-xs text-custom-muted leading-relaxed mt-3">
-                    <span class="text-custom-accent">✔</span> Garantía Trazio: Si la maqueta previa no te satisface, no tienes ningún compromiso de compra.
+                    <span class="text-custom-accent">✔</span> <span data-i18n="footer-guarantee">Garantía Trazio: Si la maqueta previa no te satisface, no tienes ningún compromiso de compra.</span>
                 </p>
             </div>
         </div>
@@ -892,11 +891,11 @@
         <!-- Barra Inferior (Restaurada con nuevos enlaces y botón) -->
         <div class="border-t border-custom mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div class="text-custom-muted flex flex-col items-center sm:items-start gap-1 sm:gap-2">
-                <p class="text-[11px]">&copy; <span id="current-year"></span> Trazio Studio. <span dataa_i18n="all-rights-reserved">Todos los derechos reservados.</span></p>
+                <p class="text-[11px]">&copy; <span id="current-year"></span> Trazio Studio. <span data-i18n="footer-all-rights">Todos los derechos reservados.</span></p>
                 <p class="text-xs font-medium">
-                    <a href="legales.html" class="font-bold hover:text-custom-accent transition-colors duration-300 easea_in-out">Aviso Legal y Privacidad</a>
+                    <a href="legales.html" class="font-bold hover:text-custom-accent transition-colors duration-300 ease-in-out" data-i18n="footer-legal">Aviso Legal y Privacidad</a>
                 </p>
-                <p class="font-medium text-[11px]" dataa_i18n="footer-signature">Diseñado con precisión por Trazio Studio</p>
+                <p class="font-medium text-[11px]" data-i18n="footer-signature">Diseñado con precisión por Trazio Studio</p>
             </div>
             <button type="button" id="back-to-top" class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-custom-muted hover:text-custom-accent transition-colors duration-300 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent rounded" data-i18n="footer-back-to-top">
                 Volver arriba

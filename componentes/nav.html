@@ -65,19 +65,19 @@
     <!-- Panel Menú Móvil -->
     <div id="mobile-menu" class="md:hidden absolute top-full left-0 right-0 z-50 opacity-0 invisible -translate-y-2 transition-all duration-300 ease-in-out bg-custom-main border-b border-custom shadow-2xl shadow-black/40 max-h-[calc(100vh-4rem)] overflow-y-auto">
         <nav class="max-w-7xl mx-auto px-5 py-5 space-y-1">
-            <a href="index.html" data-nav-link class="flex items-center gap-3 px-3 py-3 rounded-lg text-sm font-semibold text-custom-main hover:bg-custom-card transition-colors duration-300 ease-in-out">Inicio</a>
+            <a href="index.html" data-nav-link class="flex items-center gap-3 px-3 py-3 rounded-lg text-sm font-semibold text-custom-main hover:bg-custom-card transition-colors duration-300 ease-in-out" data-i18n="nav-home">Inicio</a>
             <details class="group rounded-lg border border-custom overflow-hidden">
                 <summary class="flex items-center justify-between gap-3 px-3 py-3 cursor-pointer list-none select-none text-sm font-semibold text-custom-main">
-                    <span>Portafolios</span>
+                    <span data-i18n="nav-portfolio-trigger">Portafolios</span>
                     <svg class="w-4 h-4 text-custom-accent shrink-0 transition-transform duration-300 ease-in-out group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
                 </summary>
                 <div class="px-3 pb-3 pt-1 pl-6 space-y-1">
-                    <a href="portafolio-creativo.html" data-nav-link class="block px-3 py-2.5 rounded-md text-sm text-custom-muted hover:text-custom-accent hover:bg-custom-card">Perfil Visual / Artístico</a>
-                    <a href="portafolio-tecnico.html" data-nav-link class="block px-3 py-2.5 rounded-md text-sm text-custom-muted hover:text-custom-accent hover:bg-custom-card">Perfil Técnico / Consultor</a>
+                    <a href="portafolio-creativo.html" data-nav-link class="block px-3 py-2.5 rounded-md text-sm text-custom-muted hover:text-custom-accent hover:bg-custom-card" data-i18n="nav-portfolio-visual-title">Perfil Visual / Artístico</a>
+                    <a href="portafolio-tecnico.html" data-nav-link class="block px-3 py-2.5 rounded-md text-sm text-custom-muted hover:text-custom-accent hover:bg-custom-card" data-i18n="nav-portfolio-tech-title">Perfil Técnico / Consultor</a>
                 </div>
             </details>
-            <a href="catalogo-pedidos.html" data-nav-link class="flex items-center gap-3 px-3 py-3 rounded-lg text-sm font-semibold text-custom-main hover:bg-custom-card">Catálogos</a>
-            <a href="identidad-corporativa.html" data-nav-link class="flex items-center gap-3 px-3 py-3 rounded-lg text-sm font-semibold text-custom-main hover:bg-custom-card">Empresas</a>
+            <a href="catalogo-pedidos.html" data-nav-link class="flex items-center gap-3 px-3 py-3 rounded-lg text-sm font-semibold text-custom-main hover:bg-custom-card" data-i18n="nav-catalogs">Catálogos</a>
+            <a href="identidad-corporativa.html" data-nav-link class="flex items-center gap-3 px-3 py-3 rounded-lg text-sm font-semibold text-custom-main hover:bg-custom-card" data-i18n="nav-corporate">Empresas</a>
         </nav>
     </div>
     <div id="mobile-menu-backdrop" class="md:hidden fixed inset-0 bg-black/70 z-40 hidden"></div>

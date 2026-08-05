@@ -3,18 +3,18 @@
     <div class="bg-custom-card border border-custom/20 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row gap-12 items-center shadow-2xl relative overflow-hidden">
         
         <!-- Badge Superior Izquierdo -->
-        <div class="absolute top-0 left-0 bg-custom-accent text-black text-[10px] font-black uppercase px-3 py-1.5 rounded-br-lg z-10 shadow-md">
+        <div data-i18n="tech-contact-badge" class="absolute top-0 left-0 bg-custom-accent text-black text-[10px] font-black uppercase px-3 py-1.5 rounded-br-lg z-10 shadow-md">
             Simulador de Contacto
         </div>
         
         <!-- Textos -->
         <div class="flex-1 mt-4 md:mt-0">
-            <h3 class="text-3xl font-bold mb-4 text-custom-main">Filtra a los curiosos.</h3>
-            <p class="text-custom-muted text-sm md:text-base leading-relaxed mb-6">
+            <h3 data-i18n="tech-contact-title" class="text-3xl font-bold mb-4 text-custom-main">Filtra a los curiosos.</h3>
+            <p data-i18n="tech-contact-desc" class="text-custom-muted text-sm md:text-base leading-relaxed mb-6">
                 No recibas mensajes vacíos por WhatsApp. Integramos un formulario profesional (conectado a tu correo o WhatsApp) que obliga al cliente a especificar su presupuesto y el alcance del proyecto antes de contactarte.
             </p>
             <a href="https://wa.me/5350000000?text=Hola,%20quiero%20cotizar%20mi%20Dossier%20Interactivo" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-custom-accent font-semibold hover:text-custom-main transition-colors text-sm">
-                Quiero este formulario en mi web <span class="ml-2">→</span>
+                <span data-i18n="tech-contact-link">Quiero este formulario en mi web</span> <span class="ml-2" aria-hidden="true">→</span>
             </a>
         </div>
         
@@ -23,18 +23,18 @@
             <!-- Formulario funcional -->
             <form id="tech-contact-form" class="space-y-4">
                 <div>
-                    <label class="block text-xs font-bold text-custom-muted mb-1.5">Empresa / Proyecto</label>
-                    <input type="text" id="empresa" required class="w-full h-10 bg-custom-card border border-custom/20 rounded-md px-3 text-sm focus:outline-none focus:ring-2 focus:ring-custom-accent" placeholder="Nombre de la empresa o proyecto">
+                    <label data-i18n="tech-label-empresa" class="block text-xs font-bold text-custom-muted mb-1.5">Empresa / Proyecto</label>
+                    <input type="text" id="empresa" required data-i18n-placeholder="tech-ph-empresa" class="w-full h-10 bg-custom-card border border-custom/20 rounded-md px-3 text-sm focus:outline-none focus:ring-2 focus:ring-custom-accent" placeholder="Nombre de la empresa o proyecto">
                 </div>
                 <div>
-                    <label class="block text-xs font-bold text-custom-muted mb-1.5">Presupuesto Estimado</label>
-                    <input type="text" id="presupuesto" required class="w-full h-10 bg-custom-card border border-custom/20 rounded-md px-3 text-sm focus:outline-none focus:ring-2 focus:ring-custom-accent" placeholder="Ej: +$1,000 USD">
+                    <label data-i18n="tech-label-presupuesto" class="block text-xs font-bold text-custom-muted mb-1.5">Presupuesto Estimado</label>
+                    <input type="text" id="presupuesto" required data-i18n-placeholder="tech-ph-presupuesto" class="w-full h-10 bg-custom-card border border-custom/20 rounded-md px-3 text-sm focus:outline-none focus:ring-2 focus:ring-custom-accent" placeholder="Ej: +$1,000 USD">
                 </div>
                 <div>
-                    <label class="block text-xs font-bold text-custom-muted mb-1.5">Descripción del Reto Técnico</label>
-                    <textarea id="descripcion" required rows="4" class="w-full h-20 bg-custom-card border border-custom/20 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-custom-accent" placeholder="Describe brevemente el desafío técnico"></textarea>
+                    <label data-i18n="tech-label-descripcion" class="block text-xs font-bold text-custom-muted mb-1.5">Descripción del Reto Técnico</label>
+                    <textarea id="descripcion" required rows="4" data-i18n-placeholder="tech-ph-descripcion" class="w-full h-20 bg-custom-card border border-custom/20 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-custom-accent" placeholder="Describe brevemente el desafío técnico"></textarea>
                 </div>
-                <button type="submit" id="btn-enviar" class="w-full py-3 bg-custom-accent text-black font-bold uppercase text-xs tracking-wider rounded-md hover:bg-custom-accent/90 transition-colors">
+                <button type="submit" id="btn-enviar" data-i18n="tech-btn-submit" class="w-full py-3 bg-custom-accent text-black font-bold uppercase text-xs tracking-wider rounded-md hover:bg-custom-accent/90 transition-colors">
                     Enviar Propuesta
                 </button>
             </form>

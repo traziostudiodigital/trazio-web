@@ -1,16 +1,3 @@
-<!-- ============================================================
-     TRAZIO STUDIO — "Demo Interactiva" por sector (#demo-interactiva)
-     BUG ENCONTRADO: el <div class="max-w-4xl mx-auto px-10 py-8">
-     que debía envolver TODO el contenido se cerraba en la misma
-     línea (</div> inmediato) — por eso el contenido no quedaba
-     centrado/limitado y el borde dorado (.border-double-gold, que
-     usa outline-offset:4px) se veía "expandido" pegado a los bordes
-     de la pantalla. Aquí ese div envuelve correctamente hasta el
-     final de la sección.
-     Depende de: bloque JS "Demo Interactiva por Sector" en main.js
-     (te lo doy aparte para que lo agregues — esta sección no tenía
-     NINGÚN JS propio todavía, por eso los tabs no reaccionaban).
-     ============================================================ -->
 <section id="demo-interactiva" class="relative bg-pattern-diagonal mb-20">
   <div class="max-w-4xl mx-auto px-4 sm:px-6 md:px-10 py-8">
 
@@ -21,11 +8,11 @@
           <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-black"></span>
         </span>
         <svg class="w-3 h-3 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
-        Demostración en Vivo
+        <span data-i18n="demo-live-badge">Demostración en Vivo</span>
         <svg class="w-3 h-3 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
       </span>
-      <h2 class="text-2xl md:text-3xl font-bold mt-4 text-custom-main">Así se vería tu negocio. Elige tu sector:</h2>
-      <p class="text-sm text-custom-muted mt-2 max-w-md mx-auto">Interfaces reales, adaptadas a cómo trabajas tú cada día.</p>
+      <h2 class="text-2xl md:text-3xl font-bold mt-4 text-custom-main" data-i18n="demo-title-main">Así se vería tu negocio. Elige tu sector:</h2>
+      <p class="text-sm text-custom-muted mt-2 max-w-md mx-auto" data-i18n="demo-subtitle">Interfaces reales, adaptadas a cómo trabajas tú cada día.</p>
     </div>
 
     <!-- Selector de sector (chips) -->
@@ -33,17 +20,17 @@
       <button type="button" id="tab-construccion" data-target="demo-construccion" role="tab" aria-selected="true" aria-controls="demo-construccion"
         class="flex items-center gap-2 px-4 py-2.5 rounded-lg text-xs font-bold bg-custom-accent text-black transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-main">
         <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-4h6v4M9 11h.01M15 11h.01"/></svg>
-        Construcción &amp; Industria
+        <span data-i18n="demo-tab-construccion-label">Construcción &amp; Industria</span>
       </button>
       <button type="button" id="tab-gastronomia" data-target="demo-gastronomia" role="tab" aria-selected="false" aria-controls="demo-gastronomia"
         class="flex items-center gap-2 px-4 py-2.5 rounded-lg text-xs font-bold bg-custom-card border border-custom text-custom-muted hover:border-custom-accent hover:text-custom-accent transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-main">
         <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 8h14l-1 12H6L5 8zm2 0V6a5 5 0 0110 0v2"/></svg>
-        Gastronomía &amp; Retail
+        <span data-i18n="demo-tab-gastronomia-label">Gastronomía &amp; Retail</span>
       </button>
       <button type="button" id="tab-servicios" data-target="demo-servicios" role="tab" aria-selected="false" aria-controls="demo-servicios"
         class="flex items-center gap-2 px-4 py-2.5 rounded-lg text-xs font-bold bg-custom-card border border-custom text-custom-muted hover:border-custom-accent hover:text-custom-accent transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-main">
         <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M7 3h10v18H7zM10 7h4M10 11h4M10 15h4"/></svg>
-        Servicios Profesionales
+        <span data-i18n="demo-tab-servicios-label">Servicios Profesionales</span>
       </button>
     </div>
 
@@ -65,20 +52,20 @@
         </div>
         <div class="p-6 md:p-8">
           <div class="flex items-center justify-between mb-1 gap-3">
-            <h3 class="text-xl font-bold text-custom-main">NEXO Industrial</h3>
-            <span class="text-[10px] font-bold uppercase tracking-wider text-custom-accent border border-custom-accent/30 px-2 py-1 rounded-md whitespace-nowrap">Sector Industrial</span>
+            <h3 class="text-xl font-bold text-custom-main" data-i18n="demo-cons-panel-title">NEXO Industrial</h3>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-custom-accent border border-custom-accent/30 px-2 py-1 rounded-md whitespace-nowrap" data-i18n="demo-cons-panel-badge">Sector Industrial</span>
           </div>
-          <p class="text-sm text-custom-muted mb-6">Climatización industrial eficiente</p>
+          <p class="text-sm text-custom-muted mb-6" data-i18n="demo-cons-panel-subtitle">Climatización industrial eficiente</p>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div class="bg-custom-card border border-custom rounded-lg p-4 hover:border-custom-accent transition-all duration-300">
               <div class="flex items-center gap-3 mb-3">
                 <div class="bg-custom-accent/10 p-2 rounded-lg">
                   <svg class="w-5 h-5 text-custom-accent" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-4h6v4M9 11h.01M15 11h.01"/></svg>
                 </div>
-                <h4 class="text-sm font-bold text-custom-main">Planta Cervecera Centro</h4>
+                <h4 class="text-sm font-bold text-custom-main" data-i18n="demo-cons-card1-title">Planta Cervecera Centro</h4>
               </div>
-              <div class="flex justify-between text-xs text-custom-muted mb-2"><span>Capacidad</span><span class="text-custom-main font-semibold">120,000 BTU</span></div>
-              <div class="flex justify-between text-xs text-custom-muted mb-2"><span>Eficiencia</span><span class="text-custom-accent font-semibold">94.2%</span></div>
+              <div class="flex justify-between text-xs text-custom-muted mb-2"><span data-i18n="demo-cons-card1-stat1-label">Capacidad</span><span class="text-custom-main font-semibold" data-i18n="demo-cons-card1-stat1-value">120,000 BTU</span></div>
+              <div class="flex justify-between text-xs text-custom-muted mb-2"><span data-i18n="demo-cons-card1-stat2-label">Eficiencia</span><span class="text-custom-accent font-semibold">94.2%</span></div>
               <svg class="w-full h-12 mt-2 text-custom-accent" viewBox="0 0 100 30" preserveAspectRatio="none">
                 <defs>
                   <linearGradient id="gradCons1" x1="0" y1="0" x2="0" y2="1">
@@ -95,10 +82,10 @@
                 <div class="bg-custom-accent/10 p-2 rounded-lg">
                   <svg class="w-5 h-5 text-custom-accent" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v16h16M8 12l3-3 3 3 4-4"/></svg>
                 </div>
-                <h4 class="text-sm font-bold text-custom-main">Logística Frío Norte</h4>
+                <h4 class="text-sm font-bold text-custom-main" data-i18n="demo-cons-card2-title">Logística Frío Norte</h4>
               </div>
-              <div class="flex justify-between text-xs text-custom-muted mb-2"><span>Temp. Mín.</span><span class="text-custom-main font-semibold">-22°C</span></div>
-              <div class="flex justify-between text-xs text-custom-muted mb-2"><span>Uptime</span><span class="text-custom-accent font-semibold">99.1%</span></div>
+              <div class="flex justify-between text-xs text-custom-muted mb-2"><span data-i18n="demo-cons-card2-stat1-label">Temp. Mín.</span><span class="text-custom-main font-semibold">-22°C</span></div>
+              <div class="flex justify-between text-xs text-custom-muted mb-2"><span data-i18n="demo-cons-card2-stat2-label">Uptime</span><span class="text-custom-accent font-semibold">99.1%</span></div>
               <svg class="w-full h-12 mt-2 text-custom-accent" viewBox="0 0 100 30" preserveAspectRatio="none">
                 <rect x="5" y="10" width="12" height="18" fill="currentColor" opacity="0.4" rx="1"/>
                 <rect x="25" y="5" width="12" height="23" fill="currentColor" opacity="0.4" rx="1"/>
@@ -125,10 +112,10 @@
         </div>
         <div class="p-6 md:p-8">
           <div class="flex items-center justify-between mb-1 gap-3">
-            <h3 class="text-xl font-bold text-custom-main">Sabor Habana Import</h3>
-            <span class="text-[10px] font-bold uppercase tracking-wider text-custom-accent border border-custom-accent/30 px-2 py-1 rounded-md whitespace-nowrap">Mayorista</span>
+            <h3 class="text-xl font-bold text-custom-main" data-i18n="demo-gastro-panel-title">Sabor Habana Import</h3>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-custom-accent border border-custom-accent/30 px-2 py-1 rounded-md whitespace-nowrap" data-i18n="demo-gastro-panel-badge">Mayorista</span>
           </div>
-          <p class="text-sm text-custom-muted mb-6">Distribución mayorista para mipymes</p>
+          <p class="text-sm text-custom-muted mb-6" data-i18n="demo-gastro-panel-subtitle">Distribución mayorista para mipymes</p>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div class="bg-custom-card border border-custom rounded-lg p-4 hover:border-custom-accent transition-all duration-300">
               <div class="flex items-center justify-between mb-3 gap-2">
@@ -136,11 +123,11 @@
                   <div class="bg-custom-accent/10 p-2 rounded-lg">
                     <svg class="w-5 h-5 text-custom-accent" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 8h14l-1 12H6L5 8zm2 0V6a5 5 0 0110 0v2"/></svg>
                   </div>
-                  <h4 class="text-sm font-bold text-custom-main">Café Premium 1kg</h4>
+                  <h4 class="text-sm font-bold text-custom-main" data-i18n="demo-gastro-card1-title">Café Premium 1kg</h4>
                 </div>
-                <span class="text-[10px] font-bold bg-green-500/10 text-green-400 border border-green-500/20 px-2 py-1 rounded-md whitespace-nowrap">En Stock: 340</span>
+                <span class="text-[10px] font-bold bg-green-500/10 text-green-400 border border-green-500/20 px-2 py-1 rounded-md whitespace-nowrap" data-i18n="demo-gastro-card1-stock">En Stock: 340</span>
               </div>
-              <p class="text-xs text-custom-muted">Origen: Granja Oriental · Tueste medio</p>
+              <p class="text-xs text-custom-muted" data-i18n="demo-gastro-card1-description">Origen: Granja Oriental · Tueste medio</p>
             </div>
             <div class="bg-custom-card border border-custom rounded-lg p-4 hover:border-custom-accent transition-all duration-300">
               <div class="flex items-center justify-between mb-3 gap-2">
@@ -148,11 +135,11 @@
                   <div class="bg-custom-accent/10 p-2 rounded-lg">
                     <svg class="w-5 h-5 text-custom-accent" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 7l9-4 9 4-9 4-9-4zm0 0v10l9 4 9-4V7M12 11v10"/></svg>
                   </div>
-                  <h4 class="text-sm font-bold text-custom-main">Lácteos Envío Frío</h4>
+                  <h4 class="text-sm font-bold text-custom-main" data-i18n="demo-gastro-card2-title">Lácteos Envío Frío</h4>
                 </div>
-                <span class="text-[10px] font-bold bg-red-500/10 text-red-400 border border-red-500/20 px-2 py-1 rounded-md whitespace-nowrap">Bajo: 28</span>
+                <span class="text-[10px] font-bold bg-red-500/10 text-red-400 border border-red-500/20 px-2 py-1 rounded-md whitespace-nowrap" data-i18n="demo-gastro-card2-stock">Bajo: 28</span>
               </div>
-              <p class="text-xs text-custom-muted">Logística 24h · 12 provincias</p>
+              <p class="text-xs text-custom-muted" data-i18n="demo-gastro-card2-description">Logística 24h · 12 provincias</p>
             </div>
           </div>
         </div>
@@ -172,28 +159,28 @@
         </div>
         <div class="p-6 md:p-8">
           <div class="flex items-center justify-between mb-1 gap-3">
-            <h3 class="text-xl font-bold text-custom-main">Consultora Global TCP</h3>
-            <span class="text-[10px] font-bold uppercase tracking-wider text-custom-accent border border-custom-accent/30 px-2 py-1 rounded-md whitespace-nowrap">Asesoría</span>
+            <h3 class="text-xl font-bold text-custom-main" data-i18n="demo-serv-panel-title">Consultora Global TCP</h3>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-custom-accent border border-custom-accent/30 px-2 py-1 rounded-md whitespace-nowrap" data-i18n="demo-serv-panel-badge">Asesoría</span>
           </div>
-          <p class="text-sm text-custom-muted mb-6">Asesoría legal y contable blindada</p>
+          <p class="text-sm text-custom-muted mb-6" data-i18n="demo-serv-panel-subtitle">Asesoría legal y contable blindada</p>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div class="bg-custom-card border border-custom rounded-lg p-4 hover:border-custom-accent transition-all duration-300">
               <div class="flex items-center gap-3 mb-3">
                 <div class="bg-custom-accent/10 p-2 rounded-lg">
                   <svg class="w-5 h-5 text-custom-accent" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 3h10v18H7zM10 7h4M10 11h4M10 15h4"/></svg>
                 </div>
-                <h4 class="text-sm font-bold text-custom-main">Defensa Legal Corporativa</h4>
+                <h4 class="text-sm font-bold text-custom-main" data-i18n="demo-serv-card1-title">Defensa Legal Corporativa</h4>
               </div>
-              <p class="text-xs text-custom-muted">Contratos · Litigios · Compliance</p>
+              <p class="text-xs text-custom-muted" data-i18n="demo-serv-card1-description">Contratos · Litigios · Compliance</p>
             </div>
             <div class="bg-custom-card border border-custom rounded-lg p-4 hover:border-custom-accent transition-all duration-300">
               <div class="flex items-center gap-3 mb-3">
                 <div class="bg-custom-accent/10 p-2 rounded-lg">
                   <svg class="w-5 h-5 text-custom-accent" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18M5 7h14M5 7l-2 6h6l-2-6zm14 0l-2 6h6l-2-6zM3 13a3 3 0 006 0M15 13a3 3 0 006 0"/></svg>
                 </div>
-                <h4 class="text-sm font-bold text-custom-main">Auditoría Contable TCP</h4>
+                <h4 class="text-sm font-bold text-custom-main" data-i18n="demo-serv-card2-title">Auditoría Contable TCP</h4>
               </div>
-              <p class="text-xs text-custom-muted">Fiscal · Nómina · Reporting</p>
+              <p class="text-xs text-custom-muted" data-i18n="demo-serv-card2-description">Fiscal · Nómina · Reporting</p>
             </div>
           </div>
         </div>
@@ -202,9 +189,9 @@
 
     <!-- CTA post-demo -->
     <div class="mt-8 text-center animate-fade-in-up">
-      <p class="text-sm text-custom-muted mb-4">¿Quieres una interfaz así para tu negocio?</p>
+      <p class="text-sm text-custom-muted mb-4" data-i18n="demo-cta-text">¿Quieres una interfaz así para tu negocio?</p>
       <a href="#contacto" class="inline-flex items-center gap-2 bg-custom-accent text-black text-sm font-bold px-6 py-3 rounded-lg hover:brightness-110 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-main">
-        Solicitar mi demo personalizada
+        <span data-i18n="demo-cta-button">Solicitar mi demo personalizada</span>
         <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
       </a>
     </div>
