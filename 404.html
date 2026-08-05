@@ -18,8 +18,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet"></noscript>
 
-<!-- Internacionalización / Idioma -->
-<script src="assets/i18n.js" defer></script>
+<!-- Motor de Traducción (Datos + Lógica) -->
+<script src="assets/i18n-data.js"></script>
+<script src="assets/i18n-core.js" defer></script>
 
 <!-- SEO / GEO Schema Trazio Studio -->
 <script type="application/ld+json">
@@ -125,18 +126,16 @@
     
     <main class="flex-grow relative">
         <div class="bg-mesh-lines absolute inset-0 z-0 pointer-events-none opacity-30"></div>
-        <section class="min-h-[70vh] flex flex-col items-center justify-center text-center px-6 relative z-10 animate-fade-in-up">
+        <section class="min-h-[70vh] flex flex-col items-center justify-center text-center px-6 relative z-10 animate-fade-in-up" data-i18n="404-section">
     <!-- El 404 Gigante -->
-    <h1 class="text-8xl md:text-9xl font-black text-custom-accent mb-2 tracking-tighter opacity-20 select-none">404</h1>
+    <h1 class="text-8xl md:text-9xl font-black text-custom-accent mb-2 tracking-tighter opacity-20 select-none" data-i18n="404-title-main">404</h1>
     
     <!-- Textos -->
-    <h2 class="text-3xl md:text-4xl font-bold text-custom-main mb-4">Parece que te saliste del trazo.</h2>
-    <p class="text-lg text-custom-muted mb-10 max-w-md mx-auto leading-relaxed">
-        La página que buscas no existe, fue movida o el enlace es incorrecto. Volvamos a la mesa de diseño.
-    </p>
+    <h2 class="text-3xl md:text-4xl font-bold text-custom-main mb-4" data-i18n="404-subtitle-main">Parece que te saliste del trazo.</h2>
+    <p class="text-lg text-custom-muted mb-10 max-w-md mx-auto leading-relaxed" data-i18n="404-description-main">La página que buscas no existe, fue movida o el enlace es incorrecto. Volvamos a la mesa de diseño.</p>
     
     <!-- Botón de regreso -->
-    <a href="index.html" class="inline-flex items-center gap-2 px-8 py-4 text-sm font-bold text-black bg-custom-accent rounded-lg hover:bg-custom-accent-hover transition-all shadow-lg shadow-custom-accent/20">
+    <a href="index.html" class="inline-flex items-center gap-2 px-8 py-4 text-sm font-bold text-black bg-custom-accent rounded-lg hover:bg-custom-accent-hover transition-all shadow-lg shadow-custom-accent/20" data-i18n="404-button-back">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
         Volver al Inicio
     </a>

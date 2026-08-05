@@ -1,4 +1,4 @@
-// assets/i18n.js — Motor de idioma compartido en TODAS las páginas del sitio.
+/* assets/i18n.js — Motor de idioma compartido en TODAS las páginas del sitio */
 (function () {
     if (window.__trazioI18nInit) return;
     window.__trazioI18nInit = true;
@@ -48,8 +48,9 @@
             'footer-back-to-top': 'Volver arriba',
             'all-rights-reserved': 'Todos los derechos reservados.'
         },
+
         en: {
-            // Navegación
+            // Navigation
             'nav-portfolio-trigger': 'Portfolios',
             'nav-portfolio-visual-title': 'Visual / Creative Profile',
             'nav-portfolio-visual-desc': 'Photographers, designers, creatives',
@@ -64,7 +65,7 @@
             'hero-cta-primary': 'Explore Solutions',
             'hero-cta-secondary': 'Quote my Project',
 
-            // Tarjetas de Soluciones (Home)
+            // Solution Cards (Home)
             'card-catalogs-title': 'Sales Catalogs',
             'card-catalogs-benefit-1': 'Showcase products elegantly.',
             'card-catalogs-benefit-2': 'Direct WhatsApp orders.',
@@ -90,30 +91,63 @@
             'footer-microcopy': 'No technical costs, commitments, or maintenance contracts.',
             'footer-signature': 'Designed with precision by Trazio Studio',
             'footer-back-to-top': 'Back to top',
-            'all-rights-reserved': 'All rights reserved.'
+            'all-rights-reserved': 'All rights reserved.',
+
+            // 404 page
+            '404-section': '404 content section',
+            '404-title-main': '404',
+            '404-subtitle-main': 'Seems you stepped off the design track.',
+            '404-description-main': "The page you're looking for doesn't exist, has been moved, or the link is incorrect. Let's get back to the design table.",
+            '404-button-back': 'Return to Home',
+
+            // Catalog section (example – keep adding here)
+            'catalog-cta-section': 'How It Works',
+            'catalog-how-it-works-label': 'How It Works',
+            'catalog-step-1-number': '1.',
+            'catalog-step-1-description': 'You tell us your idea.',
+            'catalog-step-2-number': '2.',
+            'catalog-step-2-description': 'We create a free mockup with your products.',
+            'catalog-step-3-number': '3.',
+            'catalog-step-3-description': 'You approve and we launch your website.',
+            'catalog-cta-heading': 'Ready to automate your sales?',
+            'catalog-cta-subheading': 'Message us on WhatsApp and we\'ll prepare a free interactive demonstration tailored to your industry in less than 24 hours.',
+            'catalog-trust-badge-1': 'Free demo 24h',
+            'catalog-trust-badge-2': 'No commitment',
+            'catalog-cta-button': 'Contact on WhatsApp',
+            'catalog-print-section-title': 'Want to review it with your team?',
+            'catalog-print-button': 'Download Proposal in PDF'
         }
     };
 
+    /**
+     * Aplica el idioma indicado a todos los elementos con data-i18n.
+     * @param {string} lang - Código de idioma ('es' o 'en')
+     */
     function applyLanguage(lang) {
-        var dict = window.TRAZIO_I18N[lang] || {};
-        document.querySelectorAll('[data-i18n]').forEach(function (el) {
-            var key = el.getAttribute('data-i18n');
-            if (dict[key]) el.textContent = dict[key];
+        const dict = window.TRAZIO_I18N[lang] || window.TRAZIO_I18N['es']; // fallback a español
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (dict[key]) {
+                el.textContent = dict[key];
+            } else {
+                // Opcional: mantener el contenido original o mostrar una clave faltante
+                // console.warn(`Clave de traducción faltante: ${key} para idioma ${lang}`);
+            }
         });
         document.documentElement.setAttribute('lang', lang);
         localStorage.setItem('trazio-lang', lang);
-        var display = document.getElementById('current-lang-display');
+        const display = document.getElementById('current-lang-display');
         if (display) display.textContent = lang.toUpperCase();
     }
 
-    document.addEventListener('DOMContentLoaded', function () {
-        var saved = localStorage.getItem('trazio-lang') || 'es';
+    document.addEventListener('DOMContentLoaded', () => {
+        const saved = localStorage.getItem('trazio-lang') || 'es';
         applyLanguage(saved);
 
-        var toggle = document.getElementById('language-toggle');
+        const toggle = document.getElementById('language-toggle');
         if (toggle) {
-            toggle.addEventListener('click', function () {
-                var current = localStorage.getItem('trazio-lang') || 'es';
+            toggle.addEventListener('click', () => {
+                const current = localStorage.getItem('trazio-lang') || 'es';
                 applyLanguage(current === 'es' ? 'en' : 'es');
             });
         }

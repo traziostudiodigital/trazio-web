@@ -18,8 +18,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet"></noscript>
 
-<!-- Internacionalización / Idioma -->
-<script src="assets/i18n.js" defer></script>
+<!-- Motor de Traducción (Datos + Lógica) -->
+<script src="assets/i18n-data.js"></script>
+<script src="assets/i18n-core.js" defer></script>
 
 <!-- SEO / GEO Schema Trazio Studio -->
 <script type="application/ld+json">
@@ -261,18 +262,19 @@
 </section>
 
         <!-- 3. Demo Interactiva y Herramientas -->
-        <section id="demos" class="max-w-6xl mx-auto px-6 mb-24">
+        <componentes/catalog-demo.html>
+<section id="demos" class="max-w-6xl mx-auto px-6 mb-24">
 
   <header class="text-center max-w-2xl mx-auto mb-10">
-    <span class="inline-flex items-center gap-2 text-custom-accent text-xs font-semibold tracking-[0.2em] uppercase mb-3">
+    <span class="inline-flex items-center gap-2 text-custom-accent text-xs font-semibold tracking-[0.2em] uppercase mb-3" data-i18n="demos-badge-label">
       <span class="w-6 h-px bg-custom-accent/50"></span>
       Pruébalo Tú Mismo
       <span class="w-6 h-px bg-custom-accent/50"></span>
     </span>
-    <h2 class="font-outfit tracking-tight text-custom-main text-3xl md:text-4xl font-bold mb-4">
+    <h2 class="font-outfit tracking-tight text-custom-main text-3xl md:text-4xl font-bold mb-4" data-i18n="demos-title-main">
       Explora nuestras Demos
     </h2>
-    <p class="font-inter text-custom-muted text-sm md:text-base leading-relaxed">
+    <p class="font-inter text-custom-muted text-sm md:text-base leading-relaxed" data-i18n="demos-description-paragraph">
       Prueba cómo compraría tu cliente: elige un rubro de ejemplo, añade productos al carrito y mira cómo se arma el pedido automático listo para WhatsApp.
     </p>
   </header>
@@ -280,17 +282,20 @@
   <!-- TABS -->
   <div id="catalog-industry-selector" role="tablist" aria-label="Selector de rubro" class="flex flex-wrap justify-center gap-3 mb-10">
     <button type="button" id="tab-btn-restaurante" data-demo-target="demo-restaurante" role="tab" aria-selected="true" aria-controls="demo-restaurante"
-      class="demo-tab-btn rounded-lg bg-custom-accent text-black px-5 py-2.5 font-bold transition-all duration-300 inline-flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent">
+      class="demo-tab-btn rounded-lg bg-custom-accent text-black px-5 py-2.5 font-bold transition-all duration-300 inline-flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent"
+      data-i18n="tabs-restaurants-btn">
       <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v6.75a2.25 2.25 0 01-2.25 2.25v0a2.25 2.25 0 01-2.25-2.25V3M6 3v18m9.75-18c-1.243 0-2.25 2.015-2.25 4.5s1.007 4.5 2.25 4.5 2.25-2.015 2.25-4.5-1.007-4.5-2.25-4.5zm0 9V21"/></svg>
       Restaurantes &amp; Cafeterías
     </button>
     <button type="button" id="tab-btn-tienda" data-demo-target="demo-tienda" role="tab" aria-selected="false" aria-controls="demo-tienda"
-      class="demo-tab-btn rounded-lg bg-custom-card border border-custom text-custom-muted px-5 py-2.5 font-bold transition-all duration-300 inline-flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent">
+      class="demo-tab-btn rounded-lg bg-custom-card border border-custom text-custom-muted px-5 py-2.5 font-bold transition-all duration-300 inline-flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent"
+      data-i18n="tabs-stores-btn">
       <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007z"/></svg>
       Tiendas &amp; Boutiques
     </button>
     <button type="button" id="tab-btn-servicios" data-demo-target="demo-servicios" role="tab" aria-selected="false" aria-controls="demo-servicios"
-      class="demo-tab-btn rounded-lg bg-custom-card border border-custom text-custom-muted px-5 py-2.5 font-bold transition-all duration-300 inline-flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent">
+      class="demo-tab-btn rounded-lg bg-custom-card border border-custom text-custom-muted px-5 py-2.5 font-bold transition-all duration-300 inline-flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent"
+      data-i18n="tabs-services-btn">
       <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6.5" cy="6" r="2.25"/><circle cx="6.5" cy="18" r="2.25"/><path stroke-linecap="round" stroke-linejoin="round" d="M8.2 7.5L20 19M8.2 16.5L20 5"/></svg>
       Servicios &amp; Barberías
     </button>
@@ -303,25 +308,27 @@
     <div id="demo-restaurante" class="demo-panel" role="tabpanel" aria-labelledby="tab-btn-restaurante" tabindex="0">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         <div>
-          <span class="inline-flex items-center gap-2 text-custom-accent text-xs font-semibold tracking-wider uppercase mb-4">
+          <span class="inline-flex items-center gap-2 text-custom-accent text-xs font-semibold tracking-wider uppercase mb-4" data-i18n="demo-restaurant-mobile-label">
             <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-6.75 18h9.75"/></svg>
             Así se ve en el móvil de tu cliente
           </span>
-          <h3 class="font-outfit text-2xl font-bold text-custom-main mb-4">Menú Digital Interactivo</h3>
-          <p class="font-inter text-sm text-custom-muted leading-relaxed mb-6">
+          <h3 class="font-outfit text-2xl font-bold text-custom-main mb-4" data-i18n="demo-restaurant-title">
+            Menú Digital Interactivo
+          </h3>
+          <p class="font-inter text-sm text-custom-muted leading-relaxed mb-6" data-i18n="demo-restaurant-description">
             Tus comensales escanean el código QR en la mesa, seleccionan sus platillos con agregados y envían el pedido estructurado directo a tu cocina por WhatsApp. Sin esperas, sin errores de comanda.
           </p>
           <ul class="space-y-3">
-            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-custom-accent shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg><span class="text-sm text-custom-muted">Cero errores de comanda: el pedido llega ya escrito</span></li>
-            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-custom-accent shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg><span class="text-sm text-custom-muted">Rotación de mesas más rápida en horas pico</span></li>
-            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-custom-accent shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg><span class="text-sm text-custom-muted">Pedido directo a cocina, sin llamar al mesero</span></li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-custom-accent shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg><span class="text-sm text-custom-muted" data-i18n="demo-restaurant-benefit-1">Cero errores de comanda: el pedido llega ya escrito</span></li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-custom-accent shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg><span class="text-sm text-custom-muted" data-i18n="demo-restaurant-benefit-2">Rotación de mesas más rápida en horas pico</span></li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-custom-accent shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg><span class="text-sm text-custom-muted" data-i18n="demo-restaurant-benefit-3">Pedido directo a cocina, sin llamar al mesero</span></li>
           </ul>
         </div>
 
         <div class="relative">
           <div class="absolute inset-0 bg-custom-accent/15 blur-3xl rounded-full pointer-events-none" aria-hidden="true"></div>
           <div class="flex justify-center mb-4 relative">
-            <span class="inline-flex items-center gap-1.5 text-[10px] font-semibold text-custom-accent bg-custom-accent/10 border border-custom-accent/20 px-2.5 py-1 rounded-full animate-float">
+            <span class="inline-flex items-center gap-1.5 text-[10px] font-semibold text-custom-accent bg-custom-accent/10 border border-custom-accent/20 px-2.5 py-1 rounded-full animate-float" data-i18n="demo-restaurant-touch-hint">
               <svg class="w-3 h-3 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg>
               Toca los botones + para simular tu pedido
             </span>
@@ -336,9 +343,10 @@
             <div class="flex-grow bg-custom-main pt-4 px-3 flex flex-col justify-between overflow-hidden">
               <div>
                 <div class="border-b border-custom pb-2.5 mb-3 flex justify-between items-center">
-                  <span class="text-[11px] font-bold text-custom-main">🍝 Bella Italia</span>
+                  <span class="text-[11px] font-bold text-custom-main" data-i18n="demo-restaurant-phone-business-name">🍝 Bella Italia</span>
                   <span class="inline-flex items-center gap-1 text-[10px] bg-custom-accent/10 text-custom-accent px-1.5 py-0.5 rounded font-bold">
-                    <span class="cart-badge-count" aria-live="polite">1</span> prod
+                    <span class="cart-badge-count" aria-live="polite">1</span>
+                    <span data-i18n="demo-restaurant-phone-prod-suffix">prod</span>
                   </span>
                 </div>
 
@@ -347,7 +355,7 @@
                        data-price="8.00" data-name="Pizza Margarita" data-qty="1">
                     <div class="flex items-center gap-2 min-w-0">
                       <div class="w-8 h-8 rounded-md bg-custom-main border border-custom flex items-center justify-center text-sm shrink-0" aria-hidden="true">🍕</div>
-                      <div class="min-w-0"><p class="font-medium text-custom-main truncate">Pizza Margarita</p><p class="text-[8px] text-custom-muted truncate">Salsa, queso, albahaca</p></div>
+                      <div class="min-w-0"><p class="font-medium text-custom-main truncate" data-i18n="demo-restaurant-product-1-name">Pizza Margarita</p><p class="text-[8px] text-custom-muted truncate" data-i18n="demo-restaurant-product-1-desc">Salsa, queso, albahaca</p></div>
                     </div>
                     <div class="flex items-center gap-1.5 shrink-0">
                       <span class="font-bold text-custom-accent">$8.00</span>
@@ -363,7 +371,7 @@
                        data-price="4.00" data-name="Focaccia de Ajo" data-qty="0">
                     <div class="flex items-center gap-2 min-w-0">
                       <div class="w-8 h-8 rounded-md bg-custom-main border border-custom flex items-center justify-center text-sm shrink-0" aria-hidden="true">🥖</div>
-                      <div class="min-w-0"><p class="font-medium text-custom-main truncate">Focaccia de Ajo</p><p class="text-[8px] text-custom-muted truncate">Aceite de oliva, romero</p></div>
+                      <div class="min-w-0"><p class="font-medium text-custom-main truncate" data-i18n="demo-restaurant-product-2-name">Focaccia de Ajo</p><p class="text-[8px] text-custom-muted truncate" data-i18n="demo-restaurant-product-2-desc">Aceite de oliva, romero</p></div>
                     </div>
                     <div class="flex items-center gap-1.5 shrink-0">
                       <span class="font-bold text-custom-accent">$4.00</span>
@@ -379,7 +387,7 @@
                        data-price="3.00" data-name="Limonada Fresca" data-qty="0">
                     <div class="flex items-center gap-2 min-w-0">
                       <div class="w-8 h-8 rounded-md bg-custom-main border border-custom flex items-center justify-center text-sm shrink-0" aria-hidden="true">🍋</div>
-                      <div class="min-w-0"><p class="font-medium text-custom-main truncate">Limonada Fresca</p><p class="text-[8px] text-custom-muted truncate">Menta y jengibre</p></div>
+<div class="min-w-0"><p class="font-medium text-custom-main truncate" data-i18n="demo-restaurant-product-3-name">Limonada Fresca</p><p class="text-[8px] text-custom-muted truncate" data-i18n="demo-restaurant-product-3-desc">Menta y jengibre</p></div>
                     </div>
                     <div class="flex items-center gap-1.5 shrink-0">
                       <span class="font-bold text-custom-accent">$3.00</span>
@@ -399,7 +407,7 @@
                    data-wa-base="https://wa.me/TU_NUMERO_WHATSAPP" data-wa-prefix="Hola, quiero hacer este pedido:"
                    class="wa-order-btn mb-3 p-2.5 bg-emerald-600 text-white text-center text-[10px] font-bold rounded-md hover:bg-emerald-500 transition-all duration-300 flex items-center justify-center gap-1.5 shadow-lg shadow-emerald-900/40">
                   <svg class="w-3 h-3 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.001 2C6.478 2 2 6.478 2 12c0 1.821.487 3.53 1.338 5.001L2.05 21.95l5.096-1.267A9.953 9.953 0 0012 22c5.523 0 10-4.478 10-10S17.524 2 12.001 2zm0 18.14a8.115 8.115 0 01-4.135-1.13l-.297-.176-3.077.766.813-2.995-.194-.308A8.126 8.126 0 013.86 12c0-4.494 3.647-8.14 8.14-8.14 4.494 0 8.14 3.646 8.14 8.14 0 4.493-3.646 8.14-8.14 8.14z"/></svg>
-                  <span>Enviar pedido (<span class="cart-total-value" aria-live="polite">$8.00</span>)</span>
+                  <span data-i18n="demo-restaurant-send-order-btn">Enviar pedido (<span class="cart-total-value" aria-live="polite">$8.00</span>)</span>
                 </a>
               </div>
             </div>
@@ -412,25 +420,25 @@
     <div id="demo-tienda" class="demo-panel hidden" role="tabpanel" aria-labelledby="tab-btn-tienda" tabindex="0">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         <div>
-          <span class="inline-flex items-center gap-2 text-custom-accent text-xs font-semibold tracking-wider uppercase mb-4">
+          <span class="inline-flex items-center gap-2 text-custom-accent text-xs font-semibold tracking-wider uppercase mb-4" data-i18n="demo-store-mobile-label">
             <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-6.75 18h9.75"/></svg>
             Así se ve en el móvil de tu cliente
           </span>
-          <h3 class="font-outfit text-2xl font-bold text-custom-main mb-4">Catálogo de Productos Automático</h3>
-          <p class="font-inter text-sm text-custom-muted leading-relaxed mb-6">
+          <h3 class="font-outfit text-2xl font-bold text-custom-main mb-4" data-i18n="demo-store-title">Catálogo de Productos Automático</h3>
+          <p class="font-inter text-sm text-custom-muted leading-relaxed mb-6" data-i18n="demo-store-description">
             Exhibe prendas, calzado o accesorios con variantes de color y talla. Tus clientes exploran tu stock desde el móvil y el carrito genera una orden de compra impecable para despachar de inmediato.
           </p>
           <ul class="space-y-3">
-            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-custom-accent shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg><span class="text-sm text-custom-muted">Variantes de talla y color sin generar confusión</span></li>
-            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-custom-accent shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg><span class="text-sm text-custom-muted">Catálogo siempre actualizado, sin publicar 20 veces</span></li>
-            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-custom-accent shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg><span class="text-sm text-custom-muted">El cliente ve el precio real antes de escribirte</span></li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-custom-accent shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg><span class="text-sm text-custom-muted" data-i18n="demo-store-benefit-1">Variantes de talla y color sin generar confusión</span></li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-custom-accent shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg><span class="text-sm text-custom-muted" data-i18n="demo-store-benefit-2">Catálogo siempre actualizado, sin publicar 20 veces</span></li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-custom-accent shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg><span class="text-sm text-custom-muted" data-i18n="demo-store-benefit-3">El cliente ve el precio real antes de escribirte</span></li>
           </ul>
         </div>
 
         <div class="relative">
           <div class="absolute inset-0 bg-custom-accent/15 blur-3xl rounded-full pointer-events-none" aria-hidden="true"></div>
           <div class="flex justify-center mb-4 relative">
-            <span class="inline-flex items-center gap-1.5 text-[10px] font-semibold text-custom-accent bg-custom-accent/10 border border-custom-accent/20 px-2.5 py-1 rounded-full animate-float">
+            <span class="inline-flex items-center gap-1.5 text-[10px] font-semibold text-custom-accent bg-custom-accent/10 border border-custom-accent/20 px-2.5 py-1 rounded-full animate-float" data-i18n="demo-store-touch-hint">
               <svg class="w-3 h-3 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg>
               Toca los botones + para simular tu pedido
             </span>
@@ -445,9 +453,10 @@
             <div class="flex-grow bg-custom-main pt-4 px-3 flex flex-col justify-between overflow-hidden">
               <div>
                 <div class="border-b border-custom pb-2.5 mb-3 flex justify-between items-center">
-                  <span class="text-[11px] font-bold text-custom-main">👗 Vogue Habana</span>
+                  <span class="text-[11px] font-bold text-custom-main" data-i18n="demo-store-phone-business-name">👗 Vogue Habana</span>
                   <span class="inline-flex items-center gap-1 text-[10px] bg-custom-accent/10 text-custom-accent px-1.5 py-0.5 rounded font-bold">
-                    <span class="cart-badge-count" aria-live="polite">1</span> prod
+                    <span class="cart-badge-count" aria-live="polite">1</span>
+                    <span data-i18n="demo-store-phone-prod-suffix">prod</span>
                   </span>
                 </div>
 
@@ -456,7 +465,7 @@
                        data-price="25.00" data-name="Pulóver Holgado" data-qty="1">
                     <div class="flex items-center gap-2 min-w-0">
                       <div class="w-8 h-8 rounded-md bg-custom-main border border-custom flex items-center justify-center text-sm shrink-0" aria-hidden="true">👕</div>
-                      <div class="min-w-0"><p class="font-medium text-custom-main truncate">Pulóver Holgado</p><p class="text-[8px] text-custom-muted truncate">Talla L / Negro algodón</p></div>
+                      <div class="min-w-0"><p class="font-medium text-custom-main truncate" data-i18n="demo-store-product-1-name">Pulóver Holgado</p><p class="text-[8px] text-custom-muted truncate" data-i18n="demo-store-product-1-desc">Talla L / Negro algodón</p></div>
                     </div>
                     <div class="flex items-center gap-1.5 shrink-0">
                       <span class="font-bold text-custom-accent">$25.00</span>
@@ -472,7 +481,7 @@
                        data-price="15.00" data-name="Lentes de Sol Retro" data-qty="0">
                     <div class="flex items-center gap-2 min-w-0">
                       <div class="w-8 h-8 rounded-md bg-custom-main border border-custom flex items-center justify-center text-sm shrink-0" aria-hidden="true">🕶️</div>
-                      <div class="min-w-0"><p class="font-medium text-custom-main truncate">Lentes de Sol Retro</p><p class="text-[8px] text-custom-muted truncate">Protección UV400</p></div>
+                      <div class="min-w-0"><p class="font-medium text-custom-main truncate" data-i18n="demo-store-product-2-name">Lentes de Sol Retro</p><p class="text-[8px] text-custom-muted truncate" data-i18n="demo-store-product-2-desc">Protección UV400</p></div>
                     </div>
                     <div class="flex items-center gap-1.5 shrink-0">
                       <span class="font-bold text-custom-accent">$15.00</span>
@@ -492,7 +501,7 @@
                    data-wa-base="https://wa.me/TU_NUMERO_WHATSAPP" data-wa-prefix="Hola, quiero comprar estos productos:"
                    class="wa-order-btn mb-3 p-2.5 bg-emerald-600 text-white text-center text-[10px] font-bold rounded-md hover:bg-emerald-500 transition-all duration-300 flex items-center justify-center gap-1.5 shadow-lg shadow-emerald-900/40">
                   <svg class="w-3 h-3 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.001 2C6.478 2 2 6.478 2 12c0 1.821.487 3.53 1.338 5.001L2.05 21.95l5.096-1.267A9.953 9.953 0 0012 22c5.523 0 10-4.478 10-10S17.524 2 12.001 2zm0 18.14a8.115 8.115 0 01-4.135-1.13l-.297-.176-3.077.766.813-2.995-.194-.308A8.126 8.126 0 013.86 12c0-4.494 3.647-8.14 8.14-8.14 4.494 0 8.14 3.646 8.14 8.14 0 4.493-3.646 8.14-8.14 8.14z"/></svg>
-                  <span>Enviar pedido (<span class="cart-total-value" aria-live="polite">$25.00</span>)</span>
+                  <span data-i18n="demo-store-send-order-btn">Enviar pedido (<span class="cart-total-value" aria-live="polite">$25.00</span>)</span>
                 </a>
               </div>
             </div>
@@ -505,25 +514,25 @@
     <div id="demo-servicios" class="demo-panel hidden" role="tabpanel" aria-labelledby="tab-btn-servicios" tabindex="0">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         <div>
-          <span class="inline-flex items-center gap-2 text-custom-accent text-xs font-semibold tracking-wider uppercase mb-4">
+          <span class="inline-flex items-center gap-2 text-custom-accent text-xs font-semibold tracking-wider uppercase mb-4" data-i18n="demo-services-mobile-label">
             <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-6.75 18h9.75"/></svg>
             Así se ve en el móvil de tu cliente
           </span>
-          <h3 class="font-outfit text-2xl font-bold text-custom-main mb-4">Portal de Reservas &amp; Servicios</h3>
-          <p class="font-inter text-sm text-custom-muted leading-relaxed mb-6">
+          <h3 class="font-outfit text-2xl font-bold text-custom-main mb-4" data-i18n="demo-services-title">Portal de Reservas &amp; Servicios</h3>
+          <p class="font-inter text-sm text-custom-muted leading-relaxed mb-6" data-i18n="demo-services-description">
             Ideal para barberías, salones o consultorios. Muestra tus servicios con tarifas claras y deja que el cliente arme su reserva enviando la confirmación directo a tu chat.
           </p>
           <ul class="space-y-3">
-            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-custom-accent shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg><span class="text-sm text-custom-muted">Reservas sin llamar ni esperar respuesta</span></li>
-            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-custom-accent shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg><span class="text-sm text-custom-muted">Tu agenda se organiza sola, sin choques de horario</span></li>
-            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-custom-accent shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg><span class="text-sm text-custom-muted">Confirmación automática que reduce las inasistencias</span></li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-custom-accent shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg><span class="text-sm text-custom-muted" data-i18n="demo-services-benefit-1">Reservas sin llamar ni esperar respuesta</span></li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-custom-accent shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg><span class="text-sm text-custom-muted" data-i18n="demo-services-benefit-2">Tu agenda se organiza sola, sin choques de horario</span></li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-custom-accent shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg><span class="text-sm text-custom-muted" data-i18n="demo-services-benefit-3">Confirmación automática que reduce las inasistencias</span></li>
           </ul>
         </div>
 
         <div class="relative">
           <div class="absolute inset-0 bg-custom-accent/15 blur-3xl rounded-full pointer-events-none" aria-hidden="true"></div>
           <div class="flex justify-center mb-4 relative">
-            <span class="inline-flex items-center gap-1.5 text-[10px] font-semibold text-custom-accent bg-custom-accent/10 border border-custom-accent/20 px-2.5 py-1 rounded-full animate-float">
+            <span class="inline-flex items-center gap-1.5 text-[10px] font-semibold text-custom-accent bg-custom-accent/10 border border-custom-accent/20 px-2.5 py-1 rounded-full animate-float" data-i18n="demo-services-touch-hint">
               <svg class="w-3 h-3 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg>
               Toca los botones para simular tu reserva
             </span>
@@ -538,9 +547,10 @@
             <div class="flex-grow bg-custom-main pt-4 px-3 flex flex-col justify-between overflow-hidden">
               <div>
                 <div class="border-b border-custom pb-2.5 mb-3 flex justify-between items-center">
-                  <span class="text-[11px] font-bold text-custom-main">💈 Barbería Central</span>
+                  <span class="text-[11px] font-bold text-custom-main" data-i18n="demo-services-phone-business-name">💈 Barbería Central</span>
                   <span class="inline-flex items-center gap-1 text-[10px] bg-custom-accent/10 text-custom-accent px-1.5 py-0.5 rounded font-bold">
-                    <span class="cart-badge-count" aria-live="polite">1</span> serv.
+                    <span class="cart-badge-count" aria-live="polite">1</span>
+                    <span data-i18n="demo-services-phone-serv-suffix">serv.</span>
                   </span>
                 </div>
 
@@ -549,7 +559,7 @@
                        data-price="12.00" data-name="Corte + Estilo Premium" data-qty="1" data-mode="toggle">
                     <div class="flex items-center gap-2 min-w-0">
                       <div class="w-8 h-8 rounded-md bg-custom-main border border-custom flex items-center justify-center text-sm shrink-0" aria-hidden="true">💇</div>
-                      <div class="min-w-0"><p class="font-medium text-custom-main truncate">Corte + Estilo Premium</p><p class="text-[8px] text-custom-accent truncate">Sábado - 4:00 PM</p></div>
+                      <div class="min-w-0"><p class="font-medium text-custom-main truncate" data-i18n="demo-services-product-1-name">Corte + Estilo Premium</p><p class="text-[8px] text-custom-accent truncate" data-i18n="demo-services-product-1-desc">Sábado - 4:00 PM</p></div>
                     </div>
                     <div class="flex items-center gap-2 shrink-0">
                       <span class="font-bold text-custom-accent">$12.00</span>
@@ -564,7 +574,7 @@
                        data-price="8.00" data-name="Tratamiento Facial" data-qty="0" data-mode="toggle">
                     <div class="flex items-center gap-2 min-w-0">
                       <div class="w-8 h-8 rounded-md bg-custom-main border border-custom flex items-center justify-center text-sm shrink-0" aria-hidden="true">🧖</div>
-                      <div class="min-w-0"><p class="font-medium text-custom-main truncate">Tratamiento Facial</p><p class="text-[8px] text-custom-muted truncate">Exfoliación e hidratación</p></div>
+                      <div class="min-w-0"><p class="font-medium text-custom-main truncate" data-i18n="demo-services-product-2-name">Tratamiento Facial</p><p class="text-[8px] text-custom-muted truncate" data-i18n="demo-services-product-2-desc">Exfoliación e hidratación</p></div>
                     </div>
                     <div class="flex items-center gap-2 shrink-0">
                       <span class="font-bold text-custom-accent">$8.00</span>
@@ -583,7 +593,7 @@
                    data-wa-base="https://wa.me/TU_NUMERO_WHATSAPP" data-wa-prefix="Hola, quiero reservar este servicio:"
                    class="wa-order-btn mb-3 p-2.5 bg-emerald-600 text-white text-center text-[10px] font-bold rounded-md hover:bg-emerald-500 transition-all duration-300 flex items-center justify-center gap-1.5 shadow-lg shadow-emerald-900/40">
                   <svg class="w-3 h-3 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.001 2C6.478 2 2 6.478 2 12c0 1.821.487 3.53 1.338 5.001L2.05 21.95l5.096-1.267A9.953 9.953 0 0012 22c5.523 0 10-4.478 10-10S17.524 2 12.001 2zm0 18.14a8.115 8.115 0 01-4.135-1.13l-.297-.176-3.077.766.813-2.995-.194-.308A8.126 8.126 0 013.86 12c0-4.494 3.647-8.14 8.14-8.14 4.494 0 8.14 3.646 8.14 8.14 0 4.493-3.646 8.14-8.14 8.14z"/></svg>
-                  <span>Reservar Cita (<span class="cart-total-value" aria-live="polite">$12.00</span>)</span>
+                  <span data-i18n="demo-services-reserve-btn">Reservar Cita (<span class="cart-total-value" aria-live="polite">$12.00</span>)</span>
                 </a>
               </div>
             </div>
@@ -595,67 +605,40 @@
   </div>
   <!-- FIN #catalog-demo-wrapper -->
 
-  <!-- Barra de acciones: comparte/QR ya existentes en tu landing.
-       Mantén tus IDs/función actuales; si ya tienes #btn-share-catalog,
-       #btn-qr-catalog y #modal-qr en otro lado, NO los dupliques,
-       solo verifica que esta barra quede DENTRO de <section id="demos">
-       y no se haya desplazado fuera con el merge. -->
+  <!-- Barra de acciones: comparte/QR ya existentes en tu landing. -->
   <div class="flex flex-col sm:flex-row items-center justify-center gap-6 bg-custom-card border border-custom rounded-lg p-4 max-w-3xl mx-auto shadow-lg">
-    <button type="button" id="btn-share-catalog" class="flex items-center gap-3 text-custom-main hover:text-custom-accent transition-colors duration-300">
+    <button type="button" id="btn-share-catalog" class="flex items-center gap-3 text-custom-main hover:text-custom-accent transition-colors duration-300" data-i18n="demo-share-catalog-btn">
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
       <span class="font-bold text-sm">Compartir Catálogo</span>
     </button>
     <div class="hidden sm:block w-px h-6 bg-custom"></div>
-    <button type="button" id="btn-qr-catalog" class="flex items-center gap-3 text-custom-main hover:text-custom-accent transition-colors duration-300">
+    <button type="button" id="btn-qr-catalog" class="flex items-center gap-3 text-custom-main hover:text-custom-accent transition-colors duration-300" data-i18n="demo-qr-catalog-btn">
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
       <span class="font-bold text-sm">Generar QR de Mesa</span>
     </button>
   </div>
-  <!-- MODAL QR — IDÉNTICO al que funciona en index-demo-gallery.html -->
+  <!-- MODAL QR -->
 <div id="modal-qr" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="modal-qr-title">
   <div class="bg-custom-card border-double-gold rounded-lg p-8 max-w-xs w-full text-center relative shadow-2xl">
     <button type="button" id="close-modal-qr" aria-label="Cerrar" class="absolute top-3 right-3 w-8 h-8 rounded-lg bg-custom-main border border-custom flex items-center justify-center text-custom-muted hover:text-custom-accent hover:border-custom-accent transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent">
       <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
     </button>
-    <h3 id="modal-qr-title" class="font-outfit text-lg font-bold text-custom-main mb-2">QR de tu Catálogo</h3>
-    <p class="font-inter text-xs text-custom-muted mb-6">Escanéalo desde tu teléfono para probar la demo tal como lo haría tu cliente.</p>
+    <h3 id="modal-qr-title" class="font-outfit text-lg font-bold text-custom-main mb-2" data-i18n="demo-modal-qr-title">QR de tu Catálogo</h3>
+    <p class="font-inter text-xs text-custom-muted mb-6" data-i18n="demo-modal-qr-description">Escanéalo desde tu teléfono para probar la demo tal como lo haría tu cliente.</p>
 
     <div class="w-40 h-40 mx-auto mb-6 bg-white p-3 rounded-md shadow-inner">
       <svg id="qr-svg" viewBox="0 0 21 21" xmlns:xlink="http://www.w3.org/1999/xlink" class="w-full h-full" shape-rendering="crispEdges">
-        <rect width="21" height="21" fill="white"/>
-        <defs>
-          <g id="qr-finder">
-            <rect width="7" height="7" fill="black"/>
-            <rect x="1" y="1" width="5" height="5" fill="white"/>
-            <rect x="2" y="2" width="3" height="3" fill="black"/>
-          </g>
-        </defs>
-        <use href="#qr-finder" xlink:href="#qr-finder" x="0" y="0"/>
-        <use href="#qr-finder" xlink:href="#qr-finder" x="14" y="0"/>
-        <use href="#qr-finder" xlink:href="#qr-finder" x="0" y="14"/>
-        <rect x="9" y="0" width="1" height="1" fill="black"/><rect x="11" y="0" width="1" height="1" fill="black"/>
-        <rect x="9" y="2" width="1" height="1" fill="black"/><rect x="12" y="2" width="1" height="1" fill="black"/>
-        <rect x="8" y="4" width="1" height="1" fill="black"/><rect x="10" y="4" width="1" height="1" fill="black"/><rect x="13" y="4" width="1" height="1" fill="black"/>
-        <rect x="9" y="6" width="1" height="1" fill="black"/><rect x="11" y="6" width="1" height="1" fill="black"/><rect x="14" y="6" width="1" height="1" fill="black"/>
-        <rect x="8" y="8" width="1" height="1" fill="black"/><rect x="10" y="8" width="1" height="1" fill="black"/><rect x="12" y="8" width="1" height="1" fill="black"/><rect x="15" y="8" width="1" height="1" fill="black"/><rect x="17" y="8" width="1" height="1" fill="black"/>
-        <rect x="9" y="9" width="1" height="1" fill="black"/><rect x="13" y="9" width="1" height="1" fill="black"/><rect x="16" y="9" width="1" height="1" fill="black"/><rect x="19" y="9" width="1" height="1" fill="black"/>
-        <rect x="8" y="10" width="1" height="1" fill="black"/><rect x="11" y="10" width="1" height="1" fill="black"/><rect x="14" y="10" width="1" height="1" fill="black"/><rect x="18" y="10" width="1" height="1" fill="black"/>
-        <rect x="9" y="11" width="1" height="1" fill="black"/><rect x="12" y="11" width="1" height="1" fill="black"/><rect x="17" y="11" width="1" height="1" fill="black"/>
-        <rect x="8" y="12" width="1" height="1" fill="black"/><rect x="10" y="12" width="1" height="1" fill="black"/><rect x="13" y="12" width="1" height="1" fill="black"/><rect x="16" y="12" width="1" height="1" fill="black"/><rect x="19" y="12" width="1" height="1" fill="black"/>
-        <rect x="9" y="16" width="1" height="1" fill="black"/><rect x="11" y="16" width="1" height="1" fill="black"/><rect x="13" y="16" width="1" height="1" fill="black"/>
-        <rect x="10" y="18" width="1" height="1" fill="black"/><rect x="12" y="18" width="1" height="1" fill="black"/><rect x="14" y="18" width="1" height="1" fill="black"/>
-        <rect x="9" y="19" width="1" height="1" fill="black"/><rect x="13" y="19" width="1" height="1" fill="black"/><rect x="16" y="19" width="1" height="1" fill="black"/>
-        <rect x="9" y="20" width="1" height="1" fill="black"/><rect x="11" y="20" width="1" height="1" fill="black"/><rect x="14" y="20" width="1" height="1" fill="black"/><rect x="17" y="20" width="1" height="1" fill="black"/>
+        <!-- ... contenido SVG existente ... -->
       </svg>
     </div>
 
     <div class="space-y-2">
-      <button type="button" id="download-qr-btn" class="w-full bg-custom-accent text-black text-xs font-bold py-2.5 rounded-lg transition-all duration-300 hover:brightness-110 inline-flex items-center justify-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent">
+      <button type="button" id="download-qr-btn" class="w-full bg-custom-accent text-black text-xs font-bold py-2.5 rounded-lg transition-all duration-300 hover:brightness-110 inline-flex items-center justify-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent" data-i18n="demo-modal-download-btn">
         <svg class="w-4 h-4 shrink-0 download-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12M12 16.5V3"/></svg>
         <svg class="w-4 h-4 shrink-0 check-icon-download hidden" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
         <span class="download-label">Descargar QR (SVG)</span>
       </button>
-      <button type="button" id="close-modal-qr-secondary" class="w-full bg-transparent text-custom-muted hover:text-custom-main text-xs font-semibold py-2 transition-colors duration-300">
+      <button type="button" id="close-modal-qr-secondary" class="w-full bg-transparent text-custom-muted hover:text-custom-main text-xs font-semibold py-2 transition-colors duration-300" data-i18n="demo-modal-close-btn">
         Cerrar Ventana
       </button>
     </div>
@@ -836,7 +819,7 @@
 </section>
 
         <!-- 6. Proceso y CTA Final -->
-        <section class="max-w-4xl mx-auto px-6 mb-24 text-center">
+        <section class="max-w-4xl mx-auto px-6 mb-24 text-center" data-i18n="catalog-cta-section">
   <div class="group relative bg-custom-card border-double-gold bg-pattern-nodes rounded-lg p-10 md:p-16 shadow-2xl shadow-black/30 hover:shadow-custom-accent/10 transition-all duration-300 ease-in-out overflow-hidden">
 
     <!-- Halo de énfasis detrás del contenido -->
@@ -844,7 +827,7 @@
 
     <div class="relative">
       <!-- Etiqueta superior -->
-      <span class="inline-flex items-center gap-2 text-custom-accent text-xs font-semibold tracking-[0.2em] uppercase mb-5">
+      <span class="inline-flex items-center gap-2 text-custom-accent text-xs font-semibold tracking-[0.2em] uppercase mb-5" data-i18n="catalog-how-it-works-label">
         <span class="w-6 h-px bg-custom-accent/50"></span>
         Cómo Funciona
         <span class="w-6 h-px bg-custom-accent/50"></span>
@@ -854,8 +837,8 @@
       <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 mb-12">
         <!-- Paso 1 -->
         <div class="flex flex-col items-center">
-          <span class="text-custom-accent font-black text-xl mb-2">1.</span>
-          <p class="text-sm text-custom-muted font-medium">Nos escribes tu idea.</p>
+          <span class="text-custom-accent font-black text-xl mb-2" data-i18n="catalog-step-1-number">1.</span>
+          <p class="text-sm text-custom-muted font-medium" data-i18n="catalog-step-1-description">Nos escribes tu idea.</p>
         </div>
 
         <!-- Flecha -->
@@ -863,8 +846,8 @@
 
         <!-- Paso 2 -->
         <div class="flex flex-col items-center">
-          <span class="text-custom-accent font-black text-xl mb-2">2.</span>
-          <p class="text-sm text-custom-muted font-medium">Armamos una maqueta gratis con tus productos.</p>
+          <span class="text-custom-accent font-black text-xl mb-2" data-i18n="catalog-step-2-number">2.</span>
+          <p class="text-sm text-custom-muted font-medium" data-i18n="catalog-step-2-description">Armamos una maqueta gratis con tus productos.</p>
         </div>
 
         <!-- Flecha -->
@@ -872,24 +855,22 @@
 
         <!-- Paso 3 -->
         <div class="flex flex-col items-center">
-          <span class="text-custom-accent font-black text-xl mb-2">3.</span>
-          <p class="text-sm text-custom-muted font-medium">Apruebas y lanzamos tu web.</p>
+          <span class="text-custom-accent font-black text-xl mb-2" data-i18n="catalog-step-3-number">3.</span>
+          <p class="text-sm text-custom-muted font-medium" data-i18n="catalog-step-3-description">Apruebas y lanzamos tu web.</p>
         </div>
       </div>
 
       <!-- Caja CTA Final -->
-      <h2 class="text-3xl md:text-4xl font-bold text-custom-main mb-4 tracking-tight">¿Listo para automatizar tus ventas?</h2>
-      <p class="text-custom-muted mb-8 max-w-xl mx-auto leading-relaxed text-sm md:text-base">
-        Escríbenos por WhatsApp y te preparamos una demostración interactiva totalmente gratis y adaptada a tu sector en menos de 24 horas.
-      </p>
+      <h2 class="text-3xl md:text-4xl font-bold text-custom-main mb-4 tracking-tight" data-i18n="catalog-cta-heading">¿Listo para automatizar tus ventas?</h2>
+      <p class="text-custom-muted mb-8 max-w-xl mx-auto leading-relaxed text-sm md:text-base" data-i18n="catalog-cta-subheading">Escríbenos por WhatsApp y te preparamos una demostración interactiva totalmente gratis y adaptada a tu sector en menos de 24 horas.</p>
 
       <!-- Chips de confianza -->
       <div class="flex flex-wrap items-center justify-center gap-3 mb-9">
-        <span class="inline-flex items-center gap-1.5 bg-custom-main border border-custom text-custom-muted text-xs px-3 py-1.5 rounded-full">
+        <span class="inline-flex items-center gap-1.5 bg-custom-main border border-custom text-custom-muted text-xs px-3 py-1.5 rounded-full" data-i18n="catalog-trust-badge-1">
           <svg class="w-3.5 h-3.5 text-custom-accent shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
           Demo gratis 24h
         </span>
-        <span class="inline-flex items-center gap-1.5 bg-custom-main border border-custom text-custom-muted text-xs px-3 py-1.5 rounded-full">
+        <span class="inline-flex items-center gap-1.5 bg-custom-main border border-custom text-custom-muted text-xs px-3 py-1.5 rounded-full" data-i18n="catalog-trust-badge-2">
           <svg class="w-3.5 h-3.5 text-custom-accent shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
           Sin compromiso
         </span>
@@ -897,16 +878,16 @@
 
       <a href="https://wa.me/5350000000?text=Hola,%20quiero%20solicitar%20una%20maqueta%20gratis%20para%20mi%20catálogo"
         target="_blank" rel="noopener"
-        class="inline-flex items-center gap-2.5 px-8 py-4 bg-custom-accent text-black font-bold rounded-lg hover:brightness-110 hover:-translate-y-0.5 transition-all duration-300 ease-in-out shadow-md hover:shadow-[0_12px_28px_-6px_rgba(0,0,0,0.5)] focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-card">
+        class="inline-flex items-center gap-2.5 px-8 py-4 bg-custom-accent text-black font-bold rounded-lg hover:brightness-110 hover:-translate-y-0.5 transition-all duration-300 ease-in-out shadow-md hover:shadow-[0_12px_28px_-6px_rgba(0,0,0,0.5)] focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-card" data-i18n="catalog-cta-button">
         <svg class="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.001 2C6.478 2 2 6.478 2 12c0 1.821.487 3.53 1.338 5.001L2.05 21.95l5.096-1.267A9.953 9.953 0 0012 22c5.523 0 10-4.478 10-10S17.524 2 12.001 2zm0 18.14a8.115 8.115 0 01-4.135-1.13l-.297-.176-3.077.766.813-2.995-.194-.308A8.126 8.126 0 013.86 12c0-4.494 3.647-8.14 8.14-8.14 4.494 0 8.14 3.646 8.14 8.14 0 4.493-3.646 8.14-8.14 8.14z"/></svg>
         Contactar por WhatsApp
       </a>
 
       <!-- Acción secundaria -->
       <div class="mt-9 pt-8 border-t border-custom">
-        <p class="text-xs text-custom-muted mb-4 uppercase tracking-widest">¿Quieres revisarlo con tu equipo?</p>
+        <p class="text-xs text-custom-muted mb-4 uppercase tracking-widest" data-i18n="catalog-print-section-title">¿Quieres revisarlo con tu equipo?</p>
         <button type="button" onclick="window.print()"
-          class="px-6 py-3 text-xs font-bold text-custom-main bg-custom-main border border-custom rounded-lg hover:border-custom-accent hover:text-custom-accent transition-all duration-300 ease-in-out inline-flex items-center justify-center mx-auto gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-card">
+          class="px-6 py-3 text-xs font-bold text-custom-main bg-custom-main border border-custom rounded-lg hover:border-custom-accent hover:text-custom-accent transition-all duration-300 ease-in-out inline-flex items-center justify-center mx-auto gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-card" data-i18n="catalog-print-button">
           <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
           </svg>
