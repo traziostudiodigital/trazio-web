@@ -760,5 +760,12 @@ window.TRAZIO_I18N = {
         'seo-c3-t2': 'Tax Audit',
         'seo-c3-t3': 'PowerBI',
 
+        // Hero Section (en)
+        'hero-badge': 'Engineering & Digital Strategy Studio',
+        'hero-title': 'We build the website your business needs to <span class="text-custom-accent">grow and be found</span>.',
+        'hero-subtitle': 'We create ultra-fast web tools optimized for Cuba. Clean designs, no monthly maintenance costs, and ready to receive orders straight to your WhatsApp.',
+        'hero-cta-primary': 'Explore Solutions',
+        'hero-cta-secondary': 'Analyze My Business',
+
     }
 };
