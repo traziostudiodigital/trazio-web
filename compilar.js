@@ -42,6 +42,32 @@ function replaceIncludes(html) {
     return result;
 }
 
+/**
+ * Función para minificar HTML básico.
+ * 1. Elimina comentarios HTML (excepto @@include, que ya se habrían procesado).
+ * 2. Reduce múltiples espacios/saltos de línea a uno solo.
+ * 3. Elimina espacios entre etiquetas HTML.
+ * @param {string} html El contenido HTML a minificar.
+ * @returns {string} El contenido HTML minificado.
+ */
+function minifyHTML(html) {
+    // 1. Eliminar comentarios HTML (excepto los de @@include, que ya se procesaron)
+    // Usamos (?!@@include) para ser robustos, aunque a esta altura ya no deberían existir.
+    html = html.replace(/<!--(?!@@include)[^]*?-->/g, '');
+
+    // 2. Eliminar saltos de línea múltiples y espacios en blanco innecesarios
+    // Reemplaza múltiples espacios, tabulaciones y saltos de línea con un solo espacio.
+    html = html.replace(/\s+/g, ' ');
+
+    // 3. Elimina el espacio entre las etiquetas HTML (e.g., `> <` a `><`)
+    html = html.replace(/>\s+</g, '><');
+
+    // 4. Elimina espacios al principio y al final de la cadena minificada.
+    html = html.trim();
+
+    return html;
+}
+
 function compileHTML() {
     console.log('🔄 Compilando HTML...');
     if (!fs.existsSync(PLANTILLAS_DIR)) {
@@ -57,7 +83,10 @@ function compileHTML() {
         const outputPath = path.join(ROOT_DIR, outputFileName);
 
         const templateContent = readFileSyncSafe(templatePath);
-        const compiledContent = replaceIncludes(templateContent);
+        let compiledContent = replaceIncludes(templateContent); // Primero procesar los includes
+
+        // Aplicar la minificación HTML
+        compiledContent = minifyHTML(compiledContent); // <-- NUEVO PASO
 
         fs.writeFileSync(outputPath, compiledContent, { encoding: 'utf8' });
         console.log(`✅ HTML Listo: ${outputFileName}`);
