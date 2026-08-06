@@ -1,43 +1,84 @@
 <!-- componentes/tech-contact-mockup.html -->
 <section class="max-w-5xl mx-auto px-6 mb-24">
-    <div class="bg-custom-card border border-custom/20 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row gap-12 items-center shadow-2xl relative overflow-hidden">
+    <div class="bg-custom-card border border-custom/20 rounded-2xl p-8 md:p-12 flex flex-col lg:flex-row gap-10 items-center shadow-2xl relative overflow-hidden bg-pattern-diagonal">
         
-        <!-- Badge Superior Izquierdo -->
-        <div data-i18n="tech-contact-badge" class="absolute top-0 left-0 bg-custom-accent text-black text-[10px] font-black uppercase px-3 py-1.5 rounded-br-lg z-10 shadow-md">
+        <!-- Badge Superior Izquierdo con Live Status -->
+        <div data-i18n="tech-contact-badge" class="absolute top-0 left-0 bg-custom-accent text-black text-[11px] font-black uppercase px-3.5 py-1.5 rounded-br-lg z-10 shadow-md flex items-center gap-2 tracking-wider">
+            <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-black opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-black"></span>
+            </span>
             Simulador de Contacto
         </div>
         
-        <!-- Textos -->
-        <div class="flex-1 mt-4 md:mt-0">
-            <h3 data-i18n="tech-contact-title" class="text-3xl font-bold mb-4 text-custom-main">Filtra a los curiosos.</h3>
+        <!-- Columna Informativa y Propuesta de Valor -->
+        <div class="flex-1 mt-6 lg:mt-0">
+            <h3 data-i18n="tech-contact-title" class="text-2xl md:text-3xl font-bold mb-4 text-custom-main leading-tight">
+                Filtra a los curiosos. <br class="hidden sm:inline"><span class="text-custom-accent">Recibe solo clientes calificados.</span>
+            </h3>
             <p data-i18n="tech-contact-desc" class="text-custom-muted text-sm md:text-base leading-relaxed mb-6">
-                No recibas mensajes vacíos por WhatsApp. Integramos un formulario profesional (conectado a tu correo o WhatsApp) que obliga al cliente a especificar su presupuesto y el alcance del proyecto antes de contactarte.
+                No recibas mensajes vacíos o informales. Integramos formularios inteligentes que filtran la intención de compra, solicitando presupuesto y alcance antes de derivar la conversación a tu correo o WhatsApp.
             </p>
-            <a href="https://wa.me/5350000000?text=Hola,%20quiero%20cotizar%20mi%20Dossier%20Interactivo" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-custom-accent font-semibold hover:text-custom-main transition-colors text-sm">
-                <span data-i18n="tech-contact-link">Quiero este formulario en mi web</span> <span class="ml-2" aria-hidden="true">→</span>
+
+            <!-- Lista de Beneficios Rápidos (UX Reading Pattern) -->
+            <ul class="space-y-2.5 mb-8 text-xs md:text-sm text-custom-main">
+                <li class="flex items-center gap-2.5">
+                    <span class="w-5 h-5 rounded-full bg-custom-accent/15 text-custom-accent flex items-center justify-center text-xs font-bold shrink-0">✓</span>
+                    <span>Cualificación automática por presupuesto</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                    <span class="w-5 h-5 rounded-full bg-custom-accent/15 text-custom-accent flex items-center justify-center text-xs font-bold shrink-0">✓</span>
+                    <span>Redirección directa a tu WhatsApp / CRM</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                    <span class="w-5 h-5 rounded-full bg-custom-accent/15 text-custom-accent flex items-center justify-center text-xs font-bold shrink-0">✓</span>
+                    <span>Sin mensajes spam ni consultas sin valor</span>
+                </li>
+            </ul>
+
+            <a href="https://wa.me/5350000000?text=Hola,%20quiero%20cotizar%20mi%20Dossier%20Interactivo" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center text-custom-accent font-semibold hover:text-custom-main transition-colors text-sm">
+                <span data-i18n="tech-contact-link">Quiero este formulario en mi web</span> 
+                <span class="ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true">→</span>
             </a>
         </div>
         
-        <!-- Mockup Visual del Formulario (Activo) -->
-        <div class="flex-1 w-full bg-custom-main/50 p-6 rounded-xl border border-custom/10 relative">
-            <!-- Formulario funcional -->
+        <!-- Mockup Visual del Formulario (Contenedor Interactivo con Estilo App Window) -->
+        <div class="flex-1 w-full bg-custom-main/80 p-5 md:p-6 rounded-xl border-double-gold relative shadow-2xl backdrop-blur-sm">
+            
+            <!-- Barra Superior Simulación de Software/Browser -->
+            <div class="flex items-center justify-between pb-4 mb-5 border-b border-custom/20">
+                <div class="flex items-center space-x-1.5">
+                    <div class="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
+                    <div class="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></div>
+                    <div class="w-2.5 h-2.5 rounded-full bg-green-500/80"></div>
+                </div>
+                <span class="text-[10px] font-mono uppercase tracking-widest text-custom-muted/80">Demo Form v1.0</span>
+            </div>
+
+            <!-- Formulario Funcional -->
             <form id="tech-contact-form" class="space-y-4">
                 <div>
-                    <label data-i18n="tech-label-empresa" class="block text-xs font-bold text-custom-muted mb-1.5">Empresa / Proyecto</label>
-                    <input type="text" id="empresa" required data-i18n-placeholder="tech-ph-empresa" class="w-full h-10 bg-custom-card border border-custom/20 rounded-md px-3 text-sm focus:outline-none focus:ring-2 focus:ring-custom-accent" placeholder="Nombre de la empresa o proyecto">
+                    <label data-i18n="tech-label-empresa" class="block text-xs font-bold text-custom-main mb-1.5">Empresa / Proyecto</label>
+                    <input type="text" id="empresa" required data-i18n-placeholder="tech-ph-empresa" class="w-full h-10 bg-custom-card border border-custom/30 text-custom-main placeholder:text-custom-muted/50 rounded-md px-3 text-sm focus:outline-none focus:border-custom-accent focus:ring-1 focus:ring-custom-accent transition-all" placeholder="Nombre de la empresa o proyecto">
                 </div>
                 <div>
-                    <label data-i18n="tech-label-presupuesto" class="block text-xs font-bold text-custom-muted mb-1.5">Presupuesto Estimado</label>
-                    <input type="text" id="presupuesto" required data-i18n-placeholder="tech-ph-presupuesto" class="w-full h-10 bg-custom-card border border-custom/20 rounded-md px-3 text-sm focus:outline-none focus:ring-2 focus:ring-custom-accent" placeholder="Ej: +$1,000 USD">
+                    <label data-i18n="tech-label-presupuesto" class="block text-xs font-bold text-custom-main mb-1.5">Presupuesto Estimado</label>
+                    <input type="text" id="presupuesto" required data-i18n-placeholder="tech-ph-presupuesto" class="w-full h-10 bg-custom-card border border-custom/30 text-custom-main placeholder:text-custom-muted/50 rounded-md px-3 text-sm focus:outline-none focus:border-custom-accent focus:ring-1 focus:ring-custom-accent transition-all" placeholder="Ej: +$1,000 USD">
                 </div>
                 <div>
-                    <label data-i18n="tech-label-descripcion" class="block text-xs font-bold text-custom-muted mb-1.5">Descripción del Reto Técnico</label>
-                    <textarea id="descripcion" required rows="4" data-i18n-placeholder="tech-ph-descripcion" class="w-full h-20 bg-custom-card border border-custom/20 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-custom-accent" placeholder="Describe brevemente el desafío técnico"></textarea>
+                    <label data-i18n="tech-label-descripcion" class="block text-xs font-bold text-custom-main mb-1.5">Descripción del Reto Técnico</label>
+                    <textarea id="descripcion" required rows="3" data-i18n-placeholder="tech-ph-descripcion" class="w-full bg-custom-card border border-custom/30 text-custom-main placeholder:text-custom-muted/50 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-custom-accent focus:ring-1 focus:ring-custom-accent transition-all resize-none" placeholder="Describe brevemente el desafío técnico"></textarea>
                 </div>
-                <button type="submit" id="btn-enviar" data-i18n="tech-btn-submit" class="w-full py-3 bg-custom-accent text-black font-bold uppercase text-xs tracking-wider rounded-md hover:bg-custom-accent/90 transition-colors">
+                
+                <button type="submit" id="btn-enviar" data-i18n="tech-btn-submit" class="w-full py-3 bg-custom-accent text-black font-extrabold uppercase text-xs tracking-wider rounded-md hover:bg-custom-accent-hover transition-all duration-200 transform active:scale-[0.99] shadow-md">
                     Enviar Propuesta
                 </button>
             </form>
+
+            <!-- Micro-copy de Instrucción UX -->
+            <p class="text-[11px] text-custom-muted/80 text-center mt-3 font-mono">
+                💡 Interactivo: Prueba el formulario simulando tu consulta.
+            </p>
         </div>
         
     </div>
