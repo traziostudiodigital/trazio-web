@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 `Hola Trazio Studio, quiero agendar mi auditoría digital para ${business}. ` +
                 `Mi nombre es ${name}, mi número de WhatsApp es ${whatsapp}, y me interesa la solución: ${solution}.`
             );
-            window.open(`https://wa.me/5350000000?text=${message}`, '_blank');
+            window.open(`https://wa.me/5353200426?text=${message}`, '_blank');
             contactForm.reset();
         });
     }
@@ -332,6 +332,8 @@ document.addEventListener('DOMContentLoaded', () => {
         demoWrapper.querySelectorAll('.demo-panel').forEach(recalcPanel);
     })();
 
+// ... todo el código anterior igual hasta initHomeGalleryDemo ...
+
     // ─────────────────────────────────────────────────────────────────────
     // 2) DEMO — Galería del Home (#demo-gallery: Catálogo/Portafolio/Corporativo)
     //    Raíz: #demo-gallery — todo se busca dentro de `gallery`, nunca de `document`
@@ -389,7 +391,10 @@ document.addEventListener('DOMContentLoaded', () => {
             catalogPane.querySelectorAll('.cart-item').forEach((item) => {
                 const price = parseFloat(item.dataset.price) || 0;
                 const qty = parseInt(item.dataset.qty || '0', 10);
+                
+                // Aplicar opacidad según si hay cantidad o no
                 item.classList.toggle('opacity-60', qty === 0);
+                
                 if (qty > 0) {
                     total += price * qty;
                     units += qty;
@@ -414,41 +419,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
             catalogPane.querySelectorAll('.cart-item').forEach((item) => {
                 const qty = parseInt(item.dataset.qty || '0', 10);
-                if (qty > 0) lines.push('- ' + item.dataset.name);
+                const name = item.dataset.name || '';
+                const price = parseFloat(item.dataset.price) || 0;
+                if (qty > 0) {
+                    const subtotal = (price * qty).toFixed(2);
+                    lines.push(`- ${name} x${qty} ($${subtotal})`);
+                }
             });
 
             const message = prefix + '\n' + lines.join('\n') + '\nTotal: ' + formatMoneyUsd(total);
             link.setAttribute('href', base + '?text=' + encodeURIComponent(message));
         }
 
-        function toggleCartItem(btn) {
-            const item = btn.closest('.cart-item');
-            const wasAdded = item.dataset.qty === '1';
-            item.dataset.qty = wasAdded ? '0' : '1';
-
-            btn.setAttribute('aria-pressed', String(!wasAdded));
-            btn.setAttribute('aria-label', wasAdded ? 'Agregar al pedido' : 'Quitar del pedido');
-            btn.classList.toggle('bg-custom-accent', !wasAdded);
-            btn.classList.toggle('text-black', !wasAdded);
-            btn.classList.toggle('border', wasAdded);
-            btn.classList.toggle('border-neutral-700', wasAdded);
-            btn.classList.toggle('text-neutral-400', wasAdded);
-
-            const iconCheck = btn.querySelector('.icon-check');
-            const iconPlus = btn.querySelector('.icon-plus');
-            if (iconCheck) iconCheck.classList.toggle('hidden', wasAdded);
-            if (iconPlus) iconPlus.classList.toggle('hidden', !wasAdded);
-
-            btn.style.transform = 'scale(0.85)';
-            setTimeout(() => { btn.style.transform = ''; }, 140);
-
+        function setQty(item, qty) {
+            qty = Math.max(0, qty);
+            item.dataset.qty = String(qty);
+            
+            const display = item.querySelector('.cart-qty-display');
+            if (display) display.textContent = String(qty);
+            
             recalcCatalog();
         }
 
         if (catalogPane) {
             catalogPane.addEventListener('click', (e) => {
-                const btn = e.target.closest('.cart-toggle-btn');
-                if (btn) toggleCartItem(btn);
+                const plusBtn = e.target.closest('.cart-qty-plus');
+                const minusBtn = e.target.closest('.cart-qty-minus');
+
+                if (plusBtn) {
+                    const item = plusBtn.closest('.cart-item');
+                    if (item) {
+                        const currentQty = parseInt(item.dataset.qty || '0', 10);
+                        setQty(item, currentQty + 1);
+                    }
+                } else if (minusBtn) {
+                    const item = minusBtn.closest('.cart-item');
+                    if (item) {
+                        const currentQty = parseInt(item.dataset.qty || '0', 10);
+                        setQty(item, currentQty - 1);
+                    }
+                }
             });
             recalcCatalog(); // estado inicial
         }
@@ -457,23 +467,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // ─────────────────────────────────────────────────────────────────────
     // 3) COMPARTIR + MODAL QR — ÚNICA implementación, compartida por ambas
     //    páginas. Cada página trae solo UNA instancia de #modal-qr /
-    //    #btn-share-catalog / #btn-qr-catalog, así que un solo binding por
-    //    getElementById es correcto y suficiente — el bug anterior era
-    //    tener 2-3 bloques distintos enganchados a los mismos IDs a la vez.
+    //    #btn-share-catalog / #btn-qr-catalog
     // ─────────────────────────────────────────────────────────────────────
     (function initShareAndQr() {
         const modal = document.getElementById('modal-qr');
         const btnOpenQr = document.getElementById('btn-qr-catalog');
         const btnCloseQr = document.getElementById('close-modal-qr');
-        const btnCloseQr2 = document.getElementById('close-modal-qr-secondary'); // solo existe en algunas páginas
+        const btnCloseQr2 = document.getElementById('close-modal-qr-secondary');
         const btnDownloadQr = document.getElementById('download-qr-btn');
         const btnShare = document.getElementById('btn-share-catalog');
-        const qrSvgContainer = document.getElementById('qr-svg'); // Contenedor del SVG
 
         function openModal() {
             if (!modal) return;
             modal.classList.remove('hidden');
-            modal.classList.add('flex'); // fuerza flex aunque el markup no lo traiga fijo
+            modal.classList.add('flex');
             document.body.style.overflow = 'hidden';
         }
 
@@ -496,8 +503,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (btnDownloadQr) {
             btnDownloadQr.addEventListener('click', () => {
-                // Busca el SVG por id="qr-svg"; si esa página no lo tiene, toma
-                // el primer <svg> dentro del modal (robusto ante markup viejo).
                 const svg = document.getElementById('qr-svg') || (modal && modal.querySelector('svg'));
                 const label = btnDownloadQr.querySelector('.download-label');
                 const icon = btnDownloadQr.querySelector('.download-icon');
@@ -539,7 +544,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                     await navigator.clipboard.writeText(shareData.url);
                 } catch (err) {
-                    return; // el usuario canceló el share nativo o el navegador bloqueó el portapapeles
+                    return;
                 }
 
                 if (toast) {
