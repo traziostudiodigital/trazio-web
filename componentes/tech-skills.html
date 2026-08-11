@@ -20,9 +20,9 @@
     </header>
     
     <!-- Cuadrícula de Habilidades / Tarjetas de Datos -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 relative">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 relative ecosystem-scroll">
       <!-- Tarjeta 1: Software & IT -->
-      <div class="group relative p-6 bg-custom-main border border-custom rounded-lg hover:-translate-y-1.5 hover:border-custom-accent transition-all duration-300 ease-in-out hover:shadow-[0_12px_32px_-12px_rgba(0,0,0,0.6)]">
+      <div class="group relative p-6 bg-custom-main border border-custom rounded-lg hover:-translate-y-1.5 hover:border-custom-accent transition-all duration-300 ease-in-out hover:shadow-[0_12px_32px_-12px_rgba(0,0,0,0.6)] ecosystem-card">
         <div class="relative">
           <div class="flex items-center gap-3 mb-5">
             <div class="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-custom-accent/10 border border-custom-accent/20 text-custom-accent group-hover:scale-105 group-hover:bg-custom-accent/15 transition-all duration-300">
@@ -41,7 +41,7 @@
     </div>
 
       <!-- Tarjeta 2: Ingeniería & Control -->
-      <div class="group relative p-6 bg-custom-main border border-custom rounded-lg hover:-translate-y-1.5 hover:border-custom-accent transition-all duration-300 ease-in-out hover:shadow-[0_12px_32px_-12px_rgba(0,0,0,0.6)]">
+      <div class="group relative p-6 bg-custom-main border border-custom rounded-lg hover:-translate-y-1.5 hover:border-custom-accent transition-all duration-300 ease-in-out hover:shadow-[0_12px_32px_-12px_rgba(0,0,0,0.6)] ecosystem-card">
         <div class="relative">
           <div class="flex items-center gap-3 mb-5">
             <div class="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-custom-accent/10 border border-custom-accent/20 text-custom-accent group-hover:scale-105 group-hover:bg-custom-accent/15 transition-all duration-300">
@@ -61,7 +61,7 @@
       </div>
 
       <!-- Tarjeta 3: Consultoría B2B -->
-      <div class="group relative p-6 bg-custom-main border border-custom rounded-lg hover:-translate-y-1.5 hover:border-custom-accent transition-all duration-300 ease-in-out hover:shadow-[0_12px_32px_-12px_rgba(0,0,0,0.6)]">
+      <div class="group relative p-6 bg-custom-main border border-custom rounded-lg hover:-translate-y-1.5 hover:border-custom-accent transition-all duration-300 ease-in-out hover:shadow-[0_12px_32px_-12px_rgba(0,0,0,0.6)] ecosystem-card">
         <div class="relative">
           <div class="flex items-center gap-3 mb-5">
             <div class="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-custom-accent/10 border border-custom-accent/20 text-custom-accent group-hover:scale-105 group-hover:bg-custom-accent/15 transition-all duration-300">
@@ -80,6 +80,14 @@
         </div>
       </div>
 
+    </div>
+
+    <!-- Indicador de Desplazamiento (Solo visible en móvil) -->
+    <div class="flex items-center justify-center gap-2 mt-6 sm:hidden text-custom-accent/60 animate-pulse">
+      <span class="text-[10px] uppercase tracking-widest font-semibold" data-i18n="skills-swipe">Desliza para ver más</span>
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+      </svg>
     </div>
   </div>
 </section>

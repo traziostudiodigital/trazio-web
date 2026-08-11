@@ -17,12 +17,14 @@
     <h2 class="text-3xl font-bold mb-3 text-custom-main">Tu proyecto técnico listo en 3 pasos</h2>
     <p class="text-sm text-custom-muted max-w-md mx-auto mb-14">Del diagnóstico a la publicación, sin vueltas ni intermediarios.</p>
 
-    <div class="relative grid grid-cols-1 md:grid-cols-3 gap-y-10 gap-x-6">
-      <!-- línea conectora — solo visible en los espacios entre tarjetas -->
+    <!-- Contenedor adaptado: Grid en PC, Scroll horizontal en Móvil -->
+    <div class="relative grid grid-cols-1 md:grid-cols-3 gap-y-10 gap-x-6 ecosystem-scroll">
+      <!-- línea conectora — solo visible en PC -->
       <div class="hidden md:block absolute top-14 left-[10%] right-[10%] h-px bg-gradient-to-r from-custom-accent/0 via-custom-accent/40 to-custom-accent/0 z-0" aria-hidden="true"></div>
 
       <!-- Paso 1 -->
-      <div class="relative z-10 p-8 rounded-2xl bg-card-soft border border-custom/10 hover:border-custom-accent/30 transition-colors">
+      <div class="relative z-10 p-8 rounded-2xl bg-card-soft border border-custom/10 hover:border-custom-accent/30 transition-colors ecosystem-card">
+        <!-- ... contenido del paso 1 ... -->
         <span class="absolute top-4 right-5 text-[11px] font-black text-custom-accent/40 tracking-widest">01</span>
         <div class="w-12 h-12 rounded-full border border-custom-accent/40 bg-custom-main flex items-center justify-center mx-auto mb-5">
           <svg class="w-5 h-5 text-custom-accent" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 21V13m5 8V8m5 13v-6m5 6V4"/></svg>
@@ -32,7 +34,8 @@
       </div>
 
       <!-- Paso 2 -->
-      <div class="relative z-10 p-8 rounded-2xl bg-card-soft border border-custom/10 hover:border-custom-accent/30 transition-colors">
+      <div class="relative z-10 p-8 rounded-2xl bg-card-soft border border-custom/10 hover:border-custom-accent/30 transition-colors ecosystem-card">
+        <!-- ... contenido del paso 2 ... -->
         <span class="absolute top-4 right-5 text-[11px] font-black text-custom-accent/40 tracking-widest">02</span>
         <div class="w-12 h-12 rounded-full border border-custom-accent/40 bg-custom-main flex items-center justify-center mx-auto mb-5">
           <svg class="w-5 h-5 text-custom-accent" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8.5 8L4.5 12l4 4M15.5 8l4 4-4 4M13.5 5l-3 14"/></svg>
@@ -42,7 +45,8 @@
       </div>
 
       <!-- Paso 3 -->
-      <div class="relative z-10 p-8 rounded-2xl bg-card-soft border border-custom/10 hover:border-custom-accent/30 transition-colors">
+      <div class="relative z-10 p-8 rounded-2xl bg-card-soft border border-custom/10 hover:border-custom-accent/30 transition-colors ecosystem-card">
+        <!-- ... contenido del paso 3 ... -->
         <span class="absolute top-4 right-5 text-[11px] font-black text-custom-accent/40 tracking-widest">03</span>
         <div class="w-12 h-12 rounded-full border border-custom-accent/40 bg-custom-main flex items-center justify-center mx-auto mb-5">
           <svg class="w-5 h-5 text-custom-accent" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
@@ -50,6 +54,12 @@
         <h4 class="font-bold mb-3 text-custom-main text-lg">Lanzamiento &amp; Entrega</h4>
         <p class="text-sm text-custom-muted leading-relaxed">Publicamos tu web en servidores globales de alta velocidad y te capacitamos para gestionarla.</p>
       </div>
+    </div>
+
+    <!-- Indicador de Swipe (Solo móvil) -->
+    <div class="flex items-center justify-center mt-8 space-x-2 sm:hidden">
+      <span class="text-[10px] uppercase tracking-[0.2em] text-custom-accent/60 font-bold" data-i18n="infra-swipe-hint">Desliza para avanzar</span>
+      <svg class="w-4 h-4 text-custom-accent animate-float" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
     </div>
   </div>
 </section>
