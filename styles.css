@@ -1,5 +1,80 @@
 /* Trazio Studio - Master Stylesheet (Premium Geometric B2B Identity) */
 
+/* --- CARRUSEL INFINITO DE LOGOS (MARQUEE PREMIUM) --- */
+.logos-marquee-container {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.logos-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 28s linear infinite;
+}
+
+.logos-item {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2.5rem;
+  color: var(--text-primary);
+  opacity: 0.55;
+  filter: grayscale(1);
+  transition: opacity 0.3s ease, filter 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  cursor: default;
+  white-space: nowrap;
+}
+
+.logos-item:hover {
+  opacity: 1;
+  filter: grayscale(0);
+  color: var(--accent);
+  transform: translateY(-2px) scale(1.05);
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Pausa al pasar el mouse (desktop) para poder leer con calma */
+.logos-marquee-container:hover .logos-track {
+  animation-play-state: paused;
+}
+
+/* Fades laterales adicionales (refuerzo visual sobre el mask) */
+.logos-fade-left,
+.logos-fade-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.logos-fade-left {
+  left: 0;
+  background: linear-gradient(to right, var(--bg-primary), transparent);
+}
+
+.logos-fade-right {
+  right: 0;
+  background: linear-gradient(to left, var(--bg-primary), transparent);
+}
+
+/* En móvil, animación un poco más rápida para dinamismo sin perder legibilidad */
+@media (max-width: 768px) {
+  .logos-track {
+    animation-duration: 18s;
+  }
+  .logos-item {
+    padding: 0 1.75rem;
+  }
+}
+
 :root {
   --bg-primary: #111118;     /* Carbono Absoluto */
   --bg-secondary: #1E1E2A;   /* Azul Cenizo */

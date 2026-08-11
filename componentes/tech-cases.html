@@ -1,105 +1,153 @@
-<!-- Casos de Éxito (Sin fondo de textura para dar descanso/aire visual) -->
+<!-- Casos de Éxito (Estética Ficha Técnica B2B) -->
 <section class="max-w-6xl mx-auto px-6 py-12 md:py-16">
-    <div class="text-center mb-12">
+    <!-- Cabecera de la Sección -->
+    <div class="text-center mb-10">
         <span class="inline-flex items-center gap-2 text-custom-accent text-xs font-semibold tracking-[0.2em] uppercase mb-3">
           <span class="w-6 h-px bg-custom-accent/50"></span>
           <span data-i18n="cases-badge">Casos de Éxito</span>
           <span class="w-6 h-px bg-custom-accent/50"></span>
         </span>
-        <h2 class="text-3xl md:text-4xl font-bold text-custom-main tracking-tight mb-4" data-i18n="cases-title">No digas tu cargo. Demuestra tu impacto.</h2>
+        <h2 class="text-3xl md:text-4xl font-bold text-custom-main tracking-tight mb-3" data-i18n="cases-title">No digas tu cargo. Demuestra tu impacto.</h2>
         <p class="text-sm md:text-base text-custom-muted max-w-2xl mx-auto leading-relaxed" data-i18n="cases-desc">
             Los clientes internacionales deciden por resultados medibles. Así se vería un caso de éxito tuyo, con tus propios números y logros reales.
         </p>
     </div>
-    
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <!-- Caso 1 -->
-        <div class="group bg-custom-card p-8 rounded-xl border border-custom/20 relative overflow-hidden transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-custom-accent/50 hover:shadow-[0_10px_30px_-10px_rgba(201,169,110,0.15)] flex flex-col justify-between">
-            <!-- Indicador geométrico superior -->
-            <div class="absolute top-0 left-0 right-0 h-0.5 bg-custom-accent/0 group-hover:bg-custom-accent transition-all duration-300"></div>
-            
-            <div>
-                <div class="flex items-center justify-between mb-4">
-                    <span class="text-xs font-bold text-custom-accent uppercase tracking-wider" data-i18n="case1-category">LOGÍSTICA & ERP</span>
-                    <span class="bg-custom-accent/10 text-custom-accent border border-custom-accent/30 text-[10px] font-bold uppercase px-2.5 py-1 rounded" data-i18n="demo-tag">Ejemplo Demo</span>
-                </div>
 
-                <h3 class="text-xl font-bold mb-4 text-custom-main group-hover:text-custom-accent transition-colors duration-300" data-i18n="case1-title">
-                    Implementación de Odoo para Importadora
-                </h3>
-                
-                <p class="text-sm text-custom-muted leading-relaxed mb-6" data-i18n="case1-desc">
-                    El cliente perdía trazabilidad en sus contenedores. Se parametrizó un sistema ERP completo enlazado a la contabilidad cubana, automatizando las fichas de costo y el control de almacén en tiempo real.
-                </p>
-            </div>
-
-            <!-- Métricas destacadas -->
-            <div class="bg-custom-main/80 p-3.5 rounded-lg border border-custom/15 flex items-center justify-between gap-2 group-hover:border-custom-accent/30 transition-colors">
-                <span class="text-xs font-semibold text-custom-accent flex items-center gap-2" data-i18n="case1-metrics">
-                    <span class="w-1.5 h-1.5 rounded-full bg-custom-accent animate-pulse"></span>
-                    Cero Fugas de Inventario | +25% Margen de Ganancia
-                </span>
-            </div>
+    <!-- Módulo Unificado de Casos (Blueprint Container) -->
+    <div class="bg-custom-card rounded-lg border border-custom/30 overflow-hidden relative shadow-lg">
+        <!-- Banner superior tipo especificación técnica -->
+        <div class="bg-custom-main/60 border-b border-custom/20 px-6 py-3 flex items-center justify-between text-xs font-mono text-custom-muted">
+            <span class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-custom-accent/60"></span>
+                <span data-i18n="cases-demo-spec">DEMO // FICHA DE RESULTADOS B2B</span>
+            </span>
+            <span class="hidden sm:inline-block text-[10px] tracking-widest uppercase border border-custom-accent/30 text-custom-accent px-2 py-0.5 rounded" data-i18n="demo-tag">Muestra Interactiva</span>
         </div>
-        
-        <!-- Caso 2 -->
-        <div class="group bg-custom-card p-8 rounded-xl border border-custom/20 relative overflow-hidden transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-custom-accent/50 hover:shadow-[0_10px_30px_-10px_rgba(201,169,110,0.15)] flex flex-col justify-between">
-            <!-- Indicador geométrico superior -->
-            <div class="absolute top-0 left-0 right-0 h-0.5 bg-custom-accent/0 group-hover:bg-custom-accent transition-all duration-300"></div>
 
-            <div>
-                <div class="flex items-center justify-between mb-4">
-                    <span class="text-xs font-bold text-custom-accent uppercase tracking-wider" data-i18n="case2-category">INFRAESTRUCTURA</span>
-                    <span class="bg-custom-accent/10 text-custom-accent border border-custom-accent/30 text-[10px] font-bold uppercase px-2.5 py-1 rounded" data-i18n="demo-tag">Ejemplo Demo</span>
+        <!-- Rejilla de Casos Unificados -->
+        <div class="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-custom/20">
+            <!-- Caso 1 -->
+            <div class="p-6 md:p-8 flex flex-col justify-between group hover:bg-custom-main/20 transition-colors duration-300">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-[11px] font-mono font-bold text-custom-accent tracking-wider uppercase" data-i18n="case1-category">01. LOGÍSTICA & ERP</span>
+                    </div>
+
+                    <h3 class="text-lg md:text-xl font-bold mb-3 text-custom-main group-hover:text-custom-accent transition-colors duration-300" data-i18n="case1-title">
+                        Implementación de Odoo para Importadora
+                    </h3>
+
+                    <p class="text-xs md:text-sm text-custom-muted leading-relaxed mb-6" data-i18n="case1-desc">
+                        El cliente perdía trazabilidad en sus contenedores. Se parametrizó un sistema ERP completo enlazado a la contabilidad cubana, automatizando las fichas de costo y el control de almacén en tiempo real.
+                    </p>
                 </div>
 
-                <h3 class="text-xl font-bold mb-4 text-custom-main group-hover:text-custom-accent transition-colors duration-300" data-i18n="case2-title">
-                    Optimización de Red en Complejo Hotelero
-                </h3>
-                
-                <p class="text-sm text-custom-muted leading-relaxed mb-6" data-i18n="case2-desc">
-                    Rediseño de los cuadros de control y automatización de las bombas de clima mediante sensores. El proyecto se amortizó en los primeros 4 meses de operación, garantizando cero paradas críticas.
-                </p>
+                <!-- Métricas tipo 'Data Point' -->
+                <div class="pt-4 border-t border-custom/15 flex items-center gap-3">
+                    <span class="text-xs font-mono font-bold text-custom-accent bg-custom-accent/10 border border-custom-accent/20 px-2.5 py-1 rounded">
+                        +25% MARGEN
+                    </span>
+                    <span class="text-xs text-custom-muted font-medium" data-i18n="case1-metrics">
+                        Cero fugas de inventario
+                    </span>
+                </div>
             </div>
 
-            <!-- Métricas destacadas -->
-            <div class="bg-custom-main/80 p-3.5 rounded-lg border border-custom/15 flex items-center justify-between gap-2 group-hover:border-custom-accent/30 transition-colors">
-                <span class="text-xs font-semibold text-custom-accent flex items-center gap-2" data-i18n="case2-metrics">
-                    <span class="w-1.5 h-1.5 rounded-full bg-custom-accent animate-pulse"></span>
-                    -30% Consumo Energético Mensual
-                </span>
+            <!-- Caso 2 -->
+            <div class="p-6 md:p-8 flex flex-col justify-between group hover:bg-custom-main/20 transition-colors duration-300">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-[11px] font-mono font-bold text-custom-accent tracking-wider uppercase" data-i18n="case2-category">02. INFRAESTRUCTURA</span>
+                    </div>
+
+                    <h3 class="text-lg md:text-xl font-bold mb-3 text-custom-main group-hover:text-custom-accent transition-colors duration-300" data-i18n="case2-title">
+                        Optimización de Red en Complejo Hotelero
+                    </h3>
+
+                    <p class="text-xs md:text-sm text-custom-muted leading-relaxed mb-6" data-i18n="case2-desc">
+                        Rediseño de los cuadros de control y automatización de las bombas de clima mediante sensores. El proyecto se amortizó en los primeros 4 meses de operación, garantizando cero paradas críticas.
+                    </p>
+                </div>
+
+                <!-- Métricas tipo 'Data Point' -->
+                <div class="pt-4 border-t border-custom/15 flex items-center gap-3">
+                    <span class="text-xs font-mono font-bold text-custom-accent bg-custom-accent/10 border border-custom-accent/20 px-2.5 py-1 rounded">
+                        -30% ENERGÍA
+                    </span>
+                    <span class="text-xs text-custom-muted font-medium" data-i18n="case2-metrics">
+                        Amortizado en 4 meses
+                    </span>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Prueba Social B2B (Logos) -->
-<section class="max-w-6xl mx-auto px-6 mb-20 text-center">
-    <div class="p-8 md:p-12 rounded-2xl bg-custom-card/50 border border-custom/15 backdrop-blur-sm">
-        <span class="inline-flex items-center gap-2 text-custom-accent text-xs font-semibold tracking-[0.2em] uppercase mb-3">
-          <span class="w-6 h-px bg-custom-accent/50"></span>
-          <span data-i18n="logos-badge">Confianza</span>
-          <span class="w-6 h-px bg-custom-accent/50"></span>
-        </span>
-        <h2 class="text-2xl md:text-3xl font-bold text-custom-main tracking-tight mb-2" data-i18n="logos-title">Empresas que confían en tu trabajo</h2>
-        <p class="text-custom-muted text-xs md:text-sm leading-relaxed max-w-xl mx-auto mb-10" data-i18n="logos-desc">
-            (Esta es una sección de ejemplo para mostrar posibles clientes o partners)
-        </p>
-        
-        <div class="flex flex-wrap justify-center items-center gap-8 md:gap-14 opacity-60 hover:opacity-100 transition-opacity duration-300">
-            <!-- Logos estilizados -->
-            <span class="text-lg md:text-xl font-black tracking-tighter text-custom-main hover:text-custom-accent transition-colors duration-300 cursor-default">
-                TECH<span class="font-light">CORP</span>
+<!-- Prueba Social / Partners (Carrusel Infinito Premium - Mejor UX en Móvil) -->
+<section class="max-w-6xl mx-auto px-6 mb-20">
+    <div class="pt-8 border-t border-custom/20 text-center">
+        <!-- Badge y Título -->
+        <div class="mb-10">
+            <span class="inline-flex items-center gap-2 text-custom-accent text-xs font-semibold tracking-[0.2em] uppercase mb-3">
+              <span class="w-6 h-px bg-custom-accent/50"></span>
+              <span data-i18n="logos-badge">Confianza & Alianzas</span>
+              <span class="w-6 h-px bg-custom-accent/50"></span>
             </span>
-            <span class="text-lg md:text-xl font-bold tracking-widest text-custom-main hover:text-custom-accent transition-colors duration-300 cursor-default">
-                GLOBAL<span class="text-custom-accent">.</span>LOGISTICS
-            </span>
-            <span class="text-lg md:text-xl font-serif italic text-custom-main hover:text-custom-accent transition-colors duration-300 cursor-default">
-                Boutique Hotels
-            </span>
-            <span class="text-lg md:text-xl font-mono font-bold text-custom-main hover:text-custom-accent transition-colors duration-300 cursor-default">
-                FINANCE GROUP
-            </span>
+            <h3 class="text-xl md:text-2xl font-bold text-custom-main tracking-tight" data-i18n="logos-title">
+                Empresas que podrían contratar tus servicios
+            </h3>
+            <p class="text-xs md:text-sm text-custom-muted mt-2 max-w-md mx-auto" data-i18n="logos-desc">
+                Ejemplo visual de cómo se muestran tus clientes o aliados clave.
+            </p>
+        </div>
+
+        <!-- Carrusel Infinito (Marquee) -->
+        <div class="logos-marquee-container relative py-6 rounded-lg border border-custom/15 bg-custom-card/20">
+            <div class="logos-track">
+                <!-- Set 1 -->
+                <div class="logos-item">
+                    <span class="text-lg md:text-xl font-black tracking-tighter">TECH<span class="font-light">CORP</span></span>
+                </div>
+                <div class="logos-item">
+                    <span class="text-lg md:text-xl font-bold tracking-widest">GLOBAL<span class="text-custom-accent">.</span>LOG</span>
+                </div>
+                <div class="logos-item">
+                    <span class="text-lg md:text-xl font-serif italic">Boutique Hotels</span>
+                </div>
+                <div class="logos-item">
+                    <span class="text-lg md:text-xl font-mono font-bold">FINANCE GROUP</span>
+                </div>
+                <div class="logos-item">
+                    <span class="text-lg md:text-xl font-extrabold tracking-tight">NEXUS<span class="text-custom-accent">Trade</span></span>
+                </div>
+                <div class="logos-item">
+                    <span class="text-lg md:text-xl font-light tracking-[0.15em] uppercase">Meridian Co.</span>
+                </div>
+
+                <!-- Set 2 (Duplicado para loop infinito sin cortes) -->
+                <div class="logos-item">
+                    <span class="text-lg md:text-xl font-black tracking-tighter">TECH<span class="font-light">CORP</span></span>
+                </div>
+                <div class="logos-item">
+                    <span class="text-lg md:text-xl font-bold tracking-widest">GLOBAL<span class="text-custom-accent">.</span>LOG</span>
+                </div>
+                <div class="logos-item">
+                    <span class="text-lg md:text-xl font-serif italic">Boutique Hotels</span>
+                </div>
+                <div class="logos-item">
+                    <span class="text-lg md:text-xl font-mono font-bold">FINANCE GROUP</span>
+                </div>
+                <div class="logos-item">
+                    <span class="text-lg md:text-xl font-extrabold tracking-tight">NEXUS<span class="text-custom-accent">Trade</span></span>
+                </div>
+                <div class="logos-item">
+                    <span class="text-lg md:text-xl font-light tracking-[0.15em] uppercase">Meridian Co.</span>
+                </div>
+            </div>
+
+            <!-- Fade Edges (Difuminado lateral premium) -->
+            <div class="logos-fade-left"></div>
+            <div class="logos-fade-right"></div>
         </div>
     </div>
 </section>
