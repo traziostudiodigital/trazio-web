@@ -4,25 +4,34 @@
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[350px] bg-gradient-to-r from-custom-accent/20 to-transparent blur-3xl rounded-full" aria-hidden="true"></div>
     </div>
 
-    <div class="max-w-7xl mx-auto relative z-10">
-        <div class="text-center max-w-3xl mx-auto mb-16">
+     <div class="text-center max-w-3xl mx-auto mb-16">
             <span data-i18n="process-badge" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase border border-custom/30 text-custom-accent bg-custom-accent/5 mb-4">
                 Nuestro Método
             </span>
             <h2 data-i18n="process-title" class="text-4xl sm:text-5xl font-bold tracking-tighter mb-6 text-custom-main">
                 Tu presencia online en 3 pasos
             </h2>
-            <p data-i18n="process-subtitle" class="text-lg sm:text-xl text-custom-muted leading-relaxed">
+            <p data-i18n="process-subtitle" class="text-lg sm:text-xl text-custom-muted leading-relaxed mb-8">
                 Un flujo de trabajo optimizado y transparente para llevar tu negocio al entorno digital de forma profesional.
             </p>
+
+            <!-- Indicador de Swipe para móvil -->
+            <div class="flex items-center justify-center gap-2 md:hidden text-custom-accent/60 animate-pulse">
+                <span data-i18n="process-swipe-hint" class="text-xs font-medium uppercase tracking-widest">Desliza para ver el proceso</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+            </div>
         </div>
 
         <div class="relative">
+            <!-- Línea conectora oculta en móvil para no interferir con el scroll -->
             <div class="hidden md:block absolute top-[68px] left-[15%] right-[15%] h-[2px] bg-gradient-to-r from-custom-accent/10 via-custom-accent/40 to-custom-accent/10 z-0" aria-hidden="true"></div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 relative z-10">
+
+            <!-- Contenedor con scroll lateral en móvil -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 relative z-10 ecosystem-scroll">
                 <!-- Paso 01 -->
-                <div class="flex flex-col items-center md:items-start text-center md:text-left group">
+                <div class="flex flex-col items-center md:items-start text-center md:text-left group ecosystem-card">
                     <div class="w-16 h-16 rounded-2xl bg-custom-card border border-custom-accent/20 flex items-center justify-center text-2xl font-extrabold text-custom-accent shadow-lg shadow-custom-accent/5 mb-6 group-hover:border-custom-accent/60 group-hover:scale-105 transition-all duration-300">
                         01
                     </div>
@@ -35,7 +44,7 @@
                 </div>
 
                 <!-- Paso 02 -->
-                <div class="flex flex-col items-center md:items-start text-center md:text-left group">
+                <div class="flex flex-col items-center md:items-start text-center md:text-left group ecosystem-card">
                     <div class="w-16 h-16 rounded-2xl bg-custom-card border border-custom-accent/20 flex items-center justify-center text-2xl font-extrabold text-custom-accent shadow-lg shadow-custom-accent/5 mb-6 group-hover:border-custom-accent/60 group-hover:scale-105 transition-all duration-300">
                         02
                     </div>
@@ -48,7 +57,7 @@
                 </div>
 
                 <!-- Paso 03 -->
-                <div class="flex flex-col items-center md:items-start text-center md:text-left group">
+                <div class="flex flex-col items-center md:items-start text-center md:text-left group ecosystem-card">
                     <div class="w-16 h-16 rounded-2xl bg-custom-card border border-custom-accent/20 flex items-center justify-center text-2xl font-extrabold text-custom-accent shadow-lg shadow-custom-accent/5 mb-6 group-hover:border-custom-accent/60 group-hover:scale-105 transition-all duration-300">
                         03
                     </div>

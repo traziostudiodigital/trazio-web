@@ -251,6 +251,61 @@ header a:active img {
 .border-double-gold > div {
   border-radius: 6px !important; /* Slightly tighter radius for nested child container */
 }
+@media (max-width: 639px) {
+  .ecosystem-scroll {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 1rem;
+    padding-bottom: 0.5rem;
+    margin: 0 -1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    /* Oculta la barra de scroll nativa manteniendo la funcionalidad */
+    scrollbar-width: none;
+  }
+
+  .ecosystem-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ecosystem-card {
+    flex: 0 0 82%;
+    scroll-snap-align: center;
+  }
+
+  /* NUEVO: Estilos para las guías de desplazamiento en móvil */
+  .scroll-hint {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px; /* Ancho de la guía */
+    height: 32px; /* Alto de la guía */
+    z-index: 10;
+    pointer-events: none; /* Permite que los clics pasen a las tarjetas */
+    color: var(--accent); /* Color dorado para la flecha */
+    opacity: 0.6; /* Un poco transparente */
+    transition: opacity 0.3s ease;
+  }
+
+  .scroll-hint-left {
+    left: 0;
+    background: linear-gradient(to right, var(--bg-primary) 30%, transparent 100%);
+  }
+
+  .scroll-hint-right {
+    right: 0;
+    background: linear-gradient(to left, var(--bg-primary) 30%, transparent 100%);
+  }
+
+  .scroll-hint svg {
+    filter: drop-shadow(0 0 3px rgba(var(--accent-rgb), 0.3)); /* Sutil resplandor */
+  }
+}
 
 /* AGREGAR ESTE BLOQUE NUEVO AQUÍ ⬇️ */
 @media (max-width: 767px) {
@@ -351,4 +406,6 @@ header a:active img {
         color: #000000 !important;
         text-decoration: none !important;
     }
+
+    
 }
