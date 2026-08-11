@@ -252,6 +252,41 @@ header a:active img {
   border-radius: 6px !important; /* Slightly tighter radius for nested child container */
 }
 
+/* Evita scroll vertical largo en móvil mostrando las tarjetas
+   en un carril horizontal con scroll-snap y "peek" de la siguiente card */
+@media (max-width: 639px) {
+  .ecosystem-scroll {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 1rem;
+    padding-bottom: 0.5rem;
+    margin: 0 -1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    /* Oculta la barra de scroll nativa manteniendo la funcionalidad */
+    scrollbar-width: none;
+  }
+
+  .ecosystem-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ecosystem-card {
+    flex: 0 0 82%;
+    scroll-snap-align: center;
+  }
+}
+
+/* --- INDICADOR DE SWIPE (ICONO ANIMADO) --- */
+@media (min-width: 640px) {
+  [data-i18n="infra-swipe-hint"],
+  [data-i18n="infra-swipe-hint"] + svg {
+    display: none;
+  }
+}
+
 /* --- TRAMAS DE FONDO PARA SECCIONES (BAJO CONTRASTE) --- */
 .bg-mesh-dots {
   background-image: radial-gradient(circle, #C9A96E 1px, transparent 1px);
