@@ -14,8 +14,10 @@
     </p>
   </header>
 
-  <!-- Grid Masonry -->
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 auto-rows-[220px] md:auto-rows-[260px]">
+  <!-- ============================================ -->
+  <!-- GRID MASONRY (Desktop / Tablet) -->
+  <!-- ============================================ -->
+  <div class="hidden md:grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 auto-rows-[220px] md:auto-rows-[260px]">
 
     <!-- Foto 1 (Destacada) -->
     <label for="lb-1" class="col-span-1 md:col-span-2 row-span-1 md:row-span-2 relative group block overflow-hidden rounded-lg border-double-gold bg-custom-card cursor-zoom-in">
@@ -43,7 +45,7 @@
 
     <!-- Foto 3 -->
     <label for="lb-3" class="col-span-1 row-span-1 relative group block overflow-hidden rounded-lg border border-custom bg-custom-card cursor-zoom-in">
-      <img src="assets/docusign-7RWBSYA9Rro-unsplash.webp" alt="Retratos" alt="Retratos" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110">
+      <img src="assets/docusign-7RWBSYA9Rro-unsplash.webp" alt="Retratos" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110">
       <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent flex flex-col justify-end p-5">
         <h3 data-i18n="portfolio-img3-title" class="text-lg font-bold text-white mb-0 group-hover:mb-1 transition-all duration-300 ease-in-out">Retratos para Negocios</h3>
         <p data-i18n="portfolio-img3-desc" class="text-custom-accent text-xs max-h-0 opacity-0 group-hover:max-h-10 group-hover:opacity-100 transition-all duration-300 ease-in-out overflow-hidden">Carga progresiva para no perder calidad.</p>
@@ -77,25 +79,85 @@
       </div>
     </label>
   </div>
+  <!-- FIN Grid Masonry (Desktop) -->
+
+
+  <!-- ============================================ -->
+  <!-- COVERFLOW 3D (Mobile only) -->
+  <!-- ============================================ -->
+  <div class="md:hidden">
+
+    <div class="pf-swipe-hint" aria-hidden="true">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l-3 3 3 3M16 9l3 3-3 3"/></svg>
+      <span data-i18n="portfolio-swipe-hint">Desliza para explorar</span>
+    </div>
+
+    <div class="pf-coverflow" role="list">
+
+      <div class="pf-card" role="listitem">
+        <label for="lb-1" class="pf-card-inner cursor-zoom-in">
+          <img src="assets/brayan-espitia-YKJ2C1p2VQ0-unsplash.webp" alt="Quinceañeras" loading="eager" decoding="async" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent flex flex-col justify-end p-5">
+            <h3 data-i18n="portfolio-img1-title" class="text-lg font-bold text-white">Sesión de Quinceañeras</h3>
+            <p data-i18n="portfolio-img1-desc" class="text-custom-accent text-xs mt-1">Galerías inmersivas con lightbox para ver cada detalle.</p>
+          </div>
+        </label>
+      </div>
+
+      <div class="pf-card" role="listitem">
+        <label for="lb-2" class="pf-card-inner cursor-zoom-in">
+          <img src="assets/nathan-dumlao-5BB_atDT4oA-unsplash.webp" alt="Bodas" loading="lazy" decoding="async" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent flex flex-col justify-end p-5">
+            <h3 data-i18n="portfolio-img2-title" class="text-lg font-bold text-white">Bodas y Eventos</h3>
+            <p data-i18n="portfolio-img2-desc" class="text-custom-accent text-xs mt-1">Muestra la sesión completa sin enviar 40 fotos por WhatsApp.</p>
+          </div>
+        </label>
+      </div>
+
+      <div class="pf-card" role="listitem">
+        <label for="lb-3" class="pf-card-inner cursor-zoom-in">
+          <img src="assets/docusign-7RWBSYA9Rro-unsplash.webp" alt="Retratos" loading="lazy" decoding="async" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent flex flex-col justify-end p-5">
+            <h3 data-i18n="portfolio-img3-title" class="text-lg font-bold text-white">Retratos para Negocios</h3>
+            <p data-i18n="portfolio-img3-desc" class="text-custom-accent text-xs mt-1">Carga progresiva para no perder calidad.</p>
+          </div>
+        </label>
+      </div>
+
+      <div class="pf-card" role="listitem">
+        <label for="lb-4" class="pf-card-inner cursor-zoom-in">
+          <img src="assets/s-o-c-i-a-l-c-u-t-RzA6DUaiTl4-unsplash.webp" alt="Moda" loading="lazy" decoding="async" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent flex flex-col justify-end p-5">
+            <h3 data-i18n="portfolio-img4-title" class="text-lg font-bold text-white">Catálogo de Moda Mipyme</h3>
+            <p data-i18n="portfolio-img4-desc" class="text-custom-accent text-xs mt-1">Protección contra descargas no autorizadas.</p>
+          </div>
+        </label>
+      </div>
+
+      <div class="pf-card" role="listitem">
+        <label for="lb-5" class="pf-card-inner cursor-zoom-in">
+          <img src="assets/javier-amador-H4_100XlT9s-unsplash.webp" alt="Exteriores" loading="lazy" decoding="async" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent flex flex-col justify-end p-5">
+            <h3 data-i18n="portfolio-img5-title" class="text-lg font-bold text-white">Fotografías de Exteriores</h3>
+            <p data-i18n="portfolio-img5-desc" class="text-custom-accent text-xs mt-1">Diseño adaptable a cualquier pantalla móvil.</p>
+          </div>
+        </label>
+      </div>
+
+    </div>
+
+    <!-- Dots indicadores (puramente visuales, decorativos) -->
+    <div class="pf-dots" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+  </div>
+  <!-- FIN Coverflow 3D (Mobile) -->
+
 
 <!-- Lightboxes: CSS puro (checkbox hack), sin JS -->
-<input type="checkbox" id="lb-1" class="sr-only peer/lb1">
-<label for="lb-1" aria-label="Cerrar imagen ampliada" class="hidden peer-checked/lb1:flex fixed inset-0 z-[60] bg-black/95 backdrop-blur-sm items-center justify-center p-6 md:p-14 cursor-zoom-out">
-  <img src="assets/brayan-espitia-YKJ2C1p2VQ0-unsplash.webp" alt="Quinceañeras" class="max-w-full max-h-full rounded-lg border-double-gold object-contain">
-  <span class="absolute top-5 right-5 md:top-8 md:right-8 w-10 h-10 rounded-lg bg-custom-card border border-custom flex items-center justify-center text-custom-main hover:border-custom-accent hover:text-custom-accent transition-all duration-300 ease-in-out">
-    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
-  </span>
-</label>
-
-<input type="checkbox" id="lb-2" class="sr-only peer/lb2">
-<label for="lb-2" aria-label="Cerrar imagen ampliada" class="hidden peer-checked/lb2:flex fixed inset-0 z-[60] bg-black/95 backdrop-blur-sm items-center justify-center p-6 md:p-14 cursor-zoom-out">
-  <img src="assets/nathan-dumlao-5BB_atDT4oA-unsplash.webp" alt="Bodas" class="max-w-full max-h-full rounded-lg border-double-gold object-contain">
-  <span class="absolute top-5 right-5 md:top-8 md:right-8 w-10 h-10 rounded-lg bg-custom-card border border-custom flex items-center justify-center text-custom-main hover:border-custom-accent hover:text-custom-accent transition-all duration-300 ease-in-out">
-    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
-  </span>
-</label>
-
-<input type="checkbox" id="lb-3" class="sr-only peer/lb3">
+<!-- Se reutilizan para las dos versiones (Desktop y Mobile) -->
+ <input type="checkbox" id="lb-3" class="sr-only peer/lb3">
 <label for="lb-3" aria-label="Cerrar imagen ampliada" class="hidden peer-checked/lb3:flex fixed inset-0 z-[60] bg-black/95 backdrop-blur-sm items-center justify-center p-6 md:p-14 cursor-zoom-out">
   <img src="assets/docusign-7RWBSYA9Rro-unsplash.webp" alt="Retratos" class="max-w-full max-h-full rounded-lg border-double-gold object-contain">
   <span class="absolute top-5 right-5 md:top-8 md:right-8 w-10 h-10 rounded-lg bg-custom-card border border-custom flex items-center justify-center text-custom-main hover:border-custom-accent hover:text-custom-accent transition-all duration-300 ease-in-out">

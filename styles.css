@@ -412,6 +412,120 @@ header a:active img {
   to   { transform: translateX(-50%); }
 }
 
+/* ============================================
+   PORTFOLIO COVERFLOW 3D — Solo mobile
+   ============================================ */
+
+.pf-coverflow {
+  display: flex;
+  gap: 1rem;
+  padding: 3rem 20vw; /* deja "aire" a los lados para centrar la tarjeta activa */
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  perspective: 1200px;
+  scrollbar-width: none;
+}
+.pf-coverflow::-webkit-scrollbar { display: none; }
+
+.pf-card {
+  flex: 0 0 68vw;
+  max-width: 320px;
+  height: 420px;
+  scroll-snap-align: center;
+  transform-style: preserve-3d;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), filter 0.4s ease, opacity 0.4s ease;
+  transform: scale(0.82) rotateY(18deg);
+  opacity: 0.55;
+  filter: blur(1.5px) brightness(0.7);
+}
+
+.pf-card-inner {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid var(--custom-border, rgba(255,255,255,0.1));
+  box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5);
+}
+.pf-card-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Tarjeta activa: se detecta por scroll-driven animation (fallback: todas iguales si no soportado) */
+@supports (animation-timeline: view()) {
+  .pf-card {
+    animation: pf-focus linear both;
+    animation-timeline: view(x);
+    animation-range: entry 25% cover 50% exit 75%;
+  }
+
+  @keyframes pf-focus {
+    0%   { transform: scale(0.8) rotateY(35deg) translateZ(-60px); opacity: 0.4; filter: blur(2px) brightness(0.6); }
+    50%  { transform: scale(1) rotateY(0deg) translateZ(0); opacity: 1; filter: blur(0) brightness(1); }
+    100% { transform: scale(0.8) rotateY(-35deg) translateZ(-60px); opacity: 0.4; filter: blur(2px) brightness(0.6); }
+  }
+}
+
+/* Fallback sin scroll-timeline: efecto estático más simple pero elegante */
+@supports not (animation-timeline: view()) {
+  .pf-card {
+    scroll-snap-align: center;
+  }
+  .pf-card:nth-child(1) { transform: scale(0.95) rotateY(0deg); opacity: 0.9; filter: none; }
+}
+
+/* Hint de swipe — aparece al entrar en viewport, invita a interactuar */
+.pf-swipe-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: var(--custom-accent, #d4af37);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  animation: pf-hint-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes pf-hint-pulse {
+  0%, 100% { opacity: 0.5; transform: translateX(0); }
+  50%      { opacity: 1;   transform: translateX(4px); }
+}
+
+/* Dots indicadores (decorativos, sin JS de sincronía real) */
+.pf-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+.pf-dots span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--custom-muted, rgba(255,255,255,0.25));
+  transition: background 0.3s ease;
+}
+
+/* Respeta accesibilidad: reduce animaciones si el usuario lo prefiere */
+@media (prefers-reduced-motion: reduce) {
+  .pf-card,
+  .pf-swipe-hint {
+    animation: none !important;
+    transform: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+  }
+}
+
 /* --- INDICADOR DE SWIPE (ICONO ANIMADO) --- */
 @media (min-width: 640px) {
   [data-i18n="infra-swipe-hint"],
