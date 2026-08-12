@@ -1,11 +1,12 @@
 <!-- Franja de Confianza Universal -->
 <section class="max-w-6xl mx-auto px-6 mb-16 -mt-8 relative z-20 animate-fade-in-up" style="animation-delay: 0.2s;">
-    <!-- Contenedor con textura y borde dorado, ~30% más grande (py-10 md:py-12 px-8 md:px-14) -->
-    <div class="relative bg-custom-card border-double-gold bg-pattern-diagonal rounded-lg overflow-hidden px-8 py-10 md:px-14 md:py-12 shadow-2xl">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 divide-y md:divide-y-0 md:divide-x divide-custom-accent/20">
+    <!-- Contenedor con overflow-hidden para el carrusel móvil -->
+    <div class="relative bg-custom-card border-double-gold bg-pattern-diagonal rounded-lg overflow-hidden shadow-2xl trust-marquee-container">
+        <!-- El track ahora es flex en móvil y grid en desktop -->
+        <div class="flex md:grid md:grid-cols-3 gap-6 divide-x-0 md:divide-x divide-custom-accent/20 trust-marquee-track py-10 md:py-12 px-8 md:px-14">
             
-            <!-- Elemento 1 (tarjeta con fondo del tema, sin textura) -->
-            <div class="flex flex-col items-center text-center px-4 pt-4 md:pt-0 first:pt-0 bg-custom-main rounded-lg p-4">
+            <!-- Elemento 1 -->
+            <div class="flex-shrink-0 w-[85vw] md:w-auto flex flex-col items-center text-center px-4 bg-custom-main rounded-lg p-4">
                 <span class="mb-3 text-custom-accent" aria-hidden="true">
                     <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
@@ -17,7 +18,7 @@
             </div>
             
             <!-- Elemento 2 -->
-            <div class="flex flex-col items-center text-center px-4 pt-6 md:pt-0 bg-custom-main rounded-lg p-4">
+            <div class="flex-shrink-0 w-[85vw] md:w-auto flex flex-col items-center text-center px-4 bg-custom-main rounded-lg p-4">
                 <span class="mb-3 text-custom-accent" aria-hidden="true">
                     <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
@@ -28,7 +29,7 @@
             </div>
 
             <!-- Elemento 3 -->
-            <div class="flex flex-col items-center text-center px-4 pt-6 md:pt-0 bg-custom-main rounded-lg p-4">
+            <div class="flex-shrink-0 w-[85vw] md:w-auto flex flex-col items-center text-center px-4 bg-custom-main rounded-lg p-4">
                 <span class="mb-3 text-custom-accent" aria-hidden="true">
                     <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M11 9a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -40,6 +41,28 @@
                 <p data-i18n="trust-item3-desc" class="text-xs text-custom-muted">Agencia basada en Cuba, a un WhatsApp de distancia.</p>
             </div>
 
+            <!-- DUPLICADOS PARA EFECTO INFINITO (Solo visibles en móvil para la animación) -->
+            <div class="md:hidden flex-shrink-0 w-[85vw] flex flex-col items-center text-center px-4 bg-custom-main rounded-lg p-4" aria-hidden="true">
+                <span class="mb-3 text-custom-accent">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" /><path stroke-linecap="round" stroke-linejoin="round" d="M3 3l18 18" /></svg>
+                </span>
+                <h3 class="text-sm font-bold text-custom-main mb-1">Pago Único</h3>
+                <p class="text-xs text-custom-muted">Sin mensualidades ni alquiler de servidores.</p>
+            </div>
+            <div class="md:hidden flex-shrink-0 w-[85vw] flex flex-col items-center text-center px-4 bg-custom-main rounded-lg p-4" aria-hidden="true">
+                <span class="mb-3 text-custom-accent">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg>
+                </span>
+                <h3 class="text-sm font-bold text-custom-main mb-1">Carga en 3G</h3>
+                <p class="text-xs text-custom-muted">Optimizada para conexiones lentas.</p>
+            </div>
+            <div class="md:hidden flex-shrink-0 w-[85vw] flex flex-col items-center text-center px-4 bg-custom-main rounded-lg p-4" aria-hidden="true">
+                <span class="mb-3 text-custom-accent">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 9a2 2 0 11-4 0 2 2 0 014 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M17 9a2 2 0 11-4 0 2 2 0 014 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M3 15c0-2.485 3.582-4.5 8-4.5s8 2.015 8 4.5v1.5c0 .828-3.582 1.5-8 1.5s-8-.672-8-1.5V15z" /></svg>
+                </span>
+                <h3 class="text-sm font-bold text-custom-main mb-1">Soporte Local</h3>
+                <p class="text-xs text-custom-muted">Agencia basada en Cuba.</p>
+            </div>
         </div>
     </div>
 </section>

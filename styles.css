@@ -251,6 +251,7 @@ header a:active img {
 .border-double-gold > div {
   border-radius: 6px !important; /* Slightly tighter radius for nested child container */
 }
+
 @media (max-width: 639px) {
   .ecosystem-scroll {
     display: flex;
@@ -307,39 +308,52 @@ header a:active img {
   }
 }
 
-/* AGREGAR ESTE BLOQUE NUEVO AQUÍ ⬇️ */
 @media (max-width: 767px) {
   .mockup-form-card.border-double-gold {
     outline-offset: 2px;
     margin: 2px;
   }
-}
 
-/* Evita scroll vertical largo en móvil mostrando las tarjetas
-   en un carril horizontal con scroll-snap y "peek" de la siguiente card */
-@media (max-width: 639px) {
-  .ecosystem-scroll {
+  /* --- ANIMACIÓN DE CONFIANZA (SÓLO MÓVIL) --- */
+  .trust-marquee-container {
+    overflow-x: auto; /* Permite el scroll horizontal */
+    -webkit-overflow-scrolling: touch; /* Mejora el rendimiento del scroll en iOS */
+    scroll-snap-type: x mandatory; /* Para que se ajuste a los elementos al deslizar */
     display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    gap: 1rem;
-    padding-bottom: 0.5rem;
-    margin: 0 -1.5rem;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    /* Oculta la barra de scroll nativa manteniendo la funcionalidad */
+    justify-content: center;
+    /* Ajustes para el mask-image si lo tuvieras, similar a .logos-marquee-container */
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    /* Oculta la barra de scroll nativa */
     scrollbar-width: none;
   }
 
-  .ecosystem-scroll::-webkit-scrollbar {
+  .trust-marquee-container::-webkit-scrollbar {
     display: none;
   }
 
-  .ecosystem-card {
-    flex: 0 0 82%;
-    scroll-snap-align: center;
+  .trust-marquee-track {
+    display: flex;
+    width: max-content;
+    animation: trust-slide-mobile 10s linear infinite;
+    gap: 1.5rem !important;   /* Espaciado consistente en el scroll */
   }
+
+  .trust-marquee-item { /* Asumiendo que tus elementos dentro del track tienen esta clase */
+    flex-shrink: 0; /* Para que los items no se encojan y mantengan su tamaño */
+    scroll-snap-align: center; /* Cada item se "engancha" al centro al deslizar */
+  }
+
+  /* Pausa al tocar (active) o pasar el mouse */
+  .trust-marquee-container:hover .trust-marquee-track,
+  .trust-marquee-container:active .trust-marquee-track {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes trust-slide-mobile {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
 
 /* --- INDICADOR DE SWIPE (ICONO ANIMADO) --- */
@@ -368,44 +382,42 @@ header a:active img {
 }
 
 @media print {
-    header, footer, nav, .hide-on-print, .no-print, button, .animate-fade-in-up {
-        display: none !important;
-    }
+  header, footer, nav, .hide-on-print, .no-print, button, .animate-fade-in-up {
+    display: none !important;
+  }
 
-    body {
-        background-color: #ffffff !important;
-        color: #000000 !important;
-        margin: 0;
-        padding: 0;
-        box-shadow: none !important;
-        -webkit-print-color-adjust: exact; /* For better print background colors */
-        print-color-adjust: exact;
-    }
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    margin: 0;
+    padding: 0;
+    box-shadow: none !important;
+    -webkit-print-color-adjust: exact; /* For better print background colors */
+    print-color-adjust: exact;
+  }
 
-    /* Optimize for A4 size */
-    @page {
-        size: A4;
-        margin: 1cm; /* Adjust margins as needed */
-    }
+  /* Optimize for A4 size */
+  @page {
+    size: A4;
+    margin: 1cm; /* Adjust margins as needed */
+  }
 
-    /* Remove shadows from all elements */
-    * {
-        box-shadow: none !important;
-        text-shadow: none !important;
-        -webkit-box-shadow: none !important;
-        -moz-box-shadow: none !important;
-    }
+  /* Remove shadows from all elements */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+  }
 
-    /* Ensure text is black for readability */
-    .text-custom-main, .text-custom-muted, h1, h2, h3, h4, h5, h6, p, span, div {
-        color: #000000 !important;
-    }
+  /* Ensure text is black for readability */
+  .text-custom-main, .text-custom-muted, h1, h2, h3, h4, h5, h6, p, span, div {
+    color: #000000 !important;
+  }
 
-    /* Ensure links are black and not underlined unless specified */
-    a {
-        color: #000000 !important;
-        text-decoration: none !important;
-    }
-
-    
+  /* Ensure links are black and not underlined unless specified */
+  a {
+    color: #000000 !important;
+    text-decoration: none !important;
+  }
 }
