@@ -356,6 +356,62 @@ header a:active img {
   to   { transform: translateX(-50%); }
 }
 
+/* --- ECOSYSTEM MARQUEE (SÓLO MÓVIL) --- */
+@media (max-width: 639px) {
+  .ecosystem-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    display: flex;
+    justify-content: center;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    scrollbar-width: none;
+  }
+  .ecosystem-scroll::-webkit-scrollbar {
+    display: none;
+  }
+  .ecosystem-track {
+    display: flex;
+    width: max-content;
+    animation: ecosystem-slide 15s linear infinite;
+    gap: 1rem;
+  }
+  .ecosystem-card {
+    flex: 0 0 82%;
+    scroll-snap-align: center;
+  }
+  /* Pausa al tocar o pasar el mouse */
+  .ecosystem-scroll:hover .ecosystem-track,
+  .ecosystem-scroll:active .ecosystem-track {
+    animation-play-state: paused;
+  }
+}
+
+/* --- ESCRITORIO: Grid normal sin animación --- */
+@media (min-width: 640px) {
+  .ecosystem-track {
+    display: grid !important;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1.5rem;
+    animation: none;           /* Elimina la animación */
+    width: auto;               /* Vuelve al ancho normal */
+  }
+  .ecosystem-card {
+    flex: none;                /* Anula el flex del móvil */
+    width: auto;
+  }
+  /* Oculta las tarjetas duplicadas */
+  .ecosystem-card:nth-child(n+4) {
+    display: none !important;
+  }
+}
+
+@keyframes ecosystem-slide {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
 /* --- INDICADOR DE SWIPE (ICONO ANIMADO) --- */
 @media (min-width: 640px) {
   [data-i18n="infra-swipe-hint"],

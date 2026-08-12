@@ -15,68 +15,134 @@
       </p>
     </header>
 
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-6">
+    <!-- En móvil se activa la clase ecosystem-scroll (flex + scroll horizontal) -->
+    <div class="ecosystem-scroll">
+      <div class="ecosystem-track grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-6">
 
-      <!-- Tarjeta 1: BILINGÜE (Ancha - 7 Cols) -->
-      <div class="group relative overflow-hidden md:col-span-7 bg-custom-card border border-custom p-8 md:p-10 rounded-lg hover:border-custom-accent/40 hover:shadow-2xl hover:shadow-black/30 transition-all duration-300 ease-in-out hover:-translate-y-1">
-        <span class="absolute -top-2 right-2 text-6xl font-black text-custom-accent/5 group-hover:text-custom-accent/10 transition-all duration-300 ease-in-out select-none leading-none" aria-hidden="true">01</span>
-        <div class="relative z-10">
-          <div class="flex items-center justify-between mb-6">
-            <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-custom-accent/10 border border-custom-accent/20 text-custom-accent group-hover:scale-105 group-hover:bg-custom-accent/15 transition-all duration-300 ease-in-out">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 016-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 01-3.827-5.802" />
-              </svg>
+        <!-- PRIMER SET (ORIGINALES) -->
+        <!-- Tarjeta 1: BILINGÜE (Ancha - 7 Cols) -->
+        <div class="ecosystem-card group relative overflow-hidden w-[calc(100vw-3rem)] max-w-sm shrink-0 md:shrink md:w-auto md:col-span-7 bg-custom-card border border-custom p-5 sm:p-6 md:p-10 rounded-lg hover:border-custom-accent/40 hover:shadow-2xl hover:shadow-black/30 transition-all duration-300 ease-in-out hover:-translate-y-1">
+          <span class="absolute -top-2 right-2 text-5xl md:text-6xl font-black text-custom-accent/5 group-hover:text-custom-accent/10 transition-all duration-300 ease-in-out select-none leading-none" aria-hidden="true">01</span>
+          <div class="relative z-10">
+            <div class="flex items-center justify-between mb-4 md:mb-6">
+              <div class="inline-flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-lg bg-custom-accent/10 border border-custom-accent/20 text-custom-accent group-hover:scale-105 group-hover:bg-custom-accent/15 transition-all duration-300 ease-in-out">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 md:w-6 md:h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 016-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 01-3.827-5.802" />
+                </svg>
+              </div>
+              <span class="text-[10px] font-bold uppercase tracking-wider text-custom-accent border border-custom-accent/30 px-2.5 py-1 rounded-md" data-i18n="features-card1-badge">Global</span>
             </div>
-            <span class="text-[10px] font-bold uppercase tracking-wider text-custom-accent border border-custom-accent/30 px-2.5 py-1 rounded-md" data-i18n="features-card1-badge">Global</span>
+            <h3 class="text-lg md:text-xl font-bold text-custom-main mb-2 md:mb-3 tracking-tight group-hover:text-custom-accent transition-colors duration-300 ease-in-out" data-i18n="features-card1-title">Bilingüe Instantáneo</h3>
+            <p class="text-custom-muted leading-relaxed text-xs sm:text-sm md:text-base" data-i18n="features-card1-description">
+              Tu web cambia de español a inglés sin recargar.
+              <span class="text-custom-muted/80 italic mt-2 block border-l-2 border-custom-accent/30 pl-3">Ideal para captar clientes extranjeros y agencias internacionales sin fricción.</span>
+            </p>
           </div>
-          <h3 class="text-xl font-bold text-custom-main mb-3 tracking-tight group-hover:text-custom-accent transition-colors duration-300 ease-in-out" data-i18n="features-card1-title">Bilingüe Instantáneo</h3>
-          <p class="text-custom-muted leading-relaxed text-sm md:text-base" data-i18n="features-card1-description">
-            Tu web cambia de español a inglés sin recargar.
-            <span class="text-custom-muted/80 italic mt-2 block border-l-2 border-custom-accent/30 pl-3">Ideal para captar clientes extranjeros y agencias internacionales sin fricción.</span>
-          </p>
         </div>
-      </div>
 
-      <!-- Tarjeta 2: CARGA LIGERA (Estrecha - 5 Cols) -->
-      <div class="group relative overflow-hidden md:col-span-5 bg-custom-card border border-custom p-8 md:p-10 rounded-lg hover:border-custom-accent/40 hover:shadow-2xl hover:shadow-black/30 transition-all duration-300 ease-in-out hover:-translate-y-1">
-        <span class="absolute -top-2 right-2 text-6xl font-black text-custom-accent/5 group-hover:text-custom-accent/10 transition-all duration-300 ease-in-out select-none leading-none" aria-hidden="true">02</span>
-        <div class="relative z-10">
-          <div class="flex items-center justify-between mb-6">
-            <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-custom-accent/10 border border-custom-accent/20 text-custom-accent group-hover:scale-105 group-hover:bg-custom-accent/15 transition-all duration-300 ease-in-out">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-              </svg>
+        <!-- Tarjeta 2: CARGA LIGERA (Estrecha - 5 Cols) -->
+        <div class="ecosystem-card group relative overflow-hidden w-[calc(100vw-3rem)] max-w-sm shrink-0 md:shrink md:w-auto md:col-span-5 bg-custom-card border border-custom p-5 sm:p-6 md:p-10 rounded-lg hover:border-custom-accent/40 hover:shadow-2xl hover:shadow-black/30 transition-all duration-300 ease-in-out hover:-translate-y-1">
+          <span class="absolute -top-2 right-2 text-5xl md:text-6xl font-black text-custom-accent/5 group-hover:text-custom-accent/10 transition-all duration-300 ease-in-out select-none leading-none" aria-hidden="true">02</span>
+          <div class="relative z-10">
+            <div class="flex items-center justify-between mb-4 md:mb-6">
+              <div class="inline-flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-lg bg-custom-accent/10 border border-custom-accent/20 text-custom-accent group-hover:scale-105 group-hover:bg-custom-accent/15 transition-all duration-300 ease-in-out">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 md:w-6 md:h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                </svg>
+              </div>
+              <span class="text-[10px] font-bold uppercase tracking-wider text-custom-accent border border-custom-accent/30 px-2.5 py-1 rounded-md" data-i18n="features-card2-badge">Ideal Cuba</span>
             </div>
-            <span class="text-[10px] font-bold uppercase tracking-wider text-custom-accent border border-custom-accent/30 px-2.5 py-1 rounded-md" data-i18n="features-card2-badge">Ideal Cuba</span>
+            <h3 class="text-lg md:text-xl font-bold text-custom-main mb-2 md:mb-3 tracking-tight group-hover:text-custom-accent transition-colors duration-300 ease-in-out" data-i18n="features-card2-title">Carga Ultraligera</h3>
+            <p class="text-custom-muted leading-relaxed text-xs sm:text-sm md:text-base" data-i18n="features-card2-description">
+              Optimizada para redes 3G/4G en Cuba.
+              <span class="text-custom-muted/80 italic mt-2 block border-l-2 border-custom-accent/30 pl-3">Tus fotos cargan al instante sin consumir los megas de tu cliente.</span>
+            </p>
           </div>
-          <h3 class="text-xl font-bold text-custom-main mb-3 tracking-tight group-hover:text-custom-accent transition-colors duration-300 ease-in-out" data-i18n="features-card2-title">Carga Ultraligera</h3>
-          <p class="text-custom-muted leading-relaxed text-sm md:text-base" data-i18n="features-card2-description">
-            Optimizada para redes 3G/4G en Cuba.
-            <span class="text-custom-muted/80 italic mt-2 block border-l-2 border-custom-accent/30 pl-3">Tus fotos cargan al instante sin consumir los megas de tu cliente.</span>
-          </p>
         </div>
-      </div>
 
-      <!-- Tarjeta 3: MODO CLARO/OSCURO (Ancha - 12 Cols) -->
-      <div class="group relative overflow-hidden md:col-span-12 bg-custom-card border border-custom p-8 md:p-10 rounded-lg hover:border-custom-accent/40 hover:shadow-2xl hover:shadow-black/30 transition-all duration-300 ease-in-out hover:-translate-y-1">
-        <span class="absolute -top-2 right-2 text-6xl font-black text-custom-accent/5 group-hover:text-custom-accent/10 transition-all duration-300 ease-in-out select-none leading-none" aria-hidden="true">03</span>
-        <div class="relative z-10">
-          <div class="flex items-center justify-between mb-6">
-            <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-custom-accent/10 border border-custom-accent/20 text-custom-accent group-hover:scale-105 group-hover:bg-custom-accent/15 transition-all duration-300 ease-in-out">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
-              </svg>
+        <!-- Tarjeta 3: MODO CLARO/OSCURO (Ancha - 12 Cols) -->
+        <div class="ecosystem-card group relative overflow-hidden w-[calc(100vw-3rem)] max-w-sm shrink-0 md:shrink md:w-auto md:col-span-12 bg-custom-card border border-custom p-5 sm:p-6 md:p-10 rounded-lg hover:border-custom-accent/40 hover:shadow-2xl hover:shadow-black/30 transition-all duration-300 ease-in-out hover:-translate-y-1">
+          <span class="absolute -top-2 right-2 text-5xl md:text-6xl font-black text-custom-accent/5 group-hover:text-custom-accent/10 transition-all duration-300 ease-in-out select-none leading-none" aria-hidden="true">03</span>
+          <div class="relative z-10">
+            <div class="flex items-center justify-between mb-4 md:mb-6">
+              <div class="inline-flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-lg bg-custom-accent/10 border border-custom-accent/20 text-custom-accent group-hover:scale-105 group-hover:bg-custom-accent/15 transition-all duration-300 ease-in-out">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 md:w-6 md:h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                </svg>
+              </div>
+              <span class="text-[10px] font-bold uppercase tracking-wider text-custom-accent border border-custom-accent/30 px-2.5 py-1 rounded-md" data-i18n="features-card3-badge">Diseño de Alta Gama</span>
             </div>
-            <span class="text-[10px] font-bold uppercase tracking-wider text-custom-accent border border-custom-accent/30 px-2.5 py-1 rounded-md" data-i18n="features-card3-badge">Diseño de Alta Gama</span>
+            <h3 class="text-lg md:text-xl font-bold text-custom-main mb-2 md:mb-3 tracking-tight group-hover:text-custom-accent transition-colors duration-300 ease-in-out" data-i18n="features-card3-title">Modo Claro/Oscuro</h3>
+            <p class="text-custom-muted leading-relaxed text-xs sm:text-sm md:text-base" data-i18n="features-card3-description">
+              Diseño adaptable a la preferencia del usuario.
+              <span class="text-custom-muted/80 italic mt-2 block border-l-2 border-custom-accent/30 pl-3">Brinda una experiencia de lectura premium y moderna en cualquier condición de luz.</span>
+            </p>
           </div>
-          <h3 class="text-xl font-bold text-custom-main mb-3 tracking-tight group-hover:text-custom-accent transition-colors duration-300 ease-in-out" data-i18n="features-card3-title">Modo Claro/Oscuro</h3>
-          <p class="text-custom-muted leading-relaxed text-sm md:text-base" data-i18n="features-card3-description">
-            Diseño adaptable a la preferencia del usuario.
-            <span class="text-custom-muted/80 italic mt-2 block border-l-2 border-custom-accent/30 pl-3">Brinda una experiencia de lectura premium y moderna en cualquier condición de luz.</span>
-          </p>
         </div>
-      </div>
 
-    </div>
-  </div>
+        <!-- SEGUNDO SET (DUPLICADAS - se ocultan en escritorio con md:hidden) -->
+        <!-- Tarjeta 1: BILINGÜE (Duplicada) -->
+        <div class="ecosystem-card group relative overflow-hidden w-[calc(100vw-3rem)] max-w-sm shrink-0 md:hidden bg-custom-card border border-custom p-5 sm:p-6 md:p-10 rounded-lg hover:border-custom-accent/40 hover:shadow-2xl hover:shadow-black/30 transition-all duration-300 ease-in-out hover:-translate-y-1">
+          <span class="absolute -top-2 right-2 text-5xl md:text-6xl font-black text-custom-accent/5 group-hover:text-custom-accent/10 transition-all duration-300 ease-in-out select-none leading-none" aria-hidden="true">01</span>
+          <div class="relative z-10">
+            <div class="flex items-center justify-between mb-4 md:mb-6">
+              <div class="inline-flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-lg bg-custom-accent/10 border border-custom-accent/20 text-custom-accent group-hover:scale-105 group-hover:bg-custom-accent/15 transition-all duration-300 ease-in-out">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 md:w-6 md:h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 016-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 01-3.827-5.802" />
+                </svg>
+              </div>
+              <span class="text-[10px] font-bold uppercase tracking-wider text-custom-accent border border-custom-accent/30 px-2.5 py-1 rounded-md" data-i18n="features-card1-badge">Global</span>
+            </div>
+            <h3 class="text-lg md:text-xl font-bold text-custom-main mb-2 md:mb-3 tracking-tight group-hover:text-custom-accent transition-colors duration-300 ease-in-out" data-i18n="features-card1-title">Bilingüe Instantáneo</h3>
+            <p class="text-custom-muted leading-relaxed text-xs sm:text-sm md:text-base" data-i18n="features-card1-description">
+              Tu web cambia de español a inglés sin recargar.
+              <span class="text-custom-muted/80 italic mt-2 block border-l-2 border-custom-accent/30 pl-3">Ideal para captar clientes extranjeros y agencias internacionales sin fricción.</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Tarjeta 2: CARGA LIGERA (Duplicada) -->
+        <div class="ecosystem-card group relative overflow-hidden w-[calc(100vw-3rem)] max-w-sm shrink-0 md:hidden bg-custom-card border border-custom p-5 sm:p-6 md:p-10 rounded-lg hover:border-custom-accent/40 hover:shadow-2xl hover:shadow-black/30 transition-all duration-300 ease-in-out hover:-translate-y-1">
+          <span class="absolute -top-2 right-2 text-5xl md:text-6xl font-black text-custom-accent/5 group-hover:text-custom-accent/10 transition-all duration-300 ease-in-out select-none leading-none" aria-hidden="true">02</span>
+          <div class="relative z-10">
+            <div class="flex items-center justify-between mb-4 md:mb-6">
+              <div class="inline-flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-lg bg-custom-accent/10 border border-custom-accent/20 text-custom-accent group-hover:scale-105 group-hover:bg-custom-accent/15 transition-all duration-300 ease-in-out">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 md:w-6 md:h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                </svg>
+              </div>
+              <span class="text-[10px] font-bold uppercase tracking-wider text-custom-accent border border-custom-accent/30 px-2.5 py-1 rounded-md" data-i18n="features-card2-badge">Ideal Cuba</span>
+            </div>
+            <h3 class="text-lg md:text-xl font-bold text-custom-main mb-2 md:mb-3 tracking-tight group-hover:text-custom-accent transition-colors duration-300 ease-in-out" data-i18n="features-card2-title">Carga Ultraligera</h3>
+            <p class="text-custom-muted leading-relaxed text-xs sm:text-sm md:text-base" data-i18n="features-card2-description">
+              Optimizada para redes 3G/4G en Cuba.
+              <span class="text-custom-muted/80 italic mt-2 block border-l-2 border-custom-accent/30 pl-3">Tus fotos cargan al instante sin consumir los megas de tu cliente.</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Tarjeta 3: MODO CLARO/OSCURO (Duplicada) -->
+        <div class="ecosystem-card group relative overflow-hidden w-[calc(100vw-3rem)] max-w-sm shrink-0 md:hidden bg-custom-card border border-custom p-5 sm:p-6 md:p-10 rounded-lg hover:border-custom-accent/40 hover:shadow-2xl hover:shadow-black/30 transition-all duration-300 ease-in-out hover:-translate-y-1">
+          <span class="absolute -top-2 right-2 text-5xl md:text-6xl font-black text-custom-accent/5 group-hover:text-custom-accent/10 transition-all duration-300 ease-in-out select-none leading-none" aria-hidden="true">03</span>
+          <div class="relative z-10">
+            <div class="flex items-center justify-between mb-4 md:mb-6">
+              <div class="inline-flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-lg bg-custom-accent/10 border border-custom-accent/20 text-custom-accent group-hover:scale-105 group-hover:bg-custom-accent/15 transition-all duration-300 ease-in-out">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 md:w-6 md:h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                </svg>
+              </div>
+              <span class="text-[10px] font-bold uppercase tracking-wider text-custom-accent border border-custom-accent/30 px-2.5 py-1 rounded-md" data-i18n="features-card3-badge">Diseño de Alta Gama</span>
+            </div>
+            <h3 class="text-lg md:text-xl font-bold text-custom-main mb-2 md:mb-3 tracking-tight group-hover:text-custom-accent transition-colors duration-300 ease-in-out" data-i18n="features-card3-title">Modo Claro/Oscuro</h3>
+            <p class="text-custom-muted leading-relaxed text-xs sm:text-sm md:text-base" data-i18n="features-card3-description">
+              Diseño adaptable a la preferencia del usuario.
+              <span class="text-custom-muted/80 italic mt-2 block border-l-2 border-custom-accent/30 pl-3">Brinda una experiencia de lectura premium y moderna en cualquier condición de luz.</span>
+            </p>
+          </div>
+        </div>
+
+      </div> <!-- cierre ecosystem-track -->
+    </div> <!-- cierre ecosystem-scroll -->
+
+  </div> <!-- cierre max-w-6xl -->
 </section>
