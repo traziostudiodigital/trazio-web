@@ -138,6 +138,23 @@
     animation: pricing-swipe-hint 1.8s ease-in-out infinite;
   }
 }
+/* Estilos para el carrusel de casos en móvil */
+@media (max-width: 767px) {
+  /* Asegura el scroll-snap correcto para el contenedor */
+  .scroll-snap-x-mandatory {
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; /* Mejora el rendimiento del scroll en iOS */
+  }
+
+  /* Oculta la barra de desplazamiento para un look más limpio */
+  .custom-scroll-hide {
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .custom-scroll-hide::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+}
 
 /* --- ACCESIBILIDAD: ACCESO UNIVERSAL PREFERS-REDUCED-MOTION --- */
 @media (prefers-reduced-motion: reduce) {

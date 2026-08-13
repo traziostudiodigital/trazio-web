@@ -24,10 +24,12 @@
             <span class="hidden sm:inline-block text-[10px] tracking-widest uppercase border border-custom-accent/30 text-custom-accent px-2 py-0.5 rounded" data-i18n="demo-tag">Muestra Interactiva</span>
         </div>
 
-        <!-- Rejilla de Casos Unificados -->
-        <div class="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-custom/20">
+        <!-- Rejilla de Casos Unificados / Carrusel Mobile -->
+        <!-- Added flex for mobile, scroll-snap, and gap. Retained grid for desktop. -->
+        <!-- Each case now has flex-shrink-0 w-full snap-center for mobile sizing. -->
+        <div class="flex overflow-x-auto scroll-snap-x-mandatory pb-4 gap-4 custom-scroll-hide md:grid md:grid-cols-2 md:divide-x divide-custom/20">
             <!-- Caso 1 -->
-            <div class="p-6 md:p-8 flex flex-col justify-between group hover:bg-custom-main/20 transition-colors duration-300">
+            <div class="p-6 md:p-8 flex flex-col justify-between group hover:bg-custom-main/20 transition-colors duration-300 flex-shrink-0 w-full snap-center md:w-auto border-b md:border-b-0 border-custom/20">
                 <div>
                     <div class="flex items-center justify-between mb-4">
                         <span class="text-[11px] font-mono font-bold text-custom-accent tracking-wider uppercase" data-i18n="case1-category">01. LOGÍSTICA & ERP</span>
@@ -54,7 +56,8 @@
             </div>
 
             <!-- Caso 2 -->
-            <div class="p-6 md:p-8 flex flex-col justify-between group hover:bg-custom-main/20 transition-colors duration-300">
+            <!-- Note: For this second case, removed border-b since the last item in a mobile carousel doesn't typically need a bottom border -->
+            <div class="p-6 md:p-8 flex flex-col justify-between group hover:bg-custom-main/20 transition-colors duration-300 flex-shrink-0 w-full snap-center md:w-auto border-custom/20">
                 <div>
                     <div class="flex items-center justify-between mb-4">
                         <span class="text-[11px] font-mono font-bold text-custom-accent tracking-wider uppercase" data-i18n="case2-category">02. INFRAESTRUCTURA</span>
@@ -79,6 +82,13 @@
                     </span>
                 </div>
             </div>
+        </div>
+
+        <!-- Paginación de Puntos (Solo Móvil) -->
+        <!-- Added dots for navigation hint on mobile, hidden on desktop -->
+        <div class="flex justify-center gap-2 pb-6 md:hidden">
+            <span class="w-2 h-2 rounded-full bg-custom-accent/60 current-case-dot"></span>
+            <span class="w-2 h-2 rounded-full bg-custom-accent/20"></span>
         </div>
     </div>
 </section>
