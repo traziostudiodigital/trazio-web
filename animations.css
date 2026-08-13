@@ -84,13 +84,69 @@
   0%, 100% { opacity: 0.5; transform: translateX(0); }
   50%      { opacity: 1;   transform: translateX(4px); }
 }
+/* --- PRICING CAROUSEL 3D FOCUS (MÓVIL) --- */
+/* Reemplaza @keyframes pricing-focus (ya no se usa) */
 
-/* --- ACCESIBILIDAD: respeta prefers-reduced-motion --- */
-/* Desactiva TODAS las animaciones/transforms de este archivo si el usuario lo prefiere */
+@keyframes pricing-swipe-hint {
+  0%, 100% {
+    transform: translateX(0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateX(6px);
+    opacity: 1;
+  }
+}
+
+/* --- REGLAS Y COMPATIBILIDAD PARA CARRUSEL DE PRECIOS MÓVIL --- */
+/* Ocultar barra de scroll en el contenedor horizontal */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (max-width: 767px) {
+  /* Habilita perspectiva 3D en el carrusel horizontal */
+  .snap-x {
+    perspective: 1000px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Estado por defecto: tarjeta "en reposo" fuera de foco */
+  .pricing-card-mobile {
+    transform: scale(0.9) translateZ(0);
+    filter: brightness(0.65) saturate(0.9);
+    opacity: 0.85;
+    will-change: transform, opacity, filter;
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+                filter 0.45s ease,
+                opacity 0.45s ease;
+  }
+
+  /* Estado activo: controlado por JS (IntersectionObserver) */
+  .pricing-card-mobile.is-active {
+    transform: scale(1) translateZ(0);
+    filter: brightness(1) saturate(1);
+    opacity: 1;
+  }
+
+  /* Indicador de Swipe Animado */
+  .pricing-swipe-hint svg {
+    animation: pricing-swipe-hint 1.8s ease-in-out infinite;
+  }
+}
+
+/* --- ACCESIBILIDAD: ACCESO UNIVERSAL PREFERS-REDUCED-MOTION --- */
 @media (prefers-reduced-motion: reduce) {
   .pf-card,
-  .pf-swipe-hint {
+  .pf-swipe-hint,
+  .pricing-card-mobile,
+  .pricing-swipe-hint svg {
     animation: none !important;
+    transition: none !important;
     transform: none !important;
     filter: none !important;
     opacity: 1 !important;

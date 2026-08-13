@@ -1,8 +1,8 @@
 <section class="max-w-6xl mx-auto px-6 mb-24 mt-20">
-  <div class="relative bg-custom-card border-double-gold bg-pattern-diagonal rounded-lg overflow-hidden px-6 py-14 md:px-12 md:py-16">
+  <div class="relative bg-custom-card border-double-gold bg-pattern-diagonal rounded-lg px-4 py-10 md:px-12 md:py-16">
 
     <!-- Banner Destacado de Demostración -->
-    <div class="w-full max-w-3xl mx-auto bg-custom-accent text-black text-center py-3 px-4 rounded-lg mb-10 font-extrabold tracking-widest uppercase text-xs md:text-sm shadow-[0_0_24px_rgba(201,169,110,0.35)] flex items-center justify-center gap-2">
+    <div class="w-full max-w-3xl mx-auto bg-custom-accent text-black text-center py-3 px-4 rounded-lg mb-8 md:mb-10 font-extrabold tracking-widest uppercase text-xs md:text-sm shadow-[0_0_24px_rgba(201,169,110,0.35)] flex items-center justify-center gap-2">
       <span class="relative flex h-2 w-2 shrink-0" aria-hidden="true">
         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-black opacity-50"></span>
         <span class="relative inline-flex rounded-full h-2 w-2 bg-black"></span>
@@ -10,15 +10,24 @@
       <span data-i18n="pricing-demo-badge">Simulador de Tarifas: Así Venderás Tus Servicios</span>
     </div>
 
-    <div class="text-center max-w-3xl mx-auto mb-14 md:mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold text-custom-main mb-6 tracking-tight" data-i18n="pricing-demo-title">Filtra a los curiosos y cierra ventas más rápido.</h2>
+    <div class="text-center max-w-3xl mx-auto mb-8 md:mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-custom-main mb-4 md:mb-6 tracking-tight" data-i18n="pricing-demo-title">Filtra a los curiosos y cierra ventas más rápido.</h2>
       <p class="text-custom-muted text-base md:text-lg leading-relaxed" data-i18n="pricing-demo-desc">Muestra tus paquetes de forma clara para que el cliente te contacte listo para pagar, sin tener que explicar tus precios 10 veces al día.</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-stretch">
+    <!-- Indicador Visual Móvil (Swipe Hint) -->
+    <div class="flex items-center justify-center gap-2 text-xs text-custom-muted mb-4 md:hidden pricing-swipe-hint">
+      <span data-i18n="pricing-swipe-text">Desliza para ver paquetes</span>
+      <svg class="w-4 h-4 text-custom-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+      </svg>
+    </div>
+
+    <!-- Contenedor Horizontal Snap en Móvil + Grid en Desktop -->
+    <div id="pricing-carousel" class="flex overflow-x-auto md:grid snap-x snap-mandatory scrollbar-none pb-4 pt-1 -mx-4 px-4 md:mx-0 md:px-0 md:overflow-visible grid-cols-1 md:grid-cols-3 gap-5 md:gap-8 items-stretch">
 
       <!-- Tarjeta 1 -->
-      <div class="group bg-custom-main p-8 rounded-lg border border-custom flex flex-col justify-between hover:-translate-y-1 hover:border-custom-accent/40 hover:shadow-2xl hover:shadow-black/30 transition-all duration-300 ease-in-out">
+      <div class="pricing-card-mobile w-[82vw] sm:w-[75vw] max-w-[320px] shrink-0 snap-center md:w-auto md:max-w-none md:shrink group bg-custom-main p-6 md:p-8 rounded-lg border border-custom flex flex-col justify-between hover:-translate-y-1 hover:border-custom-accent/40 hover:shadow-2xl hover:shadow-black/30 transition-all duration-300 ease-in-out">
         <div>
           <h3 class="text-sm font-bold text-custom-accent uppercase tracking-wider mb-2" data-i18n="pricing-card1-title">Sesión Creativa / Retratos</h3>
           <div class="flex items-baseline gap-2 mb-6 pb-6 border-b border-custom">
@@ -47,7 +56,7 @@
       </div>
 
       <!-- Tarjeta 2 -->
-      <div class="group bg-custom-main p-8 rounded-lg border border-custom flex flex-col justify-between hover:-translate-y-1 hover:border-custom-accent/40 hover:shadow-2xl hover:shadow-black/30 transition-all duration-300 ease-in-out">
+      <div class="pricing-card-mobile w-[82vw] sm:w-[75vw] max-w-[320px] shrink-0 snap-center md:w-auto md:max-w-none md:shrink group bg-custom-main p-6 md:p-8 rounded-lg border border-custom flex flex-col justify-between hover:-translate-y-1 hover:border-custom-accent/40 hover:shadow-2xl hover:shadow-black/30 transition-all duration-300 ease-in-out">
         <div>
           <h3 class="text-sm font-bold text-custom-accent uppercase tracking-wider mb-2" data-i18n="pricing-card2-title">Diseño / Dirección de Arte</h3>
           <div class="flex items-baseline gap-2 mb-6 pb-6 border-b border-custom">
@@ -76,7 +85,7 @@
       </div>
 
       <!-- Tarjeta 3 (Premium) -->
-      <div class="group border-double-gold bg-custom-main rounded-lg relative p-8 flex flex-col justify-between hover:-translate-y-1 hover:shadow-2xl hover:shadow-custom-accent/10 transition-all duration-300 ease-in-out">
+      <div class="pricing-card-mobile w-[82vw] sm:w-[75vw] max-w-[320px] shrink-0 snap-center md:w-auto md:max-w-none md:shrink group border-double-gold bg-custom-main rounded-lg relative p-6 md:p-8 flex flex-col justify-between hover:-translate-y-1 hover:shadow-2xl hover:shadow-custom-accent/10 transition-all duration-300 ease-in-out">
         <span class="absolute top-0 right-0 bg-custom-accent text-black text-[10px] font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg uppercase tracking-wider" data-i18n="pricing-popular-tag">Más Popular</span>
         <div>
           <h3 class="text-sm font-bold text-custom-accent uppercase tracking-wider mb-2" data-i18n="pricing-card3-title">Servicio / Asesoría Premium</h3>
@@ -108,3 +117,52 @@
     </div>
   </div>
 </section>
+
+<script>
+(function () {
+  var carousel = document.getElementById('pricing-carousel');
+  if (!carousel) return;
+
+  var cards = carousel.querySelectorAll('.pricing-card-mobile');
+  if (!cards.length || !('IntersectionObserver' in window)) return;
+
+  var mq = window.matchMedia('(max-width: 767px)');
+  var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var observer = null;
+
+  function buildThresholds() {
+    var list = [];
+    for (var i = 0; i <= 20; i++) list.push(i / 20);
+    return list;
+  }
+
+  function onIntersect(entries) {
+    entries.forEach(function (entry) {
+      entry.target.classList.toggle('is-active', entry.intersectionRatio > 0.6);
+    });
+  }
+
+  function enable() {
+    if (observer || reducedMotion) return;
+    observer = new IntersectionObserver(onIntersect, {
+      root: carousel,
+      threshold: buildThresholds()
+    });
+    cards.forEach(function (card) { observer.observe(card); });
+  }
+
+  function disable() {
+    if (!observer) return;
+    observer.disconnect();
+    observer = null;
+    cards.forEach(function (card) { card.classList.remove('is-active'); });
+  }
+
+  function sync() {
+    if (mq.matches) enable(); else disable();
+  }
+
+  sync();
+  mq.addEventListener('change', sync);
+})();
+</script>
