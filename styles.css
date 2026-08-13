@@ -10,7 +10,7 @@
 .logos-track {
   display: flex;
   width: max-content;
-  animation: marquee-scroll 28s linear infinite;
+  animation: marquee-scroll 28s linear infinite; /* keyframe en animations.css */
 }
 
 .logos-item {
@@ -34,15 +34,9 @@
   transform: translateY(-2px) scale(1.05);
 }
 
-@keyframes marquee-scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
+/* [EXTRAÍDO -> animations.css]: @keyframes marquee-scroll */
 
-/* Pausa al pasar el mouse (desktop) para poder leer con calma */
-.logos-marquee-container:hover .logos-track {
-  animation-play-state: paused;
-}
+/* [EXTRAÍDO -> animations.css]: .logos-marquee-container:hover .logos-track (pause) */
 
 /* Fades laterales adicionales (refuerzo visual sobre el mask) */
 .logos-fade-left,
@@ -215,31 +209,13 @@ header a:active img {
   transform: scale(0.95);
 }
 
-/* --- ANIMACIONES GLOBALES --- */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+/* [EXTRAÍDO -> animations.css]: @keyframes fadeInUp */
 
-.animate-fade-in-up {
-  animation: fadeInUp 0.8s ease-out forwards;
-}
+/* [EXTRAÍDO -> animations.css]: .animate-fade-in-up */
 
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-8px); }
-  100% { transform: translateY(0px); }
-}
+/* [EXTRAÍDO -> animations.css]: @keyframes float */
 
-.animate-float {
-  animation: float 4s ease-in-out infinite;
-}
+/* [EXTRAÍDO -> animations.css]: .animate-float */
 
 /* Custom Double Fine Gold Border Card (CorelDRAW Style) */
 .border-double-gold {
@@ -263,7 +239,6 @@ header a:active img {
     margin: 0 -1.5rem;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
-    /* Oculta la barra de scroll nativa manteniendo la funcionalidad */
     scrollbar-width: none;
   }
 
@@ -276,7 +251,6 @@ header a:active img {
     scroll-snap-align: center;
   }
 
-  /* NUEVO: Estilos para las guías de desplazamiento en móvil */
   .scroll-hint {
     position: absolute;
     top: 50%;
@@ -284,12 +258,12 @@ header a:active img {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 32px; /* Ancho de la guía */
-    height: 32px; /* Alto de la guía */
+    width: 32px;
+    height: 32px;
     z-index: 10;
-    pointer-events: none; /* Permite que los clics pasen a las tarjetas */
-    color: var(--accent); /* Color dorado para la flecha */
-    opacity: 0.6; /* Un poco transparente */
+    pointer-events: none;
+    color: var(--accent);
+    opacity: 0.6;
     transition: opacity 0.3s ease;
   }
 
@@ -304,7 +278,7 @@ header a:active img {
   }
 
   .scroll-hint svg {
-    filter: drop-shadow(0 0 3px rgba(var(--accent-rgb), 0.3)); /* Sutil resplandor */
+    filter: drop-shadow(0 0 3px rgba(var(--accent-rgb), 0.3));
   }
 }
 
@@ -316,15 +290,13 @@ header a:active img {
 
   /* --- ANIMACIÓN DE CONFIANZA (SÓLO MÓVIL) --- */
   .trust-marquee-container {
-    overflow-x: auto; /* Permite el scroll horizontal */
-    -webkit-overflow-scrolling: touch; /* Mejora el rendimiento del scroll en iOS */
-    scroll-snap-type: x mandatory; /* Para que se ajuste a los elementos al deslizar */
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
     display: flex;
     justify-content: center;
-    /* Ajustes para el mask-image si lo tuvieras, similar a .logos-marquee-container */
     -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
     mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-    /* Oculta la barra de scroll nativa */
     scrollbar-width: none;
   }
 
@@ -335,26 +307,19 @@ header a:active img {
   .trust-marquee-track {
     display: flex;
     width: max-content;
-    animation: trust-slide-mobile 10s linear infinite;
-    gap: 1.5rem !important;   /* Espaciado consistente en el scroll */
+    animation: trust-slide-mobile 10s linear infinite; /* keyframe en animations.css */
+    gap: 1.5rem !important;
   }
 
-  .trust-marquee-item { /* Asumiendo que tus elementos dentro del track tienen esta clase */
-    flex-shrink: 0; /* Para que los items no se encojan y mantengan su tamaño */
-    scroll-snap-align: center; /* Cada item se "engancha" al centro al deslizar */
+  .trust-marquee-item {
+    flex-shrink: 0;
+    scroll-snap-align: center;
   }
 
-  /* Pausa al tocar (active) o pasar el mouse */
-  .trust-marquee-container:hover .trust-marquee-track,
-  .trust-marquee-container:active .trust-marquee-track {
-    animation-play-state: paused;
-  }
+  /* [EXTRAÍDO -> animations.css]: pause rule .trust-marquee-container:hover/:active */
 }
 
-@keyframes trust-slide-mobile {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
+/* [EXTRAÍDO -> animations.css]: @keyframes trust-slide-mobile */
 
 /* --- ECOSYSTEM MARQUEE (SÓLO MÓVIL) --- */
 @media (max-width: 639px) {
@@ -374,18 +339,14 @@ header a:active img {
   .ecosystem-track {
     display: flex;
     width: max-content;
-    animation: ecosystem-slide 15s linear infinite;
+    animation: ecosystem-slide 15s linear infinite; /* keyframe en animations.css */
     gap: 1rem;
   }
   .ecosystem-card {
     flex: 0 0 82%;
     scroll-snap-align: center;
   }
-  /* Pausa al tocar o pasar el mouse */
-  .ecosystem-scroll:hover .ecosystem-track,
-  .ecosystem-scroll:active .ecosystem-track {
-    animation-play-state: paused;
-  }
+  /* [EXTRAÍDO -> animations.css]: pause rule .ecosystem-scroll:hover/:active */
 }
 
 /* --- ESCRITORIO: Grid normal sin animación --- */
@@ -394,23 +355,19 @@ header a:active img {
     display: grid !important;
     grid-template-columns: repeat(12, 1fr);
     gap: 1.5rem;
-    animation: none;           /* Elimina la animación */
-    width: auto;               /* Vuelve al ancho normal */
-  }
-  .ecosystem-card {
-    flex: none;                /* Anula el flex del móvil */
+    animation: none;
     width: auto;
   }
-  /* Oculta las tarjetas duplicadas */
+  .ecosystem-card {
+    flex: none;
+    width: auto;
+  }
   .ecosystem-card:nth-child(n+4) {
     display: none !important;
   }
 }
 
-@keyframes ecosystem-slide {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
+/* [EXTRAÍDO -> animations.css]: @keyframes ecosystem-slide */
 
 /* ============================================
    PORTFOLIO COVERFLOW 3D — Solo mobile
@@ -419,7 +376,7 @@ header a:active img {
 .pf-coverflow {
   display: flex;
   gap: 1rem;
-  padding: 3rem 20vw; /* deja "aire" a los lados para centrar la tarjeta activa */
+  padding: 3rem 20vw;
   overflow-x: auto;
   overflow-y: hidden;
   scroll-snap-type: x mandatory;
@@ -460,16 +417,12 @@ header a:active img {
 /* Tarjeta activa: se detecta por scroll-driven animation (fallback: todas iguales si no soportado) */
 @supports (animation-timeline: view()) {
   .pf-card {
-    animation: pf-focus linear both;
+    animation: pf-focus linear both; /* keyframe en animations.css */
     animation-timeline: view(x);
     animation-range: entry 25% cover 50% exit 75%;
   }
 
-  @keyframes pf-focus {
-    0%   { transform: scale(0.8) rotateY(35deg) translateZ(-60px); opacity: 0.4; filter: blur(2px) brightness(0.6); }
-    50%  { transform: scale(1) rotateY(0deg) translateZ(0); opacity: 1; filter: blur(0) brightness(1); }
-    100% { transform: scale(0.8) rotateY(-35deg) translateZ(-60px); opacity: 0.4; filter: blur(2px) brightness(0.6); }
-  }
+  /* [EXTRAÍDO -> animations.css]: @keyframes pf-focus */
 }
 
 /* Fallback sin scroll-timeline: efecto estático más simple pero elegante */
@@ -492,13 +445,10 @@ header a:active img {
   letter-spacing: 0.05em;
   text-transform: uppercase;
   margin-bottom: 0.5rem;
-  animation: pf-hint-pulse 1.8s ease-in-out infinite;
+  animation: pf-hint-pulse 1.8s ease-in-out infinite; /* keyframe en animations.css */
 }
 
-@keyframes pf-hint-pulse {
-  0%, 100% { opacity: 0.5; transform: translateX(0); }
-  50%      { opacity: 1;   transform: translateX(4px); }
-}
+/* [EXTRAÍDO -> animations.css]: @keyframes pf-hint-pulse */
 
 /* Dots indicadores (decorativos, sin JS de sincronía real) */
 .pf-dots {
@@ -515,16 +465,7 @@ header a:active img {
   transition: background 0.3s ease;
 }
 
-/* Respeta accesibilidad: reduce animaciones si el usuario lo prefiere */
-@media (prefers-reduced-motion: reduce) {
-  .pf-card,
-  .pf-swipe-hint {
-    animation: none !important;
-    transform: none !important;
-    filter: none !important;
-    opacity: 1 !important;
-  }
-}
+/* [EXTRAÍDO -> animations.css]: @media (prefers-reduced-motion: reduce) */
 
 /* --- INDICADOR DE SWIPE (ICONO ANIMADO) --- */
 @media (min-width: 640px) {
@@ -539,7 +480,7 @@ header a:active img {
   background-image: radial-gradient(circle, #C9A96E 1px, transparent 1px);
   background-size: 20px 20px;
   background-color: transparent;
-  opacity: 0.04; /* Contraste muy bajo */
+  opacity: 0.04;
 }
 
 .bg-mesh-lines {
@@ -548,7 +489,7 @@ header a:active img {
   background-size: 20px 20px;
   background-position: 0 0, 10px 10px;
   background-color: transparent;
-  opacity: 0.04; /* Contraste muy bajo */
+  opacity: 0.04;
 }
 
 @media print {
@@ -562,17 +503,15 @@ header a:active img {
     margin: 0;
     padding: 0;
     box-shadow: none !important;
-    -webkit-print-color-adjust: exact; /* For better print background colors */
+    -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
 
-  /* Optimize for A4 size */
   @page {
     size: A4;
-    margin: 1cm; /* Adjust margins as needed */
+    margin: 1cm;
   }
 
-  /* Remove shadows from all elements */
   * {
     box-shadow: none !important;
     text-shadow: none !important;
@@ -580,12 +519,10 @@ header a:active img {
     -moz-box-shadow: none !important;
   }
 
-  /* Ensure text is black for readability */
   .text-custom-main, .text-custom-muted, h1, h2, h3, h4, h5, h6, p, span, div {
     color: #000000 !important;
   }
 
-  /* Ensure links are black and not underlined unless specified */
   a {
     color: #000000 !important;
     text-decoration: none !important;

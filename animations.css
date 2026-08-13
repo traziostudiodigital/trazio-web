@@ -1,0 +1,98 @@
+/* ============================================
+   TRAZIO STUDIO - ANIMATIONS
+   Todos los @keyframes + clases dedicadas a animación
+   Cargar DESPUÉS de styles.css en el <head>
+   ============================================ */
+
+/* --- MARQUEE DE LOGOS (Header/Trust) --- */
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Pausa al pasar el mouse (desktop) para poder leer con calma */
+.logos-marquee-container:hover .logos-track {
+  animation-play-state: paused;
+}
+
+/* --- FADE IN UP (uso general, entrada de elementos) --- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* --- FLOAT (flotación suave, ej. iconos/badges) --- */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* --- TRUST MARQUEE (SÓLO MÓVIL) --- */
+@keyframes trust-slide-mobile {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Pausa al tocar (active) o pasar el mouse — media query original: max-width 767px */
+@media (max-width: 767px) {
+  .trust-marquee-container:hover .trust-marquee-track,
+  .trust-marquee-container:active .trust-marquee-track {
+    animation-play-state: paused;
+  }
+}
+
+/* --- ECOSYSTEM MARQUEE (SÓLO MÓVIL) --- */
+@keyframes ecosystem-slide {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Pausa al tocar o pasar el mouse — media query original: max-width 639px */
+@media (max-width: 639px) {
+  .ecosystem-scroll:hover .ecosystem-track,
+  .ecosystem-scroll:active .ecosystem-track {
+    animation-play-state: paused;
+  }
+}
+
+/* --- PORTFOLIO COVERFLOW 3D (scroll-driven, solo mobile) --- */
+@supports (animation-timeline: view()) {
+  @keyframes pf-focus {
+    0%   { transform: scale(0.8) rotateY(35deg) translateZ(-60px); opacity: 0.4; filter: blur(2px) brightness(0.6); }
+    50%  { transform: scale(1) rotateY(0deg) translateZ(0); opacity: 1; filter: blur(0) brightness(1); }
+    100% { transform: scale(0.8) rotateY(-35deg) translateZ(-60px); opacity: 0.4; filter: blur(2px) brightness(0.6); }
+  }
+}
+
+/* --- SWIPE HINT PULSE (indicador de deslizar en portfolio) --- */
+@keyframes pf-hint-pulse {
+  0%, 100% { opacity: 0.5; transform: translateX(0); }
+  50%      { opacity: 1;   transform: translateX(4px); }
+}
+
+/* --- ACCESIBILIDAD: respeta prefers-reduced-motion --- */
+/* Desactiva TODAS las animaciones/transforms de este archivo si el usuario lo prefiere */
+@media (prefers-reduced-motion: reduce) {
+  .pf-card,
+  .pf-swipe-hint {
+    animation: none !important;
+    transform: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+  }
+}
