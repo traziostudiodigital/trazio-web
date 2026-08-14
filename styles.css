@@ -369,6 +369,56 @@ header a:active img {
 
 /* [EXTRAÍDO -> animations.css]: @keyframes ecosystem-slide */
 
+/* Custom Double Fine Gold Border Card (CorelDRAW Style) */
+.border-double-gold {
+  border: 1px solid rgba(201, 169, 110, 0.4);
+  outline: 1px solid rgba(201, 169, 110, 0.2);
+  outline-offset: 4px;
+  border-radius: 8px !important;
+}
+.border-double-gold > div {
+  border-radius: 6px !important; /* Slightly tighter radius for nested child container */
+}
+
+@media (max-width: 767px) {
+  .mockup-form-card.border-double-gold {
+    outline-offset: 2px;
+    margin: 2px;
+  }
+
+  /* --- ANIMACIÓN DE CONFIANZA (SÓLO MÓVIL) --- */
+  .trust-marquee-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    display: flex;
+    justify-content: center;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    scrollbar-width: none;
+  }
+
+  .trust-marquee-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .trust-marquee-track {
+    display: flex;
+    width: max-content;
+    animation: trust-slide-mobile 10s linear infinite; /* keyframe en animations.css */
+    gap: 1.5rem !important;
+  }
+
+  .trust-marquee-item {
+    flex-shrink: 0;
+    scroll-snap-align: center;
+  }
+}
+
+/* ============================================
+   PORTFOLIO COVERFLOW 3D — Solo mobile
+   ============================================ */
+
 /* ============================================
    PORTFOLIO COVERFLOW 3D — Solo mobile
    ============================================ */

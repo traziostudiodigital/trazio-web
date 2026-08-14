@@ -1,14 +1,5 @@
 <!-- ============================================================
-     TRAZIO STUDIO — "Tu proyecto técnico listo en 3 pasos" (perfil técnico)
-     Cambios: quité la idea de encerrar los 3 bloques en una caja mayor
-     (quedaba demasiado "cuadrado"); en su lugar, una textura sutil de
-     fondo (.bg-pattern-nodes, apropiada para el perfil técnico) y una
-     línea conectora fina que solo se asoma en los espacios entre
-     tarjetas — refuerza la idea de "pasos" sin agregar más rectángulos.
-     Insignias circulares + ícono SVG por paso (nada de emoji) en vez
-     del número grande suelto. Reutiliza .bg-card-soft (la clase que ya
-     te di para Nosotros) en vez de "bg-custom-card/30", que no genera
-     ninguna regla CSS.
+     TRAZIO STUDIO — "Tu proyecto técnico listo en 3 pasos"
      ============================================================ -->
 <section class="relative max-w-5xl mx-auto px-6 py-10 sm:py-16 text-center mb-8 sm:mb-10 overflow-hidden">
   <div class="absolute inset-0 bg-pattern-nodes opacity-40 pointer-events-none" aria-hidden="true"></div>
@@ -17,44 +8,49 @@
     <h2 class="text-3xl font-bold mb-3 text-custom-main">Tu proyecto técnico listo en 3 pasos</h2>
     <p class="text-sm text-custom-muted max-w-md mx-auto mb-8 sm:mb-14">Del diagnóstico a la publicación, sin vueltas ni intermediarios.</p>
 
-    <!-- Contenedor adaptado: Grid en PC, Scroll horizontal en Móvil -->
-    <div class="relative grid grid-cols-1 md:grid-cols-3 gap-y-10 gap-x-6 ecosystem-scroll">
-      <!-- línea conectora — solo visible en PC -->
-      <div class="hidden md:block absolute top-14 left-[10%] right-[10%] h-px bg-gradient-to-r from-custom-accent/0 via-custom-accent/40 to-custom-accent/0 z-0" aria-hidden="true"></div>
+    <!-- Contenedor general relativo para PC -->
+    <div class="relative max-w-4xl mx-auto">
+      <!-- Línea conectora — aislada del grid de PC para no desalinear las tarjetas -->
+      <div class="hidden md:block absolute top-14 left-[15%] right-[15%] h-px bg-gradient-to-r from-custom-accent/0 via-custom-accent/40 to-custom-accent/0 z-0" aria-hidden="true"></div>
 
-      <!-- Paso 1 -->
-      <div class="relative z-10 p-6 sm:p-8 rounded-2xl bg-card-soft border border-custom/10 hover:border-custom-accent/30 transition-colors ecosystem-card">
-        <span class="absolute top-4 right-5 text-[11px] font-black text-custom-accent/40 tracking-widest">01</span>
-        <div class="w-12 h-12 rounded-full border border-custom-accent/40 bg-custom-main flex items-center justify-center mx-auto mb-5">
-          <svg class="w-5 h-5 text-custom-accent" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 21V13m5 8V8m5 13v-6m5 6V4"/></svg>
+      <!-- Contenedor de Tarjetas: Scroll táctil móvil con snap + Grid de 3 columnas en PC -->
+      <div class="flex overflow-x-auto snap-x snap-mandatory md:overflow-visible md:grid md:grid-cols-3 gap-5 md:gap-6 pb-6 md:pb-0 scrollbar-none touch-pan-x -mx-6 px-6 md:mx-0 md:px-0">
+        
+        <!-- Paso 1 -->
+        <div class="snap-center flex-shrink-0 w-[85%] sm:w-[75%] md:w-auto relative z-10 p-6 sm:p-8 rounded-2xl bg-card-soft border border-custom/10 hover:border-custom-accent/30 transition-all duration-300 flex flex-col items-center text-center group">
+          <span class="absolute top-4 right-5 text-[11px] font-black text-custom-accent/40 tracking-widest group-hover:text-custom-accent/80 transition-colors">01</span>
+          <div class="w-12 h-12 rounded-full border border-custom-accent/40 bg-custom-main flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+            <svg class="w-5 h-5 text-custom-accent" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 21V13m5 8V8m5 13v-6m5 6V4"/></svg>
+          </div>
+          <h3 class="font-bold mb-3 text-custom-main text-lg">Diagnóstico Empresarial</h3>
+          <p class="text-sm text-custom-muted leading-relaxed">Analizamos tu especialidad y estructuramos tus métricas de impacto o casos de éxito.</p>
         </div>
-        <h4 class="font-bold mb-3 text-custom-main text-lg">Diagnóstico Empresarial</h4>
-        <p class="text-sm text-custom-muted leading-relaxed">Analizamos tu especialidad y estructuramos tus métricas de impacto o casos de éxito.</p>
-      </div>
 
-      <!-- Paso 2 -->
-      <div class="relative z-10 p-6 sm:p-8 rounded-2xl bg-card-soft border border-custom/10 hover:border-custom-accent/30 transition-colors ecosystem-card">
-        <span class="absolute top-4 right-5 text-[11px] font-black text-custom-accent/40 tracking-widest">02</span>
-        <div class="w-12 h-12 rounded-full border border-custom-accent/40 bg-custom-main flex items-center justify-center mx-auto mb-5">
-          <svg class="w-5 h-5 text-custom-accent" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8.5 8L4.5 12l4 4M15.5 8l4 4-4 4M13.5 5l-3 14"/></svg>
+        <!-- Paso 2 -->
+        <div class="snap-center flex-shrink-0 w-[85%] sm:w-[75%] md:w-auto relative z-10 p-6 sm:p-8 rounded-2xl bg-card-soft border border-custom/10 hover:border-custom-accent/30 transition-all duration-300 flex flex-col items-center text-center group">
+          <span class="absolute top-4 right-5 text-[11px] font-black text-custom-accent/40 tracking-widest group-hover:text-custom-accent/80 transition-colors">02</span>
+          <div class="w-12 h-12 rounded-full border border-custom-accent/40 bg-custom-main flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+            <svg class="w-5 h-5 text-custom-accent" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8.5 8L4.5 12l4 4M15.5 8l4 4-4 4M13.5 5l-3 14"/></svg>
+          </div>
+          <h3 class="font-bold mb-3 text-custom-main text-lg">Desarrollo de Élite</h3>
+          <p class="text-sm text-custom-muted leading-relaxed">Programamos tu perfil en código estático bilingüe, con exportador a PDF y formulario de filtrado.</p>
         </div>
-        <h4 class="font-bold mb-3 text-custom-main text-lg">Desarrollo de Élite</h4>
-        <p class="text-sm text-custom-muted leading-relaxed">Programamos tu perfil en código estático bilingüe, con exportador a PDF y formulario de filtrado.</p>
-      </div>
 
-      <!-- Paso 3 -->
-      <div class="relative z-10 p-6 sm:p-8 rounded-2xl bg-card-soft border border-custom/10 hover:border-custom-accent/30 transition-colors ecosystem-card">
-        <span class="absolute top-4 right-5 text-[11px] font-black text-custom-accent/40 tracking-widest">03</span>
-        <div class="w-12 h-12 rounded-full border border-custom-accent/40 bg-custom-main flex items-center justify-center mx-auto mb-5">
-          <svg class="w-5 h-5 text-custom-accent" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+        <!-- Paso 3 -->
+        <div class="snap-center flex-shrink-0 w-[85%] sm:w-[75%] md:w-auto relative z-10 p-6 sm:p-8 rounded-2xl bg-card-soft border border-custom/10 hover:border-custom-accent/30 transition-all duration-300 flex flex-col items-center text-center group">
+          <span class="absolute top-4 right-5 text-[11px] font-black text-custom-accent/40 tracking-widest group-hover:text-custom-accent/80 transition-colors">03</span>
+          <div class="w-12 h-12 rounded-full border border-custom-accent/40 bg-custom-main flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+            <svg class="w-5 h-5 text-custom-accent" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+          </div>
+          <h3 class="font-bold mb-3 text-custom-main text-lg">Lanzamiento &amp; Entrega</h3>
+          <p class="text-sm text-custom-muted leading-relaxed">Publicamos tu web en servidores globales de alta velocidad y te capacitamos para gestionarla.</p>
         </div>
-        <h4 class="font-bold mb-3 text-custom-main text-lg">Lanzamiento &amp; Entrega</h4>
-        <p class="text-sm text-custom-muted leading-relaxed">Publicamos tu web en servidores globales de alta velocidad y te capacitamos para gestionarla.</p>
+
       </div>
     </div>
 
     <!-- Indicador de Swipe (Solo móvil) -->
-    <div class="flex items-center justify-center mt-8 space-x-2 sm:hidden">
+    <div class="flex items-center justify-center mt-6 space-x-2 md:hidden">
       <span class="text-[10px] uppercase tracking-[0.2em] text-custom-accent/60 font-bold" data-i18n="infra-swipe-hint">Desliza para avanzar</span>
       <svg class="w-4 h-4 text-custom-accent animate-float" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
     </div>
