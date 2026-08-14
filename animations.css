@@ -70,10 +70,21 @@
   }
 }
 
-/* --- ECOSYSTEM MOBILE CAROUSEL (15s smooth infinite scroll) --- */
+/* --- ECOSYSTEM MOBILE CAROUSEL (12s smooth infinite scroll + touch swipe) --- */
 @keyframes ecosystem-slide-mobile {
   from { transform: translateX(0); }
   to   { transform: translateX(-33.333%); }
+}
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  .ecosystem-track-mobile {
+    animation: none !important;
+  }
+
+  .ecosystem-scroll-mobile {
+    scroll-behavior: auto !important;
+  }
 }
 
 .ecosystem-scroll-mobile {
@@ -208,3 +219,4 @@
     opacity: 1 !important;
   }
 }
+
