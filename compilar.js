@@ -93,6 +93,28 @@ function compileHTML() {
     });
 }
 
+function copyAssets() {
+  console.log('🔄 Copiando assets estáticos...');
+
+  // Lista de todos los JS que necesitas copiar
+  const jsFiles = [
+    'calendar-creative.js',
+    'creative-rates-portafolio.js'
+    // Agrega aquí futuros archivos JS
+  ];
+
+  jsFiles.forEach(file => {
+    const srcPath = path.join(__dirname, 'assets', file);
+    const destPath = path.join(ROOT_DIR, file);
+    if (fs.existsSync(srcPath)) {
+      fs.copyFileSync(srcPath, destPath);
+      console.log(`✅ JS Copiado: ${file}`);
+    } else {
+      console.warn(`⚠️  Archivo no encontrado: ${srcPath}`);
+    }
+  });
+}
+
 function compileCSS() {
     console.log('🔄 Compilando y minificando Tailwind CSS (v4)...');
     try {
@@ -110,5 +132,6 @@ if (require.main === module) {
     console.log('🚀 Iniciando Trazio Build System...');
     compileHTML();
     compileCSS();
+    copyAssets();
     console.log('✨ Build completado con éxito.');
 }
