@@ -70,6 +70,39 @@
   }
 }
 
+/* --- ECOSYSTEM MOBILE CAROUSEL (15s smooth infinite scroll) --- */
+@keyframes ecosystem-slide-mobile {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-33.333%); }
+}
+
+.ecosystem-scroll-mobile {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.ecosystem-track-mobile {
+  display: flex;
+  gap: 1rem;
+  animation: ecosystem-slide-mobile 15s linear infinite;
+  width: max-content;
+  will-change: transform;
+}
+
+/* Pausa al tocar o pasar mouse en móvil */
+@media (max-width: 639px) {
+  .ecosystem-scroll-mobile:hover .ecosystem-track-mobile,
+  .ecosystem-scroll-mobile:active .ecosystem-track-mobile {
+    animation-play-state: paused;
+  }
+}
+
+.ecosystem-card-mobile {
+  flex: 0 0 85vw;
+  max-width: 300px;
+}
+
 /* --- PORTFOLIO COVERFLOW 3D (scroll-driven, solo mobile) --- */
 @supports (animation-timeline: view()) {
   @keyframes pf-focus {
@@ -161,8 +194,14 @@
   .pf-card,
   .pf-swipe-hint,
   .pricing-card-mobile,
-  .pricing-swipe-hint svg {
+  .pricing-swipe-hint svg,
+  .ecosystem-track-mobile {
     animation: none !important;
+  }
+  .pf-card,
+  .pf-swipe-hint,
+  .pricing-card-mobile,
+  .pricing-swipe-hint svg {
     transition: none !important;
     transform: none !important;
     filter: none !important;
