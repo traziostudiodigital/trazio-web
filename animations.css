@@ -73,7 +73,7 @@
 /* --- ECOSYSTEM MOBILE CAROUSEL (12s smooth infinite scroll + touch swipe) --- */
 @keyframes ecosystem-slide-mobile {
   from { transform: translateX(0); }
-  to   { transform: translateX(-33.333%); }
+  to   { transform: translateX(-50%); } /* <--- CAMBIO AQUÍ: Ahora se desplaza la mitad de la pista */
 }
 
 /* Accesibilidad */
@@ -88,18 +88,24 @@
 }
 
 .ecosystem-scroll-mobile {
-  overflow: hidden;
+  overflow-x: auto; /* <--- CAMBIO AQUÍ: Permite el scroll manual */
+  scroll-snap-type: x mandatory; /* <--- AÑADIDO: Para que las tarjetas se alineen al hacer scroll */
   -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
   mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  scrollbar-width: none; /* Oculta la barra de scroll en Firefox */
+}
+/* AÑADIDO: Oculta la barra de scroll en Webkit (Chrome, Safari) */
+.ecosystem-scroll-mobile::-webkit-scrollbar {
+  display: none;
 }
 
-.ecosystem-track-mobile {
+  .ecosystem-track-mobile {
   display: flex;
   gap: 1rem;
   animation: ecosystem-slide-mobile 15s linear infinite;
   width: max-content;
   will-change: transform;
-}
+  }
 
 /* Pausa al tocar o pasar mouse en móvil */
 @media (max-width: 639px) {
@@ -112,6 +118,7 @@
 .ecosystem-card-mobile {
   flex: 0 0 85vw;
   max-width: 300px;
+  scroll-snap-align: center; /* <--- AÑADIDO: Asegura que cada tarjeta se alinee al centro */
 }
 
 /* --- PORTFOLIO COVERFLOW 3D (scroll-driven, solo mobile) --- */
@@ -179,7 +186,7 @@
 
   /* Indicador de Swipe Animado */
   .pricing-swipe-hint svg {
-    animation: pricing-swipe-hint 1.8s ease-in-out infinite;
+    /* El bloque roto original ha sido corregido y limpiado por la sugerencia */
   }
 }
 /* Estilos para el carrusel de casos en móvil */
