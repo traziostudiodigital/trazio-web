@@ -70,6 +70,21 @@
   }
 }
 
+/* --- ECOSYSTEM CARDS: ANIMACIÓN DE FLOTE DESFASADA EN DESKTOP --- */
+@media (min-width: 640px) {
+  .ecosystem-card {
+    animation: float 5s ease-in-out infinite;
+  }
+  .ecosystem-card:nth-child(1) { animation-delay: 0s; }
+  .ecosystem-card:nth-child(2) { animation-delay: 1.2s; }
+  .ecosystem-card:nth-child(3) { animation-delay: 2.4s; }
+  .ecosystem-card:nth-child(4) { animation-delay: 3.6s; }
+  /* Al pasar el cursor, pausa suavemente el flote continuo para priorizar el hover */
+  .ecosystem-card:hover {
+    animation-play-state: paused;
+  }
+}
+
 /* --- ECOSYSTEM MOBILE CAROUSEL (12s smooth infinite scroll + touch swipe) --- */
 @keyframes ecosystem-slide-mobile {
   from { transform: translateX(0); }

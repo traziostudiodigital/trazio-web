@@ -349,24 +349,6 @@ header a:active img {
   /* [EXTRAÍDO -> animations.css]: pause rule .ecosystem-scroll:hover/:active */
 }
 
-/* --- ESCRITORIO: Grid normal sin animación --- */
-@media (min-width: 640px) {
-  .ecosystem-track {
-    display: grid !important;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 1.5rem;
-    animation: none;
-    width: auto;
-  }
-  .ecosystem-card {
-    flex: none;
-    width: auto;
-  }
-  .ecosystem-card:nth-child(n+4) {
-    display: none !important;
-  }
-}
-
 /* [EXTRAÍDO -> animations.css]: @keyframes ecosystem-slide */
 
 /* Custom Double Fine Gold Border Card (CorelDRAW Style) */
