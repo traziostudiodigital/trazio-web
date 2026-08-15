@@ -1,93 +1,98 @@
-<section class="max-w-4xl mx-auto px-6 mb-24">
-  <div class="relative bg-custom-card border-double-gold bg-pattern-diagonal rounded-lg overflow-hidden px-6 py-14 md:px-10 md:py-16">
+<section class="max-w-5xl mx-auto px-6 mb-24">
+  <div class="relative bg-custom-card border-double-gold bg-pattern-diagonal rounded-xl overflow-hidden px-6 py-12 md:px-10 md:py-14">
 
-    <header class="text-center mb-12">
+    <!-- Header -->
+    <header class="text-center mb-10 md:mb-12">
       <span class="inline-flex items-center gap-2 text-custom-accent text-xs font-semibold tracking-[0.2em] uppercase mb-3">
         <span class="w-6 h-px bg-custom-accent/50"></span>
         <span data-i18n="faq-badge-label">Despeja tus dudas</span>
         <span class="w-6 h-px bg-custom-accent/50"></span>
       </span>
-      <h2 class="text-3xl font-bold text-custom-main tracking-tight" data-i18n="faq-title-main">
+      <h2 class="text-2xl md:text-3xl font-bold text-custom-main tracking-tight" data-i18n="faq-title-main">
         Preguntas Frecuentes
       </h2>
     </header>
 
-    <div class="space-y-4">
+    <!-- FAQ Grid (2 columnas en tablet/desktop para reducir scroll) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 items-start">
       <!-- FAQ 1: Actualización -->
-      <details class="group bg-custom-main border border-custom rounded-lg overflow-hidden transition-all duration-300 ease-in-out open:border-custom-accent/40" open>
-        <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden select-none">
-          <div class="flex items-center gap-4">
-            <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-custom-accent/10 border border-custom-accent/20 text-custom-accent text-sm font-black shrink-0">?</span>
-            <h4 class="font-bold text-custom-main text-base md:text-lg" data-i18n="faq-1-question">¿Cómo actualizo mis productos o precios?</h4>
+      <details class="group bg-custom-main/80 backdrop-blur-sm border border-custom rounded-xl overflow-hidden transition-all duration-300 ease-in-out hover:border-custom-accent/40 open:border-custom-accent/60 open:bg-custom-main open:shadow-lg open:shadow-custom-accent/5" open>
+        <summary class="flex items-center justify-between gap-3 p-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden select-none">
+          <div class="flex items-center gap-3">
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-custom-accent/10 border border-custom-accent/20 text-custom-accent text-xs font-black shrink-0 transition-transform duration-300 group-hover:scale-105">?</span>
+            <h4 class="font-bold text-custom-main text-sm md:text-base leading-snug" data-i18n="faq-1-question">¿Cómo actualizo mis productos o precios?</h4>
           </div>
-          <svg class="w-5 h-5 text-custom-accent shrink-0 transition-transform duration-300 ease-in-out group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <svg class="w-4 h-4 text-custom-accent shrink-0 transition-transform duration-300 ease-in-out group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
           </svg>
         </summary>
-        <div class="px-6 pb-6 pl-[4.5rem]">
-          <p class="text-sm md:text-base text-custom-muted leading-relaxed" data-i18n="faq-1-answer">
+        <div class="px-5 pb-5 pl-14">
+          <p class="text-xs md:text-sm text-custom-muted leading-relaxed" data-i18n="faq-1-answer">
             Tu inventario vive en una lista tan simple como una hoja de cálculo en tu teléfono. Cambias un precio, guardas, y tu catálogo se actualiza al instante sin depender de un programador.
           </p>
         </div>
       </details>
 
       <!-- FAQ 2: Monedas -->
-      <details class="group bg-custom-main border border-custom rounded-lg overflow-hidden transition-all duration-300 ease-in-out open:border-custom-accent/40">
-        <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden select-none">
-          <div class="flex items-center gap-4">
-            <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-custom-accent/10 border border-custom-accent/20 text-custom-accent text-sm font-black shrink-0">?</span>
-            <h4 class="font-bold text-custom-main text-base md:text-lg" data-i18n="faq-2-question">¿Puedo mostrar precios en USD y CUP?</h4>
+      <details class="group bg-custom-main/80 backdrop-blur-sm border border-custom rounded-xl overflow-hidden transition-all duration-300 ease-in-out hover:border-custom-accent/40 open:border-custom-accent/60 open:bg-custom-main open:shadow-lg open:shadow-custom-accent/5">
+        <summary class="flex items-center justify-between gap-3 p-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden select-none">
+          <div class="flex items-center gap-3">
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-custom-accent/10 border border-custom-accent/20 text-custom-accent text-xs font-black shrink-0 transition-transform duration-300 group-hover:scale-105">?</span>
+            <h4 class="font-bold text-custom-main text-sm md:text-base leading-snug" data-i18n="faq-2-question">¿Puedo mostrar precios en USD y CUP?</h4>
           </div>
-          <svg class="w-5 h-5 text-custom-accent shrink-0 transition-transform duration-300 ease-in-out group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <svg class="w-4 h-4 text-custom-accent shrink-0 transition-transform duration-300 ease-in-out group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
           </svg>
         </summary>
-        <div class="px-6 pb-6 pl-[4.5rem]">
-          <p class="text-sm md:text-base text-custom-muted leading-relaxed" data-i18n="faq-2-answer">
+        <div class="px-5 pb-5 pl-14">
+          <p class="text-xs md:text-sm text-custom-muted leading-relaxed" data-i18n="faq-2-answer">
             Sí. Tu catálogo puede mostrar ambos precios fijos o incluir un selector para que tu cliente elija cómo prefiere ver el valor, evitando confusiones al pagar.
           </p>
         </div>
       </details>
 
-      <!-- FAQ 3: Mantenimiento (Shared with Corp) -->
-      <details class="group bg-custom-main border border-custom rounded-lg overflow-hidden transition-all duration-300 ease-in-out open:border-custom-accent/40">
-        <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden select-none">
-          <div class="flex items-center gap-4">
-            <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-custom-accent/10 border border-custom-accent/20 text-custom-accent text-sm font-black shrink-0">?</span>
-            <h4 class="font-bold text-custom-main text-base md:text-lg" data-i18n="faq-3-question">¿Necesito pagar mantenimiento mensual?</h4>
+      <!-- FAQ 3: Mantenimiento -->
+      <details class="group bg-custom-main/80 backdrop-blur-sm border border-custom rounded-xl overflow-hidden transition-all duration-300 ease-in-out hover:border-custom-accent/40 open:border-custom-accent/60 open:bg-custom-main open:shadow-lg open:shadow-custom-accent/5">
+        <summary class="flex items-center justify-between gap-3 p-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden select-none">
+          <div class="flex items-center gap-3">
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-custom-accent/10 border border-custom-accent/20 text-custom-accent text-xs font-black shrink-0 transition-transform duration-300 group-hover:scale-105">?</span>
+            <h4 class="font-bold text-custom-main text-sm md:text-base leading-snug" data-i18n="faq-3-question">¿Necesito pagar mantenimiento mensual?</h4>
           </div>
-          <svg class="w-5 h-5 text-custom-accent shrink-0 transition-transform duration-300 ease-in-out group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <svg class="w-4 h-4 text-custom-accent shrink-0 transition-transform duration-300 ease-in-out group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
           </svg>
         </summary>
-        <div class="px-6 pb-6 pl-[4.5rem]">
-          <p class="text-sm md:text-base text-custom-muted leading-relaxed" data-i18n="faq-3-answer">
+        <div class="px-5 pb-5 pl-14">
+          <p class="text-xs md:text-sm text-custom-muted leading-relaxed" data-i18n="faq-3-answer">
             No. Haces un pago único por el desarrollo y te ahorras los costosos mantenimientos de servidores tradicionales gracias a nuestra arquitectura estática.
           </p>
         </div>
       </details>
 
-      <!-- FAQ 4: Conexión (Shared with Corp) -->
-      <details class="group bg-custom-main border border-custom rounded-lg overflow-hidden transition-all duration-300 ease-in-out open:border-custom-accent/40">
-        <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden select-none">
-          <div class="flex items-center gap-4">
-            <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-custom-accent/10 border border-custom-accent/20 text-custom-accent text-sm font-black shrink-0">?</span>
-            <h4 class="font-bold text-custom-main text-base md:text-lg" data-i18n="faq-4-question">¿Funciona bien con la conexión de Cuba?</h4>
+      <!-- FAQ 4: Conexión -->
+      <details class="group bg-custom-main/80 backdrop-blur-sm border border-custom rounded-xl overflow-hidden transition-all duration-300 ease-in-out hover:border-custom-accent/40 open:border-custom-accent/60 open:bg-custom-main open:shadow-lg open:shadow-custom-accent/5">
+        <summary class="flex items-center justify-between gap-3 p-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden select-none">
+          <div class="flex items-center gap-3">
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-custom-accent/10 border border-custom-accent/20 text-custom-accent text-xs font-black shrink-0 transition-transform duration-300 group-hover:scale-105">?</span>
+            <h4 class="font-bold text-custom-main text-sm md:text-base leading-snug" data-i18n="faq-4-question">¿Funciona bien con la conexión de Cuba?</h4>
           </div>
-          <svg class="w-5 h-5 text-custom-accent shrink-0 transition-transform duration-300 ease-in-out group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <svg class="w-4 h-4 text-custom-accent shrink-0 transition-transform duration-300 ease-in-out group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
           </svg>
         </summary>
-        <div class="px-6 pb-6 pl-[4.5rem]">
-          <p class="text-sm md:text-base text-custom-muted leading-relaxed" data-i18n="faq-4-answer">
+        <div class="px-5 pb-5 pl-14">
+          <p class="text-xs md:text-sm text-custom-muted leading-relaxed" data-i18n="faq-4-answer">
             Es nuestra especialidad. Optimizamos el catálogo para que cargue en milisegundos incluso en redes 3G, garantizando que no pierdas ventas por lentitud.
           </p>
         </div>
       </details>
+
     </div>
 
+    <!-- Footer -->
     <p class="text-center text-xs text-custom-muted mt-10">
-      <span data-i18n="faq-footer-text">¿Tienes otra duda?</span> <a href="#contacto" class="text-custom-accent font-medium hover:underline" data-i18n="faq-footer-link">Escríbenos directo</a>.
+      <span data-i18n="faq-footer-text">¿Tienes otra duda?</span>
+      <a href="#contacto" class="text-custom-accent font-semibold hover:underline transition-all duration-200" data-i18n="faq-footer-link">Escríbenos directo</a>.
     </p>
   </div>
 </section>
