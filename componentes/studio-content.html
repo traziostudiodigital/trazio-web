@@ -20,17 +20,17 @@
         </p>
     </div>
 
-    <!-- Historia y Método -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+    <!-- Historia y Método (Horizontal Snap Scroll en móvil, Grid 2 columnas en Desktop) -->
+    <div class="flex md:grid md:grid-cols-2 gap-4 md:gap-8 mb-16 overflow-x-auto md:overflow-visible snap-x snap-mandatory scroll-snap-x-mandatory scrollbar-none custom-scroll-hide -mx-6 px-6 md:mx-0 md:px-0 pb-4 md:pb-0">
         <!-- Tarjeta 1 -->
-        <div class="bg-custom-card/80 backdrop-blur-sm p-8 rounded-xl border-double-gold shadow-xl hover:-translate-y-1 transition-transform duration-300">
+        <div class="min-w-[85vw] sm:min-w-[340px] md:min-w-0 snap-center bg-custom-card/80 backdrop-blur-sm p-6 md:p-8 rounded-xl border-double-gold shadow-xl hover:-translate-y-1 transition-transform duration-300">
             <h3 class="text-xl font-bold text-custom-main mb-4" data-i18n="about-card1-title">Nuestro Origen</h3>
             <p class="text-sm text-custom-muted leading-relaxed" data-i18n="about-card1-desc">
                 Nacimos de la necesidad de unir tres mundos que rara vez se cruzan en Cuba: el análisis financiero, el diseño vectorial de precisión y el código web ultraligero. Entendemos que una web no es un gasto estético, sino un activo contable que debe generar retorno.
             </p>
         </div>
         <!-- Tarjeta 2 -->
-        <div class="bg-custom-card/80 backdrop-blur-sm p-8 rounded-xl border-double-gold shadow-xl hover:-translate-y-1 transition-transform duration-300">
+        <div class="min-w-[85vw] sm:min-w-[340px] md:min-w-0 snap-center bg-custom-card/80 backdrop-blur-sm p-6 md:p-8 rounded-xl border-double-gold shadow-xl hover:-translate-y-1 transition-transform duration-300">
             <h3 class="text-xl font-bold text-custom-main mb-4" data-i18n="about-card2-title">Nuestra Filosofía Técnica</h3>
             <p class="text-sm text-custom-muted leading-relaxed" data-i18n="about-card2-desc">
                 Desarrollamos con código propio y estático. Cero plantillas pesadas de WordPress. Esto garantiza que nuestras webs carguen en milisegundos incluso bajo redes 3G inestables, ofreciendo una experiencia fluida sin importar la conexión del usuario.
