@@ -13,14 +13,21 @@
       <p data-i18n="process-description" class="text-custom-muted max-w-2xl mx-auto leading-relaxed text-sm md:text-base">
         Un sistema diseñado para convertir tu visión en una experiencia digital de alto impacto, sin fricciones.
       </p>
+
+      <!-- Hint de deslizamiento (solo móvil) -->
+      <div class="sm:hidden flex items-center justify-center gap-2 mt-5 text-custom-accent/70 text-xs font-medium tracking-wide">
+        <span data-i18n="infra-swipe-hint">Desliza para explorar</span>
+        <svg class="w-4 h-4 animate-pulse" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+      </div>
     </header>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+    <!-- Contenedor Responsive: Scroll Horizontal en Móvil / Grid 2x2 en Sm / Grid 1x4 en Desktop -->
+    <div class="flex sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 overflow-x-auto sm:overflow-visible snap-x snap-mandatory scrollbar-none pb-4 sm:pb-0 relative">
       <!-- Línea conectora decorativa (solo desktop) -->
-      <div class="hidden lg:block absolute top-12 left-0 right-0 h-px bg-gradient-to-r from-transparent via-custom-accent/40 to-transparent" aria-hidden="true"></div>
+      <div class="hidden lg:block absolute top-12 left-0 right-0 h-px bg-gradient-to-r from-transparent via-custom-accent/40 to-transparent pointer-events-none" aria-hidden="true"></div>
 
       <!-- Paso 1 -->
-      <div class="group relative p-6 bg-custom-main border border-custom rounded-lg overflow-hidden hover:-translate-y-1.5 hover:border-custom-accent transition-all duration-300 ease-in-out hover:shadow-[0_12px_32px_-12px_rgba(0,0,0,0.6)]">
+      <div class="snap-center shrink-0 w-[85vw] max-w-[320px] sm:max-w-none sm:w-full sm:shrink group relative p-6 bg-custom-main border border-custom rounded-lg overflow-hidden hover:-translate-y-2 hover:border-custom-accent transition-all duration-300 ease-in-out hover:shadow-[0_12px_32px_-12px_rgba(0,0,0,0.6)] z-10">
         <span class="absolute -top-3 -right-2 text-7xl font-black text-custom-accent/5 group-hover:text-custom-accent/10 transition-all duration-300 ease-in-out select-none leading-none" aria-hidden="true">01</span>
         <div class="relative">
           <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-custom-accent/10 border border-custom-accent/20 text-custom-accent mb-5 group-hover:scale-105 group-hover:bg-custom-accent/15 transition-all duration-300 ease-in-out">
@@ -33,7 +40,7 @@
       </div>
 
       <!-- Paso 2 -->
-      <div class="group relative p-6 bg-custom-main border border-custom rounded-lg overflow-hidden hover:-translate-y-1.5 hover:border-custom-accent transition-all duration-300 ease-in-out hover:shadow-[0_12px_32px_-12px_rgba(0,0,0,0.6)]">
+      <div class="snap-center shrink-0 w-[85vw] max-w-[320px] sm:max-w-none sm:w-full sm:shrink group relative p-6 bg-custom-main border border-custom rounded-lg overflow-hidden hover:-translate-y-2 hover:border-custom-accent transition-all duration-300 ease-in-out hover:shadow-[0_12px_32px_-12px_rgba(0,0,0,0.6)] z-10">
         <span class="absolute -top-3 -right-2 text-7xl font-black text-custom-accent/5 group-hover:text-custom-accent/10 transition-all duration-300 ease-in-out select-none leading-none" aria-hidden="true">02</span>
         <div class="relative">
           <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-custom-accent/10 border border-custom-accent/20 text-custom-accent mb-5 group-hover:scale-105 group-hover:bg-custom-accent/15 transition-all duration-300 ease-in-out">
@@ -46,7 +53,7 @@
       </div>
 
       <!-- Paso 3 -->
-      <div class="group relative p-6 bg-custom-main border border-custom rounded-lg overflow-hidden hover:-translate-y-1.5 hover:border-custom-accent transition-all duration-300 ease-in-out hover:shadow-[0_12px_32px_-12px_rgba(0,0,0,0.6)]">
+      <div class="snap-center shrink-0 w-[85vw] max-w-[320px] sm:max-w-none sm:w-full sm:shrink group relative p-6 bg-custom-main border border-custom rounded-lg overflow-hidden hover:-translate-y-2 hover:border-custom-accent transition-all duration-300 ease-in-out hover:shadow-[0_12px_32px_-12px_rgba(0,0,0,0.6)] z-10">
         <span class="absolute -top-3 -right-2 text-7xl font-black text-custom-accent/5 group-hover:text-custom-accent/10 transition-all duration-300 ease-in-out select-none leading-none" aria-hidden="true">03</span>
         <div class="relative">
           <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-custom-accent/10 border border-custom-accent/20 text-custom-accent mb-5 group-hover:scale-105 group-hover:bg-custom-accent/15 transition-all duration-300 ease-in-out">
@@ -59,7 +66,7 @@
       </div>
 
       <!-- Paso 4 -->
-      <div class="group relative p-6 bg-custom-main border border-custom rounded-lg overflow-hidden hover:-translate-y-1.5 hover:border-custom-accent transition-all duration-300 ease-in-out hover:shadow-[0_12px_32px_-12px_rgba(0,0,0,0.6)]">
+      <div class="snap-center shrink-0 w-[85vw] max-w-[320px] sm:max-w-none sm:w-full sm:shrink group relative p-6 bg-custom-main border border-custom rounded-lg overflow-hidden hover:-translate-y-2 hover:border-custom-accent transition-all duration-300 ease-in-out hover:shadow-[0_12px_32px_-12px_rgba(0,0,0,0.6)] z-10">
         <span class="absolute -top-3 -right-2 text-7xl font-black text-custom-accent/5 group-hover:text-custom-accent/10 transition-all duration-300 ease-in-out select-none leading-none" aria-hidden="true">04</span>
         <div class="relative">
           <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-custom-accent/10 border border-custom-accent/20 text-custom-accent mb-5 group-hover:scale-105 group-hover:bg-custom-accent/15 transition-all duration-300 ease-in-out">
