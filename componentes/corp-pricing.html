@@ -13,93 +13,117 @@
         <p class="text-custom-muted max-w-xl mx-auto leading-relaxed text-sm md:text-base" data-i18n="packages-subtitle">Elige el paquete que se ajusta a tu etapa actual. Sin letra pequeña, sin sorpresas.</p>
     </header>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-stretch">
+    <!-- Indicador Visual Móvil (Swipe Hint) -->
+    <div class="flex items-center justify-center gap-2 text-xs text-custom-muted mb-4 md:hidden pricing-swipe-hint">
+        <span data-i18n="packages-swipe-text">Desliza para ver planes</span>
+        <svg class="w-4 h-4 text-custom-accent animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+        </svg>
+    </div>
+
+    <!-- Contenedor Horizontal Snap en Móvil + Grid en Desktop -->
+    <div id="pricing-carousel" class="flex overflow-x-auto md:grid snap-x snap-mandatory scrollbar-none pb-4 pt-4 -mx-6 px-6 md:mx-0 md:px-0 md:overflow-visible grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 items-stretch">
 
         <!-- Paquete Presencia Digital -->
-        <div class="group p-8 md:p-10 rounded-lg border border-custom bg-custom-card text-custom-main flex flex-col h-full transition-all duration-300 ease-in-out hover:border-custom-accent/40 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/30">
-            <div class="inline-flex items-center justify-center w-11 h-11 rounded-lg bg-custom-accent/10 border border-custom-accent/20 text-custom-accent mb-5">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-6.75 18h9.75"/></svg>
+        <div class="pricing-card-mobile w-[82vw] sm:w-[70vw] max-w-[320px] shrink-0 snap-center md:w-auto md:max-w-none md:shrink group p-6 sm:p-8 md:p-10 rounded-lg border border-custom bg-custom-card text-custom-main flex flex-col h-full justify-between transition-all duration-300 ease-in-out hover:border-custom-accent/40 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/30">
+            <div>
+                <div class="inline-flex items-center justify-center w-11 h-11 rounded-lg bg-custom-accent/10 border border-custom-accent/20 text-custom-accent mb-5">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-6.75 18h9.75"/></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-1" data-i18n="packages-plan1-title">Presencia Digital</h3>
+                <p class="text-xs text-custom-accent/70 font-medium mb-6 uppercase tracking-wide" data-i18n="packages-plan1-subtitle">Ideal para arrancar</p>
+                <ul class="space-y-3.5 mb-8">
+                    <li class="flex items-start gap-3">
+                        <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                        <span class="text-sm text-custom-muted" data-i18n="packages-plan1-feature1">Landing Page de Alto Impacto</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                        <span class="text-sm text-custom-muted" data-i18n="packages-plan1-feature2">Botón directo a WhatsApp</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                        <span class="text-sm text-custom-muted" data-i18n="packages-plan1-feature3">Optimización Móvil</span>
+                    </li>
+                </ul>
             </div>
-            <h3 class="text-xl font-bold mb-1" data-i18n="packages-plan1-title">Presencia Digital</h3>
-            <p class="text-xs text-custom-accent/70 font-medium mb-6 uppercase tracking-wide" data-i18n="packages-plan1-subtitle">Ideal para arrancar</p>
-            <ul class="space-y-3.5 flex-grow mb-8">
-                <li class="flex items-start gap-3">
-                    <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                    <span class="text-sm text-custom-muted" data-i18n="packages-plan1-feature1">Landing Page de Alto Impacto</span>
-                </li>
-                <li class="flex items-start gap-3">
-                    <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                    <span class="text-sm text-custom-muted" data-i18n="packages-plan1-feature2">Botón directo a WhatsApp</span>
-                </li>
-                <li class="flex items-start gap-3">
-                    <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                    <span class="text-sm text-custom-muted" data-i18n="packages-plan1-feature3">Optimización Móvil</span>
-                </li>
-            </ul>
             <a href="https://wa.me/TU_NUMERO_WHATSAPP" target="_blank" rel="noopener" class="block w-full text-center py-3.5 rounded-lg font-bold text-sm transition-all duration-300 ease-in-out mt-auto border border-custom text-custom-main hover:border-custom-accent hover:text-custom-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-card" data-i18n="packages-cta-quote">Cotizar Paquete</a>
         </div>
 
         <!-- Paquete Corporativa Estándar (MÁS ELEGIDO) -->
-        <div class="group relative p-8 md:p-10 rounded-lg border-double-gold bg-custom-card text-custom-main flex flex-col h-full md:scale-105 z-10 transition-all duration-300 ease-in-out hover:md:scale-[1.07] hover:shadow-2xl hover:shadow-custom-accent/10">
+        <div class="pricing-card-mobile w-[82vw] sm:w-[70vw] max-w-[320px] shrink-0 snap-center md:w-auto md:max-w-none md:shrink group relative p-6 sm:p-8 md:p-10 rounded-lg border-double-gold bg-custom-card text-custom-main flex flex-col h-full justify-between md:scale-105 z-10 transition-all duration-300 ease-in-out hover:md:scale-[1.07] hover:shadow-2xl hover:shadow-custom-accent/10">
             <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-custom-accent text-black text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg whitespace-nowrap" data-i18n="packages-plan2-badge">⭐ Más Elegido</span>
-            <div class="inline-flex items-center justify-center w-11 h-11 rounded-lg bg-custom-accent/15 border border-custom-accent/30 text-custom-accent mb-5">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6 21v-3.375c0-.621.504-1.125 1.125-1.125h1.5c.621 0 1.125.504 1.125 1.125V21"/></svg>
+            <div>
+                <div class="inline-flex items-center justify-center w-11 h-11 rounded-lg bg-custom-accent/15 border border-custom-accent/30 text-custom-accent mb-5">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6 21v-3.375c0-.621.504-1.125 1.125-1.125h1.5c.621 0 1.125.504 1.125 1.125V21"/></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-1" data-i18n="packages-plan2-title">Corporativa Estándar</h3>
+                <p class="text-xs text-custom-accent font-medium mb-6 uppercase tracking-wide" data-i18n="packages-plan2-subtitle">Ideal para crecer</p>
+                <ul class="space-y-3.5 mb-8">
+                    <li class="flex items-start gap-3">
+                        <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                        <span class="text-sm text-custom-main font-medium" data-i18n="packages-plan2-feature1">Todo lo de Presencia Digital</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                        <span class="text-sm text-custom-muted" data-i18n="packages-plan2-feature2">Dominio y Correo Profesional</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                        <span class="text-sm text-custom-muted" data-i18n="packages-plan2-feature3">Catálogo de Servicios</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                        <span class="text-sm text-custom-muted" data-i18n="packages-plan2-feature4">Bilingüe (ES/EN)</span>
+                    </li>
+                </ul>
             </div>
-            <h3 class="text-xl font-bold mb-1" data-i18n="packages-plan2-title">Corporativa Estándar</h3>
-            <p class="text-xs text-custom-accent font-medium mb-6 uppercase tracking-wide" data-i18n="packages-plan2-subtitle">Ideal para crecer</p>
-            <ul class="space-y-3.5 flex-grow mb-8">
-                <li class="flex items-start gap-3">
-                    <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                    <span class="text-sm text-custom-main font-medium" data-i18n="packages-plan2-feature1">Todo lo de Presencia Digital</span>
-                </li>
-                <li class="flex items-start gap-3">
-                    <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                    <span class="text-sm text-custom-muted" data-i18n="packages-plan2-feature2">Dominio y Correo Profesional</span>
-                </li>
-                <li class="flex items-start gap-3">
-                    <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                    <span class="text-sm text-custom-muted" data-i18n="packages-plan2-feature3">Catálogo de Servicios</span>
-                </li>
-                <li class="flex items-start gap-3">
-                    <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                    <span class="text-sm text-custom-muted" data-i18n="packages-plan2-feature4">Bilingüe (ES/EN)</span>
-                </li>
-            </ul>
             <a href="https://wa.me/TU_NUMERO_WHATSAPP" target="_blank" rel="noopener" class="block w-full text-center py-3.5 rounded-lg font-bold text-sm transition-all duration-300 ease-in-out mt-auto bg-custom-accent text-black hover:brightness-110 hover:shadow-[0_8px_24px_-4px_rgba(0,0,0,0.4)] focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-card" data-i18n="packages-cta-quote">Cotizar Paquete</a>
         </div>
 
         <!-- Paquete Corporativa Plus -->
-        <div class="group p-8 md:p-10 rounded-lg border border-custom bg-custom-card text-custom-main flex flex-col h-full transition-all duration-300 ease-in-out hover:border-custom-accent/40 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/30">
-            <div class="inline-flex items-center justify-center w-11 h-11 rounded-lg bg-custom-accent/10 border border-custom-accent/20 text-custom-accent mb-5">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 4.5v15m6-15v15M3.75 4.5h16.5c.621 0 1.125.504 1.125 1.125v12.75c0 .621-.504 1.125-1.125 1.125H3.75A1.125 1.125 0 012.625 18.375V5.625c0-.621.504-1.125 1.125-1.125z"/></svg>
+        <div class="pricing-card-mobile w-[82vw] sm:w-[70vw] max-w-[320px] shrink-0 snap-center md:w-auto md:max-w-none md:shrink group p-6 sm:p-8 md:p-10 rounded-lg border border-custom bg-custom-card text-custom-main flex flex-col h-full justify-between transition-all duration-300 ease-in-out hover:border-custom-accent/40 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/30">
+            <div>
+                <div class="inline-flex items-center justify-center w-11 h-11 rounded-lg bg-custom-accent/10 border border-custom-accent/20 text-custom-accent mb-5">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 4.5v15m6-15v15M3.75 4.5h16.5c.621 0 1.125.504 1.125 1.125v12.75c0 .621-.504 1.125-1.125 1.125H3.75A1.125 1.125 0 012.625 18.375V5.625c0-.621.504-1.125 1.125-1.125z"/></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-1" data-i18n="packages-plan3-title">Corporativa Plus</h3>
+                <p class="text-xs text-custom-accent/70 font-medium mb-6 uppercase tracking-wide" data-i18n="packages-plan3-subtitle">Ideal para escalar</p>
+                <ul class="space-y-3.5 mb-8">
+                    <li class="flex items-start gap-3">
+                        <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                        <span class="text-sm text-custom-muted" data-i18n="packages-plan3-feature1">Todo lo Estándar</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                        <span class="text-sm text-custom-muted" data-i18n="packages-plan3-feature2">Formulario de Filtrado Empresarial</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                        <span class="text-sm text-custom-muted" data-i18n="packages-plan3-feature3">Exportador de Curriculum PDF</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                        <span class="text-sm text-custom-muted" data-i18n="packages-plan3-feature4">Selector Dinámico de Rubros</span>
+                    </li>
+                </ul>
             </div>
-            <h3 class="text-xl font-bold mb-1" data-i18n="packages-plan3-title">Corporativa Plus</h3>
-            <p class="text-xs text-custom-accent/70 font-medium mb-6 uppercase tracking-wide" data-i18n="packages-plan3-subtitle">Ideal para escalar</p>
-            <ul class="space-y-3.5 flex-grow mb-8">
-                <li class="flex items-start gap-3">
-                    <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                    <span class="text-sm text-custom-muted" data-i18n="packages-plan3-feature1">Todo lo Estándar</span>
-                </li>
-                <li class="flex items-start gap-3">
-                    <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                    <span class="text-sm text-custom-muted" data-i18n="packages-plan3-feature2">Formulario de Filtrado Empresarial/span>
-                </li>
-                <li class="flex items-start gap-3">
-                    <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                    <span class="text-sm text-custom-muted" data-i18n="packages-plan3-feature3">Exportador de Curriculum PDF</span>
-                </li>
-                <li class="flex items-start gap-3">
-                    <svg class="text-custom-accent w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                    <span class="text-sm text-custom-muted" data-i18n="packages-plan3-feature4">Selector Dinámico de Rubros</span>
-                </li>
-            </ul>
             <a href="https://wa.me/TU_NUMERO_WHATSAPP" target="_blank" rel="noopener" class="block w-full text-center py-3.5 rounded-lg font-bold text-sm transition-all duration-300 ease-in-out mt-auto border border-custom text-custom-main hover:border-custom-accent hover:text-custom-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-accent focus-visible:ring-offset-2 focus-visible:ring-offset-custom-card" data-i18n="packages-cta-quote">Cotizar Paquete</a>
         </div>
 
     </div>
 
+    <!-- Indicadores de Paginación Móvil (Dots Animados) -->
+    <div id="pricing-dots" class="flex justify-center items-center gap-2 mt-6 md:hidden" aria-hidden="true">
+        <span class="pricing-dot w-6 h-2 rounded-full bg-custom-accent transition-all duration-300"></span>
+        <span class="pricing-dot w-2 h-2 rounded-full bg-custom-accent/30 transition-all duration-300"></span>
+        <span class="pricing-dot w-2 h-2 rounded-full bg-custom-accent/30 transition-all duration-300"></span>
+    </div>
+
     <!-- Microcopy de apoyo a la decisión -->
-    <p class="text-center text-xs text-custom-muted mt-10">
+    <p class="text-center text-xs text-custom-muted mt-8 md:mt-10">
         <span data-i18n="packages-footer-question">¿No sabes cuál elegir?</span> <a href="https://wa.me/TU_NUMERO_WHATSAPP" target="_blank" rel="noopener" class="text-custom-accent font-medium hover:underline" data-i18n="packages-footer-link">Escríbenos</a> <span data-i18n="packages-footer-cta">y te ayudamos a decidir sin compromiso.</span>
     </p>
 </section>
+<!-- Script para la lógica del carrusel interactivo en móvil -->
+<script src="creative-rates-portafolio.js" defer></script>
