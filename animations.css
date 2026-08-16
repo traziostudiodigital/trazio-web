@@ -242,3 +242,29 @@
   }
 }
 
+/* --- TEXTO BRILLO DORADO SUTIL (Gold Shimmer Effect) --- */
+@keyframes goldShine {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.gold-shine-text {
+  background: linear-gradient(
+    90deg,
+    var(--text-muted, #94a3b8) 0%,
+    var(--text-muted, #94a3b8) 35%,
+    #fbbf24 50%,
+    var(--text-muted, #94a3b8) 65%,
+    var(--text-muted, #94a3b8) 100%
+  );
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: goldShine 6s linear infinite;
+}
+

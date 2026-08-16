@@ -1,29 +1,39 @@
-<section id="hero" class="max-w-4xl mx-auto px-6 py-12 md:py-16 flex flex-col items-center text-center animate-fade-in-up">
-    <!-- Full Logotype -->
-    <img src="assets/logo-gold.svg" class="logo-gold h-14 md:h-16 mx-auto mb-6" alt="Trazio Studio">
-    <img src="assets/logo-dark.svg" class="logo-dark h-14 md:h-16 mx-auto mb-6" alt="Trazio Studio">
-    
-    <!-- Badge -->
-    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase border border-custom/30 text-custom-accent bg-custom-accent/5 mb-6">
-        <span data-i18n="hero-badge">Estudio de Ingeniería & Estrategia Digital</span>
-    </span>
+<section id="hero" class="relative max-w-4xl mx-auto px-5 sm:px-6 pt-6 pb-12 sm:py-14 md:py-20 flex flex-col items-center text-center animate-fade-in-up">
+    <!-- Glow ambiental sutil de fondo para dar profundidad de agencia digital -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-custom-accent/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
 
-    <!-- Main Title -->
-    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tighter leading-[1.1] mb-6 text-custom-main" data-i18n="hero-title">
-        Trazamos la web que tu negocio necesita para <span class="text-custom-accent">crecer y ser encontrado</span>.
+    <!-- Floating Logotype con micro-animación -->
+    <div class="relative mb-5 sm:mb-6 animate-float">
+        <img src="assets/logo-gold.svg" class="logo-gold h-10 sm:h-12 md:h-14 mx-auto object-contain transition-transform duration-300 hover:scale-105" alt="Trazio Studio">
+        <img src="assets/logo-dark.svg" class="logo-dark h-10 sm:h-12 md:h-14 mx-auto object-contain transition-transform duration-300 hover:scale-105" alt="Trazio Studio">
+    </div>
+
+    <!-- Badge / Pill minimalista con indicador pulsante -->
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] sm:text-xs font-medium tracking-wide border border-custom-accent/20 text-custom-accent bg-custom-accent/5 backdrop-blur-sm mb-5 sm:mb-6 shadow-sm">
+        <span class="w-1.5 h-1.5 rounded-full bg-custom-accent animate-ping"></span>
+        <span data-i18n="hero-badge">Estudio de Ingeniería & Estrategia Digital</span>
+    </div>
+
+    <!-- Main Title: Escala fluida y márgenes compactos para móviles -->
+    <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.15] mb-4 sm:mb-6 text-custom-main max-w-3xl" data-i18n="hero-title">
+        Trazamos la web que tu negocio necesita para <span class="text-transparent bg-clip-text bg-gradient-to-r from-custom-accent to-amber-200">crecer y ser encontrado</span>.
     </h1>
 
-    <!-- Subtitle -->
-    <p class="text-lg sm:text-xl text-custom-muted max-w-2xl mb-12 leading-relaxed" data-i18n="hero-subtitle">
+    <!-- Subtitle: Más digerible en móviles sin empujar los botones fuera de pantalla -->
+    <p class="text-sm sm:text-base md:text-lg text-custom-muted max-w-xl sm:max-w-2xl mb-7 sm:mb-10 leading-relaxed font-normal" data-i18n="hero-subtitle">
         Creamos herramientas web ultrarrápidas y optimizadas para Cuba. Diseños limpios, sin costes de mantenimiento mensuales y listos para recibir pedidos directo en tu WhatsApp.
     </p>
 
     <!-- CTA Buttons -->
-    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center w-full sm:w-auto">
-        <a href="#solutions" class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 text-base font-semibold text-black bg-custom-accent rounded-xl shadow-lg shadow-custom-accent/10 hover:bg-custom-accent-hover hover:-translate-y-1 transition-all duration-300" data-i18n="hero-cta-primary">
-            Explorar Soluciones
+    <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center w-full max-w-xs sm:max-w-none">
+        <a href="#solutions" class="group relative inline-flex items-center justify-center w-full sm:w-auto px-6 py-3.5 sm:px-8 sm:py-4 text-sm sm:text-base font-semibold text-black bg-custom-accent rounded-xl shadow-lg shadow-custom-accent/20 hover:bg-custom-accent-hover active:scale-95 transition-all duration-200 ease-out" data-i18n="hero-cta-primary">
+            <span>Explorar Soluciones</span>
+            <svg class="w-4 h-4 ml-2 transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            </svg>
         </a>
-        <a href="#footer" class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 text-base font-semibold text-custom-main bg-custom-card border border-custom/20 rounded-xl hover:bg-custom-main hover:border-custom/55 hover:-translate-y-1 transition-all duration-300" data-i18n="hero-cta-secondary">
+
+        <a href="#footer" class="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3.5 sm:px-8 sm:py-4 text-sm sm:text-base font-semibold text-custom-main bg-custom-card/80 backdrop-blur-sm border border-custom/20 rounded-xl hover:border-custom-accent/40 hover:bg-custom-card active:scale-95 transition-all duration-200 ease-out" data-i18n="hero-cta-secondary">
             Analizar mi Negocio
         </a>
     </div>

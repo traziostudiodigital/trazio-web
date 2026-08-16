@@ -1,5 +1,5 @@
 <!-- Selector de Autoidentificación -->
-<section class="max-w-6xl mx-auto px-6 mb-16 mt-12">
+<section id="solutions" class="max-w-6xl mx-auto px-5 mb-16 mt-12">
     <div class="text-center mb-10">
         <span class="inline-flex items-center gap-2 text-custom-accent text-xs font-semibold tracking-[0.2em] uppercase mb-3">
             <span class="w-6 h-px bg-custom-accent/50"></span>
@@ -10,20 +10,12 @@
         <p data-i18n="selector-description" class="text-custom-muted mt-3 text-sm md:text-base">Selecciona tu perfil para ir directo a la solución ideal.</p>
     </div>
 
-    <!-- Contenedor con scroll horizontal en móvil -->
-    <div class="relative">
-        <!-- Guía dorada izquierda (solo móvil) -->
-        <div class="scroll-hint scroll-hint-left sm:hidden" aria-hidden="true">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
-        </div>
-
-        <!-- IMPORTANTE: grid/gap van aquí mismo, sin div envolvente extra,
-             para que las tarjetas sean hijas directas de .ecosystem-scroll
-             y el display:flex del media query móvil funcione correctamente -->
-        <div class="ecosystem-scroll grid grid-cols-1 md:grid-cols-3 gap-6">
-
+    <!-- Contenedor con scroll horizontal táctil optimizado -->
+    <div class="relative group">
+        <!-- Contenedor flex para scroll móvil -->
+        <div class="ecosystem-scroll flex md:grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 overflow-x-auto pb-6 snap-x scrollbar-hide">
             <!-- Botón 1: Catálogos -->
-            <a href="catalogo-pedidos.html" class="ecosystem-card group bg-custom-card border border-custom p-7 rounded-lg hover:border-custom-accent/50 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/30 transition-all duration-300 ease-in-out flex flex-col items-center text-center">
+            <a href="catalogo-pedidos.html" class="ecosystem-card snap-start shrink-0 w-[85vw] sm:w-auto bg-custom-card border border-custom p-7 rounded-2xl hover:border-custom-accent/50 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 flex flex-col items-center text-center">
                 <div class="inline-flex items-center justify-center w-14 h-14 rounded-lg bg-custom-accent/10 border border-custom-accent/20 text-custom-accent mb-5 group-hover:scale-110 group-hover:bg-custom-accent/15 transition-all duration-300 ease-in-out">
                     <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007z"/></svg>
                 </div>
@@ -36,7 +28,7 @@
             </a>
 
                 <!-- Botón 2: Portafolios -->
-            <a href="portafolio-creativo.html" class="ecosystem-card group bg-custom-card border border-custom p-7 rounded-lg hover:border-custom-accent/50 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/30 transition-all duration-300 ease-in-out flex flex-col items-center text-center">
+            <a href="portafolio-creativo.html" class="ecosystem-card snap-start shrink-0 w-[85vw] sm:w-auto bg-custom-card border border-custom p-7 rounded-2xl hover:border-custom-accent/50 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 flex flex-col items-center text-center">
                 <div class="inline-flex items-center justify-center w-14 h-14 rounded-lg bg-custom-accent/10 border border-custom-accent/20 text-custom-accent mb-5 group-hover:scale-110 group-hover:bg-custom-accent/15 transition-all duration-300 ease-in-out">
                     <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42"/></svg>
                 </div>
@@ -49,7 +41,7 @@
             </a>
 
             <!-- Botón 3: Corporativo -->
-            <a href="identidad-corporativa.html" class="ecosystem-card group bg-custom-card border border-custom p-7 rounded-lg hover:border-custom-accent/50 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/30 transition-all duration-300 ease-in-out flex flex-col items-center text-center">
+            <a href="identidad-corporativa.html" class="ecosystem-card snap-start shrink-0 w-[85vw] sm:w-auto bg-custom-card border border-custom p-7 rounded-2xl hover:border-custom-accent/50 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 flex flex-col items-center text-center">
                 <div class="inline-flex items-center justify-center w-14 h-14 rounded-lg bg-custom-accent/10 border border-custom-accent/20 text-custom-accent mb-5 group-hover:scale-110 group-hover:bg-custom-accent/15 transition-all duration-300 ease-in-out">
                     <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 3h15l-.75 18h-13.5L4.5 3zM9 3v18M15 3v18M9 8.25h6M9 12h6M9 15.75h6"/></svg>
                 </div>
@@ -62,11 +54,6 @@
             </a>
 
         </div>
-
-        <!-- Guía dorada derecha (solo móvil) -->
-        <div class="scroll-hint scroll-hint-right sm:hidden" aria-hidden="true">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
         </div>
-    </div>
 </section>
 
