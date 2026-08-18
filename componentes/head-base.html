@@ -19,18 +19,48 @@
 <script src="assets/i18n-data.js"></script>
 <script src="assets/i18n-core.js" defer></script>
 
-<!-- SEO / GEO Schema Trazio Studio -->
+<!-- SEO / GEO Schema Avanzado Trazio Studio -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
+  "@graph": [
+    {
   "@type": "ProfessionalService",
+      "@id": "https://traziostudio.com/#organization",
   "name": "Trazio Studio",
-  "description": "Desarrollo web estático, catálogos y presencia corporativa para Mipymes, TCP y empresas privadas en Cuba.",
-  "areaServed": "Cuba",
-  "telephone": "+53200426",
+      "description": "Agencia de desarrollo web estático, catálogos interactivos y presencia corporativa para Mipymes, TCP y empresas privadas en Cuba.",
   "url": "https://traziostudio.com",
   "logo": "https://traziostudio.com/assets/logo-gold.svg",
-  "image": "https://traziostudio.com/assets/og-home.jpg"
+      "image": "https://traziostudio.com/assets/og-home.webp",
+      "telephone": "+53200426",
+      "email": "contacto@traziostudio.com",
+      "priceRange": "$$",
+      "areaServed": {
+        "@type": "Country",
+        "name": "Cuba"
+      },
+      "sameAs": [
+        "https://facebook.com/traziostudio",
+        "https://instagram.com/traziostudio"
+      ],
+      "knowsAbout": [
+        "Desarrollo Web",
+        "Catálogos Digitales",
+        "SEO Local",
+        "Diseño B2B",
+        "Optimización de Velocidad"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://traziostudio.com/#website",
+      "url": "https://traziostudio.com",
+      "name": "Trazio Studio | Agencia Web B2B",
+      "publisher": {
+        "@id": "https://traziostudio.com/#organization"
+}
+    }
+  ]
 }
 </script>
 
