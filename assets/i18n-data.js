@@ -337,6 +337,22 @@ window.TRAZIO_I18N = {
         'packages-plan3-feature1': 'Everything Standard',
         'packages-plan3-feature2': 'B2B Filtering Form',
         'packages-plan3-feature3': 'PDF Dossier Exporter',
+        
+        // Corporate CTA Section (en)
+        'corporate-badge-label': 'Last Step',
+        'corporate-cta-heading': 'Make the corporate leap today.',
+        'corporate-cta-subheading': 'Write to us on WhatsApp to schedule a free audit of your business.',
+        'corporate-trust-badge-1': '100% Free Audit',
+        'corporate-trust-badge-2': 'No Commitment',
+        'corporate-cta-button': 'Contact via WhatsApp',
+        'corporate-print-section-title': 'Need to present this information to your partners?',
+        'corporate-print-button': 'Download Proposal PDF',
+
+        // Live demo section
+        'demo-live-badge': 'Live Demo',
+        'demo-title-main': 'This is how your business would look. Choose your sector:',
+        'demo-subtitle': 'Real interfaces, adapted to how you work every day.',
+
         'packages-plan3-feature4': 'Dynamic Category Selector',
 
          // CTA & Footer
@@ -344,6 +360,14 @@ window.TRAZIO_I18N = {
         'packages-footer-question': 'Not sure which one to choose?',
         'packages-footer-link': 'Write to us',
         'packages-footer-cta': 'and we will help you decide with no commitment',
+
+        // Tech Hero Section (en)
+        'tech-hero-badge': 'INTERACTIVE DEMO: HOW YOUR FUTURE WEBSITE WILL LOOK',
+        'tech-hero-title-part1': 'Your technical career deserves an ',
+        'tech-hero-title-part2-accent': 'Executive-Corporate Presence',
+        'tech-hero-description': 'Position your professional capability at the level of large corporations. We design your high-speed private profile to secure tenders, attract international contracts, and demonstrate real impact.',
+        'tech-hero-btn-demo': 'Explore Demo',
+        'tech-hero-btn-quote': 'Get My Website Quote',
         
         // Methodology / Turnkey Process Section (en)
         'process-badge-label': 'Methodology',
