@@ -119,7 +119,7 @@ function compileCSS() {
     console.log('🔄 Compilando y minificando Tailwind CSS (v4)...');
     try {
         // Ejecuta el CLI de Tailwind v4
-        execSync('npx @tailwindcss/cli -i ./input.css -o ./output.css --minify', { stdio: 'inherit' });
+        execSync('npx @tailwindcss/cli -i ./input.css -o ./output.css --minify', { stdio: 'inherit', cwd: __dirname });
         console.log('✅ CSS Listo y Minificado (output.css)');
     } catch (error) {
         console.error('❌ Error al compilar Tailwind CSS');

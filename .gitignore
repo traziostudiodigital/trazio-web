@@ -8,3 +8,7 @@ node_modules/
 # Ignorar archivos del sistema operativo
 Thumbs.db
 .DS_Store
+
+# Entorno y logs
+.env*
+*.log
