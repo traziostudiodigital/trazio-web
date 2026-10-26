@@ -421,7 +421,7 @@ window.TRAZIO_I18N = {
         'footer-contact': 'Connect with Us',
         'footer-whatsapp-label': 'Direct WhatsApp',
         'footer-whatsapp-desc': 'The fastest way to quote',
-        'footer-email': 'contacto@traziostudio.com',    
+        'footer-email': 'contacto@trazio.net',    
 
         // Footer CTA card
         'footer-aida-text': 'Ready to grow your business?',
