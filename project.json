@@ -1,0 +1,22 @@
+{
+  "scope": "web",
+  "repo": true,
+  "deploy": "hostinger-git",
+  "dominio": "trazio.net",
+  "fuentes_globs": [
+    "componentes/*.html",
+    "plantillas/*.html",
+    "assets/js/i18n-data.js",
+    "sitemap.xml",
+    "robots.txt"
+  ],
+  "no_tocar": [
+    "*.html en la raíz de web/ (son compilados, se regeneran con el build)",
+    "output.css (compilado)",
+    "node_modules/"
+  ],
+  "idioma": "es-CU",
+  "identidad_tokens": "../docs/COMPONENTES.md",
+  "build_cmd": "npm run build",
+  "min_archivos": 5
+}
